@@ -1,0 +1,105 @@
+\documentclass[aspectratio=169]{beamer}
+\usepackage{fontspec}
+
+% Tipografías de la Identidad Visual
+\setmainfont{Inter}
+\setsansfont{Inter}
+\setmonofont{JetBrains Mono}
+\newfontfamily\titlefont{Montserrat}[BoldFont={Montserrat Bold}]
+
+% Colores de la Identidad Visual
+\definecolor{AzulMarino}{HTML}{1A365D}
+\definecolor{GrisPizarra}{HTML}{4A5568}
+\definecolor{BlancoNieve}{HTML}{F7FAFC}
+\definecolor{VerdeAzulado}{HTML}{319795}
+
+% Aplicación de colores a Beamer
+\setbeamercolor{palette primary}{bg=AzulMarino, fg=BlancoNieve}
+\setbeamercolor{palette secondary}{bg=VerdeAzulado, fg=BlancoNieve}
+\setbeamercolor{palette tertiary}{bg=GrisPizarra, fg=BlancoNieve}
+\setbeamercolor{structure}{fg=AzulMarino}
+\setbeamercolor{background canvas}{bg=BlancoNieve}
+\setbeamercolor{normal text}{fg=GrisPizarra}
+
+\setbeamerfont{title}{family=\titlefont, series=\bfseries, size=\Huge}
+\setbeamerfont{frametitle}{family=\titlefont, series=\bfseries, size=\LARGE}
+
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{listings}
+
+\lstset{
+  basicstyle=\ttfamily\color{GrisPizarra}\small,
+  keywordstyle=\color{VerdeAzulado}\bfseries,
+  stringstyle=\color{AzulMarino},
+  commentstyle=\color{GrisPizarra}\itshape,
+  backgroundcolor=\color{BlancoNieve},
+  frame=single,
+  rulecolor=\color{GrisPizarra}
+}
+
+\title{Práctica Guiada: Modelado Predictivo Continuo}
+\subtitle{Scikit-Learn y Regresiones (Laboratorio)}
+\author{Clase Práctica - Semana 4}
+\date{}
+
+\begin{document}
+
+\begin{frame}
+    \titlepage
+\end{frame}
+
+\begin{frame}[fragile]{Instanciar y Entrenar una Regresión OLS}
+    La regresión más simple y fundamental:
+    
+\begin{lstlisting}[language=Python]
+from sklearn.linear_model import LinearRegression
+
+# 1. Creamos el modelo
+modelo_ols = LinearRegression()
+
+# 2. El modelo "aprende" a trazar la linea
+modelo_ols.fit(X_train, y_train)
+
+# 3. Extraemos la formula y = mx + b
+print(f"Pendiente (w): {modelo_ols.coef_}")
+print(f"Intercepto (b): {modelo_ols.intercept_}")
+\end{lstlisting}
+    
+\end{frame}
+
+\begin{frame}[fragile]{Inyectando Flexibilidad: Polinomios}
+    Para curvar nuestro modelo, expandimos nuestras variables $X$:
+    
+\begin{lstlisting}[language=Python]
+from sklearn.preprocessing import PolynomialFeatures
+
+# Genera [X, X^2] si el grado es 2
+poly = PolynomialFeatures(degree=2, include_bias=False)
+X_poly = poly.fit_transform(X)
+
+# Ahora entrenamos el mismo modelo OLS sobre la matriz curada
+modelo_ols.fit(X_poly, y)
+\end{lstlisting}
+    
+\end{frame}
+
+\begin{frame}[fragile]{Lasso, Ridge y ElasticNet}
+    Implementando a los Inspectores de Peso (Penalizaciones L1 y L2):
+    
+\begin{lstlisting}[language=Python]
+from sklearn.linear_model import Lasso, Ridge, ElasticNet
+
+# L1 (Lasso) - Fuerza coeficientes a 0
+modelo_lasso = Lasso(alpha=0.1)
+
+# L2 (Ridge) - Encoge coeficientes proporcionalmente
+modelo_ridge = Ridge(alpha=1.0)
+
+# Mezcla (ElasticNet) - 50% Lasso, 50% Ridge
+modelo_elastic = ElasticNet(alpha=0.1, l1_ratio=0.5)
+\end{lstlisting}
+    
+\end{frame}
+
+\end{document}

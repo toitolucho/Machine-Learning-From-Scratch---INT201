@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+<!-- Categoría Base -->
+<question type="category">
+    <category><text>$course$/Semana 4 - Regresión y Regularización</text></category>
+    <info format="html"><text><![CDATA[Cuestionario de la Semana 4: Lasso, Ridge, y Mínimos Cuadrados.]]></text></info>
+</question>
+
+<!-- Q01. Selección Múltiple -->
+<question type="multichoice">
+    <name><text>Q01. Penalización L1 vs L2</text></name>
+    <questiontext format="html"><text><![CDATA[<p>¿Qué diferencia fundamental existe entre la penalización matemática aplicada por Lasso en contraste con Ridge?</p>]]></text></questiontext>
+    <generalfeedback format="html"><text><![CDATA[Lasso (L1) tiene vértices afilados en su función de pérdida, lo que causa selecciones exactas en cero.]]></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="100">
+        <text><![CDATA[Lasso utiliza la norma absoluta L1 permitiendo forzar coeficientes exactamente a cero, mientras que Ridge utiliza la norma L2 reduciéndolos sin llegar a cero.]]></text>
+        <feedback format="html"><text><![CDATA[¡Correcto!]]></text></feedback>
+    </answer>
+    <answer fraction="-33.33333">
+        <text><![CDATA[Ridge eleva los coeficientes al cubo y Lasso utiliza raíces cuadradas.]]></text>
+        <feedback format="html"><text><![CDATA[Falso.]]></text></feedback>
+    </answer>
+    <answer fraction="-33.33333">
+        <text><![CDATA[Ridge realiza una selección drástica de variables descartando la mayoría y Lasso las conserva todas.]]></text>
+        <feedback format="html"><text><![CDATA[Falso, es exactamente al revés.]]></text></feedback>
+    </answer>
+    <answer fraction="-33.33333">
+        <text><![CDATA[Lasso solo puede aplicarse en problemas de clasificación multiclase.]]></text>
+        <feedback format="html"><text><![CDATA[Falso, Lasso es para regresión (aunque su penalidad se puede aplicar a regresión logística).]]></text></feedback>
+    </answer>
+</question>
+
+<!-- Q02. Selección Múltiple -->
+<question type="multichoice">
+    <name><text>Q02. Falsos Negativos en Animación 3D</text></name>
+    <questiontext format="html"><text><![CDATA[<p>Si un estudiante de animación busca minimizar los Falsos Negativos al predecir si un renderizado tardará más del límite óptimo de 30 segundos, ¿cuál de los siguientes casos debe evitar a toda costa?</p>]]></text></questiontext>
+    <generalfeedback format="html"><text><![CDATA[Un Falso Negativo es decir "No va a tardar" cuando en realidad SÍ va a tardar, bloqueando la red de renderizado.]]></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answer fraction="100">
+        <text><![CDATA[El modelo predice que tardará 10 segundos (Sano/Rápido), pero en la realidad la GPU se congela y tarda 80 segundos (Enfermo/Lento).]]></text>
+        <feedback format="html"><text><![CDATA[¡Correcto! Este es el escenario más catastrófico.]]></text></feedback>
+    </answer>
+    <answer fraction="-33.33333">
+        <text><![CDATA[El modelo genera una falsa alarma estimando que tardará 60 segundos, pero termina exitosamente en 15.]]></text>
+        <feedback format="html"><text><![CDATA[Falso. Eso es un Falso Positivo.]]></text></feedback>
+    </answer>
+    <answer fraction="-33.33333">
+        <text><![CDATA[El modelo predice 90 segundos y tarda 120 segundos.]]></text>
+        <feedback format="html"><text><![CDATA[Falso. Sigue siendo un Verdadero Positivo (ambos excedieron la barrera de 30s).]]></text></feedback>
+    </answer>
+    <answer fraction="-33.33333">
+        <text><![CDATA[El modelo estima 5 segundos y tarda 5 segundos.]]></text>
+        <feedback format="html"><text><![CDATA[Falso. Ese es un Verdadero Negativo.]]></text></feedback>
+    </answer>
+</question>
+
+<!-- Q03. Completar Código (shortanswer) -->
+<question type="shortanswer">
+    <name><text>Q03. Completar Código - Regresión Lineal</text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p>Escribe el nombre de la clase de Scikit-Learn que se utiliza para instanciar el estimador de Mínimos Cuadrados Ordinarios (Respetar mayúsculas y minúsculas):</p>
+<pre>
+modelo = ???()
+</pre>]]></text>
+    </questiontext>
+    <generalfeedback format="html"><text><![CDATA[La clase es LinearRegression.]]></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <usecase>0</usecase>
+    <answer fraction="100">
+        <text>LinearRegression</text>
+        <feedback format="html"><text><![CDATA[¡Correcto!]]></text></feedback>
+    </answer>
+</question>
+
+<!-- Q04. Completar Código (shortanswer) -->
+<question type="shortanswer">
+    <name><text>Q04. Completar Código - Expansión Polinómica</text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p>Escribe el nombre de la clase de Scikit-Learn utilizada para transformar un conjunto de datos lineal a una representación curva de grado N (Respetar mayúsculas y minúsculas):</p>
+<pre>
+poly = ???(degree=3)
+</pre>]]></text>
+    </questiontext>
+    <generalfeedback format="html"><text><![CDATA[La clase es PolynomialFeatures.]]></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <usecase>0</usecase>
+    <answer fraction="100">
+        <text>PolynomialFeatures</text>
+        <feedback format="html"><text><![CDATA[¡Correcto!]]></text></feedback>
+    </answer>
+</question>
+
+<!-- Q05. Emparejamiento (matching) -->
+<question type="matching">
+    <name><text>Q05. ElasticNet y Ridge</text></name>
+    <questiontext format="html"><text><![CDATA[<p>Relacione el algoritmo con su comportamiento principal en la penalización de coeficientes:</p>]]></text></questiontext>
+    <defaultgrade>1</defaultgrade>
+    <shuffleanswers>true</shuffleanswers>
+    <subquestion format="html">
+        <text><![CDATA[Lasso (L1)]]></text>
+        <answer><text>Fuerza los coeficientes redundantes exactamente a cero, realizando selección automática de variables.</text></answer>
+    </subquestion>
+    <subquestion format="html">
+        <text><![CDATA[ElasticNet]]></text>
+        <answer><text>Combina penalizaciones L1 y L2 utilizando el ratio l1_ratio.</text></answer>
+    </subquestion>
+</question>
+
+<!-- Q06. Emparejamiento (matching) -->
+<question type="matching">
+    <name><text>Q06. Multicolinealidad</text></name>
+    <questiontext format="html"><text><![CDATA[<p>Relacione el concepto de diagnóstico con su interpretación correcta:</p>]]></text></questiontext>
+    <defaultgrade>1</defaultgrade>
+    <shuffleanswers>true</shuffleanswers>
+    <subquestion format="html">
+        <text><![CDATA[VIF mayor a 10]]></text>
+        <answer><text>Indica que la variable es altamente redundante y puede colapsar la matemática de la regresión OLS.</text></answer>
+    </subquestion>
+    <subquestion format="html">
+        <text><![CDATA[Multicolinealidad]]></text>
+        <answer><text>Situación donde dos o más variables predictoras están altamente correlacionadas entre sí (Ej. Alto y Ancho en 16:9).</text></answer>
+    </subquestion>
+</question>
+
+<!-- Q07. Verdadero/Falso -->
+<question type="truefalse">
+    <name><text>Q07. Lasso e Infinito</text></name>
+    <questiontext format="html"><text><![CDATA[<p>¿Qué efecto ocurre en una Regresión Lasso si incrementamos drásticamente el valor del hiperparámetro de regularización Alpha hacia el infinito? ¿Todos los coeficientes de peso asociados se fuerzan a cero, dejando solo el intercepto?</p>]]></text></questiontext>
+    <generalfeedback format="html"><text><![CDATA[Verdadero. Un Alpha infinito no tolerará ningún peso en las variables y las convertirá en cero.]]></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <answer fraction="100">
+        <text>true</text>
+        <feedback format="html"><text><![CDATA[¡Correcto!]]></text></feedback>
+    </answer>
+    <answer fraction="0">
+        <text>false</text>
+        <feedback format="html"><text><![CDATA[Incorrecto. Una penalización tan extrema limpia toda la matriz.]]></text></feedback>
+    </answer>
+</question>
+
+<!-- Q08. Verdadero/Falso -->
+<question type="truefalse">
+    <name><text>Q08. Ridge y Ceros</text></name>
+    <questiontext format="html"><text><![CDATA[<p>La regresión Ridge (L2) es ideal para eliminar variables de un conjunto de datos, porque convierte todos los coeficientes inútiles matemáticamente en 0.</p>]]></text></questiontext>
+    <generalfeedback format="html"><text><![CDATA[Falso. Ridge encoge los coeficientes pero NUNCA los hace exactamente cero (a diferencia de Lasso).]]></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <answer fraction="100">
+        <text>false</text>
+        <feedback format="html"><text><![CDATA[¡Correcto! Ridge encoge los pesos, pero no elimina las variables.]]></text></feedback>
+    </answer>
+    <answer fraction="0">
+        <text>true</text>
+        <feedback format="html"><text><![CDATA[Incorrecto. Estás pensando en Lasso (L1).]]></text></feedback>
+    </answer>
+</question>
+
+<!-- Q09. Arrastrar y Soltar (ddwtos) -->
+<question type="ddwtos">
+    <name><text>Q09. Lasso en Scikit-Learn</text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p>Completa el código para entrenar un modelo que aplique penalización de norma absoluta (L1) con un factor de fuerza de 0.5:</p>
+        <pre>
+from sklearn.linear_model import [[1]]
+modelo = [[1]]([[2]]=0.5)
+modelo.fit(X_train, y_train)
+        </pre>]]></text>
+    </questiontext>
+    <generalfeedback format="html"><text><![CDATA[Lasso aplica L1. El parámetro de fuerza se llama alpha.]]></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <shuffleanswers>true</shuffleanswers>
+    <dragbox>
+        <text><![CDATA[Lasso]]></text>
+        <group>1</group>
+    </dragbox>
+    <dragbox>
+        <text><![CDATA[alpha]]></text>
+        <group>2</group>
+    </dragbox>
+    <dragbox>
+        <text><![CDATA[Ridge]]></text>
+        <group>1</group>
+    </dragbox>
+    <dragbox>
+        <text><![CDATA[beta]]></text>
+        <group>2</group>
+    </dragbox>
+</question>
+
+<!-- Q10. Arrastrar y Soltar (ddwtos) -->
+<question type="ddwtos">
+    <name><text>Q10. ElasticNet y L1 Ratio</text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p>Completa el código para entrenar un modelo híbrido ElasticNet que tienda a comportarse exactamente igual a Lasso (penalización L1 pura):</p>
+        <pre>
+modelo_mixto = [[1]](alpha=1.0, [[2]]=1.0)
+modelo_mixto.fit(X, y)
+        </pre>]]></text>
+    </questiontext>
+    <generalfeedback format="html"><text><![CDATA[ElasticNet balancea ambas normas. Si l1_ratio=1.0, es 100% Lasso.]]></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <shuffleanswers>true</shuffleanswers>
+    <dragbox>
+        <text><![CDATA[ElasticNet]]></text>
+        <group>1</group>
+    </dragbox>
+    <dragbox>
+        <text><![CDATA[l1_ratio]]></text>
+        <group>2</group>
+    </dragbox>
+    <dragbox>
+        <text><![CDATA[LinearRegression]]></text>
+        <group>1</group>
+    </dragbox>
+    <dragbox>
+        <text><![CDATA[l2_ratio]]></text>
+        <group>2</group>
+    </dragbox>
+</question>
+
+</quiz>
