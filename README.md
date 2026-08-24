@@ -1,4 +1,4 @@
-# Machine Learning From Scratch - INT210
+# Machine Learning From Scratch - INT201
 
 Bienvenido al repositorio oficial del curso **INT210: Machine Learning From Scratch**, un programa de formación universitaria avanzada en Ciencia de Datos e Inteligencia Artificial enfocado en la construcción de algoritmos de aprendizaje automático desde sus cimientos matemáticos y computacionales puros, sin depender de librerías de caja negra.
 
