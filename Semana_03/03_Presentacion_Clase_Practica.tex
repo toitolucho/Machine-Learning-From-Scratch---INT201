@@ -1,0 +1,94 @@
+\documentclass[aspectratio=169]{beamer}
+
+% Compilar con XeLaTeX
+\usepackage{fontspec}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{listings}
+
+% Branding Académico (Obligatorio)
+\definecolor{AzulMarino}{HTML}{1A365D}
+\definecolor{GrisPizarra}{HTML}{4A5568}
+\definecolor{VerdeAzulado}{HTML}{319795}
+\definecolor{FondoBlanco}{HTML}{F7FAFC}
+
+% Configuracion de Beamer
+\setbeamercolor{background canvas}{bg=FondoBlanco}
+\setbeamercolor{title}{fg=AzulMarino}
+\setbeamercolor{frametitle}{fg=AzulMarino}
+\setbeamercolor{normal text}{fg=GrisPizarra}
+
+% Fuentes
+\setmainfont{Inter}
+\setsansfont{Montserrat}
+\setmonofont{JetBrains Mono}
+
+% Configuración de listings para código Python
+\lstset{
+    language=Python,
+    basicstyle=\ttfamily\small,
+    keywordstyle=\color{AzulMarino}\bfseries,
+    stringstyle=\color{VerdeAzulado},
+    commentstyle=\color{GrisPizarra}\itshape,
+    showstringspaces=false,
+    breaklines=true,
+    frame=single,
+    rulecolor=\color{GrisPizarra}
+}
+
+\title{Práctica: Modelos Supervisados Clásicos}
+\subtitle{Scikit-Learn, Pandas y Visualización}
+\author{Machine Learning para Ciberseguridad}
+\date{Semana 3}
+
+\begin{document}
+
+\begin{frame}
+    \titlepage
+\end{frame}
+
+\begin{frame}[fragile]{Exploración del Dataset (Pandas)}
+    Vamos a usar \texttt{pandas} para cargar e inspeccionar la data:
+    \begin{lstlisting}
+import pandas as pd
+
+# Cargar dataset de URLs sospechosas
+df = pd.read_csv("phishing_dataset.csv")
+
+# Explorar las primeras filas
+print(df.head())
+    \end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]{Entrenamiento: k-NN en Scikit-Learn}
+    La librería \texttt{scikit-learn} tiene una interfaz estándar: \texttt{fit()} para entrenar y \texttt{predict()} para clasificar.
+    \begin{lstlisting}
+from sklearn.neighbors import KNeighborsClassifier
+
+# Instanciar el modelo (k=5 vecinos)
+knn = KNeighborsClassifier(n_neighbors=5, metric='euclidean')
+
+# Entrenar el modelo con los datos
+knn.fit(X_train, y_train)
+
+# Clasificar nuevas paginas web
+predicciones = knn.predict(X_test)
+    \end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]{Evaluación: La Matriz de Confusión}
+    \begin{lstlisting}
+from sklearn.metrics import confusion_matrix, ConfusionMatrixDisplay
+import matplotlib.pyplot as plt
+
+# Generar la matriz cruzando realidad vs prediccion
+cm = confusion_matrix(y_test, predicciones)
+
+# Ploteo visual
+disp = ConfusionMatrixDisplay(cm, display_labels=['Phishing', 'Legitimo'])
+disp.plot(cmap='Blues')
+plt.show()
+    \end{lstlisting}
+\end{frame}
+
+\end{document}

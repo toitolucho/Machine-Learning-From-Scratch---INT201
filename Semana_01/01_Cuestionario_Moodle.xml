@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+<!-- category -->
+  <question type="category">
+    <category>
+      <text>$course$/Semana 01: Fundamentos de IA y Jerarquía de Datos</text>
+    </category>
+    <info format="html">
+      <text><![CDATA[Preguntas sobre Inteligencia Artificial, Machine Learning y análisis exploratorio con Pandas.]]></text>
+    </info>
+  </question>
+
+<!-- Question 1: Multiple choice -->
+  <question type="multichoice">
+    <name>
+      <text>Q01. Concepto de Machine Learning</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>¿Cuál es la principal diferencia entre la Inteligencia Artificial general y el Machine Learning?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>El Machine Learning es un subconjunto de la IA que se enfoca en que los sistemas aprendan de los datos sin ser explícitamente programados.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+      <text><![CDATA[El Machine Learning permite a los algoritmos aprender de los datos para hacer predicciones, mientras que la IA abarca cualquier técnica que imite el comportamiento humano.]]></text>
+    </answer>
+    <answer fraction="-33.33333" format="html">
+      <text><![CDATA[No existe diferencia, son términos exactamente iguales en la literatura científica.]]></text>
+    </answer>
+    <answer fraction="-33.33333" format="html">
+      <text><![CDATA[La IA solo se usa para Ciberseguridad, mientras que el Machine Learning se usa para Arte Digital.]]></text>
+    </answer>
+  </question>
+
+<!-- Question 2: Drag and Drop -->
+  <question type="ddwtos">
+    <name>
+      <text>Q02. Pandas DataFrame</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Complete el código en Python para cargar un archivo CSV utilizando Pandas:</p>
+      <pre>import pandas as [[1]]
+df = pd.[[2]]('datos.csv')
+print(df.[[3]]())</pre>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>Se utiliza <code>import pandas as pd</code> por convención. <code>read_csv</code> carga el archivo, y <code>head()</code> muestra las primeras filas.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>1</shuffleanswers>
+    <dragbox>
+      <text><![CDATA[pd]]></text>
+      <group>1</group>
+    </dragbox>
+    <dragbox>
+      <text><![CDATA[read_csv]]></text>
+      <group>2</group>
+    </dragbox>
+    <dragbox>
+      <text><![CDATA[head]]></text>
+      <group>3</group>
+    </dragbox>
+    <dragbox>
+      <text><![CDATA[load_csv]]></text>
+      <group>2</group>
+    </dragbox>
+  </question>
+
+<!-- Question 3: True/False -->
+  <question type="truefalse">
+    <name>
+      <text>Q03. Falso Positivo en Ciberseguridad</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>En el contexto de la prevención de amenazas digitales, un "Falso Positivo" ocurre cuando el modelo de ML clasifica incorrectamente una actividad legítima como una amenaza o ataque.</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>Correcto. Un Falso Positivo genera fricción, ya que bloquea usuarios legítimos, a diferencia de un Falso Negativo que permite el paso de una brecha de seguridad real.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>1.0000000</penalty>
+    <hidden>0</hidden>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>true</text>
+    </answer>
+    <answer fraction="0" format="moodle_auto_format">
+      <text>false</text>
+    </answer>
+  </question>
+</quiz>

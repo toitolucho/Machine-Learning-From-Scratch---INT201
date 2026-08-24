@@ -1,0 +1,87 @@
+\documentclass[aspectratio=169]{beamer}
+
+% Compilar con XeLaTeX
+\usepackage{fontspec}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{amsmath}
+
+% Branding Académico (Obligatorio)
+\definecolor{AzulMarino}{HTML}{1A365D}
+\definecolor{GrisPizarra}{HTML}{4A5568}
+\definecolor{VerdeAzulado}{HTML}{319795}
+\definecolor{FondoBlanco}{HTML}{F7FAFC}
+
+% Configuracion de Beamer
+\setbeamercolor{background canvas}{bg=FondoBlanco}
+\setbeamercolor{title}{fg=AzulMarino}
+\setbeamercolor{frametitle}{fg=AzulMarino}
+\setbeamercolor{normal text}{fg=GrisPizarra}
+\setbeamercolor{itemize item}{fg=VerdeAzulado}
+\setbeamercolor{block title}{bg=AzulMarino, fg=white}
+\setbeamercolor{block body}{bg=white, fg=GrisPizarra}
+\setbeamercolor{alertblock title}{bg=VerdeAzulado, fg=white}
+\setbeamercolor{alertblock body}{bg=white, fg=GrisPizarra}
+
+% Fuentes
+\setmainfont{Inter}
+\setsansfont{Montserrat}
+\setmonofont{JetBrains Mono}
+
+\title{Modelos Supervisados de Clasificación Clásica}
+\subtitle{k-NN y Regresión Logística Aplicados a la Ciberseguridad}
+\author{Machine Learning para Ciberseguridad}
+\date{Semana 3}
+
+\begin{document}
+
+\begin{frame}
+    \titlepage
+\end{frame}
+
+\begin{frame}{Objetivo de la Sesión}
+    \begin{itemize}
+        \item Comprender el algoritmo \textbf{k-Nearest Neighbors (k-NN)} y sus métricas de distancia.
+        \item Entender la función Sigmoide y cómo la \textbf{Regresión Logística} estima probabilidades.
+        \item Aplicar estos conceptos para detectar fraudes o Phishing.
+        \item \textcolor{VerdeAzulado}{\textbf{Analizar el costo de negocio entre Falsos Positivos y Falsos Negativos.}}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{k-Nearest Neighbors (k-NN)}
+    \begin{block}{La Analogía del Vecindario}
+        "Dime con quién andas y te diré quién eres."
+        Si analizamos un nuevo sitio web y sus 5 "vecinos" más parecidos estadísticamente resultan ser sitios de \textit{Phishing}, el modelo clasificará este nuevo sitio como \textit{Phishing}.
+    \end{block}
+    
+    \textbf{Distancia Euclídea ($L_2$):}
+    $$d(\mathbf{x}, \mathbf{x}_i) = \sqrt{\sum_{j=1}^{d} (x^{(j)} - x_i^{(j)})^2}$$
+\end{frame}
+
+\begin{frame}{Regresión Logística y la Función Sigmoide}
+    \begin{alertblock}{La Rampa Clasificadora}
+        Imagina un tobogán liso. Los atributos sospechosos (falta de SSL, IP expuesta) suman "peso". Si la evidencia es pesada, te deslizas hacia la zona de \textit{Phishing} (probabilidad cercana a 1).
+    \end{alertblock}
+    
+    La función sigmoide mapea cualquier número real a una probabilidad entre 0 y 1:
+    $$\sigma(z) = \frac{1}{1 + e^{-z}}$$
+\end{frame}
+
+\begin{frame}{Matriz de Confusión en Ciberseguridad}
+    \begin{table}[]
+        \centering
+        \begin{tabular}{|l|l|l|}
+        \hline
+        \textbf{} & \textbf{Predicción: Phishing} & \textbf{Predicción: Legítimo} \\ \hline
+        \textbf{Real: Phishing} & Verdadero Positivo (VP) & \textcolor{red}{Falso Negativo (FN)} \\ \hline
+        \textbf{Real: Legítimo} & \textcolor{orange}{Falso Positivo (FP)} & Verdadero Negativo (VN) \\ \hline
+        \end{tabular}
+    \end{table}
+    
+    \begin{itemize}
+        \item \textbf{FP:} Usuario bloqueado por error (Fricción de Negocio).
+        \item \textbf{FN:} Ataque exitoso que no detectamos (Brecha de Seguridad Catastrófica).
+    \end{itemize}
+\end{frame}
+
+\end{document}

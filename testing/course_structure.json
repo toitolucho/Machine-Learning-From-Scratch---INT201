@@ -1,0 +1,172 @@
+[
+    {
+        "chapter_id": 1,
+        "title": "Bloque 1: Fundamentos y Flujo de Trabajo",
+        "weeks": [
+            {
+                "week": "Semana_01",
+                "title": "Semana 01",
+                "resources": [
+                    {
+                        "type": "URL",
+                        "title": "01 Cuestionario Moodle",
+                        "description": "<p>Recurso del curso: <a href='https://github.com/toitolucho/Machine-Learning-From-Scratch---INT201/blob/main/Semana_01/01_Cuestionario_Moodle.xml' target='_blank'>01 Cuestionario Moodle</a></p>",
+                        "url": "https://github.com/toitolucho/Machine-Learning-From-Scratch---INT201/blob/main/Semana_01/01_Cuestionario_Moodle.xml",
+                        "filename": "01_Cuestionario_Moodle.xml"
+                    },
+                    {
+                        "type": "URL",
+                        "title": "01 Introduccion IA y Jerarquia de Datos",
+                        "description": "<p>Material guiado: <a href='https://colab.research.google.com/github/toitolucho/Machine-Learning-From-Scratch---INT201/blob/main/Semana_01/01_Introduccion_IA_y_Jerarquia_de_Datos.ipynb' target='_blank'>01 Introduccion IA y Jerarquia de Datos</a></p>",
+                        "url": "https://colab.research.google.com/github/toitolucho/Machine-Learning-From-Scratch---INT201/blob/main/Semana_01/01_Introduccion_IA_y_Jerarquia_de_Datos.ipynb",
+                        "filename": "01_Introduccion_IA_y_Jerarquia_de_Datos.ipynb"
+                    },
+                    {
+                        "type": "Assignment",
+                        "title": "01 Laboratorio Evaluacion",
+                        "description": "<p>Por favor completa el cuaderno de Jupyter: <a href='https://colab.research.google.com/github/toitolucho/Machine-Learning-From-Scratch---INT201/blob/main/Semana_01/01_Laboratorio_Evaluacion.ipynb' target='_blank'>01 Laboratorio Evaluacion</a> en Google Colab.</p>",
+                        "url": "https://colab.research.google.com/github/toitolucho/Machine-Learning-From-Scratch---INT201/blob/main/Semana_01/01_Laboratorio_Evaluacion.ipynb",
+                        "filename": "01_Laboratorio_Evaluacion.ipynb"
+                    },
+                    {
+                        "type": "URL",
+                        "title": "01 Presentacion Clase Practica",
+                        "description": "<p>Recurso del curso: <a href='https://github.com/toitolucho/Machine-Learning-From-Scratch---INT201/blob/main/Semana_01/01_Presentacion_Clase_Practica.tex' target='_blank'>01 Presentacion Clase Practica</a></p>",
+                        "url": "https://github.com/toitolucho/Machine-Learning-From-Scratch---INT201/blob/main/Semana_01/01_Presentacion_Clase_Practica.tex",
+                        "filename": "01_Presentacion_Clase_Practica.tex"
+                    },
+                    {
+                        "type": "URL",
+                        "title": "01 Presentacion Clase Teoria",
+                        "description": "<p>Recurso del curso: <a href='https://github.com/toitolucho/Machine-Learning-From-Scratch---INT201/blob/main/Semana_01/01_Presentacion_Clase_Teoria.tex' target='_blank'>01 Presentacion Clase Teoria</a></p>",
+                        "url": "https://github.com/toitolucho/Machine-Learning-From-Scratch---INT201/blob/main/Semana_01/01_Presentacion_Clase_Teoria.tex",
+                        "filename": "01_Presentacion_Clase_Teoria.tex"
+                    },
+                    {
+                        "type": "Assignment",
+                        "title": "01 Tarea",
+                        "description": "<p>Por favor completa el cuaderno de Jupyter: <a href='https://colab.research.google.com/github/toitolucho/Machine-Learning-From-Scratch---INT201/blob/main/Semana_01/01_Tarea.ipynb' target='_blank'>01 Tarea</a> en Google Colab.</p>",
+                        "url": "https://colab.research.google.com/github/toitolucho/Machine-Learning-From-Scratch---INT201/blob/main/Semana_01/01_Tarea.ipynb",
+                        "filename": "01_Tarea.ipynb"
+                    }
+                ]
+            },
+            {
+                "week": "Semana_02",
+                "title": "Semana 02",
+                "resources": [
+                    {
+                        "type": "URL",
+                        "title": "02 Cuestionario",
+                        "description": "<p>Recurso del curso: <a href='https://github.com/toitolucho/Machine-Learning-From-Scratch---INT201/blob/main/Semana_02/02_Cuestionario.xml' target='_blank'>02 Cuestionario</a></p>",
+                        "url": "https://github.com/toitolucho/Machine-Learning-From-Scratch---INT201/blob/main/Semana_02/02_Cuestionario.xml",
+                        "filename": "02_Cuestionario.xml"
+                    },
+                    {
+                        "type": "Assignment",
+                        "title": "02 Laboratorio Evaluacion",
+                        "description": "<p>Por favor completa el cuaderno de Jupyter: <a href='https://colab.research.google.com/github/toitolucho/Machine-Learning-From-Scratch---INT201/blob/main/Semana_02/02_Laboratorio_Evaluacion.ipynb' target='_blank'>02 Laboratorio Evaluacion</a> en Google Colab.</p>",
+                        "url": "https://colab.research.google.com/github/toitolucho/Machine-Learning-From-Scratch---INT201/blob/main/Semana_02/02_Laboratorio_Evaluacion.ipynb",
+                        "filename": "02_Laboratorio_Evaluacion.ipynb"
+                    },
+                    {
+                        "type": "URL",
+                        "title": "02 Preprocesamiento y Escalado",
+                        "description": "<p>Material guiado: <a href='https://colab.research.google.com/github/toitolucho/Machine-Learning-From-Scratch---INT201/blob/main/Semana_02/02_Preprocesamiento_y_Escalado.ipynb' target='_blank'>02 Preprocesamiento y Escalado</a></p>",
+                        "url": "https://colab.research.google.com/github/toitolucho/Machine-Learning-From-Scratch---INT201/blob/main/Semana_02/02_Preprocesamiento_y_Escalado.ipynb",
+                        "filename": "02_Preprocesamiento_y_Escalado.ipynb"
+                    },
+                    {
+                        "type": "URL",
+                        "title": "02 Presentacion Clase Practica",
+                        "description": "<p>Recurso del curso: <a href='https://github.com/toitolucho/Machine-Learning-From-Scratch---INT201/blob/main/Semana_02/02_Presentacion_Clase_Practica.tex' target='_blank'>02 Presentacion Clase Practica</a></p>",
+                        "url": "https://github.com/toitolucho/Machine-Learning-From-Scratch---INT201/blob/main/Semana_02/02_Presentacion_Clase_Practica.tex",
+                        "filename": "02_Presentacion_Clase_Practica.tex"
+                    },
+                    {
+                        "type": "URL",
+                        "title": "02 Presentacion Clase Teoria",
+                        "description": "<p>Recurso del curso: <a href='https://github.com/toitolucho/Machine-Learning-From-Scratch---INT201/blob/main/Semana_02/02_Presentacion_Clase_Teoria.tex' target='_blank'>02 Presentacion Clase Teoria</a></p>",
+                        "url": "https://github.com/toitolucho/Machine-Learning-From-Scratch---INT201/blob/main/Semana_02/02_Presentacion_Clase_Teoria.tex",
+                        "filename": "02_Presentacion_Clase_Teoria.tex"
+                    },
+                    {
+                        "type": "Assignment",
+                        "title": "02 Tarea",
+                        "description": "<p>Por favor completa el cuaderno de Jupyter: <a href='https://colab.research.google.com/github/toitolucho/Machine-Learning-From-Scratch---INT201/blob/main/Semana_02/02_Tarea.ipynb' target='_blank'>02 Tarea</a> en Google Colab.</p>",
+                        "url": "https://colab.research.google.com/github/toitolucho/Machine-Learning-From-Scratch---INT201/blob/main/Semana_02/02_Tarea.ipynb",
+                        "filename": "02_Tarea.ipynb"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "chapter_id": 2,
+        "title": "Bloque 2: Preprocesamiento y Limpieza de Datos",
+        "weeks": [
+            {
+                "week": "Semana_03",
+                "title": "Semana 03",
+                "resources": [
+                    {
+                        "type": "URL",
+                        "title": "03 Clasificacion Supervisada",
+                        "description": "<p>Material guiado: <a href='https://colab.research.google.com/github/toitolucho/Machine-Learning-From-Scratch---INT201/blob/main/Semana_03/03_Clasificacion_Supervisada.ipynb' target='_blank'>03 Clasificacion Supervisada</a></p>",
+                        "url": "https://colab.research.google.com/github/toitolucho/Machine-Learning-From-Scratch---INT201/blob/main/Semana_03/03_Clasificacion_Supervisada.ipynb",
+                        "filename": "03_Clasificacion_Supervisada.ipynb"
+                    },
+                    {
+                        "type": "URL",
+                        "title": "03 Cuestionario",
+                        "description": "<p>Recurso del curso: <a href='https://github.com/toitolucho/Machine-Learning-From-Scratch---INT201/blob/main/Semana_03/03_Cuestionario.xml' target='_blank'>03 Cuestionario</a></p>",
+                        "url": "https://github.com/toitolucho/Machine-Learning-From-Scratch---INT201/blob/main/Semana_03/03_Cuestionario.xml",
+                        "filename": "03_Cuestionario.xml"
+                    },
+                    {
+                        "type": "Assignment",
+                        "title": "03 Laboratorio Evaluacion",
+                        "description": "<p>Por favor completa el cuaderno de Jupyter: <a href='https://colab.research.google.com/github/toitolucho/Machine-Learning-From-Scratch---INT201/blob/main/Semana_03/03_Laboratorio_Evaluacion.ipynb' target='_blank'>03 Laboratorio Evaluacion</a> en Google Colab.</p>",
+                        "url": "https://colab.research.google.com/github/toitolucho/Machine-Learning-From-Scratch---INT201/blob/main/Semana_03/03_Laboratorio_Evaluacion.ipynb",
+                        "filename": "03_Laboratorio_Evaluacion.ipynb"
+                    },
+                    {
+                        "type": "URL",
+                        "title": "03 Presentacion Clase Practica",
+                        "description": "<p>Recurso del curso: <a href='https://github.com/toitolucho/Machine-Learning-From-Scratch---INT201/blob/main/Semana_03/03_Presentacion_Clase_Practica.tex' target='_blank'>03 Presentacion Clase Practica</a></p>",
+                        "url": "https://github.com/toitolucho/Machine-Learning-From-Scratch---INT201/blob/main/Semana_03/03_Presentacion_Clase_Practica.tex",
+                        "filename": "03_Presentacion_Clase_Practica.tex"
+                    },
+                    {
+                        "type": "URL",
+                        "title": "03 Presentacion Clase Teoria",
+                        "description": "<p>Recurso del curso: <a href='https://github.com/toitolucho/Machine-Learning-From-Scratch---INT201/blob/main/Semana_03/03_Presentacion_Clase_Teoria.tex' target='_blank'>03 Presentacion Clase Teoria</a></p>",
+                        "url": "https://github.com/toitolucho/Machine-Learning-From-Scratch---INT201/blob/main/Semana_03/03_Presentacion_Clase_Teoria.tex",
+                        "filename": "03_Presentacion_Clase_Teoria.tex"
+                    },
+                    {
+                        "type": "Assignment",
+                        "title": "03 Tarea",
+                        "description": "<p>Por favor completa el cuaderno de Jupyter: <a href='https://colab.research.google.com/github/toitolucho/Machine-Learning-From-Scratch---INT201/blob/main/Semana_03/03_Tarea.ipynb' target='_blank'>03 Tarea</a> en Google Colab.</p>",
+                        "url": "https://colab.research.google.com/github/toitolucho/Machine-Learning-From-Scratch---INT201/blob/main/Semana_03/03_Tarea.ipynb",
+                        "filename": "03_Tarea.ipynb"
+                    },
+                    {
+                        "type": "URL",
+                        "title": "generar xml",
+                        "description": "<p>Recurso del curso: <a href='https://github.com/toitolucho/Machine-Learning-From-Scratch---INT201/blob/main/Semana_03/generar_xml.py' target='_blank'>generar xml</a></p>",
+                        "url": "https://github.com/toitolucho/Machine-Learning-From-Scratch---INT201/blob/main/Semana_03/generar_xml.py",
+                        "filename": "generar_xml.py"
+                    },
+                    {
+                        "type": "URL",
+                        "title": "graficas b64",
+                        "description": "<p>Recurso del curso: <a href='https://github.com/toitolucho/Machine-Learning-From-Scratch---INT201/blob/main/Semana_03/graficas_b64.txt' target='_blank'>graficas b64</a></p>",
+                        "url": "https://github.com/toitolucho/Machine-Learning-From-Scratch---INT201/blob/main/Semana_03/graficas_b64.txt",
+                        "filename": "graficas_b64.txt"
+                    }
+                ]
+            }
+        ]
+    }
+]
