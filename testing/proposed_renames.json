@@ -1,0 +1,401 @@
+[
+  {
+    "index": 1,
+    "cmid": 416831,
+    "original": "01-02-2026-T-Distribucion Monkey forma Piramide 4x4",
+    "clean_title": "Distribucion Monkey forma Piramide 4x4",
+    "new_name": "01-02-2026-T-Distribucion Monkey forma Piramide 4x4"
+  },
+  {
+    "index": 2,
+    "cmid": 180126,
+    "original": "02-02-2026-T-Movimiento y Unidades de Medida - Piezas del Tetris",
+    "clean_title": "Movimiento y Unidades de Medida - Piezas del Tetris",
+    "new_name": "02-02-2026-T-Movimiento y Unidades de Medida - Piezas del Tetris"
+  },
+  {
+    "index": 3,
+    "cmid": 344185,
+    "original": "03-02-2026-T-Creación Figuras Básicas, Movimiento y Escalado - Mesa Circular",
+    "clean_title": "Creación Figuras Básicas, Movimiento y Escalado - Mesa Circular",
+    "new_name": "03-02-2026-T-Creación Figuras Básicas, Movimiento y Escalado - Mesa Circular"
+  },
+  {
+    "index": 4,
+    "cmid": 408391,
+    "original": "04-02-2026-T-Movimiento y Escalado - Sofas y Mesa",
+    "clean_title": "Movimiento y Escalado - Sofas y Mesa",
+    "new_name": "04-02-2026-T-Movimiento y Escalado - Sofas y Mesa"
+  },
+  {
+    "index": 5,
+    "cmid": 356081,
+    "original": "05-02-2026-T-Creacion Figuras Basicas, Movimiento y Escalado - Mono Robot",
+    "clean_title": "Creacion Figuras Basicas, Movimiento y Escalado - Mono Robot",
+    "new_name": "05-02-2026-T-Creacion Figuras Basicas, Movimiento y Escalado - Mono Robot"
+  },
+  {
+    "index": 6,
+    "cmid": 344184,
+    "original": "02-01-2024 Creacion Figuras Basicas, Movimiento y Escalado - Mesa Rectangular",
+    "clean_title": "Creacion Figuras Basicas, Movimiento y Escalado - Mesa Rectangular",
+    "new_name": "06-02-2026-T-Creacion Figuras Basicas, Movimiento y Escalado - Mesa Rectangular"
+  },
+  {
+    "index": 7,
+    "cmid": 408718,
+    "original": "03-01-2026-T-Creación Figuras Básicas, Movimiento y Escalado - Trensito Basico",
+    "clean_title": "Creación Figuras Básicas, Movimiento y Escalado - Trensito Basico",
+    "new_name": "07-02-2026-T-Creación Figuras Básicas, Movimiento y Escalado - Trensito Basico"
+  },
+  {
+    "index": 8,
+    "cmid": 408719,
+    "original": "04-01-2026-T-Modelado Auto de Madera utilizando shapes sobrepuestos",
+    "clean_title": "Modelado Auto de Madera utilizando shapes sobrepuestos",
+    "new_name": "08-02-2026-T-Modelado Auto de Madera utilizando shapes sobrepuestos"
+  },
+  {
+    "index": 9,
+    "cmid": 408720,
+    "original": "05-01-2026-T-Modelado por Extruccion y edicion interna de la malla de de un Dinosaurio",
+    "clean_title": "Modelado por Extruccion y edicion interna de la malla de de un Dinosaurio",
+    "new_name": "09-02-2026-T-Modelado por Extruccion y edicion interna de la malla de de un Dinosaurio"
+  },
+  {
+    "index": 10,
+    "cmid": 408721,
+    "original": "06-01-2026-T-Creación Figuras Básicas, Movimiento y Escalado - Propuesta Libre ",
+    "clean_title": "Creación Figuras Básicas, Movimiento y Escalado - Propuesta Libre",
+    "new_name": "10-02-2026-T-Creación Figuras Básicas, Movimiento y Escalado - Propuesta Libre"
+  },
+  {
+    "index": 11,
+    "cmid": 408740,
+    "original": "07-01-2026-T-Modelado Operadores Booleanos - Tren Madera",
+    "clean_title": "Modelado Operadores Booleanos - Tren Madera",
+    "new_name": "11-02-2026-T-Modelado Operadores Booleanos - Tren Madera"
+  },
+  {
+    "index": 12,
+    "cmid": 180131,
+    "original": "05-02-2024 Movimiento y Unidades de Medida - Laberinto",
+    "clean_title": "Movimiento y Unidades de Medida - Laberinto",
+    "new_name": "12-02-2026-T-Movimiento y Unidades de Medida - Laberinto"
+  },
+  {
+    "index": 13,
+    "cmid": 182372,
+    "original": "07-01-2024 Objetos - Union de Objetos",
+    "clean_title": "Objetos - Union de Objetos",
+    "new_name": "13-02-2026-T-Objetos - Union de Objetos"
+  },
+  {
+    "index": 14,
+    "cmid": 409091,
+    "original": "08-01-2026-T-Modelado Inicial de la Torre Maya",
+    "clean_title": "Modelado Inicial de la Torre Maya",
+    "new_name": "14-02-2026-T-Modelado Inicial de la Torre Maya"
+  },
+  {
+    "index": 15,
+    "cmid": 409093,
+    "original": "09-01-2026-T-Modelado Nave Espacial - Subdivisión Surface",
+    "clean_title": "Modelado Nave Espacial - Subdivisión Surface",
+    "new_name": "15-02-2026-T-Modelado Nave Espacial - Subdivisión Surface"
+  },
+  {
+    "index": 16,
+    "cmid": 394206,
+    "original": "05-01-2025 - Torre Maya Finalizada",
+    "clean_title": "Torre Maya Finalizada",
+    "new_name": "16-02-2026-T-Torre Maya Finalizada"
+  },
+  {
+    "index": 17,
+    "cmid": 409092,
+    "original": "10-02-2025-T-Torre Maya Finalizada",
+    "clean_title": "Torre Maya Finalizada",
+    "new_name": "17-02-2026-T-Torre Maya Finalizada"
+  },
+  {
+    "index": 18,
+    "cmid": 410287,
+    "original": "11-01-2026-T-Script de Piramide de Donas - Torres de Hanoi",
+    "clean_title": "Script de Piramide de Donas - Torres de Hanoi",
+    "new_name": "18-02-2026-T-Script de Piramide de Donas - Torres de Hanoi"
+  },
+  {
+    "index": 19,
+    "cmid": 411232,
+    "original": "12-01-2026-T-Script de Creacion escena Basica de Distribucion de Mesas  y Sillas",
+    "clean_title": "Script de Creacion escena Basica de Distribucion de Mesas  y Sillas",
+    "new_name": "19-02-2026-T-Script de Creacion escena Basica de Distribucion de Mesas  y Sillas"
+  },
+  {
+    "index": 20,
+    "cmid": 411709,
+    "original": "13-01-2026-T-Script de Creacion escena como Anfiteatro",
+    "clean_title": "Script de Creacion escena como Anfiteatro",
+    "new_name": "20-02-2026-T-Script de Creacion escena como Anfiteatro"
+  },
+  {
+    "index": 21,
+    "cmid": 411710,
+    "original": "14-01-2026-T-Script de Creacion escena de piezas de Domino en forma de Spiral",
+    "clean_title": "Script de Creacion escena de piezas de Domino en forma de Spiral",
+    "new_name": "21-02-2026-T-Script de Creacion escena de piezas de Domino en forma de Spiral"
+  },
+  {
+    "index": 22,
+    "cmid": 412811,
+    "original": "15-01-2026-T-Animacion Pelotita Bote Vertical",
+    "clean_title": "Animacion Pelotita Bote Vertical",
+    "new_name": "22-02-2026-T-Animacion Pelotita Bote Vertical"
+  },
+  {
+    "index": 23,
+    "cmid": 412816,
+    "original": "16-01-2026-T-Animacion Pelotita Bote En Parabola",
+    "clean_title": "Animacion Pelotita Bote En Parabola",
+    "new_name": "23-02-2026-T-Animacion Pelotita Bote En Parabola"
+  },
+  {
+    "index": 24,
+    "cmid": 413234,
+    "original": "17-01-2026-T-Animacion Pelotita Con controles UP - DOWN",
+    "clean_title": "Animacion Pelotita Con controles UP - DOWN",
+    "new_name": "24-02-2026-T-Animacion Pelotita Con controles UP - DOWN"
+  },
+  {
+    "index": 25,
+    "cmid": 413236,
+    "original": "18-01-2026-T-Caida de la pelotita en Arcos Con Controles",
+    "clean_title": "Caida de la pelotita en Arcos Con Controles",
+    "new_name": "25-02-2026-T-Caida de la pelotita en Arcos Con Controles"
+  },
+  {
+    "index": 26,
+    "cmid": 348153,
+    "original": "09-02-2025  - Modelado Delfin - Subsdivision Surface ",
+    "clean_title": "Modelado Delfin - Subsdivision Surface",
+    "new_name": "26-02-2026-T-Modelado Delfin - Subsdivision Surface"
+  },
+  {
+    "index": 27,
+    "cmid": 184618,
+    "original": "10-02-2025 - Modelado Mesa Version B",
+    "clean_title": "Modelado Mesa Version B",
+    "new_name": "27-02-2026-T-Modelado Mesa Version B"
+  },
+  {
+    "index": 28,
+    "cmid": 386387,
+    "original": "12-02-2025 - Modelado Barquillo de Helado",
+    "clean_title": "Modelado Barquillo de Helado",
+    "new_name": "28-02-2026-T-Modelado Barquillo de Helado"
+  },
+  {
+    "index": 29,
+    "cmid": 377676,
+    "original": "13-02-2025 Modelado de Personaje V1",
+    "clean_title": "Modelado de Personaje V1",
+    "new_name": "29-02-2026-T-Modelado de Personaje V1"
+  },
+  {
+    "index": 30,
+    "cmid": 377677,
+    "original": "14-02-2025- Modelado del Personaje concluido V2",
+    "clean_title": "Modelado del Personaje concluido V2",
+    "new_name": "30-02-2026-T-Modelado del Personaje concluido V2"
+  },
+  {
+    "index": 31,
+    "cmid": 323812,
+    "original": "15-02-2025 - Modelado Personaje 2",
+    "clean_title": "Modelado Personaje 2",
+    "new_name": "31-02-2026-T-Modelado Personaje 2"
+  },
+  {
+    "index": 32,
+    "cmid": 349765,
+    "original": "17-02-2024 - Modelado Personaje 3",
+    "clean_title": "Modelado Personaje 3",
+    "new_name": "32-02-2026-T-Modelado Personaje 3"
+  },
+  {
+    "index": 33,
+    "cmid": 191301,
+    "original": "18-02-2024 - Modelado Persona 4",
+    "clean_title": "Modelado Persona 4",
+    "new_name": "33-02-2026-T-Modelado Persona 4"
+  },
+  {
+    "index": 34,
+    "cmid": 350299,
+    "original": "18-02-2022 - Modelado Personaje Among Us",
+    "clean_title": "Modelado Personaje Among Us",
+    "new_name": "34-02-2026-T-Modelado Personaje Among Us"
+  },
+  {
+    "index": 35,
+    "cmid": 360116,
+    "original": "19-02-2022 - Modelado Auto Basico",
+    "clean_title": "Modelado Auto Basico",
+    "new_name": "35-02-2026-T-Modelado Auto Basico"
+  },
+  {
+    "index": 36,
+    "cmid": 360117,
+    "original": "20-01-2023 - Modelado Avion de Madera",
+    "clean_title": "Modelado Avion de Madera",
+    "new_name": "36-02-2026-T-Modelado Avion de Madera"
+  },
+  {
+    "index": 37,
+    "cmid": 389352,
+    "original": "19-02-2024 - Modelado del Peon",
+    "clean_title": "Modelado del Peon",
+    "new_name": "37-02-2026-T-Modelado del Peon"
+  },
+  {
+    "index": 38,
+    "cmid": 351386,
+    "original": "19-02-2022 - Modelado del Peon",
+    "clean_title": "Modelado del Peon",
+    "new_name": "38-02-2026-T-Modelado del Peon"
+  },
+  {
+    "index": 39,
+    "cmid": 326969,
+    "original": "20-02-2024 - Modelado Completo del tablero de Ajedrez",
+    "clean_title": "Modelado Completo del tablero de Ajedrez",
+    "new_name": "39-02-2026-T-Modelado Completo del tablero de Ajedrez"
+  },
+  {
+    "index": 40,
+    "cmid": 200007,
+    "original": "21-02-2024 - Trazado y levantamiento del Logo de Batman",
+    "clean_title": "Trazado y levantamiento del Logo de Batman",
+    "new_name": "40-02-2026-T-Trazado y levantamiento del Logo de Batman"
+  },
+  {
+    "index": 41,
+    "cmid": 326970,
+    "original": "Tarea 19 - Lego Character Modeling",
+    "clean_title": "Lego Character Modeling",
+    "new_name": "41-02-2026-T-Lego Character Modeling"
+  },
+  {
+    "index": 42,
+    "cmid": 239611,
+    "original": "21-02-2024 - Curvas de Bezier - Logo",
+    "clean_title": "Curvas de Bezier - Logo",
+    "new_name": "42-02-2026-T-Curvas de Bezier - Logo"
+  },
+  {
+    "index": 43,
+    "cmid": 200008,
+    "original": "22-01-2024 - Trazado de una Tipografía como Isologotipo",
+    "clean_title": "Trazado de una Tipografía como Isologotipo",
+    "new_name": "43-02-2026-T-Trazado de una Tipografía como Isologotipo"
+  },
+  {
+    "index": 44,
+    "cmid": 201186,
+    "original": "23-01-2024 - Trazado, levantamiento y Asignación de Materiales Pino de Boliche",
+    "clean_title": "Trazado, levantamiento y Asignación de Materiales Pino de Boliche",
+    "new_name": "44-02-2026-T-Trazado, levantamiento y Asignación de Materiales Pino de Boliche"
+  },
+  {
+    "index": 45,
+    "cmid": 201187,
+    "original": "24-01-2023 - Pieza Peon tablero de Ajedrez con Curvas de Beziel",
+    "clean_title": "Pieza Peon tablero de Ajedrez con Curvas de Beziel",
+    "new_name": "45-02-2026-T-Pieza Peon tablero de Ajedrez con Curvas de Beziel"
+  },
+  {
+    "index": 46,
+    "cmid": 352527,
+    "original": "28-01-2023 - Wooden Animal Toy / PuercoEspin ",
+    "clean_title": "Wooden Animal Toy / PuercoEspin",
+    "new_name": "46-02-2026-T-Wooden Animal Toy / PuercoEspin"
+  },
+  {
+    "index": 47,
+    "cmid": 331411,
+    "original": "29-01-2023 - Wooden Animal Toy / Quirquincho",
+    "clean_title": "Wooden Animal Toy / Quirquincho",
+    "new_name": "47-02-2026-T-Wooden Animal Toy / Quirquincho"
+  },
+  {
+    "index": 48,
+    "cmid": 364409,
+    "original": "25-01-2023 Script de Piramide de Donas",
+    "clean_title": "Script de Piramide de Donas",
+    "new_name": "48-02-2026-T-Script de Piramide de Donas"
+  },
+  {
+    "index": 49,
+    "cmid": 364410,
+    "original": "26-01-2023 Script de Torre Maya con Cubos",
+    "clean_title": "Script de Torre Maya con Cubos",
+    "new_name": "49-02-2026-T-Script de Torre Maya con Cubos"
+  },
+  {
+    "index": 50,
+    "cmid": 364411,
+    "original": "08-01-2025 Script Robot Monkey",
+    "clean_title": "Script Robot Monkey",
+    "new_name": "50-02-2026-T-Script Robot Monkey"
+  },
+  {
+    "index": 51,
+    "cmid": 396708,
+    "original": "09-01-2025 Piezas del Tetris 1",
+    "clean_title": "Piezas del Tetris 1",
+    "new_name": "51-02-2026-T-Piezas del Tetris 1"
+  },
+  {
+    "index": 52,
+    "cmid": 397075,
+    "original": "09-01-2025 Piezas del Tetris 2",
+    "clean_title": "Piezas del Tetris 2",
+    "new_name": "52-02-2026-T-Piezas del Tetris 2"
+  },
+  {
+    "index": 53,
+    "cmid": 397472,
+    "original": "10-01-2025-Estantería con Libros Aleatorios",
+    "clean_title": "Estantería con Libros Aleatorios",
+    "new_name": "53-02-2026-T-Estantería con Libros Aleatorios"
+  },
+  {
+    "index": 54,
+    "cmid": 398804,
+    "original": "11-01-2025 - Scripting, Disenio de un camino de Rodeado de Arboles",
+    "clean_title": "Scripting, Disenio de un camino de Rodeado de Arboles",
+    "new_name": "54-02-2026-T-Scripting, Disenio de un camino de Rodeado de Arboles"
+  },
+  {
+    "index": 55,
+    "cmid": 404570,
+    "original": "16-02-2025 - Scripting estante bajo creatividad",
+    "clean_title": "Scripting estante bajo creatividad",
+    "new_name": "55-02-2026-T-Scripting estante bajo creatividad"
+  },
+  {
+    "index": 56,
+    "cmid": 404571,
+    "original": "17-02-2025 - Scripting Propuesta Creativa",
+    "clean_title": "Scripting Propuesta Creativa",
+    "new_name": "56-02-2026-T-Scripting Propuesta Creativa"
+  },
+  {
+    "index": 57,
+    "cmid": 406317,
+    "original": "18-02-2025 - Scripting Generacion de rampas",
+    "clean_title": "Scripting Generacion de rampas",
+    "new_name": "57-02-2026-T-Scripting Generacion de rampas"
+  }
+]
