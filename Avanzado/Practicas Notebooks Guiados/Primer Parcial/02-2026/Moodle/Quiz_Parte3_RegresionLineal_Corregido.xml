@@ -1,0 +1,1059 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+
+  <!-- Categoria del Cuestionario -->
+  <question type="category">
+    <category>
+      <text>$course$/Primer Parcial 01-2026/Practica 01 - Parte 3: Regresion Lineal desde Cero</text>
+    </category>
+    <info format="html">
+      <text><![CDATA[<p>Banco de preguntas evaluativas para la Practica 01 (Parte 3: Regresion Lineal desde Cero, Evaluacion y Prediccion) sobre el dataset de diseno de personajes 2D de la serie Neon Skies.</p>]]></text>
+    </info>
+  </question>
+
+  <!-- Q01 -->
+  <question type="multichoice">
+    <name>
+      <text>Q01. Formulacion del modelo y termino de bias</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>En el modelo de regresion lineal multiple expresado como:</p>
+<pre><code>y_hat = beta_0 + beta_1 * x_1 + beta_2 * x_2 + ... + beta_n * x_n</code></pre>
+<p>¿Que representa conceptualmente el parametro \(\beta_0\) (intercepto o sesgo)?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>El intercepto beta_0 cuantifica el valor esperado de la variable objetivo y cuando todas las variables predictoras x_1, ..., x_n toman simultaneamente el valor cero.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+      <text><![CDATA[El valor esperado de \(y\) cuando todas las variables predictoras \(x_j\) son iguales a cero]]></text>
+      <feedback format="html">
+        <text><![CDATA[<p>Correcto. Es el valor base o punto de partida del plano de regresion.</p>]]></text>
+      </feedback>
+    </answer>
+    <answer fraction="-33.33333" format="html">
+      <text><![CDATA[La varianza no explicada por el modelo]]></text>
+      <feedback format="html">
+        <text><![CDATA[<p>Incorrecto. La varianza no explicada se relaciona con la suma residual de cuadrados.</p>]]></text>
+      </feedback>
+    </answer>
+    <answer fraction="-33.33333" format="html">
+      <text><![CDATA[La tasa de cambio promedio de la variable dependiente por cada unidad de tiempo]]></text>
+      <feedback format="html">
+        <text><![CDATA[<p>Incorrecto. Esa tasa corresponde a los coeficientes de pendiente beta_j.</p>]]></text>
+      </feedback>
+    </answer>
+    <answer fraction="-33.33333" format="html">
+      <text><![CDATA[El coeficiente de correlacion lineal estandarizado]]></text>
+      <feedback format="html">
+        <text><![CDATA[<p>Incorrecto. El coeficiente de correlacion r es adimensional, mientras que beta_0 conserva las unidades de y.</p>]]></text>
+      </feedback>
+    </answer>
+  </question>
+
+  <!-- Q02 -->
+  <question type="multichoice">
+    <name>
+      <text>Q02. Funcion de costo en Minimos Cuadrados Ordinarios</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>¿Cual es la funcion de costo que minimiza matematicamente el metodo de Minimos Cuadrados Ordinarios (OLS) para encontrar el vector optimo de parametros \(\boldsymbol{\beta}\)?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>OLS minimiza el Error Cuadratico Medio (MSE), que es el promedio de las diferencias al cuadrado entre los valores reales y las estimaciones del modelo.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+      <text><![CDATA[\(J(\boldsymbol{\beta}) = \frac{1}{m} \sum_{i=1}^m (y_i - \hat{y}_i)^2\)]]></text>
+      <feedback format="html">
+        <text><![CDATA[<p>Correcto. La funcion de costo cuadratico penaliza las distancias euclidianas residuales.</p>]]></text>
+      </feedback>
+    </answer>
+    <answer fraction="-33.33333" format="html">
+      <text><![CDATA[\(J(\boldsymbol{\beta}) = \frac{1}{m} \sum_{i=1}^m |y_i - \hat{y}_i|\)]]></text>
+      <feedback format="html">
+        <text><![CDATA[<p>Incorrecto. Corresponde al Error Absoluto Medio (MAE), utilizado en regresion mediana o robusta (L1).</p>]]></text>
+      </feedback>
+    </answer>
+    <answer fraction="-33.33333" format="html">
+      <text><![CDATA[\(J(\boldsymbol{\beta}) = -\sum_{i=1}^m y_i \log(\hat{y}_i)\)]]></text>
+      <feedback format="html">
+        <text><![CDATA[<p>Incorrecto. Corresponde a la Entropia Cruzada Binaria empleada en Regresion Logistica.</p>]]></text>
+      </feedback>
+    </answer>
+    <answer fraction="-33.33333" format="html">
+      <text><![CDATA[\(J(\boldsymbol{\beta}) = \max_{i} |y_i - \hat{y}_i|\)]]></text>
+      <feedback format="html">
+        <text><![CDATA[<p>Incorrecto. Corresponde a la norma infinita (minimax).</p>]]></text>
+      </feedback>
+    </answer>
+  </question>
+
+  <!-- Q03 -->
+  <question type="multichoice">
+    <name>
+      <text>Q03. Solucion cerrada de la Ecuacion Normal</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Al igualar a cero el gradiente de la funcion de costo matricial \(\nabla_{\boldsymbol{\beta}} J(\boldsymbol{\beta}) = \mathbf{0}\), se deduce la solucion analitica cerrada conocida como la Ecuacion Normal. Seleccione la formulacion algebraica correcta:</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>La solucion cerrada exacta es beta = (X_b^T X_b)^(-1) X_b^T y, donde X_b es la matriz de caracteristicas con columna de bias.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+      <text><![CDATA[\(\boldsymbol{\beta} = (\mathbf{X}_b^T \mathbf{X}_b)^{-1} \mathbf{X}_b^T \mathbf{y}\)]]></text>
+      <feedback format="html">
+        <text><![CDATA[<p>Correcto. Es la Ecuacion Normal clasica de Minimos Cuadrados.</p>]]></text>
+      </feedback>
+    </answer>
+    <answer fraction="-33.33333" format="html">
+      <text><![CDATA[\(\boldsymbol{\beta} = \mathbf{X}_b^T (\mathbf{X}_b \mathbf{X}_b^T)^{-1} \mathbf{y}\)]]></text>
+      <feedback format="html">
+        <text><![CDATA[<p>Incorrecto. Invierte el producto en el espacio de muestras en vez del espacio de caracteristicas.</p>]]></text>
+      </feedback>
+    </answer>
+    <answer fraction="-33.33333" format="html">
+      <text><![CDATA[\(\boldsymbol{\beta} = (\mathbf{X}_b \mathbf{X}_b)^{-1} \mathbf{y}\)]]></text>
+      <feedback format="html">
+        <text><![CDATA[<p>Incorrecto. X_b no es una matriz cuadrada en la mayoria de problemas.</p>]]></text>
+      </feedback>
+    </answer>
+    <answer fraction="-33.33333" format="html">
+      <text><![CDATA[\(\boldsymbol{\beta} = \mathbf{X}_b^T \mathbf{y}\)]]></text>
+      <feedback format="html">
+        <text><![CDATA[<p>Incorrecto. Omite la normalizacion por la covarianza de caracteristicas.</p>]]></text>
+      </feedback>
+    </answer>
+  </question>
+
+  <!-- Q04 -->
+  <question type="truefalse">
+    <name>
+      <text>Q04. Naturaleza analitica de la Ecuacion Normal</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>A diferencia del algoritmo de Descenso de Gradiente (Gradient Descent), la Ecuacion Normal resuelve los parametros optimos de la regresion lineal en una unica operacion matricial cerrada, sin requerir hiperparametros como la tasa de aprendizaje (learning rate) ni bucles de iteracion.</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>La afirmacion es verdadera. Al ser una funcion cuadratica convexa con derivada analitica invertible, la solucion global se computa directamente mediante algebra lineal.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>1.0000000</penalty>
+    <hidden>0</hidden>
+    <answer fraction="100" format="html">
+      <text><![CDATA[Verdadero]]></text>
+      <feedback format="html">
+        <text><![CDATA[<p>Correcto. Es una solucion analitica exacta en un solo paso.</p>]]></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[Falso]]></text>
+      <feedback format="html">
+        <text><![CDATA[<p>Incorrecto. La Ecuacion Normal no requiere iteraciones ni learning rate.</p>]]></text>
+      </feedback>
+    </answer>
+  </question>
+
+  <!-- Q05 -->
+  <question type="ddwtos">
+    <name>
+      <text>Q05. Ensamblaje de matriz con termino de bias</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Complete el codigo para construir la matriz de diseno <code>X_b</code> agregando la columna inicial de unos requerida para el termino constante:</p>
+<pre><code>ones = np.[[1]]((len(y), 1))
+X_b = np.[[2]]([ones, X])
+print("Dimensiones X_b:", X_b.shape)</code></pre>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>np.ones((m, 1)) crea la columna de unos y np.hstack([ones, X]) realiza el apilamiento horizontal en NumPy.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>true</shuffleanswers>
+    <dragbox>
+      <text><![CDATA[ones]]></text>
+      <group>1</group>
+    </dragbox>
+    <dragbox>
+      <text><![CDATA[hstack]]></text>
+      <group>2</group>
+    </dragbox>
+    <dragbox>
+      <text><![CDATA[zeros]]></text>
+      <group>1</group>
+    </dragbox>
+    <dragbox>
+      <text><![CDATA[eye]]></text>
+      <group>1</group>
+    </dragbox>
+    <dragbox>
+      <text><![CDATA[vstack]]></text>
+      <group>2</group>
+    </dragbox>
+    <dragbox>
+      <text><![CDATA[dstack]]></text>
+      <group>2</group>
+    </dragbox>
+  </question>
+
+  <!-- Q06 -->
+  <question type="multichoice">
+    <name>
+      <text>Q06. Dimensiones exactas de matriz X_b</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Considere el dataset <code>characters_features.csv</code> con 20 personajes y 5 caracteristicas predictoras continuas. Tras aplicar la creacion de la columna de bias, ¿cuales son las dimensiones exactas de la matriz <code>X_b</code> y del vector <code>y</code>?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>X_b tiene 20 filas (observaciones) y 6 columnas (1 columna de unos + 5 caracteristicas). El vector objetivo y tiene longitud 20 unidimensional: (20,).</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<code>X_b</code>: (20, 6) | <code>y</code>: (20,)]]></text>
+      <feedback format="html">
+        <text><![CDATA[<p>Correcto. 20 observaciones y 6 columnas en X_b.</p>]]></text>
+      </feedback>
+    </answer>
+    <answer fraction="-33.33333" format="html">
+      <text><![CDATA[<code>X_b</code>: (20, 5) | <code>y</code>: (20,)]]></text>
+      <feedback format="html">
+        <text><![CDATA[<p>Incorrecto. (20, 5) corresponde a la matriz X sin la columna de bias.</p>]]></text>
+      </feedback>
+    </answer>
+    <answer fraction="-33.33333" format="html">
+      <text><![CDATA[<code>X_b</code>: (16, 6) | <code>y</code>: (16,)]]></text>
+      <feedback format="html">
+        <text><![CDATA[<p>Incorrecto. 16 muestras corresponde al conjunto de entrenamiento tras el split.</p>]]></text>
+      </feedback>
+    </answer>
+    <answer fraction="-33.33333" format="html">
+      <text><![CDATA[<code>X_b</code>: (20, 7) | <code>y</code>: (20, 1)]]></text>
+      <feedback format="html">
+        <text><![CDATA[<p>Incorrecto. La columna de nombres y el target no forman parte de X_b.</p>]]></text>
+      </feedback>
+    </answer>
+  </question>
+
+  <!-- Q07 -->
+  <question type="ddwtos">
+    <name>
+      <text>Q07. Implementacion de la Ecuacion Normal con NumPy</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Complete la expresion en NumPy para calcular el vector de coeficientes <code>beta_simple</code> resolviendo la Ecuacion Normal:</p>
+<pre><code>beta_simple = np.linalg.[[1]](X_simple.T [[2]] X_simple) [[2]] X_simple.T [[2]] y</code></pre>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>Se utiliza np.linalg.inv() para calcular la inversa de la matriz (X^T X) y el operador @ para realizar las multiplicaciones matriciales sucesivas.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>true</shuffleanswers>
+    <dragbox>
+      <text><![CDATA[inv]]></text>
+      <group>1</group>
+    </dragbox>
+    <dragbox>
+      <text><![CDATA[@]]></text>
+      <group>2</group>
+    </dragbox>
+    <dragbox>
+      <text><![CDATA[pinv]]></text>
+      <group>1</group>
+    </dragbox>
+    <dragbox>
+      <text><![CDATA[det]]></text>
+      <group>1</group>
+    </dragbox>
+    <dragbox>
+      <text><![CDATA[*]]></text>
+      <group>2</group>
+    </dragbox>
+  </question>
+
+  <!-- Q08 -->
+  <question type="multichoice">
+    <name>
+      <text>Q08. Coeficientes obtenidos en la regresion simple</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Al ajustar la regresion lineal simple tomando <code>num_frames_total</code> como unico predictor de <code>production_hours</code>:</p>
+<pre><code>print(f"beta_0 (intercepto): {beta_simple[0]:.4f}")
+print(f"beta_1 (pendiente) : {beta_simple[1]:.4f}")</code></pre>
+<p>Indique los valores exactos resultantes del calculo:</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>El calculo exacto por la Ecuacion Normal arroja beta_0 = 17.5948 horas y beta_1 = 1.0094 horas por fotograma.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+      <text><![CDATA[\(\beta_0 = 17.5948\) | \(\beta_1 = 1.0094\)]]></text>
+      <feedback format="html">
+        <text><![CDATA[<p>Correcto. Valores exactos calculados sobre el dataset completo.</p>]]></text>
+      </feedback>
+    </answer>
+    <answer fraction="-33.33333" format="html">
+      <text><![CDATA[\(\beta_0 = -37.0913\) | \(\beta_1 = 0.8580\)]]></text>
+      <feedback format="html">
+        <text><![CDATA[<p>Incorrecto. -37.0913 corresponde al intercepto de la regresion multiple.</p>]]></text>
+      </feedback>
+    </answer>
+    <answer fraction="-33.33333" format="html">
+      <text><![CDATA[\(\beta_0 = 0.0000\) | \(\beta_1 = 1.5000\)]]></text>
+      <feedback format="html">
+        <text><![CDATA[<p>Incorrecto. El modelo incluye intercepto no forzado a cero.</p>]]></text>
+      </feedback>
+    </answer>
+    <answer fraction="-33.33333" format="html">
+      <text><![CDATA[\(\beta_0 = 96.3200\) | \(\beta_1 = 0.9782\)]]></text>
+      <feedback format="html">
+        <text><![CDATA[<p>Incorrecto. 96.32 es la media de y y 0.9782 es la correlacion r.</p>]]></text>
+      </feedback>
+    </answer>
+  </question>
+
+  <!-- Q09 -->
+  <question type="multichoice">
+    <name>
+      <text>Q09. Pronostico con modelo simple para 120 fotogramas</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Utilizando el modelo lineal simple \(\hat{y} = 17.5948 + 1.0094 \times x_{\text{frames}}\), ¿cuantas horas de produccion se pronostican para un personaje que requiere exactamente 120 fotogramas de animacion?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>y_hat = 17.5948 + 1.00936 * 120 = 17.5948 + 121.123 = 138.72 horas.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+      <text><![CDATA[138.72 horas]]></text>
+      <feedback format="html">
+        <text><![CDATA[<p>Correcto. 17.5948 + 1.0094 * 120 = 138.72 h.</p>]]></text>
+      </feedback>
+    </answer>
+    <answer fraction="-33.33333" format="html">
+      <text><![CDATA[120.00 horas]]></text>
+      <feedback format="html">
+        <text><![CDATA[<p>Incorrecto. No toma en consideracion el intercepto base de 17.59 horas.</p>]]></text>
+      </feedback>
+    </answer>
+    <answer fraction="-33.33333" format="html">
+      <text><![CDATA[168.00 horas]]></text>
+      <feedback format="html">
+        <text><![CDATA[<p>Incorrecto. 168 fotogramas corresponde al personaje Blaze.</p>]]></text>
+      </feedback>
+    </answer>
+    <answer fraction="-33.33333" format="html">
+      <text><![CDATA[96.32 horas]]></text>
+      <feedback format="html">
+        <text><![CDATA[<p>Incorrecto. 96.32 h es la media general del dataset.</p>]]></text>
+      </feedback>
+    </answer>
+  </question>
+
+  <!-- Q10 -->
+  <question type="multichoice">
+    <name>
+      <text>Q10. Significado del intercepto en diseno y preproduccion</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>¿Cual es la interpretacion fisica y artistica del intercepto \(\beta_0 \approx 17.59\) horas en el flujo de trabajo del estudio de animacion?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>beta_0 representa el costo fijo o tiempo base de preproduccion necesario para conceptualizar el diseno del personaje, elaborar hojas de modelo (model sheets), definir paletas y configurar esqueletos digitales antes de dibujar el primer fotograma de animacion.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+      <text><![CDATA[Representa el costo base fijo de preproduccion (conceptualizacion, paleta, model sheet y rig) antes de animar cualquier fotograma]]></text>
+      <feedback format="html">
+        <text><![CDATA[<p>Correcto. Es el tiempo ineludible de desarrollo conceptual del personaje.</p>]]></text>
+      </feedback>
+    </answer>
+    <answer fraction="-33.33333" format="html">
+      <text><![CDATA[Es un margen de error introducido por la imprecision de los calculos matriciales]]></text>
+      <feedback format="html">
+        <text><![CDATA[<p>Incorrecto. El intercepto no es un margen de error matematico.</p>]]></text>
+      </feedback>
+    </answer>
+    <answer fraction="-33.33333" format="html">
+      <text><![CDATA[Corresponde al tiempo de renderizado por lotes del servidor]]></text>
+      <feedback format="html">
+        <text><![CDATA[<p>Incorrecto. La variable registra horas de ilustracion y animacion.</p>]]></text>
+      </feedback>
+    </answer>
+    <answer fraction="-33.33333" format="html">
+      <text><![CDATA[Indica que ningun personaje puede tener menos de 17 fotogramas en el guion]]></text>
+      <feedback format="html">
+        <text><![CDATA[<p>Incorrecto. Las unidades de beta_0 son horas, no fotogramas.</p>]]></text>
+      </feedback>
+    </answer>
+  </question>
+
+  <!-- Q11 -->
+  <question type="ddwtos">
+    <name>
+      <text>Q11. Calculo de residuos y Error Absoluto Medio</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Complete la definicion de los residuos y el calculo del MAE en NumPy:</p>
+<pre><code>residuos = y - y_pred
+mae = np.[[1]](np.[[2]](residuos))
+print(f"MAE: {mae:.2f} horas")</code></pre>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>El Error Absoluto Medio es la media (np.mean) de las diferencias absolutas (np.abs) entre los valores observados y las predicciones.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>true</shuffleanswers>
+    <dragbox>
+      <text><![CDATA[mean]]></text>
+      <group>1</group>
+    </dragbox>
+    <dragbox>
+      <text><![CDATA[abs]]></text>
+      <group>2</group>
+    </dragbox>
+    <dragbox>
+      <text><![CDATA[sum]]></text>
+      <group>1</group>
+    </dragbox>
+    <dragbox>
+      <text><![CDATA[average]]></text>
+      <group>1</group>
+    </dragbox>
+    <dragbox>
+      <text><![CDATA[sqrt]]></text>
+      <group>2</group>
+    </dragbox>
+    <dragbox>
+      <text><![CDATA[square]]></text>
+      <group>2</group>
+    </dragbox>
+  </question>
+
+  <!-- Q12 -->
+  <question type="multichoice">
+    <name>
+      <text>Q12. Discrepancia entre RMSE y MAE</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>En la evaluacion del modelo simple se obtuvieron los valores: <strong>MAE = 8.47 horas</strong> y <strong>RMSE = 10.30 horas</strong>. ¿Por que el RMSE resulta cuantitativamente mayor que el MAE?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>El RMSE eleva los residuos al cuadrado antes de promediar, otorgando un peso desproporcionadamente mayor a desviaciones severas en personajes extremos (como Blaze), mientras que el MAE penaliza de forma estrictamente lineal.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+      <text><![CDATA[Porque el RMSE penaliza de forma cuadratica los errores grandes, dandoles mas peso relativo que el MAE]]></text>
+      <feedback format="html">
+        <text><![CDATA[<p>Correcto. La penalizacion cuadratica magnifica el impacto de outliers.</p>]]></text>
+      </feedback>
+    </answer>
+    <answer fraction="-33.33333" format="html">
+      <text><![CDATA[Porque el MAE ignora los errores negativos en su calculo]]></text>
+      <feedback format="html">
+        <text><![CDATA[<p>Incorrecto. El MAE utiliza el valor absoluto de todas las desviaciones.</p>]]></text>
+      </feedback>
+    </answer>
+    <answer fraction="-33.33333" format="html">
+      <text><![CDATA[Porque el RMSE se mide en horas al cuadrado y el MAE en horas lineales]]></text>
+      <feedback format="html">
+        <text><![CDATA[<p>Incorrecto. La raiz cuadrada en el RMSE devuelve la unidad a horas lineales.</p>]]></text>
+      </feedback>
+    </answer>
+    <answer fraction="-33.33333" format="html">
+      <text><![CDATA[Es un fallo numerico producido por no normalizar las caracteristicas con MinMaxScaler]]></text>
+      <feedback format="html">
+        <text><![CDATA[<p>Incorrecto. En cualquier distribucion de errores no nula, matematicamente RMSE >= MAE.</p>]]></text>
+      </feedback>
+    </answer>
+  </question>
+
+  <!-- Q13 -->
+  <question type="multichoice">
+    <name>
+      <text>Q13. Interpretacion de R2 en regresion simple</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Para el modelo de regresion simple implementado desde cero, se obtuvo un coeficiente de determinacion de \(R^2 = 0.9569\). Indique la conclusion correcta respecto a la varianza explicada:</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>R^2 = 0.9569 indica que el 95.69% de la varianza total de las horas de produccion es explicada directamente por la cantidad total de fotogramas del personaje.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+      <text><![CDATA[El 95.69% de la variabilidad en las horas de produccion es explicada unicamente por la cantidad de fotogramas]]></text>
+      <feedback format="html">
+        <text><![CDATA[<p>Correcto. Es la definicion estandar de R^2.</p>]]></text>
+      </feedback>
+    </answer>
+    <answer fraction="-33.33333" format="html">
+      <text><![CDATA[El modelo comete un 95.69% de predicciones incorrectas]]></text>
+      <feedback format="html">
+        <text><![CDATA[<p>Incorrecto. R^2 no es una tasa de error.</p>]]></text>
+      </feedback>
+    </answer>
+    <answer fraction="-33.33333" format="html">
+      <text><![CDATA[El 4.31% de los personajes no pueden ser dibujados por los animadores]]></text>
+      <feedback format="html">
+        <text><![CDATA[<p>Incorrecto. 4.31% es la varianza no explicada o residual.</p>]]></text>
+      </feedback>
+    </answer>
+    <answer fraction="-33.33333" format="html">
+      <text><![CDATA[La pendiente de la recta es exactamente 0.9569]]></text>
+      <feedback format="html">
+        <text><![CDATA[<p>Incorrecto. La pendiente beta_1 es 1.0094.</p>]]></text>
+      </feedback>
+    </answer>
+  </question>
+
+  <!-- Q14 -->
+  <question type="ddwtos">
+    <name>
+      <text>Q14. Division de datos con train_test_split</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Complete la funcion de scikit-learn para separar el 80% de los datos para entrenamiento y el 20% para evaluacion con reproducibilidad:</p>
+<pre><code>from sklearn.model_selection import [[1]]
+X_train, X_test, y_train, y_test = [[1]](X, y, test_size=[[2]], random_state=42)</code></pre>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>train_test_split particiona tensores y test_size=0.20 reserva una fraccion del 20% para el conjunto de prueba.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>true</shuffleanswers>
+    <dragbox>
+      <text><![CDATA[train_test_split]]></text>
+      <group>1</group>
+    </dragbox>
+    <dragbox>
+      <text><![CDATA[0.20]]></text>
+      <group>2</group>
+    </dragbox>
+    <dragbox>
+      <text><![CDATA[split_dataset]]></text>
+      <group>1</group>
+    </dragbox>
+    <dragbox>
+      <text><![CDATA[cross_validation]]></text>
+      <group>1</group>
+    </dragbox>
+    <dragbox>
+      <text><![CDATA[0.80]]></text>
+      <group>2</group>
+    </dragbox>
+    <dragbox>
+      <text><![CDATA[20]]></text>
+      <group>2</group>
+    </dragbox>
+  </question>
+
+  <!-- Q15 -->
+  <question type="multichoice">
+    <name>
+      <text>Q15. Composicion del conjunto de prueba con random_state=42</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Al aplicar <code>train_test_split(..., test_size=0.20, random_state=42)</code> sobre los 20 personajes, ¿cuantos registros componen el conjunto de prueba y que personajes especificos fueron asignados a dicho conjunto?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>El 20% de 20 son 4 muestras. Con random_state=42 los indices seleccionados corresponden exactamente a: Lyra, Olmo, Blaze y Kael.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+      <text><![CDATA[4 personajes: <code>Lyra</code>, <code>Olmo</code>, <code>Blaze</code> y <code>Kael</code>]]></text>
+      <feedback format="html">
+        <text><![CDATA[<p>Correcto. Particion exacta verificada en la ejecucion del cuaderno.</p>]]></text>
+      </feedback>
+    </answer>
+    <answer fraction="-33.33333" format="html">
+      <text><![CDATA[4 personajes: <code>Seraph</code>, <code>Crux</code>, <code>Vela</code> y <code>Asha</code>]]></text>
+      <feedback format="html">
+        <text><![CDATA[<p>Incorrecto. Estos personajes permanecieron en el conjunto de entrenamiento.</p>]]></text>
+      </feedback>
+    </answer>
+    <answer fraction="-33.33333" format="html">
+      <text><![CDATA[5 personajes: <code>Pip</code>, <code>Thorn</code>, <code>Lune</code>, <code>Rex</code> y <code>Cleo</code>]]></text>
+      <feedback format="html">
+        <text><![CDATA[<p>Incorrecto. El conjunto de prueba contiene 4 muestras, no 5.</p>]]></text>
+      </feedback>
+    </answer>
+    <answer fraction="-33.33333" format="html">
+      <text><![CDATA[2 personajes: <code>Blaze</code> y <code>Olmo</code>]]></text>
+      <feedback format="html">
+        <text><![CDATA[<p>Incorrecto. test_size=0.20 sobre 20 asigna 4 registros.</p>]]></text>
+      </feedback>
+    </answer>
+  </question>
+
+  <!-- Q16 -->
+  <question type="ddwtos">
+    <name>
+      <text>Q16. Ajuste y prediccion en LinearRegression</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Complete la secuencia de entrenamiento y prediccion con scikit-learn:</p>
+<pre><code>model = LinearRegression()
+model.[[1]](X_train, y_train)
+y_pred_test = model.[[2]](X_test)</code></pre>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>El metodo fit() optimiza los parametros y predict() genera estimaciones sobre matrices de caracteristicas de prueba.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>true</shuffleanswers>
+    <dragbox>
+      <text><![CDATA[fit]]></text>
+      <group>1</group>
+    </dragbox>
+    <dragbox>
+      <text><![CDATA[predict]]></text>
+      <group>2</group>
+    </dragbox>
+    <dragbox>
+      <text><![CDATA[train]]></text>
+      <group>1</group>
+    </dragbox>
+    <dragbox>
+      <text><![CDATA[learn]]></text>
+      <group>1</group>
+    </dragbox>
+    <dragbox>
+      <text><![CDATA[forecast]]></text>
+      <group>2</group>
+    </dragbox>
+    <dragbox>
+      <text><![CDATA[transform]]></text>
+      <group>2</group>
+    </dragbox>
+  </question>
+
+  <!-- Q17 -->
+  <question type="multichoice">
+    <name>
+      <text>Q17. Coeficiente e interpretacion de has_special_fx</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>En el modelo de regresion multiple, el coeficiente obtenido para la variable binaria <code>has_special_fx</code> es de aproximadamente <strong>+4.75 horas</strong>. ¿Cual es la interpretacion de este valor manteniendo constantes las demas variables?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>En regresion multiple, cada coeficiente mide el cambio esperado en y al aumentar una unidad en dicha variable manteniendo constantes todas las demas (ceteris paribus). Incorporar efectos especiales complejos agrega en promedio 4.75 horas a la produccion del personaje.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+      <text><![CDATA[Manteniendo constantes las demas caracteristicas, agregar efectos especiales incrementa en promedio 4.75 horas la carga de produccion]]></text>
+      <feedback format="html">
+        <text><![CDATA[<p>Correcto. Es la interpretacion ceteris paribus de un coeficiente de regresion.</p>]]></text>
+      </feedback>
+    </answer>
+    <answer fraction="-33.33333" format="html">
+      <text><![CDATA[Los efectos especiales reducen un 4.75% el tiempo de animacion]]></text>
+      <feedback format="html">
+        <text><![CDATA[<p>Incorrecto. El signo del coeficiente es positivo (+4.75) y se mide en horas absolutas, no en porcentaje.</p>]]></text>
+      </feedback>
+    </answer>
+    <answer fraction="-33.33333" format="html">
+      <text><![CDATA[Solo se permite agregar efectos especiales a personajes con mas de 4 estados]]></text>
+      <feedback format="html">
+        <text><![CDATA[<p>Incorrecto. El coeficiente no impone restricciones operativas.</p>]]></text>
+      </feedback>
+    </answer>
+    <answer fraction="-33.33333" format="html">
+      <text><![CDATA[El modelo comete un error constante de 4.75 horas en todos los personajes]]></text>
+      <feedback format="html">
+        <text><![CDATA[<p>Incorrecto. 4.75 horas solo aplica cuando has_special_fx = 1.</p>]]></text>
+      </feedback>
+    </answer>
+  </question>
+
+  <!-- Q18 -->
+  <question type="multichoice">
+    <name>
+      <text>Q18. Generalizacion: Desempeno en Entrenamiento vs Prueba</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Considere la comparacion de metricas del modelo multiple:</p>
+<pre><code>Metrica                 Multiple (Entrenamiento)    Multiple (Prueba)
+R^2                                       0.9929               0.8580
+MAE (horas)                                 3.45                17.39
+RMSE (horas)                                4.41                23.42</code></pre>
+<p>¿Cual es el principio fundamental de Machine Learning que explica por que el rendimiento en la prueba es inferior al de entrenamiento?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>Los parametros se ajustaron directamente para minimizar el error sobre las 16 muestras de entrenamiento. Al predecir sobre datos nuevos no observados (generalizacion), el modelo experimenta un error mayor debido a la varianza y a la presencia de observaciones atipicas.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+      <text><![CDATA[Error de generalizacion: los parametros se optimizaron sobre el entrenamiento, por lo que es natural que el desempeno en datos nuevos no vistos sea menor]]></text>
+      <feedback format="html">
+        <text><![CDATA[<p>Correcto. Es el comportamiento estandar de todo modelo predictivo en generalizacion.</p>]]></text>
+      </feedback>
+    </answer>
+    <answer fraction="-33.33333" format="html">
+      <text><![CDATA[El modelo sufrio un colapso numerico en la libreria scikit-learn]]></text>
+      <feedback format="html">
+        <text><![CDATA[<p>Incorrecto. El calculo fue exitoso y computacionalmente estable.</p>]]></text>
+      </feedback>
+    </answer>
+    <answer fraction="-33.33333" format="html">
+      <text><![CDATA[Los datos del conjunto de prueba fueron corrompidos intencionalmente en la Parte 1]]></text>
+      <feedback format="html">
+        <text><![CDATA[<p>Incorrecto. El dataset fue validado y limpiado exhaustivamente.</p>]]></text>
+      </feedback>
+    </answer>
+    <answer fraction="-33.33333" format="html">
+      <text><![CDATA[La regresion lineal no puede evaluarse con metricas como MAE o RMSE]]></text>
+      <feedback format="html">
+        <text><![CDATA[<p>Incorrecto. Son las metricas estandar de la disciplina.</p>]]></text>
+      </feedback>
+    </answer>
+  </question>
+
+  <!-- Q19 -->
+  <question type="truefalse">
+    <name>
+      <text>Q19. Apalancamiento de outliers en tamanos de prueba reducidos</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Con un conjunto de prueba de solo \(N=4\) observaciones, la presencia de un personaje atipico extremo como Blaze (185 horas reales frente a 148.9 predichas, error = \(-36.1\) horas) ejerce un apalancamiento desproporcionado sobre el RMSE (\(23.42\) horas), por lo que se debe evitar descalificar la capacidad general del modelo sin analizar los residuos individuales.</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>La afirmacion es verdadera. Al tener solo 4 muestras, un unico residuo grande de 36.1 horas al elevarse al cuadrado aporta mas de 1300 a la suma del MSE, distorsionando el promedio de la prueba.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>1.0000000</penalty>
+    <hidden>0</hidden>
+    <answer fraction="100" format="html">
+      <text><![CDATA[Verdadero]]></text>
+      <feedback format="html">
+        <text><![CDATA[<p>Correcto. Muestras pequenas son altamente vulnerables al apalancamiento de valores extremos.</p>]]></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[Falso]]></text>
+      <feedback format="html">
+        <text><![CDATA[<p>Incorrecto. En muestras pequenas, los outliers dominan el valor de RMSE.</p>]]></text>
+      </feedback>
+    </answer>
+  </question>
+
+  <!-- Q20 -->
+  <question type="multichoice">
+    <name>
+      <text>Q20. Interpretacion de la linea diagonal y = x</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>En el grafico de dispersion Valor Real (\(x\)) frente a Valor Predicho (\(y\)), ¿que representa la linea diagonal roja discontinua \(y = x\)?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>La linea y = x representa prediccion perfecta: si un punto cae exactamente sobre la recta, significa que el valor predicho coincide al 100% con el valor real observado (residuo e = 0).</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+      <text><![CDATA[La prediccion perfecta: puntos situados sobre ella tienen un error de prediccion exactamente igual a cero]]></text>
+      <feedback format="html">
+        <text><![CDATA[<p>Correcto. Representa la coincidencia exacta entre la realidad y la estimacion.</p>]]></text>
+      </feedback>
+    </answer>
+    <answer fraction="-33.33333" format="html">
+      <text><![CDATA[El promedio aritmetico de las horas de produccion del conjunto de datos]]></text>
+      <feedback format="html">
+        <text><![CDATA[<p>Incorrecto. El promedio se representaria como una linea horizontal o vertical fija.</p>]]></text>
+      </feedback>
+    </answer>
+    <answer fraction="-33.33333" format="html">
+      <text><![CDATA[El limite superior de confianza al 95% del modelo bayesiano]]></text>
+      <feedback format="html">
+        <text><![CDATA[<p>Incorrecto. No corresponde a un intervalo de confianza.</p>]]></text>
+      </feedback>
+    </answer>
+    <answer fraction="-33.33333" format="html">
+      <text><![CDATA[La cota maxima permitida de fotogramas por personaje]]></text>
+      <feedback format="html">
+        <text><![CDATA[<p>Incorrecto. Ambos ejes corresponden a horas de produccion.</p>]]></text>
+      </feedback>
+    </answer>
+  </question>
+
+  <!-- Q21 -->
+  <question type="multichoice">
+    <name>
+      <text>Q21. Exactitud por personaje en el conjunto de prueba</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Considere la tabla de predicciones individuales sobre las 4 muestras de prueba:</p>
+<pre><code>Lyra       -> Real:  142.0 h | Predicho:  144.5 h | Error:   +2.5 h
+Olmo       -> Real:   18.0 h | Predicho:   36.2 h | Error:  +18.2 h
+Blaze      -> Real:  185.0 h | Predicho:  148.9 h | Error:  -36.1 h
+Kael       -> Real:  138.5 h | Predicho:  125.7 h | Error:  -12.8 h</code></pre>
+<p>¿Para cual personaje de prueba el modelo de regresion multiple logro su prediccion mas exacta (menor error absoluto)?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>Para Lyra el error absoluto fue de apenas |144.5 - 142.0| = 2.5 horas, situandose practicamente sobre la diagonal de prediccion perfecta.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<code>Lyra</code> (error de solo +2.5 horas)]]></text>
+      <feedback format="html">
+        <text><![CDATA[<p>Correcto. La discrepancia fue de apenas 2.5 horas en un total de 142.0 h.</p>]]></text>
+      </feedback>
+    </answer>
+    <answer fraction="-33.33333" format="html">
+      <text><![CDATA[<code>Blaze</code> (error de -36.1 horas)]]></text>
+      <feedback format="html">
+        <text><![CDATA[<p>Incorrecto. Blaze experimento el mayor error de subestimacion.</p>]]></text>
+      </feedback>
+    </answer>
+    <answer fraction="-33.33333" format="html">
+      <text><![CDATA[<code>Olmo</code> (error de +18.2 horas)]]></text>
+      <feedback format="html">
+        <text><![CDATA[<p>Incorrecto. En Olmo el error duplico su valor real (36.2 h vs 18.0 h).</p>]]></text>
+      </feedback>
+    </answer>
+    <answer fraction="-33.33333" format="html">
+      <text><![CDATA[<code>Kael</code> (error de -12.8 horas)]]></text>
+      <feedback format="html">
+        <text><![CDATA[<p>Incorrecto. Kael tuvo un error absoluto de 12.8 horas.</p>]]></text>
+      </feedback>
+    </answer>
+  </question>
+
+  <!-- Q22 -->
+  <question type="ddwtos">
+    <name>
+      <text>Q22. Grafico diagnostico de residuos y linea horizontal</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Complete el codigo para graficar el analisis de residuos frente a valores predichos y trazar la linea de referencia horizontal en cero:</p>
+<pre><code>plt.scatter(y_pred_multi_test, residuos_test, color="coral")
+plt.[[1]](y=[[2]], color="black", linestyle="--")
+plt.xlabel("Valores Predichos")
+plt.ylabel("Residuos")</code></pre>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>plt.axhline(y=0) traza una linea horizontal infinita a lo largo de todo el eje X en la ordenada y=0.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>true</shuffleanswers>
+    <dragbox>
+      <text><![CDATA[axhline]]></text>
+      <group>1</group>
+    </dragbox>
+    <dragbox>
+      <text><![CDATA[0]]></text>
+      <group>2</group>
+    </dragbox>
+    <dragbox>
+      <text><![CDATA[axvline]]></text>
+      <group>1</group>
+    </dragbox>
+    <dragbox>
+      <text><![CDATA[plot_line]]></text>
+      <group>1</group>
+    </dragbox>
+    <dragbox>
+      <text><![CDATA[1]]></text>
+      <group>2</group>
+    </dragbox>
+    <dragbox>
+      <text><![CDATA[100]]></text>
+      <group>2</group>
+    </dragbox>
+  </question>
+
+  <!-- Q23 -->
+  <question type="multichoice">
+    <name>
+      <text>Q23. Pronostico de produccion para el personaje Nova</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>El estudio ha disenado una nueva heroina para la temporada 2 llamada <strong>Nova</strong> con los siguientes atributos: 96 fotogramas totales, ratio de pantalla de 0.20, 4 estados de animacion, 24 fps y efectos especiales (<code>has_special_fx = 1</code>). Al aplicar <code>model.predict(X_nova)</code>, ¿cual es el pronostico estimado de horas de produccion?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>La prediccion del modelo ajustado para el vector [96, 0.20, 4, 24, 1] es exactamente 120.97 horas (aproximadamente 121 horas).</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+      <text><![CDATA[120.97 horas (aprox. 3.0 semanas laborales de 40 horas)]]></text>
+      <feedback format="html">
+        <text><![CDATA[<p>Correcto. 120.97 / 40 = 3.02 semanas de trabajo de un animador.</p>]]></text>
+      </feedback>
+    </answer>
+    <answer fraction="-33.33333" format="html">
+      <text><![CDATA[96.32 horas (exactamente la media del dataset)]]></text>
+      <feedback format="html">
+        <text><![CDATA[<p>Incorrecto. Nova tiene mayor complejidad que la media del estudio.</p>]]></text>
+      </feedback>
+    </answer>
+    <answer fraction="-33.33333" format="html">
+      <text><![CDATA[185.00 horas (el maximo del personaje Blaze)]]></text>
+      <feedback format="html">
+        <text><![CDATA[<p>Incorrecto. Nova tiene 96 fotogramas frente a 168 de Blaze.</p>]]></text>
+      </feedback>
+    </answer>
+    <answer fraction="-33.33333" format="html">
+      <text><![CDATA[48.00 horas (equivalente a un personaje de soporte simple)]]></text>
+      <feedback format="html">
+        <text><![CDATA[<p>Incorrecto. Nova requiere animacion de accion fluida a 24 fps.</p>]]></text>
+      </feedback>
+    </answer>
+  </question>
+
+  <!-- Q24 -->
+  <question type="multichoice">
+    <name>
+      <text>Q24. Analisis de sensibilidad en el pronostico de Nova</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Mediante el analisis de sensibilidad ejecutado en el Ejercicio 3.8, si la direccion de arte decide eliminar los efectos especiales de Nova (cambiando <code>has_special_fx</code> de 1 a 0), ¿en cuantas horas se reduce la carga de trabajo pronosticada?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>Al ser un modelo lineal, cambiar una variable binaria de 1 a 0 manteniendo lo demas constante reduce el pronostico exactamente en el valor de su coeficiente beta_5: 4.75 horas (120.97 h - 116.22 h = 4.75 h).</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+      <text><![CDATA[Se reduce exactamente en 4.75 horas (el valor del coeficiente \(\beta_5\))]]></text>
+      <feedback format="html">
+        <text><![CDATA[<p>Correcto. La respuesta marginal en un modelo lineal es identica al coeficiente.</p>]]></text>
+      </feedback>
+    </answer>
+    <answer fraction="-33.33333" format="html">
+      <text><![CDATA[Se reduce en un 50% de la carga total]]></text>
+      <feedback format="html">
+        <text><![CDATA[<p>Incorrecto. Los efectos especiales son un componente incremental, no la mitad del trabajo.</p>]]></text>
+      </feedback>
+    </answer>
+    <answer fraction="-33.33333" format="html">
+      <text><![CDATA[No se reduce en nada porque los efectos especiales no consumen horas de ilustracion]]></text>
+      <feedback format="html">
+        <text><![CDATA[<p>Incorrecto. El coeficiente beta_5 es positivo (+4.75 h).</p>]]></text>
+      </feedback>
+    </answer>
+    <answer fraction="-33.33333" format="html">
+      <text><![CDATA[Se reduce en 24.0 horas correspondientes a la tasa de fps]]></text>
+      <feedback format="html">
+        <text><![CDATA[<p>Incorrecto. fps y special_fx son variables independientes.</p>]]></text>
+      </feedback>
+    </answer>
+  </question>
+
+  <!-- Q25 -->
+  <question type="truefalse">
+    <name>
+      <text>Q25. Equivalencia matematica entre NumPy y scikit-learn</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Si resolvemos la regresion lineal sin regularizacion sobre el mismo conjunto de datos mediante la Ecuacion Normal con NumPy o utilizando la clase <code>LinearRegression</code> de scikit-learn, ambos metodos convergen exactamente a los mismos valores numericos de intercepto y coeficientes, demostrando que scikit-learn resuelve la misma formulacion algebraica de Minimos Cuadrados.</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>La afirmacion es verdadera. LinearRegression de scikit-learn utiliza internamente scipy.linalg.lstsq (basada en descomposicion SVD de la Ecuacion Normal) para calcular la misma solucion analitica cerrada de OLS.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>1.0000000</penalty>
+    <hidden>0</hidden>
+    <answer fraction="100" format="html">
+      <text><![CDATA[Verdadero]]></text>
+      <feedback format="html">
+        <text><![CDATA[<p>Correcto. Ambos metodos resuelven el mismo problema analitico cerrado.</p>]]></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[Falso]]></text>
+      <feedback format="html">
+        <text><![CDATA[<p>Incorrecto. No existen diferencias matematicas en la solucion analitica de OLS sin penalizaciones.</p>]]></text>
+      </feedback>
+    </answer>
+  </question>
+
+</quiz>

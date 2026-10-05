@@ -1,0 +1,1074 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+
+  <!-- Categoria del Cuestionario -->
+  <question type="category">
+    <category>
+      <text>$course$/Primer Parcial 01-2026/Practica 01 - Parte 2: Analisis Exploratorio con Pandas</text>
+    </category>
+    <info format="html">
+      <text><![CDATA[<p>Banco de preguntas evaluativas para la Practica 01 (Parte 2: Analisis Exploratorio con Pandas y Seleccion de Caracteristicas) sobre el dataset de diseno de personajes 2D de la serie Neon Skies.</p>]]></text>
+    </info>
+  </question>
+
+  <!-- Q01 -->
+  <question type="ddwtos">
+    <name>
+      <text>Q01. Carga de archivo CSV con Pandas</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Complete la instruccion para importar la libreria Pandas y cargar el archivo de datos depurado en un DataFrame denominado <code>df</code>:</p>
+<pre><code>import pandas as [[1]]
+df = pd.[[2]]("characters_clean.csv")</code></pre>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>El alias convencional de importacion de Pandas es pd y la funcion estandar para leer archivos delimitados por comas es pd.read_csv().</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>true</shuffleanswers>
+    <dragbox>
+      <text><![CDATA[pd]]></text>
+      <group>1</group>
+    </dragbox>
+    <dragbox>
+      <text><![CDATA[read_csv]]></text>
+      <group>2</group>
+    </dragbox>
+    <dragbox>
+      <text><![CDATA[np]]></text>
+      <group>1</group>
+    </dragbox>
+    <dragbox>
+      <text><![CDATA[load_csv]]></text>
+      <group>2</group>
+    </dragbox>
+    <dragbox>
+      <text><![CDATA[read_table]]></text>
+      <group>2</group>
+    </dragbox>
+  </question>
+
+  <!-- Q02 -->
+  <question type="multichoice">
+    <name>
+      <text>Q02. Dimensiones y estructura del DataFrame</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Al ejecutar la consulta de dimensiones sobre el dataset cargado:</p>
+<pre><code>print("Dimensiones:", df.shape)</code></pre>
+<p>Indique cual es la salida exacta producida por Pandas:</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>El dataset characters_clean.csv contiene exactamente 20 registros (filas) y 12 variables (columnas), representado por la tupla (20, 12).</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+      <text><![CDATA[(20, 12)]]></text>
+      <feedback format="html">
+        <text><![CDATA[<p>Correcto. 20 filas y 12 columnas.</p>]]></text>
+      </feedback>
+    </answer>
+    <answer fraction="-33.33333" format="html">
+      <text><![CDATA[(12, 20)]]></text>
+      <feedback format="html">
+        <text><![CDATA[<p>Incorrecto. shape retorna primero las filas y luego las columnas.</p>]]></text>
+      </feedback>
+    </answer>
+    <answer fraction="-33.33333" format="html">
+      <text><![CDATA[(20, 10)]]></text>
+      <feedback format="html">
+        <text><![CDATA[<p>Incorrecto. El dataset limpio conserva 12 columnas.</p>]]></text>
+      </feedback>
+    </answer>
+    <answer fraction="-33.33333" format="html">
+      <text><![CDATA[(20, 7)]]></text>
+      <feedback format="html">
+        <text><![CDATA[<p>Incorrecto. 7 columnas corresponde al dataset final tras la seleccion de caracteristicas en el Ejercicio 2.6.</p>]]></text>
+      </feedback>
+    </answer>
+  </question>
+
+  <!-- Q03 -->
+  <question type="multichoice">
+    <name>
+      <text>Q03. Deteccion de columnas de tipo objeto</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Considere la inspeccion de tipos de datos en el DataFrame mediante:</p>
+<pre><code>print(df.dtypes)</code></pre>
+<p>Determine cuales columnas presentan el tipo <code>object</code> (texto) y requieren transformacion o codificacion antes de ser ingresadas a un modelo de regresion:</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>Las unicas variables categoricas de texto en el dataset son name, role y style. Las restantes 9 columnas son numericas (int64 o float64).</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<code>name</code>, <code>role</code> y <code>style</code>]]></text>
+      <feedback format="html">
+        <text><![CDATA[<p>Correcto. Estas 3 columnas contienen cadenas de caracteres.</p>]]></text>
+      </feedback>
+    </answer>
+    <answer fraction="-33.33333" format="html">
+      <text><![CDATA[<code>fps</code>, <code>has_special_fx</code> y <code>num_states</code>]]></text>
+      <feedback format="html">
+        <text><![CDATA[<p>Incorrecto. Estas columnas son de tipo entero (int64).</p>]]></text>
+      </feedback>
+    </answer>
+    <answer fraction="-33.33333" format="html">
+      <text><![CDATA[Unicamente la columna <code>name</code>]]></text>
+      <feedback format="html">
+        <text><![CDATA[<p>Incorrecto. role y style tambien son cadenas de texto.</p>]]></text>
+      </feedback>
+    </answer>
+    <answer fraction="-33.33333" format="html">
+      <text><![CDATA[<code>screen_time_ratio</code> y <code>production_hours</code>]]></text>
+      <feedback format="html">
+        <text><![CDATA[<p>Incorrecto. Son de tipo float64 (flotantes continuos).</p>]]></text>
+      </feedback>
+    </answer>
+  </question>
+
+  <!-- Q04 -->
+  <question type="ddwtos">
+    <name>
+      <text>Q04. Estadisticas descriptivas y percentiles</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Complete el codigo para generar la tabla de estadisticas univariadas (media, desviacion, minimo, cuartiles y maximo) de las columnas numericas:</p>
+<pre><code>estadisticas = df.[[1]]().[[2]](2)
+print(estadisticas)</code></pre>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>El metodo describe() calcula el resumen estadistico de 8 numeros para columnas numericas y round(2) redondea los resultados a 2 cifras decimales.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>true</shuffleanswers>
+    <dragbox>
+      <text><![CDATA[describe]]></text>
+      <group>1</group>
+    </dragbox>
+    <dragbox>
+      <text><![CDATA[round]]></text>
+      <group>2</group>
+    </dragbox>
+    <dragbox>
+      <text><![CDATA[summary]]></text>
+      <group>1</group>
+    </dragbox>
+    <dragbox>
+      <text><![CDATA[info]]></text>
+      <group>1</group>
+    </dragbox>
+    <dragbox>
+      <text><![CDATA[format]]></text>
+      <group>2</group>
+    </dragbox>
+  </question>
+
+  <!-- Q05 -->
+  <question type="multichoice">
+    <name>
+      <text>Q05. Rango de la variable objetivo production_hours</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Segun la salida de <code>df.describe()</code> sobre la variable objetivo <code>production_hours</code>:</p>
+<pre><code>count     20.00
+mean      96.32
+std       50.91
+min       18.00
+max      185.00</code></pre>
+<p>¿A que personajes corresponden respectivamente el valor minimo (18.00 h) y el valor maximo (185.00 h)?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>El minimo absoluto es 18.00 horas perteneciente a Olmo (personaje de soporte a 8 fps con 1 solo estado), y el maximo es 185.00 horas perteneciente a Blaze (protagonista a 24 fps con 7 estados y 168 fotogramas).</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+      <text><![CDATA[Minimo: Olmo | Maximo: Blaze]]></text>
+      <feedback format="html">
+        <text><![CDATA[<p>Correcto. Olmo registra 18.0 horas y Blaze registra 185.0 horas.</p>]]></text>
+      </feedback>
+    </answer>
+    <answer fraction="-33.33333" format="html">
+      <text><![CDATA[Minimo: Pip | Maximo: Seraph]]></text>
+      <feedback format="html">
+        <text><![CDATA[<p>Incorrecto. Pip tiene 30.0 horas y Seraph tiene 168.0 horas.</p>]]></text>
+      </feedback>
+    </answer>
+    <answer fraction="-33.33333" format="html">
+      <text><![CDATA[Minimo: Crux | Maximo: Kael]]></text>
+      <feedback format="html">
+        <text><![CDATA[<p>Incorrecto. Crux registra 44.0 horas y Kael 138.5 horas.</p>]]></text>
+      </feedback>
+    </answer>
+    <answer fraction="-33.33333" format="html">
+      <text><![CDATA[Minimo: Sela | Maximo: Asha]]></text>
+      <feedback format="html">
+        <text><![CDATA[<p>Incorrecto. Sela registra 42.0 horas y Asha 155.0 horas.</p>]]></text>
+      </feedback>
+    </answer>
+  </question>
+
+  <!-- Q06 -->
+  <question type="ddwtos">
+    <name>
+      <text>Q06. Generacion de histogramas y diagramas de caja</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Complete el codigo para graficar la distribucion de frecuencias con 8 intervalos y el diagrama de caja de las variables continuas:</p>
+<pre><code>cols = ["fps", "screen_time_ratio", "num_states", "num_frames_total", "production_hours"]
+df[cols].[[1]](bins=8, figsize=(12, 8))
+df[cols].plot(kind=[[2]], figsize=(12, 5))</code></pre>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>El metodo hist(bins=n) genera histogramas por columna y plot(kind="box") genera diagramas de caja (boxplots).</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>true</shuffleanswers>
+    <dragbox>
+      <text><![CDATA[hist]]></text>
+      <group>1</group>
+    </dragbox>
+    <dragbox>
+      <text><![CDATA["box"]]></text>
+      <group>2</group>
+    </dragbox>
+    <dragbox>
+      <text><![CDATA[plot_hist]]></text>
+      <group>1</group>
+    </dragbox>
+    <dragbox>
+      <text><![CDATA["boxplot"]]></text>
+      <group>2</group>
+    </dragbox>
+    <dragbox>
+      <text><![CDATA["bar"]]></text>
+      <group>2</group>
+    </dragbox>
+  </question>
+
+  <!-- Q07 -->
+  <question type="multichoice">
+    <name>
+      <text>Q07. Criterio de deteccion de outliers en diagramas de caja</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>En el analisis exploratorio mediante boxplot, ¿cual es la definicion formal del Rango Intercuartilico (IQR) y la regla estandar para identificar observaciones atipicas (outliers)?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>El Rango Intercuartilico es la diferencia entre el percentil 75 (Q3) y el percentil 25 (Q1): IQR = Q3 - Q1. Un punto se considera outlier si es mayor que Q3 + 1.5 * IQR o menor que Q1 - 1.5 * IQR.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+      <text><![CDATA[\(\text{IQR} = Q3 - Q1\); se clasifican como atipicos los valores fuera de \([Q1 - 1.5 \times \text{IQR}, \; Q3 + 1.5 \times \text{IQR}]\)]]></text>
+      <feedback format="html">
+        <text><![CDATA[<p>Correcto. Es la definicion formal de Tukey para la deteccion de valores atipicos en boxplots.</p>]]></text>
+      </feedback>
+    </answer>
+    <answer fraction="-33.33333" format="html">
+      <text><![CDATA[\(\text{IQR} = \text{Media} - \text{Mediana}\); se clasifican como atipicos los valores que difieren en mas de 2 desviaciones estandar]]></text>
+      <feedback format="html">
+        <text><![CDATA[<p>Incorrecto. Esa es la definicion de asimetria o regla empirica gaussiana, no el IQR.</p>]]></text>
+      </feedback>
+    </answer>
+    <answer fraction="-33.33333" format="html">
+      <text><![CDATA[\(\text{IQR} = \text{Maximo} - \text{Minimo}\); son atipicos los que superan el percentil 95]]></text>
+      <feedback format="html">
+        <text><![CDATA[<p>Incorrecto. Maximo menos minimo define el rango total.</p>]]></text>
+      </feedback>
+    </answer>
+    <answer fraction="-33.33333" format="html">
+      <text><![CDATA[\(\text{IQR} = Q2\); son atipicos aquellos registros con valores menores a cero]]></text>
+      <feedback format="html">
+        <text><![CDATA[<p>Incorrecto. Q2 representa la mediana.</p>]]></text>
+      </feedback>
+    </answer>
+  </question>
+
+  <!-- Q08 -->
+  <question type="multichoice">
+    <name>
+      <text>Q08. Naturaleza discreta de la variable fps</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Al visualizar el histograma de <code>fps</code>, la distribucion no presenta una curva continua ni acampanada. ¿Cual es la razon metodologica y cuales son los valores discretos observados?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>fps es un parametro tecnico de configuracion industrial en la animacion digital y toma unicamente tres valores estandar en el estudio: 8 fps (soporte basico), 12 fps (estandar) y 24 fps (accion fluida).</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+      <text><![CDATA[Es un parametro tecnico discreto que asume exclusivamente los valores de 8, 12 y 24 fps]]></text>
+      <feedback format="html">
+        <text><![CDATA[<p>Correcto. Representa tasas estandar de la industria de animacion.</p>]]></text>
+      </feedback>
+    </answer>
+    <answer fraction="-33.33333" format="html">
+      <text><![CDATA[Es una variable aleatoria continua con sesgo provocado por datos faltantes]]></text>
+      <feedback format="html">
+        <text><![CDATA[<p>Incorrecto. No existen datos faltantes en la columna fps tras la Parte 1.</p>]]></text>
+      </feedback>
+    </answer>
+    <answer fraction="-33.33333" format="html">
+      <text><![CDATA[Solo toma valores pares continuos comprendidos entre 10 y 60 fps]]></text>
+      <feedback format="html">
+        <text><![CDATA[<p>Incorrecto. No existen valores como 30 ni 60 fps en este dataset.</p>]]></text>
+      </feedback>
+    </answer>
+    <answer fraction="-33.33333" format="html">
+      <text><![CDATA[Fue generada de manera erronea por un fallo en la funcion read_csv]]></text>
+      <feedback format="html">
+        <text><![CDATA[<p>Incorrecto. La funcion leyo los enteros de forma valida.</p>]]></text>
+      </feedback>
+    </answer>
+  </question>
+
+  <!-- Q09 -->
+  <question type="ddwtos">
+    <name>
+      <text>Q09. Frecuencia de categorias con value_counts</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Complete la instruccion para obtener la distribucion de frecuencias de cada rol y estilo en el DataFrame:</p>
+<pre><code>print(df["role"].[[1]]())
+print(df["style"].[[1]]())</code></pre>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>El metodo value_counts() devuelve una Serie con los conteos de ocurrencia de cada categoria unica ordenados de forma descendente.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>true</shuffleanswers>
+    <dragbox>
+      <text><![CDATA[value_counts]]></text>
+      <group>1</group>
+    </dragbox>
+    <dragbox>
+      <text><![CDATA[count_values]]></text>
+      <group>1</group>
+    </dragbox>
+    <dragbox>
+      <text><![CDATA[frequencies]]></text>
+      <group>1</group>
+    </dragbox>
+    <dragbox>
+      <text><![CDATA[unique]]></text>
+      <group>1</group>
+    </dragbox>
+  </question>
+
+  <!-- Q10 -->
+  <question type="multichoice">
+    <name>
+      <text>Q10. Conteo exacto por categorias de rol</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>De acuerdo con la salida de <code>df["role"].value_counts()</code>, ¿cual es la composicion exacta de la muestra por roles?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>El conteo arroja exactamente: support = 9, antagonist = 7, protagonist = 4 (total = 20).</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+      <text><![CDATA[support: 9, antagonist: 7, protagonist: 4]]></text>
+      <feedback format="html">
+        <text><![CDATA[<p>Correcto. La categoria support es la mas numerosa con 9 personajes.</p>]]></text>
+      </feedback>
+    </answer>
+    <answer fraction="-33.33333" format="html">
+      <text><![CDATA[support: 10, antagonist: 5, protagonist: 5]]></text>
+      <feedback format="html">
+        <text><![CDATA[<p>Incorrecto. Verifique el resultado en el cuaderno.</p>]]></text>
+      </feedback>
+    </answer>
+    <answer fraction="-33.33333" format="html">
+      <text><![CDATA[support: 7, antagonist: 7, protagonist: 6]]></text>
+      <feedback format="html">
+        <text><![CDATA[<p>Incorrecto. 7, 7 y 6 corresponde a la distribucion por estilo, no por rol.</p>]]></text>
+      </feedback>
+    </answer>
+    <answer fraction="-33.33333" format="html">
+      <text><![CDATA[support: 4, antagonist: 8, protagonist: 8]]></text>
+      <feedback format="html">
+        <text><![CDATA[<p>Incorrecto. Solo existen 4 protagonistas.</p>]]></text>
+      </feedback>
+    </answer>
+  </question>
+
+  <!-- Q11 -->
+  <question type="ddwtos">
+    <name>
+      <text>Q11. Agregacion por grupos con groupby</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Complete el codigo para calcular el promedio de horas de produccion agrupado por cada estilo de animacion:</p>
+<pre><code>promedio_estilo = df.[[1]]("style")[[[2]]].mean().round(2)
+print(promedio_estilo)</code></pre>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>La funcion groupby("columna_agrupacion") divide los datos y la seleccion entre corchetes ["production_hours"] aplica la operacion mean() unicamente a la columna numerica deseada.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>true</shuffleanswers>
+    <dragbox>
+      <text><![CDATA[groupby]]></text>
+      <group>1</group>
+    </dragbox>
+    <dragbox>
+      <text><![CDATA["production_hours"]]></text>
+      <group>2</group>
+    </dragbox>
+    <dragbox>
+      <text><![CDATA[group_by]]></text>
+      <group>1</group>
+    </dragbox>
+    <dragbox>
+      <text><![CDATA[aggregate]]></text>
+      <group>1</group>
+    </dragbox>
+    <dragbox>
+      <text><![CDATA["style"]]></text>
+      <group>2</group>
+    </dragbox>
+    <dragbox>
+      <text><![CDATA["fps"]]></text>
+      <group>2</group>
+    </dragbox>
+  </question>
+
+  <!-- Q12 -->
+  <question type="multichoice">
+    <name>
+      <text>Q12. Horas promedio por estilo de arte</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Considere los resultados calculados mediante <code>df.groupby("style")["production_hours"].mean().round(2)</code>:</p>
+<pre><code>style
+cel_shaded     99.50
+flat           40.00
+painted       149.93</code></pre>
+<p>Indique cual afirmacion describe con rigor la relacion de horas de produccion entre los estilos:</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>painted es el estilo mas costoso con 149.93 h promedio, superando por casi 110 horas al estilo flat (40.00 h). El estilo cel_shaded se ubica exactamente en el rango intermedio (99.50 h).</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+      <text><![CDATA[El estilo <code>painted</code> es el mas laborioso (149.93 h) y el estilo <code>flat</code> es el menos laborioso (40.00 h)]]></text>
+      <feedback format="html">
+        <text><![CDATA[<p>Correcto. La complejidad del renderizado pictorico demanda casi 4 veces el tiempo de arte plano.</p>]]></text>
+      </feedback>
+    </answer>
+    <answer fraction="-33.33333" format="html">
+      <text><![CDATA[El estilo <code>cel_shaded</code> requiere mas horas de trabajo que el estilo <code>painted</code>]]></text>
+      <feedback format="html">
+        <text><![CDATA[<p>Incorrecto. cel_shaded requiere 99.50 h frente a 149.93 h de painted.</p>]]></text>
+      </feedback>
+    </answer>
+    <answer fraction="-33.33333" format="html">
+      <text><![CDATA[El estilo <code>flat</code> demanda un promedio superior a 100 horas]]></text>
+      <feedback format="html">
+        <text><![CDATA[<p>Incorrecto. flat promedia exactamente 40.00 horas.</p>]]></text>
+      </feedback>
+    </answer>
+    <answer fraction="-33.33333" format="html">
+      <text><![CDATA[No existen diferencias significativas entre los tres estilos de animacion]]></text>
+      <feedback format="html">
+        <text><![CDATA[<p>Incorrecto. Las diferencias son estadisticamente muy marcadas.</p>]]></text>
+      </feedback>
+    </answer>
+  </question>
+
+  <!-- Q13 -->
+  <question type="ddwtos">
+    <name>
+      <text>Q13. Seleccion de columnas numericas y matriz de correlacion</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Complete el codigo para filtrar unicamente las columnas numericas y computar la matriz de correlacion de Pearson:</p>
+<pre><code>df_num = df.[[1]](include="number")
+corr_matrix = df_num.[[2]]()</code></pre>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>El metodo select_dtypes(include="number") descarta columnas categoricas (texto) y corr() calcula los coeficientes r de Pearson entre todas las variables numericas.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>true</shuffleanswers>
+    <dragbox>
+      <text><![CDATA[select_dtypes]]></text>
+      <group>1</group>
+    </dragbox>
+    <dragbox>
+      <text><![CDATA[corr]]></text>
+      <group>2</group>
+    </dragbox>
+    <dragbox>
+      <text><![CDATA[filter_dtypes]]></text>
+      <group>1</group>
+    </dragbox>
+    <dragbox>
+      <text><![CDATA[correlate]]></text>
+      <group>2</group>
+    </dragbox>
+    <dragbox>
+      <text><![CDATA[covariance]]></text>
+      <group>2</group>
+    </dragbox>
+  </question>
+
+  <!-- Q14 -->
+  <question type="multichoice">
+    <name>
+      <text>Q14. Variable con maxima correlacion lineal</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Considere la serie de correlaciones de Pearson con la variable objetivo <code>production_hours</code> ordenada de forma descendente:</p>
+<pre><code>num_frames_total     0.9782
+screen_time_ratio    0.9462
+num_states           0.9404
+fps                  0.9181
+has_special_fx       0.7623
+num_colors           0.6585
+color_contrast       0.2883
+avg_brightness      -0.5491</code></pre>
+<p>¿Cual variable presenta la correlacion mas alta con las horas de produccion y que interpretacion tiene su coeficiente \(r = 0.9782\)?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>num_frames_total presenta r = +0.9782. Un coeficiente proximo a +1.0 denota una relacion lineal positiva casi perfecta: la cantidad de fotogramas es el predictor individual dominante de la carga de trabajo.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<code>num_frames_total</code>; indica una relacion lineal positiva casi perfecta]]></text>
+      <feedback format="html">
+        <text><![CDATA[<p>Correcto. r = 0.9782 evidencia una asociacion lineal dominante.</p>]]></text>
+      </feedback>
+    </answer>
+    <answer fraction="-33.33333" format="html">
+      <text><![CDATA[<code>fps</code>; indica una relacion exponencial]]></text>
+      <feedback format="html">
+        <text><![CDATA[<p>Incorrecto. La correlacion de Pearson mide exclusivamente relaciones lineales.</p>]]></text>
+      </feedback>
+    </answer>
+    <answer fraction="-33.33333" format="html">
+      <text><![CDATA[<code>screen_time_ratio</code>; indica que el modelo comete un 94.62% de errores]]></text>
+      <feedback format="html">
+        <text><![CDATA[<p>Incorrecto. El coeficiente de correlacion no es una tasa de error.</p>]]></text>
+      </feedback>
+    </answer>
+    <answer fraction="-33.33333" format="html">
+      <text><![CDATA[<code>avg_brightness</code>; indica una correlacion espuria sin significado]]></text>
+      <feedback format="html">
+        <text><![CDATA[<p>Incorrecto. avg_brightness posee signo negativo y menor magnitud absoluta (0.5491).</p>]]></text>
+      </feedback>
+    </answer>
+  </question>
+
+  <!-- Q15 -->
+  <question type="multichoice">
+    <name>
+      <text>Q15. Interpretacion de correlacion negativa en avg_brightness</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>La variable <code>avg_brightness</code> presenta una correlacion negativa de \(r = -0.5491\) frente a <code>production_hours</code>. ¿Cual es el significado practico de este signo en el contexto artistico de la serie <em>Neon Skies</em>?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>Una correlacion negativa indica que a mayor valor de brillo promedio, menor cantidad de horas de produccion. Los personajes mas luminosos (tonos pastel y paletas claras) corresponden a personajes de soporte sencillos, mientras que personajes oscuros y ricamente sombreados demandan mas horas de arte.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+      <text><![CDATA[Personajes con paletas mas claras y brillantes tienden a requerir menos horas de produccion que personajes oscuros y densamente sombreados]]></text>
+      <feedback format="html">
+        <text><![CDATA[<p>Correcto. La relacion inversa refleja la simplicidad de coloreado de los personajes de soporte pastel.</p>]]></text>
+      </feedback>
+    </answer>
+    <answer fraction="-33.33333" format="html">
+      <text><![CDATA[Existe un error de calculo que invirtio los signos de la matriz de correlacion]]></text>
+      <feedback format="html">
+        <text><![CDATA[<p>Incorrecto. El signo negativo es consistente con los datos reales.</p>]]></text>
+      </feedback>
+    </answer>
+    <answer fraction="-33.33333" format="html">
+      <text><![CDATA[El brillo reduce fisicamente el tiempo de procesamiento de la GPU]]></text>
+      <feedback format="html">
+        <text><![CDATA[<p>Incorrecto. La variable mide horas de trabajo humano de los ilustradores.</p>]]></text>
+      </feedback>
+    </answer>
+    <answer fraction="-33.33333" format="html">
+      <text><![CDATA[No existe ninguna relacion detectable entre el color y el tiempo de animacion]]></text>
+      <feedback format="html">
+        <text><![CDATA[<p>Incorrecto. Un valor absoluto de 0.55 refleja una asociacion moderada considerable.</p>]]></text>
+      </feedback>
+    </answer>
+  </question>
+
+  <!-- Q16 -->
+  <question type="multichoice">
+    <name>
+      <text>Q16. Descarte de color_contrast por bajo coeficiente</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>¿Por que la variable <code>color_contrast</code> (\(r = 0.2883\)) es la primera candidata a ser descartada como caracteristica predictora para la regresion lineal?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>Un coeficiente de correlacion con valor absoluto inferior a 0.30 refleja una relacion lineal muy debil. Incluir variables con escasa senal incrementa la varianza del modelo y aporta principalmente ruido aleatorio.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+      <text><![CDATA[Porque su correlacion lineal es debil (< 0.30), aportando mayoritariamente ruido predictivo al modelo]]></text>
+      <feedback format="html">
+        <text><![CDATA[<p>Correcto. Variables con r < 0.30 explican muy poca varianza en modelos lineales.</p>]]></text>
+      </feedback>
+    </answer>
+    <answer fraction="-33.33333" format="html">
+      <text><![CDATA[Porque las variables con correlacion positiva no pueden utilizarse en Mínimos Cuadrados Ordinarios]]></text>
+      <feedback format="html">
+        <text><![CDATA[<p>Incorrecto. La regresion lineal admite tanto coeficientes positivos como negativos.</p>]]></text>
+      </feedback>
+    </answer>
+    <answer fraction="-33.33333" format="html">
+      <text><![CDATA[Porque es una variable cualitativa no numerica]]></text>
+      <feedback format="html">
+        <text><![CDATA[<p>Incorrecto. color_contrast es una variable continua de tipo float64.</p>]]></text>
+      </feedback>
+    </answer>
+    <answer fraction="-33.33333" format="html">
+      <text><![CDATA[Porque genera errores de division entre cero en la matriz inversa]]></text>
+      <feedback format="html">
+        <text><![CDATA[<p>Incorrecto. No genera divisiones por cero.</p>]]></text>
+      </feedback>
+    </answer>
+  </question>
+
+  <!-- Q17 -->
+  <question type="ddwtos">
+    <name>
+      <text>Q17. Codificacion One-Hot con get_dummies</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Complete la funcion de Pandas para aplicar codificacion One-Hot a la columna <code>role</code> evitando la trampa de la variable dummy:</p>
+<pre><code>df_encoded = pd.[[1]](df, columns=["role"], [[2]]=True)
+print(df_encoded.columns.tolist())</code></pre>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>pd.get_dummies() convierte variables categoricas en columnas binarias (indicadoras) y drop_first=True elimina la primera columna generada para evitar multicolinealidad perfecta.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>true</shuffleanswers>
+    <dragbox>
+      <text><![CDATA[get_dummies]]></text>
+      <group>1</group>
+    </dragbox>
+    <dragbox>
+      <text><![CDATA[drop_first]]></text>
+      <group>2</group>
+    </dragbox>
+    <dragbox>
+      <text><![CDATA[one_hot]]></text>
+      <group>1</group>
+    </dragbox>
+    <dragbox>
+      <text><![CDATA[to_dummies]]></text>
+      <group>1</group>
+    </dragbox>
+    <dragbox>
+      <text><![CDATA[remove_first]]></text>
+      <group>2</group>
+    </dragbox>
+    <dragbox>
+      <text><![CDATA[drop_reference]]></text>
+      <group>2</group>
+    </dragbox>
+  </question>
+
+  <!-- Q18 -->
+  <question type="multichoice">
+    <name>
+      <text>Q18. Justificacion teorica de drop_first en regresion</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>¿Cual es el proposito matematico estricto de utilizar <code>drop_first=True</code> al codificar variables categoricas para un modelo de regresion lineal?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>Si se incluyen las k columnas dummy mas el termino de intercepcion (columna de unos), la suma de las k columnas dummy es exactamente 1.0 para cada fila, provocando dependencia lineal exacta (multicolinealidad perfecta) y haciendo que la matriz (X^T X) sea singular y no invertible.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+      <text><![CDATA[Evitar la trampa de la variable dummy (multicolinealidad perfecta) para garantizar que la matriz \((\mathbf{X}^T \mathbf{X})\) sea invertible]]></text>
+      <feedback format="html">
+        <text><![CDATA[<p>Correcto. La colinealidad perfecta impide invertir la matriz en la Ecuacion Normal.</p>]]></text>
+      </feedback>
+    </answer>
+    <answer fraction="-33.33333" format="html">
+      <text><![CDATA[Reducir a la mitad el numero de filas del dataset para acelerar el procesamiento]]></text>
+      <feedback format="html">
+        <text><![CDATA[<p>Incorrecto. drop_first descarta columnas, no observaciones (filas).</p>]]></text>
+      </feedback>
+    </answer>
+    <answer fraction="-33.33333" format="html">
+      <text><![CDATA[Eliminar valores atipicos ubicados en la primera posicion de la muestra]]></text>
+      <feedback format="html">
+        <text><![CDATA[<p>Incorrecto. No tiene relacion con la deteccion de outliers.</p>]]></text>
+      </feedback>
+    </answer>
+    <answer fraction="-33.33333" format="html">
+      <text><![CDATA[Obligar al modelo a calcular coeficientes estrictamente positivos]]></text>
+      <feedback format="html">
+        <text><![CDATA[<p>Incorrecto. Los coeficientes pueden ser negativos respecto a la categoria de referencia.</p>]]></text>
+      </feedback>
+    </answer>
+  </question>
+
+  <!-- Q19 -->
+  <question type="multichoice">
+    <name>
+      <text>Q19. Cantidad de columnas generadas con drop_first</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Si la variable categorica original <code>role</code> posee 3 categorias unicas (<code>antagonist</code>, <code>protagonist</code> y <code>support</code>), ¿cuantas columnas binarias nuevas genera <code>pd.get_dummies(df, columns=["role"], drop_first=True)</code> y cual categoria opera como referencia base?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>Con k=3 categorias y drop_first=True se generan k - 1 = 2 columnas: role_protagonist y role_support. La categoria antagonist (primera en orden alfabetico) se omite y se representa cuando ambas columnas dummy valen 0.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+      <text><![CDATA[2 columnas (<code>role_protagonist</code> y <code>role_support</code>); <code>antagonist</code> opera como categoria base]]></text>
+      <feedback format="html">
+        <text><![CDATA[<p>Correcto. Se generan k-1 = 2 columnas binarias.</p>]]></text>
+      </feedback>
+    </answer>
+    <answer fraction="-33.33333" format="html">
+      <text><![CDATA[3 columnas (una para cada rol existente)]]></text>
+      <feedback format="html">
+        <text><![CDATA[<p>Incorrecto. Eso ocurre cuando drop_first=False.</p>]]></text>
+      </feedback>
+    </answer>
+    <answer fraction="-33.33333" format="html">
+      <text><![CDATA[1 columna con valores enteros 0, 1 y 2]]></text>
+      <feedback format="html">
+        <text><![CDATA[<p>Incorrecto. Eso corresponde a una codificacion ordinal, no a get_dummies.</p>]]></text>
+      </feedback>
+    </answer>
+    <answer fraction="-33.33333" format="html">
+      <text><![CDATA[6 columnas combinando pares de roles]]></text>
+      <feedback format="html">
+        <text><![CDATA[<p>Incorrecto. No se generan interacciones polinomiales.</p>]]></text>
+      </feedback>
+    </answer>
+  </question>
+
+  <!-- Q20 -->
+  <question type="ddwtos">
+    <name>
+      <text>Q20. Mapeo ordinal para variable jerarquica style</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Complete el mapeo ordinal que asigna numeros enteros crecientes segun la complejidad de renderizado del estilo artistico:</p>
+<pre><code>style_map = {"flat": 0, "cel_shaded": 1, "painted": 2}
+df["style_code"] = df["style"].[[1]]([[2]])</code></pre>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>El metodo map(diccionario) mapea cada valor de una Serie de Pandas al nuevo valor definido en el diccionario receptor.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>true</shuffleanswers>
+    <dragbox>
+      <text><![CDATA[map]]></text>
+      <group>1</group>
+    </dragbox>
+    <dragbox>
+      <text><![CDATA[style_map]]></text>
+      <group>2</group>
+    </dragbox>
+    <dragbox>
+      <text><![CDATA[apply]]></text>
+      <group>1</group>
+    </dragbox>
+    <dragbox>
+      <text><![CDATA[transform]]></text>
+      <group>1</group>
+    </dragbox>
+    <dragbox>
+      <text><![CDATA[dict_map]]></text>
+      <group>2</group>
+    </dragbox>
+  </question>
+
+  <!-- Q21 -->
+  <question type="multichoice">
+    <name>
+      <text>Q21. Valor de style_code para Lyra y Blaze</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Considerando el mapeo <code>{"flat": 0, "cel_shaded": 1, "painted": 2}</code>, ¿cuales son los valores enteros asignados en <code>style_code</code> para los personajes Lyra (estilo <code>cel_shaded</code>) y Blaze (estilo <code>painted</code>)?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>Lyra tiene estilo cel_shaded, por lo que su style_code es 1. Blaze tiene estilo painted, por lo que su style_code es 2.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+      <text><![CDATA[Lyra: 1 | Blaze: 2]]></text>
+      <feedback format="html">
+        <text><![CDATA[<p>Correcto. cel_shaded = 1 y painted = 2.</p>]]></text>
+      </feedback>
+    </answer>
+    <answer fraction="-33.33333" format="html">
+      <text><![CDATA[Lyra: 0 | Blaze: 1]]></text>
+      <feedback format="html">
+        <text><![CDATA[<p>Incorrecto. 0 corresponde a flat.</p>]]></text>
+      </feedback>
+    </answer>
+    <answer fraction="-33.33333" format="html">
+      <text><![CDATA[Lyra: 2 | Blaze: 0]]></text>
+      <feedback format="html">
+        <text><![CDATA[<p>Incorrecto. Verifique el orden en el diccionario de mapeo.</p>]]></text>
+      </feedback>
+    </answer>
+    <answer fraction="-33.33333" format="html">
+      <text><![CDATA[Ambos personajes reciben el codigo 1]]></text>
+      <feedback format="html">
+        <text><![CDATA[<p>Incorrecto. Tienen estilos de animacion distintos.</p>]]></text>
+      </feedback>
+    </answer>
+  </question>
+
+  <!-- Q22 -->
+  <question type="ddwtos">
+    <name>
+      <text>Q22. Filtrado por umbral de correlacion</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Complete la comprension de lista para seleccionar las caracteristicas predictoras con correlacion absoluta igual o superior a 0.60 frente al objetivo:</p>
+<pre><code>umbral = 0.60
+seleccionadas = [col for col in corr_target.index if [[1]](corr_target[col]) >= [[2]]]</code></pre>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>La funcion abs() evalua el valor absoluto asegurando que tanto correlaciones fuertemente positivas como negativas sean consideradas frente al umbral.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>true</shuffleanswers>
+    <dragbox>
+      <text><![CDATA[abs]]></text>
+      <group>1</group>
+    </dragbox>
+    <dragbox>
+      <text><![CDATA[umbral]]></text>
+      <group>2</group>
+    </dragbox>
+    <dragbox>
+      <text><![CDATA[val]]></text>
+      <group>1</group>
+    </dragbox>
+    <dragbox>
+      <text><![CDATA[norm]]></text>
+      <group>1</group>
+    </dragbox>
+    <dragbox>
+      <text><![CDATA[0.30]]></text>
+      <group>2</group>
+    </dragbox>
+    <dragbox>
+      <text><![CDATA[1.00]]></text>
+      <group>2</group>
+    </dragbox>
+  </question>
+
+  <!-- Q23 -->
+  <question type="multichoice">
+    <name>
+      <text>Q23. Dimensiones exactas de characters_features.csv</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Al construir el DataFrame de caracteristicas final <code>df_features</code> excluyendo variables no significativas y la redundancia de <code>num_colors</code>:</p>
+<pre><code>feature_cols = ["name", "num_frames_total", "screen_time_ratio", "num_states", "fps", "has_special_fx", "production_hours"]
+df_features = df[feature_cols].copy()
+print("Forma:", df_features.shape)</code></pre>
+<p>Indique las dimensiones del dataset exportado:</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>df_features contiene las 20 observaciones de los personajes y exactamente 7 columnas (el identificador name, 5 caracteristicas predictoras y el target production_hours).</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+      <text><![CDATA[(20, 7)]]></text>
+      <feedback format="html">
+        <text><![CDATA[<p>Correcto. 20 filas y 7 columnas.</p>]]></text>
+      </feedback>
+    </answer>
+    <answer fraction="-33.33333" format="html">
+      <text><![CDATA[(20, 12)]]></text>
+      <feedback format="html">
+        <text><![CDATA[<p>Incorrecto. 12 columnas correspondia al dataset completo original.</p>]]></text>
+      </feedback>
+    </answer>
+    <answer fraction="-33.33333" format="html">
+      <text><![CDATA[(16, 7)]]></text>
+      <feedback format="html">
+        <text><![CDATA[<p>Incorrecto. Las 20 filas se conservan en la exportacion (la particion 80/20 se realiza en la Parte 3).</p>]]></text>
+      </feedback>
+    </answer>
+    <answer fraction="-33.33333" format="html">
+      <text><![CDATA[(20, 5)]]></text>
+      <feedback format="html">
+        <text><![CDATA[<p>Incorrecto. 5 columnas corresponde unicamente a las variables predictoras sin contar name ni el target.</p>]]></text>
+      </feedback>
+    </answer>
+  </question>
+
+  <!-- Q24 -->
+  <question type="ddwtos">
+    <name>
+      <text>Q24. Exportacion a disco sin indice</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Complete la llamada para exportar el DataFrame a formato CSV sin incorporar una columna adicional de indice:</p>
+<pre><code>df_features.[[1]]("characters_features.csv", [[2]]=False)</code></pre>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>to_csv(ruta, index=False) serializa el DataFrame a disco omitiendo los indices numericos de fila generados por defecto por Pandas.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>true</shuffleanswers>
+    <dragbox>
+      <text><![CDATA[to_csv]]></text>
+      <group>1</group>
+    </dragbox>
+    <dragbox>
+      <text><![CDATA[index]]></text>
+      <group>2</group>
+    </dragbox>
+    <dragbox>
+      <text><![CDATA[save_csv]]></text>
+      <group>1</group>
+    </dragbox>
+    <dragbox>
+      <text><![CDATA[export_csv]]></text>
+      <group>1</group>
+    </dragbox>
+    <dragbox>
+      <text><![CDATA[header]]></text>
+      <group>2</group>
+    </dragbox>
+    <dragbox>
+      <text><![CDATA[sep]]></text>
+      <group>2</group>
+    </dragbox>
+  </question>
+
+  <!-- Q25 -->
+  <question type="truefalse">
+    <name>
+      <text>Q25. Razon metodologica de incluir la columna name</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Es una buena practica conservar la columna categorica <code>name</code> en el archivo de caracteristicas final <code>characters_features.csv</code>, ya que actua como identificador unico (ID) para rastrear personajes individualmente, diagnosticar residuos en graficos de dispersion y validar casos especificos de prueba (como el personaje Blaze o Nova).</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>La afirmacion es verdadera. Aunque no se introduce como numero en la ecuacion de regresion, el nombre permite etiquetar observaciones, realizar auditoria cualitativa y rastrear errores de prediccion en Machine Learning.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>1.0000000</penalty>
+    <hidden>0</hidden>
+    <answer fraction="100" format="html">
+      <text><![CDATA[Verdadero]]></text>
+      <feedback format="html">
+        <text><![CDATA[<p>Correcto. La columna name permite trazabilidad y diagnostico de modelos.</p>]]></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[Falso]]></text>
+      <feedback format="html">
+        <text><![CDATA[<p>Incorrecto. Conservar identificadores es esencial para diagnostico en aprendizaje supervisado.</p>]]></text>
+      </feedback>
+    </answer>
+  </question>
+
+</quiz>

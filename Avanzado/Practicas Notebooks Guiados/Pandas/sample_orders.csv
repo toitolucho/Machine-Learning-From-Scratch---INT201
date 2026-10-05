@@ -1,0 +1,14 @@
+order_id,team,channel,quantity,unit_price,delivery_days,satisfaction
+ORD-001,Sales,Web,2,19.5,3.0,8
+ORD-002,Support,Phone,1,45.0,7.0,6
+ORD-003,Operations,Store,5,12.0,2.0,9
+ORD-004,Sales,Web,3,22.0,,7
+ORD-005,Support,Web,2,18.0,5.0,5
+ORD-006,Sales,Phone,4,30.0,6.0,8
+ORD-007,Operations,Store,1,55.0,1.0,9
+ORD-008,Support,Phone,2,16.5,8.0,4
+ORD-009,Sales,Web,6,10.0,3.0,8
+ORD-010,Operations,Web,3,24.0,4.0,7
+ORD-011,Support,Store,1,400.0,9.0,3
+ORD-012,Sales,Phone,2,28.0,2.0,8
+ORD-002,Support,Phone,1,45.0,7.0,6

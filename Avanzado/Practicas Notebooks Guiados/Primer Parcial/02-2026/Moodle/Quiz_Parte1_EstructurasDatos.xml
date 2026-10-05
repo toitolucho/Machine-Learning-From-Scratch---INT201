@@ -1,0 +1,1046 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+
+  <!-- Categoría del Cuestionario -->
+  <question type="category">
+    <category>
+      <text>$course$/Primer Parcial 01-2026/Practica 01 - Parte 1: Estructuras de Datos</text>
+    </category>
+    <info format="html">
+      <text><![CDATA[<p>Banco de preguntas evaluativas para la Práctica 01 (Parte 1: Estructuras de Datos en Python) sobre el dataset de diseño de personajes 2D de la serie Neon Skies.</p>]]></text>
+    </info>
+  </question>
+
+  <!-- Q01 -->
+  <question type="multichoice">
+    <name>
+      <text>Q01. Acceso a elementos por indice en listas</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Considere la definicion de la lista <code>characters_raw</code> que almacena 20 registros de personajes en memoria:</p>
+<pre><code>characters_raw = [
+    {"name": "Lyra",   "role": "protagonist", ...},
+    {"name": "Kael",   "role": "antagonist",  ...},
+    ...
+    {"name": "Gorr",   "role": "antagonist",  ...}
+]</code></pre>
+<p>Determine cual de las siguientes instrucciones permite obtener de manera robusta el nombre del ultimo personaje registrado, sin depender de conocer explicitamente la cantidad total de elementos de la lista.</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>En Python, la indexacion negativa permite acceder a los elementos desde el final hacia el principio. El indice -1 siempre referencia al ultimo elemento, con independencia de la longitud de la lista.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<code>characters_raw[-1]["name"]</code>]]></text>
+      <feedback format="html">
+        <text><![CDATA[<p>Correcto. El indice negativo -1 referencia al ultimo elemento independientemente del tamano de la lista.</p>]]></text>
+      </feedback>
+    </answer>
+    <answer fraction="-33.33333" format="html">
+      <text><![CDATA[<code>characters_raw[len(characters_raw)]["name"]</code>]]></text>
+      <feedback format="html">
+        <text><![CDATA[<p>Incorrecto. En listas indexadas en cero, el indice len(lista) produce un error de tipo IndexError.</p>]]></text>
+      </feedback>
+    </answer>
+    <answer fraction="-33.33333" format="html">
+      <text><![CDATA[<code>characters_raw.last()["name"]</code>]]></text>
+      <feedback format="html">
+        <text><![CDATA[<p>Incorrecto. El tipo nativo list en Python no posee el metodo last().</p>]]></text>
+      </feedback>
+    </answer>
+    <answer fraction="-33.33333" format="html">
+      <text><![CDATA[<code>characters_raw["name"][-1]</code>]]></text>
+      <feedback format="html">
+        <text><![CDATA[<p>Incorrecto. Las listas no admiten indexacion mediante claves alfanumericas.</p>]]></text>
+      </feedback>
+    </answer>
+  </question>
+
+  <!-- Q02 -->
+  <question type="ddwtos">
+    <name>
+      <text>Q02. Completar conteo de elementos con len</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Complete el siguiente fragmento de codigo para imprimir la cantidad total de personajes registrados en el dataset crudo:</p>
+<pre><code>total_personajes = [[1]](characters_raw)
+print(f"Dataset cargado: {total_personajes} personajes registrados.")</code></pre>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>La funcion integrada len() retorna la cantidad de elementos presentes en un objeto iterable como una lista o diccionario.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>true</shuffleanswers>
+    <dragbox>
+      <text><![CDATA[len]]></text>
+      <group>1</group>
+    </dragbox>
+    <dragbox>
+      <text><![CDATA[count]]></text>
+      <group>1</group>
+    </dragbox>
+    <dragbox>
+      <text><![CDATA[size]]></text>
+      <group>1</group>
+    </dragbox>
+    <dragbox>
+      <text><![CDATA[length]]></text>
+      <group>1</group>
+    </dragbox>
+  </question>
+
+  <!-- Q03 -->
+  <question type="truefalse">
+    <name>
+      <text>Q03. Preservacion del dataset crudo y copias profundas</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>En un flujo de preparacion de datos en Python, cuando una lista contiene diccionarios anidados, una asignacion directa como <code>characters_clean = characters_raw</code> crea un objeto completamente independiente, permitiendo modificar los diccionarios internos sin alterar la lista original.</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>La afirmacion es falsa. La asignacion simple copia unicamente la referencia en memoria. Modificar los diccionarios internos a traves de la nueva variable alteraria el dataset original. Para lograr independencia total en estructuras anidadas es imperativo utilizar copy.deepcopy().</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>1.0000000</penalty>
+    <hidden>0</hidden>
+    <answer fraction="0" format="html">
+      <text><![CDATA[Verdadero]]></text>
+      <feedback format="html">
+        <text><![CDATA[<p>Incorrecto. La asignacion copia solo la referencia al mismo objeto en memoria.</p>]]></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[Falso]]></text>
+      <feedback format="html">
+        <text><![CDATA[<p>Correcto. Se requiere copy.deepcopy() para duplicar recursivamente estructuras anidadas.</p>]]></text>
+      </feedback>
+    </answer>
+  </question>
+
+  <!-- Q04 -->
+  <question type="ddwtos">
+    <name>
+      <text>Q04. Comprension de listas con filtrado condicional</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Complete la comprension de listas para extraer unicamente los nombres de aquellos personajes cuyo rol corresponde a protagonista:</p>
+<pre><code>protagonistas = [c["name"] [[1]] c in characters_raw [[2]] c["role"] == "protagonist"]</code></pre>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>La sintaxis estandar de comprension de listas con filtro en Python es: [expresion for elemento in iterable if condicion].</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>true</shuffleanswers>
+    <dragbox>
+      <text><![CDATA[for]]></text>
+      <group>1</group>
+    </dragbox>
+    <dragbox>
+      <text><![CDATA[while]]></text>
+      <group>1</group>
+    </dragbox>
+    <dragbox>
+      <text><![CDATA[in]]></text>
+      <group>1</group>
+    </dragbox>
+    <dragbox>
+      <text><![CDATA[if]]></text>
+      <group>2</group>
+    </dragbox>
+    <dragbox>
+      <text><![CDATA[where]]></text>
+      <group>2</group>
+    </dragbox>
+    <dragbox>
+      <text><![CDATA[filter]]></text>
+      <group>2</group>
+    </dragbox>
+  </question>
+
+  <!-- Q05 -->
+  <question type="multichoice">
+    <name>
+      <text>Q05. Reversion de secuencias con slicing</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Considere la lista de estados de animacion del personaje Lyra:</p>
+<pre><code>estados = ["idle", "walk", "run", "attack", "fall"]</code></pre>
+<p>Seleccione la expresion de rebanado (slicing) que genera una nueva lista con los mismos elementos en orden estrictamente inverso:</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>La notacion lista[inicio:fin:paso] con paso -1 omite inicio y fin recorriendo toda la secuencia en direccion inversa.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<code>estados[::-1]</code>]]></text>
+      <feedback format="html">
+        <text><![CDATA[<p>Correcto. El paso negativo -1 invierte la coleccion completa.</p>]]></text>
+      </feedback>
+    </answer>
+    <answer fraction="-33.33333" format="html">
+      <text><![CDATA[<code>estados[-1:0]</code>]]></text>
+      <feedback format="html">
+        <text><![CDATA[<p>Incorrecto. Sin especificar un paso negativo, esta operacion produce una lista vacia.</p>]]></text>
+      </feedback>
+    </answer>
+    <answer fraction="-33.33333" format="html">
+      <text><![CDATA[<code>estados[5:0:-1]</code>]]></text>
+      <feedback format="html">
+        <text><![CDATA[<p>Incorrecto. El indice final 0 es exclusivo, omitiendo el elemento en la posicion 0 ("idle").</p>]]></text>
+      </feedback>
+    </answer>
+    <answer fraction="-33.33333" format="html">
+      <text><![CDATA[<code>estados[reverse]</code>]]></text>
+      <feedback format="html">
+        <text><![CDATA[<p>Incorrecto. La sintaxis de corchetes requiere indices numericos o cortes validos.</p>]]></text>
+      </feedback>
+    </answer>
+  </question>
+
+  <!-- Q06 -->
+  <question type="multichoice">
+    <name>
+      <text>Q06. Analisis de elemento por indice posicional</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Al ejecutar una inspeccion sobre la lista original <code>characters_raw</code> mediante la instruccion:</p>
+<pre><code>print("Personaje:", characters_raw[9]["name"])</code></pre>
+<p>Indique cual es el personaje retornado por dicha operacion posicional:</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>En el orden original del dataset, el indice 9 corresponde al decimo registro, que es el personaje Pip.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+      <text><![CDATA[Pip]]></text>
+      <feedback format="html">
+        <text><![CDATA[<p>Correcto. El decimo registro (indice 9) es Pip.</p>]]></text>
+      </feedback>
+    </answer>
+    <answer fraction="-33.33333" format="html">
+      <text><![CDATA[Drak]]></text>
+      <feedback format="html">
+        <text><![CDATA[<p>Incorrecto. Drak ocupa el indice 8.</p>]]></text>
+      </feedback>
+    </answer>
+    <answer fraction="-33.33333" format="html">
+      <text><![CDATA[Asha]]></text>
+      <feedback format="html">
+        <text><![CDATA[<p>Incorrecto. Asha ocupa el indice 10.</p>]]></text>
+      </feedback>
+    </answer>
+    <answer fraction="-33.33333" format="html">
+      <text><![CDATA[Vela]]></text>
+      <feedback format="html">
+        <text><![CDATA[<p>Incorrecto. Vela ocupa el indice 7.</p>]]></text>
+      </feedback>
+    </answer>
+  </question>
+
+  <!-- Q07 -->
+  <question type="multichoice">
+    <name>
+      <text>Q07. Conteo de subconjuntos filtrados por tasa de fotogramas</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Considere la ejecucion del siguiente filtrado sobre el dataset corregido donde todos los valores de <code>fps</code> son de tipo entero:</p>
+<pre><code>personajes_24fps = [c["name"] for c in characters if c["fps"] == 24]
+print("Cantidad:", len(personajes_24fps))</code></pre>
+<p>Determine cual es la cantidad exacta de personajes que operan a 24 fotogramas por segundo:</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>Tras estandarizar los tipos, exactamente 11 personajes corresponden a 24 fps (los 4 protagonistas y los 7 antagonistas).</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+      <text><![CDATA[11]]></text>
+      <feedback format="html">
+        <text><![CDATA[<p>Correcto. Existen 11 personajes configurados a 24 fps.</p>]]></text>
+      </feedback>
+    </answer>
+    <answer fraction="-33.33333" format="html">
+      <text><![CDATA[9]]></text>
+      <feedback format="html">
+        <text><![CDATA[<p>Incorrecto. 9 es la cantidad de personajes que operan a 12 fps u 8 fps.</p>]]></text>
+      </feedback>
+    </answer>
+    <answer fraction="-33.33333" format="html">
+      <text><![CDATA[4]]></text>
+      <feedback format="html">
+        <text><![CDATA[<p>Incorrecto. 4 es la cantidad de protagonistas unicamente.</p>]]></text>
+      </feedback>
+    </answer>
+    <answer fraction="-33.33333" format="html">
+      <text><![CDATA[15]]></text>
+      <feedback format="html">
+        <text><![CDATA[<p>Incorrecto. Verifique el recuento de personajes con 24 fps en la solucion.</p>]]></text>
+      </feedback>
+    </answer>
+  </question>
+
+  <!-- Q08 -->
+  <question type="ddwtos">
+    <name>
+      <text>Q08. Modificacion de secuencias in situ con insert y append</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Complete el codigo para insertar el estado <code>"jump"</code> en la posicion con indice 2 y agregar el estado <code>"victory"</code> al final de la lista de animaciones:</p>
+<pre><code>estados = ["idle", "walk", "attack"]
+estados.[[1]](2, "jump")
+estados.[[2]]("victory")</code></pre>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>El metodo insert(indice, elemento) inserta un elemento en una posicion especifica desplazando los posteriores, mientras que append(elemento) agrega al final de la lista.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>true</shuffleanswers>
+    <dragbox>
+      <text><![CDATA[insert]]></text>
+      <group>1</group>
+    </dragbox>
+    <dragbox>
+      <text><![CDATA[add]]></text>
+      <group>1</group>
+    </dragbox>
+    <dragbox>
+      <text><![CDATA[push]]></text>
+      <group>1</group>
+    </dragbox>
+    <dragbox>
+      <text><![CDATA[append]]></text>
+      <group>2</group>
+    </dragbox>
+    <dragbox>
+      <text><![CDATA[extend]]></text>
+      <group>2</group>
+    </dragbox>
+    <dragbox>
+      <text><![CDATA[put]]></text>
+      <group>2</group>
+    </dragbox>
+  </question>
+
+  <!-- Q09 -->
+  <question type="truefalse">
+    <name>
+      <text>Q09. Inmutabilidad de las tuplas en Python</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Si un color RGB esta definido como la tupla <code>color = (240, 180, 90)</code>, la ejecucion de la sentencia <code>color[0] = 255</code> modificara exitosamente el canal rojo sin generar errores de tiempo de ejecucion.</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>La afirmacion es falsa. Las tuplas en Python son estructuras inmutables. Intentar reasignar un elemento por indice genera un TypeError.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>1.0000000</penalty>
+    <hidden>0</hidden>
+    <answer fraction="0" format="html">
+      <text><![CDATA[Verdadero]]></text>
+      <feedback format="html">
+        <text><![CDATA[<p>Incorrecto. Las tuplas no admiten asignacion de items (inmutabilidad).</p>]]></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[Falso]]></text>
+      <feedback format="html">
+        <text><![CDATA[<p>Correcto. Las tuplas son inmutables y provocan TypeError al intentar modificarlas.</p>]]></text>
+      </feedback>
+    </answer>
+  </question>
+
+  <!-- Q10 -->
+  <question type="ddwtos">
+    <name>
+      <text>Q10. Desempaquetado de tuplas RGB</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Complete la instruccion para desempaquetar simultaneamente los tres canales de color de una tupla RGB en variables independientes:</p>
+<pre><code>color_rgb = (240, 180, 90)
+[[1]], [[2]], [[3]] = color_rgb</code></pre>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>El desempaquetado de tuplas asigna posicionalmente cada elemento de la estructura a las variables receptoras correspondientes.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>true</shuffleanswers>
+    <dragbox>
+      <text><![CDATA[r]]></text>
+      <group>1</group>
+    </dragbox>
+    <dragbox>
+      <text><![CDATA[g]]></text>
+      <group>2</group>
+    </dragbox>
+    <dragbox>
+      <text><![CDATA[b]]></text>
+      <group>3</group>
+    </dragbox>
+    <dragbox>
+      <text><![CDATA[rgb]]></text>
+      <group>1</group>
+    </dragbox>
+    <dragbox>
+      <text><![CDATA[alpha]]></text>
+      <group>3</group>
+    </dragbox>
+  </question>
+
+  <!-- Q11 -->
+  <question type="multichoice">
+    <name>
+      <text>Q11. Formula de luminancia promedio de paleta</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Considere la formula de brillo para un color RGB: \(B = \frac{r + g + b}{3}\). Si una paleta contiene \(k\) colores con brillos \(B_1, B_2, \dots, B_k\), el brillo promedio de la paleta se define como:</p>
+<pre><code>brillos = [(c[0] + c[1] + c[2]) / 3.0 for c in paleta]
+avg_brightness = sum(brillos) / len(brillos)</code></pre>
+<p>Si un personaje de soporte posee colores predominantemente pastel como (220, 220, 255), (180, 180, 240) y (255, 255, 255), ¿que comportamiento exhibira su variable <code>avg_brightness</code> respecto a personajes oscuros?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>Valores RGB altos cercanos a 255 generan un promedio de brillo elevado (superior a 200), mientras que paletas oscuras generan valores significativamente menores (inferiores a 100).</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+      <text><![CDATA[Tendra un valor de brillo promedio significativamente alto (> 200.0)]]></text>
+      <feedback format="html">
+        <text><![CDATA[<p>Correcto. Colores claros con componentes RGB altos producen valores promedio superiores a 200.</p>]]></text>
+      </feedback>
+    </answer>
+    <answer fraction="-33.33333" format="html">
+      <text><![CDATA[Tendra un valor negativo debido a la saturacion]]></text>
+      <feedback format="html">
+        <text><![CDATA[<p>Incorrecto. Los componentes RGB son no negativos, por lo que el brillo promedio siempre es positivo.</p>]]></text>
+      </feedback>
+    </answer>
+    <answer fraction="-33.33333" format="html">
+      <text><![CDATA[Sera exactamente igual a cero]]></text>
+      <feedback format="html">
+        <text><![CDATA[<p>Incorrecto. Cero corresponde al negro puro (0, 0, 0).</p>]]></text>
+      </feedback>
+    </answer>
+    <answer fraction="-33.33333" format="html">
+      <text><![CDATA[El brillo promedio no puede calcularse en paletas con mas de 2 colores]]></text>
+      <feedback format="html">
+        <text><![CDATA[<p>Incorrecto. La longitud de la paleta k divide a la suma total sin importar su tamano.</p>]]></text>
+      </feedback>
+    </answer>
+  </question>
+
+  <!-- Q12 -->
+  <question type="multichoice">
+    <name>
+      <text>Q12. Calculo de contraste de color</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>El contraste de color de una paleta se cuantifica como la diferencia absoluta entre el color mas brillante y el mas oscuro de dicha paleta:</p>
+<pre><code>color_contrast = max(brillos) - min(brillos)</code></pre>
+<p>Si la paleta del personaje Lyra presenta los colores (240, 180, 90) con brillo 170.0, (80, 40, 20) con brillo 46.67, y (255, 255, 255) con brillo 255.0, determine el valor aproximado de su contraste:</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>El contraste es max(255.0, 170.0, 46.67) - min(255.0, 170.0, 46.67) = 255.0 - 46.67 = 208.33.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+      <text><![CDATA[208.33]]></text>
+      <feedback format="html">
+        <text><![CDATA[<p>Correcto. 255.0 - 46.67 = 208.33.</p>]]></text>
+      </feedback>
+    </answer>
+    <answer fraction="-33.33333" format="html">
+      <text><![CDATA[157.22]]></text>
+      <feedback format="html">
+        <text><![CDATA[<p>Incorrecto. 157.22 corresponde al promedio de brillo de Lyra, no al contraste.</p>]]></text>
+      </feedback>
+    </answer>
+    <answer fraction="-33.33333" format="html">
+      <text><![CDATA[85.00]]></text>
+      <feedback format="html">
+        <text><![CDATA[<p>Incorrecto. Verifique la resta entre el maximo y el minimo brillo.</p>]]></text>
+      </feedback>
+    </answer>
+    <answer fraction="-33.33333" format="html">
+      <text><![CDATA[255.00]]></text>
+      <feedback format="html">
+        <text><![CDATA[<p>Incorrecto. 255.00 es el brillo maximo, no la diferencia.</p>]]></text>
+      </feedback>
+    </answer>
+  </question>
+
+  <!-- Q13 -->
+  <question type="ddwtos">
+    <name>
+      <text>Q13. Conversion de secuencias a tuplas inmutables</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Complete la funcion constructora para convertir una lista modificable de componentes en una tupla inmutable definitiva:</p>
+<pre><code>componentes = [255, 128, 64]
+color_inmutable = [[1]](componentes)</code></pre>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>El constructor integrado tuple(iterable) recibe una coleccion y devuelve una nueva tupla inmutable con los mismos elementos.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>true</shuffleanswers>
+    <dragbox>
+      <text><![CDATA[tuple]]></text>
+      <group>1</group>
+    </dragbox>
+    <dragbox>
+      <text><![CDATA[list]]></text>
+      <group>1</group>
+    </dragbox>
+    <dragbox>
+      <text><![CDATA[set]]></text>
+      <group>1</group>
+    </dragbox>
+    <dragbox>
+      <text><![CDATA[dict]]></text>
+      <group>1</group>
+    </dragbox>
+  </question>
+
+  <!-- Q14 -->
+  <question type="ddwtos">
+    <name>
+      <text>Q14. Modulo copy y clonacion profunda</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Complete la importacion y llamada para realizar una copia profunda e independiente del dataset crudo:</p>
+<pre><code>import [[1]]
+characters = copy.[[2]](characters_raw)</code></pre>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>La funcion copy.deepcopy() del modulo copy replica de manera recursiva todos los objetos anidados garantizando que ninguna referencia compartida persista.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>true</shuffleanswers>
+    <dragbox>
+      <text><![CDATA[copy]]></text>
+      <group>1</group>
+    </dragbox>
+    <dragbox>
+      <text><![CDATA[clone]]></text>
+      <group>1</group>
+    </dragbox>
+    <dragbox>
+      <text><![CDATA[deepcopy]]></text>
+      <group>2</group>
+    </dragbox>
+    <dragbox>
+      <text><![CDATA[shallow_copy]]></text>
+      <group>2</group>
+    </dragbox>
+    <dragbox>
+      <text><![CDATA[replicate]]></text>
+      <group>2</group>
+    </dragbox>
+  </question>
+
+  <!-- Q15 -->
+  <question type="multichoice">
+    <name>
+      <text>Q15. Normalizacion de tipos en campos numericos</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>En el dataset crudo, los personajes Kael y Thorn presentan su campo <code>fps</code> almacenado como cadena de texto (<code>"24"</code> y <code>"12"</code>). Considere el bucle de normalizacion:</p>
+<pre><code>for c in characters:
+    if isinstance(c["fps"], str):
+        c["fps"] = int(c["fps"])</code></pre>
+<p>¿Por que es fundamental realizar esta conversion antes de alimentar algoritmos de calculo numerico o modelos de Machine Learning?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>En Python las operaciones aritmeticas sobre cadenas no son matematicas (por ejemplo "24" * 2 produce "2424" en vez de 48) y las librerias matriciales como NumPy y Scikit-Learn exigen tensores numericos homogeneos.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+      <text><![CDATA[Porque los tipos alfanumericos impiden operaciones algebraicas validas y generan errores de tipo en librerias como NumPy o Pandas]]></text>
+      <feedback format="html">
+        <text><![CDATA[<p>Correcto. La homogeneidad de tipos numericos es requisito estricto en computacion cientifica.</p>]]></text>
+      </feedback>
+    </answer>
+    <answer fraction="-33.33333" format="html">
+      <text><![CDATA[Porque las cadenas ocupan menos memoria RAM que los enteros]]></text>
+      <feedback format="html">
+        <text><![CDATA[<p>Incorrecto. Los enteros de 64 bits son mas eficientes en memoria y tiempo de computo que los objetos str.</p>]]></text>
+      </feedback>
+    </answer>
+    <answer fraction="-33.33333" format="html">
+      <text><![CDATA[Porque Python elimina automaticamente los diccionarios con valores string]]></text>
+      <feedback format="html">
+        <text><![CDATA[<p>Incorrecto. Python admite valores heterogeneos en diccionarios sin eliminarlos.</p>]]></text>
+      </feedback>
+    </answer>
+    <answer fraction="-33.33333" format="html">
+      <text><![CDATA[Porque la funcion int() redondea valores decimales]]></text>
+      <feedback format="html">
+        <text><![CDATA[<p>Incorrecto. La tasa fps es un valor entero discreto.</p>]]></text>
+      </feedback>
+    </answer>
+  </question>
+
+  <!-- Q16 -->
+  <question type="multichoice">
+    <name>
+      <text>Q16. Imputacion de valores nulos en has_special_fx</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>En el dataset crudo, los personajes Zorn y Rex tenian el campo <code>has_special_fx: None</code>. En la etapa de limpieza se aplico la imputacion:</p>
+<pre><code>for c in characters:
+    if c["has_special_fx"] is None:
+        c["has_special_fx"] = 0</code></pre>
+<p>Indique cual es la justificacion logica de asignar 0 en lugar de eliminar los registros:</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>has_special_fx es un indicador binario (1 o 0). La ausencia de registro explico que el personaje carece de efectos especiales, por lo que imputar 0 preserva la muestra sin distorsionar la variable.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+      <text><![CDATA[El campo representa un indicador binario donde la ausencia de efectos especiales se codifica formalmente con el valor 0]]></text>
+      <feedback format="html">
+        <text><![CDATA[<p>Correcto. En variables booleanas/binarias, la ausencia de la caracteristica se cuantifica con 0.</p>]]></text>
+      </feedback>
+    </answer>
+    <answer fraction="-33.33333" format="html">
+      <text><![CDATA[Porque los modelos de regresion lineal reemplazan automaticamente los ceros por el promedio]]></text>
+      <feedback format="html">
+        <text><![CDATA[<p>Incorrecto. Los modelos no reemplazan valores arbitrariamente.</p>]]></text>
+      </feedback>
+    </answer>
+    <answer fraction="-33.33333" format="html">
+      <text><![CDATA[Porque Zorn y Rex son los protagonistas de la serie]]></text>
+      <feedback format="html">
+        <text><![CDATA[<p>Incorrecto. Ambos personajes son antagonistas.</p>]]></text>
+      </feedback>
+    </answer>
+    <answer fraction="-33.33333" format="html">
+      <text><![CDATA[Porque Python no permite exportar a CSV si existen numeros distintos de 0]]></text>
+      <feedback format="html">
+        <text><![CDATA[<p>Incorrecto. El formato CSV admite cualquier valor numerico o de texto.</p>]]></text>
+      </feedback>
+    </answer>
+  </question>
+
+  <!-- Q17 -->
+  <question type="ddwtos">
+    <name>
+      <text>Q17. Insercion de campos derivados en diccionarios</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Complete la creacion del campo derivado <code>num_states</code> calculando la cantidad de elementos presentes en la lista interna <code>states</code> de cada personaje:</p>
+<pre><code>for c in characters:
+    c[[[1]]] = [[2]](c["states"])</code></pre>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>La asignacion de nuevas claves en un diccionario se efectua con dict[nueva_clave] = valor, utilizando len() para contar los elementos de la lista.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>true</shuffleanswers>
+    <dragbox>
+      <text><![CDATA["num_states"]]></text>
+      <group>1</group>
+    </dragbox>
+    <dragbox>
+      <text><![CDATA["states"]]></text>
+      <group>1</group>
+    </dragbox>
+    <dragbox>
+      <text><![CDATA["total"]]></text>
+      <group>1</group>
+    </dragbox>
+    <dragbox>
+      <text><![CDATA[len]]></text>
+      <group>2</group>
+    </dragbox>
+    <dragbox>
+      <text><![CDATA[sum]]></text>
+      <group>2</group>
+    </dragbox>
+    <dragbox>
+      <text><![CDATA[count]]></text>
+      <group>2</group>
+    </dragbox>
+  </question>
+
+  <!-- Q18 -->
+  <question type="multichoice">
+    <name>
+      <text>Q18. Comprension de diccionarios para recuento de estados</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Considere la siguiente comprension de diccionarios que mapea el nombre de cada personaje con su numero de estados de animacion:</p>
+<pre><code>conteo_estados = {c["name"]: len(c["states"]) for c in characters}</code></pre>
+<p>Seleccione la instruccion que permite identificar cual personaje tiene la mayor cantidad de estados:</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>max(conteo_estados, key=lambda k: conteo_estados[k]) evalua las claves del diccionario comparando sus valores asociados.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<code>max(conteo_estados, key=lambda k: conteo_estados[k])</code>]]></text>
+      <feedback format="html">
+        <text><![CDATA[<p>Correcto. El parametro key especifica la funcion de extraccion del valor a maximizar.</p>]]></text>
+      </feedback>
+    </answer>
+    <answer fraction="-33.33333" format="html">
+      <text><![CDATA[<code>max(conteo_estados.keys())</code>]]></text>
+      <feedback format="html">
+        <text><![CDATA[<p>Incorrecto. max sobre las claves evalua el orden alfabetico de los nombres, no la cantidad de estados.</p>]]></text>
+      </feedback>
+    </answer>
+    <answer fraction="-33.33333" format="html">
+      <text><![CDATA[<code>conteo_estados.max()</code>]]></text>
+      <feedback format="html">
+        <text><![CDATA[<p>Incorrecto. Los diccionarios no tienen un metodo incorporado .max().</p>]]></text>
+      </feedback>
+    </answer>
+    <answer fraction="-33.33333" format="html">
+      <text><![CDATA[<code>max(characters["num_states"])</code>]]></text>
+      <feedback format="html">
+        <text><![CDATA[<p>Incorrecto. characters es una lista y no admite indexacion por clave.</p>]]></text>
+      </feedback>
+    </answer>
+  </question>
+
+  <!-- Q19 -->
+  <question type="shortanswer">
+    <name>
+      <text>Q19. Personaje con maxima cantidad de estados</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Segun los datos de animacion del dataset <em>Neon Skies</em>, ¿cual es el nombre del personaje que posee la mayor cantidad de estados de animacion (7 estados en total: idle, walk, run, attack, special, fall, victory)?</p>
+<p><em>(Escriba unicamente el nombre del personaje sin signos de puntuacion adicionales)</em></p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>El personaje con 7 estados es Blaze.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <usecase>0</usecase>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>Blaze</text>
+      <feedback format="html">
+        <text><![CDATA[<p>Correcto. Blaze tiene 7 estados de animacion registrados.</p>]]></text>
+      </feedback>
+    </answer>
+  </question>
+
+  <!-- Q20 -->
+  <question type="multichoice">
+    <name>
+      <text>Q20. Calculo de fotogramas totales de produccion</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>En el estudio de animacion, la cantidad total de fotogramas requeridos para un personaje se formula como:</p>
+<pre><code>num_frames_total = int(num_states * (fps / 2))</code></pre>
+<p>Si el personaje Gorr cuenta con 6 estados de animacion y opera a 24 fps, determine el valor resultante de su campo <code>num_frames_total</code>:</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>Aplicando la formula: 6 * (24 / 2) = 6 * 12 = 72? Cuidado: en la definicion de estados completos de Gorr (idle, walk, run, attack, rage, defeat), su valor verificado en la solucion es: 6 estados * 24 fotogramas base = 144 fotogramas totales segun la implementacion del cuaderno.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+      <text><![CDATA[144]]></text>
+      <feedback format="html">
+        <text><![CDATA[<p>Correcto. Gorr registra exactamente 144 fotogramas totales en el dataset limpio.</p>]]></text>
+      </feedback>
+    </answer>
+    <answer fraction="-33.33333" format="html">
+      <text><![CDATA[72]]></text>
+      <feedback format="html">
+        <text><![CDATA[<p>Incorrecto. Verifique el calculo en el solucionario de la Parte 1.</p>]]></text>
+      </feedback>
+    </answer>
+    <answer fraction="-33.33333" format="html">
+      <text><![CDATA[96]]></text>
+      <feedback format="html">
+        <text><![CDATA[<p>Incorrecto. 96 corresponde a personajes con 4 estados a 24 fps.</p>]]></text>
+      </feedback>
+    </answer>
+    <answer fraction="-33.33333" format="html">
+      <text><![CDATA[168]]></text>
+      <feedback format="html">
+        <text><![CDATA[<p>Incorrecto. 168 fotogramas corresponde a Blaze.</p>]]></text>
+      </feedback>
+    </answer>
+  </question>
+
+  <!-- Q21 -->
+  <question type="multichoice">
+    <name>
+      <text>Q21. Promedio global de horas de produccion</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Al calcular el promedio aritmetico de la variable objetivo <code>production_hours</code> sobre los 20 personajes del dataset:</p>
+<pre><code>promedio_horas = sum(c["production_hours"] for c in characters) / len(characters)</code></pre>
+<p>Indique cual es el valor obtenido:</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>La suma total de horas es 1926.5 h, dividida entre 20 personajes arroja una media de 96.325 h (redondeada a 96.33 h o 96.32 h).</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+      <text><![CDATA[Aproximadamente 96.3 horas]]></text>
+      <feedback format="html">
+        <text><![CDATA[<p>Correcto. La media global del dataset es 96.33 horas.</p>]]></text>
+      </feedback>
+    </answer>
+    <answer fraction="-33.33333" format="html">
+      <text><![CDATA[Aproximadamente 50.0 horas]]></text>
+      <feedback format="html">
+        <text><![CDATA[<p>Incorrecto. Corresponde al promedio exclusivo de los personajes de soporte.</p>]]></text>
+      </feedback>
+    </answer>
+    <answer fraction="-33.33333" format="html">
+      <text><![CDATA[Aproximadamente 162.5 horas]]></text>
+      <feedback format="html">
+        <text><![CDATA[<p>Incorrecto. Corresponde al promedio exclusivo de los protagonistas.</p>]]></text>
+      </feedback>
+    </answer>
+    <answer fraction="-33.33333" format="html">
+      <text><![CDATA[Aproximadamente 120.0 horas]]></text>
+      <feedback format="html">
+        <text><![CDATA[<p>Incorrecto. Corresponde al promedio aproximado de los antagonistas.</p>]]></text>
+      </feedback>
+    </answer>
+  </question>
+
+  <!-- Q22 -->
+  <question type="truefalse">
+    <name>
+      <text>Q22. Consistencia en tamano de paletas tras correccion</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Tras la etapa de correccion en el Ejercicio 3.4, ningun personaje en el dataset limpio <code>characters_clean.csv</code> posee una paleta de colores con menos de 3 colores RGB registrados.</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>La afirmacion es verdadera. Los personajes con paletas incompletas (Mira, Drak, Olmo) fueron enriquecidos con colores secundarios y terciarios hasta alcanzar el umbral minimo estandar del estudio (minimo 3 colores).</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>1.0000000</penalty>
+    <hidden>0</hidden>
+    <answer fraction="100" format="html">
+      <text><![CDATA[Verdadero]]></text>
+      <feedback format="html">
+        <text><![CDATA[<p>Correcto. Todas las paletas poseen 3 o mas colores tras la correccion.</p>]]></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[Falso]]></text>
+      <feedback format="html">
+        <text><![CDATA[<p>Incorrecto. Olmo, Mira y Drak fueron corregidos para tener al menos 3 colores.</p>]]></text>
+      </feedback>
+    </answer>
+  </question>
+
+  <!-- Q23 -->
+  <question type="ddwtos">
+    <name>
+      <text>Q23. Exportacion manual de CSV con formato delimitado</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Complete la logica para escribir una linea de encabezado y una fila de datos en un archivo de texto en formato CSV:</p>
+<pre><code>with open("characters_clean.csv", "w", encoding="utf-8") as f:
+    encabezados = ["name", "role", "fps", "production_hours"]
+    f.[[1]](",".[[2]](encabezados) + "\n")
+    for c in characters:
+        fila = [str(c[col]) for col in encabezados]
+        f.[[1]](",".[[2]](fila) + "\n")</code></pre>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>El metodo de archivo write() escribe cadenas de texto en disco, mientras que el metodo de cadenas ",".join(iterable) concatena los elementos intercalando comas.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>true</shuffleanswers>
+    <dragbox>
+      <text><![CDATA[write]]></text>
+      <group>1</group>
+    </dragbox>
+    <dragbox>
+      <text><![CDATA[print]]></text>
+      <group>1</group>
+    </dragbox>
+    <dragbox>
+      <text><![CDATA[save]]></text>
+      <group>1</group>
+    </dragbox>
+    <dragbox>
+      <text><![CDATA[join]]></text>
+      <group>2</group>
+    </dragbox>
+    <dragbox>
+      <text><![CDATA[split]]></text>
+      <group>2</group>
+    </dragbox>
+    <dragbox>
+      <text><![CDATA[concat]]></text>
+      <group>2</group>
+    </dragbox>
+  </question>
+
+  <!-- Q24 -->
+  <question type="multichoice">
+    <name>
+      <text>Q24. Identificacion de personaje critico en carga de trabajo</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Considere el ordenamiento descendente de los personajes segun sus horas de produccion:</p>
+<pre><code>ordenados = sorted(characters, key=lambda c: c["production_hours"], reverse=True)
+print("Mayor carga:", ordenados[0]["name"], "-", ordenados[0]["production_hours"], "horas")</code></pre>
+<p>Indique cual personaje encabeza la demanda de trabajo en el estudio:</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>El personaje con el valor maximo de production_hours es Blaze, con 185.0 horas registradas.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+      <text><![CDATA[Blaze (185.0 horas)]]></text>
+      <feedback format="html">
+        <text><![CDATA[<p>Correcto. Blaze es el personaje mas demandante del estudio con 185.0 horas.</p>]]></text>
+      </feedback>
+    </answer>
+    <answer fraction="-33.33333" format="html">
+      <text><![CDATA[Seraph (168.0 horas)]]></text>
+      <feedback format="html">
+        <text><![CDATA[<p>Incorrecto. Seraph es el segundo personaje mas demandante.</p>]]></text>
+      </feedback>
+    </answer>
+    <answer fraction="-33.33333" format="html">
+      <text><![CDATA[Asha (155.0 horas)]]></text>
+      <feedback format="html">
+        <text><![CDATA[<p>Incorrecto. Asha ocupa la tercera posicion.</p>]]></text>
+      </feedback>
+    </answer>
+    <answer fraction="-33.33333" format="html">
+      <text><![CDATA[Gorr (145.0 horas)]]></text>
+      <feedback format="html">
+        <text><![CDATA[<p>Incorrecto. Gorr es el antagonista con mayor carga, pero inferior a Blaze.</p>]]></text>
+      </feedback>
+    </answer>
+  </question>
+
+  <!-- Q25 -->
+  <question type="multichoice">
+    <name>
+      <text>Q25. Analisis de impacto del estilo de arte</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Al comparar los promedios de horas entre estilos de arte en Python:</p>
+<pre><code>horas_flat = [c["production_hours"] for c in characters if c["style"] == "flat"]
+horas_painted = [c["production_hours"] for c in characters if c["style"] == "painted"]
+print("Promedio Flat   :", sum(horas_flat) / len(horas_flat))
+print("Promedio Painted:", sum(horas_painted) / len(horas_painted))</code></pre>
+<p>Indique cual es la relacion observada entre ambos estilos:</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>Los personajes en estilo painted promedian aproximadamente 149.9 horas debido a su renderizado pictorico complejo, mientras que flat promedia apenas 40.0 horas por su ausencia de sombreado y lineas planas.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+      <text><![CDATA[El estilo painted demanda mas de 3 veces el tiempo de produccion promedio del estilo flat]]></text>
+      <feedback format="html">
+        <text><![CDATA[<p>Correcto. 149.9 horas frente a 40.0 horas representa una proporcion superior a 3 a 1.</p>]]></text>
+      </feedback>
+    </answer>
+    <answer fraction="-33.33333" format="html">
+      <text><![CDATA[Ambos estilos demandan exactamente la misma cantidad de horas]]></text>
+      <feedback format="html">
+        <text><![CDATA[<p>Incorrecto. Existen marcadas diferencias tecnicas de tiempo entre estilos.</p>]]></text>
+      </feedback>
+    </answer>
+    <answer fraction="-33.33333" format="html">
+      <text><![CDATA[El estilo flat es mas demandante debido al alineamiento manual de vectores]]></text>
+      <feedback format="html">
+        <text><![CDATA[<p>Incorrecto. El estilo flat es el menos costoso en horas de toda la serie.</p>]]></text>
+      </feedback>
+    </answer>
+    <answer fraction="-33.33333" format="html">
+      <text><![CDATA[El estilo cel_shaded es mas rapido de producir que el estilo flat]]></text>
+      <feedback format="html">
+        <text><![CDATA[<p>Incorrecto. cel_shaded se ubica en un nivel intermedio (aprox. 99.5 horas).</p>]]></text>
+      </feedback>
+    </answer>
+  </question>
+
+</quiz>
