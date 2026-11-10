@@ -1,0 +1,1667 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+
+<!-- ============================================================ -->
+<!-- CATEGORY                                                      -->
+<!-- ============================================================ -->
+<question type="category">
+    <category><text>$course$/API - HTTP REST y FastAPI</text></category>
+    <info format="html"><text><![CDATA[Evaluación sobre protocolo HTTP, diseño de APIs REST y creación de servicios con FastAPI. 55 preguntas clasificadas por dificultad.]]></text></info>
+</question>
+
+<!-- ============================================================ -->
+<!-- Q01 - EASY - Conceptos de Servicios                           -->
+<!-- ============================================================ -->
+<question type="multichoice">
+    <name><text>Q01. [EASY] Protocolo para páginas web</text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p>¿Cuál es el protocolo que utilizan los navegadores web para solicitar páginas y recursos de un servidor?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p>HTTP (HyperText Transfer Protocol) es el protocolo estándar que permite la comunicación entre clientes (navegadores) y servidores web.</p>]]></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <correctfeedback format="html"><text><![CDATA[¡Correcto!]]></text></correctfeedback>
+    <incorrectfeedback format="html"><text><![CDATA[Incorrecto. HTTP es el protocolo para la web.]]></text></incorrectfeedback>
+    <answer fraction="100" format="html"><text><![CDATA[HTTP]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[SMTP]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[FTP]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[SSH]]></text></answer>
+    <tags>
+        <tag><text>Tema 1: Fundamentos HTTP y REST</text></tag>
+        <tag><text>Facil</text></tag>
+        <tag><text>Opcion Multiple</text></tag>
+    </tags>
+</question>
+
+<!-- ============================================================ -->
+<!-- Q02 - EASY - Servicios de Red                                 -->
+<!-- ============================================================ -->
+<question type="multichoice">
+    <name><text>Q02. [EASY] Servicio para enviar correos</text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p>¿Qué protocolo se utiliza para <strong>enviar</strong> correos electrónicos desde un cliente hacia un servidor de correo?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p>SMTP (Simple Mail Transfer Protocol) es el protocolo estándar para enviar correos electrónicos.</p>]]></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <correctfeedback format="html"><text><![CDATA[¡Correcto!]]></text></correctfeedback>
+    <incorrectfeedback format="html"><text><![CDATA[Incorrecto. SMTP es el protocolo para enviar correos.]]></text></incorrectfeedback>
+    <answer fraction="100" format="html"><text><![CDATA[SMTP]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[HTTP]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[FTP]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[DNS]]></text></answer>
+    <tags>
+        <tag><text>Tema 1: Fundamentos HTTP y REST</text></tag>
+        <tag><text>Facil</text></tag>
+        <tag><text>Opcion Multiple</text></tag>
+    </tags>
+</question>
+
+<!-- ============================================================ -->
+<!-- Q03 - EASY - Servicios de Red                                 -->
+<!-- ============================================================ -->
+<question type="multichoice">
+    <name><text>Q03. [EASY] Transferencia segura de archivos</text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p>Un administrador necesita transferir archivos de forma segura a un servidor remoto. ¿Qué protocolo debería utilizar?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p>SFTP (SSH File Transfer Protocol) permite transferir archivos de forma segura usando encriptación SSH.</p>]]></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <correctfeedback format="html"><text><![CDATA[¡Correcto!]]></text></correctfeedback>
+    <incorrectfeedback format="html"><text><![CDATA[Incorrecto. SFTP es la versión segura para transferir archivos.]]></text></incorrectfeedback>
+    <answer fraction="100" format="html"><text><![CDATA[SFTP]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[HTTP]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[SMTP]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[DNS]]></text></answer>
+    <tags>
+        <tag><text>Tema 1: Fundamentos HTTP y REST</text></tag>
+        <tag><text>Facil</text></tag>
+        <tag><text>Opcion Multiple</text></tag>
+    </tags>
+</question>
+
+<!-- ============================================================ -->
+<!-- Q04 - EASY - Modelo Cliente-Servidor                          -->
+<!-- ============================================================ -->
+<question type="multichoice">
+    <name><text>Q04. [EASY] Quién inicia la comunicación</text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p>En el modelo cliente-servidor de HTTP, ¿quién <strong>inicia</strong> siempre la comunicación?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p>En HTTP, el <strong>cliente</strong> (navegador, script, aplicación) siempre es quien inicia la comunicación enviando una solicitud (request) al servidor.</p>]]></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <correctfeedback format="html"><text><![CDATA[¡Correcto!]]></text></correctfeedback>
+    <incorrectfeedback format="html"><text><![CDATA[Incorrecto. En HTTP, siempre es el cliente quien inicia.]]></text></incorrectfeedback>
+    <answer fraction="100" format="html"><text><![CDATA[El cliente (navegador, script, UI)]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[El servidor]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[La base de datos]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[El router de red]]></text></answer>
+    <tags>
+        <tag><text>Tema 1: Fundamentos HTTP y REST</text></tag>
+        <tag><text>Facil</text></tag>
+        <tag><text>Opcion Multiple</text></tag>
+    </tags>
+</question>
+
+<!-- ============================================================ -->
+<!-- Q05 - EASY - HTTP Stateless                                   -->
+<!-- ============================================================ -->
+<question type="truefalse">
+    <name><text>Q05. [EASY] HTTP es stateless</text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p>HTTP es un protocolo <strong>stateless</strong> (sin estado): cada solicitud lleva toda la información que el servidor necesita; el servidor no guarda memoria entre llamadas.</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p>Verdadero. Cada request HTTP es independiente. El servidor no recuerda solicitudes anteriores.</p>]]></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>1</penalty>
+    <hidden>0</hidden>
+    <answer fraction="100" format="html"><text><![CDATA[true]]></text></answer>
+    <answer fraction="0" format="html"><text><![CDATA[false]]></text></answer>
+    <tags>
+        <tag><text>Tema 1: Fundamentos HTTP y REST</text></tag>
+        <tag><text>Facil</text></tag>
+        <tag><text>Verdadero o Falso</text></tag>
+    </tags>
+</question>
+
+<!-- ============================================================ -->
+<!-- Q06 - EASY - Partes del Request                               -->
+<!-- ============================================================ -->
+<question type="multichoice">
+    <name><text>Q06. [EASY] Partes de un HTTP Request</text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p>¿Cuáles son las partes principales de un HTTP Request?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p>Un HTTP Request tiene: <strong>Método</strong> (qué hacer), <strong>URL</strong> (qué recurso), <strong>Headers</strong> (metadatos como Content-Type) y <strong>Body</strong> (datos, ej. JSON).</p>]]></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <correctfeedback format="html"><text><![CDATA[¡Correcto!]]></text></correctfeedback>
+    <incorrectfeedback format="html"><text><![CDATA[Incorrecto. Las partes son: Método, URL, Headers y Body.]]></text></incorrectfeedback>
+    <answer fraction="100" format="html"><text><![CDATA[Método, URL, Headers y Body]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[Solo URL y Body]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[Protocolo, Puerto y DNS]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[IP, Puerto y Paquete]]></text></answer>
+    <tags>
+        <tag><text>Tema 1: Fundamentos HTTP y REST</text></tag>
+        <tag><text>Facil</text></tag>
+        <tag><text>Opcion Multiple</text></tag>
+    </tags>
+</question>
+
+<!-- ============================================================ -->
+<!-- Q07 - EASY - Método GET                                       -->
+<!-- ============================================================ -->
+<question type="multichoice">
+    <name><text>Q07. [EASY] Propósito del método GET</text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p>¿Cuál es el propósito del método HTTP <code>GET</code>?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p>GET se usa para <strong>leer</strong> (obtener) un recurso del servidor. Es un método seguro porque no modifica datos.</p>]]></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <correctfeedback format="html"><text><![CDATA[¡Correcto!]]></text></correctfeedback>
+    <incorrectfeedback format="html"><text><![CDATA[Incorrecto. GET es para leer/obtener datos.]]></text></incorrectfeedback>
+    <answer fraction="100" format="html"><text><![CDATA[Leer / obtener un recurso]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[Crear un nuevo recurso]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[Eliminar un recurso]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[Actualizar completamente un recurso]]></text></answer>
+    <tags>
+        <tag><text>Tema 1: Fundamentos HTTP y REST</text></tag>
+        <tag><text>Facil</text></tag>
+        <tag><text>Opcion Multiple</text></tag>
+    </tags>
+</question>
+
+<!-- ============================================================ -->
+<!-- Q08 - EASY - Método POST                                      -->
+<!-- ============================================================ -->
+<question type="multichoice">
+    <name><text>Q08. [EASY] Método para enviar datos de predicción</text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p>Para enviar datos al servidor (por ejemplo, las características de un modelo ML para obtener una predicción), ¿qué método HTTP se usa normalmente?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p>POST se usa para enviar datos al servidor. En ML, las predicciones usan POST porque los features viajan en el body, no en la URL.</p>]]></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <correctfeedback format="html"><text><![CDATA[¡Correcto!]]></text></correctfeedback>
+    <incorrectfeedback format="html"><text><![CDATA[Incorrecto. POST es el método para enviar datos.]]></text></incorrectfeedback>
+    <answer fraction="100" format="html"><text><![CDATA[POST]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[GET]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[DELETE]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[OPTIONS]]></text></answer>
+    <tags>
+        <tag><text>Tema 1: Fundamentos HTTP y REST</text></tag>
+        <tag><text>Facil</text></tag>
+        <tag><text>Opcion Multiple</text></tag>
+    </tags>
+</question>
+
+<!-- ============================================================ -->
+<!-- Q09 - EASY - Status Code 200                                  -->
+<!-- ============================================================ -->
+<question type="multichoice">
+    <name><text>Q09. [EASY] Significado de Status Code 200</text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p>Cuando un servidor responde con el código de estado <code>200</code>, ¿qué significa?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p>200 OK significa que la solicitud fue procesada con éxito.</p>]]></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <correctfeedback format="html"><text><![CDATA[¡Correcto!]]></text></correctfeedback>
+    <incorrectfeedback format="html"><text><![CDATA[Incorrecto. 200 = éxito (OK).]]></text></incorrectfeedback>
+    <answer fraction="100" format="html"><text><![CDATA[Éxito - la solicitud fue procesada correctamente (OK)]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[El recurso no fue encontrado]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[Error interno del servidor]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[Redirección a otra URL]]></text></answer>
+    <tags>
+        <tag><text>Tema 1: Fundamentos HTTP y REST</text></tag>
+        <tag><text>Facil</text></tag>
+        <tag><text>Opcion Multiple</text></tag>
+    </tags>
+</question>
+
+<!-- ============================================================ -->
+<!-- Q10 - EASY - Status Code 404                                  -->
+<!-- ============================================================ -->
+<question type="multichoice">
+    <name><text>Q10. [EASY] Status Code 404</text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p>Si haces un request a <code>GET /api/v2/pokemon/not-a-real-pokemon</code> y recibes código <code>404</code>, ¿qué significa?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p>404 Not Found significa que el recurso solicitado no existe en el servidor.</p>]]></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <correctfeedback format="html"><text><![CDATA[¡Correcto!]]></text></correctfeedback>
+    <incorrectfeedback format="html"><text><![CDATA[Incorrecto. 404 = recurso no encontrado.]]></text></incorrectfeedback>
+    <answer fraction="100" format="html"><text><![CDATA[El recurso no fue encontrado (Not Found)]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[Error interno del servidor]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[El request fue exitoso]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[No tienes permisos para acceder]]></text></answer>
+    <tags>
+        <tag><text>Tema 1: Fundamentos HTTP y REST</text></tag>
+        <tag><text>Facil</text></tag>
+        <tag><text>Opcion Multiple</text></tag>
+    </tags>
+</question>
+
+<!-- ============================================================ -->
+<!-- Q11 - EASY - JSON                                             -->
+<!-- ============================================================ -->
+<question type="multichoice">
+    <name><text>Q11. [EASY] Formato de datos en APIs</text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p>¿Cuál es el formato de datos más común que se utiliza en el body de las solicitudes y respuestas de APIs modernas?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p>JSON (JavaScript Object Notation) es el formato estándar de intercambio de datos en APIs REST.</p>]]></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <correctfeedback format="html"><text><![CDATA[¡Correcto!]]></text></correctfeedback>
+    <incorrectfeedback format="html"><text><![CDATA[Incorrecto. JSON es el formato estándar en APIs REST.]]></text></incorrectfeedback>
+    <answer fraction="100" format="html"><text><![CDATA[JSON]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[CSV]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[HTML]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[TXT]]></text></answer>
+    <tags>
+        <tag><text>Tema 1: Fundamentos HTTP y REST</text></tag>
+        <tag><text>Facil</text></tag>
+        <tag><text>Opcion Multiple</text></tag>
+    </tags>
+</question>
+
+<!-- ============================================================ -->
+<!-- Q12 - EASY - Rango de Status Codes                            -->
+<!-- ============================================================ -->
+<question type="multichoice">
+    <name><text>Q12. [EASY] Rango 5xx</text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p>Los códigos de estado HTTP en el rango <code>5xx</code> indican:</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p>5xx = Error del servidor. Significa que el servidor falló al procesar la solicitud (ejemplo: 500 Internal Server Error).</p>]]></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <correctfeedback format="html"><text><![CDATA[¡Correcto!]]></text></correctfeedback>
+    <incorrectfeedback format="html"><text><![CDATA[Incorrecto. 5xx = error del servidor.]]></text></incorrectfeedback>
+    <answer fraction="100" format="html"><text><![CDATA[Error del servidor]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[Éxito]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[Error del cliente]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[Redirección]]></text></answer>
+    <tags>
+        <tag><text>Tema 1: Fundamentos HTTP y REST</text></tag>
+        <tag><text>Facil</text></tag>
+        <tag><text>Opcion Multiple</text></tag>
+    </tags>
+</question>
+
+<!-- ============================================================ -->
+<!-- Q13 - EASY - Content-Type header                              -->
+<!-- ============================================================ -->
+<question type="multichoice">
+    <name><text>Q13. [EASY] Header Content-Type</text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p>Cuando enviamos datos JSON en un POST request, ¿qué valor debe tener el header <code>Content-Type</code>?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p>Content-Type: application/json le indica al servidor que el body contiene datos en formato JSON.</p>]]></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <correctfeedback format="html"><text><![CDATA[¡Correcto!]]></text></correctfeedback>
+    <incorrectfeedback format="html"><text><![CDATA[Incorrecto. Para JSON se usa application/json.]]></text></incorrectfeedback>
+    <answer fraction="100" format="html"><text><![CDATA[application/json]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[text/html]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[text/plain]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[application/xml]]></text></answer>
+    <tags>
+        <tag><text>Tema 1: Fundamentos HTTP y REST</text></tag>
+        <tag><text>Facil</text></tag>
+        <tag><text>Opcion Multiple</text></tag>
+    </tags>
+</question>
+
+<!-- ============================================================ -->
+<!-- Q14 - EASY - Código de primer GET (completar)                 -->
+<!-- ============================================================ -->
+<question type="ddwtos">
+    <name><text>Q14. [EASY] Completar código GET request</text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p>Completa el siguiente código para hacer un GET request y obtener los datos de Pikachu:</p>
+<pre>
+import requests
+
+url = "https://pokeapi.co/api/v2/pokemon/pikachu"
+response = requests.[[1]](url, timeout=10)
+
+print(response.[[2]])   # ver el código de estado
+</pre>]]></text>
+    </questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p>Se usa <code>requests.get(url)</code> para hacer un GET request, y <code>response.status_code</code> para ver el código de estado (200, 404, etc.).</p>]]></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>true</shuffleanswers>
+    <dragbox><text><![CDATA[get]]></text><group>1</group></dragbox>
+    <dragbox><text><![CDATA[status_code]]></text><group>1</group></dragbox>
+    <dragbox><text><![CDATA[post]]></text><group>1</group></dragbox>
+    <dragbox><text><![CDATA[headers]]></text><group>1</group></dragbox>
+    <dragbox><text><![CDATA[send]]></text><group>1</group></dragbox>
+    <tags>
+        <tag><text>Tema 1: Fundamentos HTTP y REST</text></tag>
+        <tag><text>Facil</text></tag>
+        <tag><text>Arrastrar y Soltar</text></tag>
+    </tags>
+</question>
+
+<!-- ============================================================ -->
+<!-- Q15 - EASY - response.json()                                  -->
+<!-- ============================================================ -->
+<question type="multichoice">
+    <name><text>Q15. [EASY] Convertir respuesta a diccionario Python</text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p>Después de hacer un request con la librería <code>requests</code>, ¿qué método usas para convertir el body JSON de la respuesta en un diccionario de Python?</p>
+<pre>
+response = requests.get(url)
+data = response.______()
+</pre>]]></text>
+    </questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p><code>response.json()</code> convierte el body JSON en un diccionario (dict) o lista de Python.</p>]]></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <correctfeedback format="html"><text><![CDATA[¡Correcto!]]></text></correctfeedback>
+    <incorrectfeedback format="html"><text><![CDATA[Incorrecto. Se usa response.json().]]></text></incorrectfeedback>
+    <answer fraction="100" format="html"><text><![CDATA[response.json()]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[response.text()]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[response.read()]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[response.decode()]]></text></answer>
+    <tags>
+        <tag><text>Tema 1: Fundamentos HTTP y REST</text></tag>
+        <tag><text>Facil</text></tag>
+        <tag><text>Opcion Multiple</text></tag>
+    </tags>
+</question>
+
+<!-- ============================================================ -->
+<!-- Q16 - INTERMEDIATE - Partes de una URL                        -->
+<!-- ============================================================ -->
+<question type="ddwtos">
+    <name><text>Q16. [INTERMEDIATE] Partes de una URL</text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p>En la URL <code>https://api.bank.com/v1/models/7/predict?round=2</code>, identifica las partes:</p>
+<ul>
+<li>El <strong>esquema (scheme)</strong> es: [[1]]</li>
+<li>El <strong>host</strong> es: [[2]]</li>
+<li>El <strong>query parameter</strong> es: [[3]]</li>
+</ul>]]></text>
+    </questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p>En una URL: el scheme es el protocolo (https), el host es el dominio (api.bank.com), y los query parameters van después del signo ? (round=2).</p>]]></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>true</shuffleanswers>
+    <dragbox><text><![CDATA[https]]></text><group>1</group></dragbox>
+    <dragbox><text><![CDATA[api.bank.com]]></text><group>1</group></dragbox>
+    <dragbox><text><![CDATA[round=2]]></text><group>1</group></dragbox>
+    <dragbox><text><![CDATA[http]]></text><group>1</group></dragbox>
+    <dragbox><text><![CDATA[/v1/models]]></text><group>1</group></dragbox>
+    <dragbox><text><![CDATA[models/7]]></text><group>1</group></dragbox>
+    <tags>
+        <tag><text>Tema 2: Principios de Diseno de APIs</text></tag>
+        <tag><text>Intermedio</text></tag>
+        <tag><text>Arrastrar y Soltar</text></tag>
+    </tags>
+</question>
+
+<!-- ============================================================ -->
+<!-- Q17 - INTERMEDIATE - REST nombres correctos                   -->
+<!-- ============================================================ -->
+<question type="multichoice">
+    <name><text>Q17. [INTERMEDIATE] Nombres REST correctos</text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p>Según las buenas prácticas de REST, ¿cuál de las siguientes rutas está <strong>correctamente</strong> diseñada?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p>En REST se usan <strong>sustantivos plurales</strong> en las URLs y se deja que el método HTTP sea el verbo. <code>GET /models</code> es correcto. Los verbos en URLs como "getAllModels" o "createPrediction" son incorrectos.</p>]]></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <correctfeedback format="html"><text><![CDATA[¡Correcto!]]></text></correctfeedback>
+    <incorrectfeedback format="html"><text><![CDATA[Incorrecto. En REST se usan sustantivos plurales, no verbos.]]></text></incorrectfeedback>
+    <answer fraction="100" format="html"><text><![CDATA[GET /models]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[GET /getAllModels]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[POST /createPrediction]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[GET /deleteModel?id=7]]></text></answer>
+    <tags>
+        <tag><text>Tema 2: Principios de Diseno de APIs</text></tag>
+        <tag><text>Intermedio</text></tag>
+        <tag><text>Opcion Multiple</text></tag>
+    </tags>
+</question>
+
+<!-- ============================================================ -->
+<!-- Q18 - INTERMEDIATE - DELETE correcto                          -->
+<!-- ============================================================ -->
+<question type="multichoice">
+    <name><text>Q18. [INTERMEDIATE] Eliminar un recurso en REST</text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p>Para eliminar el modelo con id 7 de nuestro API, ¿cuál es la forma correcta según REST?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p>En REST: <code>DELETE /models/7</code>. El método HTTP (DELETE) indica la acción; la URL identifica el recurso.</p>]]></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <correctfeedback format="html"><text><![CDATA[¡Correcto!]]></text></correctfeedback>
+    <incorrectfeedback format="html"><text><![CDATA[Incorrecto. Se usa DELETE /models/7 en REST.]]></text></incorrectfeedback>
+    <answer fraction="100" format="html"><text><![CDATA[DELETE /models/7]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[GET /deleteModel?id=7]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[POST /models/7/delete]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[GET /models/7/remove]]></text></answer>
+    <tags>
+        <tag><text>Tema 2: Principios de Diseno de APIs</text></tag>
+        <tag><text>Intermedio</text></tag>
+        <tag><text>Opcion Multiple</text></tag>
+    </tags>
+</question>
+
+<!-- ============================================================ -->
+<!-- Q19 - INTERMEDIATE - CRUD mapping                             -->
+<!-- ============================================================ -->
+<question type="ddwtos">
+    <name><text>Q19. [INTERMEDIATE] CRUD y métodos HTTP</text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p>Relaciona cada operación CRUD con su método HTTP:</p>
+<ul>
+<li><strong>Leer</strong> un recurso: [[1]]</li>
+<li><strong>Crear</strong> un recurso: [[2]]</li>
+<li><strong>Eliminar</strong> un recurso: [[3]]</li>
+</ul>]]></text>
+    </questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p>GET = Leer, POST = Crear, DELETE = Eliminar. PUT = Reemplazar, PATCH = Actualizar parcialmente.</p>]]></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>true</shuffleanswers>
+    <dragbox><text><![CDATA[GET]]></text><group>1</group></dragbox>
+    <dragbox><text><![CDATA[POST]]></text><group>1</group></dragbox>
+    <dragbox><text><![CDATA[DELETE]]></text><group>1</group></dragbox>
+    <dragbox><text><![CDATA[PATCH]]></text><group>1</group></dragbox>
+    <dragbox><text><![CDATA[PUT]]></text><group>1</group></dragbox>
+    <tags>
+        <tag><text>Tema 1: Fundamentos HTTP y REST</text></tag>
+        <tag><text>Intermedio</text></tag>
+        <tag><text>Arrastrar y Soltar</text></tag>
+    </tags>
+</question>
+
+<!-- ============================================================ -->
+<!-- Q20 - INTERMEDIATE - Status Code 422                          -->
+<!-- ============================================================ -->
+<question type="multichoice">
+    <name><text>Q20. [INTERMEDIATE] Significado de 422</text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p>Enviamos el siguiente JSON a nuestro API de predicción, pero recibimos <code>422</code>:</p>
+<pre>{"attack": "high", "defense": 40, "speed": 90}</pre>
+<p>¿Qué significa el código 422?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p>422 Unprocessable Entity significa que el JSON es válido pero los campos tienen tipos incorrectos. "high" es texto, pero attack espera un número.</p>]]></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <correctfeedback format="html"><text><![CDATA[¡Correcto!]]></text></correctfeedback>
+    <incorrectfeedback format="html"><text><![CDATA[Incorrecto. 422 = JSON válido pero con campos incorrectos.]]></text></incorrectfeedback>
+    <answer fraction="100" format="html"><text><![CDATA[El JSON es válido pero los campos tienen tipos incorrectos (texto en vez de número)]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[El servidor se cayó]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[El recurso no existe]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[No tienes permiso para acceder]]></text></answer>
+    <tags>
+        <tag><text>Tema 2: Principios de Diseno de APIs</text></tag>
+        <tag><text>Intermedio</text></tag>
+        <tag><text>Opcion Multiple</text></tag>
+    </tags>
+</question>
+
+<!-- ============================================================ -->
+<!-- Q21 - INTERMEDIATE - POST request código                      -->
+<!-- ============================================================ -->
+<question type="ddwtos">
+    <name><text>Q21. [INTERMEDIATE] Completar POST request</text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p>Completa el código para enviar datos de predicción al servidor:</p>
+<pre>
+import requests
+
+url = "http://127.0.0.1:8000/predict"
+payload = {"square_feet": 1850, "bedrooms": 3}
+
+response = requests.[[1]](url, [[2]]=payload, timeout=10)
+print(response.status_code)
+print(response.[[3]]())
+</pre>]]></text>
+    </questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p>Para enviar datos JSON: <code>requests.post(url, json=payload)</code>. Para leer la respuesta: <code>response.json()</code>.</p>]]></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>true</shuffleanswers>
+    <dragbox><text><![CDATA[post]]></text><group>1</group></dragbox>
+    <dragbox><text><![CDATA[json]]></text><group>1</group></dragbox>
+    <dragbox><text><![CDATA[json]]></text><group>1</group></dragbox>
+    <dragbox><text><![CDATA[get]]></text><group>1</group></dragbox>
+    <dragbox><text><![CDATA[data]]></text><group>1</group></dragbox>
+    <dragbox><text><![CDATA[text]]></text><group>1</group></dragbox>
+    <tags>
+        <tag><text>Tema 1: Fundamentos HTTP y REST</text></tag>
+        <tag><text>Intermedio</text></tag>
+        <tag><text>Arrastrar y Soltar</text></tag>
+    </tags>
+</question>
+
+<!-- ============================================================ -->
+<!-- Q22 - EASY - Qué es un servidor                               -->
+<!-- ============================================================ -->
+<question type="multichoice">
+    <name><text>Q22. [EASY] Qué es un servidor</text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p>¿Qué es un "servidor" en el contexto de sistemas computacionales?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p>Un servidor es un programa (o computadora) que está escuchando solicitudes de los clientes y les envía respuestas. Puede ser software corriendo en cualquier computadora.</p>]]></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <correctfeedback format="html"><text><![CDATA[¡Correcto!]]></text></correctfeedback>
+    <incorrectfeedback format="html"><text><![CDATA[Incorrecto.]]></text></incorrectfeedback>
+    <answer fraction="100" format="html"><text><![CDATA[Un programa que escucha solicitudes de clientes y les envía respuestas]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[Solo una computadora grande y costosa]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[Un tipo especial de navegador web]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[Un cable de red que conecta computadoras]]></text></answer>
+    <tags>
+        <tag><text>Tema 1: Fundamentos HTTP y REST</text></tag>
+        <tag><text>Facil</text></tag>
+        <tag><text>Opcion Multiple</text></tag>
+    </tags>
+</question>
+
+<!-- ============================================================ -->
+<!-- Q23 - EASY - Qué es un API                                    -->
+<!-- ============================================================ -->
+<question type="multichoice">
+    <name><text>Q23. [EASY] Definición de API</text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p>¿Qué significa API y para qué sirve?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p>API = Application Programming Interface. Es un contrato que define cómo dos programas pueden comunicarse entre sí.</p>]]></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <correctfeedback format="html"><text><![CDATA[¡Correcto!]]></text></correctfeedback>
+    <incorrectfeedback format="html"><text><![CDATA[Incorrecto.]]></text></incorrectfeedback>
+    <answer fraction="100" format="html"><text><![CDATA[Application Programming Interface: un contrato que define cómo dos programas se comunican]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[Advanced Python Interface: una herramienta para programar en Python]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[Automatic Page Installer: un programa que instala páginas web]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[Access Point Identifier: una dirección de red]]></text></answer>
+    <tags>
+        <tag><text>Tema 2: Principios de Diseno de APIs</text></tag>
+        <tag><text>Facil</text></tag>
+        <tag><text>Opcion Multiple</text></tag>
+    </tags>
+</question>
+
+<!-- ============================================================ -->
+<!-- Q24 - INTERMEDIATE - Qué es FastAPI                           -->
+<!-- ============================================================ -->
+<question type="multichoice">
+    <name><text>Q24. [INTERMEDIATE] Qué hace FastAPI</text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p>¿Cuál es la mejor descripción de lo que hace FastAPI?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p>FastAPI convierte funciones de Python ordinarias en endpoints web. Usa type hints para validar datos automáticamente y genera documentación gratis.</p>]]></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <correctfeedback format="html"><text><![CDATA[¡Correcto!]]></text></correctfeedback>
+    <incorrectfeedback format="html"><text><![CDATA[Incorrecto.]]></text></incorrectfeedback>
+    <answer fraction="100" format="html"><text><![CDATA[Convierte funciones de Python en endpoints web con validación automática y documentación gratuita]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[Es un navegador web especializado para APIs]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[Es una base de datos NoSQL para aplicaciones web]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[Es un protocolo de red alternativo a HTTP]]></text></answer>
+    <tags>
+        <tag><text>Tema 3: FastAPI Web Framework</text></tag>
+        <tag><text>Intermedio</text></tag>
+        <tag><text>Opcion Multiple</text></tag>
+    </tags>
+</question>
+
+<!-- ============================================================ -->
+<!-- Q25 - INTERMEDIATE - FastAPI Hello World                      -->
+<!-- ============================================================ -->
+<question type="ddwtos">
+    <name><text>Q25. [INTERMEDIATE] Completar FastAPI Hello World</text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p>Completa el código para crear un endpoint GET que responda "Hello, player one!":</p>
+<pre>
+from fastapi import [[1]]
+
+app = FastAPI(title="Hello API")
+
+@app.[[2]]("/")
+def hello():
+    return {"message": "Hello, player one!"}
+</pre>]]></text>
+    </questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p>Se importa <code>FastAPI</code>, se crea la app, y se usa el decorador <code>@app.get("/")</code> para vincular el método GET con la ruta "/" a la función.</p>]]></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>true</shuffleanswers>
+    <dragbox><text><![CDATA[FastAPI]]></text><group>1</group></dragbox>
+    <dragbox><text><![CDATA[get]]></text><group>1</group></dragbox>
+    <dragbox><text><![CDATA[Flask]]></text><group>1</group></dragbox>
+    <dragbox><text><![CDATA[post]]></text><group>1</group></dragbox>
+    <dragbox><text><![CDATA[requests]]></text><group>1</group></dragbox>
+    <tags>
+        <tag><text>Tema 3: FastAPI Web Framework</text></tag>
+        <tag><text>Intermedio</text></tag>
+        <tag><text>Arrastrar y Soltar</text></tag>
+    </tags>
+</question>
+
+<!-- ============================================================ -->
+<!-- Q26 - INTERMEDIATE - Decorator en FastAPI                     -->
+<!-- ============================================================ -->
+<question type="multichoice">
+    <name><text>Q26. [INTERMEDIATE] Función del decorador @app.get</text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p>En el siguiente código, ¿qué hace el decorador <code>@app.get("/")</code>?</p>
+<pre>
+@app.get("/")
+def hello():
+    return {"message": "Hello!"}
+</pre>]]></text>
+    </questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p>El decorador vincula la URL "/" con el método HTTP GET a la función <code>hello()</code>. Cuando alguien hace GET /, FastAPI ejecuta esa función.</p>]]></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <correctfeedback format="html"><text><![CDATA[¡Correcto!]]></text></correctfeedback>
+    <incorrectfeedback format="html"><text><![CDATA[Incorrecto. El decorador vincula URL + método HTTP a la función.]]></text></incorrectfeedback>
+    <answer fraction="100" format="html"><text><![CDATA[Vincula la ruta "/" con el método GET a la función hello()]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[Importa la librería FastAPI]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[Crea una base de datos]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[Inicia el servidor automáticamente]]></text></answer>
+    <tags>
+        <tag><text>Tema 3: FastAPI Web Framework</text></tag>
+        <tag><text>Intermedio</text></tag>
+        <tag><text>Opcion Multiple</text></tag>
+    </tags>
+</question>
+
+<!-- ============================================================ -->
+<!-- Q27 - INTERMEDIATE - Retorno dict → JSON                      -->
+<!-- ============================================================ -->
+<question type="truefalse">
+    <name><text>Q27. [INTERMEDIATE] Dict se convierte en JSON</text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p>En FastAPI, cuando una función endpoint retorna un diccionario de Python (<code>dict</code>), este se convierte automáticamente en una respuesta JSON.</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p>Verdadero. FastAPI convierte automáticamente un dict retornado por una función en JSON con Content-Type: application/json.</p>]]></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>1</penalty>
+    <hidden>0</hidden>
+    <answer fraction="100" format="html"><text><![CDATA[true]]></text></answer>
+    <answer fraction="0" format="html"><text><![CDATA[false]]></text></answer>
+    <tags>
+        <tag><text>Tema 3: FastAPI Web Framework</text></tag>
+        <tag><text>Intermedio</text></tag>
+        <tag><text>Verdadero o Falso</text></tag>
+    </tags>
+</question>
+
+<!-- ============================================================ -->
+<!-- Q28 - INTERMEDIATE - Path parameter                           -->
+<!-- ============================================================ -->
+<question type="multichoice">
+    <name><text>Q28. [INTERMEDIATE] Qué es un path parameter</text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p>Observa este endpoint:</p>
+<pre>
+@app.get("/characters/{character_id}")
+def one_character(character_id: int):
+    return {"id": character_id}
+</pre>
+<p>Si hacemos el request <code>GET /characters/25</code>, ¿qué valor tendrá <code>character_id</code> dentro de la función?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p>FastAPI lee <code>25</code> de la URL, lo convierte a <code>int</code> (por el type hint) y lo pasa como parámetro. character_id será el entero 25.</p>]]></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <correctfeedback format="html"><text><![CDATA[¡Correcto!]]></text></correctfeedback>
+    <incorrectfeedback format="html"><text><![CDATA[Incorrecto. FastAPI extrae el valor 25 de la URL y lo convierte a entero.]]></text></incorrectfeedback>
+    <answer fraction="100" format="html"><text><![CDATA[El entero 25]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[El texto "character_id"]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[El texto "/characters/25"]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[None]]></text></answer>
+    <tags>
+        <tag><text>Tema 3: FastAPI Web Framework</text></tag>
+        <tag><text>Intermedio</text></tag>
+        <tag><text>Opcion Multiple</text></tag>
+    </tags>
+</question>
+
+<!-- ============================================================ -->
+<!-- Q29 - INTERMEDIATE - Query vs Path parameter                  -->
+<!-- ============================================================ -->
+<question type="multichoice">
+    <name><text>Q29. [INTERMEDIATE] Diferencia path vs query parameter</text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p>En la URL <code>/characters/25?verbose=true</code>:</p>
+<ul>
+<li><code>25</code> es un ________</li>
+<li><code>verbose=true</code> es un ________</li>
+</ul>
+<p>¿Cuál es la combinación correcta?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p>25 está en el <strong>path</strong> (identifica el recurso). verbose=true está después del <strong>?</strong> (query parameter: filtra o modifica la respuesta).</p>]]></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <correctfeedback format="html"><text><![CDATA[¡Correcto!]]></text></correctfeedback>
+    <incorrectfeedback format="html"><text><![CDATA[Incorrecto.]]></text></incorrectfeedback>
+    <answer fraction="100" format="html"><text><![CDATA[25 = path parameter, verbose=true = query parameter]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[25 = query parameter, verbose=true = path parameter]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[Ambos son path parameters]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[Ambos son headers]]></text></answer>
+    <tags>
+        <tag><text>Tema 3: FastAPI Web Framework</text></tag>
+        <tag><text>Intermedio</text></tag>
+        <tag><text>Opcion Multiple</text></tag>
+    </tags>
+</question>
+
+<!-- ============================================================ -->
+<!-- Q30 - INTERMEDIATE - Type hint validation                     -->
+<!-- ============================================================ -->
+<question type="multichoice">
+    <name><text>Q30. [INTERMEDIATE] Validación por type hints</text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p>Si un endpoint espera <code>character_id: int</code> y hacemos el request <code>GET /characters/abc</code>, ¿qué código de estado devuelve FastAPI?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p>FastAPI devuelve <code>422</code> automáticamente porque "abc" no se puede convertir a int. Pydantic realiza la validación.</p>]]></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <correctfeedback format="html"><text><![CDATA[¡Correcto!]]></text></correctfeedback>
+    <incorrectfeedback format="html"><text><![CDATA[Incorrecto. FastAPI devuelve 422 cuando el tipo no coincide.]]></text></incorrectfeedback>
+    <answer fraction="100" format="html"><text><![CDATA[422 (Unprocessable Entity)]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[200 (OK)]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[404 (Not Found)]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[500 (Internal Server Error)]]></text></answer>
+    <tags>
+        <tag><text>Tema 3: FastAPI Web Framework</text></tag>
+        <tag><text>Intermedio</text></tag>
+        <tag><text>Opcion Multiple</text></tag>
+    </tags>
+</question>
+
+<!-- ============================================================ -->
+<!-- Q31 - INTERMEDIATE - Pydantic BaseModel                       -->
+<!-- ============================================================ -->
+<question type="ddwtos">
+    <name><text>Q31. [INTERMEDIATE] Completar Pydantic Model</text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p>Completa la definición del modelo Pydantic para validar el body de una predicción:</p>
+<pre>
+from pydantic import [[1]]
+
+class PredictionRequest([[2]]):
+    attack: [[3]]
+    defense: int
+    speed: int
+</pre>]]></text>
+    </questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p>Se importa <code>BaseModel</code> de pydantic. La clase hereda de <code>BaseModel</code>. Los campos usan type hints como <code>int</code>.</p>]]></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>true</shuffleanswers>
+    <dragbox><text><![CDATA[BaseModel]]></text><group>1</group></dragbox>
+    <dragbox><text><![CDATA[BaseModel]]></text><group>1</group></dragbox>
+    <dragbox><text><![CDATA[int]]></text><group>1</group></dragbox>
+    <dragbox><text><![CDATA[FastAPI]]></text><group>1</group></dragbox>
+    <dragbox><text><![CDATA[dict]]></text><group>1</group></dragbox>
+    <dragbox><text><![CDATA[string]]></text><group>1</group></dragbox>
+    <tags>
+        <tag><text>Tema 3: FastAPI Web Framework</text></tag>
+        <tag><text>Intermedio</text></tag>
+        <tag><text>Arrastrar y Soltar</text></tag>
+    </tags>
+</question>
+
+<!-- ============================================================ -->
+<!-- Q32 - INTERMEDIATE - HTTPException 404                        -->
+<!-- ============================================================ -->
+<question type="ddwtos">
+    <name><text>Q32. [INTERMEDIATE] Completar HTTPException</text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p>Completa el código para devolver un error 404 cuando el personaje no existe:</p>
+<pre>
+from fastapi import FastAPI, [[1]]
+
+@app.get("/v1/characters/{character_id}")
+def get_character(character_id: int):
+    if character_id not in CHARACTERS:
+        raise [[2]](
+            status_code=[[3]],
+            detail={"code": "CHARACTER_NOT_FOUND",
+                    "message": f"Character {character_id} does not exist"})
+    return CHARACTERS[character_id]
+</pre>]]></text>
+    </questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p>Se importa <code>HTTPException</code>, se lanza con <code>raise HTTPException(status_code=404, ...)</code> para indicar que el recurso no fue encontrado.</p>]]></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>true</shuffleanswers>
+    <dragbox><text><![CDATA[HTTPException]]></text><group>1</group></dragbox>
+    <dragbox><text><![CDATA[HTTPException]]></text><group>1</group></dragbox>
+    <dragbox><text><![CDATA[404]]></text><group>1</group></dragbox>
+    <dragbox><text><![CDATA[HTTPResponse]]></text><group>1</group></dragbox>
+    <dragbox><text><![CDATA[HTTPError]]></text><group>1</group></dragbox>
+    <dragbox><text><![CDATA[500]]></text><group>1</group></dragbox>
+    <tags>
+        <tag><text>Tema 3: FastAPI Web Framework</text></tag>
+        <tag><text>Intermedio</text></tag>
+        <tag><text>Arrastrar y Soltar</text></tag>
+    </tags>
+</question>
+
+<!-- ============================================================ -->
+<!-- Q33 - INTERMEDIATE - Pagination                               -->
+<!-- ============================================================ -->
+<question type="multichoice">
+    <name><text>Q33. [INTERMEDIATE] Por qué paginar</text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p>¿Por qué un API debe paginar las listas en lugar de devolver todos los registros?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p>Paginar evita sobrecargar la red y el cliente. Si hay miles de registros, enviarlos todos sería lento y consumiría mucha memoria.</p>]]></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <correctfeedback format="html"><text><![CDATA[¡Correcto!]]></text></correctfeedback>
+    <incorrectfeedback format="html"><text><![CDATA[Incorrecto.]]></text></incorrectfeedback>
+    <answer fraction="100" format="html"><text><![CDATA[Para no sobrecargar la red y el cliente cuando hay muchos registros]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[Porque HTTP no permite enviar más de 5 registros]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[Porque los navegadores no soportan listas largas]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[Para que el servidor sea más lento y seguro]]></text></answer>
+    <tags>
+        <tag><text>Tema 2: Principios de Diseno de APIs</text></tag>
+        <tag><text>Intermedio</text></tag>
+        <tag><text>Opcion Multiple</text></tag>
+    </tags>
+</question>
+
+<!-- ============================================================ -->
+<!-- Q34 - INTERMEDIATE - Pagination code                          -->
+<!-- ============================================================ -->
+<question type="multichoice">
+    <name><text>Q34. [INTERMEDIATE] Resultado de paginación</text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p>Tenemos 15 registros y hacemos el request:</p>
+<pre>GET /v1/predictions?page=2&amp;limit=5</pre>
+<p>¿Qué registros devuelve el servidor? (Los registros están numerados del 1 al 15)</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p>Con page=2 y limit=5: start = (2-1)*5 = 5. Se devuelven items[5:10], que son los registros 6 al 10.</p>]]></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <correctfeedback format="html"><text><![CDATA[¡Correcto!]]></text></correctfeedback>
+    <incorrectfeedback format="html"><text><![CDATA[Incorrecto. Page 2 con limit 5: registros 6-10.]]></text></incorrectfeedback>
+    <answer fraction="100" format="html"><text><![CDATA[Registros 6 al 10]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[Registros 1 al 5]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[Registros 2 al 7]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[Registros 11 al 15]]></text></answer>
+    <tags>
+        <tag><text>Tema 2: Principios de Diseno de APIs</text></tag>
+        <tag><text>Intermedio</text></tag>
+        <tag><text>Opcion Multiple</text></tag>
+    </tags>
+</question>
+
+<!-- ============================================================ -->
+<!-- Q35 - INTERMEDIATE - Uvicorn                                  -->
+<!-- ============================================================ -->
+<question type="ddwtos">
+    <name><text>Q35. [INTERMEDIATE] Completar comando uvicorn</text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p>Completa el comando para iniciar el servidor de desarrollo:</p>
+<pre>
+[[1]] 03_game_api:[[2]] --reload --port [[3]]
+</pre>]]></text>
+    </questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p><code>uvicorn</code> es el servidor que escucha en un puerto. <code>03_game_api:app</code> indica el archivo y la variable. <code>--port 8000</code> indica el puerto.</p>]]></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>true</shuffleanswers>
+    <dragbox><text><![CDATA[uvicorn]]></text><group>1</group></dragbox>
+    <dragbox><text><![CDATA[app]]></text><group>1</group></dragbox>
+    <dragbox><text><![CDATA[8000]]></text><group>1</group></dragbox>
+    <dragbox><text><![CDATA[fastapi]]></text><group>1</group></dragbox>
+    <dragbox><text><![CDATA[server]]></text><group>1</group></dragbox>
+    <dragbox><text><![CDATA[80]]></text><group>1</group></dragbox>
+    <tags>
+        <tag><text>Tema 3: FastAPI Web Framework</text></tag>
+        <tag><text>Intermedio</text></tag>
+        <tag><text>Arrastrar y Soltar</text></tag>
+    </tags>
+</question>
+
+<!-- ============================================================ -->
+<!-- Q36 - INTERMEDIATE - /docs                                    -->
+<!-- ============================================================ -->
+<question type="multichoice">
+    <name><text>Q36. [INTERMEDIATE] Documentación automática</text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p>FastAPI genera documentación automáticamente. ¿En qué ruta del servidor puedes acceder a la interfaz interactiva Swagger UI para probar los endpoints?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p>FastAPI genera automáticamente una interfaz Swagger UI en <code>/docs</code> y una referencia en <code>/redoc</code>.</p>]]></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <correctfeedback format="html"><text><![CDATA[¡Correcto!]]></text></correctfeedback>
+    <incorrectfeedback format="html"><text><![CDATA[Incorrecto. La documentación Swagger está en /docs.]]></text></incorrectfeedback>
+    <answer fraction="100" format="html"><text><![CDATA[/docs]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[/api]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[/swagger]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[/help]]></text></answer>
+    <tags>
+        <tag><text>Tema 3: FastAPI Web Framework</text></tag>
+        <tag><text>Intermedio</text></tag>
+        <tag><text>Opcion Multiple</text></tag>
+    </tags>
+</question>
+
+<!-- ============================================================ -->
+<!-- Q37 - INTERMEDIATE - Versioning                               -->
+<!-- ============================================================ -->
+<question type="multichoice">
+    <name><text>Q37. [INTERMEDIATE] Versionamiento de API</text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p>¿Cuál es la práctica recomendada para versionar un API sin romper los clientes existentes?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p>Se recomienda poner la versión en el path: /v1, /v2. Se mantiene la versión anterior activa mientras los clientes migran.</p>]]></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <correctfeedback format="html"><text><![CDATA[¡Correcto!]]></text></correctfeedback>
+    <incorrectfeedback format="html"><text><![CDATA[Incorrecto.]]></text></incorrectfeedback>
+    <answer fraction="100" format="html"><text><![CDATA[Incluir la versión en el path (/v1, /v2) y mantener la anterior activa]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[Cambiar el endpoint directamente sin aviso]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[Crear un servidor completamente nuevo]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[No se puede versionar un API]]></text></answer>
+    <tags>
+        <tag><text>Tema 2: Principios de Diseno de APIs</text></tag>
+        <tag><text>Intermedio</text></tag>
+        <tag><text>Opcion Multiple</text></tag>
+    </tags>
+</question>
+
+<!-- ============================================================ -->
+<!-- Q38 - HARD - Prediction formula                               -->
+<!-- ============================================================ -->
+<question type="multichoice">
+    <name><text>Q38. [HARD] Resultado de la fórmula de predicción</text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p>Nuestra API de predicción usa la fórmula:</p>
+<pre>power = 1.5 * attack + defense + 0.5 * speed</pre>
+<p>Si enviamos <code>{"attack": 55, "defense": 40, "speed": 90}</code>, ¿cuál es el valor de <code>predicted_power</code>?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p>1.5 * 55 + 40 + 0.5 * 90 = 82.5 + 40 + 45 = 167.5</p>]]></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <correctfeedback format="html"><text><![CDATA[¡Correcto!]]></text></correctfeedback>
+    <incorrectfeedback format="html"><text><![CDATA[Incorrecto. 1.5*55 + 40 + 0.5*90 = 82.5 + 40 + 45 = 167.5]]></text></incorrectfeedback>
+    <answer fraction="100" format="html"><text><![CDATA[167.5]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[185.0]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[145.0]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[210.0]]></text></answer>
+    <tags>
+        <tag><text>Tema 3: FastAPI Web Framework</text></tag>
+        <tag><text>Dificil</text></tag>
+        <tag><text>Opcion Multiple</text></tag>
+    </tags>
+</question>
+
+<!-- ============================================================ -->
+<!-- Q39 - INTERMEDIATE - TestClient                               -->
+<!-- ============================================================ -->
+<question type="ddwtos">
+    <name><text>Q39. [INTERMEDIATE] Completar TestClient</text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p>Completa el código para probar el endpoint de predicción sin necesidad de un servidor real:</p>
+<pre>
+from fastapi.testclient import [[1]]
+from game_api import app
+
+client = [[2]](app)
+
+r = client.post("/v1/predictions",
+                json={"attack": 55, "defense": 40, "speed": 90})
+assert r.[[3]] == 200
+</pre>]]></text>
+    </questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p><code>TestClient</code> permite probar la app directamente desde Python sin iniciar un servidor. Se verifica con <code>r.status_code</code>.</p>]]></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>true</shuffleanswers>
+    <dragbox><text><![CDATA[TestClient]]></text><group>1</group></dragbox>
+    <dragbox><text><![CDATA[TestClient]]></text><group>1</group></dragbox>
+    <dragbox><text><![CDATA[status_code]]></text><group>1</group></dragbox>
+    <dragbox><text><![CDATA[TestServer]]></text><group>1</group></dragbox>
+    <dragbox><text><![CDATA[HTTPClient]]></text><group>1</group></dragbox>
+    <dragbox><text><![CDATA[response]]></text><group>1</group></dragbox>
+    <tags>
+        <tag><text>Tema 3: FastAPI Web Framework</text></tag>
+        <tag><text>Intermedio</text></tag>
+        <tag><text>Arrastrar y Soltar</text></tag>
+    </tags>
+</question>
+
+<!-- ============================================================ -->
+<!-- Q40 - HARD - GET on POST route                                -->
+<!-- ============================================================ -->
+<question type="multichoice">
+    <name><text>Q40. [HARD] GET en una ruta POST</text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p>Si el endpoint <code>POST /v1/predictions</code> está definido y hacemos un request <code>GET /v1/predictions</code>, ¿qué código de estado devuelve FastAPI?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p>405 Method Not Allowed. La ruta existe pero solo acepta POST, no GET. FastAPI lo maneja automáticamente.</p>]]></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <correctfeedback format="html"><text><![CDATA[¡Correcto!]]></text></correctfeedback>
+    <incorrectfeedback format="html"><text><![CDATA[Incorrecto. 405 = Method Not Allowed.]]></text></incorrectfeedback>
+    <answer fraction="100" format="html"><text><![CDATA[405 (Method Not Allowed)]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[404 (Not Found)]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[200 (OK)]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[500 (Server Error)]]></text></answer>
+    <tags>
+        <tag><text>Tema 3: FastAPI Web Framework</text></tag>
+        <tag><text>Dificil</text></tag>
+        <tag><text>Opcion Multiple</text></tag>
+    </tags>
+</question>
+
+<!-- ============================================================ -->
+<!-- Q41 - EASY - response.json() type                             -->
+<!-- ============================================================ -->
+<question type="multichoice">
+    <name><text>Q41. [EASY] Tipo de dato de response.json()</text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p>En el notebook, después de ejecutar:</p>
+<pre>
+data = response.json()
+print(type(data))
+</pre>
+<p>¿Qué tipo de dato muestra?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p>Un objeto JSON <code>{...}</code> se convierte en un <code>dict</code> de Python. Una lista JSON <code>[...]</code> se convierte en una <code>list</code>.</p>]]></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <correctfeedback format="html"><text><![CDATA[¡Correcto!]]></text></correctfeedback>
+    <incorrectfeedback format="html"><text><![CDATA[Incorrecto.]]></text></incorrectfeedback>
+    <answer fraction="100" format="html"><text><![CDATA[dict (diccionario de Python)]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[str (texto)]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[JSON (tipo especial)]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[Response (objeto HTTP)]]></text></answer>
+    <tags>
+        <tag><text>Tema 1: Fundamentos HTTP y REST</text></tag>
+        <tag><text>Facil</text></tag>
+        <tag><text>Opcion Multiple</text></tag>
+    </tags>
+</question>
+
+<!-- ============================================================ -->
+<!-- Q42 - HARD - Error shape uniforme                             -->
+<!-- ============================================================ -->
+<question type="multichoice">
+    <name><text>Q42. [HARD] Estructura uniforme de errores</text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p>En nuestro API, cuando un recurso no se encuentra, la respuesta de error tiene esta estructura:</p>
+<pre>
+{
+  "code": "CHARACTER_NOT_FOUND",
+  "message": "Character 99 does not exist"
+}
+</pre>
+<p>¿Por qué usamos siempre el mismo formato JSON para TODOS los errores?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p>Una forma uniforme de errores permite que los clientes (UI, scripts) procesen errores de forma predecible. El "code" es para máquinas y el "message" es para humanos.</p>]]></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <correctfeedback format="html"><text><![CDATA[¡Correcto!]]></text></correctfeedback>
+    <incorrectfeedback format="html"><text><![CDATA[Incorrecto.]]></text></incorrectfeedback>
+    <answer fraction="100" format="html"><text><![CDATA[Para que los clientes puedan procesar errores de forma predecible (code para máquinas, message para humanos)]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[Porque HTTP solo permite un formato de error]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[Porque Python solo puede generar errores con esas dos claves]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[Para que el servidor ahorre memoria]]></text></answer>
+    <tags>
+        <tag><text>Tema 2: Principios de Diseno de APIs</text></tag>
+        <tag><text>Dificil</text></tag>
+        <tag><text>Opcion Multiple</text></tag>
+    </tags>
+</question>
+
+<!-- ============================================================ -->
+<!-- Q43 - HARD - Stack FastAPI                                    -->
+<!-- ============================================================ -->
+<question type="ddwtos">
+    <name><text>Q43. [HARD] Stack de FastAPI</text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p>FastAPI se construye sobre otras librerías. Completa la descripción:</p>
+<ul>
+<li>[[1]] es el servidor que escucha en un puerto.</li>
+<li>[[2]] se encarga del routing y la documentación.</li>
+<li>[[3]] se encarga de la validación de datos.</li>
+</ul>]]></text>
+    </questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p>Uvicorn es el servidor ASGI. FastAPI maneja el routing y docs. Pydantic valida los datos con type hints.</p>]]></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>true</shuffleanswers>
+    <dragbox><text><![CDATA[Uvicorn]]></text><group>1</group></dragbox>
+    <dragbox><text><![CDATA[FastAPI]]></text><group>1</group></dragbox>
+    <dragbox><text><![CDATA[Pydantic]]></text><group>1</group></dragbox>
+    <dragbox><text><![CDATA[Flask]]></text><group>1</group></dragbox>
+    <dragbox><text><![CDATA[Django]]></text><group>1</group></dragbox>
+    <dragbox><text><![CDATA[NumPy]]></text><group>1</group></dragbox>
+    <tags>
+        <tag><text>Tema 3: FastAPI Web Framework</text></tag>
+        <tag><text>Dificil</text></tag>
+        <tag><text>Arrastrar y Soltar</text></tag>
+    </tags>
+</question>
+
+<!-- ============================================================ -->
+<!-- Q44 - EASY - 127.0.0.1                                        -->
+<!-- ============================================================ -->
+<question type="multichoice">
+    <name><text>Q44. [EASY] Dirección 127.0.0.1</text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p>Cuando ejecutamos nuestro servidor y accedemos a <code>http://127.0.0.1:8000</code>, ¿qué significa la dirección <code>127.0.0.1</code>?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p>127.0.0.1 es "localhost", es decir, tu propia computadora. El servidor está corriendo localmente.</p>]]></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <correctfeedback format="html"><text><![CDATA[¡Correcto!]]></text></correctfeedback>
+    <incorrectfeedback format="html"><text><![CDATA[Incorrecto. 127.0.0.1 = tu propia computadora (localhost).]]></text></incorrectfeedback>
+    <answer fraction="100" format="html"><text><![CDATA[La propia computadora (localhost)]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[Un servidor de Google]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[La dirección del router de red]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[Una dirección de internet pública]]></text></answer>
+    <tags>
+        <tag><text>Tema 1: Fundamentos HTTP y REST</text></tag>
+        <tag><text>Facil</text></tag>
+        <tag><text>Opcion Multiple</text></tag>
+    </tags>
+</question>
+
+<!-- ============================================================ -->
+<!-- Q45 - EASY - Puerto                                           -->
+<!-- ============================================================ -->
+<question type="multichoice">
+    <name><text>Q45. [EASY] Qué es un puerto</text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p>En <code>http://127.0.0.1:8000</code>, el número <code>8000</code> representa:</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p>El puerto es un número que identifica un servicio específico en la computadora. Una máquina puede tener varios servicios corriendo en puertos diferentes (8000, 80, 443, etc.).</p>]]></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <correctfeedback format="html"><text><![CDATA[¡Correcto!]]></text></correctfeedback>
+    <incorrectfeedback format="html"><text><![CDATA[Incorrecto.]]></text></incorrectfeedback>
+    <answer fraction="100" format="html"><text><![CDATA[El puerto donde el servidor escucha las solicitudes]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[El número de versión del API]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[El código de estado de la respuesta]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[El número de usuarios conectados]]></text></answer>
+    <tags>
+        <tag><text>Tema 1: Fundamentos HTTP y REST</text></tag>
+        <tag><text>Facil</text></tag>
+        <tag><text>Opcion Multiple</text></tag>
+    </tags>
+</question>
+
+<!-- ============================================================ -->
+<!-- Q46 - HARD - Flujo completo request                           -->
+<!-- ============================================================ -->
+<question type="multichoice">
+    <name><text>Q46. [HARD] Flujo completo de un request</text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p>Cuando un cliente hace <code>POST /v1/predictions</code> a nuestra API FastAPI, ¿cuál es el orden correcto del flujo?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p>El flujo es: 1) El cliente envía el HTTP request. 2) Uvicorn recibe y lo pasa a FastAPI. 3) FastAPI/Pydantic valida los datos. 4) La función Python se ejecuta. 5) El dict se convierte en JSON y se devuelve al cliente.</p>]]></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <correctfeedback format="html"><text><![CDATA[¡Correcto!]]></text></correctfeedback>
+    <incorrectfeedback format="html"><text><![CDATA[Incorrecto.]]></text></incorrectfeedback>
+    <answer fraction="100" format="html"><text><![CDATA[Cliente → Uvicorn → FastAPI (router + validación) → función Python → dict → JSON response]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[Cliente → función Python → Uvicorn → JSON response]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[FastAPI → Uvicorn → Cliente → función Python]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[función Python → FastAPI → Cliente → Uvicorn]]></text></answer>
+    <tags>
+        <tag><text>Tema 3: FastAPI Web Framework</text></tag>
+        <tag><text>Dificil</text></tag>
+        <tag><text>Opcion Multiple</text></tag>
+    </tags>
+</question>
+
+<!-- ============================================================ -->
+<!-- Q47 - HARD - response_model                                   -->
+<!-- ============================================================ -->
+<question type="multichoice">
+    <name><text>Q47. [HARD] Propósito de response_model</text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p>En el siguiente código, ¿cuál es el propósito de <code>response_model=PredictionResponse</code>?</p>
+<pre>
+@app.post("/v1/predictions", response_model=PredictionResponse)
+def create_prediction(request: PredictionRequest):
+    power = 1.5 * request.attack + request.defense + 0.5 * request.speed
+    return {"predicted_power": power, "model_version": "0.1.0"}
+</pre>]]></text>
+    </questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p><code>response_model</code> indica a FastAPI la forma exacta de la respuesta. Filtra campos extra, valida tipos de salida y documenta el endpoint automáticamente.</p>]]></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <correctfeedback format="html"><text><![CDATA[¡Correcto!]]></text></correctfeedback>
+    <incorrectfeedback format="html"><text><![CDATA[Incorrecto.]]></text></incorrectfeedback>
+    <answer fraction="100" format="html"><text><![CDATA[Define y valida la estructura de la respuesta JSON, y la documenta en /docs]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[Crea automáticamente la base de datos]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[Inicia el modelo de machine learning]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[Guarda la respuesta en un archivo log]]></text></answer>
+    <tags>
+        <tag><text>Tema 3: FastAPI Web Framework</text></tag>
+        <tag><text>Dificil</text></tag>
+        <tag><text>Opcion Multiple</text></tag>
+    </tags>
+</question>
+
+<!-- ============================================================ -->
+<!-- Q48 - INTERMEDIATE - reload flag                            -->
+<!-- ============================================================ -->
+<question type="multichoice">
+    <name><text>Q48. [INTERMEDIATE] Flag --reload de uvicorn</text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p>En el comando <code>uvicorn 03_game_api:app --reload --port 8000</code>, ¿qué hace el flag <code>--reload</code>?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p><code>--reload</code> reinicia automáticamente el servidor cada vez que guardas cambios en el archivo Python. Es solo para desarrollo, no producción.</p>]]></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <correctfeedback format="html"><text><![CDATA[¡Correcto!]]></text></correctfeedback>
+    <incorrectfeedback format="html"><text><![CDATA[Incorrecto.]]></text></incorrectfeedback>
+    <answer fraction="100" format="html"><text><![CDATA[Reinicia el servidor automáticamente cuando se detectan cambios en el código]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[Recarga la base de datos]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[Recarga la página del navegador]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[Reinicia la computadora]]></text></answer>
+    <tags>
+        <tag><text>Tema 3: FastAPI Web Framework</text></tag>
+        <tag><text>Intermedio</text></tag>
+        <tag><text>Opcion Multiple</text></tag>
+    </tags>
+</question>
+
+<!-- ============================================================ -->
+<!-- Q49 - INTERMEDIATE - Servicios y puertos comunes              -->
+<!-- ============================================================ -->
+<question type="ddwtos">
+    <name><text>Q49. [INTERMEDIATE] Servicios y sus funciones</text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p>Relaciona cada servicio con su función principal:</p>
+<ul>
+<li>Servir páginas web: [[1]]</li>
+<li>Almacenar y consultar datos estructurados: [[2]]</li>
+<li>Traducir nombres de dominio a direcciones IP: [[3]]</li>
+</ul>]]></text>
+    </questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p>HTTP sirve páginas web, las bases de datos almacenan datos estructurados, y DNS traduce dominios (google.com) a IPs (142.250.x.x).</p>]]></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>true</shuffleanswers>
+    <dragbox><text><![CDATA[HTTP]]></text><group>1</group></dragbox>
+    <dragbox><text><![CDATA[Base de datos]]></text><group>1</group></dragbox>
+    <dragbox><text><![CDATA[DNS]]></text><group>1</group></dragbox>
+    <dragbox><text><![CDATA[SMTP]]></text><group>1</group></dragbox>
+    <dragbox><text><![CDATA[FTP]]></text><group>1</group></dragbox>
+    <dragbox><text><![CDATA[SSH]]></text><group>1</group></dragbox>
+    <tags>
+        <tag><text>Tema 1: Fundamentos HTTP y REST</text></tag>
+        <tag><text>Intermedio</text></tag>
+        <tag><text>Arrastrar y Soltar</text></tag>
+    </tags>
+</question>
+
+<!-- ============================================================ -->
+<!-- Q50 - HARD - Lectura de código completo                       -->
+<!-- ============================================================ -->
+<question type="multichoice">
+    <name><text>Q50. [HARD] Qué devuelve este endpoint</text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p>Observa el siguiente endpoint:</p>
+<pre>
+@app.get("/v1/characters")
+def list_characters(page: int = 1, limit: int = 5):
+    items = list(CHARACTERS.values())
+    start = (page - 1) * limit
+    return {"items": items[start:start + limit],
+            "page": page, "limit": limit, "total": len(items)}
+</pre>
+<p>Si <code>CHARACTERS</code> tiene 7 elementos y hacemos <code>GET /v1/characters?page=2&amp;limit=3</code>, ¿cuántos items devuelve?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p>start = (2-1)*3 = 3. items[3:6] devuelve 3 elementos (los índices 3, 4, 5 de los 7 totales).</p>]]></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <correctfeedback format="html"><text><![CDATA[¡Correcto!]]></text></correctfeedback>
+    <incorrectfeedback format="html"><text><![CDATA[Incorrecto. start=3, items[3:6] = 3 elementos.]]></text></incorrectfeedback>
+    <answer fraction="100" format="html"><text><![CDATA[3 items]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[7 items]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[5 items]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[1 item]]></text></answer>
+    <tags>
+        <tag><text>Tema 3: FastAPI Web Framework</text></tag>
+        <tag><text>Dificil</text></tag>
+        <tag><text>Opcion Multiple</text></tag>
+    </tags>
+</question>
+
+<!-- ============================================================ -->
+<!-- Q51 - HARD - Qué código resuelve el problema                  -->
+<!-- ============================================================ -->
+<question type="multichoice">
+    <name><text>Q51. [HARD] Seleccionar código correcto para POST prediction</text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p>Necesitas crear un endpoint que reciba stats de un personaje y devuelva su power. ¿Cuál código es correcto?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p>Se usa <code>@app.post</code> con un parámetro que tiene un tipo Pydantic BaseModel. FastAPI lee el JSON body automáticamente.</p>]]></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <correctfeedback format="html"><text><![CDATA[¡Correcto!]]></text></correctfeedback>
+    <incorrectfeedback format="html"><text><![CDATA[Incorrecto.]]></text></incorrectfeedback>
+    <answer fraction="100" format="html"><text><![CDATA[@app.post("/v1/predictions")
+def create_prediction(request: PredictionRequest):
+    power = 1.5 * request.attack + request.defense
+    return {"predicted_power": power}]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[@app.get("/v1/predictions")
+def create_prediction(request: PredictionRequest):
+    power = 1.5 * request.attack + request.defense
+    return {"predicted_power": power}]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[@app.post("/v1/predictions")
+def create_prediction():
+    power = 1.5 * attack + defense
+    return power]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[@app.post("/v1/createPrediction")
+def create_prediction(attack, defense):
+    return 1.5 * attack + defense]]></text></answer>
+    <tags>
+        <tag><text>Tema 3: FastAPI Web Framework</text></tag>
+        <tag><text>Dificil</text></tag>
+        <tag><text>Opcion Multiple</text></tag>
+    </tags>
+</question>
+
+<!-- ============================================================ -->
+<!-- Q52 - INTERMEDIATE - Safe methods                             -->
+<!-- ============================================================ -->
+<question type="truefalse">
+    <name><text>Q52. [INTERMEDIATE] GET es un método seguro (safe)</text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p>El método HTTP <code>GET</code> se considera "safe" (seguro) porque <strong>no modifica</strong> datos en el servidor; solo lee información.</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p>Verdadero. GET es safe porque solo lee, no crea, modifica ni elimina recursos. POST, PUT, PATCH y DELETE no son safe.</p>]]></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>1</penalty>
+    <hidden>0</hidden>
+    <answer fraction="100" format="html"><text><![CDATA[true]]></text></answer>
+    <answer fraction="0" format="html"><text><![CDATA[false]]></text></answer>
+    <tags>
+        <tag><text>Tema 1: Fundamentos HTTP y REST</text></tag>
+        <tag><text>Intermedio</text></tag>
+        <tag><text>Verdadero o Falso</text></tag>
+    </tags>
+</question>
+
+<!-- ============================================================ -->
+<!-- Q53 - HARD - Pagination envelope                              -->
+<!-- ============================================================ -->
+<question type="ddwtos">
+    <name><text>Q53. [HARD] Completar función de paginación</text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p>Completa la función de paginación:</p>
+<pre>
+def paginate(items, page=1, limit=5):
+    start = ([[1]]) * limit
+    return {"items": items[start:start + [[2]]],
+            "page": page, "limit": limit,
+            "total": [[3]]}
+</pre>]]></text>
+    </questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p>start = (page - 1) * limit calcula dónde empieza la página. Se corta la lista con items[start:start+limit]. total = len(items) es el tamaño completo.</p>]]></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>true</shuffleanswers>
+    <dragbox><text><![CDATA[page - 1]]></text><group>1</group></dragbox>
+    <dragbox><text><![CDATA[limit]]></text><group>1</group></dragbox>
+    <dragbox><text><![CDATA[len(items)]]></text><group>1</group></dragbox>
+    <dragbox><text><![CDATA[page]]></text><group>1</group></dragbox>
+    <dragbox><text><![CDATA[page]]></text><group>1</group></dragbox>
+    <dragbox><text><![CDATA[start]]></text><group>1</group></dragbox>
+    <tags>
+        <tag><text>Tema 2: Principios de Diseno de APIs</text></tag>
+        <tag><text>Dificil</text></tag>
+        <tag><text>Arrastrar y Soltar</text></tag>
+    </tags>
+</question>
+
+<!-- ============================================================ -->
+<!-- Q54 - INTERMEDIATE - snake_case                               -->
+<!-- ============================================================ -->
+<question type="multichoice">
+    <name><text>Q54. [INTERMEDIATE] Convención de nombres en APIs</text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p>Según las buenas prácticas de diseño API, ¿qué convención de nombres deben usar los campos JSON?</p>
+<pre>
+Ejemplo: ¿Cuál es la forma correcta de nombrar un campo para "precio predicho"?
+</pre>]]></text>
+    </questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p>Se usa <code>snake_case</code> (minúsculas con guiones bajos): <code>predicted_price</code>. Esto es consistente, legible y estándar en Python/JSON APIs.</p>]]></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <correctfeedback format="html"><text><![CDATA[¡Correcto!]]></text></correctfeedback>
+    <incorrectfeedback format="html"><text><![CDATA[Incorrecto. Se usa snake_case: predicted_price.]]></text></incorrectfeedback>
+    <answer fraction="100" format="html"><text><![CDATA[predicted_price (snake_case)]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[PredictedPrice (PascalCase)]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[predictedPrice (camelCase)]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[PREDICTED_PRICE (UPPER_CASE)]]></text></answer>
+    <tags>
+        <tag><text>Tema 2: Principios de Diseno de APIs</text></tag>
+        <tag><text>Intermedio</text></tag>
+        <tag><text>Opcion Multiple</text></tag>
+    </tags>
+</question>
+
+<!-- ============================================================ -->
+<!-- Q55 - HARD - Escenario completo                               -->
+<!-- ============================================================ -->
+<question type="multichoice">
+    <name><text>Q55. [HARD] Diagnóstico completo de un request fallido</text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p>Un estudiante ejecuta el siguiente código y obtiene un error:</p>
+<pre>
+import requests
+
+payload = {"attack": 55, "defense": 40}   # falta "speed"
+r = requests.post("http://127.0.0.1:8000/v1/predictions", json=payload)
+print(r.status_code)   # imprime: 422
+</pre>
+<p>¿Cuál es la causa del error 422?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p>El modelo PredictionRequest requiere tres campos: attack, defense y speed. Falta "speed", así que Pydantic rechaza la solicitud con 422.</p>]]></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <correctfeedback format="html"><text><![CDATA[¡Correcto!]]></text></correctfeedback>
+    <incorrectfeedback format="html"><text><![CDATA[Incorrecto. Falta el campo requerido "speed" en el payload.]]></text></incorrectfeedback>
+    <answer fraction="100" format="html"><text><![CDATA[Falta el campo requerido "speed" en el payload JSON]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[La URL es incorrecta]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[El servidor no está corriendo]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[El método debería ser GET en vez de POST]]></text></answer>
+    <tags>
+        <tag><text>Tema 3: FastAPI Web Framework</text></tag>
+        <tag><text>Dificil</text></tag>
+        <tag><text>Opcion Multiple</text></tag>
+    </tags>
+</question>
+
+</quiz>
+

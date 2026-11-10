@@ -1,0 +1,795 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+
+<!-- =====================================================================
+     EVALUACION: Criterio e Ingenieria de Arquitectura
+     Categoria: API - Razonamiento de Arquitectura e Ingenieria
+     Total: 20 preguntas | Sin codigo | Solo razonamiento conceptual
+     Tipos: multichoice (8), matching (5), ddwtos/secuencia (7)
+     NOTA: Ningun comentario contiene doble guion.
+     ===================================================================== -->
+
+  <question type="category">
+    <category>
+      <text><![CDATA[$course$/API - Razonamiento de Arquitectura e Ingenieria]]></text>
+    </category>
+    <info format="html">
+      <text><![CDATA[<p>Preguntas de razonamiento e ingenieria de criterio sobre HTTP, REST, servicios web y FastAPI. Sin codigo; orientadas a evaluar la comprension del flujo, la arquitectura y la toma de decisiones tecnicas.</p>]]></text>
+    </info>
+  </question>
+
+  <!-- CRIT01 -->
+  <question type="multichoice">
+    <name><text><![CDATA[CRIT01. Diagnostico: 422 vs 500]]></text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Un estudiante consume un endpoint de prediccion de tu API. Cuando envia el campo <strong>edad</strong> como texto ("veinte") en lugar de un numero, la API responde con codigo <strong>422 Unprocessable Entity</strong>. Cuando el modelo de ML interno lanza una excepcion inesperada, la API responde con <strong>500 Internal Server Error</strong>.</p>
+<p>¿Que explica correctamente la diferencia entre ambas respuestas?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p><strong>422</strong> significa que el servidor entendio la peticion pero los datos no pasan la validacion de esquema (error del cliente). <strong>500</strong> indica un fallo interno no anticipado en el servidor (error del servidor). Son responsabilidades distintas: validacion vs logica interna.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100">
+      <text><![CDATA[El 422 es un error del cliente porque los datos no cumplen el esquema esperado; el 500 es un fallo interno del servidor que no fue anticipado.]]></text>
+      <feedback format="html"><text><![CDATA[<p>Correcto. La distincion entre error de cliente (4xx) y error de servidor (5xx) es fundamental en el diseno de APIs.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="-33.33333">
+      <text><![CDATA[Ambos son errores del cliente; el 500 se produce cuando el cliente envia demasiadas peticiones.]]></text>
+      <feedback format="html"><text><![CDATA[<p>Incorrecto. Los codigos 5xx son siempre errores del lado del servidor, no del cliente.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="-33.33333">
+      <text><![CDATA[El 422 significa que el servidor esta caido; el 500 que la ruta no existe.]]></text>
+      <feedback format="html"><text><![CDATA[<p>Incorrecto. 422 es error de validacion de datos y 404 es "ruta no encontrada".</p>]]></text></feedback>
+    </answer>
+    <answer fraction="-33.33333">
+      <text><![CDATA[No hay diferencia real; ambos indican que la peticion fue rechazada por seguridad.]]></text>
+      <feedback format="html"><text><![CDATA[<p>Incorrecto. Tienen significados tecnicamente distintos y requieren acciones correctivas diferentes.</p>]]></text></feedback>
+    </answer>
+    <tags>
+      <tag><text>Tema 3: FastAPI Web Framework</text></tag>
+      <tag><text>Dificultad: Intermedio</text></tag>
+      <tag><text>Tipo: Opcion Multiple</text></tag>
+    </tags>
+  </question>
+
+  <!-- CRIT02 -->
+  <question type="multichoice">
+    <name><text><![CDATA[CRIT02. Diagnostico: Servidor no responde]]></text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Un compañero dice: "levante mi servicio FastAPI pero cuando intento acceder desde otro computador de la red, no obtengo respuesta." Tu tienes que diagnosticar el problema.</p>
+<p>¿Cual de las siguientes es la causa mas probable que deberias verificar primero?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>Por defecto, FastAPI (a traves de Uvicorn) escucha en <strong>127.0.0.1</strong> (localhost), lo que significa que solo acepta conexiones del mismo equipo. Para que otros equipos puedan acceder, debe ejecutarse con <strong>--host 0.0.0.0</strong>, que indica al SO que escuche en todas las interfaces de red disponibles.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100">
+      <text><![CDATA[El servicio esta escuchando en 127.0.0.1 (localhost) en lugar de 0.0.0.0, por lo que solo acepta conexiones locales.]]></text>
+      <feedback format="html"><text><![CDATA[<p>Correcto. Este es el error de configuracion de host mas comun al desplegar servicios en red local.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="-33.33333">
+      <text><![CDATA[El puerto 80 esta reservado y nunca puede usarse para APIs personalizadas.]]></text>
+      <feedback format="html"><text><![CDATA[<p>Incorrecto. El puerto 80 puede usarse; el problema es la direccion de escucha, no el numero de puerto.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="-33.33333">
+      <text><![CDATA[Python no soporta conexiones de red por defecto; se necesita instalar un modulo especial.]]></text>
+      <feedback format="html"><text><![CDATA[<p>Incorrecto. Python y FastAPI/Uvicorn soportan conexiones de red sin modulos adicionales.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="-33.33333">
+      <text><![CDATA[Los otros computadores deben tener la misma version de Python instalada para conectarse.]]></text>
+      <feedback format="html"><text><![CDATA[<p>Incorrecto. Los clientes no necesitan Python; solo necesitan poder alcanzar la IP y puerto del servidor.</p>]]></text></feedback>
+    </answer>
+    <tags>
+      <tag><text>Tema 1: Fundamentos HTTP y REST</text></tag>
+      <tag><text>Dificultad: Intermedio</text></tag>
+      <tag><text>Tipo: Opcion Multiple</text></tag>
+    </tags>
+  </question>
+
+  <!-- CRIT03 -->
+  <question type="multichoice">
+    <name><text><![CDATA[CRIT03. Error 405 al acceder desde el navegador]]></text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Tu API tiene un endpoint para crear predicciones que esta definido para aceptar solo el metodo <strong>POST</strong>. Un compañero escribe la URL directamente en la barra del navegador y obtiene error <strong>405 Method Not Allowed</strong>.</p>
+<p>¿Por que ocurre esto y como deberia acceder correctamente?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>Cuando escribes una URL en el navegador, este realiza automaticamente una peticion <strong>GET</strong>. Si el endpoint solo acepta POST, el servidor rechaza la peticion con 405. Para hacer una peticion POST se necesita una herramienta como Swagger /docs, Postman, o escribir codigo cliente.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100">
+      <text><![CDATA[El navegador envia GET automaticamente; el endpoint solo acepta POST. Debe usar Swagger (/docs) o Postman para hacer la peticion correcta.]]></text>
+      <feedback format="html"><text><![CDATA[<p>Correcto. Los navegadores usan GET para URLs escritas directamente. Los endpoints POST requieren herramientas que permitan especificar el metodo y el cuerpo de la peticion.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="-33.33333">
+      <text><![CDATA[El error 405 significa que el servidor esta apagado; hay que reiniciarlo.]]></text>
+      <feedback format="html"><text><![CDATA[<p>Incorrecto. 405 significa que el metodo HTTP usado no esta permitido en ese endpoint, no que el servidor este caido.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="-33.33333">
+      <text><![CDATA[El navegador debe actualizarse a la ultima version para soportar metodos POST.]]></text>
+      <feedback format="html"><text><![CDATA[<p>Incorrecto. Todos los navegadores modernos soportan POST, pero no lo usan al escribir una URL en la barra de direcciones.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="-33.33333">
+      <text><![CDATA[El endpoint tiene un error en el codigo; necesita definirse nuevamente.]]></text>
+      <feedback format="html"><text><![CDATA[<p>Incorrecto. El endpoint funciona correctamente; el problema es el metodo con que se esta llamando.</p>]]></text></feedback>
+    </answer>
+    <tags>
+      <tag><text>Tema 1: Fundamentos HTTP y REST</text></tag>
+      <tag><text>Dificultad: Facil</text></tag>
+      <tag><text>Tipo: Opcion Multiple</text></tag>
+    </tags>
+  </question>
+
+  <!-- CRIT04 -->
+  <question type="multichoice">
+    <name><text><![CDATA[CRIT04. Cambio que rompe compatibilidad en una API]]></text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Tu equipo tiene una API en produccion con la ruta <strong>/predict</strong> que recibe un campo llamado <strong>"features"</strong>. Ahora quieren renombrar ese campo a <strong>"datos_entrada"</strong> porque les parece mas descriptivo.</p>
+<p>Un ingeniero senior dice: "Eso es un breaking change, no podemos hacerlo sin coordinar con todos los clientes."</p>
+<p>¿Por que tiene razon el ingeniero?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>Un <strong>breaking change</strong> es cualquier modificacion en la API que hace que los clientes existentes dejen de funcionar. Renombrar un campo rompe todos los clientes que ya envian "features", porque el servidor ya no reconocera ese campo. La solucion tipica es lanzar una nueva version (v2) manteniendo v1 activa durante un periodo de transicion.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100">
+      <text><![CDATA[Los clientes que ya estan en produccion envian el campo "features"; si se renombra, recibiran error 422 porque el campo esperado ya no existe, rompiendo la integracion sin previo aviso.]]></text>
+      <feedback format="html"><text><![CDATA[<p>Correcto. Este principio de retrocompatibilidad es central en el diseno de APIs de larga vida.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="-33.33333">
+      <text><![CDATA[El ingeniero esta equivocado; cambiar el nombre de un campo es un cambio menor que no afecta a nadie.]]></text>
+      <feedback format="html"><text><![CDATA[<p>Incorrecto. Renombrar un campo es un breaking change clasico que afecta a todos los consumidores existentes.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="-33.33333">
+      <text><![CDATA[Solo afecta a los clientes que usan el navegador; los que usan Postman no se veran afectados.]]></text>
+      <feedback format="html"><text><![CDATA[<p>Incorrecto. Afecta a cualquier cliente que envie el campo con el nombre antiguo, independientemente de la herramienta.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="-33.33333">
+      <text><![CDATA[El problema es solo estetico; el servidor puede deducir que "features" y "datos_entrada" son lo mismo.]]></text>
+      <feedback format="html"><text><![CDATA[<p>Incorrecto. El servidor no puede adivinar equivalencias de nombres; los campos deben coincidir exactamente con el esquema definido.</p>]]></text></feedback>
+    </answer>
+    <tags>
+      <tag><text>Tema 2: Principios de Diseno de APIs</text></tag>
+      <tag><text>Dificultad: Intermedio</text></tag>
+      <tag><text>Tipo: Opcion Multiple</text></tag>
+    </tags>
+  </question>
+
+  <!-- CRIT05 -->
+  <question type="ddwtos">
+    <name><text><![CDATA[CRIT05. Secuencia: Ciclo completo de una peticion HTTP]]></text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Ordena correctamente las etapas del ciclo de vida de una peticion HTTP arrastrando la etiqueta correcta a cada paso numerado:</p>
+<ol>
+  <li>[[1]] - El usuario escribe una URL en el navegador.</li>
+  <li>[[2]] - El sistema resuelve el nombre de dominio a una direccion IP.</li>
+  <li>[[3]] - El cliente establece una conexion con el servidor en el puerto indicado.</li>
+  <li>[[4]] - El cliente envia el mensaje HTTP con el metodo, ruta y cabeceras.</li>
+  <li>[[5]] - El servidor procesa la peticion y genera la respuesta.</li>
+  <li>[[6]] - El cliente recibe el codigo de estado y el cuerpo de la respuesta.</li>
+</ol>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>El orden correcto es: Inicio de peticion → Resolucion DNS → Conexion TCP → Envio de peticion HTTP → Procesamiento en servidor → Recepcion de respuesta. Este flujo es la base de toda comunicacion web.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <hidden>0</hidden>
+    <shuffleanswers>true</shuffleanswers>
+    <dragbox><text><![CDATA[Inicio de peticion]]></text><group>1</group></dragbox>
+    <dragbox><text><![CDATA[Resolucion DNS]]></text><group>1</group></dragbox>
+    <dragbox><text><![CDATA[Conexion TCP]]></text><group>1</group></dragbox>
+    <dragbox><text><![CDATA[Envio de peticion HTTP]]></text><group>1</group></dragbox>
+    <dragbox><text><![CDATA[Procesamiento en servidor]]></text><group>1</group></dragbox>
+    <dragbox><text><![CDATA[Recepcion de respuesta]]></text><group>1</group></dragbox>
+    <dragbox><text><![CDATA[Cierre de sesion del usuario]]></text><group>1</group></dragbox>
+    <dragbox><text><![CDATA[Instalacion del servidor]]></text><group>1</group></dragbox>
+    <tags>
+      <tag><text>Tema 1: Fundamentos HTTP y REST</text></tag>
+      <tag><text>Dificultad: Intermedio</text></tag>
+      <tag><text>Tipo: Arrastrar y Soltar</text></tag>
+    </tags>
+  </question>
+
+  <!-- CRIT06 -->
+  <question type="multichoice">
+    <name><text><![CDATA[CRIT06. Localhost vs IP publica]]></text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Un estudiante desarrollo su API en su laptop y la prueba exitosamente usando <strong>http://localhost:8000</strong>. Luego comparte esa URL con un compañero que esta en otra ciudad, pero el compañero no puede acceder.</p>
+<p>¿Cual es la explicacion correcta?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p><strong>localhost</strong> (o 127.0.0.1) es una direccion de loopback que solo existe dentro del mismo equipo. Para que alguien externo pueda acceder, el servidor necesita estar expuesto en una IP publica (o mediante un tunel como ngrok), y el puerto debe estar abierto en el firewall.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100">
+      <text><![CDATA["localhost" solo existe dentro del mismo equipo; el compañero necesita la IP publica del servidor o un tunel, no la direccion local.]]></text>
+      <feedback format="html"><text><![CDATA[<p>Correcto. Localhost es una direccion de red interna al dispositivo y no es enrutable hacia el exterior.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="-33.33333">
+      <text><![CDATA[El compañero debe instalar FastAPI en su computador para poder acceder a la API remota.]]></text>
+      <feedback format="html"><text><![CDATA[<p>Incorrecto. Los clientes no necesitan FastAPI; solo necesitan poder alcanzar la IP y puerto del servidor.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="-33.33333">
+      <text><![CDATA[El puerto 8000 esta bloqueado internacionalmente por razones de seguridad.]]></text>
+      <feedback format="html"><text><![CDATA[<p>Incorrecto. No hay puertos bloqueados internacionalmente por defecto en ese sentido; el problema es la direccion localhost.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="-33.33333">
+      <text><![CDATA[El compañero necesita estar en la misma ciudad para acceder a la URL.]]></text>
+      <feedback format="html"><text><![CDATA[<p>Incorrecto. La ubicacion geografica no es el problema; lo es la direccion de red usada.</p>]]></text></feedback>
+    </answer>
+    <tags>
+      <tag><text>Tema 1: Fundamentos HTTP y REST</text></tag>
+      <tag><text>Dificultad: Facil</text></tag>
+      <tag><text>Tipo: Opcion Multiple</text></tag>
+    </tags>
+  </question>
+
+  <!-- CRIT07 -->
+  <question type="matching">
+    <name><text><![CDATA[CRIT07. Protocolos y sus propositos]]></text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Relaciona cada protocolo de red con la tarea principal para la que fue diseñado:</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>Cada protocolo de internet tiene un proposito especifico: HTTP/HTTPS para navegacion web, SMTP para envio de correo, FTP/SFTP para transferencia de archivos, DNS para traducir nombres de dominio a IPs, y SQL sobre TCP para bases de datos.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>true</shuffleanswers>
+    <subquestion format="html">
+      <text><![CDATA[<p>HTTPS</p>]]></text>
+      <answer><text><![CDATA[Transferencia de paginas web y APIs de forma segura]]></text></answer>
+    </subquestion>
+    <subquestion format="html">
+      <text><![CDATA[<p>SMTP</p>]]></text>
+      <answer><text><![CDATA[Envio de correos electronicos entre servidores]]></text></answer>
+    </subquestion>
+    <subquestion format="html">
+      <text><![CDATA[<p>SFTP</p>]]></text>
+      <answer><text><![CDATA[Transferencia de archivos de forma cifrada y segura]]></text></answer>
+    </subquestion>
+    <subquestion format="html">
+      <text><![CDATA[<p>DNS</p>]]></text>
+      <answer><text><![CDATA[Traducir nombres de dominio a direcciones IP]]></text></answer>
+    </subquestion>
+    <subquestion format="html">
+      <text><![CDATA[<p>SQL sobre TCP</p>]]></text>
+      <answer><text><![CDATA[Consultar y manipular bases de datos relacionales]]></text></answer>
+    </subquestion>
+    <tags>
+      <tag><text>Tema 1: Fundamentos HTTP y REST</text></tag>
+      <tag><text>Dificultad: Facil</text></tag>
+      <tag><text>Tipo: Emparejamiento</text></tag>
+    </tags>
+  </question>
+
+  <!-- CRIT08 -->
+  <question type="multichoice">
+    <name><text><![CDATA[CRIT08. HTTP es sin estado (stateless)]]></text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Una estudiante diseña una API REST para un sistema de recomendacion. Planea que el servidor "recuerde" al usuario entre peticiones para no pedirle el ID cada vez. Un compañero le dice: "Eso no funciona asi con HTTP puro."</p>
+<p>¿Por que el compañero tiene razon?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>HTTP es un protocolo <strong>sin estado (stateless)</strong>: cada peticion es completamente independiente y el servidor no guarda ninguna memoria de peticiones anteriores. Para identificar al usuario entre peticiones se usan mecanismos explicitos como tokens (JWT), cookies de sesion, o el cliente envia el ID en cada peticion.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100">
+      <text><![CDATA[HTTP es sin estado; el servidor no recuerda peticiones anteriores. Cada peticion debe incluir toda la informacion necesaria, como un token o ID de usuario.]]></text>
+      <feedback format="html"><text><![CDATA[<p>Correcto. La naturaleza stateless de HTTP es una de sus caracteristicas fundamentales y un principio de REST.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="-33.33333">
+      <text><![CDATA[El servidor siempre recuerda al usuario porque guarda su IP; no es necesario enviar el ID.]]></text>
+      <feedback format="html"><text><![CDATA[<p>Incorrecto. La IP puede cambiar y ademas no es un mecanismo de autenticacion; HTTP no mantiene estado por si solo.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="-33.33333">
+      <text><![CDATA[El problema es que FastAPI no soporta sesiones de usuario; habria que usar otro framework.]]></text>
+      <feedback format="html"><text><![CDATA[<p>Incorrecto. El problema es el protocolo HTTP en si, no el framework. FastAPI puede implementar autenticacion con tokens.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="-33.33333">
+      <text><![CDATA[Solo los servidores en la nube pueden recordar usuarios; los locales no.]]></text>
+      <feedback format="html"><text><![CDATA[<p>Incorrecto. La ubicacion del servidor no tiene relacion con la naturaleza stateless de HTTP.</p>]]></text></feedback>
+    </answer>
+    <tags>
+      <tag><text>Tema 1: Fundamentos HTTP y REST</text></tag>
+      <tag><text>Dificultad: Intermedio</text></tag>
+      <tag><text>Tipo: Opcion Multiple</text></tag>
+    </tags>
+  </question>
+
+  <!-- CRIT09 -->
+  <question type="multichoice">
+    <name><text><![CDATA[CRIT09. Auditoria de anti-patrones REST]]></text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Revisa las siguientes rutas de una API y selecciona la opcion que contiene una ruta que viola los principios REST:</p>
+<ul>
+  <li>Ruta A: <code>POST /juegos</code> para crear un juego nuevo</li>
+  <li>Ruta B: <code>GET /juegos/42</code> para obtener el juego con ID 42</li>
+  <li>Ruta C: <code>GET /obtenerTodosLosJuegos</code> para listar todos los juegos</li>
+  <li>Ruta D: <code>DELETE /juegos/42</code> para eliminar el juego con ID 42</li>
+</ul>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>La Ruta C viola REST porque incluye una accion (verbo) en la URL (<em>obtener</em>). En REST, las URLs representan <strong>recursos</strong> (sustantivos), y la accion la define el <strong>metodo HTTP</strong>. La forma correcta es <code>GET /juegos</code>.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100">
+      <text><![CDATA[Ruta C, porque incluye un verbo (obtener) en la URL; en REST las URLs deben ser sustantivos que representen recursos.]]></text>
+      <feedback format="html"><text><![CDATA[<p>Correcto. Uno de los principios REST mas importantes es que las URLs identifican recursos, no acciones.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="-33.33333">
+      <text><![CDATA[Ruta A, porque POST no deberia usarse para crear recursos; se debe usar PUT.]]></text>
+      <feedback format="html"><text><![CDATA[<p>Incorrecto. POST es el metodo estandar de REST para crear nuevos recursos en una coleccion.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="-33.33333">
+      <text><![CDATA[Ruta B, porque no se deberia incluir el ID en la URL; debe ir en el cuerpo.]]></text>
+      <feedback format="html"><text><![CDATA[<p>Incorrecto. Los identificadores de recursos van tipicamente en la URL como parametros de ruta, lo cual es correcto en REST.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="-33.33333">
+      <text><![CDATA[Ruta D, porque DELETE es un metodo peligroso que no forma parte de REST.]]></text>
+      <feedback format="html"><text><![CDATA[<p>Incorrecto. DELETE es un metodo HTTP estandar y es parte de los metodos CRUD en REST.</p>]]></text></feedback>
+    </answer>
+    <tags>
+      <tag><text>Tema 2: Principios de Diseno de APIs</text></tag>
+      <tag><text>Dificultad: Intermedio</text></tag>
+      <tag><text>Tipo: Opcion Multiple</text></tag>
+    </tags>
+  </question>
+
+  <!-- CRIT10 -->
+  <question type="multichoice">
+    <name><text><![CDATA[CRIT10. Por que POST y no GET para predicciones ML]]></text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Un equipo debate si el endpoint de prediccion de su modelo de ML deberia ser <strong>GET /predict?features=1,2,3</strong> o <strong>POST /predict</strong> con el cuerpo en JSON.</p>
+<p>¿Cual es el argumento tecnico mas solido para preferir POST?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>GET incluye todos los datos en la URL (query string), lo que tiene limitaciones de longitud (aprox. 2000 caracteres), expone datos sensibles en logs y en el historial del navegador. POST envia los datos en el cuerpo de la peticion, lo que soporta estructuras complejas como JSON, vectores de alta dimension, y no tiene limites practicos de tamano.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100">
+      <text><![CDATA[POST permite enviar los datos en el cuerpo como JSON, soportando vectores complejos sin limite de longitud y sin exponer los datos en la URL.]]></text>
+      <feedback format="html"><text><![CDATA[<p>Correcto. Para modelos de ML con muchos features, POST con cuerpo JSON es la practica estandar de la industria.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="-33.33333">
+      <text><![CDATA[POST es mas rapido que GET porque el servidor no necesita leer la URL.]]></text>
+      <feedback format="html"><text><![CDATA[<p>Incorrecto. La diferencia de velocidad no es el argumento relevante; lo son la capacidad de datos y la seguridad.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="-33.33333">
+      <text><![CDATA[GET solo funciona con texto plano; POST es el unico metodo que soporta numeros.]]></text>
+      <feedback format="html"><text><![CDATA[<p>Incorrecto. Ambos metodos pueden transportar cualquier tipo de dato; la diferencia esta en donde van los datos.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="-33.33333">
+      <text><![CDATA[FastAPI solo puede procesar peticiones POST; no tiene soporte nativo para GET.]]></text>
+      <feedback format="html"><text><![CDATA[<p>Incorrecto. FastAPI soporta todos los metodos HTTP.</p>]]></text></feedback>
+    </answer>
+    <tags>
+      <tag><text>Tema 2: Principios de Diseno de APIs</text></tag>
+      <tag><text>Dificultad: Intermedio</text></tag>
+      <tag><text>Tipo: Opcion Multiple</text></tag>
+    </tags>
+  </question>
+
+  <!-- CRIT11 -->
+  <question type="multichoice">
+    <name><text><![CDATA[CRIT11. Necesidad de paginacion en APIs]]></text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Una API retorna todos los juegos de una base de datos con <code>GET /juegos</code>. Con 50 juegos funciona bien. Seis meses despues la base tiene 500,000 juegos y el endpoint se vuelve muy lento o falla.</p>
+<p>¿Cual es la solucion de diseno correcta que debio haberse implementado desde el inicio?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>La <strong>paginacion</strong> (con parametros como <code>skip</code> y <code>limit</code>, o page y page_size) permite retornar un subconjunto de resultados por peticion. Esto evita sobrecargar el servidor y la red al crecer los datos. Es una practica estandar de diseno de APIs desde el principio.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100">
+      <text><![CDATA[Paginacion: retornar solo un subconjunto de resultados por peticion usando parametros como skip y limit, para que el cliente solicite los datos en partes.]]></text>
+      <feedback format="html"><text><![CDATA[<p>Correcto. La paginacion es una practica estandar para APIs que manejan colecciones que pueden crecer indefinidamente.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="-33.33333">
+      <text><![CDATA[Usar un servidor mas potente para que pueda retornar todos los registros mas rapido.]]></text>
+      <feedback format="html"><text><![CDATA[<p>Incorrecto. Mas hardware solo posterga el problema; el diseno debe ser escalable desde el inicio.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="-33.33333">
+      <text><![CDATA[Comprimir los datos antes de enviarlos para que el volumen no afecte el rendimiento.]]></text>
+      <feedback format="html"><text><![CDATA[<p>Incorrecto. La compresion ayuda con el ancho de banda pero no con el tiempo de procesamiento de millones de registros.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="-33.33333">
+      <text><![CDATA[Cambiar el metodo de GET a POST para que la peticion pueda cargar mas datos.]]></text>
+      <feedback format="html"><text><![CDATA[<p>Incorrecto. El problema no es el metodo HTTP sino la cantidad de datos retornados en una sola respuesta.</p>]]></text></feedback>
+    </answer>
+    <tags>
+      <tag><text>Tema 2: Principios de Diseno de APIs</text></tag>
+      <tag><text>Dificultad: Intermedio</text></tag>
+      <tag><text>Tipo: Opcion Multiple</text></tag>
+    </tags>
+  </question>
+
+  <!-- CRIT12 -->
+  <question type="matching">
+    <name><text><![CDATA[CRIT12. Parametro de ruta vs parametro de consulta]]></text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Relaciona cada escenario con el tipo de parametro HTTP mas apropiado para implementarlo:</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>Los <strong>parametros de ruta</strong> (/juegos/42) identifican un recurso especifico e irremplazable. Los <strong>parametros de consulta</strong> (/juegos?genero=RPG&limit=10) se usan para filtrar, ordenar o paginar una coleccion. Esta distincion mejora la claridad y el diseno semantico de la API.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>true</shuffleanswers>
+    <subquestion format="html">
+      <text><![CDATA[<p>Obtener el detalle de un juego con ID especifico</p>]]></text>
+      <answer><text><![CDATA[Parametro de ruta: /juegos/{id}]]></text></answer>
+    </subquestion>
+    <subquestion format="html">
+      <text><![CDATA[<p>Filtrar juegos por genero y ordenarlos por calificacion</p>]]></text>
+      <answer><text><![CDATA[Parametro de consulta: /juegos?genero=RPG&orden=calificacion]]></text></answer>
+    </subquestion>
+    <subquestion format="html">
+      <text><![CDATA[<p>Acceder a los logros de un jugador concreto</p>]]></text>
+      <answer><text><![CDATA[Parametro de ruta: /jugadores/{id}/logros]]></text></answer>
+    </subquestion>
+    <subquestion format="html">
+      <text><![CDATA[<p>Paginar una lista de partidas (pagina 2, 20 resultados por pagina)</p>]]></text>
+      <answer><text><![CDATA[Parametro de consulta: /partidas?pagina=2&limite=20]]></text></answer>
+    </subquestion>
+    <tags>
+      <tag><text>Tema 2: Principios de Diseno de APIs</text></tag>
+      <tag><text>Dificultad: Intermedio</text></tag>
+      <tag><text>Tipo: Emparejamiento</text></tag>
+    </tags>
+  </question>
+
+  <!-- CRIT13 -->
+  <question type="multichoice">
+    <name><text><![CDATA[CRIT13. Interpretando Swagger en /docs]]></text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Accedes a <strong>http://localhost:8000/docs</strong> de tu API y ves un endpoint documentado con:</p>
+<ul>
+  <li>Metodo: <strong>POST</strong></li>
+  <li>Ruta: <strong>/predict</strong></li>
+  <li>Request Body: <code>{"features": [1.2, 3.4, 5.6]}</code></li>
+  <li>Respuesta 200: <code>{"prediccion": "RPG", "confianza": 0.92}</code></li>
+  <li>Respuesta 422: <code>Validation Error</code></li>
+</ul>
+<p>¿Que informacion puedes concluir solo con leer esta documentacion?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>Swagger /docs expone automaticamente el contrato completo de la API: metodo, ruta, formato del cuerpo esperado, y todos los posibles codigos de respuesta. Con esa informacion, cualquier desarrollador puede consumir el endpoint sin ver el codigo fuente, que es el objetivo de una buena documentacion de API.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100">
+      <text><![CDATA[El endpoint espera una lista de numeros decimales como entrada y devuelve una categoria de juego con su nivel de confianza; el 422 indica que si los datos no son validos, el servidor lo rechaza.]]></text>
+      <feedback format="html"><text><![CDATA[<p>Correcto. Swagger /docs es el contrato de la API: define todo lo necesario para consumirla sin ver el codigo fuente.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="-33.33333">
+      <text><![CDATA[No se puede saber nada util; habria que leer el codigo Python para entender que hace el endpoint.]]></text>
+      <feedback format="html"><text><![CDATA[<p>Incorrecto. La documentacion Swagger es precisamente para entender la API sin necesidad de leer el codigo.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="-33.33333">
+      <text><![CDATA[El endpoint solo funciona si el cliente tiene Python instalado.]]></text>
+      <feedback format="html"><text><![CDATA[<p>Incorrecto. Cualquier cliente HTTP puede consumir el endpoint independientemente del lenguaje.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="-33.33333">
+      <text><![CDATA[El 422 significa que el servidor tiene un bug; habria que depurarlo antes de usarlo.]]></text>
+      <feedback format="html"><text><![CDATA[<p>Incorrecto. El 422 es una respuesta de validacion esperada y documentada; indica que los datos del cliente no cumplen el esquema.</p>]]></text></feedback>
+    </answer>
+    <tags>
+      <tag><text>Tema 3: FastAPI Web Framework</text></tag>
+      <tag><text>Dificultad: Facil</text></tag>
+      <tag><text>Tipo: Opcion Multiple</text></tag>
+    </tags>
+  </question>
+
+  <!-- CRIT14 -->
+  <question type="multichoice">
+    <name><text><![CDATA[CRIT14. Valor de un formato de error uniforme]]></text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Dos APIs manejan los errores de diferente forma:</p>
+<ul>
+  <li><strong>API A:</strong> Cuando hay un error, retorna texto libre: "hubo un problema", "fallo el servidor", "datos incorrectos".</li>
+  <li><strong>API B:</strong> Siempre retorna JSON con estructura fija: <code>{"error": "VALIDATION_ERROR", "detalle": "El campo edad debe ser mayor a 0", "codigo": 422}</code></li>
+</ul>
+<p>¿Por que API B es una mejor practica de ingenieria?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>Un formato de error uniforme y estructurado permite a los clientes programaticos (otras aplicaciones, scripts) detectar y manejar errores de forma automatica. El texto libre requiere parsing manual y es fragil. Este es un principio de diseno de APIs profesionales.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100">
+      <text><![CDATA[El formato estructurado permite que los clientes programaticos procesen y reaccionen a los errores de forma automatica y confiable, sin depender de interpretar texto libre.]]></text>
+      <feedback format="html"><text><![CDATA[<p>Correcto. Las APIs son consumidas por codigo, no solo por humanos; los errores estructurados facilitan la integracion.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="-33.33333">
+      <text><![CDATA[API B es mejor porque JSON es mas rapido de transmitir que texto plano.]]></text>
+      <feedback format="html"><text><![CDATA[<p>Incorrecto. La ventaja no es de velocidad sino de predictibilidad y facilidad de procesamiento automatico.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="-33.33333">
+      <text><![CDATA[API A es mejor porque el texto libre es mas facil de leer para los usuarios finales.]]></text>
+      <feedback format="html"><text><![CDATA[<p>Incorrecto. Los consumidores de una API son tipicamente otros sistemas, no usuarios finales que leen mensajes directamente.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="-33.33333">
+      <text><![CDATA[No hay diferencia real; ambas formas transmiten la misma informacion.]]></text>
+      <feedback format="html"><text><![CDATA[<p>Incorrecto. El formato estructurado es semanticamente mas rico y procesa automaticamente; el texto libre no.</p>]]></text></feedback>
+    </answer>
+    <tags>
+      <tag><text>Tema 2: Principios de Diseno de APIs</text></tag>
+      <tag><text>Dificultad: Intermedio</text></tag>
+      <tag><text>Tipo: Opcion Multiple</text></tag>
+    </tags>
+  </question>
+
+  <!-- CRIT15 -->
+  <question type="multichoice">
+    <name><text><![CDATA[CRIT15. Pydantic como barrera de validacion]]></text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Un estudiante dice: "No necesito Pydantic, yo verifico los datos manualmente dentro de la funcion del endpoint." Su compañero responde: "Usar Pydantic es mejor practica."</p>
+<p>¿Cual es el argumento mas solido a favor de Pydantic?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>Pydantic valida automaticamente tipos, rangos y campos requeridos <strong>antes</strong> de que la logica del endpoint se ejecute. Genera errores 422 descriptivos de forma automatica. La validacion manual es propensa a errores, dificil de mantener y no genera documentacion automatica en Swagger.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100">
+      <text><![CDATA[Pydantic valida automaticamente antes de ejecutar la logica, genera errores descriptivos y documenta el esquema en Swagger; la validacion manual es mas propensa a errores y mas dificil de mantener.]]></text>
+      <feedback format="html"><text><![CDATA[<p>Correcto. Pydantic es una capa declarativa de validacion que reduce codigo repetitivo y aumenta la robustez.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="-33.33333">
+      <text><![CDATA[Pydantic es obligatorio en FastAPI; sin el, el servidor no puede arrancar.]]></text>
+      <feedback format="html"><text><![CDATA[<p>Incorrecto. Pydantic no es estrictamente obligatorio, pero si una mejor practica muy recomendada.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="-33.33333">
+      <text><![CDATA[La validacion manual con if/else es siempre mas rapida y eficiente que Pydantic.]]></text>
+      <feedback format="html"><text><![CDATA[<p>Incorrecto. Pydantic esta implementado en Rust (v2) y es muy eficiente; ademas ofrece mucho mas que velocidad.</p>]]></text></feedback>
+    </answer>
+    <answer fraction="-33.33333">
+      <text><![CDATA[Pydantic solo sirve para validar correos electronicos; no es util para datos de ML.]]></text>
+      <feedback format="html"><text><![CDATA[<p>Incorrecto. Pydantic puede validar cualquier estructura de datos: listas, flotantes, enteros, cadenas, objetos anidados, etc.</p>]]></text></feedback>
+    </answer>
+    <tags>
+      <tag><text>Tema 3: FastAPI Web Framework</text></tag>
+      <tag><text>Dificultad: Intermedio</text></tag>
+      <tag><text>Tipo: Opcion Multiple</text></tag>
+    </tags>
+  </question>
+
+  <!-- CRIT16 -->
+  <question type="matching">
+    <name><text><![CDATA[CRIT16. Capas del stack FastAPI y sus responsabilidades]]></text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Relaciona cada componente del stack de una API con FastAPI con su responsabilidad principal:</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>En el stack de FastAPI: <strong>Uvicorn</strong> es el servidor ASGI que escucha el puerto y gestiona las conexiones TCP. <strong>FastAPI</strong> enruta las peticiones a las funciones correctas. <strong>Pydantic</strong> valida y convierte los datos. El <strong>modelo ML</strong> realiza la prediccion. <strong>Swagger UI</strong> genera la documentacion interactiva.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>true</shuffleanswers>
+    <subquestion format="html">
+      <text><![CDATA[<p>Uvicorn</p>]]></text>
+      <answer><text><![CDATA[Escuchar el puerto de red y gestionar conexiones HTTP entrantes]]></text></answer>
+    </subquestion>
+    <subquestion format="html">
+      <text><![CDATA[<p>FastAPI (decoradores @app.get / @app.post)</p>]]></text>
+      <answer><text><![CDATA[Enrutar cada peticion a la funcion Python correcta segun la ruta y metodo]]></text></answer>
+    </subquestion>
+    <subquestion format="html">
+      <text><![CDATA[<p>Pydantic (BaseModel)</p>]]></text>
+      <answer><text><![CDATA[Validar y convertir automaticamente los datos de entrada y salida]]></text></answer>
+    </subquestion>
+    <subquestion format="html">
+      <text><![CDATA[<p>Swagger UI (/docs)</p>]]></text>
+      <answer><text><![CDATA[Generar documentacion interactiva y explorable de todos los endpoints]]></text></answer>
+    </subquestion>
+    <tags>
+      <tag><text>Tema 3: FastAPI Web Framework</text></tag>
+      <tag><text>Dificultad: Intermedio</text></tag>
+      <tag><text>Tipo: Emparejamiento</text></tag>
+    </tags>
+  </question>
+
+  <!-- CRIT17 -->
+  <question type="ddwtos">
+    <name><text><![CDATA[CRIT17. Secuencia: Decidir el codigo de estado correcto]]></text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Cuando recibes una peticion en tu API, sigues un proceso de decision para elegir el codigo de estado de respuesta. Arrastra la etiqueta correcta a cada paso del flujo:</p>
+<ol>
+  <li>[[1]] - Verificar que la peticion es sintacticamente valida (formato JSON correcto).</li>
+  <li>[[2]] - Validar que los campos requeridos existen y tienen los tipos correctos.</li>
+  <li>[[3]] - Verificar que el recurso solicitado existe en el sistema.</li>
+  <li>[[4]] - Ejecutar la logica de negocio o el modelo ML.</li>
+  <li>[[5]] - Retornar el resultado si todo fue exitoso.</li>
+</ol>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>El flujo de decision: 400 (peticion malformada) → 422 (datos invalidos) → 404 (recurso no encontrado) → logica de negocio → 200 (exito). Cada capa de decision tiene su propio codigo de estado, lo que permite diagnosticar exactamente donde fallo la peticion.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <hidden>0</hidden>
+    <shuffleanswers>true</shuffleanswers>
+    <dragbox><text><![CDATA[400 si el JSON esta malformado]]></text><group>1</group></dragbox>
+    <dragbox><text><![CDATA[422 si los tipos o campos son invalidos]]></text><group>1</group></dragbox>
+    <dragbox><text><![CDATA[404 si el recurso no existe]]></text><group>1</group></dragbox>
+    <dragbox><text><![CDATA[500 si hay un error interno]]></text><group>1</group></dragbox>
+    <dragbox><text><![CDATA[200 con el resultado]]></text><group>1</group></dragbox>
+    <dragbox><text><![CDATA[301 si la URL fue movida]]></text><group>1</group></dragbox>
+    <dragbox><text><![CDATA[201 si se creo un nuevo usuario]]></text><group>1</group></dragbox>
+    <tags>
+      <tag><text>Tema 1: Fundamentos HTTP y REST</text></tag>
+      <tag><text>Dificultad: Dificil</text></tag>
+      <tag><text>Tipo: Arrastrar y Soltar</text></tag>
+    </tags>
+  </question>
+
+  <!-- CRIT18 -->
+  <question type="ddwtos">
+    <name><text><![CDATA[CRIT18. Secuencia: Proceso de diseno de una API REST]]></text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Un equipo va a disenar una nueva API REST. Arrastra la etiqueta al paso correspondiente del proceso recomendado:</p>
+<ol>
+  <li>[[1]] - Identificar los recursos principales que la API va a exponer.</li>
+  <li>[[2]] - Definir las operaciones CRUD para cada recurso y los metodos HTTP.</li>
+  <li>[[3]] - Disenar los esquemas de datos de entrada y salida (contratos).</li>
+  <li>[[4]] - Definir los codigos de estado y mensajes de error estandar.</li>
+  <li>[[5]] - Implementar, probar y publicar la documentacion.</li>
+</ol>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>El proceso recomendado de diseno API sigue la logica: recursos → operaciones → contratos de datos → manejo de errores → implementacion y documentacion. Este orden asegura que el diseno es coherente antes de escribir una sola linea de codigo.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <hidden>0</hidden>
+    <shuffleanswers>true</shuffleanswers>
+    <dragbox><text><![CDATA[Modelado de recursos (sustantivos)]]></text><group>1</group></dragbox>
+    <dragbox><text><![CDATA[Mapeo de operaciones y metodos HTTP]]></text><group>1</group></dragbox>
+    <dragbox><text><![CDATA[Diseno de esquemas y contratos de datos]]></text><group>1</group></dragbox>
+    <dragbox><text><![CDATA[Definicion de codigos de error estandar]]></text><group>1</group></dragbox>
+    <dragbox><text><![CDATA[Implementacion, prueba y documentacion]]></text><group>1</group></dragbox>
+    <dragbox><text><![CDATA[Configuracion del firewall del servidor]]></text><group>1</group></dragbox>
+    <dragbox><text><![CDATA[Eleccion del lenguaje de programacion]]></text><group>1</group></dragbox>
+    <tags>
+      <tag><text>Tema 2: Principios de Diseno de APIs</text></tag>
+      <tag><text>Dificultad: Dificil</text></tag>
+      <tag><text>Tipo: Arrastrar y Soltar</text></tag>
+    </tags>
+  </question>
+
+  <!-- CRIT19 -->
+  <question type="matching">
+    <name><text><![CDATA[CRIT19. Metodos HTTP y operaciones CRUD]]></text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Relaciona cada metodo HTTP con la operacion CRUD que le corresponde segun las convenciones REST:</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>El mapeo estandar REST es: GET = Read (leer/consultar), POST = Create (crear), PUT = Update completo (reemplazar), PATCH = Update parcial (modificar campos especificos), DELETE = Delete (eliminar). Este mapeo es una convencion central de las APIs RESTful.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>true</shuffleanswers>
+    <subquestion format="html">
+      <text><![CDATA[<p>GET</p>]]></text>
+      <answer><text><![CDATA[Read: leer o consultar un recurso existente]]></text></answer>
+    </subquestion>
+    <subquestion format="html">
+      <text><![CDATA[<p>POST</p>]]></text>
+      <answer><text><![CDATA[Create: crear un nuevo recurso en la coleccion]]></text></answer>
+    </subquestion>
+    <subquestion format="html">
+      <text><![CDATA[<p>PUT</p>]]></text>
+      <answer><text><![CDATA[Update completo: reemplazar todo el contenido de un recurso]]></text></answer>
+    </subquestion>
+    <subquestion format="html">
+      <text><![CDATA[<p>DELETE</p>]]></text>
+      <answer><text><![CDATA[Delete: eliminar un recurso del sistema]]></text></answer>
+    </subquestion>
+    <subquestion format="html">
+      <text><![CDATA[<p>PATCH</p>]]></text>
+      <answer><text><![CDATA[Update parcial: modificar solo algunos campos de un recurso]]></text></answer>
+    </subquestion>
+    <tags>
+      <tag><text>Tema 1: Fundamentos HTTP y REST</text></tag>
+      <tag><text>Dificultad: Facil</text></tag>
+      <tag><text>Tipo: Emparejamiento</text></tag>
+    </tags>
+  </question>
+
+  <!-- CRIT20 -->
+  <question type="ddwtos">
+    <name><text><![CDATA[CRIT20. Secuencia: Desplegar un servicio FastAPI]]></text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Ordena las etapas para poner en produccion un servicio de prediccion basado en FastAPI arrastrando la etiqueta correcta a cada paso:</p>
+<ol>
+  <li>[[1]] - Desarrollar y entrenar el modelo de ML; guardar el modelo serializado.</li>
+  <li>[[2]] - Crear la aplicacion FastAPI con los endpoints de prediccion y validacion Pydantic.</li>
+  <li>[[3]] - Probar localmente con Swagger /docs o Postman que los endpoints responden correctamente.</li>
+  <li>[[4]] - Empaquetar la aplicacion con sus dependencias (requirements.txt o contenedor).</li>
+  <li>[[5]] - Desplegar en un servidor o plataforma en la nube con IP publica accesible.</li>
+  <li>[[6]] - Monitorear los logs y el rendimiento del servicio en produccion.</li>
+</ol>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>El ciclo de despliegue: entrenamiento del modelo → desarrollo de la API → pruebas locales → empaquetado → despliegue en servidor → monitoreo. Este flujo garantiza que el servicio es funcional antes de exponerlo a usuarios reales.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <hidden>0</hidden>
+    <shuffleanswers>true</shuffleanswers>
+    <dragbox><text><![CDATA[Entrenar y guardar el modelo]]></text><group>1</group></dragbox>
+    <dragbox><text><![CDATA[Desarrollar la API con FastAPI y Pydantic]]></text><group>1</group></dragbox>
+    <dragbox><text><![CDATA[Pruebas locales con Swagger y Postman]]></text><group>1</group></dragbox>
+    <dragbox><text><![CDATA[Empaquetar con dependencias]]></text><group>1</group></dragbox>
+    <dragbox><text><![CDATA[Desplegar en servidor con IP publica]]></text><group>1</group></dragbox>
+    <dragbox><text><![CDATA[Monitorear logs y rendimiento]]></text><group>1</group></dragbox>
+    <dragbox><text><![CDATA[Redisenar la base de datos relacional]]></text><group>1</group></dragbox>
+    <dragbox><text><![CDATA[Instalar el sistema operativo del servidor]]></text><group>1</group></dragbox>
+    <tags>
+      <tag><text>Tema 3: FastAPI Web Framework</text></tag>
+      <tag><text>Dificultad: Dificil</text></tag>
+      <tag><text>Tipo: Arrastrar y Soltar</text></tag>
+    </tags>
+  </question>
+
+</quiz>
+
