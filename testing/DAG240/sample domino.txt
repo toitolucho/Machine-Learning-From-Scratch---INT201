@@ -1,0 +1,90 @@
+import bpy
+
+import random
+
+
+
+domino = bpy.data.objects["Cube"]
+
+agujereador = bpy.data.objects["Cylinder"]
+
+
+
+x = random.randrange(-8, 8)/10
+
+z = random.randrange(-18,18)/10
+
+agujereador.location = (x,0,  z)
+
+
+
+
+
+bpy.ops.object.select_all(action='DESELECT')
+
+domino.select_set(True)
+
+bpy.context.view_layer.objects.active = domino
+
+
+
+
+
+
+
+#bpy.context.space_data.context = 'MODIFIER'
+
+bpy.ops.object.modifier_add(type='BOOLEAN')
+
+bpy.context.object.modifiers["Boolean"].object = agujereador
+
+bpy.context.object.modifiers["Boolean"].operation = 'DIFFERENCE'
+
+bpy.ops.object.modifier_apply(modifier="Boolean")
+
+
+
+I have that piece of code for blender with python, I tested it and it creates a hole on a pieza, I am trying to emulate the domino pieces, so I will have a feature that will do that.
+
+puntos = [ (-2,0,2) , (0,0,4),  (5,5,3),           ()  ]
+
+              p1         p2         p3     p4    ...p7
+
+  
+
+  
+
+Caras  = [
+
+[0,0,0,1,0,0,0]
+
+,[1,0,0,0,0,0,1]
+
+,[1,0,0,1,0,0,1]
+
+.
+
+.
+
+.
+
+.
+
+]
+
+
+
+def Agujerear (cara):
+
+indice= 0
+
+por cada casilla en caras[cara-1]:
+
+if casilla == 1:
+
+crearAgujero(domino, agujereador, puntos[indice])
+
+indice = indice +1
+
+Agujerear(6)
+

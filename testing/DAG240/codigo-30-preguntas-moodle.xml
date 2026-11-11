@@ -1,0 +1,1100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+
+<!-- ============================================================ -->
+<!-- CATEGORIA PRINCIPAL Y DESCRIPCION GENERAL                    -->
+<!-- ============================================================ -->
+<question type="category">
+    <category><text>$course$/DAG240 - Scripting en Blender con Python - Codigo</text></category>
+    <info format="html"><text><![CDATA[<p><strong>Evaluación de Lectura y Comprensión de Código — DAG240: Scripting en Blender con Python (02-2026)</strong></p>
+<p>Cuestionario de 30 preguntas diseñado para comprobar que el estudiante sabe <strong>leer, predecir, depurar y completar</strong> scripts de Blender en Python (<code>bpy</code>), detectando errores sutiles o trampas conceptuales frecuentes al usar código generado por IA.</p>
+<p><strong>Temas evaluados:</strong></p>
+<ul>
+  <li>Lectura y predicción de scripts con <code>bpy.data.objects</code>, <code>location</code>, <code>scale</code>, <code>rotation_euler</code> (radianes) y bucles <code>for</code> simples o anidados.</li>
+  <li>Diferencia entre selección (<code>select_set</code>) y objeto activo (<code>view_layer.objects.active</code>), limpieza de escena y duplicación vinculada vs. completa.</li>
+  <li>Asignación de materiales, uso de <code>random.randrange</code> vs. <code>random.uniform</code> y manejo de excepciones (<code>KeyError</code>).</li>
+  <li>Depuración paso a paso del script de fichas de dominó con modificadores booleanos (<code>DIFFERENCE</code>, aplicación de escala, orden de operaciones y aplicación permanente).</li>
+</ul>
+<p><strong>Clasificación por dificultad:</strong> Easy (10 preguntas), Intermediate (12 preguntas) y Hard (8 preguntas).</p>]]></text></info>
+</question>
+
+<!-- ============================================================ -->
+<!-- SUBCATEGORIA: EASY                                        -->
+<!-- ============================================================ -->
+<question type="category">
+    <category><text>$course$/DAG240 - Scripting en Blender con Python - Codigo/Easy</text></category>
+    <info format="html"><text><![CDATA[<p><strong>Nivel Easy (10 preguntas):</strong> Lectura básica de código <code>bpy</code>, acceso a objetos, transformaciones, bucles simples, radianes y operaciones booleanas básicas.</p>]]></text></info>
+</question>
+
+<!-- ============================================================ -->
+<!-- Q01 - EASY - Acceso a un objeto por nombre -->
+<!-- ============================================================ -->
+<question type="multichoice">
+    <name><text><![CDATA[Q01. [EASY] Acceso a un objeto por nombre]]></text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p>¿Qué hace la siguiente línea de código en Blender?</p>
+<pre>domino = bpy.data.objects["Cube"]</pre>]]></text>
+    </questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p><code>bpy.data.objects["Cube"]</code> accede al diccionario de objetos de Blender y retorna una referencia (un puntero) al objeto cuyo nombre es "Cube". No crea, no selecciona ni elimina — simplemente obtiene acceso a ese objeto para poder usarlo después en el código. Si el objeto no existe, Blender lanzará un <code>KeyError</code>.</p>]]></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <correctfeedback format="html"><text><![CDATA[¡Correcto!]]></text></correctfeedback>
+    <incorrectfeedback format="html"><text><![CDATA[Incorrecto. Revisa el análisis del código.]]></text></incorrectfeedback>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[Crea un nuevo objeto llamado "Cube" en la escena]]></text></answer>
+    <answer fraction="100" format="html"><text><![CDATA[Busca y obtiene una referencia al objeto llamado "Cube" que ya existe en la escena]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[Selecciona el objeto "Cube" en la escena]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[Elimina el objeto "Cube" de la escena]]></text></answer>
+    <tags>
+        <tag><text>02-2026</text></tag>
+        <tag><text>scripting</text></tag>
+        <tag><text>Easy</text></tag>
+        <tag><text>Opcion Multiple</text></tag>
+    </tags>
+</question>
+
+<!-- ============================================================ -->
+<!-- Q02 - EASY - Cambiar la posición de un objeto -->
+<!-- ============================================================ -->
+<question type="multichoice">
+    <name><text><![CDATA[Q02. [EASY] Cambiar la posición de un objeto]]></text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p>¿Qué efecto tiene este código sobre el objeto <code>agujereador</code>?</p>
+<pre>agujereador.location = (0.3, 0, -1.5)</pre>]]></text>
+    </questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p>Asignar directamente a <code>.location</code> establece la <strong>posición absoluta</strong> del objeto en el espacio 3D de la escena. No es un desplazamiento relativo — si el objeto estaba en (5, 5, 5), después de esta línea estará exactamente en (0.3, 0, -1.5). Para moverse de forma relativa habría que sumar: <code>agujereador.location.x += 0.3</code>.</p>]]></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <correctfeedback format="html"><text><![CDATA[¡Correcto!]]></text></correctfeedback>
+    <incorrectfeedback format="html"><text><![CDATA[Incorrecto. Revisa el análisis del código.]]></text></incorrectfeedback>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[Mueve el objeto 0.3 unidades en X, 0 en Y y -1.5 en Z <strong>de forma relativa</strong> a su posición actual]]></text></answer>
+    <answer fraction="100" format="html"><text><![CDATA[Mueve el objeto a la posición absoluta X=0.3, Y=0, Z=-1.5 en el espacio de la escena]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[Escala el objeto por los valores dados]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[Rota el objeto usando los valores dados como ángulos en grados]]></text></answer>
+    <tags>
+        <tag><text>02-2026</text></tag>
+        <tag><text>scripting</text></tag>
+        <tag><text>Easy</text></tag>
+        <tag><text>Opcion Multiple</text></tag>
+    </tags>
+</question>
+
+<!-- ============================================================ -->
+<!-- Q03 - EASY - Número aleatorio con random.randrange -->
+<!-- ============================================================ -->
+<question type="multichoice">
+    <name><text><![CDATA[Q03. [EASY] Número aleatorio con random.randrange]]></text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p>¿Cuáles son los posibles valores que puede generar la siguiente línea?</p>
+<pre>x = random.randrange(-8, 8)</pre>]]></text>
+    </questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p><code>random.randrange(inicio, fin)</code> genera un entero desde <code>inicio</code> hasta <code>fin - 1</code>. El valor final <strong>no está incluido</strong>. Entonces <code>randrange(-8, 8)</code> puede generar -8, -7, -6, ..., 6, 7 — pero nunca el 8. Esto es idéntico al comportamiento de <code>range()</code> en Python.</p>]]></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <correctfeedback format="html"><text><![CDATA[¡Correcto!]]></text></correctfeedback>
+    <incorrectfeedback format="html"><text><![CDATA[Incorrecto. Revisa el análisis del código.]]></text></incorrectfeedback>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[Números del -8 al 8, incluyendo ambos extremos]]></text></answer>
+    <answer fraction="100" format="html"><text><![CDATA[Números del -8 al 7, incluyendo -8 pero <strong>excluyendo</strong> el 8]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[Números del -7 al 8, excluyendo -8 pero incluyendo el 8]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[Solo números positivos del 0 al 8]]></text></answer>
+    <tags>
+        <tag><text>02-2026</text></tag>
+        <tag><text>scripting</text></tag>
+        <tag><text>Easy</text></tag>
+        <tag><text>Opcion Multiple</text></tag>
+    </tags>
+</question>
+
+<!-- ============================================================ -->
+<!-- Q04 - EASY - Deseleccionar todos los objetos -->
+<!-- ============================================================ -->
+<question type="multichoice">
+    <name><text><![CDATA[Q04. [EASY] Deseleccionar todos los objetos]]></text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p>¿Cuál es el propósito de esta línea en el contexto del script del dominó?</p>
+<pre>bpy.ops.object.select_all(action='DESELECT')</pre>]]></text>
+    </questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p><code>select_all(action='DESELECT')</code> recorre todos los objetos visibles y les quita el estado de selección. Esto es necesario antes de seleccionar manualmente objetos específicos, para asegurarse de que las operaciones posteriores (como aplicar un modificador) solo afecten al objeto deseado y no a todos los que estuvieran seleccionados previamente.</p>]]></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <correctfeedback format="html"><text><![CDATA[¡Correcto!]]></text></correctfeedback>
+    <incorrectfeedback format="html"><text><![CDATA[Incorrecto. Revisa el análisis del código.]]></text></incorrectfeedback>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[Elimina todos los objetos de la escena]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[Oculta todos los objetos en el viewport]]></text></answer>
+    <answer fraction="100" format="html"><text><![CDATA[Quita la selección de todos los objetos, dejando la escena sin nada seleccionado]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[Selecciona todos los objetos de la escena]]></text></answer>
+    <tags>
+        <tag><text>02-2026</text></tag>
+        <tag><text>scripting</text></tag>
+        <tag><text>Easy</text></tag>
+        <tag><text>Opcion Multiple</text></tag>
+    </tags>
+</question>
+
+<!-- ============================================================ -->
+<!-- Q05 - EASY - Seleccionar y activar un objeto -->
+<!-- ============================================================ -->
+<question type="multichoice">
+    <name><text><![CDATA[Q05. [EASY] Seleccionar y activar un objeto]]></text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p>Observa estas dos líneas:</p>
+<pre>domino.select_set(True)
+bpy.context.view_layer.objects.active = domino</pre>
+<p>¿Cuál es la diferencia entre "seleccionar" y "activar" un objeto?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p>En Blender, puedes tener varios objetos seleccionados, pero solo uno puede ser el <strong>activo</strong>. Los operadores como <code>modifier_apply</code> trabajan sobre el objeto activo. <code>select_set(True)</code> marca el objeto con el borde de selección, y <code>objects.active</code> define cuál es el activo. Muchos operadores requieren ambas condiciones para funcionar correctamente.</p>]]></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <correctfeedback format="html"><text><![CDATA[¡Correcto!]]></text></correctfeedback>
+    <incorrectfeedback format="html"><text><![CDATA[Incorrecto. Revisa el análisis del código.]]></text></incorrectfeedback>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[Son exactamente lo mismo; ambas líneas hacen lo mismo]]></text></answer>
+    <answer fraction="100" format="html"><text><![CDATA[<code>select_set(True)</code> lo marca como seleccionado (borde naranja), mientras que <code>.active</code> lo convierte en el objeto activo (borde amarillo brillante) sobre el que actúan los operadores]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[Solo <code>.active</code> es necesario; <code>select_set</code> es obsoleto en versiones modernas]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[<code>select_set</code> selecciona el objeto en la escena, y <code>.active</code> lo selecciona en el outliner]]></text></answer>
+    <tags>
+        <tag><text>02-2026</text></tag>
+        <tag><text>scripting</text></tag>
+        <tag><text>Easy</text></tag>
+        <tag><text>Opcion Multiple</text></tag>
+    </tags>
+</question>
+
+<!-- ============================================================ -->
+<!-- Q06 - EASY - Escala de un objeto -->
+<!-- ============================================================ -->
+<question type="multichoice">
+    <name><text><![CDATA[Q06. [EASY] Escala de un objeto]]></text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p>¿Qué hace este código?</p>
+<pre>obj = bpy.data.objects["Cube"]
+obj.scale = (2, 1, 3)</pre>]]></text>
+    </questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p><code>.scale</code> acepta una tupla <code>(x, y, z)</code> donde cada valor es un multiplicador. <code>scale = (2, 1, 3)</code> hace el cubo dos veces más ancho en X, mantiene su tamaño en Y (factor 1 = sin cambio) y lo hace tres veces más alto en Z. No tiene ningún efecto sobre la posición ni la rotación.</p>]]></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <correctfeedback format="html"><text><![CDATA[¡Correcto!]]></text></correctfeedback>
+    <incorrectfeedback format="html"><text><![CDATA[Incorrecto. Revisa el análisis del código.]]></text></incorrectfeedback>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[Mueve el cubo a las coordenadas (2, 1, 3)]]></text></answer>
+    <answer fraction="100" format="html"><text><![CDATA[Escala el cubo: el doble en X, sin cambio en Y, el triple en Z]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[Escala el cubo uniformemente por un factor de (2+1+3)/3 = 2]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[Rota el cubo 2° en X, 1° en Y y 3° en Z]]></text></answer>
+    <tags>
+        <tag><text>02-2026</text></tag>
+        <tag><text>scripting</text></tag>
+        <tag><text>Easy</text></tag>
+        <tag><text>Opcion Multiple</text></tag>
+    </tags>
+</question>
+
+<!-- ============================================================ -->
+<!-- Q07 - EASY - Bucle para crear múltiples cubos -->
+<!-- ============================================================ -->
+<question type="multichoice">
+    <name><text><![CDATA[Q07. [EASY] Bucle para crear múltiples cubos]]></text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p>¿Cuántos cubos creará el siguiente bucle?</p>
+<pre>for i in range(5):
+    bpy.ops.mesh.primitive_cube_add(location=(i * 2, 0, 0))</pre>]]></text>
+    </questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p><code>range(5)</code> genera los valores 0, 1, 2, 3, 4 — exactamente 5 iteraciones. En cada iteración se crea un cubo en posiciones X = 0, 2, 4, 6, 8. El parámetro <code>location</code> en <code>primitive_cube_add</code> es opcional; si no se da, el cubo aparece en el origen. Entonces el resultado son <strong>5 cubos</strong> distribuidos a lo largo del eje X.</p>]]></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <correctfeedback format="html"><text><![CDATA[¡Correcto!]]></text></correctfeedback>
+    <incorrectfeedback format="html"><text><![CDATA[Incorrecto. Revisa el análisis del código.]]></text></incorrectfeedback>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[4 cubos]]></text></answer>
+    <answer fraction="100" format="html"><text><![CDATA[5 cubos]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[6 cubos]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[Ninguno — <code>primitive_cube_add</code> necesita un tamaño obligatorio]]></text></answer>
+    <tags>
+        <tag><text>02-2026</text></tag>
+        <tag><text>scripting</text></tag>
+        <tag><text>Easy</text></tag>
+        <tag><text>Opcion Multiple</text></tag>
+    </tags>
+</question>
+
+<!-- ============================================================ -->
+<!-- Q08 - EASY - Rotación con radianes -->
+<!-- ============================================================ -->
+<question type="multichoice">
+    <name><text><![CDATA[Q08. [EASY] Rotación con radianes]]></text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p>¿Qué hace este fragmento de código? ¿A cuántos grados equivale?</p>
+<pre>import math
+obj.rotation_euler = (0, 0, math.radians(90))</pre>]]></text>
+    </questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p>Blender almacena la rotación en <strong>radianes</strong>, no en grados. <code>math.radians(90)</code> convierte 90° a su equivalente en radianes, que es π/2 ≈ 1.5708. Entonces el código rota el objeto exactamente 90° alrededor del eje Z. Si escribieras <code>rotation_euler = (0, 0, 90)</code> sin convertir, el objeto giraría ~5157°, que es incorrecto.</p>]]></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <correctfeedback format="html"><text><![CDATA[¡Correcto!]]></text></correctfeedback>
+    <incorrectfeedback format="html"><text><![CDATA[Incorrecto. Revisa el análisis del código.]]></text></incorrectfeedback>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[Rota el objeto 90 radianes en Z, lo cual equivale aproximadamente a 5157°]]></text></answer>
+    <answer fraction="100" format="html"><text><![CDATA[Rota el objeto 90° en el eje Z usando la representación en radianes (π/2)]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[Rota el objeto 1.57° en Z, porque <code>math.radians(90)</code> retorna aproximadamente 1.57]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[Establece la rotación en grados directamente, sin conversión]]></text></answer>
+    <tags>
+        <tag><text>02-2026</text></tag>
+        <tag><text>scripting</text></tag>
+        <tag><text>Easy</text></tag>
+        <tag><text>Opcion Multiple</text></tag>
+    </tags>
+</question>
+
+<!-- ============================================================ -->
+<!-- Q09 - EASY - Modificador Boolean — tipo de operación -->
+<!-- ============================================================ -->
+<question type="truefalse">
+    <name><text><![CDATA[Q09. [EASY] Modificador Boolean — tipo de operación]]></text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p>En el script del dominó, si cambias <code>'DIFFERENCE'</code> por <code>'UNION'</code>, el cilindro se <strong>restará</strong> del cubo en lugar de unirse a él.</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p>Es exactamente al revés. La operación <code>'DIFFERENCE'</code> <strong>resta</strong> la forma del objeto herramienta (el cilindro) del objeto base (el dominó), creando un hueco. La operación <code>'UNION'</code> <strong>combina</strong> ambas formas en una sola malla fusionada. Para hacer agujeros en el dominó, se necesita <code>'DIFFERENCE'</code>.</p>]]></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>1</penalty>
+    <hidden>0</hidden>
+    <answer fraction="0" format="html"><text><![CDATA[true]]></text></answer>
+    <answer fraction="100" format="html"><text><![CDATA[false]]></text></answer>
+    <tags>
+        <tag><text>02-2026</text></tag>
+        <tag><text>scripting</text></tag>
+        <tag><text>Easy</text></tag>
+        <tag><text>Verdadero o Falso</text></tag>
+    </tags>
+</question>
+
+<!-- ============================================================ -->
+<!-- Q10 - EASY - Referencia al objeto activo -->
+<!-- ============================================================ -->
+<question type="multichoice">
+    <name><text><![CDATA[Q10. [EASY] Referencia al objeto activo]]></text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p>¿Qué objeto modifican estas líneas del script del dominó?</p>
+<pre>bpy.ops.object.modifier_add(type='BOOLEAN')
+bpy.context.object.modifiers["Boolean"].object = agujereador</pre>]]></text>
+    </questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p><code>bpy.context.object</code> siempre hace referencia al <strong>objeto activo</strong> en el momento de la ejecución. En el script del dominó, justo antes de estas líneas se ejecuta <code>bpy.context.view_layer.objects.active = domino</code>, así que el objeto activo es <code>domino</code>. Por eso el modificador Boolean se agrega y configura sobre el cubo (dominó), no sobre el cilindro.</p>]]></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <correctfeedback format="html"><text><![CDATA[¡Correcto!]]></text></correctfeedback>
+    <incorrectfeedback format="html"><text><![CDATA[Incorrecto. Revisa el análisis del código.]]></text></incorrectfeedback>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[Modifican el objeto <code>agujereador</code> (el cilindro)]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[Modifican todos los objetos seleccionados en la escena]]></text></answer>
+    <answer fraction="100" format="html"><text><![CDATA[Modifican el objeto activo, que en este caso es <code>domino</code> (el cubo)]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[Crean un nuevo objeto vacío con el modificador]]></text></answer>
+    <tags>
+        <tag><text>02-2026</text></tag>
+        <tag><text>scripting</text></tag>
+        <tag><text>Easy</text></tag>
+        <tag><text>Opcion Multiple</text></tag>
+    </tags>
+</question>
+
+<!-- ============================================================ -->
+<!-- SUBCATEGORIA: INTERMEDIATE                                        -->
+<!-- ============================================================ -->
+<question type="category">
+    <category><text>$course$/DAG240 - Scripting en Blender con Python - Codigo/Intermediate</text></category>
+    <info format="html"><text><![CDATA[<p><strong>Nivel Intermediate (12 preguntas):</strong> Detección de errores de contexto y nombres, bucles anidados, copias vinculadas, materiales (arrastrar y soltar), rangos aleatorios y trampas lógicas.</p>]]></text></info>
+</question>
+
+<!-- ============================================================ -->
+<!-- Q11 - INTERMEDIATE - Error en el script del dominó -->
+<!-- ============================================================ -->
+<question type="multichoice">
+    <name><text><![CDATA[Q11. [INTERMEDIATE] Error en el script del dominó]]></text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p>El siguiente código intenta hacer un agujero en el dominó, pero tiene un <strong>error en una línea</strong>. ¿Cuál es?</p>
+<pre>import bpy
+import random
+
+domino = bpy.data.objects["Cube"]
+agujereador = bpy.data.objects["Cylinder"]
+
+x = random.randrange(-8, 8) / 10
+z = random.randrange(-18, 18) / 10
+
+agujereador.location = (x, 0, z)
+
+bpy.ops.object.select_all(action='DESELECT')
+domino.select_set(True)
+bpy.context.view_layer.objects.active = agujereador   # línea A
+
+bpy.ops.object.modifier_add(type='BOOLEAN')
+bpy.context.object.modifiers["Boolean"].object = agujereador
+bpy.context.object.modifiers["Boolean"].operation = 'DIFFERENCE'
+bpy.ops.object.modifier_apply(modifier="Boolean")</pre>]]></text>
+    </questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p>El error está en la <strong>línea A</strong>. Se selecciona <code>domino</code> con <code>select_set(True)</code>, pero luego se establece <code>agujereador</code> como el objeto <strong>activo</strong>. Esto es una contradicción: el modificador Boolean se agrega al objeto activo (el cilindro), no al dominó. El modificador debe agregarse al cubo, así que la línea correcta es <code>bpy.context.view_layer.objects.active = domino</code>. El valor <code>'DIFFERENCE'</code> es correcto y <code>'SUBTRACT'</code> no existe como operación válida.</p>]]></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <correctfeedback format="html"><text><![CDATA[¡Correcto!]]></text></correctfeedback>
+    <incorrectfeedback format="html"><text><![CDATA[Incorrecto. Revisa el análisis del código.]]></text></incorrectfeedback>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[<code>agujereador.location = (x, 0, z)</code> — debería ser <code>(0, x, z)</code>]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[<code>bpy.ops.object.select_all(action='DESELECT')</code> — debería ser <code>action='SELECT'</code>]]></text></answer>
+    <answer fraction="100" format="html"><text><![CDATA[<code>bpy.context.view_layer.objects.active = agujereador</code> — debería ser <code>= domino</code>]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[<code>operation = 'DIFFERENCE'</code> — debería ser <code>operation = 'SUBTRACT'</code>]]></text></answer>
+    <tags>
+        <tag><text>02-2026</text></tag>
+        <tag><text>scripting</text></tag>
+        <tag><text>Intermediate</text></tag>
+        <tag><text>Opcion Multiple</text></tag>
+    </tags>
+</question>
+
+<!-- ============================================================ -->
+<!-- Q12 - INTERMEDIATE - Bucle anidado — grilla de cubos -->
+<!-- ============================================================ -->
+<question type="multichoice">
+    <name><text><![CDATA[Q12. [INTERMEDIATE] Bucle anidado — grilla de cubos]]></text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p>¿Cuántos cubos crea el siguiente código y en qué disposición quedan?</p>
+<pre>for fila in range(4):
+    for columna in range(3):
+        bpy.ops.mesh.primitive_cube_add(
+            location=(columna * 2, fila * 2, 0)
+        )</pre>]]></text>
+    </questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p>El bucle externo (<code>fila</code>) itera 4 veces (0, 1, 2, 3) y el interno (<code>columna</code>) itera 3 veces (0, 1, 2). En total: 4 × 3 = <strong>12 cubos</strong>. La variable <code>fila</code> controla la posición en Y y <code>columna</code> en X. Resultado: una grilla de <strong>4 filas en Y</strong> y <strong>3 columnas en X</strong>. Si la pregunta dijera "3 filas × 4 columnas", los ejes estarían intercambiados — pero la cantidad de cubos sería la misma.</p>]]></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <correctfeedback format="html"><text><![CDATA[¡Correcto!]]></text></correctfeedback>
+    <incorrectfeedback format="html"><text><![CDATA[Incorrecto. Revisa el análisis del código.]]></text></incorrectfeedback>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[7 cubos en una línea recta]]></text></answer>
+    <answer fraction="100" format="html"><text><![CDATA[12 cubos en una grilla de 4 filas × 3 columnas]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[12 cubos en una grilla de 3 filas × 4 columnas]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[4 cubos en una grilla de 2×2]]></text></answer>
+    <tags>
+        <tag><text>02-2026</text></tag>
+        <tag><text>scripting</text></tag>
+        <tag><text>Intermediate</text></tag>
+        <tag><text>Opcion Multiple</text></tag>
+    </tags>
+</question>
+
+<!-- ============================================================ -->
+<!-- Q13 - INTERMEDIATE - Duplicate vs Linked Duplicate -->
+<!-- ============================================================ -->
+<question type="multichoice">
+    <name><text><![CDATA[Q13. [INTERMEDIATE] Duplicate vs Linked Duplicate]]></text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p>¿Cuál es la diferencia entre estas dos operaciones?</p>
+<pre># Opción A
+bpy.ops.object.duplicate(linked=False)
+
+# Opción B
+bpy.ops.object.duplicate(linked=True)</pre>]]></text>
+    </questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p>Con <code>linked=False</code> (equivalente a Shift+D), cada copia tiene su <strong>propia malla independiente</strong> — editar una no afecta a las demás. Con <code>linked=True</code> (equivalente a Alt+D), las copias <strong>comparten datos de malla</strong>: editar la geometría de una afecta a todas. Las linked duplicates son útiles para crear muchas instancias del mismo objeto ahorrando memoria, como piezas de dominó repetidas.</p>]]></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <correctfeedback format="html"><text><![CDATA[¡Correcto!]]></text></correctfeedback>
+    <incorrectfeedback format="html"><text><![CDATA[Incorrecto. Revisa el análisis del código.]]></text></incorrectfeedback>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[No hay diferencia; ambas crean copias independientes]]></text></answer>
+    <answer fraction="100" format="html"><text><![CDATA[<code>linked=False</code> crea una copia con su propia malla independiente; <code>linked=True</code> crea una copia que comparte la misma malla (linked duplicate / instancia)]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[<code>linked=True</code> duplica también los modificadores; <code>linked=False</code> no]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[<code>linked=True</code> es para duplicar materiales; <code>linked=False</code> es para duplicar geometría]]></text></answer>
+    <tags>
+        <tag><text>02-2026</text></tag>
+        <tag><text>scripting</text></tag>
+        <tag><text>Intermediate</text></tag>
+        <tag><text>Opcion Multiple</text></tag>
+    </tags>
+</question>
+
+<!-- ============================================================ -->
+<!-- Q14 - INTERMEDIATE - Modificar solo el eje X de la posición -->
+<!-- ============================================================ -->
+<question type="multichoice">
+    <name><text><![CDATA[Q14. [INTERMEDIATE] Modificar solo el eje X de la posición]]></text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p>¿Cuál es la diferencia entre estas dos formas de mover un objeto?</p>
+<pre># Forma 1
+obj.location = (5, 0, 0)
+
+# Forma 2
+obj.location.x = 5</pre>]]></text>
+    </questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p>Esta es una distinción importante. <code>obj.location = (5, 0, 0)</code> <strong>reemplaza</strong> toda la tupla de ubicación, forzando Y=0 y Z=0 sin importar dónde estuviera el objeto. En cambio, <code>obj.location.x = 5</code> <strong>solo modifica</strong> la componente X, dejando Y y Z intactos. Si el objeto estaba en (1, 3, 2), después de la Forma 2 estará en (5, 3, 2).</p>]]></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <correctfeedback format="html"><text><![CDATA[¡Correcto!]]></text></correctfeedback>
+    <incorrectfeedback format="html"><text><![CDATA[Incorrecto. Revisa el análisis del código.]]></text></incorrectfeedback>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[Son equivalentes; ambas producen exactamente el mismo resultado]]></text></answer>
+    <answer fraction="100" format="html"><text><![CDATA[La Forma 1 mueve el objeto a X=5, Y=0, Z=0; la Forma 2 solo cambia X=5, conservando los valores actuales de Y y Z]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[La Forma 2 es incorrecta; no se puede acceder a <code>.location.x</code> directamente]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[La Forma 1 mueve el objeto de forma relativa; la Forma 2 lo mueve de forma absoluta]]></text></answer>
+    <tags>
+        <tag><text>02-2026</text></tag>
+        <tag><text>scripting</text></tag>
+        <tag><text>Intermediate</text></tag>
+        <tag><text>Opcion Multiple</text></tag>
+    </tags>
+</question>
+
+<!-- ============================================================ -->
+<!-- Q15 - INTERMEDIATE - Aplicar material a un objeto -->
+<!-- ============================================================ -->
+<question type="ddwtos">
+    <name><text><![CDATA[Q15. [INTERMEDIATE] Aplicar material a un objeto]]></text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p>Completa el código para asignar un material ya existente llamado <code>"Material.001"</code> al objeto <code>cubo</code>:</p>
+<pre>cubo = bpy.data.objects["Cube"]
+material = bpy.data.materials["Material.001"]
+
+if cubo.data.material_slots:
+    cubo.data.material_slots[0].material = material
+else:
+    cubo.data.[[1]].[[2]](material)</pre>]]></text>
+    </questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p>Antes de asignar un material, se verifica si el objeto ya tiene slots de material. Si los tiene, se puede asignar directamente al slot 0. Si <strong>no</strong> tiene slots (la condición <code>else</code>), se debe usar <code>.append()</code> para agregar el material al objeto. Intentar acceder a <code>material_slots[0]</code> en un objeto sin slots causaría un <code>IndexError</code>.</p>]]></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>true</shuffleanswers>
+    <dragbox>
+        <text><![CDATA[materials]]></text>
+        <group>1</group>
+    </dragbox>
+    <dragbox>
+        <text><![CDATA[append]]></text>
+        <group>1</group>
+    </dragbox>
+    <dragbox>
+        <text><![CDATA[material_slots]]></text>
+        <group>1</group>
+    </dragbox>
+    <dragbox>
+        <text><![CDATA[add]]></text>
+        <group>1</group>
+    </dragbox>
+    <dragbox>
+        <text><![CDATA[objects]]></text>
+        <group>1</group>
+    </dragbox>
+    <dragbox>
+        <text><![CDATA[insert]]></text>
+        <group>1</group>
+    </dragbox>
+    <tags>
+        <tag><text>02-2026</text></tag>
+        <tag><text>scripting</text></tag>
+        <tag><text>Intermediate</text></tag>
+        <tag><text>Arrastrar y Soltar</text></tag>
+    </tags>
+</question>
+
+<!-- ============================================================ -->
+<!-- Q16 - INTERMEDIATE - Trampa: select_all con acción incorrecta -->
+<!-- ============================================================ -->
+<question type="multichoice">
+    <name><text><![CDATA[Q16. [INTERMEDIATE] Trampa: select_all con acción incorrecta]]></text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p>Un estudiante quiere eliminar todos los objetos de la escena con este código. ¿Funciona correctamente?</p>
+<pre>bpy.ops.object.select_all(action='SELECT')
+bpy.ops.object.delete()</pre>]]></text>
+    </questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p>El código <strong>sí funciona</strong> técnicamente — <code>select_all(action='SELECT')</code> selecciona <strong>todos</strong> los objetos visibles en la escena, incluyendo la cámara, luces, y cualquier otro objeto auxiliar, y luego <code>delete()</code> los elimina todos. La trampa aquí es que el código no produce un error, pero su efecto puede ser no deseado si el estudiante solo quería eliminar los objetos de geometría. Además, es falso afirmar que <code>action='SELECT'</code> no exista: <code>action='SELECT'</code> sí es válido.</p>]]></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <correctfeedback format="html"><text><![CDATA[¡Correcto!]]></text></correctfeedback>
+    <incorrectfeedback format="html"><text><![CDATA[Incorrecto. Revisa el análisis del código.]]></text></incorrectfeedback>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[Sí, funciona perfectamente]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[No, porque <code>delete()</code> necesita que el objeto esté activo, no solo seleccionado]]></text></answer>
+    <answer fraction="100" format="html"><text><![CDATA[Sí funciona, pero también eliminaría la cámara y la luz de la escena]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[No, porque <code>action='SELECT'</code> no existe; debería ser <code>action='ALL'</code>]]></text></answer>
+    <tags>
+        <tag><text>02-2026</text></tag>
+        <tag><text>scripting</text></tag>
+        <tag><text>Intermediate</text></tag>
+        <tag><text>Opcion Multiple</text></tag>
+    </tags>
+</question>
+
+<!-- ============================================================ -->
+<!-- Q17 - INTERMEDIATE - Trampa: Nombre de modificador incorrecto -->
+<!-- ============================================================ -->
+<question type="multichoice">
+    <name><text><![CDATA[Q17. [INTERMEDIATE] Trampa: Nombre de modificador incorrecto]]></text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p>El siguiente código intenta aplicar el modificador Boolean pero falla en la última línea. ¿Por qué?</p>
+<pre>bpy.ops.object.modifier_add(type='BOOLEAN')
+bpy.context.object.modifiers["Boolean"].object = agujereador
+bpy.context.object.modifiers["Boolean"].operation = 'DIFFERENCE'
+bpy.ops.object.modifier_apply(modifier="Booleano")</pre>]]></text>
+    </questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p>Blender nombra el modificador automáticamente como <code>"Boolean"</code> (en inglés) cuando se usa <code>modifier_add(type='BOOLEAN')</code>. La función <code>modifier_apply</code> requiere el <strong>nombre exacto</strong> del modificador tal como aparece en la interfaz/datos. Escribir <code>"Booleano"</code> (en español) causará que Blender no encuentre ningún modificador con ese nombre y lanzará un error. Siempre se debe usar el nombre que Blender asignó internamente.</p>]]></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <correctfeedback format="html"><text><![CDATA[¡Correcto!]]></text></correctfeedback>
+    <incorrectfeedback format="html"><text><![CDATA[Incorrecto. Revisa el análisis del código.]]></text></incorrectfeedback>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[<code>operation = 'DIFFERENCE'</code> no es válido; debería ser <code>'SUBTRACT'</code>]]></text></answer>
+    <answer fraction="100" format="html"><text><![CDATA[<code>modifier_apply</code> recibe el nombre del modificador como aparece en Blender, que es <code>"Boolean"</code>, no <code>"Booleano"</code>]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[Falta llamar a <code>bpy.ops.object.update()</code> antes de aplicar el modificador]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[El modificador debe aplicarse con <code>modifier_apply(type='BOOLEAN')</code>]]></text></answer>
+    <tags>
+        <tag><text>02-2026</text></tag>
+        <tag><text>scripting</text></tag>
+        <tag><text>Intermediate</text></tag>
+        <tag><text>Opcion Multiple</text></tag>
+    </tags>
+</question>
+
+<!-- ============================================================ -->
+<!-- Q18 - INTERMEDIATE - Rango de posición aleatoria en el dominó -->
+<!-- ============================================================ -->
+<question type="multichoice">
+    <name><text><![CDATA[Q18. [INTERMEDIATE] Rango de posición aleatoria en el dominó]]></text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p>En el script del dominó, el agujero se posiciona así:</p>
+<pre>x = random.randrange(-8, 8) / 10
+z = random.randrange(-18, 18) / 10</pre>
+<p>¿Cuáles son los valores mínimo y máximo posibles para <code>x</code> y <code>z</code> respectivamente?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p>Recordando que <code>randrange(a, b)</code> excluye el límite superior: <code>randrange(-8, 8)</code> genera de -8 a 7, y al dividir entre 10 da de <strong>-0.8 a 0.7</strong>. De igual forma, <code>randrange(-18, 18)</code> genera de -18 a 17, y al dividir da de <strong>-1.8 a 1.7</strong>. Pensar que los extremos 0.8 y 1.8 están incluidos es una trampa común — asume que el 8 y el 18 están incluidos, lo cual es incorrecto.</p>]]></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <correctfeedback format="html"><text><![CDATA[¡Correcto!]]></text></correctfeedback>
+    <incorrectfeedback format="html"><text><![CDATA[Incorrecto. Revisa el análisis del código.]]></text></incorrectfeedback>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[x: [-0.8, 0.8], z: [-1.8, 1.8]]]></text></answer>
+    <answer fraction="100" format="html"><text><![CDATA[x: [-0.8, 0.7], z: [-1.8, 1.7]]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[x: [-0.7, 0.8], z: [-1.7, 1.8]]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[x: [-8, 8], z: [-18, 18]]]></text></answer>
+    <tags>
+        <tag><text>02-2026</text></tag>
+        <tag><text>scripting</text></tag>
+        <tag><text>Intermediate</text></tag>
+        <tag><text>Opcion Multiple</text></tag>
+    </tags>
+</question>
+
+<!-- ============================================================ -->
+<!-- Q19 - INTERMEDIATE - Bucle con índice y posición -->
+<!-- ============================================================ -->
+<question type="multichoice">
+    <name><text><![CDATA[Q19. [INTERMEDIATE] Bucle con índice y posición]]></text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p>¿Qué posiciones en X tendrán los cubos creados por este código?</p>
+<pre>for i in range(1, 6):
+    bpy.ops.mesh.primitive_cube_add(location=(i * 1.5, 0, 0))</pre>]]></text>
+    </questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p><code>range(1, 6)</code> genera los valores 1, 2, 3, 4, 5 (empieza en 1, no en 0). Al multiplicar por 1.5: 1×1.5=1.5, 2×1.5=3.0, 3×1.5=4.5, 4×1.5=6.0, 5×1.5=7.5. La trampa es que <code>range(5)</code> empieza en 0, pero <code>range(1, 6)</code> empieza en 1 — un detalle que cambia todos los valores.</p>]]></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <correctfeedback format="html"><text><![CDATA[¡Correcto!]]></text></correctfeedback>
+    <incorrectfeedback format="html"><text><![CDATA[Incorrecto. Revisa el análisis del código.]]></text></incorrectfeedback>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[X = 0, 1.5, 3.0, 4.5, 6.0]]></text></answer>
+    <answer fraction="100" format="html"><text><![CDATA[X = 1.5, 3.0, 4.5, 6.0, 7.5]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[X = 1, 2, 3, 4, 5]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[X = 0, 1, 2, 3, 4]]></text></answer>
+    <tags>
+        <tag><text>02-2026</text></tag>
+        <tag><text>scripting</text></tag>
+        <tag><text>Intermediate</text></tag>
+        <tag><text>Opcion Multiple</text></tag>
+    </tags>
+</question>
+
+<!-- ============================================================ -->
+<!-- Q20 - INTERMEDIATE - Verdadero/Falso: Mover el agujereador mueve el agujero -->
+<!-- ============================================================ -->
+<question type="truefalse">
+    <name><text><![CDATA[Q20. [INTERMEDIATE] Verdadero/Falso: Mover el agujereador mueve el agujero]]></text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p>En el script del dominó, después de aplicar el modificador Boolean con <code>modifier_apply</code>, si mueves el objeto <code>agujereador</code> (el cilindro) a otra posición, el agujero en el dominó también se moverá.</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p>Una vez que se llama a <code>modifier_apply</code>, el modificador Boolean se <strong>aplica de forma permanente</strong> a la malla del dominó. El agujero queda "grabado" en la geometría del cubo. Desde ese momento, mover el cilindro no tiene ningún efecto sobre el dominó. Antes de aplicar el modificador (si solo está agregado pero no aplicado), mover el cilindro sí afectaría la forma del agujero en tiempo real.</p>]]></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>1</penalty>
+    <hidden>0</hidden>
+    <answer fraction="0" format="html"><text><![CDATA[true]]></text></answer>
+    <answer fraction="100" format="html"><text><![CDATA[false]]></text></answer>
+    <tags>
+        <tag><text>02-2026</text></tag>
+        <tag><text>scripting</text></tag>
+        <tag><text>Intermediate</text></tag>
+        <tag><text>Verdadero o Falso</text></tag>
+    </tags>
+</question>
+
+<!-- ============================================================ -->
+<!-- Q21 - INTERMEDIATE - Trampa: bpy.context.object sin objeto activo -->
+<!-- ============================================================ -->
+<question type="multichoice">
+    <name><text><![CDATA[Q21. [INTERMEDIATE] Trampa: bpy.context.object sin objeto activo]]></text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p>¿Qué problema tiene el siguiente código?</p>
+<pre>import bpy
+
+bpy.ops.object.select_all(action='DESELECT')
+bpy.ops.object.modifier_add(type='BOOLEAN')</pre>]]></text>
+    </questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p><code>bpy.ops.object.select_all(action='DESELECT')</code> quita la selección de todos los objetos. Dependiendo de la versión de Blender y el contexto, esto puede dejar sin objeto activo (<code>bpy.context.object</code> puede ser <code>None</code>). Al intentar <code>modifier_add</code>, Blender necesita un objeto activo para agregarle el modificador — sin uno, el operador lanzará un error de contexto. Siempre se debe establecer el objeto activo antes de usar operadores que lo requieren.</p>]]></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <correctfeedback format="html"><text><![CDATA[¡Correcto!]]></text></correctfeedback>
+    <incorrectfeedback format="html"><text><![CDATA[Incorrecto. Revisa el análisis del código.]]></text></incorrectfeedback>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[<code>select_all</code> y <code>modifier_add</code> no pueden usarse en la misma sesión]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[No hay problema; el código funciona correctamente]]></text></answer>
+    <answer fraction="100" format="html"><text><![CDATA[Después de deseleccionar todo, no hay objeto activo, por lo que <code>modifier_add</code> fallará o actuará sobre un contexto vacío]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[<code>modifier_add</code> requiere que primero se llame a <code>bpy.ops.object.mode_set(mode='EDIT')</code>]]></text></answer>
+    <tags>
+        <tag><text>02-2026</text></tag>
+        <tag><text>scripting</text></tag>
+        <tag><text>Intermediate</text></tag>
+        <tag><text>Opcion Multiple</text></tag>
+    </tags>
+</question>
+
+<!-- ============================================================ -->
+<!-- Q22 - INTERMEDIATE - Trampa: operación Boolean incorrecta -->
+<!-- ============================================================ -->
+<question type="multichoice">
+    <name><text><![CDATA[Q22. [INTERMEDIATE] Trampa: operación Boolean incorrecta]]></text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p>¿Cuál es el error en el siguiente fragmento del script del dominó?</p>
+<pre>bpy.ops.object.modifier_add(type='BOOLEAN')
+bpy.context.object.modifiers["Boolean"].object = agujereador
+bpy.context.object.modifiers["Boolean"].operation = 'INTERSECT'
+bpy.ops.object.modifier_apply(modifier="Boolean")</pre>]]></text>
+    </questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p><code>'INTERSECT'</code> <strong>es</strong> una operación válida en Blender — no hay error de sintaxis. Pero su efecto es completamente diferente: en lugar de restar el cilindro del cubo, conserva <strong>solo la parte donde ambos objetos se superponen</strong>. Para crear agujeros en el dominó, la operación correcta es <code>'DIFFERENCE'</code>. Esta es una trampa conceptual: el código ejecuta sin errores, pero no produce el resultado esperado.</p>]]></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <correctfeedback format="html"><text><![CDATA[¡Correcto!]]></text></correctfeedback>
+    <incorrectfeedback format="html"><text><![CDATA[Incorrecto. Revisa el análisis del código.]]></text></incorrectfeedback>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[<code>'INTERSECT'</code> no es una operación válida de Boolean en Blender]]></text></answer>
+    <answer fraction="100" format="html"><text><![CDATA[No hay error técnico, pero si el objetivo es hacer un agujero, se debería usar <code>'DIFFERENCE'</code> en lugar de <code>'INTERSECT'</code>]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[Falta la línea <code>bpy.context.object.modifiers["Boolean"].solver = 'FAST'</code>]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[El modificador debería aplicarse antes de configurar su operación]]></text></answer>
+    <tags>
+        <tag><text>02-2026</text></tag>
+        <tag><text>scripting</text></tag>
+        <tag><text>Intermediate</text></tag>
+        <tag><text>Opcion Multiple</text></tag>
+    </tags>
+</question>
+
+<!-- ============================================================ -->
+<!-- SUBCATEGORIA: HARD                                        -->
+<!-- ============================================================ -->
+<question type="category">
+    <category><text>$course$/DAG240 - Scripting en Blender con Python - Codigo/Hard</text></category>
+    <info format="html"><text><![CDATA[<p><strong>Nivel Hard (8 preguntas):</strong> Criterio avanzado de depuración: escala no aplicada en booleanos, bucles mal estructurados, orden de ejecución, errores por omisión y flujo completo del dominó.</p>]]></text></info>
+</question>
+
+<!-- ============================================================ -->
+<!-- Q23 - HARD - Escala no uniforme y Boolean -->
+<!-- ============================================================ -->
+<question type="multichoice">
+    <name><text><![CDATA[Q23. [HARD] Escala no uniforme y Boolean]]></text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p>Un estudiante quiere crear agujeros circulares perfectos en el dominó. Tiene este código:</p>
+<pre>agujereador = bpy.data.objects["Cylinder"]
+agujereador.scale = (2, 2, 1)
+agujereador.location = (0, 0, 0)
+
+bpy.ops.object.modifier_add(type='BOOLEAN')
+bpy.context.object.modifiers["Boolean"].object = agujereador
+bpy.context.object.modifiers["Boolean"].operation = 'DIFFERENCE'
+bpy.ops.object.modifier_apply(modifier="Boolean")</pre>
+<p>¿Qué problema podría ocurrir con esta escala no uniforme al aplicar el Boolean?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p>Esta es una situación real y común en Blender. Cuando escalas un objeto en Python con <code>.scale</code>, estás cambiando la <strong>transformación del objeto</strong>, no la geometría real de la malla. El modificador Boolean opera sobre las mallas reales. Si la escala no está aplicada, el Boolean puede producir resultados inesperados o incorrectos. La solución es aplicar la escala antes del Boolean: <code>bpy.ops.object.transform_apply(scale=True)</code>. Esto "hornea" la transformación en la geometría.</p>]]></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <correctfeedback format="html"><text><![CDATA[¡Correcto!]]></text></correctfeedback>
+    <incorrectfeedback format="html"><text><![CDATA[Incorrecto. Revisa el análisis del código.]]></text></incorrectfeedback>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[Ninguno; la escala no afecta a las operaciones Boolean]]></text></answer>
+    <answer fraction="100" format="html"><text><![CDATA[El Boolean puede fallar o dar resultados incorrectos si la escala del objeto no ha sido aplicada (<code>Ctrl+A</code> / Apply Scale), porque Blender opera sobre la geometría real, no sobre la transformación visual]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[El cilindro se volverá invisible antes del Boolean]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[El Boolean solo funciona si la escala es <code>(1, 1, 1)</code>]]></text></answer>
+    <tags>
+        <tag><text>02-2026</text></tag>
+        <tag><text>scripting</text></tag>
+        <tag><text>Hard</text></tag>
+        <tag><text>Opcion Multiple</text></tag>
+    </tags>
+</question>
+
+<!-- ============================================================ -->
+<!-- Q24 - HARD - Script completo del dominó — múltiples agujeros -->
+<!-- ============================================================ -->
+<question type="ddwtos">
+    <name><text><![CDATA[Q24. [HARD] Script completo del dominó — múltiples agujeros]]></text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p>Completa el código para hacer <strong>5 agujeros aleatorios</strong> en el dominó usando un bucle:</p>
+<pre>import bpy
+import random
+
+domino = bpy.data.objects["Cube"]
+agujereador = bpy.data.objects["Cylinder"]
+
+for _ in range([[1]]):                          # línea A
+    x = random.randrange(-8, 8) / 10
+    z = random.randrange(-18, 18) / 10
+    agujereador.location = (x, 0, z)
+
+    bpy.ops.object.select_all(action='DESELECT')
+    domino.select_set(True)
+    bpy.context.view_layer.objects.active = domino
+
+    bpy.ops.object.modifier_add(type='BOOLEAN')
+    bpy.context.object.modifiers["Boolean"].object = agujereador
+    bpy.context.object.modifiers["Boolean"].operation = 'DIFFERENCE'
+    bpy.ops.object.modifier_apply(modifier=[[2]]) # línea B</pre>]]></text>
+    </questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p>Para crear 5 agujeros, el bucle debe iterar 5 veces: <code>range(5)</code>. Se usa <code>_</code> como variable de bucle porque su valor no se utiliza dentro del cuerpo (es una convención en Python). En la línea B, <code>modifier_apply</code> necesita el nombre exacto del modificador como string: <code>"Boolean"</code> — así es como Blender nombra automáticamente el primer modificador Boolean creado.</p>]]></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>true</shuffleanswers>
+    <dragbox>
+        <text><![CDATA[5]]></text>
+        <group>1</group>
+    </dragbox>
+    <dragbox>
+        <text><![CDATA["Boolean"]]></text>
+        <group>1</group>
+    </dragbox>
+    <dragbox>
+        <text><![CDATA[4]]></text>
+        <group>1</group>
+    </dragbox>
+    <dragbox>
+        <text><![CDATA[6]]></text>
+        <group>1</group>
+    </dragbox>
+    <dragbox>
+        <text><![CDATA["Booleano"]]></text>
+        <group>1</group>
+    </dragbox>
+    <dragbox>
+        <text><![CDATA['DIFFERENCE']]></text>
+        <group>1</group>
+    </dragbox>
+    <dragbox>
+        <text><![CDATA[agujereador]]></text>
+        <group>1</group>
+    </dragbox>
+    <tags>
+        <tag><text>02-2026</text></tag>
+        <tag><text>scripting</text></tag>
+        <tag><text>Hard</text></tag>
+        <tag><text>Arrastrar y Soltar</text></tag>
+    </tags>
+</question>
+
+<!-- ============================================================ -->
+<!-- Q25 - HARD - Trampa: Crear objetos fuera del bucle -->
+<!-- ============================================================ -->
+<question type="multichoice">
+    <name><text><![CDATA[Q25. [HARD] Trampa: Crear objetos fuera del bucle]]></text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p>El siguiente código intenta crear 4 cubos en diferentes posiciones pero tiene un error lógico. ¿Cuál es?</p>
+<pre>import bpy
+
+posiciones = [(0,0,0), (3,0,0), (6,0,0), (9,0,0)]
+
+bpy.ops.mesh.primitive_cube_add()
+cubo = bpy.context.active_object
+
+for pos in posiciones:
+    cubo.location = pos</pre>]]></text>
+    </questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p>El código solo crea <strong>un solo cubo</strong> fuera del bucle, y luego lo mueve 4 veces a diferentes posiciones. Al final, el cubo queda en la última posición <code>(9, 0, 0)</code> — no hay 4 cubos. Para crear 4 cubos en 4 posiciones, <code>primitive_cube_add</code> debe estar <strong>dentro</strong> del bucle. Esta es una trampa de lógica: el código funciona sin errores, pero el resultado no es el esperado.</p>]]></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <correctfeedback format="html"><text><![CDATA[¡Correcto!]]></text></correctfeedback>
+    <incorrectfeedback format="html"><text><![CDATA[Incorrecto. Revisa el análisis del código.]]></text></incorrectfeedback>
+    <answer fraction="100" format="html"><text><![CDATA[<code>primitive_cube_add</code> debería estar dentro del bucle para crear 4 cubos distintos]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[No hay ningún error; el código crea 4 cubos correctamente]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[<code>bpy.context.active_object</code> no funciona para obtener el cubo recién creado]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[<code>cubo.location = pos</code> es incorrecto; debería ser <code>cubo.location = list(pos)</code>]]></text></answer>
+    <tags>
+        <tag><text>02-2026</text></tag>
+        <tag><text>scripting</text></tag>
+        <tag><text>Hard</text></tag>
+        <tag><text>Opcion Multiple</text></tag>
+    </tags>
+</question>
+
+<!-- ============================================================ -->
+<!-- Q26 - HARD - Trampa: randrange vs random.uniform -->
+<!-- ============================================================ -->
+<question type="multichoice">
+    <name><text><![CDATA[Q26. [HARD] Trampa: randrange vs random.uniform]]></text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p>¿Cuál es la diferencia entre estas dos versiones del script del dominó?</p>
+<pre># Versión A
+x = random.randrange(-8, 8) / 10
+
+# Versión B
+x = random.uniform(-0.8, 0.8)</pre>]]></text>
+    </questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p><code>random.randrange(-8, 8)</code> genera <strong>enteros</strong> (-8, -7, ..., 7) y al dividir entre 10 se obtienen múltiplos de 0.1 (valores discretos). <code>random.uniform(-0.8, 0.8)</code> genera <strong>cualquier número de punto flotante</strong> entre -0.8 y 0.8, con mucha más precisión y variedad. Para posicionamiento de agujeros, <code>uniform</code> da resultados más naturales y menos "cuadriculados". Ambas opciones son válidas, pero producen distribuciones distintas.</p>]]></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <correctfeedback format="html"><text><![CDATA[¡Correcto!]]></text></correctfeedback>
+    <incorrectfeedback format="html"><text><![CDATA[Incorrecto. Revisa el análisis del código.]]></text></incorrectfeedback>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[No hay diferencia; ambas generan exactamente los mismos valores]]></text></answer>
+    <answer fraction="100" format="html"><text><![CDATA[La Versión A genera solo valores enteros divididos entre 10 (como -0.8, -0.7, ..., 0.6, 0.7); la Versión B genera cualquier número decimal entre -0.8 y 0.8]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[La Versión B es incorrecta; <code>random.uniform</code> no existe en Python]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[La Versión A puede generar valores negativos; la Versión B solo positivos]]></text></answer>
+    <tags>
+        <tag><text>02-2026</text></tag>
+        <tag><text>scripting</text></tag>
+        <tag><text>Hard</text></tag>
+        <tag><text>Opcion Multiple</text></tag>
+    </tags>
+</question>
+
+<!-- ============================================================ -->
+<!-- Q27 - HARD - Acceso a objeto inexistente -->
+<!-- ============================================================ -->
+<question type="multichoice">
+    <name><text><![CDATA[Q27. [HARD] Acceso a objeto inexistente]]></text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p>¿Qué ocurrirá cuando se ejecute este código si no existe ningún objeto llamado "Domino" en la escena?</p>
+<pre>import bpy
+
+pieza = bpy.data.objects["Domino"]
+pieza.location = (0, 0, 5)
+print("Objeto movido exitosamente")</pre>]]></text>
+    </questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p>Acceder a <code>bpy.data.objects["Domino"]</code> cuando ese objeto no existe lanza inmediatamente un <code>KeyError: 'bpy_prop_collection[key]: key "Domino" not found'</code>. La ejecución del script se detiene ahí — las líneas 2 y 3 nunca llegan a ejecutarse, y el <code>print</code> nunca aparece. Para evitar esto se puede verificar antes: <code>if "Domino" in bpy.data.objects:</code> o usar un bloque <code>try/except KeyError</code>.</p>]]></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <correctfeedback format="html"><text><![CDATA[¡Correcto!]]></text></correctfeedback>
+    <incorrectfeedback format="html"><text><![CDATA[Incorrecto. Revisa el análisis del código.]]></text></incorrectfeedback>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[Blender crea automáticamente un objeto vacío llamado "Domino"]]></text></answer>
+    <answer fraction="100" format="html"><text><![CDATA[El código falla en la primera línea con un <code>KeyError</code> y el resto del código nunca se ejecuta]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[<code>pieza</code> se convierte en <code>None</code> y la segunda línea lanza un <code>AttributeError</code>]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[El código ejecuta sin errores; Blender simplemente ignora las líneas que no puede completar]]></text></answer>
+    <tags>
+        <tag><text>02-2026</text></tag>
+        <tag><text>scripting</text></tag>
+        <tag><text>Hard</text></tag>
+        <tag><text>Opcion Multiple</text></tag>
+    </tags>
+</question>
+
+<!-- ============================================================ -->
+<!-- Q28 - HARD - Script de dominó: orden de operaciones -->
+<!-- ============================================================ -->
+<question type="multichoice">
+    <name><text><![CDATA[Q28. [HARD] Script de dominó: orden de operaciones]]></text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p>El siguiente código tiene el orden de operaciones incorrecto. ¿Qué pasaría al ejecutarlo?</p>
+<pre>import bpy
+
+domino = bpy.data.objects["Cube"]
+agujereador = bpy.data.objects["Cylinder"]
+
+bpy.ops.object.modifier_add(type='BOOLEAN')           # paso 1
+bpy.context.object.modifiers["Boolean"].object = agujereador
+bpy.context.object.modifiers["Boolean"].operation = 'DIFFERENCE'
+
+bpy.ops.object.select_all(action='DESELECT')           # paso 2
+domino.select_set(True)
+bpy.context.view_layer.objects.active = domino
+
+bpy.ops.object.modifier_apply(modifier="Boolean")     # paso 3</pre>]]></text>
+    </questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p>El orden importa crucialmente. En el código correcto, primero se establece <code>domino</code> como el objeto activo, y <strong>luego</strong> se agrega el modificador (que se agrega al objeto activo). En este código alterado, el modificador se agrega al objeto activo del momento (que puede ser el cilindro u otro objeto). Después se cambia el objeto activo al dominó, pero el modificador ya está en el objeto equivocado. Al aplicar, el resultado es impredecible o erróneo.</p>]]></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <correctfeedback format="html"><text><![CDATA[¡Correcto!]]></text></correctfeedback>
+    <incorrectfeedback format="html"><text><![CDATA[Incorrecto. Revisa el análisis del código.]]></text></incorrectfeedback>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[Funciona correctamente; el orden de las secciones no importa]]></text></answer>
+    <answer fraction="100" format="html"><text><![CDATA[El modificador se agrega al objeto activo <strong>antes</strong> de que el dominó sea el objeto activo, por lo que podría agregarse al objeto activo en ese momento (que podría ser cualquier otro objeto) — y luego intentar aplicarlo al dominó que tiene un contexto inconsistente]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[<code>modifier_apply</code> siempre falla si se llama después de <code>select_all</code>]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[El código falla porque <code>select_all</code> borra los modificadores recién agregados]]></text></answer>
+    <tags>
+        <tag><text>02-2026</text></tag>
+        <tag><text>scripting</text></tag>
+        <tag><text>Hard</text></tag>
+        <tag><text>Opcion Multiple</text></tag>
+    </tags>
+</question>
+
+<!-- ============================================================ -->
+<!-- Q29 - HARD - Generación procedural de dominó completo -->
+<!-- ============================================================ -->
+<question type="multichoice">
+    <name><text><![CDATA[Q29. [HARD] Generación procedural de dominó completo]]></text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p>¿Qué hace el siguiente código completo? Describe el resultado final en la escena.</p>
+<pre>import bpy
+import random
+import math
+
+for i in range(7):
+    bpy.ops.mesh.primitive_cube_add(
+        size=1,
+        location=(i * 1.2, 0, 0)
+    )
+    pieza = bpy.context.active_object
+    pieza.scale = (0.4, 0.8, 0.9)
+    pieza.rotation_euler = (0, 0, math.radians(random.randrange(0, 360)))</pre>]]></text>
+    </questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p>El bucle itera 7 veces. En cada iteración: (1) crea un cubo separado en posición X = i×1.2 (0, 1.2, 2.4, 3.6, 4.8, 6.0, 7.2), (2) lo escala a proporciones rectangulares similares a una ficha de dominó (delgado en X, mediano en Y, alto en Z), y (3) lo rota un ángulo aleatorio en Z. El resultado es una <strong>fila de 7 "fichas de dominó"</strong> mal mezcladas (orientación caótica). <code>bpy.context.active_object</code> obtiene el cubo recién creado en cada iteración.</p>]]></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <correctfeedback format="html"><text><![CDATA[¡Correcto!]]></text></correctfeedback>
+    <incorrectfeedback format="html"><text><![CDATA[Incorrecto. Revisa el análisis del código.]]></text></incorrectfeedback>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[Crea 7 cilindros en fila, cada uno con una rotación aleatoria en Z]]></text></answer>
+    <answer fraction="100" format="html"><text><![CDATA[Crea 7 cubos en fila, cada uno escalado como una ficha de dominó rectangular y rotado aleatoriamente en Z]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[Crea 7 cubos todos en la misma posición con escalas distintas]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[Crea 1 cubo y lo mueve 7 veces a posiciones distintas]]></text></answer>
+    <tags>
+        <tag><text>02-2026</text></tag>
+        <tag><text>scripting</text></tag>
+        <tag><text>Hard</text></tag>
+        <tag><text>Opcion Multiple</text></tag>
+    </tags>
+</question>
+
+<!-- ============================================================ -->
+<!-- Q30 - HARD - Trampa maestra: Boolean sin objeto herramienta -->
+<!-- ============================================================ -->
+<question type="multichoice">
+    <name><text><![CDATA[Q30. [HARD] Trampa maestra: Boolean sin objeto herramienta]]></text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p>El siguiente código intenta hacer un agujero en el dominó. Parece correcto pero tiene un error muy sutil. ¿Cuál es?</p>
+<pre>import bpy
+import random
+
+domino = bpy.data.objects["Cube"]
+
+x = random.randrange(-8, 8) / 10
+z = random.randrange(-18, 18) / 10
+
+bpy.ops.object.select_all(action='DESELECT')
+domino.select_set(True)
+bpy.context.view_layer.objects.active = domino
+
+bpy.ops.object.modifier_add(type='BOOLEAN')
+bpy.context.object.modifiers["Boolean"].operation = 'DIFFERENCE'
+bpy.ops.object.modifier_apply(modifier="Boolean")</pre>]]></text>
+    </questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p>Este código tiene <strong>dos errores</strong>: (1) Nunca se obtiene ni se referencia el objeto <code>agujereador</code> — las variables <code>x</code> y <code>z</code> se calculan pero nunca se usan. (2) La línea <code>bpy.context.object.modifiers["Boolean"].object = agujereador</code> está completamente ausente, así que el Boolean no sabe qué forma usar para restar. Un modificador Boolean sin objeto herramienta asignado no puede aplicarse correctamente. Blender puede lanzar un error o simplemente no hacer ningún cambio visible. Esta pregunta prueba si el estudiante lee el código con atención y nota <strong>lo que falta</strong>, no solo lo que está mal escrito.</p>]]></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <correctfeedback format="html"><text><![CDATA[¡Correcto!]]></text></correctfeedback>
+    <incorrectfeedback format="html"><text><![CDATA[Incorrecto. Revisa el análisis del código.]]></text></incorrectfeedback>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[<code>random.randrange</code> debería ser <code>random.uniform</code> para valores decimales]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[El modificador Boolean nunca recibe un objeto herramienta (falta <code>modifiers["Boolean"].object = ...</code>), por lo que el Boolean no tiene qué restar]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[Falta <code>agujereador.location = (x, 0, z)</code> después de crear las variables <code>x</code> y <code>z</code>]]></text></answer>
+    <answer fraction="100" format="html"><text><![CDATA[Ambos errores ocurren: falta referenciar y posicionar <code>agujereador</code> y también falta asignarlo al modificador (<code>modifiers["Boolean"].object = ...</code>)]]></text></answer>
+    <tags>
+        <tag><text>02-2026</text></tag>
+        <tag><text>scripting</text></tag>
+        <tag><text>Hard</text></tag>
+        <tag><text>Opcion Multiple</text></tag>
+    </tags>
+</question>
+
+</quiz>

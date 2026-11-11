@@ -1,0 +1,249 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<title>Moodle Quiz XHTML Export</title>
+<style type="text/css">
+body {
+     font-family: verdana, helvetica, sans-serif;
+     background-color: #fff;
+     color: #000;
+ }
+ 
+ .question {
+     border: 1px solid #ddd;
+     margin: 5px;
+     padding: 3px;
+ }
+ 
+ .question h3 {
+     font-weight: normal;
+     font-size: 125%;
+ }
+ 
+ .question ul {
+     list-style-type: none;
+ }
+</style>
+</head>
+<body>
+<form action="...REPLACE ME..." method="post">
+
+
+<!-- question: 28494279  name: Q02. Keyword Arguments Z -->
+<div class="question">
+<h3>Q02. Keyword Arguments Z</h3>
+<p class="questiontext"><p>Deseas crear un cubo específicamente en la posición Z = 5, dejando que Blender use los valores por defecto para el resto de los parámetros. Completa el código:</p><pre>bpy.ops.mesh.primitive_cube_add([[1]]=(0, 0, [[2]]))</pre></p>
+<!-- export of ddwtos type is not supported  -->
+</div>
+
+
+
+<!-- question: 28494280  name: Q03. Piramide de 3 Bloques -->
+<div class="question">
+<h3>Q03. Piramide de 3 Bloques</h3>
+<p class="questiontext"><p>Completa el script para crear una pirámide simple de 3 niveles donde cada bloque superior es más pequeño que el anterior:</p><pre>bpy.ops.mesh.primitive_cube_add(location=(0,0,1), scale=(3,3,1))bpy.ops.mesh.primitive_cube_add(location=(0,0,2), scale=([[1]],[[1]],1))bpy.ops.mesh.primitive_cube_add(location=(0,0,3), scale=([[2]],[[2]],1))</pre></p>
+<!-- export of ddwtos type is not supported  -->
+</div>
+
+
+
+<!-- question: 28494281  name: Q04. Logica de Tablero -->
+<div class="question">
+<h3>Q04. Logica de Tablero</h3>
+<p class="questiontext"><p>Para crear un tablero de ajedrez, necesitamos colocar cubos solo en las celdas donde la suma de las coordenadas sea par. Completa la condición:</p><pre>for x in range(8):for y in range(8):if (x + y) % 2 == [[1]]:bpy.ops.mesh.primitive_cube_add(location=(x, y, 0))</pre></p>
+<!-- export of ddwtos type is not supported  -->
+</div>
+
+
+
+<!-- question: 28494284  name: Q07. Importacion de Modulos -->
+<div class="question">
+<h3>Q07. Importacion de Modulos</h3>
+<p class="questiontext"><p>Completa las importaciones necesarias para crear objetos y generar posiciones aleatorias:</p><pre>import [[1]]import [[2]]</pre></p>
+<!-- export of ddwtos type is not supported  -->
+</div>
+
+
+
+<!-- question: 28494285  name: Q08. Pared Anidada -->
+<div class="question">
+<h3>Q08. Pared Anidada</h3>
+<p class="questiontext"><p>Completa el bucle anidado para crear una pared de 5 bloques de largo por 2 de alto. Los bloques miden 2 unidades de ancho y 1 de alto:</p><pre>for z in range(2):for x in range(5):bpy.ops.mesh.primitive_cube_add(location=(x*[[1]], 0, z*[[2]]))</pre></p>
+<!-- export of ddwtos type is not supported  -->
+</div>
+
+
+
+<!-- question: 28494287  name: Q10. Escalera Caracol -->
+<div class="question">
+<h3>Q10. Escalera Caracol</h3>
+<p class="questiontext"><p>Para una escalera de caracol, los peldaños deben subir en Z y rotar en el centro. Completa:</p><pre>import mathfor i in range(20):angulo = i * 0.5bpy.ops.mesh.primitive_cube_add(location=(math.cos(angulo), math.sin(angulo), [[1]]),rotation=(0, 0, [[2]]))</pre></p>
+<!-- export of ddwtos type is not supported  -->
+</div>
+
+
+
+<!-- question: 28494295  name: Q18. Limpieza de Escena -->
+<div class="question">
+<h3>Q18. Limpieza de Escena</h3>
+<p class="questiontext"><p>Completa el comando para seleccionar todos los objetos antes de borrarlos:</p><pre>bpy.ops.object.select_all([[1]]='[[2]]')</pre></p>
+<!-- export of ddwtos type is not supported  -->
+</div>
+
+
+
+<!-- question: 28494278  name: Q01. Simplificacion de Parametros -->
+<div class="question">
+<h3>Q01. Simplificacion de Parametros</h3>
+<p class="questiontext"><p>La función <code>bpy.ops.mesh.primitive_cube_add</code> tiene múltiples parámetros opcionales con valores por defecto. Si deseas crear un cubo en el origen (0,0,0) con el tamaño estándar, ¿cuál es la llamada más eficiente y simplificada?</p></p>
+<ul class="multichoice">
+  <li><input name="quest_28494278" type="radio" value="bpy.ops.mesh.primitive_cube_add()" />bpy.ops.mesh.primitive_cube_add()</li>
+  <li><input name="quest_28494278" type="radio" value="bpy.ops.mesh.primitive_cube_add(location=(0,0,0), size=2, scale=(1,1,1))" />bpy.ops.mesh.primitive_cube_add(location=(0,0,0), size=2, scale=(1,1,1))</li>
+  <li><input name="quest_28494278" type="radio" value="bpy.ops.mesh.primitive_cube_add(required=True)" />bpy.ops.mesh.primitive_cube_add(required=True)</li>
+</ul>
+</div>
+
+
+
+<!-- question: 28494283  name: Q06. Escalera Algoritmica -->
+<div class="question">
+<h3>Q06. Escalera Algoritmica</h3>
+<p class="questiontext"><p>Quieres crear una escalera de 10 peldaños. Cada peldaño debe subir 0.5 unidades en Z y avanzar 1 unidad en Y respecto al anterior. ¿Cuál es la lógica de <code>location</code> dentro del bucle <code>for i in range(10):</code>?</p></p>
+<ul class="multichoice">
+  <li><input name="quest_28494283" type="radio" value="location=(0, i, i * 0.5)" />location=(0, i, i * 0.5)</li>
+  <li><input name="quest_28494283" type="radio" value="location=(0, 0.5, i)" />location=(0, 0.5, i)</li>
+  <li><input name="quest_28494283" type="radio" value="location=(i, i, i)" />location=(i, i, i)</li>
+</ul>
+</div>
+
+
+
+<!-- question: 28494286  name: Q09. Aleatoriedad -->
+<div class="question">
+<h3>Q09. Aleatoriedad</h3>
+<p class="questiontext"><p>¿Qué instrucción usarías para que el parámetro <code>size</code> de un cubo sea un número decimal aleatorio entre 0.5 y 2.0?</p></p>
+<ul class="multichoice">
+  <li><input name="quest_28494286" type="radio" value="size=random.uniform(0.5, 2.0)" />size=random.uniform(0.5, 2.0)</li>
+  <li><input name="quest_28494286" type="radio" value="size=random.randint(0.5, 2.0)" />size=random.randint(0.5, 2.0)</li>
+  <li><input name="quest_28494286" type="radio" value="size=random.choice(0.5, 2.0)" />size=random.choice(0.5, 2.0)</li>
+</ul>
+</div>
+
+
+
+<!-- question: 28494290  name: Q13. Piramide Maya Logica -->
+<div class="question">
+<h3>Q13. Piramide Maya Logica</h3>
+<p class="questiontext"><p>Si queremos una pirámide de bloques cuya base se reduce en cada nivel, ¿qué función de Python es ideal para el bucle del eje Z?</p></p>
+<ul class="multichoice">
+  <li><input name="quest_28494290" type="radio" value="range(10, 0, -1)" />range(10, 0, -1)</li>
+  <li><input name="quest_28494290" type="radio" value="range(10)" />range(10)</li>
+  <li><input name="quest_28494290" type="radio" value="list(10, 0)" />list(10, 0)</li>
+</ul>
+</div>
+
+
+
+<!-- question: 28494292  name: Q15. Unidades de Rotacion -->
+<div class="question">
+<h3>Q15. Unidades de Rotacion</h3>
+<p class="questiontext"><p>Cuando pasas el parámetro <code>rotation=(0, 0, 1.57)</code> a una función <code>primitive_add</code>, ¿en qué unidad está interpretando Blender ese valor?</p></p>
+<ul class="multichoice">
+  <li><input name="quest_28494292" type="radio" value="Radianes" />Radianes</li>
+  <li><input name="quest_28494292" type="radio" value="Grados" />Grados</li>
+  <li><input name="quest_28494292" type="radio" value="Porcentaje" />Porcentaje</li>
+</ul>
+</div>
+
+
+
+<!-- question: 28494294  name: Q17. Alternancia -->
+<div class="question">
+<h3>Q17. Alternancia</h3>
+<p class="questiontext"><p>Para crear una fila de 10 objetos donde los pares sean Cubos y los impares sean Esferas, ¿qué condición usarías?</p></p>
+<ul class="multichoice">
+  <li><input name="quest_28494294" type="radio" value="if i % 2 == 0:" />if i % 2 == 0:</li>
+  <li><input name="quest_28494294" type="radio" value="if i / 2 == 1:" />if i / 2 == 1:</li>
+  <li><input name="quest_28494294" type="radio" value="if i == random:" />if i == random:</li>
+</ul>
+</div>
+
+
+
+<!-- question: 28494297  name: Q20. Parametros Suzanne -->
+<div class="question">
+<h3>Q20. Parametros Suzanne</h3>
+<p class="questiontext"><p>Si ejecutas <code>bpy.ops.mesh.primitive_monkey_add()</code>, ¿dónde aparecerá la cabeza de la mona (Suzanne)?</p></p>
+<ul class="multichoice">
+  <li><input name="quest_28494297" type="radio" value="En el origen (0,0,0) del mundo." />En el origen (0,0,0) del mundo.</li>
+  <li><input name="quest_28494297" type="radio" value="En una posición aleatoria." />En una posición aleatoria.</li>
+  <li><input name="quest_28494297" type="radio" value="No aparece porque faltan parámetros obligatorios." />No aparece porque faltan parámetros obligatorios.</li>
+</ul>
+</div>
+
+
+
+<!-- question: 28494282  name: Q05. Propiedad Scale -->
+<div class="question">
+<h3>Q05. Propiedad Scale</h3>
+<p class="questiontext"><p>Si tienes el objeto seleccionado y quieres duplicar su tamaño solo en el eje <b>X</b> accediendo directamente a sus propiedades de objeto, ¿qué propiedad debes modificar?</p><p><code>bpy.context.object.[[1]] = 2.0</code></p></p>
+<ul class="shortanswer"><li><label class="accesshide" for="quest_28494282">Respuesta</label><input id="quest_28494282" name="quest_28494282" type="text" /></li></ul></div>
+
+
+
+<!-- question: 28494289  name: Q12. Referencia Contextual -->
+<div class="question">
+<h3>Q12. Referencia Contextual</h3>
+<p class="questiontext"><p>¿Cuál es la propiedad de <code>bpy.context</code> que nos permite acceder al objeto que acabamos de crear con un operador?</p><p><code>obj = bpy.context.[[1]]</code></p></p>
+<ul class="shortanswer"><li><label class="accesshide" for="quest_28494289">Respuesta</label><input id="quest_28494289" name="quest_28494289" type="text" /></li></ul></div>
+
+
+
+<!-- question: 28494291  name: Q14. Borrado Short -->
+<div class="question">
+<h3>Q14. Borrado Short</h3>
+<p class="questiontext"><p>Escribe el nombre del operador que se usa para eliminar los objetos seleccionados de la escena (solo la última palabra):</p><p><code>bpy.ops.object.[1]</code></p></p>
+<ul class="shortanswer"><li><label class="accesshide" for="quest_28494291">Respuesta</label><input id="quest_28494291" name="quest_28494291" type="text" /></li></ul></div>
+
+
+
+<!-- question: 28494296  name: Q19. Renombrar -->
+<div class="question">
+<h3>Q19. Renombrar</h3>
+<p class="questiontext"><p>¿Qué propiedad debes modificar para cambiar el nombre de un objeto por código?</p><p><code>bpy.context.object.[[1]] = "NuevoNombre"</code></p></p>
+<ul class="shortanswer"><li><label class="accesshide" for="quest_28494296">Respuesta</label><input id="quest_28494296" name="quest_28494296" type="text" /></li></ul></div>
+
+
+
+<!-- question: 28494288  name: Q11. Orden de Argumentos -->
+<div class="question">
+<h3>Q11. Orden de Argumentos</h3>
+<p class="questiontext"><p>En Python, puedes pasar los argumentos a las funciones de Blender en cualquier orden siempre que incluyas el nombre del parámetro (ej. <code>location=(1,1,1), size=5</code>).</p></p>
+<ul class="truefalse">
+  <li><input name="quest_28494288" type="radio" value="Verdadero" />Verdadero</li>
+  <li><input name="quest_28494288" type="radio" value="Falso" />Falso</li>
+</ul>
+</div>
+
+
+
+<!-- question: 28494293  name: Q16. Enter Edit Mode -->
+<div class="question">
+<h3>Q16. Enter Edit Mode</h3>
+<p class="questiontext"><p>El parámetro <code>enter_editmode=True</code> hará que, tras crear el objeto, Blender cambie automáticamente al modo edición del mismo.</p></p>
+<ul class="truefalse">
+  <li><input name="quest_28494293" type="radio" value="Verdadero" />Verdadero</li>
+  <li><input name="quest_28494293" type="radio" value="Falso" />Falso</li>
+</ul>
+</div>
+
+
+
+<p class="submit">
+  <input type="submit" />
+</p>
+</form>
+</body>
+</html>
