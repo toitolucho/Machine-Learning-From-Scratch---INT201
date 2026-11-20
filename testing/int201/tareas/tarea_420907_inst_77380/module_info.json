@@ -1,0 +1,25 @@
+{
+  "id": 420907,
+  "url": "https://ecampus.usfx.bo/mod/assign/view.php?id=420907",
+  "name": "T01 - ",
+  "instance": 77380,
+  "visible": 1,
+  "uservisible": true,
+  "visibleoncoursepage": 1,
+  "modicon": "https://ecampus.usfx.bo/theme/image.php/fordson/assign/1758136634/icon",
+  "modname": "assign",
+  "modplural": "Tareas",
+  "availability": null,
+  "indent": 0,
+  "onclick": "",
+  "afterlink": null,
+  "customdata": "\"\"",
+  "noviewlink": false,
+  "completion": 1,
+  "completiondata": {
+    "state": 0,
+    "timecompleted": 0,
+    "overrideby": null,
+    "valueused": false
+  }
+}

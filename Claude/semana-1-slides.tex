@@ -1,0 +1,886 @@
+% =====================================================================
+%  INT210 - Machine Learning aplicado a la Ciberseguridad y al
+%  Diseño/Animación Digital
+%  Semana 1: Fundamentos de IA, ML y la Jerarquía de Necesidades de Datos
+%  Compilar con:  tectonic semana-1-slides.tex   (o xelatex / lualatex)
+% =====================================================================
+\documentclass[10pt,aspectratio=169]{beamer}
+
+% ---------------------------------------------------------------- Idioma
+\usepackage{fontspec}
+\usepackage[spanish,es-noshorthands,es-tabla]{babel}
+
+% ---------------------------------------------------------------- Paquetes
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric,positioning,arrows.meta,calc,fit}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usepackage{listings}
+\usepackage{xcolor}
+
+% ---------------------------------------------------------------- Tema
+\usetheme{Madrid}
+\usecolortheme{default}
+\definecolor{usfxazul}{RGB}{0,51,102}
+\definecolor{usfxrojo}{RGB}{153,0,0}
+\definecolor{usfxdorado}{RGB}{196,145,2}
+\definecolor{codigofondo}{RGB}{246,248,250}
+\definecolor{codigoverde}{RGB}{0,128,0}
+\definecolor{codigogris}{RGB}{110,110,110}
+\definecolor{vp}{RGB}{46,125,50}
+\definecolor{fp}{RGB}{239,108,0}
+\definecolor{fn}{RGB}{198,40,40}
+
+\setbeamercolor{structure}{fg=usfxazul}
+\setbeamercolor{palette primary}{bg=usfxazul,fg=white}
+\setbeamercolor{palette secondary}{bg=usfxazul!85!black,fg=white}
+\setbeamercolor{palette tertiary}{bg=usfxazul!70!black,fg=white}
+\setbeamercolor{frametitle}{bg=usfxazul,fg=white}
+\setbeamercolor{title}{bg=usfxazul,fg=white}
+\setbeamercolor{block title}{bg=usfxazul,fg=white}
+\setbeamercolor{block body}{bg=usfxazul!6}
+\setbeamercolor{block title example}{bg=vp,fg=white}
+\setbeamercolor{block body example}{bg=vp!6}
+\setbeamercolor{block title alerted}{bg=usfxrojo,fg=white}
+\setbeamercolor{block body alerted}{bg=usfxrojo!6}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{itemize items}[circle]
+\setbeamertemplate{enumerate items}[default]
+\setbeamertemplate{blocks}[rounded][shadow=false]
+
+% Diapositiva de sección automática
+\AtBeginSection[]{
+  \begin{frame}{Contenido}
+    \tableofcontents[currentsection,hideothersubsections]
+  \end{frame}
+}
+
+% ---------------------------------------------------------------- Código
+\lstdefinestyle{python}{
+  language=Python,
+  basicstyle=\ttfamily\scriptsize,
+  keywordstyle=\color{usfxazul}\bfseries,
+  stringstyle=\color{usfxrojo},
+  commentstyle=\color{codigoverde}\itshape,
+  numberstyle=\tiny\color{codigogris},
+  numbers=left, numbersep=6pt,
+  backgroundcolor=\color{codigofondo},
+  frame=single, rulecolor=\color{usfxazul!40},
+  breaklines=true, showstringspaces=false,
+  columns=fullflexible, keepspaces=true,
+  xleftmargin=1.5em, framexleftmargin=1.5em,
+  morekeywords={as,True,False,None},
+}
+\lstdefinestyle{salida}{
+  basicstyle=\ttfamily\scriptsize,
+  backgroundcolor=\color{black!85},
+  basicstyle=\ttfamily\scriptsize\color{white},
+  frame=none, numbers=none, columns=fullflexible, keepspaces=true,
+}
+\lstset{style=python}
+
+% ---------------------------------------------------------------- Portada
+\title[INT210 · Semana 1]{Fundamentos de IA, Machine Learning\\y la Jerarquía de Necesidades de Datos}
+\subtitle{Machine Learning aplicado a la Ciberseguridad y al Diseño/Animación Digital}
+\author[L. A. Molina Yampa]{Ing. Luis Antonio Molina Yampa}
+\institute[USFX]{Universidad Mayor, Real y Pontificia de San Francisco Xavier de Chuquisaca\\
+  INT210 -- Machine Learning}
+\date{Semana 1}
+
+\newcommand{\capa}[5]{%
+  \fill[#4] (-#1,#2) -- (#1,#2) -- (#1-0.45,#2+0.9) -- (-#1+0.45,#2+0.9) -- cycle;
+  \node[font=\scriptsize\bfseries, text=#5, align=center] at (0,#2+0.45) {#3};}
+\newcommand{\ejemplo}[1]{\textcolor{usfxdorado}{\textbf{#1}}}
+
+% =====================================================================
+\begin{document}
+
+\begin{frame}[plain]
+  \titlepage
+\end{frame}
+
+% ---------------------------------------------------------------------
+\begin{frame}{Objetivos de aprendizaje}
+  Al finalizar la semana, el estudiante será capaz de:
+  \medskip
+  \begin{enumerate}
+    \item \textbf{Diferenciar} IA, Machine Learning, Deep Learning y Estadística.
+    \item \textbf{Representar} una muestra del mundo real como un vector de características $\mathbf{x}_i\in\mathbb{R}^d$.
+    \item \textbf{Formalizar} el aprendizaje supervisado como la aproximación de una función $f:\mathcal{X}\to\mathcal{Y}$.
+    \item \textbf{Clasificar} problemas según el tipo de aprendizaje (supervisado, no supervisado, semi-supervisado, refuerzo).
+    \item \textbf{Explicar} por qué los datos (y no el modelo) son la base de todo proyecto de ML.
+    \item \textbf{Interpretar} una matriz de confusión en un escenario de ciberseguridad.
+  \end{enumerate}
+\end{frame}
+
+% ---------------------------------------------------------------------
+\begin{frame}{Organización de la semana}
+  \centering
+  \begin{tabular}{>{\bfseries}l l l}
+    \toprule
+    Sesión & Modalidad & Producto \\
+    \midrule
+    Clase 1 (1.5 h) & Sesión teórica magistral & Conceptos y formalización \\
+    Clase 2 (1.5 h) & Práctica guiada en Google Colab & Exploración del dataset Iris con Pandas \\
+    Clase 3 (1.5 h) & Laboratorio evaluado & Clasificador heurístico + matriz de confusión \\
+    Autónomo & Fuera de aula & Tarea + Quiz en Moodle \\
+    \bottomrule
+  \end{tabular}
+  \vfill
+  \begin{block}{Hilo conductor del curso}
+    Cada concepto se ilustra con dos dominios de aplicación:
+    \textbf{ciberseguridad} (tráfico de red, malware, intrusiones) y
+    \textbf{diseño/animación digital} (píxeles, renders, fotogramas).
+  \end{block}
+\end{frame}
+
+% =====================================================================
+\section{IA, ML, DL y Estadística}
+% =====================================================================
+
+\begin{frame}{Delimitando los dominios}
+  \begin{columns}[T]
+    \begin{column}{0.47\textwidth}
+      \centering
+      \begin{tikzpicture}[scale=0.92]
+        \draw[fill=usfxazul!12, draw=usfxazul, thick] (0,0) ellipse (3.1 and 2.25);
+        \draw[fill=usfxazul!28, draw=usfxazul, thick] (0.45,-0.35) ellipse (2.25 and 1.6);
+        \draw[fill=usfxazul!55, draw=usfxazul, thick] (0.9,-0.65) ellipse (1.25 and 0.9);
+        \node[font=\bfseries\small, usfxazul] at (-0.2,1.75) {Inteligencia Artificial};
+        \node[font=\bfseries\small, usfxazul] at (0.2,0.75) {Machine Learning};
+        \node[font=\bfseries\small, white] at (0.9,-0.65) {Deep Learning};
+        \node[font=\tiny, align=center, text=black!70] at (-2.05,-0.2) {Reglas\\Lógica difusa\\Heurísticas};
+      \end{tikzpicture}
+    \end{column}
+    \begin{column}{0.51\textwidth}
+      \small
+      \begin{description}[IA]
+        \item[IA] Superconjunto: cualquier técnica que permita a una computadora \emph{simular} razonamiento humano (incluye reglas fijas y heurísticas).
+        \item[ML] Subcampo de la IA: algoritmos que \emph{aprenden patrones de los datos} sin ser programados explícitamente.
+        \item[DL] Especialización del ML: redes neuronales multicapa que extraen \emph{jerarquías de características} de datos no estructurados (imagen, audio, video).
+      \end{description}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{Programación tradicional vs. Machine Learning}
+  \centering
+  \begin{tikzpicture}[
+      caja/.style={draw=usfxazul, fill=usfxazul!8, rounded corners, minimum width=2.3cm, minimum height=0.8cm, font=\small},
+      prog/.style={draw=usfxrojo, fill=usfxrojo!10, rounded corners, minimum width=2.6cm, minimum height=1.6cm, font=\small\bfseries, align=center},
+      flecha/.style={-{Stealth[length=2.5mm]}, thick, usfxazul}]
+    % Tradicional
+    \node[font=\bfseries] at (-0.6,1.9) {Programación tradicional};
+    \node[caja] (d1) at (-2.6,1.0) {Datos};
+    \node[caja] (r1) at (-2.6,0.0) {Reglas};
+    \node[prog] (p1) at (0.4,0.5) {Programa};
+    \node[caja, fill=vp!15, draw=vp] (o1) at (3.2,0.5) {Respuestas};
+    \draw[flecha] (d1) -- (p1); \draw[flecha] (r1) -- (p1); \draw[flecha] (p1) -- (o1);
+    % ML
+    \node[font=\bfseries] at (-0.6,-1.2) {Machine Learning};
+    \node[caja] (d2) at (-2.6,-2.1) {Datos};
+    \node[caja, fill=vp!15, draw=vp] (r2) at (-2.6,-3.1) {Respuestas};
+    \node[prog] (p2) at (0.4,-2.6) {Algoritmo de\\aprendizaje};
+    \node[caja, fill=usfxdorado!20, draw=usfxdorado] (o2) at (3.2,-2.6) {Reglas (modelo)};
+    \draw[flecha] (d2) -- (p2); \draw[flecha] (r2) -- (p2); \draw[flecha] (p2) -- (o2);
+  \end{tikzpicture}
+  \vfill
+  \begin{exampleblock}{Ejemplo -- Filtro de spam}
+    \textbf{Tradicional:} \texttt{if "premio" in correo: spam}. \quad
+    \textbf{ML:} se entrena con 10\,000 correos etiquetados y el modelo descubre por sí mismo qué palabras, remitentes y horarios delatan al spam.
+  \end{exampleblock}
+\end{frame}
+
+\begin{frame}{Estadística vs. Machine Learning}
+  \centering
+  \renewcommand{\arraystretch}{1.3}
+  \begin{tabular}{>{\bfseries}p{3.2cm} p{5.1cm} p{5.1cm}}
+    \toprule
+    & Estadística tradicional & Machine Learning \\
+    \midrule
+    Objetivo principal & Inferencia y explicación & Predicción y generalización \\
+    Pregunta típica & ¿Es significativo este parámetro? & ¿Qué tan bien predice datos nuevos? \\
+    Supuestos & Distribuciones previas estrictas & Pocos supuestos; validación empírica \\
+    Escala & Muestras moderadas & Grandes volúmenes de datos \\
+    Validación & $p$-valores, intervalos de confianza & Conjunto de prueba, validación cruzada \\
+    \bottomrule
+  \end{tabular}
+  \vfill
+  \begin{exampleblock}{Ejemplo -- mismo dato, dos preguntas}
+    Con registros de un estudio de animación: el \textbf{estadístico} pregunta
+    \emph{``¿el número de luces influye significativamente en el tiempo de render?''};
+    el \textbf{ingeniero de ML} pregunta \emph{``¿cuántos segundos tardará el próximo fotograma?''}.
+  \end{exampleblock}
+\end{frame}
+
+\begin{frame}{Analogía: el parque de diversiones}
+  \begin{columns}[T]
+    \begin{column}{0.32\textwidth}
+      \begin{block}{IA: robot con manual}
+        \small
+        \emph{``Si ves una piedra roja, salta; si es azul, agáchate.''}\\[0.4em]
+        Parece inteligente, pero ante una piedra \textbf{amarilla} se confunde: no está en sus reglas fijas.
+      \end{block}
+    \end{column}
+    \begin{column}{0.32\textwidth}
+      \begin{block}{ML: cachorro entrenable}
+        \small
+        Le mostramos 100 fotos de gatos y 100 de perros. Cada acierto recibe una ``galleta'' (premio matemático).\\[0.4em]
+        Aprende \textbf{solo} a reconocer orejas y bigotes.
+      \end{block}
+    \end{column}
+    \begin{column}{0.32\textwidth}
+      \begin{block}{DL: detective con supergafas}
+        \small
+        Descompone la imagen en capas: \textbf{bordes} $\to$ \textbf{ojos} $\to$ \textbf{cara completa}.\\[0.4em]
+        Procesa datos muy complejos como un cerebro de muchas capas.
+      \end{block}
+    \end{column}
+  \end{columns}
+  \vfill
+  \begin{alertblock}{Pregunta para la clase}
+    Un antivirus que bloquea archivos cuyo \emph{hash} está en una lista negra, ¿es IA, ML o DL? ¿Y uno que detecta malware \emph{nunca antes visto}?
+  \end{alertblock}
+\end{frame}
+
+% =====================================================================
+\section{Formalización matemática}
+% =====================================================================
+
+\begin{frame}{Representación vectorial de una muestra}
+  Cada instancia del mundo real se transforma en un \textbf{vector de características}:
+  \[
+    \mathbf{x}_i = [x_{i,1},\, x_{i,2},\, \dots,\, x_{i,d}]^{T} \in \mathbb{R}^{d}
+  \]
+  \begin{itemize}
+    \item $\mathbf{x}_i$: la $i$-ésima muestra \quad $\bullet$ \quad $d$: dimensionalidad (número de \emph{features}) \quad $\bullet$ \quad $x_{i,j}$: valor de la característica $j$.
+  \end{itemize}
+  \medskip
+  \begin{columns}[T]
+    \begin{column}{0.49\textwidth}
+      \begin{exampleblock}{Ejemplo: conexión de red ($d=4$)}
+        \small
+        \[
+          \mathbf{x}_{17} =
+          \begin{bmatrix} 2.3 \\ 1540 \\ 12 \\ 443 \end{bmatrix}
+          \begin{array}{l}
+            \leftarrow \text{duración (s)} \\
+            \leftarrow \text{bytes enviados} \\
+            \leftarrow \text{nº de paquetes} \\
+            \leftarrow \text{puerto destino}
+          \end{array}
+        \]
+      \end{exampleblock}
+    \end{column}
+    \begin{column}{0.49\textwidth}
+      \begin{exampleblock}{Ejemplo: flor Iris ($d=4$)}
+        \small
+        \[
+          \mathbf{x}_{1} =
+          \begin{bmatrix} 5.1 \\ 3.5 \\ 1.4 \\ 0.2 \end{bmatrix}
+          \begin{array}{l}
+            \leftarrow \text{largo del sépalo (cm)} \\
+            \leftarrow \text{ancho del sépalo (cm)} \\
+            \leftarrow \text{largo del pétalo (cm)} \\
+            \leftarrow \text{ancho del pétalo (cm)}
+          \end{array}
+        \]
+      \end{exampleblock}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{El dataset como matriz}
+  Con $n$ muestras apiladas obtenemos la \textbf{matriz de diseño} $\mathbf{X}\in\mathbb{R}^{n\times d}$ y el vector de etiquetas $\mathbf{y}$:
+  \[
+    \mathbf{X} =
+    \begin{bmatrix}
+      x_{1,1} & x_{1,2} & \cdots & x_{1,d} \\
+      x_{2,1} & x_{2,2} & \cdots & x_{2,d} \\
+      \vdots  & \vdots  & \ddots & \vdots  \\
+      x_{n,1} & x_{n,2} & \cdots & x_{n,d}
+    \end{bmatrix},
+    \qquad
+    \mathbf{y} = \begin{bmatrix} y_1 \\ y_2 \\ \vdots \\ y_n \end{bmatrix}
+  \]
+  \begin{exampleblock}{Ejemplo: Iris}
+    \centering\small
+    \begin{tabular}{c cccc c}
+      \toprule
+      $i$ & sépalo largo & sépalo ancho & pétalo largo & pétalo ancho & $y_i$ \\
+      \midrule
+      1   & 5.1 & 3.5 & 1.4 & 0.2 & 0 (setosa) \\
+      51  & 7.0 & 3.2 & 4.7 & 1.4 & 1 (versicolor) \\
+      101 & 6.3 & 3.3 & 6.0 & 2.5 & 2 (virginica) \\
+      \bottomrule
+    \end{tabular}\\[0.3em]
+    Iris completo: $n=150$, $d=4$ $\;\Rightarrow\;$ $\mathbf{X}\in\mathbb{R}^{150\times 4}$.
+  \end{exampleblock}
+\end{frame}
+
+\begin{frame}{La función de mapeo predictivo}
+  El aprendizaje supervisado busca aproximar una función
+  \[
+    f:\mathcal{X}\to\mathcal{Y}, \qquad \hat{y}_i = f(\mathbf{x}_i)
+  \]
+  que minimice el error empírico sobre los datos de entrenamiento.
+  \medskip
+  \begin{columns}[T]
+    \begin{column}{0.49\textwidth}
+      \begin{block}{Clasificación}
+        $\mathcal{Y}$ es un conjunto \textbf{discreto}:
+        \[ \mathcal{Y}=\{0,1\} \quad\text{o}\quad \mathcal{Y}=\{-1,+1\} \]
+        \small\ejemplo{Ejemplo:} ¿el tráfico es \emph{seguro} (0) o un \emph{ataque DDoS} (1)?
+      \end{block}
+    \end{column}
+    \begin{column}{0.49\textwidth}
+      \begin{block}{Regresión}
+        $\mathcal{Y}$ es \textbf{continuo}:
+        \[ \mathcal{Y}=\mathbb{R} \]
+        \small\ejemplo{Ejemplo:} ¿cuántos segundos tardará en renderizarse un fotograma? \; $\hat{y}=42.7$ s
+      \end{block}
+    \end{column}
+  \end{columns}
+  \medskip
+  \begin{alertblock}{¿Cómo se mide el error? -- Función de pérdida}
+    \small
+    Clasificación (0-1): $\mathcal{L}(y,\hat{y}) = \mathbf{1}[y\neq\hat{y}]$
+    \qquad
+    Regresión (cuadrática): $\mathcal{L}(y,\hat{y}) = (y-\hat{y})^2$
+  \end{alertblock}
+\end{frame}
+
+\begin{frame}{Ejemplo resuelto: calculando la pérdida}
+  Un modelo predice el tiempo de render (s) de 4 fotogramas:
+  \medskip
+  \begin{columns}[c]
+    \begin{column}{0.48\textwidth}
+      \centering
+      \begin{tabular}{cccc}
+        \toprule
+        Fotograma & $y_i$ & $\hat{y}_i$ & $(y_i-\hat{y}_i)^2$ \\
+        \midrule
+        1 & 40 & 38 & 4 \\
+        2 & 55 & 60 & 25 \\
+        3 & 32 & 31 & 1 \\
+        4 & 70 & 64 & 36 \\
+        \midrule
+        \multicolumn{3}{r}{\textbf{Suma}} & \textbf{66} \\
+        \bottomrule
+      \end{tabular}
+    \end{column}
+    \begin{column}{0.48\textwidth}
+      Error cuadrático medio (MSE):
+      \[
+        \text{MSE} = \frac{1}{n}\sum_{i=1}^{n}(y_i-\hat{y}_i)^2 = \frac{66}{4} = 16.5\ \text{s}^2
+      \]
+      Raíz del MSE:
+      \[
+        \text{RMSE} = \sqrt{16.5} \approx 4.06\ \text{s}
+      \]
+      \small\emph{Interpretación:} en promedio el modelo se equivoca en unos 4 segundos por fotograma.
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{Tipos de aprendizaje}
+  \small
+  \renewcommand{\arraystretch}{1.35}
+  \begin{tabular}{>{\bfseries}p{2.6cm} p{4.2cm} p{6.6cm}}
+    \toprule
+    Tipo & Datos disponibles & Ejemplo en nuestros dominios \\
+    \midrule
+    Supervisado & $\mathcal{D}=\{(\mathbf{x}_i,y_i)\}_{i=1}^n$ \newline minimiza $\mathcal{L}(y_i,f(\mathbf{x}_i))$ & Clasificar correos como \emph{phishing} / legítimo a partir de miles de ejemplos etiquetados. \\
+    No supervisado & $\mathcal{D}=\{\mathbf{x}_i\}_{i=1}^n$ \newline (sin etiquetas) & Agrupar (clustering) sesiones de usuarios por comportamiento; detectar un grupo anómalo. Agrupar paletas de color de un portafolio. \\
+    Semi-supervisado & Pocos datos etiquetados + muchos sin etiquetar & 200 binarios etiquetados por un analista + 50\,000 sin revisar para mejorar un detector de malware a bajo costo. \\
+    Por refuerzo & Agente + entorno + recompensas & Un personaje animado aprende a caminar; un agente aprende a responder ataques en un simulador de red. \\
+    \bottomrule
+  \end{tabular}
+\end{frame}
+
+\begin{frame}{Actividad rápida: ¿qué tipo de problema es?}
+  Para cada caso indique: \textbf{(a)} tipo de aprendizaje y \textbf{(b)} clasificación o regresión (si aplica).
+  \medskip
+  \begin{enumerate}
+    \item Predecir cuántos megabytes ocupará un video exportado a partir de su duración y resolución.
+    \item Separar 1 millón de registros de \emph{logs} en grupos sin conocer de antemano qué representan.
+    \item Decidir si un inicio de sesión es fraudulento usando un historial de accesos marcados por el SOC.
+    \item Entrenar un bot que aprende a jugar un videojuego maximizando su puntaje.
+  \end{enumerate}
+  \vfill
+  \pause
+  \begin{exampleblock}{Respuestas}
+    \small
+    1.~Supervisado -- regresión \quad
+    2.~No supervisado -- clustering \quad
+    3.~Supervisado -- clasificación \quad
+    4.~Refuerzo
+  \end{exampleblock}
+\end{frame}
+
+% =====================================================================
+\section{Jerarquía de necesidades de datos}
+% =====================================================================
+
+\begin{frame}{La pirámide de Monica Rogati}
+  \begin{columns}[c]
+    \begin{column}{0.55\textwidth}
+      \centering
+      \begin{tikzpicture}[scale=0.78]
+        \capa{4.2}{0.0}{Recolectar\\{\tiny sensores, logs de red, APIs}}{usfxazul!25}{black}
+        \capa{3.75}{0.9}{Mover / Almacenar\\{\tiny ingesta, pipelines ETL}}{usfxazul!40}{black}
+        \capa{3.3}{1.8}{Explorar / Transformar\\{\tiny limpieza, anomalías}}{usfxazul!60}{white}
+        \capa{2.85}{2.7}{Agregar / Etiquetar\\{\tiny métricas, features}}{usfxazul!75}{white}
+        \capa{2.4}{3.6}{Aprender / Optimizar\\{\tiny A/B testing, reglas}}{usfxazul!90}{white}
+        \fill[usfxdorado] (-1.95,4.5) -- (1.95,4.5) -- (0,5.7) -- cycle;
+        \node[font=\scriptsize\bfseries] at (0,4.9) {IA / ML};
+        \draw[thick, usfxrojo, |-|] (4.4,0) -- (4.4,2.7) node[midway, right, font=\scriptsize, align=left, text=usfxrojo] {70\%--80\%\\del tiempo};
+      \end{tikzpicture}
+    \end{column}
+    \begin{column}{0.43\textwidth}
+      \small
+      \begin{itemize}
+        \item No se puede modelar sin una \textbf{base robusta} de datos.
+        \item Reis y Housley (2022): entre el \textbf{70\% y 80\%} del tiempo de un científico de datos se consume en las capas inferiores.
+        \item El modelo es la \emph{punta} visible; la ingeniería de datos es el iceberg.
+      \end{itemize}
+      \begin{alertblock}{Antipatrón}
+        \footnotesize Entrenar un clasificador de malware o un generador de arte sin pipelines estables ni limpieza previa: costoso e inviable.
+      \end{alertblock}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{Ejemplo: la pirámide en un SOC de un estudio de animación}
+  \small
+  \renewcommand{\arraystretch}{1.3}
+  \begin{tabular}{>{\bfseries}p{3.2cm} p{10.2cm}}
+    \toprule
+    Capa & Qué se hace en la práctica \\
+    \midrule
+    Recolectar & Capturar logs del firewall, NetFlow de la granja de render, eventos de inicio de sesión. \\
+    Mover / Almacenar & Enviar los logs a un repositorio central (p. ej. un SIEM) con un pipeline ETL confiable. \\
+    Explorar / Transformar & Eliminar duplicados, normalizar zonas horarias, corregir IPs mal formadas. \\
+    Agregar / Etiquetar & Calcular ``bytes por minuto por host''; el analista marca incidentes reales como \emph{ataque}. \\
+    Aprender / Optimizar & Probar primero reglas simples (umbral de bytes) y medir su efecto. \\
+    \textcolor{usfxdorado}{IA / ML} & Recién ahora: entrenar un modelo que detecte exfiltración de renders confidenciales. \\
+    \bottomrule
+  \end{tabular}
+\end{frame}
+
+% =====================================================================
+\section{Práctica guiada: explorando Iris con Pandas}
+% =====================================================================
+
+\begin{frame}{El dataset Iris}
+  \begin{columns}[c]
+    \begin{column}{0.45\textwidth}
+      \begin{itemize}
+        \item $n = 150$ flores, 50 por especie.
+        \item $d = 4$ características numéricas (cm).
+        \item 3 clases: \emph{setosa}, \emph{versicolor}, \emph{virginica}.
+        \item Incluido en \texttt{scikit-learn}: no requiere descarga manual.
+      \end{itemize}
+      \medskip
+      \begin{block}{¿Por qué Iris?}
+        \small Es pequeño, limpio y visualizable: ideal para aprender el \emph{flujo de trabajo} antes de usar datos reales de red.
+      \end{block}
+    \end{column}
+    \begin{column}{0.53\textwidth}
+      \centering\footnotesize
+      \begin{tabular}{l ccc}
+        \toprule
+        & \multicolumn{3}{c}{Largo del pétalo (cm)} \\
+        \cmidrule(lr){2-4}
+        Especie & mín & máx & media \\
+        \midrule
+        setosa     & 1.0 & 1.9 & 1.46 \\
+        versicolor & 3.0 & 5.1 & 4.26 \\
+        virginica  & 4.5 & 6.9 & 5.55 \\
+        \midrule
+        & \multicolumn{3}{c}{Ancho del pétalo (cm)} \\
+        \cmidrule(lr){2-4}
+        setosa     & 0.1 & 0.6 & 0.25 \\
+        versicolor & 1.0 & 1.8 & 1.33 \\
+        virginica  & 1.4 & 2.5 & 2.03 \\
+        \bottomrule
+      \end{tabular}\\[0.4em]
+      \emph{Observación:} ¡las setosas no se solapan con las demás!
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}[fragile]{Paso 1: Carga de datos}
+  \begin{lstlisting}
+import pandas as pd
+from sklearn.datasets import load_iris
+
+iris_raw = load_iris()                                  # Carga del dataset Iris
+df = pd.DataFrame(data=iris_raw.data, columns=iris_raw.feature_names)
+df['species'] = iris_raw.target                         # Etiquetas 0, 1, 2
+
+species_map = {0: 'setosa', 1: 'versicolor', 2: 'virginica'}
+df['species_name'] = df['species'].map(species_map)     # Mapeo semántico
+df.head()
+  \end{lstlisting}
+  \textbf{Salida:}
+  \begin{lstlisting}[style=salida]
+   sepal length (cm)  sepal width (cm)  petal length (cm)  petal width (cm)  species species_name
+0                5.1               3.5                1.4               0.2        0       setosa
+1                4.9               3.0                1.4               0.2        0       setosa
+2                4.7               3.2                1.3               0.2        0       setosa
+3                4.6               3.1                1.5               0.2        0       setosa
+4                5.0               3.6                1.4               0.2        0       setosa
+  \end{lstlisting}
+\end{frame}
+
+\begin{frame}{Paso 1: ¿qué hace cada línea?}
+  \small
+  \begin{description}[\texttt{df['species\_name']}]
+    \item[\texttt{import pandas as pd}] Librería estándar para estructuras tabulares (\emph{DataFrames}).
+    \item[\texttt{load\_iris()}] Devuelve de forma determinista las 150 muestras con sus 4 atributos.
+    \item[\texttt{pd.DataFrame(...)}] Crea la tabla asignando nombres a cada columna (\emph{feature}).
+    \item[\texttt{df['species']}] Agrega la etiqueta real $y_i \in \{0,1,2\}$.
+    \item[\texttt{df['species\_name']}] Traduce números a nombres legibles con \texttt{.map()}.
+  \end{description}
+  \vfill
+  \begin{block}{Conexión con la teoría}
+    Las 4 primeras columnas forman $\mathbf{X}\in\mathbb{R}^{150\times4}$; la columna \texttt{species} es el vector $\mathbf{y}$.
+  \end{block}
+\end{frame}
+
+\begin{frame}[fragile]{Paso 2: Consultas con \texttt{query()}}
+  \textbf{Objetivo:} encontrar setosas con pétalos muy delgados (ancho $\le 0.2$ cm), como un \emph{filtro de umbral bajo}.
+  \begin{lstlisting}
+filtro_setosa = df.query("species_name == 'setosa' and `petal width (cm)` <= 0.2")
+print(f"Total de muestras encontradas: {len(filtro_setosa)}")
+  \end{lstlisting}
+  \begin{lstlisting}[style=salida]
+Total de muestras encontradas: 34
+  \end{lstlisting}
+  \medskip
+  \begin{itemize}
+    \item Los nombres de columna con espacios se encierran entre \textbf{comillas invertidas} (\texttt{\`{}...\`{}}).
+    \item \texttt{and} exige que \textbf{ambas} condiciones se cumplan simultáneamente.
+  \end{itemize}
+  \begin{exampleblock}{Analogía en ciberseguridad}
+    \small\texttt{logs.query("puerto == 22 and `intentos\_fallidos` >= 5")} \; $\to$ posibles ataques de fuerza bruta por SSH.
+  \end{exampleblock}
+\end{frame}
+
+\begin{frame}[fragile]{Paso 3: Correlación de Pearson}
+  \begin{columns}[c]
+    \begin{column}{0.5\textwidth}
+\begin{lstlisting}
+cols = ['petal length (cm)',
+        'petal width (cm)']
+corr = df[cols].corr(method='pearson')
+print(corr)
+\end{lstlisting}
+\begin{lstlisting}[style=salida]
+                   petal length  petal width
+petal length (cm)      1.000000     0.962865
+petal width (cm)       0.962865     1.000000
+\end{lstlisting}
+      \small
+      \[
+        r = \frac{\sum_i (x_i-\bar{x})(y_i-\bar{y})}{\sqrt{\sum_i (x_i-\bar{x})^2}\sqrt{\sum_i (y_i-\bar{y})^2}} \in [-1,1]
+      \]
+      $r\approx0.96$: relación lineal positiva \textbf{muy fuerte}.
+    \end{column}
+    \begin{column}{0.48\textwidth}
+      \centering
+      \begin{tikzpicture}
+        \begin{axis}[
+            width=6.6cm, height=5.6cm,
+            xlabel={Largo del pétalo (cm)}, ylabel={Ancho del pétalo (cm)},
+            label style={font=\scriptsize}, tick label style={font=\tiny},
+            legend style={font=\tiny, at={(0.97,0.03)}, anchor=south east},
+            scatter/classes={
+              0={mark=*, usfxazul, mark size=1.3pt},
+              1={mark=square*, usfxdorado, mark size=1.3pt},
+              2={mark=triangle*, usfxrojo, mark size=1.6pt}},
+            xmin=0.5, xmax=7.3, ymin=0, ymax=2.7]
+          \addplot[scatter, only marks, scatter src=explicit symbolic]
+            table[x=largo, y=ancho, meta=clase] {iris_petalos.dat};
+          \legend{setosa, versicolor, virginica}
+          \draw[dashed, thick, black!70] (axis cs:2.0,0) -- (axis cs:2.0,2.7);
+          \node[font=\tiny, anchor=west] at (axis cs:2.05,2.35) {umbral $=2.0$};
+        \end{axis}
+      \end{tikzpicture}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+% =====================================================================
+\section{Laboratorio evaluado: heurística vs. modelo}
+% =====================================================================
+
+\begin{frame}{El desafío del laboratorio}
+  \begin{enumerate}
+    \item \textbf{Cargar} el dataset Iris (estructura de la Clase 2).
+    \item \textbf{Construir un modelo heurístico} con \texttt{if-elif-else} que prediga \emph{setosa} vs.\ \emph{no-setosa} usando un umbral sobre el pétalo.
+    \item \textbf{Comparar} con un modelo algorítmico: $k$-vecinos más cercanos ($k$-NN) con $k=3$.
+    \item \textbf{Generar la matriz de confusión} y defender sus implicaciones en un escenario de ciberseguridad.
+  \end{enumerate}
+  \vfill
+  \begin{alertblock}{Escenario simulado}
+    \centering
+    \textbf{Setosa} $=$ Alerta de intrusión crítica (\emph{malware}) \qquad
+    \textbf{No-setosa} $=$ Tráfico de red legítimo
+  \end{alertblock}
+\end{frame}
+
+\begin{frame}[fragile]{Modelo heurístico (hecho a mano)}
+  \begin{lstlisting}
+import numpy as np
+from sklearn.metrics import confusion_matrix
+
+def clasificador_manual(row):
+    # Regla basada en el análisis visual: las setosas tienen pétalos muy cortos
+    if row['petal length (cm)'] < 2.0:
+        return 0  # Setosa  (=> Malware)
+    else:
+        return 1  # No-Setosa (=> Tráfico legítimo)
+
+df['prediccion_heuristica'] = df.apply(clasificador_manual, axis=1)
+df['label_binario'] = df['species'].apply(lambda x: 0 if x == 0 else 1)
+
+conf_matrix = confusion_matrix(df['label_binario'], df['prediccion_heuristica'])
+print("Matriz de Confusión Obtenida:")
+print(conf_matrix)
+  \end{lstlisting}
+  \begin{lstlisting}[style=salida]
+Matriz de Confusión Obtenida:
+[[ 50   0]
+ [  0 100]]
+  \end{lstlisting}
+\end{frame}
+
+\begin{frame}{Leyendo la matriz de confusión}
+  \begin{columns}[c]
+    \begin{column}{0.5\textwidth}
+      \centering
+      \begin{tikzpicture}[cel/.style={minimum width=2.2cm, minimum height=1.25cm, draw=white, very thick, align=center, font=\small}]
+        \node[cel, fill=vp!80, text=white]  (a) at (0,0)     {\textbf{VP}\\50};
+        \node[cel, fill=fn!80, text=white]  (b) at (2.2,0)   {\textbf{FN}\\0};
+        \node[cel, fill=fp!80, text=white]  (c) at (0,-1.25) {\textbf{FP}\\0};
+        \node[cel, fill=vp!45]              (d) at (2.2,-1.25){\textbf{VN}\\100};
+        \node[font=\scriptsize, above=0.05cm of a] {Pred.\ Malware};
+        \node[font=\scriptsize, above=0.05cm of b] {Pred.\ Legítimo};
+        \node[font=\scriptsize, rotate=90, align=center] at ($(a.west)+(-0.4,0)$) {Real\\Malware};
+        \node[font=\scriptsize, rotate=90, align=center] at ($(c.west)+(-0.4,0)$) {Real\\Legítimo};
+      \end{tikzpicture}
+    \end{column}
+    \begin{column}{0.48\textwidth}
+      \small
+      \begin{itemize}
+        \item Filas $=$ clase \textbf{real}; columnas $=$ clase \textbf{predicha}.
+        \item \texttt{scikit-learn} ordena las etiquetas: la clase \texttt{0} (setosa $=$ malware, nuestra clase \emph{positiva}) aparece primero.
+        \item Resultado: \textbf{clasificación perfecta}. El umbral de 2.0 cm separa totalmente a las setosas.
+      \end{itemize}
+      \begin{alertblock}{¡Cuidado!}
+        \footnotesize En la mayoría de los textos la clase positiva es \texttt{1} y aparece abajo a la derecha. Verifique siempre el orden de las etiquetas.
+      \end{alertblock}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{Defensa analítica: los cuatro extremos de la matriz}
+  \small
+  \begin{columns}[T]
+    \begin{column}{0.49\textwidth}
+      \begin{exampleblock}{Verdadero Positivo (VP)}
+        Predice malware y \textbf{es} malware. El firewall intercepta la amenaza y protege los activos del estudio de diseño.
+      \end{exampleblock}
+      \begin{block}{Falso Positivo (FP) -- Error Tipo I}
+        Predice malware pero era \textbf{tráfico legítimo} de renders 3D. Se corta la conexión con la granja de servidores: retrasos y falsas alarmas que saturan al SOC.
+      \end{block}
+    \end{column}
+    \begin{column}{0.49\textwidth}
+      \begin{exampleblock}{Verdadero Negativo (VN)}
+        Predice tráfico legítimo y \textbf{lo es}. Eficiencia operativa: los animadores renderizan sin bloqueos.
+      \end{exampleblock}
+      \begin{alertblock}{Falso Negativo (FN) -- Error Tipo II}
+        Predice legítimo pero era \textbf{malware}. Un ransomware entra en silencio, cifra los servidores y compromete la propiedad intelectual (modelos 3D bajo NDA). \textbf{El error más peligroso.}
+      \end{alertblock}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{Ejemplo con errores: un IDS en producción}
+  Un sistema de detección analiza \textbf{1\,000 paquetes}; 50 son maliciosos.
+  \medskip
+  \begin{columns}[c]
+    \begin{column}{0.42\textwidth}
+      \centering
+      \begin{tikzpicture}[cel/.style={minimum width=2.0cm, minimum height=1.15cm, draw=white, very thick, align=center, font=\small}]
+        \node[cel, fill=vp!80, text=white]   (a) at (0,0)     {\textbf{VP}\\45};
+        \node[cel, fill=fn!80, text=white]   (b) at (2.0,0)   {\textbf{FN}\\5};
+        \node[cel, fill=fp!80, text=white]   (c) at (0,-1.15) {\textbf{FP}\\30};
+        \node[cel, fill=vp!45]               (d) at (2.0,-1.15){\textbf{VN}\\920};
+        \node[font=\scriptsize, above=0.05cm of a] {Pred.\ Ataque};
+        \node[font=\scriptsize, above=0.05cm of b] {Pred.\ Normal};
+        \node[font=\scriptsize, rotate=90, align=center] at ($(a.west)+(-0.4,0)$) {Real\\Ataque};
+        \node[font=\scriptsize, rotate=90, align=center] at ($(c.west)+(-0.4,0)$) {Real\\Normal};
+      \end{tikzpicture}
+    \end{column}
+    \begin{column}{0.56\textwidth}
+      \small
+      \begin{align*}
+        \text{Exactitud} &= \tfrac{VP+VN}{\text{Total}} = \tfrac{45+920}{1000} = 96.5\% \\
+        \text{Precisión} &= \tfrac{VP}{VP+FP} = \tfrac{45}{75} = 60.0\% \\
+        \text{Sensibilidad (Recall)} &= \tfrac{VP}{VP+FN} = \tfrac{45}{50} = 90.0\%
+      \end{align*}
+    \end{column}
+  \end{columns}
+  \medskip
+  \begin{alertblock}{Lección}
+    \small Una exactitud de 96.5\% suena excelente, pero \textbf{5 ataques pasaron sin ser detectados} y 4 de cada 10 alertas son falsas. En datos desbalanceados la exactitud \emph{engaña}.
+  \end{alertblock}
+\end{frame}
+
+\begin{frame}[fragile]{Modelo algorítmico: $k$-NN con $k=3$}
+  \begin{columns}[T]
+    \begin{column}{0.55\textwidth}
+\begin{lstlisting}
+from sklearn.neighbors import KNeighborsClassifier
+from sklearn.model_selection import train_test_split
+
+X = df[iris_raw.feature_names]
+y = df['species']
+X_tr, X_te, y_tr, y_te = train_test_split(
+    X, y, test_size=0.3,
+    random_state=42, stratify=y)
+
+knn = KNeighborsClassifier(n_neighbors=3)
+knn.fit(X_tr, y_tr)
+print(knn.score(X_te, y_te))
+print(confusion_matrix(y_te, knn.predict(X_te)))
+\end{lstlisting}
+\begin{lstlisting}[style=salida]
+0.9555555555555556
+[[15  0  0]
+ [ 0 15  0]
+ [ 0  2 13]]
+\end{lstlisting}
+    \end{column}
+    \begin{column}{0.43\textwidth}
+      \small
+      \begin{block}{Idea de $k$-NN}
+        Para clasificar una flor nueva, se buscan las $k=3$ flores más \textbf{cercanas} (distancia euclidiana) y se vota:
+        \[ d(\mathbf{x},\mathbf{z})=\sqrt{\textstyle\sum_{j=1}^{d}(x_j-z_j)^2} \]
+      \end{block}
+      \begin{itemize}
+        \item Exactitud en prueba: \textbf{95.6\%} (3 clases).
+        \item 2 virginicas confundidas con versicolor: las clases que \emph{sí} se solapan.
+        \item La heurística sólo resuelve el problema \emph{binario} fácil.
+      \end{itemize}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+% =====================================================================
+\section{Trabajo autónomo y cierre}
+% =====================================================================
+
+\begin{frame}{Tarea para la casa}
+  \begin{block}{Instrucciones}
+    \begin{enumerate}
+      \item Modifique \texttt{clasificador\_manual} para usar \texttt{petal width (cm)} en lugar del largo.
+      \item Encuentre \textbf{iterativamente} el umbral que lleve los \textbf{Falsos Negativos a cero}, aunque aumenten levemente los Falsos Positivos.
+      \item Argumente matemáticamente por qué esta parametrización es preferible en ciberseguridad reactiva.
+    \end{enumerate}
+  \end{block}
+  \begin{exampleblock}{Pista}
+    \small
+    Revise la tabla de estadísticos: el ancho máximo de una setosa es 0.6 cm y el mínimo de una versicolor es 1.0 cm.
+    ¿Qué pasa con la regla \texttt{ancho < 0.6}? ¿Y con \texttt{ancho <= 0.6}?
+    Relacione su respuesta con la \textbf{sensibilidad} $\frac{VP}{VP+FN}$.
+  \end{exampleblock}
+\end{frame}
+
+\begin{frame}{Quiz de Moodle: preguntas de muestra}
+  \small
+  \begin{enumerate}
+    \item ¿Qué subcampo de la IA entrena algoritmos para aprender patrones de los datos sin ser programados explícitamente?
+      \begin{enumerate}[A.]
+        \item Inteligencia Artificial General \quad B. Machine Learning \quad C. Sistemas expertos \quad D. PLN
+      \end{enumerate}
+    \item En detección de intrusiones, un \textbf{Falso Negativo} (Error Tipo II) es\ldots
+      \begin{enumerate}[A.]
+        \item Clasificar tráfico legítimo como intrusión.
+        \item Clasificar tráfico malicioso como acceso seguro y legítimo.
+      \end{enumerate}
+    \item En $\mathbf{x}=[x_1,x_2,\dots,x_d]$, ¿qué representa $d$?
+      \begin{enumerate}[A.]
+        \item Número de muestras \quad B. La etiqueta \quad C. La dimensionalidad \quad D. Coeficiente de Pearson
+      \end{enumerate}
+  \end{enumerate}
+  \vfill
+  \centering\footnotesize\textcolor{codigogris}{El quiz completo (formato Aiken) se publica en Moodle.}
+\end{frame}
+
+\begin{frame}{Resumen de la semana}
+  \begin{columns}[T]
+    \begin{column}{0.49\textwidth}
+      \begin{block}{Conceptos clave}
+        \small
+        \begin{itemize}
+          \item IA $\supset$ ML $\supset$ DL.
+          \item ML prioriza \textbf{predicción}; Estadística, \textbf{inferencia}.
+          \item Muestra $=$ vector $\mathbf{x}_i\in\mathbb{R}^d$; dataset $=$ matriz $\mathbf{X}\in\mathbb{R}^{n\times d}$.
+          \item Supervisado: aprender $f:\mathcal{X}\to\mathcal{Y}$ minimizando $\mathcal{L}$.
+        \end{itemize}
+      \end{block}
+    \end{column}
+    \begin{column}{0.49\textwidth}
+      \begin{block}{Ideas para llevar}
+        \small
+        \begin{itemize}
+          \item Los datos son la base de la pirámide: sin ellos no hay ML.
+          \item Explorar antes de modelar (\texttt{query}, \texttt{corr}, gráficos).
+          \item En seguridad, el \textbf{FN} es el error más caro.
+          \item La exactitud sola puede engañar.
+        \end{itemize}
+      \end{block}
+    \end{column}
+  \end{columns}
+  \vfill
+  \begin{alertblock}{Próxima semana}
+    \centering Continuamos con la Semana 2 del curso. ¡Traer el notebook de esta semana funcionando!
+  \end{alertblock}
+\end{frame}
+
+\begin{frame}{Referencias bibliográficas}
+  \small
+  \begin{thebibliography}{9}
+    \setbeamertemplate{bibliography item}[book]
+    \bibitem{grus} Grus, J. (2019).
+      \newblock \emph{Data Science from Scratch: First Principles with Python} (2nd ed.).
+      \newblock O'Reilly Media.
+    \bibitem{muller} Müller, A. C., \& Guido, S. (2017).
+      \newblock \emph{Introduction to Machine Learning with Python: A Guide for Data Scientists}.
+      \newblock O'Reilly Media.
+    \bibitem{reis} Reis, J., \& Housley, M. (2022).
+      \newblock \emph{Fundamentals of Data Engineering: Plan and Build Robust Data Systems}.
+      \newblock O'Reilly Media.
+    \bibitem{jamison} Jamison, P. (2023).
+      \newblock \emph{The (Absolute) Beginner's Guide to AI}.
+      \newblock Paul Jamison Publishing.
+  \end{thebibliography}
+\end{frame}
+
+\begin{frame}[plain]
+  \centering
+  \vfill
+  {\Huge\bfseries\color{usfxazul} ¡Gracias!}\\[1em]
+  {\large ¿Preguntas?}\\[2em]
+  \small INT210 -- Machine Learning \quad·\quad USFX
+  \vfill
+\end{frame}
+
+\end{document}

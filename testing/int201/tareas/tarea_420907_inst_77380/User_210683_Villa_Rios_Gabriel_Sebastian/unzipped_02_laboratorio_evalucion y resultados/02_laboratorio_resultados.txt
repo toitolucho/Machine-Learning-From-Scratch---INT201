@@ -1,0 +1,84 @@
+
+1. CARGA DE DATOS Y EXPLORACION
+Primeras 5 filas:
+   mean radius  mean texture  ...  worst fractal dimension  diagnosis
+0        17.99         10.38  ...                  0.11890          1
+1        20.57         17.77  ...                  0.08902          1
+2        19.69         21.25  ...                  0.08758          1
+3        11.42         20.38  ...                  0.17300          1
+4        20.29         14.34  ...                  0.07678          1
+
+[5 rows x 31 columns]
+
+Dimensiones del dataset: (569, 31)
+
+Cantidad por diagnostico (0 = benigno, 1 = maligno):
+diagnosis
+0    357
+1    212
+Name: count, dtype: int64
+
+Valores faltantes: 0
+
+2. PREPROCESAMIENTO
+Datos de entrenamiento: 455
+Datos de prueba: 114
+
+3. ESCALAMIENTO
+Escalamiento realizado con StandardScaler.
+
+4. MODELOS Y MATRICES DE CONFUSION
+
+Matriz de confusion de KNN (con escalamiento):
+[[71  1]
+ [ 4 38]]
+Exactitud KNN: 95.61 %
+
+Matriz de confusion del Arbol de Decision (sin escalamiento):
+[[70  2]
+ [ 8 34]]
+Exactitud Arbol: 91.23 %
+
+Matriz de confusion de KNN SIN escalamiento:
+[[71  1]
+ [ 9 33]]
+Exactitud KNN sin escalar: 91.23 %
+
+Exactitud Arbol CON escalamiento: 91.23 %
+
+REPORTE DE CLASIFICACION - KNN ESCALADO:
+              precision    recall  f1-score   support
+
+     Benigno       0.95      0.99      0.97        72
+     Maligno       0.97      0.90      0.94        42
+
+    accuracy                           0.96       114
+   macro avg       0.96      0.95      0.95       114
+weighted avg       0.96      0.96      0.96       114
+
+Nota: matrices en orden [Benigno (0), Maligno (1)].
+En la matriz, un falso negativo es la fila Maligno, columna Benigno.
+
+5. RESPUESTAS TEORICAS
+
+1. ¿Que implica un error tipo II (falso negativo) y por que es peligroso?
+   Ocurre cuando un tumor realmente maligno se clasifica como benigno.
+   Esto puede retrasar otros estudios y la atencion necesaria. En un
+   contexto clinico, esa demora puede empeorar el pronostico del paciente.
+   Por eso es importante observar los falsos negativos y la sensibilidad
+   del modelo, no solo su exactitud general.
+
+2. ¿Por que el Arbol de Decision no falla gravemente sin escalar los datos?
+   Porque el Arbol de Decision toma decisiones mediante comparaciones
+   y puntos de corte de cada caracteristica, en vez de calcular
+   distancias entre muestras. Cambiar la escala de una variable
+   generalmente no cambia el orden de sus valores ni las particiones
+   que el arbol puede realizar. KNN, en cambio, utiliza distancias y
+   puede verse dominado por variables con valores numericos grandes.
+
+CONCLUSION:
+El escalamiento es importante para KNN porque compara distancias.
+El Arbol de Decision normalmente no lo necesita. Para aplicaciones
+medicas reales, estos resultados son solo educativos: ningun modelo
+puede usarse para diagnosticar pacientes sin validacion clinica rigurosa.
+

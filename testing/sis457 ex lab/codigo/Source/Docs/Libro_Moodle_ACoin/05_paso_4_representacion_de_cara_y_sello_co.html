@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Paso 4. Representación de CARA y SELLO con materiales</title>
+</head>
+<body>
+<h3>4.1 Declaración</h3>
+<p>En <code style="background:#f0f0f0;padding:1px 4px;border-radius:3px;">Coin.h</code>, en la sección privada (junto a los componentes), agregar:</p>
+<pre style="background:#f6f8fa;border:1px solid #d0d7de;border-radius:4px;padding:12px;overflow-x:auto;font-size:0.9em;line-height:1.45;"><code>    /** Material para el lado CARA (naranja). */
+    UPROPERTY()
+    class UMaterialInstance* MatCara;
+
+    /** Material para el lado SELLO (azul). */
+    UPROPERTY()
+    class UMaterialInstance* MatSello;</code></pre>
+<p>En la sección <code style="background:#f0f0f0;padding:1px 4px;border-radius:3px;">public</code>, declarar el método:</p>
+<pre style="background:#f6f8fa;border:1px solid #d0d7de;border-radius:4px;padding:12px;overflow-x:auto;font-size:0.9em;line-height:1.45;"><code>    /** Aplica el material correspondiente al lado visible. */
+    void MostrarLado();</code></pre>
+<h3>4.2 Carga de materiales e implementación</h3>
+<p>En <code style="background:#f0f0f0;padding:1px 4px;border-radius:3px;">Coin.cpp</code>, agregar el <code style="background:#f0f0f0;padding:1px 4px;border-radius:3px;">include</code> del material:</p>
+<pre style="background:#f6f8fa;border:1px solid #d0d7de;border-radius:4px;padding:12px;overflow-x:auto;font-size:0.9em;line-height:1.45;"><code>#include &quot;Materials/MaterialInstance.h&quot;</code></pre>
+<p>Al final del constructor, cargar los materiales que ya existen en el proyecto:</p>
+<pre style="background:#f6f8fa;border:1px solid #d0d7de;border-radius:4px;padding:12px;overflow-x:auto;font-size:0.9em;line-height:1.45;"><code>    // 6. Materiales existentes en el proyecto
+    ConstructorHelpers::FObjectFinderOptional&lt;UMaterialInstance&gt; Orange(TEXT(&quot;/Game/Puzzle/Meshes/OrangeMaterial.OrangeMaterial&quot;));
+    ConstructorHelpers::FObjectFinderOptional&lt;UMaterialInstance&gt; Blue(TEXT(&quot;/Game/Puzzle/Meshes/BlueMaterial.BlueMaterial&quot;));
+    MatCara = Orange.Get();
+    MatSello = Blue.Get();</code></pre>
+<p>Implementar el método después del constructor y completar el espacio:</p>
+<pre style="background:#f6f8fa;border:1px solid #d0d7de;border-radius:4px;padding:12px;overflow-x:auto;font-size:0.9em;line-height:1.45;"><code>void ACoin::MostrarLado()
+{
+    if (______)                                  // PISTA: atributo que indica si el lado visible es CARA.
+    {
+        CoinMesh-&gt;SetMaterial(0, MatCara);
+    }
+    else
+    {
+        CoinMesh-&gt;SetMaterial(0, MatSello);
+    }
+}</code></pre>
+<h3>4.3 Fundamento</h3>
+<p>Los punteros <code style="background:#f0f0f0;padding:1px 4px;border-radius:3px;">MatCara</code> y <code style="background:#f0f0f0;padding:1px 4px;border-radius:3px;">MatSello</code> llevan <code style="background:#f0f0f0;padding:1px 4px;border-radius:3px;">UPROPERTY()</code> aunque no se muestren en el editor. De este modo, el <strong>recolector de basura</strong> de Unreal sabe que los materiales están en uso y no los libera.</p>
+<h3>Punto de verificación 4</h3>
+<p>Compilar. El proyecto debe compilar sin errores. Todavía no se observa un cambio de color, porque <code style="background:#f0f0f0;padding:1px 4px;border-radius:3px;">MostrarLado()</code> aún no se invoca.</p>
+</body>
+</html>

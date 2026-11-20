@@ -1,0 +1,57 @@
+ID,Selected,Difficulty,Category,Type,Question Summary
+Q01,TRUE,EASY,Servicios de Red,multichoice,Protocolo para páginas web (HTTP)
+Q02,TRUE,EASY,Servicios de Red,multichoice,Servicio para enviar correos (SMTP)
+Q03,TRUE,EASY,Servicios de Red,multichoice,Transferencia segura de archivos (SFTP)
+Q04,TRUE,EASY,Cliente-Servidor,multichoice,Quién inicia la comunicación en HTTP
+Q05,TRUE,EASY,HTTP,truefalse,HTTP es stateless (sin estado)
+Q06,TRUE,EASY,HTTP Request,multichoice,Partes de un HTTP Request (Método/URL/Headers/Body)
+Q07,TRUE,EASY,HTTP Methods,multichoice,Propósito del método GET
+Q08,TRUE,EASY,HTTP Methods,multichoice,Método para enviar datos de predicción (POST)
+Q09,TRUE,EASY,Status Codes,multichoice,Significado de Status Code 200
+Q10,TRUE,EASY,Status Codes,multichoice,Significado de Status Code 404
+Q11,TRUE,EASY,JSON,multichoice,Formato de datos más común en APIs (JSON)
+Q12,TRUE,EASY,Status Codes,multichoice,Rango 5xx = Error del servidor
+Q13,TRUE,EASY,HTTP Headers,multichoice,Header Content-Type para JSON
+Q14,TRUE,EASY,Código Python,ddwtos,Completar código GET request con requests
+Q15,TRUE,EASY,Código Python,multichoice,response.json() para convertir a dict
+Q16,TRUE,INTERMEDIATE,URL,ddwtos,Identificar partes de una URL (scheme/host/query)
+Q17,TRUE,INTERMEDIATE,API Design,multichoice,Nombres REST correctos (sustantivos vs verbos)
+Q18,TRUE,INTERMEDIATE,API Design,multichoice,Eliminar un recurso en REST (DELETE /models/7)
+Q19,TRUE,INTERMEDIATE,HTTP Methods,ddwtos,CRUD y métodos HTTP (GET/POST/DELETE)
+Q20,TRUE,INTERMEDIATE,Status Codes,multichoice,Significado de 422 con ejemplo práctico
+Q21,TRUE,INTERMEDIATE,Código Python,ddwtos,Completar POST request con requests
+Q22,TRUE,EASY,Sistemas,multichoice,Qué es un servidor
+Q23,TRUE,EASY,API,multichoice,Definición de API
+Q24,TRUE,INTERMEDIATE,FastAPI,multichoice,Qué hace FastAPI
+Q25,TRUE,INTERMEDIATE,FastAPI Código,ddwtos,Completar FastAPI Hello World
+Q26,TRUE,INTERMEDIATE,FastAPI,multichoice,Función del decorador @app.get
+Q27,TRUE,INTERMEDIATE,FastAPI,truefalse,Dict retornado se convierte en JSON
+Q28,TRUE,INTERMEDIATE,FastAPI,multichoice,Path parameter - valor de character_id
+Q29,TRUE,INTERMEDIATE,FastAPI,multichoice,Diferencia path vs query parameter
+Q30,TRUE,INTERMEDIATE,FastAPI,multichoice,Validación automática por type hints (422)
+Q31,TRUE,INTERMEDIATE,Pydantic,ddwtos,Completar definición de Pydantic Model
+Q32,TRUE,INTERMEDIATE,FastAPI Código,ddwtos,Completar HTTPException para 404
+Q33,TRUE,INTERMEDIATE,API Design,multichoice,Por qué paginar las listas
+Q34,TRUE,INTERMEDIATE,Código,multichoice,Resultado de paginación page=2 limit=5
+Q35,TRUE,INTERMEDIATE,FastAPI,ddwtos,Completar comando uvicorn
+Q36,TRUE,INTERMEDIATE,FastAPI,multichoice,Documentación automática en /docs
+Q37,TRUE,INTERMEDIATE,API Design,multichoice,Versionamiento de API (/v1 /v2)
+Q38,TRUE,HARD,Código / Lógica,multichoice,Resultado de la fórmula de predicción (167.5)
+Q39,TRUE,INTERMEDIATE,FastAPI Testing,ddwtos,Completar TestClient para testing
+Q40,TRUE,HARD,HTTP / FastAPI,multichoice,GET en una ruta POST → 405
+Q41,TRUE,EASY,Python / JSON,multichoice,Tipo de dato de response.json() (dict)
+Q42,TRUE,HARD,API Design,multichoice,Estructura uniforme de errores (code + message)
+Q43,TRUE,HARD,FastAPI Arquitectura,ddwtos,Stack de FastAPI (Uvicorn/FastAPI/Pydantic)
+Q44,TRUE,EASY,Redes,multichoice,Dirección 127.0.0.1 = localhost
+Q45,TRUE,EASY,Redes,multichoice,Qué es un puerto (8000)
+Q46,TRUE,HARD,Arquitectura,multichoice,Flujo completo de un request en FastAPI
+Q47,TRUE,HARD,FastAPI,multichoice,Propósito de response_model
+Q48,TRUE,INTERMEDIATE,FastAPI,multichoice,Flag --reload de uvicorn
+Q49,TRUE,INTERMEDIATE,Servicios de Red,ddwtos,Servicios y sus funciones (HTTP/DB/DNS)
+Q50,TRUE,HARD,Lectura de Código,multichoice,Qué devuelve endpoint con paginación
+Q51,TRUE,HARD,Código,multichoice,Seleccionar código correcto para POST prediction
+Q52,TRUE,INTERMEDIATE,HTTP,truefalse,GET es un método seguro (safe)
+Q53,TRUE,HARD,Código Python,ddwtos,Completar función de paginación
+Q54,TRUE,INTERMEDIATE,API Design,multichoice,Convención snake_case en campos JSON
+Q55,TRUE,HARD,Diagnóstico,multichoice,Diagnóstico de request fallido (falta campo)
+

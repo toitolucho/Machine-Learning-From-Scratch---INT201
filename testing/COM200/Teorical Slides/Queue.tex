@@ -1,0 +1,203 @@
+\documentclass{beamer}
+
+\usetheme{Madrid}
+\usecolortheme{seahorse}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{listings}
+\usepackage{xcolor}
+
+% --- Configuración del estilo del código C# ---
+\lstdefinestyle{CSharpStyle}{
+  language=[Sharp]C,
+  basicstyle=\scriptsize\ttfamily,
+  keywordstyle=\color{blue}\bfseries,
+  stringstyle=\color{teal},
+  commentstyle=\color{gray}\itshape,
+  showstringspaces=false,
+  breaklines=true,
+  frame=single,
+  rulecolor=\color{gray!30},
+  tabsize=2,
+  captionpos=b,
+  numbers=left,
+  numberstyle=\tiny\color{gray},
+}
+
+% --- Título ---
+\title{Uso de la Cola (Queue) en C\# para Videojuegos en Unity}
+\author{Luis Antonio Molina Yampa}
+\institute{COM200 - Programacion Avanzada}
+\date{\today}
+
+\begin{document}
+
+% --- Portada ---
+\begin{frame}
+  \titlepage
+\end{frame}
+
+% --- Concepto General ---
+\begin{frame}{Concepto General}
+  Una \textbf{Queue (cola)} en C\# es una estructura de datos \textbf{FIFO (First In, First Out)}, es decir, el primer elemento en ingresar es el primero en salir.  
+
+  \vspace{0.3cm}
+  En el contexto de Unity, se puede usar para gestionar \textbf{enemigos que aparecen en oleadas}, asegurando que se procesen en el orden correcto.  
+
+  \vspace{0.3cm}
+  Ejemplos de uso:
+  \begin{itemize}
+    \item Control de turnos de enemigos o jugadores.
+    \item Spawns secuenciales en escenas.
+    \item Ejecución ordenada de eventos o tareas.
+  \end{itemize}
+\end{frame}
+
+% --- Declaración de una Queue ---
+\begin{frame}[fragile]{Declaración de una Queue en C\#}
+\lstset{style=CSharpStyle}
+Antes de usar una cola, se importa:
+\begin{lstlisting}
+using System.Collections.Generic;
+\end{lstlisting}
+
+Se puede declarar una cola de objetos que representen enemigos:
+\begin{lstlisting}
+Queue<GameObject> colaDeEnemigos = new Queue<GameObject>();
+\end{lstlisting}
+\end{frame}
+
+% --- Agregar elementos a la cola ---
+\begin{frame}[fragile]{Agregar enemigos a la cola — Enqueue()}
+\lstset{style=CSharpStyle}
+El método \textbf{Enqueue()} agrega un elemento al final de la cola:
+\begin{lstlisting}
+colaDeEnemigos.Enqueue(goblin);
+colaDeEnemigos.Enqueue(orco);
+colaDeEnemigos.Enqueue(dragon);
+\end{lstlisting}
+
+\textbf{Ejemplo práctico:}  
+Cuando un enemigo entra al mapa, se añade a la cola para controlar el orden de aparición.
+\end{frame}
+
+% --- Quitar el primer elemento ---
+\begin{frame}[fragile]{Procesar enemigos — Dequeue()}
+\lstset{style=CSharpStyle}
+\textbf{Dequeue()} elimina y devuelve el primer enemigo de la cola:
+\begin{lstlisting}
+GameObject siguiente = colaDeEnemigos.Dequeue();
+Debug.Log("Atacando al enemigo: " + siguiente.name);
+\end{lstlisting}
+
+Se recomienda verificar si la cola tiene elementos antes de llamar a \textbf{Dequeue()}:
+\begin{lstlisting}
+if(colaDeEnemigos.Count > 0)
+{
+    GameObject enemigoActual = colaDeEnemigos.Dequeue();
+}
+\end{lstlisting}
+\end{frame}
+
+% --- Ver el siguiente elemento ---
+\begin{frame}[fragile]{Consultar sin eliminar — Peek()}
+\lstset{style=CSharpStyle}
+El método \textbf{Peek()} permite ver el primer enemigo sin retirarlo:
+\begin{lstlisting}
+GameObject siguiente = colaDeEnemigos.Peek();
+Debug.Log("El siguiente enemigo será: " + siguiente.name);
+\end{lstlisting}
+
+En Unity, esto puede utilizarse para mostrar en la UI quién será el próximo en actuar.
+\end{frame}
+
+% --- Vaciar la cola y contar elementos ---
+\begin{frame}[fragile]{Otras operaciones importantes}
+\begin{itemize}
+    \item \textbf{Clear()} — Vacía toda la cola.
+\begin{lstlisting}
+colaDeEnemigos.Clear();
+\end{lstlisting}
+
+    \item \textbf{Count} — Devuelve la cantidad de enemigos en la cola.
+\begin{lstlisting}
+int cantidad = colaDeEnemigos.Count;
+\end{lstlisting}
+
+    \item \textbf{Contains()} — Verifica si un enemigo está en la cola.
+\begin{lstlisting}
+if(colaDeEnemigos.Contains(dragon))
+    Debug.Log("El dragón está en espera");
+\end{lstlisting}
+\end{itemize}
+\end{frame}
+
+% --- Ejemplo completo en Unity ---
+\begin{frame}[fragile]{Ejemplo completo: Spawns de enemigos}
+\lstset{style=CSharpStyle}
+\begin{lstlisting}
+using UnityEngine;
+using System.Collections.Generic;
+
+public class SpawnManager : MonoBehaviour
+{
+    public GameObject goblin, orco, dragon;
+    private Queue<GameObject> colaDeEnemigos = new Queue<GameObject>();
+
+    void Start()
+    {
+        colaDeEnemigos.Enqueue(goblin);
+        colaDeEnemigos.Enqueue(orco);
+        colaDeEnemigos.Enqueue(dragon);
+
+        StartCoroutine(SpawnearEnemigos());
+    }
+
+    System.Collections.IEnumerator SpawnearEnemigos()
+    {
+        while(colaDeEnemigos.Count > 0)
+        {
+            GameObject siguiente = colaDeEnemigos.Dequeue();
+            Instantiate(siguiente, transform.position, Quaternion.identity);
+            Debug.Log("Enemigo spawneado: " + siguiente.name);
+            yield return new WaitForSeconds(2f);
+        }
+    }
+}
+\end{lstlisting}
+\end{frame}
+
+% --- Ventajas de Queue en Unity ---
+\begin{frame}{Ventajas de usar Queue en Unity}
+\begin{itemize}
+    \item Garantiza que los enemigos o eventos se procesen en \textbf{orden lógico}.
+    \item Simplifica la administración de oleadas o turnos.
+    \item Evita que los objetos se procesen de manera desordenada.
+    \item Permite integrar sistemas de UI mostrando al próximo enemigo en cola.
+\end{itemize}
+\end{frame}
+
+% --- Comparación con otras estructuras ---
+\begin{frame}{Comparación con Stack y List}
+\begin{table}[]
+\centering
+\begin{tabular}{|l|l|l|}
+\hline
+\textbf{Estructura} & \textbf{Orden de acceso} & \textbf{Ejemplo en Unity} \\ \hline
+Queue & FIFO (primero entra, primero sale) & Spawns de enemigos, turnos \\ \hline
+Stack & LIFO (último entra, primero sale) & Recolector de platos, historial \\ \hline
+List & Acceso por índice & Inventario, lista de objetos activos \\ \hline
+\end{tabular}
+\end{table}
+\end{frame}
+
+% --- Conclusión ---
+\begin{frame}{Conclusión}
+\begin{itemize}
+    \item La \textbf{Queue} en C\# permite controlar elementos en orden secuencial.
+    \item Es ideal para sistemas de spawns, turnos y tareas que deben procesarse paso a paso.
+    \item Facilita la programación de escenas donde el orden de aparición o ejecución es crítico.
+\end{itemize}
+\end{frame}
+
+\end{document}

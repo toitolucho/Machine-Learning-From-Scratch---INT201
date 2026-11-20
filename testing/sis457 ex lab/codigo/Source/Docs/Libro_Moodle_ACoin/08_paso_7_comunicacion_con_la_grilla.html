@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Paso 7. Comunicación con la grilla</title>
+</head>
+<body>
+<p>En este paso la moneda deja de colocarse manualmente: la <strong>grilla</strong> la crea al iniciar la partida y la moneda <strong>notifica</strong> a la grilla cada vez que sale CARA.</p>
+<h3>7.1 Atributo de asociación en la moneda</h3>
+<p>En <code style="background:#f0f0f0;padding:1px 4px;border-radius:3px;">Coin.h</code>, sección <code style="background:#f0f0f0;padding:1px 4px;border-radius:3px;">public</code>:</p>
+<pre style="background:#f6f8fa;border:1px solid #d0d7de;border-radius:4px;padding:12px;overflow-x:auto;font-size:0.9em;line-height:1.45;"><code>    /** Grilla dueña de la moneda. */
+    UPROPERTY()
+    class APuzzleDiceGameBlockGrid* OwningGrid;</code></pre>
+<p>En <code style="background:#f0f0f0;padding:1px 4px;border-radius:3px;">Coin.cpp</code>, agregar el <code style="background:#f0f0f0;padding:1px 4px;border-radius:3px;">include</code> de la grilla:</p>
+<pre style="background:#f6f8fa;border:1px solid #d0d7de;border-radius:4px;padding:12px;overflow-x:auto;font-size:0.9em;line-height:1.45;"><code>#include &quot;PuzzleDiceGameBlockGrid.h&quot;</code></pre>
+<p>Al final de <code style="background:#f0f0f0;padding:1px 4px;border-radius:3px;">CoinClicked</code>, agregar la notificación y completar el espacio:</p>
+<pre style="background:#f6f8fa;border:1px solid #d0d7de;border-radius:4px;padding:12px;overflow-x:auto;font-size:0.9em;line-height:1.45;"><code>    if (bEsCara &amp;&amp; ______)                       // PISTA: puntero a la grilla; se comprueba que no sea nulo.
+    {
+        OwningGrid-&gt;AddScore();
+    }</code></pre>
+<p>En el constructor, inicializar el puntero:</p>
+<pre style="background:#f6f8fa;border:1px solid #d0d7de;border-radius:4px;padding:12px;overflow-x:auto;font-size:0.9em;line-height:1.45;"><code>    OwningGrid = nullptr;</code></pre>
+<h3>7.2 Creación de la moneda desde la grilla</h3>
+<p>En <code style="background:#f0f0f0;padding:1px 4px;border-radius:3px;">PuzzleDiceGameBlockGrid.cpp</code>, agregar el <code style="background:#f0f0f0;padding:1px 4px;border-radius:3px;">include</code>:</p>
+<pre style="background:#f6f8fa;border:1px solid #d0d7de;border-radius:4px;padding:12px;overflow-x:auto;font-size:0.9em;line-height:1.45;"><code>#include &quot;Coin.h&quot;</code></pre>
+<p>En <code style="background:#f0f0f0;padding:1px 4px;border-radius:3px;">APuzzleDiceGameBlockGrid::BeginPlay()</code>, <strong>después</strong> del ciclo <code style="background:#f0f0f0;padding:1px 4px;border-radius:3px;">for</code> que crea los dados, agregar y completar:</p>
+<pre style="background:#f6f8fa;border:1px solid #d0d7de;border-radius:4px;padding:12px;overflow-x:auto;font-size:0.9em;line-height:1.45;"><code>    // Creación de la moneda a la izquierda de la grilla
+    ACoin* NuevaMoneda = GetWorld()-&gt;______&lt;ACoin&gt;(       // PISTA: mismo método que se usa para crear los dados.
+        GetActorLocation() + FVector(-300.f, 0.f, 0.f), FRotator::ZeroRotator);
+
+    if (NuevaMoneda)
+    {
+        NuevaMoneda-&gt;OwningGrid = this;
+    }</code></pre>
+<h3>7.3 Fundamento</h3>
+<ul>
+<li><code style="background:#f0f0f0;padding:1px 4px;border-radius:3px;">SpawnActor</code> registra el actor en el mundo: ejecuta su constructor, inicializa sus componentes y llama a <code style="background:#f0f0f0;padding:1px 4px;border-radius:3px;">BeginPlay()</code>. Un objeto creado con <code style="background:#f0f0f0;padding:1px 4px;border-radius:3px;">new</code> no formaría parte del nivel.
+</li>
+<li>La moneda conoce a la grilla solo mediante el puntero <code style="background:#f0f0f0;padding:1px 4px;border-radius:3px;">OwningGrid</code>, para enviarle mensajes. Esta relación es una <strong>asociación</strong>, la misma que existe entre <code style="background:#f0f0f0;padding:1px 4px;border-radius:3px;">ADice</code> y la grilla.
+</li>
+<li>La comprobación de <code style="background:#f0f0f0;padding:1px 4px;border-radius:3px;">OwningGrid</code> distinto de nulo evita un fallo cuando la moneda se coloca manualmente en el nivel, sin grilla.
+</li>
+</ul>
+<h3>Punto de verificación 7</h3>
+<p>Compilar. Eliminar del nivel las monedas colocadas manualmente. Al presionar <strong>Play</strong> debe aparecer una moneda a la izquierda de la grilla de dados, sin haberla colocado en el editor.</p>
+</body>
+</html>

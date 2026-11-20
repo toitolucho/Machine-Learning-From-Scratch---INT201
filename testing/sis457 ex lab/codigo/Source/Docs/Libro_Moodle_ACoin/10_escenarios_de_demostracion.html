@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Escenarios de demostración</title>
+</head>
+<body>
+<p>Cada escenario debe configurarse en el editor de Unreal y documentarse con la evidencia indicada (captura de pantalla del nivel, del panel <strong>Details</strong> o del <strong>Output Log</strong>, según corresponda).</p>
+<h3>Escenario A — Moneda colocada manualmente con lado fijo</h3>
+<ol>
+<li>Arrastrar una moneda <code style="background:#f0f0f0;padding:1px 4px;border-radius:3px;">Coin</code> al nivel, lejos de la grilla.
+</li>
+<li>En <strong>Details → Moneda</strong>, desmarcar <code style="background:#f0f0f0;padding:1px 4px;border-radius:3px;">bLadoAleatorio</code> y desmarcar <code style="background:#f0f0f0;padding:1px 4px;border-radius:3px;">bEsCara</code>.
+</li>
+<li>Presionar <strong>Play</strong> tres veces.
+</li>
+</ol>
+<p><strong>Resultado esperado:</strong> la moneda inicia siempre de color <strong>azul</strong> (SELLO).<br>
+<strong>Evidencia:</strong> captura del panel <strong>Details</strong> y captura del nivel en ejecución.</p>
+<h3>Escenario B — Tres monedas con configuraciones distintas</h3>
+<ol>
+<li>Colocar tres monedas en el nivel, una junto a otra.
+</li>
+<li>Configurar en <strong>Details</strong>:
+<ul>
+<li>Moneda 1: <code style="background:#f0f0f0;padding:1px 4px;border-radius:3px;">bLadoAleatorio</code> desmarcado, <code style="background:#f0f0f0;padding:1px 4px;border-radius:3px;">bEsCara</code> marcado.
+</li>
+<li>Moneda 2: <code style="background:#f0f0f0;padding:1px 4px;border-radius:3px;">bLadoAleatorio</code> desmarcado, <code style="background:#f0f0f0;padding:1px 4px;border-radius:3px;">bEsCara</code> desmarcado.
+</li>
+<li>Moneda 3: <code style="background:#f0f0f0;padding:1px 4px;border-radius:3px;">bLadoAleatorio</code> marcado.
+</li>
+</ul>
+</li>
+<li>Presionar <strong>Play</strong> y hacer clic dos veces sobre la moneda 1.
+</li>
+</ol>
+<p><strong>Resultado esperado:</strong> al iniciar, la moneda 1 es naranja, la moneda 2 es azul y la moneda 3 tiene un color aleatorio. Las tres son objetos distintos de la misma clase: el clic sobre la moneda 1 solo modifica su propio estado, y el registro muestra su nombre con <code style="background:#f0f0f0;padding:1px 4px;border-radius:3px;">lanzamientos: 1</code> y <code style="background:#f0f0f0;padding:1px 4px;border-radius:3px;">lanzamientos: 2</code>.<br>
+<strong>Evidencia:</strong> captura del nivel al iniciar y captura del <strong>Output Log</strong>.</p>
+<h3>Escenario C — Escala de la instancia</h3>
+<ol>
+<li>Seleccionar una de las monedas colocadas manualmente.
+</li>
+<li>En <strong>Details → Transform → Scale</strong>, asignar <code style="background:#f0f0f0;padding:1px 4px;border-radius:3px;">2.0</code> en los tres ejes.
+</li>
+<li>Presionar <strong>Play</strong> y hacer clic sobre ella.
+</li>
+</ol>
+<p><strong>Resultado esperado:</strong> la moneda es del doble de tamaño que las demás y sigue respondiendo al clic.<br>
+<strong>Evidencia:</strong> captura del nivel en ejecución.</p>
+<h3>Escenario D — Valor inicial del contador</h3>
+<ol>
+<li>Seleccionar una moneda colocada manualmente y asignar <code style="background:#f0f0f0;padding:1px 4px;border-radius:3px;">Lanzamientos = 10</code> en <strong>Details</strong>.
+</li>
+<li>Presionar <strong>Play</strong> y hacer clic una vez sobre ella.
+</li>
+</ol>
+<p><strong>Resultado esperado:</strong> el registro muestra <code style="background:#f0f0f0;padding:1px 4px;border-radius:3px;">lanzamientos: 11</code>, lo que demuestra que el valor configurado en el editor reemplaza al valor por defecto del constructor.<br>
+<strong>Evidencia:</strong> captura del <strong>Output Log</strong>.</p>
+<h3>Escenario E — Integración con la grilla y la puntuación</h3>
+<ol>
+<li>Eliminar del nivel todas las monedas colocadas manualmente.
+</li>
+<li>Seleccionar la grilla (<code style="background:#f0f0f0;padding:1px 4px;border-radius:3px;">PuzzleDiceGameBlockGrid</code>) en el <strong>World Outliner</strong>.
+</li>
+<li>En <strong>Details → Grid</strong>, asignar <code style="background:#f0f0f0;padding:1px 4px;border-radius:3px;">Points = 5</code>, <code style="background:#f0f0f0;padding:1px 4px;border-radius:3px;">Rows = 2</code> y <code style="background:#f0f0f0;padding:1px 4px;border-radius:3px;">Columns = 3</code>.
+</li>
+<li>Presionar <strong>Play</strong> y hacer clic sobre la moneda creada por la grilla hasta obtener al menos dos resultados CARA.
+</li>
+</ol>
+<p><strong>Resultado esperado:</strong> la grilla muestra 6 dados y una moneda a su izquierda. Cada resultado CARA incrementa la <strong>Puntuación</strong> en 5 puntos; los resultados SELLO no la modifican.<br>
+<strong>Evidencia:</strong> captura del nivel en ejecución con la puntuación visible y captura del <strong>Output Log</strong> con los lanzamientos.</p>
+</body>
+</html>

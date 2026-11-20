@@ -1,0 +1,109 @@
+\documentclass{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{amsmath}
+\usepackage{graphicx}
+
+\usetheme{Madrid}
+\usecolortheme{default}
+
+\title[Preparación de Variables]{Módulo 4: Aprendizaje Automático}
+\subtitle{Clase 2: Preparación de Variables (Feature Engineering y Escalado)}
+\author{Diplomado en Ciencia de Datos}
+\date{\today}
+
+\begin{document}
+
+\begin{frame}
+    \titlepage
+\end{frame}
+
+\begin{frame}{Objetivos de la Sesión}
+    \begin{itemize}
+        \item Comprender el impacto de la calidad de los datos en el rendimiento algorítmico (\textit{Garbage in, Garbage out}).
+        \item Identificar y procesar valores atípicos (outliers) y nulos (NaN) mediante limpieza e imputación estadística.
+        \item Transformar variables categóricas en estructuras numéricas matriciales (One-Hot Encoding).
+        \item Aplicar técnicas de normalización y estandarización para la homogeneización de magnitudes métricas.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Limpieza de Datos y Manejo de Nulos}
+    \textbf{Fundamento Teórico:}
+    \vspace{0.3cm}
+    \\
+    Los modelos matemáticos carecen de intuición para procesar o ignorar espacios vacíos en las matrices de entrada.
+    \begin{itemize}
+        \item \textbf{Eliminación (Drop):} Se remueven filas completas. Aplicable solo si la proporción de datos corruptos es marginal.
+        \item \textbf{Imputación:} Se sustituye el valor nulo por un estadístico representativo (Media o Mediana) para preservar el tamaño muestral sin alterar significativamente la distribución subyacente.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Comandos Base: Limpieza de Datos}
+    \begin{itemize}
+        \item \verb|df.isnull().sum()|: \textit{Diagnóstico.} Cuantifica la suma total de valores nulos presentes por cada característica.
+        \item \verb|df.dropna()|: \textit{Eliminación.} Filtra y destruye los registros que contienen al menos un valor \verb|NaN|.
+        \item \verb|df.fillna(valor)|: \textit{Imputación.} Reemplaza los campos vacíos con el \verb|valor| especificado (ej. media aritmética o mediana).
+        \item \verb|df.describe()|: \textit{Auditoría.} Despliega los parámetros de estadística descriptiva básica para la identificación de valores atípicos (outliers).
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Ingeniería de Características (Feature Engineering)}
+    \textbf{Codificación de Variables Categóricas (One-Hot Encoding)}
+    \vspace{0.3cm}
+    \\
+    Los algoritmos exigen entradas numéricas estrictas. Las variables de texto (nominales) impiden el cálculo de funciones de coste o distancias.
+    \begin{itemize}
+        \item \textbf{Variables Dummy:} Se proyecta una columna nominal (con $n$ categorías) hacia $n$ columnas binarias independientes.
+        \item El valor $1$ señala la presencia de la característica, y $0$ su ausencia, habilitando la evaluación matricial ortogonal.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Comandos Base: Ingeniería de Características}
+    \begin{itemize}
+        \item \verb|pd.get_dummies(df['col'])|: \textit{Transformación.} Convierte la serie categórica indicada en múltiples series binarias independientes.
+        \item \verb|pd.concat([df1, df2], axis=1)|: \textit{Integración.} Concatena matrices a lo largo de un eje específico. \verb|axis=1| asegura la anexión horizontal (adición de columnas).
+        \item \verb|df.drop(columns=['col'])|: \textit{Limpieza estructural.} Elimina las columnas nominales originales que ya han sido codificadas, evitando errores de tipado durante el entrenamiento.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Transformación y Escalado de Variables}
+    \textbf{El Problema de la Magnitud Nominal}
+    \vspace{0.2cm}
+    \\
+    Algoritmos iterativos y basados en distancias (SVM, k-NN) asignan mayor peso matemático a variables con rangos numéricos extensos.
+    \vspace{0.3cm}
+    \begin{itemize}
+        \item \textbf{Normalización Min-Max:} Comprime toda la distribución al intervalo continuo estricto $[0, 1]$.
+        \begin{equation*}
+        V_{nuevo} = \frac{V - V_{min}}{V_{max} - V_{min}}
+        \end{equation*}
+        \item \textbf{Estandarización (Z-Score):} Modifica la distribución para obtener una media $\mu=0$ y desviación estándar $\sigma=1$.
+        \begin{equation*}
+        Z = \frac{V - \mu}{\sigma}
+        \end{equation*}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Comandos Base: Escalado (Scikit-Learn)}
+    \begin{itemize}
+        \item \verb|StandardScaler()|: \textit{Instanciación.} Genera el objeto transformador configurado para estandarización Z-Score.
+        \item \verb|MinMaxScaler()|: \textit{Instanciación.} Genera el objeto transformador configurado para normalización en el rango [0,1].
+        \item \verb|scaler.fit_transform(X)|: \textit{Aplicación matricial.} 
+        \begin{itemize}
+            \item \verb|fit|: Calcula los parámetros estadísticos requeridos (media, varianza, o mínimos y máximos) de la matriz $X$.
+            \item \verb|transform|: Aplica la ecuación matemática sobre cada elemento de $X$ retornando la matriz escalada equivalente.
+        \end{itemize}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+    \begin{center}
+        \Large \textbf{Fin de la Presentación Teórica}\\
+        \vspace{0.5cm}
+        \normalsize Transición al Laboratorio Práctico:\\
+        \vspace{0.2cm}
+        \verb|02_Preparacion_de_Variables.ipynb|
+    \end{center}
+\end{frame}
+
+\end{document}

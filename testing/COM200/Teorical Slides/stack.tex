@@ -1,0 +1,204 @@
+\documentclass{beamer}
+
+\usetheme{Madrid}
+\usecolortheme{seahorse}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{listings}
+\usepackage{xcolor}
+
+% --- Configuración del estilo del código C# ---
+\lstdefinestyle{CSharpStyle}{
+  language=[Sharp]C,
+  basicstyle=\scriptsize\ttfamily,
+  keywordstyle=\color{blue}\bfseries,
+  stringstyle=\color{teal},
+  commentstyle=\color{gray}\itshape,
+  showstringspaces=false,
+  breaklines=true,
+  frame=single,
+  rulecolor=\color{gray!30},
+  tabsize=2,
+  captionpos=b,
+  numbers=left,
+  numberstyle=\tiny\color{gray},
+}
+
+\title{Uso de Stack (Pila) en C\# para el Desarrollo de Videojuegos con Unity}
+\author{COM200-Programacion Avanzada}
+\date{\today}
+
+\begin{document}
+
+\begin{frame}
+\titlepage
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{Concepto general}
+\begin{itemize}
+    \item Un \textbf{Stack (pila)} en C\# es una estructura de datos del tipo \textbf{LIFO (Last In, First Out)}.
+    \item El último elemento que entra es el primero en salir.
+    \item En un videojuego, puede imaginarse como una \textbf{torre de platos apilados}.
+    \item En Unity, esta estructura es útil para:
+    \begin{itemize}
+        \item Recolectar y entregar objetos apilados (platos, cajas, recursos).
+        \item Registrar acciones recientes o implementar “undo”.
+        \item Controlar inventarios tipo pila.
+    \end{itemize}
+\end{itemize}
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}[fragile]{Declaración de un Stack}
+Antes de usar una pila en C\#, se importa el espacio de nombres:
+\begin{lstlisting}
+using System.Collections.Generic;
+\end{lstlisting}
+
+Luego, se declara la pila del tipo deseado:
+\begin{lstlisting}
+Stack<GameObject> pilaDePlatos = new Stack<GameObject>();
+\end{lstlisting}
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}[fragile]{Operación Push() — Agregar elementos}
+\textbf{Push()} agrega un elemento en la parte superior de la pila.
+\begin{lstlisting}
+pilaDePlatos.Push(plato);
+\end{lstlisting}
+
+Ejemplo práctico en Unity:
+\begin{lstlisting}
+public class RecolectorDePlatos : MonoBehaviour
+{
+    private Stack<GameObject> pilaDePlatos = new Stack<GameObject>();
+
+    public void RecogerPlato(GameObject plato)
+    {
+        pilaDePlatos.Push(plato);
+        Debug.Log($"Plato {plato.name} añadido a la pila. Total: {pilaDePlatos.Count}");
+    }
+}
+\end{lstlisting}
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}[fragile]{Operación Pop() — Quitar y obtener el último elemento}
+\textbf{Pop()} elimina el último elemento agregado y lo devuelve.
+\begin{lstlisting}
+GameObject ultimoPlato = pilaDePlatos.Pop();
+Debug.Log($"Plato entregado: {ultimoPlato.name}");
+\end{lstlisting}
+
+Validación antes de eliminar:
+\begin{lstlisting}
+if (pilaDePlatos.Count > 0)
+{
+    GameObject plato = pilaDePlatos.Pop();
+}
+\end{lstlisting}
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}[fragile]{Operación Peek() — Consultar sin eliminar}
+Permite ver el último elemento de la pila sin eliminarlo.
+\begin{lstlisting}
+GameObject platoSuperior = pilaDePlatos.Peek();
+Debug.Log("El plato superior es: " + platoSuperior.name);
+\end{lstlisting}
+
+Ideal para mostrar en la interfaz qué plato será entregado a continuación.
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}[fragile]{Otras operaciones importantes}
+\begin{itemize}
+    \item \textbf{Clear()}: Vacía toda la pila.
+    \begin{lstlisting}
+    pilaDePlatos.Clear();
+    \end{lstlisting}
+
+    \item \textbf{Count}: Devuelve la cantidad de elementos.
+    \begin{lstlisting}
+    int cantidad = pilaDePlatos.Count;
+    \end{lstlisting}
+
+    \item \textbf{Contains()}: Comprueba si un elemento está presente.
+    \begin{lstlisting}
+    if (pilaDePlatos.Contains(platoEspecial))
+        Debug.Log("¡El plato dorado está en la pila!");
+    \end{lstlisting}
+\end{itemize}
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}[fragile]{Ejemplo completo: Recolector de platos}
+\begin{lstlisting}
+using UnityEngine;
+using System.Collections.Generic;
+
+public class RecolectorDePlatos : MonoBehaviour
+{
+    private Stack<GameObject> pilaDePlatos = new Stack<GameObject>();
+    public Transform puntoDeApilado;
+    private float alturaEntrePlatos = 0.2f;
+
+    public void RecogerPlato(GameObject plato)
+    {
+        Vector3 nuevaPos = puntoDeApilado.position + 
+                           Vector3.up * (pilaDePlatos.Count * alturaEntrePlatos);
+
+        GameObject nuevoPlato = Instantiate(plato, nuevaPos, 
+                                            Quaternion.identity, puntoDeApilado);
+        pilaDePlatos.Push(nuevoPlato);
+    }
+
+    public void EntregarPlato()
+    {
+        if (pilaDePlatos.Count > 0)
+        {
+            GameObject platoSuperior = pilaDePlatos.Pop();
+            Destroy(platoSuperior);
+        }
+    }
+}
+\end{lstlisting}
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{Ventajas de usar Stack en Unity}
+\begin{itemize}
+    \item Mantiene un orden lógico inverso (LIFO).
+    \item Facilita la gestión de objetos apilados o reversibles.
+    \item Simplifica la programación de mecánicas de recolección y entrega.
+    \item Mejora la claridad y la eficiencia del código.
+\end{itemize}
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{Comparación con otras estructuras de datos}
+\begin{table}[]
+\centering
+\begin{tabular}{|l|l|l|}
+\hline
+\textbf{Estructura} & \textbf{Orden de acceso} & \textbf{Uso común en videojuegos} \\ \hline
+Stack & LIFO (último entra, primero sale) & Recolector de platos, historial \\ \hline
+Queue & FIFO (primero entra, primero sale) & Turnos, spawns secuenciales \\ \hline
+List & Acceso directo por índice & Inventarios, listas de objetos \\ \hline
+\end{tabular}
+\end{table}
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{Conclusión}
+\begin{itemize}
+    \item La clase \textbf{Stack} en C\# permite manejar datos en orden inverso.
+    \item Es ideal para mecánicas donde el último elemento agregado debe procesarse primero.
+    \item En Unity, facilita la implementación de sistemas de recolección, almacenamiento y entrega.
+    \item Su simplicidad y claridad la convierten en una herramienta valiosa para el desarrollo de videojuegos.
+\end{itemize}
+\end{frame}
+
+\end{document}

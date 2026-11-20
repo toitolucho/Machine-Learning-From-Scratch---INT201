@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Paso 2. Atributos de la moneda</title>
+</head>
+<body>
+<h3>2.1 Código</h3>
+<p>En <code style="background:#f0f0f0;padding:1px 4px;border-radius:3px;">Coin.h</code>, dentro de la sección <code style="background:#f0f0f0;padding:1px 4px;border-radius:3px;">public</code>, agregar los atributos y completar los espacios:</p>
+<pre style="background:#f6f8fa;border:1px solid #d0d7de;border-radius:4px;padding:12px;overflow-x:auto;font-size:0.9em;line-height:1.45;"><code>public:
+    ACoin();
+
+    /** Indica si el lado visible es CARA (true) o SELLO (false). */
+    UPROPERTY(______, Category = &quot;Moneda&quot;)      // PISTA: especificador que permite EDITAR el valor en el panel Details.
+    bool bEsCara = true;
+
+    /** Número de veces que la moneda ha sido lanzada. */
+    UPROPERTY(EditAnywhere, Category = &quot;Moneda&quot;)
+    ______ Lanzamientos = 0;                      // PISTA: tipo entero de 32 bits que utiliza Unreal.
+
+    /** Si es verdadero, la moneda elige un lado al azar al iniciar la partida. */
+    UPROPERTY(EditAnywhere, Category = &quot;Moneda&quot;)
+    bool bLadoAleatorio = true;</code></pre>
+<h3>2.2 Fundamento</h3>
+<ul>
+<li><code style="background:#f0f0f0;padding:1px 4px;border-radius:3px;">bool</code> representa un valor con dos estados; es adecuado para el lado de la moneda.
+</li>
+<li><code style="background:#f0f0f0;padding:1px 4px;border-radius:3px;">int32</code> garantiza un entero de 32 bits en cualquier plataforma, a diferencia de <code style="background:#f0f0f0;padding:1px 4px;border-radius:3px;">int</code>, cuyo tamaño depende del compilador.
+</li>
+<li>La macro <code style="background:#f0f0f0;padding:1px 4px;border-radius:3px;">UPROPERTY</code> registra el atributo en el <strong>sistema de reflexión</strong> de Unreal. Sin ella, el atributo existe en C++, pero no aparece en el editor.
+</li>
+<li>El atributo <code style="background:#f0f0f0;padding:1px 4px;border-radius:3px;">bLadoAleatorio</code> permite controlar desde el editor si el lado inicial es aleatorio o fijo; se utilizará en los escenarios de demostración.
+</li>
+</ul>
+<h3>Punto de verificación 2</h3>
+<p>Cerrar el editor, compilar desde Visual Studio y volver a abrir el proyecto. Seleccionar la moneda en el nivel y verificar que en el panel <strong>Details</strong> aparece la categoría <strong>Moneda</strong> con los atributos <code style="background:#f0f0f0;padding:1px 4px;border-radius:3px;">bEsCara</code>, <code style="background:#f0f0f0;padding:1px 4px;border-radius:3px;">Lanzamientos</code> y <code style="background:#f0f0f0;padding:1px 4px;border-radius:3px;">bLadoAleatorio</code>, y que sus valores pueden modificarse.</p>
+</body>
+</html>

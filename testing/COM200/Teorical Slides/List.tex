@@ -1,0 +1,205 @@
+\documentclass{beamer}
+
+\usetheme{Madrid}
+\usecolortheme{seahorse}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{listings}
+\usepackage{xcolor}
+
+% --- Configuración del estilo del código C# ---
+\lstdefinestyle{CSharpStyle}{
+  language=[Sharp]C,
+  basicstyle=\scriptsize\ttfamily,
+  keywordstyle=\color{blue}\bfseries,
+  stringstyle=\color{teal},
+  commentstyle=\color{gray}\itshape,
+  showstringspaces=false,
+  breaklines=true,
+  frame=single,
+  rulecolor=\color{gray!30},
+  tabsize=2,
+  captionpos=b,
+  numbers=left,
+  numberstyle=\tiny\color{gray},
+}
+
+\title{Uso de List (Lista) en C\# para el Desarrollo de Videojuegos con Unity}
+\author{COM200-Programacion Avanzada}
+\date{\today}
+
+\begin{document}
+
+\begin{frame}
+\titlepage
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{Concepto general}
+\begin{itemize}
+    \item Una \textbf{List (lista)} en C\# es una estructura de datos dinámica que almacena elementos de forma secuencial.
+    \item A diferencia de un arreglo (Array) tradicional, su capacidad de memoria puede \textbf{incrementarse o reducirse dinámicamente} en tiempo de ejecución.
+    \item En el contexto de la programación, se conceptualiza como un contenedor secuencial donde los objetos se estructuran mediante posiciones numéricas (índices).
+    \item En el motor Unity, esta estructura resulta de particular utilidad para:
+    \begin{itemize}
+        \item Diseñar sistemas de inventario dinámicos y escalables.
+        \item Administrar conjuntos de entidades activas en la escena (e.g., enemigos, proyectiles).
+        \item Almacenar nodos de navegación (waypoints) para sistemas de Inteligencia Artificial.
+    \end{itemize}
+\end{itemize}
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}[fragile]{Declaración de un List}
+Para implementar una lista en C\#, se requiere la inclusión previa del espacio de nombres correspondiente a las colecciones genéricas:
+\begin{lstlisting}[style=CSharpStyle]
+using System.Collections.Generic;
+\end{lstlisting}
+
+Posteriormente, se procede con la declaración e inicialización de la estructura, especificando el tipo de dato subyacente que albergará:
+\begin{lstlisting}[style=CSharpStyle]
+List<GameObject> inventario = new List<GameObject>();
+\end{lstlisting}
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}[fragile]{Operaciones Add() e Insert() — Inserción de elementos}
+El método \textbf{Add()} adjunta un elemento al final de la secuencia de la lista.
+\begin{lstlisting}[style=CSharpStyle]
+inventario.Add(espada);
+\end{lstlisting}
+
+El método \textbf{Insert()} introduce un elemento en una posición (índice) específica, desplazando los elementos subsecuentes.
+\begin{lstlisting}[style=CSharpStyle]
+inventario.Insert(0, pocionDeVida); // Inserción en la posición inicial
+\end{lstlisting}
+
+Implementación en el contexto de Unity:
+\begin{lstlisting}[style=CSharpStyle]
+public void RecolectarElemento(GameObject nuevoElemento)
+{
+    inventario.Add(nuevoElemento);
+    Debug.Log($"Elemento registrado. Total en estructura: {inventario.Count}");
+}
+\end{lstlisting}
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}[fragile]{Operaciones Remove() y RemoveAt() — Eliminación de elementos}
+El método \textbf{Remove()} localiza el elemento especificado y suprime su primera aparición. Retorna un valor booleano (\texttt{true}) si la operación de eliminación es exitosa.
+\begin{lstlisting}[style=CSharpStyle]
+bool exito = inventario.Remove(espadaRota);
+\end{lstlisting}
+
+El método \textbf{RemoveAt()} elimina el elemento ubicado exactamente en el índice proporcionado como argumento.
+\begin{lstlisting}[style=CSharpStyle]
+if (inventario.Count > 0)
+{
+    inventario.RemoveAt(0); // Supresión del primer elemento de la secuencia
+}
+\end{lstlisting}
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}[fragile]{Acceso por Índice — Consulta y Modificación}
+A diferencia de las estructuras tipo Pila o Cola, la Lista facilita el acceso aleatorio directo a los elementos mediante su índice (con base cero) utilizando la notación de corchetes \texttt{[]}.
+
+\begin{lstlisting}[style=CSharpStyle]
+// Acceso de lectura al tercer elemento (índice 2)
+GameObject elementoActivo = inventario[2];
+Debug.Log("Objeto referenciado: " + elementoActivo.name);
+
+// Sobrescritura de un elemento existente en la estructura
+inventario[1] = escudoMejorado;
+\end{lstlisting}
+
+\textit{Nota:} Es imperativo garantizar que el valor del índice sea estrictamente menor a la propiedad \texttt{Count} para prevenir el lanzamiento de la excepción \texttt{ArgumentOutOfRangeException}.
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}[fragile]{Otras operaciones relevantes}
+\begin{itemize}
+    \item \textbf{Clear()}: Libera la estructura eliminando la totalidad de sus elementos.
+    \begin{lstlisting}[style=CSharpStyle]
+    inventario.Clear();
+    \end{lstlisting}
+
+    \item \textbf{Count}: Retorna la magnitud actual de la estructura (constituye una propiedad de la clase, no un método).
+    \begin{lstlisting}[style=CSharpStyle]
+    int magnitudTotal = inventario.Count;
+    \end{lstlisting}
+
+    \item \textbf{Contains()}: Verifica la existencia de un elemento específico dentro de la colección.
+    \begin{lstlisting}[style=CSharpStyle]
+    if (inventario.Contains(llaveMaestra))
+        Debug.Log("Condición lógica de validación cumplida.");
+    \end{lstlisting}
+\end{itemize}
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}[fragile]{Ejemplo práctico: Controlador de Inventario}
+\begin{lstlisting}[style=CSharpStyle]
+using UnityEngine;
+using System.Collections.Generic;
+
+public class ControladorInventario : MonoBehaviour
+{
+    public List<string> elementos = new List<string>();
+
+    public void RegistrarElemento(string identificador)
+    {
+        elementos.Add(identificador);
+        Debug.Log("Registro exitoso: " + identificador);
+    }
+
+    public void ProcesarElemento(int indice)
+    {
+        if (indice >= 0 && indice < elementos.Count)
+        {
+            Debug.Log("Procesando entidad: " + elementos[indice]);
+            elementos.RemoveAt(indice); // Eliminación tras su procesamiento
+        }
+        else
+        {
+            Debug.LogWarning("Excepción prevenida: Índice fuera de los límites.");
+        }
+    }
+}
+\end{lstlisting}
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{Ventajas de la implementación de List en Unity}
+\begin{itemize}
+    \item \textbf{Flexibilidad de memoria:} La capacidad de almacenamiento se adapta dinámicamente según los requerimientos de ejecución.
+    \item \textbf{Acceso Aleatorio:} Posibilita la lectura o modificación de los elementos en tiempo constante ($O(1)$) mediante su identificador posicional.
+    \item \textbf{Riqueza de funciones:} Proporciona métodos integrados para la búsqueda, ordenamiento (\texttt{Sort}) y manipulación eficiente de la información.
+    \item \textbf{Iterabilidad:} Facilita la iteración sistemática mediante el uso de estructuras de control de flujo como \texttt{for} o \texttt{foreach}.
+\end{itemize}
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{Comparativa de Estructuras de Datos Lineales}
+\begin{table}[]
+\centering
+\begin{tabular}{|l|l|l|}
+\hline
+\textbf{Estructura} & \textbf{Paradigma de acceso} & \textbf{Aplicación típica en simulación} \\ \hline
+Stack & LIFO (Último en entrar, primero en salir) & Procesamiento inverso, historiales \\ \hline
+Queue & FIFO (Primero en entrar, primero en salir) & Gestión de turnos, colas de ejecución \\ \hline
+List & \textbf{Acceso directo (Aleatorio)} & \textbf{Sistemas dinámicos, repositorios} \\ \hline
+\end{tabular}
+\end{table}
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{Conclusión}
+\begin{itemize}
+    \item La clase genérica \textbf{List} en C\# constituye una de las colecciones más versátiles y fundamentales en la arquitectura de software.
+    \item Integra la eficiencia de acceso posicional característica de los arreglos estáticos con la adaptabilidad del redimensionamiento de memoria dinámico.
+    \item En el ecosistema de Unity, el dominio de esta estructura resulta indispensable para el diseño de arquitecturas escalables, la gestión de entidades dinámicas y la administración óptima de conjuntos de datos de longitud variable durante el ciclo de vida de la aplicación.
+\end{itemize}
+\end{frame}
+
+\end{document}

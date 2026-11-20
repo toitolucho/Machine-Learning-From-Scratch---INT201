@@ -1,0 +1,1004 @@
+{
+  "assignments": [
+    {
+      "assignmentid": 77381,
+      "submissions": [
+        {
+          "id": 4498200,
+          "userid": 6668,
+          "attemptnumber": 0,
+          "timecreated": 1792675497,
+          "timemodified": 1792675497,
+          "status": "new",
+          "groupid": 0,
+          "plugins": [
+            {
+              "type": "file",
+              "name": "Archivos enviados",
+              "fileareas": [
+                {
+                  "area": "submission_files",
+                  "files": []
+                }
+              ]
+            },
+            {
+              "type": "comments",
+              "name": "Comentarios de la entrega"
+            }
+          ],
+          "gradingstatus": "notgraded"
+        },
+        {
+          "id": 4498196,
+          "userid": 141808,
+          "attemptnumber": 0,
+          "timecreated": 1792675241,
+          "timemodified": 1792675269,
+          "status": "submitted",
+          "groupid": 0,
+          "plugins": [
+            {
+              "type": "file",
+              "name": "Archivos enviados",
+              "fileareas": [
+                {
+                  "area": "submission_files",
+                  "files": [
+                    {
+                      "filename": "Módulo_4_Aprendizaje_Automático_(Machine_Learning).ipynb",
+                      "filepath": "/",
+                      "filesize": 369377,
+                      "fileurl": "https://ecampus.usfx.bo/webservice/pluginfile.php/1862530/assignsubmission_file/submission_files/4498196/M%C3%B3dulo_4_Aprendizaje_Autom%C3%A1tico_%28Machine_Learning%29.ipynb",
+                      "timemodified": 1792675269,
+                      "mimetype": "text/plain",
+                      "isexternalfile": false
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "comments",
+              "name": "Comentarios de la entrega"
+            }
+          ],
+          "gradingstatus": "notgraded"
+        },
+        {
+          "id": 4498211,
+          "userid": 153505,
+          "attemptnumber": 0,
+          "timecreated": 1792675780,
+          "timemodified": 1792680517,
+          "status": "submitted",
+          "groupid": 0,
+          "plugins": [
+            {
+              "type": "file",
+              "name": "Archivos enviados",
+              "fileareas": [
+                {
+                  "area": "submission_files",
+                  "files": [
+                    {
+                      "filename": "05_Comparacion_Clasificadores.ipynb",
+                      "filepath": "/",
+                      "filesize": 797004,
+                      "fileurl": "https://ecampus.usfx.bo/webservice/pluginfile.php/1862530/assignsubmission_file/submission_files/4498211/05_Comparacion_Clasificadores.ipynb",
+                      "timemodified": 1792680517,
+                      "mimetype": "text/plain",
+                      "isexternalfile": false
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "comments",
+              "name": "Comentarios de la entrega"
+            }
+          ],
+          "gradingstatus": "notgraded"
+        },
+        {
+          "id": 4495140,
+          "userid": 158320,
+          "attemptnumber": 0,
+          "timecreated": 1792497281,
+          "timemodified": 1792669899,
+          "status": "submitted",
+          "groupid": 0,
+          "plugins": [
+            {
+              "type": "file",
+              "name": "Archivos enviados",
+              "fileareas": [
+                {
+                  "area": "submission_files",
+                  "files": [
+                    {
+                      "filename": "05_Comparacion_Clasificadores (1).ipynb",
+                      "filepath": "/",
+                      "filesize": 820844,
+                      "fileurl": "https://ecampus.usfx.bo/webservice/pluginfile.php/1862530/assignsubmission_file/submission_files/4495140/05_Comparacion_Clasificadores%20%281%29.ipynb",
+                      "timemodified": 1792669899,
+                      "mimetype": "text/plain",
+                      "isexternalfile": false
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "comments",
+              "name": "Comentarios de la entrega"
+            }
+          ],
+          "gradingstatus": "notgraded"
+        },
+        {
+          "id": 4494535,
+          "userid": 174037,
+          "attemptnumber": 0,
+          "timecreated": 1792450469,
+          "timemodified": 1792676587,
+          "status": "submitted",
+          "groupid": 0,
+          "plugins": [
+            {
+              "type": "file",
+              "name": "Archivos enviados",
+              "fileareas": [
+                {
+                  "area": "submission_files",
+                  "files": [
+                    {
+                      "filename": "05_Comparacion_Clasificadores.ipynb",
+                      "filepath": "/",
+                      "filesize": 1110431,
+                      "fileurl": "https://ecampus.usfx.bo/webservice/pluginfile.php/1862530/assignsubmission_file/submission_files/4494535/05_Comparacion_Clasificadores.ipynb",
+                      "timemodified": 1792676587,
+                      "mimetype": "text/plain",
+                      "isexternalfile": false
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "comments",
+              "name": "Comentarios de la entrega"
+            }
+          ],
+          "gradingstatus": "notgraded"
+        },
+        {
+          "id": 4502278,
+          "userid": 181035,
+          "attemptnumber": 0,
+          "timecreated": 1793028129,
+          "timemodified": 1793028129,
+          "status": "new",
+          "groupid": 0,
+          "plugins": [
+            {
+              "type": "file",
+              "name": "Archivos enviados",
+              "fileareas": [
+                {
+                  "area": "submission_files",
+                  "files": []
+                }
+              ]
+            },
+            {
+              "type": "comments",
+              "name": "Comentarios de la entrega"
+            }
+          ],
+          "gradingstatus": "notgraded"
+        },
+        {
+          "id": 4494277,
+          "userid": 189224,
+          "attemptnumber": 0,
+          "timecreated": 1792440276,
+          "timemodified": 1792673674,
+          "status": "submitted",
+          "groupid": 0,
+          "plugins": [
+            {
+              "type": "file",
+              "name": "Archivos enviados",
+              "fileareas": [
+                {
+                  "area": "submission_files",
+                  "files": [
+                    {
+                      "filename": "AlacoriaCuetoEmanuel_t2.ipynb",
+                      "filepath": "/",
+                      "filesize": 1046702,
+                      "fileurl": "https://ecampus.usfx.bo/webservice/pluginfile.php/1862530/assignsubmission_file/submission_files/4494277/AlacoriaCuetoEmanuel_t2.ipynb",
+                      "timemodified": 1792673674,
+                      "mimetype": "text/plain",
+                      "isexternalfile": false
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "comments",
+              "name": "Comentarios de la entrega"
+            }
+          ],
+          "gradingstatus": "notgraded"
+        },
+        {
+          "id": 4497035,
+          "userid": 189741,
+          "attemptnumber": 0,
+          "timecreated": 1792599942,
+          "timemodified": 1792641311,
+          "status": "submitted",
+          "groupid": 0,
+          "plugins": [
+            {
+              "type": "file",
+              "name": "Archivos enviados",
+              "fileareas": [
+                {
+                  "area": "submission_files",
+                  "files": [
+                    {
+                      "filename": "02_Laboratorio_Evaluacion_Cruz_Trujillo_Brayann.ipynb",
+                      "filepath": "/",
+                      "filesize": 68585,
+                      "fileurl": "https://ecampus.usfx.bo/webservice/pluginfile.php/1862530/assignsubmission_file/submission_files/4497035/02_Laboratorio_Evaluacion_Cruz_Trujillo_Brayann.ipynb",
+                      "timemodified": 1792641311,
+                      "mimetype": "text/html",
+                      "isexternalfile": false
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "comments",
+              "name": "Comentarios de la entrega"
+            }
+          ],
+          "gradingstatus": "notgraded"
+        },
+        {
+          "id": 4498145,
+          "userid": 192347,
+          "attemptnumber": 0,
+          "timecreated": 1792673649,
+          "timemodified": 1792673649,
+          "status": "new",
+          "groupid": 0,
+          "plugins": [
+            {
+              "type": "file",
+              "name": "Archivos enviados",
+              "fileareas": [
+                {
+                  "area": "submission_files",
+                  "files": []
+                }
+              ]
+            },
+            {
+              "type": "comments",
+              "name": "Comentarios de la entrega"
+            }
+          ],
+          "gradingstatus": "notgraded"
+        },
+        {
+          "id": 4497476,
+          "userid": 193316,
+          "attemptnumber": 0,
+          "timecreated": 1792624168,
+          "timemodified": 1792677486,
+          "status": "submitted",
+          "groupid": 0,
+          "plugins": [
+            {
+              "type": "file",
+              "name": "Archivos enviados",
+              "fileareas": [
+                {
+                  "area": "submission_files",
+                  "files": [
+                    {
+                      "filename": "02_Laboratorio_Evaluacion (1).ipynb",
+                      "filepath": "/",
+                      "filesize": 9052,
+                      "fileurl": "https://ecampus.usfx.bo/webservice/pluginfile.php/1862530/assignsubmission_file/submission_files/4497476/02_Laboratorio_Evaluacion%20%281%29.ipynb",
+                      "timemodified": 1792677486,
+                      "mimetype": "text/plain",
+                      "isexternalfile": false
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "comments",
+              "name": "Comentarios de la entrega"
+            }
+          ],
+          "gradingstatus": "notgraded"
+        },
+        {
+          "id": 4494525,
+          "userid": 199170,
+          "attemptnumber": 0,
+          "timecreated": 1792449868,
+          "timemodified": 1792674230,
+          "status": "submitted",
+          "groupid": 0,
+          "plugins": [
+            {
+              "type": "file",
+              "name": "Archivos enviados",
+              "fileareas": [
+                {
+                  "area": "submission_files",
+                  "files": [
+                    {
+                      "filename": "02_Tarea_MaytaBaltazarEdemir.ipynb",
+                      "filepath": "/",
+                      "filesize": 7077,
+                      "fileurl": "https://ecampus.usfx.bo/webservice/pluginfile.php/1862530/assignsubmission_file/submission_files/4494525/02_Tarea_MaytaBaltazarEdemir.ipynb",
+                      "timemodified": 1792674230,
+                      "mimetype": "text/plain",
+                      "isexternalfile": false
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "comments",
+              "name": "Comentarios de la entrega"
+            }
+          ],
+          "gradingstatus": "notgraded"
+        },
+        {
+          "id": 4494257,
+          "userid": 199822,
+          "attemptnumber": 0,
+          "timecreated": 1792439676,
+          "timemodified": 1792439676,
+          "status": "new",
+          "groupid": 0,
+          "plugins": [
+            {
+              "type": "file",
+              "name": "Archivos enviados",
+              "fileareas": [
+                {
+                  "area": "submission_files",
+                  "files": []
+                }
+              ]
+            },
+            {
+              "type": "comments",
+              "name": "Comentarios de la entrega"
+            }
+          ],
+          "gradingstatus": "notgraded"
+        },
+        {
+          "id": 4499663,
+          "userid": 201052,
+          "attemptnumber": 0,
+          "timecreated": 1792764387,
+          "timemodified": 1792764387,
+          "status": "new",
+          "groupid": 0,
+          "plugins": [
+            {
+              "type": "file",
+              "name": "Archivos enviados",
+              "fileareas": [
+                {
+                  "area": "submission_files",
+                  "files": []
+                }
+              ]
+            },
+            {
+              "type": "comments",
+              "name": "Comentarios de la entrega"
+            }
+          ],
+          "gradingstatus": "notgraded"
+        },
+        {
+          "id": 4495809,
+          "userid": 201054,
+          "attemptnumber": 0,
+          "timecreated": 1792534254,
+          "timemodified": 1792678389,
+          "status": "submitted",
+          "groupid": 0,
+          "plugins": [
+            {
+              "type": "file",
+              "name": "Archivos enviados",
+              "fileareas": [
+                {
+                  "area": "submission_files",
+                  "files": [
+                    {
+                      "filename": "05_Comparacion_Clasificadores (1).ipynb",
+                      "filepath": "/",
+                      "filesize": 801966,
+                      "fileurl": "https://ecampus.usfx.bo/webservice/pluginfile.php/1862530/assignsubmission_file/submission_files/4495809/05_Comparacion_Clasificadores%20%281%29.ipynb",
+                      "timemodified": 1792678389,
+                      "mimetype": "text/plain",
+                      "isexternalfile": false
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "comments",
+              "name": "Comentarios de la entrega"
+            }
+          ],
+          "gradingstatus": "notgraded"
+        },
+        {
+          "id": 4498237,
+          "userid": 202678,
+          "attemptnumber": 0,
+          "timecreated": 1792677408,
+          "timemodified": 1792677418,
+          "status": "submitted",
+          "groupid": 0,
+          "plugins": [
+            {
+              "type": "file",
+              "name": "Archivos enviados",
+              "fileareas": [
+                {
+                  "area": "submission_files",
+                  "files": [
+                    {
+                      "filename": "05_Comparacion_Clasificadores_resuelto_Limbert_Mamani_Isla.ipynb",
+                      "filepath": "/",
+                      "filesize": 1770080,
+                      "fileurl": "https://ecampus.usfx.bo/webservice/pluginfile.php/1862530/assignsubmission_file/submission_files/4498237/05_Comparacion_Clasificadores_resuelto_Limbert_Mamani_Isla.ipynb",
+                      "timemodified": 1792677418,
+                      "mimetype": "text/plain",
+                      "isexternalfile": false
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "comments",
+              "name": "Comentarios de la entrega"
+            }
+          ],
+          "gradingstatus": "notgraded"
+        },
+        {
+          "id": 4498225,
+          "userid": 203220,
+          "attemptnumber": 0,
+          "timecreated": 1792676452,
+          "timemodified": 1792681052,
+          "status": "submitted",
+          "groupid": 0,
+          "plugins": [
+            {
+              "type": "file",
+              "name": "Archivos enviados",
+              "fileareas": [
+                {
+                  "area": "submission_files",
+                  "files": [
+                    {
+                      "filename": "05_Comparacion_Clasificadores (1).ipynb",
+                      "filepath": "/",
+                      "filesize": 757393,
+                      "fileurl": "https://ecampus.usfx.bo/webservice/pluginfile.php/1862530/assignsubmission_file/submission_files/4498225/05_Comparacion_Clasificadores%20%281%29.ipynb",
+                      "timemodified": 1792681052,
+                      "mimetype": "text/plain",
+                      "isexternalfile": false
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "comments",
+              "name": "Comentarios de la entrega"
+            }
+          ],
+          "gradingstatus": "notgraded"
+        },
+        {
+          "id": 4497885,
+          "userid": 206492,
+          "attemptnumber": 0,
+          "timecreated": 1792639479,
+          "timemodified": 1792644356,
+          "status": "submitted",
+          "groupid": 0,
+          "plugins": [
+            {
+              "type": "file",
+              "name": "Archivos enviados",
+              "fileareas": [
+                {
+                  "area": "submission_files",
+                  "files": [
+                    {
+                      "filename": "TAREA_Taller Comparativo de Clasificadores.ipynb",
+                      "filepath": "/",
+                      "filesize": 761016,
+                      "fileurl": "https://ecampus.usfx.bo/webservice/pluginfile.php/1862530/assignsubmission_file/submission_files/4497885/TAREA_Taller%20Comparativo%20de%20Clasificadores.ipynb",
+                      "timemodified": 1792644356,
+                      "mimetype": "text/plain",
+                      "isexternalfile": false
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "comments",
+              "name": "Comentarios de la entrega"
+            }
+          ],
+          "gradingstatus": "notgraded"
+        },
+        {
+          "id": 4496656,
+          "userid": 206731,
+          "attemptnumber": 0,
+          "timecreated": 1792580674,
+          "timemodified": 1792668873,
+          "status": "submitted",
+          "groupid": 0,
+          "plugins": [
+            {
+              "type": "file",
+              "name": "Archivos enviados",
+              "fileareas": [
+                {
+                  "area": "submission_files",
+                  "files": [
+                    {
+                      "filename": "05_Comparacion_Clasificadores_YAreth Penacho Flores .ipynb",
+                      "filepath": "/",
+                      "filesize": 932082,
+                      "fileurl": "https://ecampus.usfx.bo/webservice/pluginfile.php/1862530/assignsubmission_file/submission_files/4496656/05_Comparacion_Clasificadores_YAreth%20Penacho%20Flores%20.ipynb",
+                      "timemodified": 1792668873,
+                      "mimetype": "text/plain",
+                      "isexternalfile": false
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "comments",
+              "name": "Comentarios de la entrega"
+            }
+          ],
+          "gradingstatus": "notgraded"
+        },
+        {
+          "id": 4498115,
+          "userid": 207738,
+          "attemptnumber": 0,
+          "timecreated": 1792672667,
+          "timemodified": 1792672920,
+          "status": "submitted",
+          "groupid": 0,
+          "plugins": [
+            {
+              "type": "file",
+              "name": "Archivos enviados",
+              "fileareas": [
+                {
+                  "area": "submission_files",
+                  "files": [
+                    {
+                      "filename": "05_Comparacion_Clasificadores_.ipynb",
+                      "filepath": "/",
+                      "filesize": 1203162,
+                      "fileurl": "https://ecampus.usfx.bo/webservice/pluginfile.php/1862530/assignsubmission_file/submission_files/4498115/05_Comparacion_Clasificadores_.ipynb",
+                      "timemodified": 1792672920,
+                      "mimetype": "text/plain",
+                      "isexternalfile": false
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "comments",
+              "name": "Comentarios de la entrega"
+            }
+          ],
+          "gradingstatus": "notgraded"
+        },
+        {
+          "id": 4494847,
+          "userid": 208354,
+          "attemptnumber": 0,
+          "timecreated": 1792462457,
+          "timemodified": 1792675309,
+          "status": "submitted",
+          "groupid": 0,
+          "plugins": [
+            {
+              "type": "file",
+              "name": "Archivos enviados",
+              "fileareas": [
+                {
+                  "area": "submission_files",
+                  "files": [
+                    {
+                      "filename": "05_Comparacion_Clasificadores.ipynb",
+                      "filepath": "/",
+                      "filesize": 19715,
+                      "fileurl": "https://ecampus.usfx.bo/webservice/pluginfile.php/1862530/assignsubmission_file/submission_files/4494847/05_Comparacion_Clasificadores.ipynb",
+                      "timemodified": 1792675309,
+                      "mimetype": "text/plain",
+                      "isexternalfile": false
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "comments",
+              "name": "Comentarios de la entrega"
+            }
+          ],
+          "gradingstatus": "notgraded"
+        },
+        {
+          "id": 4498086,
+          "userid": 208954,
+          "attemptnumber": 0,
+          "timecreated": 1792671045,
+          "timemodified": 1792678799,
+          "status": "submitted",
+          "groupid": 0,
+          "plugins": [
+            {
+              "type": "file",
+              "name": "Archivos enviados",
+              "fileareas": [
+                {
+                  "area": "submission_files",
+                  "files": [
+                    {
+                      "filename": "05_Comparacion_Clasificadores (2) (1).ipynb",
+                      "filepath": "/",
+                      "filesize": 536655,
+                      "fileurl": "https://ecampus.usfx.bo/webservice/pluginfile.php/1862530/assignsubmission_file/submission_files/4498086/05_Comparacion_Clasificadores%20%282%29%20%281%29.ipynb",
+                      "timemodified": 1792678799,
+                      "mimetype": "text/plain",
+                      "isexternalfile": false
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "comments",
+              "name": "Comentarios de la entrega"
+            }
+          ],
+          "gradingstatus": "notgraded"
+        },
+        {
+          "id": 4497193,
+          "userid": 209092,
+          "attemptnumber": 0,
+          "timecreated": 1792610187,
+          "timemodified": 1792672963,
+          "status": "submitted",
+          "groupid": 0,
+          "plugins": [
+            {
+              "type": "file",
+              "name": "Archivos enviados",
+              "fileareas": [
+                {
+                  "area": "submission_files",
+                  "files": [
+                    {
+                      "filename": "TAREA_MAPACALOR_ALE.ipynb",
+                      "filepath": "/",
+                      "filesize": 1066542,
+                      "fileurl": "https://ecampus.usfx.bo/webservice/pluginfile.php/1862530/assignsubmission_file/submission_files/4497193/TAREA_MAPACALOR_ALE.ipynb",
+                      "timemodified": 1792672963,
+                      "mimetype": "text/plain",
+                      "isexternalfile": false
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "comments",
+              "name": "Comentarios de la entrega"
+            }
+          ],
+          "gradingstatus": "notgraded"
+        },
+        {
+          "id": 4495435,
+          "userid": 209278,
+          "attemptnumber": 0,
+          "timecreated": 1792511620,
+          "timemodified": 1792668467,
+          "status": "submitted",
+          "groupid": 0,
+          "plugins": [
+            {
+              "type": "file",
+              "name": "Archivos enviados",
+              "fileareas": [
+                {
+                  "area": "submission_files",
+                  "files": [
+                    {
+                      "filename": "05_Comparacion_Clasificadores.ipynb",
+                      "filepath": "/",
+                      "filesize": 1243444,
+                      "fileurl": "https://ecampus.usfx.bo/webservice/pluginfile.php/1862530/assignsubmission_file/submission_files/4495435/05_Comparacion_Clasificadores.ipynb",
+                      "timemodified": 1792668467,
+                      "mimetype": "text/plain",
+                      "isexternalfile": false
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "comments",
+              "name": "Comentarios de la entrega"
+            }
+          ],
+          "gradingstatus": "notgraded"
+        },
+        {
+          "id": 4495722,
+          "userid": 209300,
+          "attemptnumber": 0,
+          "timecreated": 1792531311,
+          "timemodified": 1792669189,
+          "status": "submitted",
+          "groupid": 0,
+          "plugins": [
+            {
+              "type": "file",
+              "name": "Archivos enviados",
+              "fileareas": [
+                {
+                  "area": "submission_files",
+                  "files": [
+                    {
+                      "filename": "05_Comparacion_Clasificadores_GDPM.ipynb",
+                      "filepath": "/",
+                      "filesize": 846452,
+                      "fileurl": "https://ecampus.usfx.bo/webservice/pluginfile.php/1862530/assignsubmission_file/submission_files/4495722/05_Comparacion_Clasificadores_GDPM.ipynb",
+                      "timemodified": 1792669189,
+                      "mimetype": "text/plain",
+                      "isexternalfile": false
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "comments",
+              "name": "Comentarios de la entrega"
+            }
+          ],
+          "gradingstatus": "notgraded"
+        },
+        {
+          "id": 4495629,
+          "userid": 209918,
+          "attemptnumber": 0,
+          "timecreated": 1792525969,
+          "timemodified": 1792673781,
+          "status": "submitted",
+          "groupid": 0,
+          "plugins": [
+            {
+              "type": "file",
+              "name": "Archivos enviados",
+              "fileareas": [
+                {
+                  "area": "submission_files",
+                  "files": [
+                    {
+                      "filename": "tarea_2.ipynb",
+                      "filepath": "/",
+                      "filesize": 1289228,
+                      "fileurl": "https://ecampus.usfx.bo/webservice/pluginfile.php/1862530/assignsubmission_file/submission_files/4495629/tarea_2.ipynb",
+                      "timemodified": 1792673781,
+                      "mimetype": "text/plain",
+                      "isexternalfile": false
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "comments",
+              "name": "Comentarios de la entrega"
+            }
+          ],
+          "gradingstatus": "notgraded"
+        },
+        {
+          "id": 4495230,
+          "userid": 210608,
+          "attemptnumber": 0,
+          "timecreated": 1792502245,
+          "timemodified": 1792670457,
+          "status": "submitted",
+          "groupid": 0,
+          "plugins": [
+            {
+              "type": "file",
+              "name": "Archivos enviados",
+              "fileareas": [
+                {
+                  "area": "submission_files",
+                  "files": [
+                    {
+                      "filename": "05_Comparacion_Clasificadores_TAREA.ipynb",
+                      "filepath": "/",
+                      "filesize": 655481,
+                      "fileurl": "https://ecampus.usfx.bo/webservice/pluginfile.php/1862530/assignsubmission_file/submission_files/4495230/05_Comparacion_Clasificadores_TAREA.ipynb",
+                      "timemodified": 1792670457,
+                      "mimetype": "text/plain",
+                      "isexternalfile": false
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "comments",
+              "name": "Comentarios de la entrega"
+            }
+          ],
+          "gradingstatus": "notgraded"
+        },
+        {
+          "id": 4498199,
+          "userid": 210683,
+          "attemptnumber": 0,
+          "timecreated": 1792675478,
+          "timemodified": 1792675804,
+          "status": "submitted",
+          "groupid": 0,
+          "plugins": [
+            {
+              "type": "file",
+              "name": "Archivos enviados",
+              "fileareas": [
+                {
+                  "area": "submission_files",
+                  "files": [
+                    {
+                      "filename": "05_Comparacion_Clasificadores y PDF con mapas.zip",
+                      "filepath": "/",
+                      "filesize": 634379,
+                      "fileurl": "https://ecampus.usfx.bo/webservice/pluginfile.php/1862530/assignsubmission_file/submission_files/4498199/05_Comparacion_Clasificadores%20y%20PDF%20con%20mapas.zip",
+                      "timemodified": 1792675804,
+                      "mimetype": "application/zip",
+                      "isexternalfile": false
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "comments",
+              "name": "Comentarios de la entrega"
+            }
+          ],
+          "gradingstatus": "notgraded"
+        },
+        {
+          "id": 4497732,
+          "userid": 210700,
+          "attemptnumber": 0,
+          "timecreated": 1792634253,
+          "timemodified": 1792678676,
+          "status": "submitted",
+          "groupid": 0,
+          "plugins": [
+            {
+              "type": "file",
+              "name": "Archivos enviados",
+              "fileareas": [
+                {
+                  "area": "submission_files",
+                  "files": [
+                    {
+                      "filename": "tarea2_machinelearning.ipynb",
+                      "filepath": "/",
+                      "filesize": 736337,
+                      "fileurl": "https://ecampus.usfx.bo/webservice/pluginfile.php/1862530/assignsubmission_file/submission_files/4497732/tarea2_machinelearning.ipynb",
+                      "timemodified": 1792678676,
+                      "mimetype": "text/plain",
+                      "isexternalfile": false
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "comments",
+              "name": "Comentarios de la entrega"
+            }
+          ],
+          "gradingstatus": "notgraded"
+        },
+        {
+          "id": 4494855,
+          "userid": 211525,
+          "attemptnumber": 0,
+          "timecreated": 1792462789,
+          "timemodified": 1792678746,
+          "status": "submitted",
+          "groupid": 0,
+          "plugins": [
+            {
+              "type": "file",
+              "name": "Archivos enviados",
+              "fileareas": [
+                {
+                  "area": "submission_files",
+                  "files": [
+                    {
+                      "filename": "05_Comparacion_Clasificadores.ipynb",
+                      "filepath": "/",
+                      "filesize": 1034557,
+                      "fileurl": "https://ecampus.usfx.bo/webservice/pluginfile.php/1862530/assignsubmission_file/submission_files/4494855/05_Comparacion_Clasificadores.ipynb",
+                      "timemodified": 1792678746,
+                      "mimetype": "text/plain",
+                      "isexternalfile": false
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "comments",
+              "name": "Comentarios de la entrega"
+            }
+          ],
+          "gradingstatus": "notgraded"
+        }
+      ]
+    }
+  ],
+  "warnings": []
+}

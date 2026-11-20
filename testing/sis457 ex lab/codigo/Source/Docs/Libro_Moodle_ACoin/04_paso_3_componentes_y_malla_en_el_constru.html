@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Paso 3. Componentes y malla en el constructor</title>
+</head>
+<body>
+<h3>3.1 Declaración de componentes</h3>
+<p>En <code style="background:#f0f0f0;padding:1px 4px;border-radius:3px;">Coin.h</code>, inmediatamente después de <code style="background:#f0f0f0;padding:1px 4px;border-radius:3px;">GENERATED_BODY()</code> (antes de <code style="background:#f0f0f0;padding:1px 4px;border-radius:3px;">public:</code>), declarar los componentes como privados:</p>
+<pre style="background:#f6f8fa;border:1px solid #d0d7de;border-radius:4px;padding:12px;overflow-x:auto;font-size:0.9em;line-height:1.45;"><code>    /** Componente raíz de la moneda. */
+    UPROPERTY(VisibleDefaultsOnly, Category = &quot;Moneda&quot;)
+    class USceneComponent* DummyRoot;
+
+    /** Malla visible de la moneda. */
+    UPROPERTY(VisibleDefaultsOnly, Category = &quot;Moneda&quot;)
+    class UStaticMeshComponent* CoinMesh;</code></pre>
+<h3>3.2 Construcción de la malla</h3>
+<p>En <code style="background:#f0f0f0;padding:1px 4px;border-radius:3px;">Coin.cpp</code>, agregar los <code style="background:#f0f0f0;padding:1px 4px;border-radius:3px;">include</code> necesarios y completar el constructor:</p>
+<pre style="background:#f6f8fa;border:1px solid #d0d7de;border-radius:4px;padding:12px;overflow-x:auto;font-size:0.9em;line-height:1.45;"><code>#include &quot;Coin.h&quot;
+#include &quot;UObject/ConstructorHelpers.h&quot;
+#include &quot;Components/StaticMeshComponent.h&quot;
+
+ACoin::ACoin()
+{
+    // 1. Componente raíz
+    DummyRoot = CreateDefaultSubobject&lt;USceneComponent&gt;(TEXT(&quot;Dummy0&quot;));
+    RootComponent = DummyRoot;
+
+    // 2. Componente de malla, unido a la raíz
+    CoinMesh = CreateDefaultSubobject&lt;UStaticMeshComponent&gt;(TEXT(&quot;CoinMesh0&quot;));
+    CoinMesh-&gt;SetupAttachment(DummyRoot);
+
+    // 3. Carga de la malla básica del cilindro
+    ConstructorHelpers::FObjectFinderOptional&lt;UStaticMesh&gt; Cilindro(TEXT(&quot;/Engine/BasicShapes/Cylinder.Cylinder&quot;));
+    CoinMesh-&gt;______(Cilindro.Get());            // PISTA: método que asigna una malla estática (Set + Static + Mesh).
+
+    // 4. Escala: el cilindro mide 100 x 100 x 100 unidades; se reduce su altura (eje Z)
+    CoinMesh-&gt;SetRelativeScale3D(FVector(0.8f, 0.8f, ______));   // PISTA: grosor de 8 unidades -&gt; 8 / 100.
+
+    // 5. Colisión para poder recibir clics del ratón
+    CoinMesh-&gt;SetCollisionResponseToChannel(ECC_Visibility, ECR_Block);
+}</code></pre>
+<h3>3.3 Fundamento</h3>
+<ul>
+<li>La moneda <strong>crea y es dueña</strong> de sus componentes; estos se destruyen junto con ella. Esta relación es una <strong>composición</strong>.
+</li>
+<li><code style="background:#f0f0f0;padding:1px 4px;border-radius:3px;">ConstructorHelpers</code> solo puede utilizarse dentro del constructor. Si se traslada a otro método, el motor detiene la ejecución con un error.
+</li>
+<li>La escala multiplica el tamaño original en cada eje: con <code style="background:#f0f0f0;padding:1px 4px;border-radius:3px;">FVector(0.8f, 0.8f, 0.08f)</code> la moneda tiene 80 unidades de diámetro y 8 de grosor.
+</li>
+</ul>
+<h3>Punto de verificación 3</h3>
+<p>Compilar. La moneda colocada en el nivel debe verse como un disco delgado. Si se arrastra una nueva moneda al nivel, debe tener la misma forma.</p>
+</body>
+</html>

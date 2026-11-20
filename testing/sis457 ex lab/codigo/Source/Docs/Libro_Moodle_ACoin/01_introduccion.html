@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Introducción</title>
+</head>
+<body>
+<h3>Programación Orientada a Objetos en C++ / Unreal Engine — Proyecto <code style="background:#f0f0f0;padding:1px 4px;border-radius:3px;">PuzzleDiceGame</code></h3>
+<h3>1. Propósito</h3>
+<p>En esta guía el estudiante construye, paso a paso, una nueva clase <strong><code style="background:#f0f0f0;padding:1px 4px;border-radius:3px;">ACoin</code></strong> que representa una moneda con dos lados, <strong>CARA</strong> y <strong>SELLO</strong>, dentro del mismo proyecto en el que se desarrolló la clase <code style="background:#f0f0f0;padding:1px 4px;border-radius:3px;">ADice</code>. La mayor parte del código se proporciona; el estudiante debe completar algunos espacios sencillos, integrar la clase en el proyecto, configurarla en el editor de Unreal y <strong>demostrar su funcionamiento</strong> mediante escenarios de prueba.</p>
+<h3>2. Objetivos de aprendizaje</h3>
+<p>Al finalizar la guía, el estudiante será capaz de:</p>
+<ol>
+<li>Crear una clase C++ derivada de <code style="background:#f0f0f0;padding:1px 4px;border-radius:3px;">AActor</code> desde el editor de Unreal.
+</li>
+<li>Declarar atributos expuestos al editor mediante <code style="background:#f0f0f0;padding:1px 4px;border-radius:3px;">UPROPERTY</code>.
+</li>
+<li>Construir la representación visual de un objeto con componentes y una malla básica, aplicando escala.
+</li>
+<li>Distinguir las responsabilidades del constructor, de <code style="background:#f0f0f0;padding:1px 4px;border-radius:3px;">BeginPlay()</code> y de los eventos.
+</li>
+<li>Responder a la interacción del jugador mediante el evento <code style="background:#f0f0f0;padding:1px 4px;border-radius:3px;">OnClicked</code>.
+</li>
+<li>Establecer comunicación entre objetos (moneda y grilla) mediante un puntero de asociación.
+</li>
+</ol>
+<h3>3. Requisitos previos</h3>
+<ul>
+<li>Proyecto <code style="background:#f0f0f0;padding:1px 4px;border-radius:3px;">PuzzleDiceGame</code> abierto y compilando sin errores.
+</li>
+<li>Visual Studio configurado para el proyecto.
+</li>
+<li>Conocimiento de la clase <code style="background:#f0f0f0;padding:1px 4px;border-radius:3px;">ADice</code> desarrollada en clase (se utilizará como referencia).
+</li>
+</ul>
+<h3>4. Convenciones de la guía</h3>
+<ul>
+<li>Los espacios marcados con <code style="background:#f0f0f0;padding:1px 4px;border-radius:3px;">______</code> deben ser completados por el estudiante. Cada uno se acompaña de una pista en un comentario <code style="background:#f0f0f0;padding:1px 4px;border-radius:3px;">// PISTA:</code>.
+</li>
+<li>Cada paso termina con un <strong>Punto de verificación</strong>, que describe lo que debe observarse en el editor antes de continuar.
+</li>
+<li>Los <strong>Escenarios de demostración</strong> (capítulo «Escenarios de demostración») se realizan al final y constituyen la evidencia de la entrega.
+</li>
+<li>Cuando se modifica un archivo <code style="background:#f0f0f0;padding:1px 4px;border-radius:3px;">.h</code> (se agregan atributos o métodos), se recomienda <strong>cerrar el editor de Unreal y compilar desde Visual Studio</strong> (configuración <em>Development Editor</em>). Para cambios solo en archivos <code style="background:#f0f0f0;padding:1px 4px;border-radius:3px;">.cpp</code>, puede utilizarse el botón <strong>Compile</strong> del editor.
+</li>
+</ul>
+</body>
+</html>

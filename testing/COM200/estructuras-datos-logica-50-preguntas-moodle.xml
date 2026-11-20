@@ -1,0 +1,1614 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+
+<!-- ============================================================ -->
+<!-- CATEGORIA PRINCIPAL Y DESCRIPCION GENERAL                    -->
+<!-- ============================================================ -->
+<question type="category">
+    <category><text>$course$/COM200 - Estructuras de Datos en C# para Unity - Logica</text></category>
+    <info format="html"><text><![CDATA[<p><strong>Evaluación de Lógica y Criterio — COM200: Estructuras de Datos en Juegos 2D con Unity (02-2026)</strong></p>
+<p>Cuestionario de 50 preguntas orientado a evaluar el criterio técnico y la lógica aplicada al elegir, combinar y depurar estructuras de datos en videojuegos 2D en Unity.</p>
+<p><strong>Capítulos evaluados:</strong></p>
+<ul>
+  <li><strong>Arrays y Matrices:</strong> Arreglos estáticos (<code>T[]</code>), indexación cíclica, tableros <code>T[,]</code>, matrices escalonadas <code>int[][]</code>, carga con <code>TextAsset</code> y validaciones de formato.</li>
+  <li><strong>List:</strong> Colecciones dinámicas, sincronización con <code>Destroy</code>, eliminación segura en recorrido inverso y control de referencias.</li>
+  <li><strong>Queue:</strong> Principio FIFO, vista previa con <code>Peek</code>, reciclaje de objetos (<em>object pool</em>), corrutinas, BFS y colas de prioridad separadas.</li>
+  <li><strong>Stack:</strong> Principio LIFO, historial deshacer, navegación de menús, <em>flood fill</em> y validación con <code>Count</code>.</li>
+</ul>
+<p><strong>Clasificación por dificultad:</strong> Fácil (20 preguntas), Intermedio (20 preguntas) y Difícil (10 preguntas).</p>]]></text></info>
+</question>
+
+<!-- ============================================================ -->
+<!-- SUBCATEGORIA: FACIL                                        -->
+<!-- ============================================================ -->
+<question type="category">
+    <category><text>$course$/COM200 - Estructuras de Datos en C# para Unity - Logica/Facil</text></category>
+    <info format="html"><text><![CDATA[<p><strong>Nivel Fácil (20 preguntas):</strong> Selección de estructura adecuada según orden de acceso, indexación básica, sincronización de colecciones y despliegue con <code>TextAsset</code>.</p>]]></text></info>
+</question>
+
+<!-- L-Q01 [Facil] Prefabs de cactus en el Inspector -->
+<question type="multichoice">
+    <name><text><![CDATA[L-Q01 Prefabs de cactus en el Inspector]]></text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p><em>(Nota: Para esta pregunta, usaremos corchetes [...] en lugar de los símbolos de genéricos &lt; &gt;)</em></p>
+<p><strong>Escenario:</strong> En un juego tipo <em>endless runner</em> hay exactamente 3 prefabs de cactus. El diseñador quiere arrastrarlos desde el Inspector a un solo campo del script <code>SpawnerCactus</code> y el script debe elegir uno al azar. La cantidad de prefabs no cambia durante la partida.</p>
+<p><strong>Objetivo:</strong> Elegir la declaración más simple y adecuada.</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p>Un arreglo es ideal para un conjunto fijo que se elige por índice (<code>cactus[Random.Range(0, cactus.Length)]</code>), y Unity lo muestra en el Inspector para arrastrar los prefabs. Unity <strong>no muestra</strong> <code>Queue</code> ni <code>Stack</code> en el Inspector, así que no podrían asignarse arrastrando. Tres variables separadas funcionan, pero obligan a escribir un <code>if</code> o <code>switch</code> para elegir al azar y no escalan si se agrega un cuarto cactus.</p>]]></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <correctfeedback format="html"><text><![CDATA[¡Correcto!]]></text></correctfeedback>
+    <incorrectfeedback format="html"><text><![CDATA[Incorrecto. Revisa la explicación de los fundamentos.]]></text></incorrectfeedback>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[<code>public Queue[GameObject] cactus;</code>]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[<code>public GameObject cactus1, cactus2, cactus3;</code>]]></text></answer>
+    <answer fraction="100" format="html"><text><![CDATA[<code>public GameObject[] cactus;</code>]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[<code>public Stack[GameObject] cactus;</code>]]></text></answer>
+    <tags>
+        <tag><text>02-2026</text></tag>
+        <tag><text>Arrays y Matrices</text></tag>
+        <tag><text>Facil</text></tag>
+        <tag><text>Opcion Multiple</text></tag>
+    </tags>
+</question>
+
+<!-- L-Q02 [Facil] Fantasmas que salen de la casa -->
+<question type="multichoice">
+    <name><text><![CDATA[L-Q02 Fantasmas que salen de la casa]]></text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p><em>(Nota: Para esta pregunta, usaremos corchetes [...] en lugar de los símbolos de genéricos &lt; &gt;)</em></p>
+<p><strong>Escenario:</strong> En un juego de laberinto, 4 fantasmas esperan dentro de una casa central. Cada 5 segundos sale uno, <strong>siempre en el mismo orden</strong> en que fueron registrados al inicio del nivel.</p>
+<p><strong>Objetivo:</strong> Elegir la estructura para administrar a los fantasmas que esperan.</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p>"Salir en el mismo orden en que se registraron" es FIFO, el comportamiento de una <code>Queue</code>. Un <code>Stack</code> liberaría primero al último registrado (orden inverso). La elección aleatoria rompe el orden, y liberar el último elemento de una lista también invierte el orden.</p>]]></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <correctfeedback format="html"><text><![CDATA[¡Correcto!]]></text></correctfeedback>
+    <incorrectfeedback format="html"><text><![CDATA[Incorrecto. Revisa la explicación de los fundamentos.]]></text></incorrectfeedback>
+    <answer fraction="100" format="html"><text><![CDATA[<code>Queue[GameObject]</code>: se registran con <code>Enqueue()</code> y cada 5 segundos se libera uno con <code>Dequeue()</code>]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[<code>Stack[GameObject]</code>: se registran con <code>Push()</code> y cada 5 segundos se libera uno con <code>Pop()</code>]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[<code>GameObject[]</code>: cada 5 segundos se libera un fantasma elegido con <code>Random.Range</code>]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[<code>List[GameObject]</code>: cada 5 segundos se libera el último elemento de la lista]]></text></answer>
+    <tags>
+        <tag><text>02-2026</text></tag>
+        <tag><text>Queue</text></tag>
+        <tag><text>Facil</text></tag>
+        <tag><text>Opcion Multiple</text></tag>
+    </tags>
+</question>
+
+<!-- L-Q03 [Facil] Cajas sobre la cabeza -->
+<question type="multichoice">
+    <name><text><![CDATA[L-Q03 Cajas sobre la cabeza]]></text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p><em>(Nota: Para esta pregunta, usaremos corchetes [...] en lugar de los símbolos de genéricos &lt; &gt;)</em></p>
+<p><strong>Escenario:</strong> En un juego de plataformas 2D, el personaje recoge cajas y las va apilando sobre su cabeza. Al presionar la tecla de lanzar, <strong>solo puede lanzar la caja que está arriba</strong>.</p>
+<p><strong>Objetivo:</strong> Elegir la estructura que modela las cajas cargadas.</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p>La caja de arriba es la última recogida: LIFO. <code>Push()</code> la coloca en la cima y <code>Pop()</code> la retira para lanzarla. Una <code>Queue</code> lanzaría la primera caja recogida, que está en la base de la torre. Lanzar el índice 0 de una lista también corresponde a la caja más antigua, y un arreglo de tamaño 10 impone un límite arbitrario.</p>]]></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <correctfeedback format="html"><text><![CDATA[¡Correcto!]]></text></correctfeedback>
+    <incorrectfeedback format="html"><text><![CDATA[Incorrecto. Revisa la explicación de los fundamentos.]]></text></incorrectfeedback>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[<code>Queue[GameObject]</code>, porque las cajas se recogen en orden]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[<code>GameObject[]</code> con tamaño 10]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[<code>List[GameObject]</code>, lanzando siempre la caja del índice 0]]></text></answer>
+    <answer fraction="100" format="html"><text><![CDATA[<code>Stack[GameObject]</code>, usando <code>Push()</code> al recoger y <code>Pop()</code> al lanzar]]></text></answer>
+    <tags>
+        <tag><text>02-2026</text></tag>
+        <tag><text>Stack</text></tag>
+        <tag><text>Facil</text></tag>
+        <tag><text>Opcion Multiple</text></tag>
+    </tags>
+</question>
+
+<!-- L-Q04 [Facil] Enemigos en pantalla -->
+<question type="multichoice">
+    <name><text><![CDATA[L-Q04 Enemigos en pantalla]]></text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p><em>(Nota: Para esta pregunta, usaremos corchetes [...] en lugar de los símbolos de genéricos &lt; &gt;)</em></p>
+<p><strong>Escenario:</strong> En un <em>shooter</em> 2D aparecen enemigos en momentos distintos. Cada bala tiene un <code>Collider2D</code> con <code>isTrigger</code> activado y, cuando toca a un enemigo, ese enemigo muere. Los enemigos mueren <strong>en cualquier orden</strong>. Un <code>EnemyManager</code> necesita saber en todo momento qué enemigos siguen vivos.</p>
+<p><strong>Objetivo:</strong> Elegir cómo guardar los enemigos vivos.</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p>Como los enemigos mueren en cualquier orden, hay que poder quitar <strong>un enemigo específico</strong>, y <code>List.Remove(enemigo)</code> lo permite. <code>Dequeue()</code> quitaría al primero que apareció y <code>Pop()</code> al último, que no necesariamente son los que murieron. Un arreglo de tamaño fijo no puede crecer cuando aparecen nuevas oleadas.</p>]]></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <correctfeedback format="html"><text><![CDATA[¡Correcto!]]></text></correctfeedback>
+    <incorrectfeedback format="html"><text><![CDATA[Incorrecto. Revisa la explicación de los fundamentos.]]></text></incorrectfeedback>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[<code>Queue[GameObject]</code>, retirando con <code>Dequeue()</code> cada vez que muere un enemigo]]></text></answer>
+    <answer fraction="100" format="html"><text><![CDATA[<code>List[GameObject]</code>, con <code>Add()</code> al aparecer y <code>Remove(enemigo)</code> al morir]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[<code>Stack[GameObject]</code>, retirando con <code>Pop()</code> cada vez que muere un enemigo]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[<code>GameObject[]</code> con el tamaño de la primera oleada]]></text></answer>
+    <tags>
+        <tag><text>02-2026</text></tag>
+        <tag><text>List</text></tag>
+        <tag><text>Facil</text></tag>
+        <tag><text>Opcion Multiple</text></tag>
+    </tags>
+</question>
+
+<!-- L-Q05 [Facil] Tablero de tres en raya -->
+<question type="multichoice">
+    <name><text><![CDATA[L-Q05 Tablero de tres en raya]]></text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p><em>(Nota: Para esta pregunta, usaremos corchetes [...] en lugar de los símbolos de genéricos &lt; &gt;)</em></p>
+<p><strong>Escenario:</strong> Se programa un juego de tres en raya (3×3). Cada casilla puede estar vacía, tener una X o tener una O. Al hacer clic en una casilla se conoce su fila y su columna.</p>
+<p><strong>Objetivo:</strong> Elegir cómo representar el estado del tablero.</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p>El tablero tiene dimensiones fijas y uniformes, y cada clic da directamente la fila y la columna: una matriz rectangular es la representación natural. Además, verificar si hay tres en línea es sencillo recorriendo filas, columnas y diagonales. Las colas y pilas no permiten consultar una casilla por posición, y una lista que solo crece con cada jugada pierde la relación con la casilla jugada.</p>]]></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <correctfeedback format="html"><text><![CDATA[¡Correcto!]]></text></correctfeedback>
+    <incorrectfeedback format="html"><text><![CDATA[Incorrecto. Revisa la explicación de los fundamentos.]]></text></incorrectfeedback>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[<code>Queue[char]</code> con 9 elementos]]></text></answer>
+    <answer fraction="100" format="html"><text><![CDATA[<code>char[,] tablero = new char[3, 3];</code> accediendo con <code>tablero[fila, columna]</code>]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[<code>List[char]</code> que crece con cada jugada]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[<code>Stack[char]</code> donde cada jugada hace <code>Push()</code>]]></text></answer>
+    <tags>
+        <tag><text>02-2026</text></tag>
+        <tag><text>Arrays y Matrices</text></tag>
+        <tag><text>Facil</text></tag>
+        <tag><text>Opcion Multiple</text></tag>
+    </tags>
+</question>
+
+<!-- L-Q06 [Facil] Niveles para WebGL -->
+<question type="multichoice">
+    <name><text><![CDATA[L-Q06 Niveles para WebGL]]></text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p><em>(Nota: Para esta pregunta, usaremos corchetes [...] en lugar de los símbolos de genéricos &lt; &gt;)</em></p>
+<p><strong>Escenario:</strong> El equipo diseñó 8 niveles en archivos <code>.txt</code>. El juego se publicará en WebGL y en Android, y los jugadores <strong>no</strong> deben modificar los niveles.</p>
+<p><strong>Objetivo:</strong> Elegir la forma de cargar los niveles.</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p><code>TextAsset</code> se empaqueta en la <em>build</em> y funciona en todas las plataformas sin depender de rutas. Un arreglo <code>TextAsset[]</code> permite además cambiar de nivel con un índice. Una ruta absoluta de la PC no existe en Android ni en el navegador. Escribir los niveles en el código o pedir archivos al jugador complica el diseño sin necesidad.</p>]]></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <correctfeedback format="html"><text><![CDATA[¡Correcto!]]></text></correctfeedback>
+    <incorrectfeedback format="html"><text><![CDATA[Incorrecto. Revisa la explicación de los fundamentos.]]></text></incorrectfeedback>
+    <answer fraction="100" format="html"><text><![CDATA[Un arreglo <code>TextAsset[] niveles</code> asignado desde el Inspector, leyendo <code>niveles[i].text</code>]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[<code>File.ReadAllLines("C:/MiJuego/Niveles/nivel1.txt")</code>]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[Copiar el contenido de cada nivel dentro de un <code>Stack[string]</code> en el código]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[Pedir al jugador que seleccione el archivo del nivel al iniciar el juego]]></text></answer>
+    <tags>
+        <tag><text>02-2026</text></tag>
+        <tag><text>Arrays y Matrices</text></tag>
+        <tag><text>Facil</text></tag>
+        <tag><text>Opcion Multiple</text></tag>
+    </tags>
+</question>
+
+<!-- L-Q07 [Facil] Diálogo de un NPC -->
+<question type="multichoice">
+    <name><text><![CDATA[L-Q07 Diálogo de un NPC]]></text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p><em>(Nota: Para esta pregunta, usaremos corchetes [...] en lugar de los símbolos de genéricos &lt; &gt;)</em></p>
+<p><strong>Escenario:</strong> Al acercarse a un NPC (detectado con <code>OnTriggerEnter2D</code>), se carga su diálogo de 5 líneas. Cada vez que el jugador presiona <code>Espacio</code> debe mostrarse <strong>la siguiente línea</strong>, en el orden en que fueron escritas, hasta terminar.</p>
+<p><strong>Objetivo:</strong> Elegir la lógica más adecuada.</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p>El diálogo se consume en orden y cada línea se muestra una sola vez: una <code>Queue</code> lo modela directamente, y <code>Count &gt; 0</code> indica cuándo termina. Con un <code>Stack</code> el diálogo saldría al revés, empezando por la última línea. Mostrar siempre <code>lineas[0]</code> repite la misma línea, y el azar rompe la conversación.</p>]]></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <correctfeedback format="html"><text><![CDATA[¡Correcto!]]></text></correctfeedback>
+    <incorrectfeedback format="html"><text><![CDATA[Incorrecto. Revisa la explicación de los fundamentos.]]></text></incorrectfeedback>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[Guardar las líneas en un <code>Stack[string]</code> y mostrar <code>Pop()</code> en cada pulsación]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[Guardar las líneas en un <code>string[]</code> y mostrar siempre <code>lineas[0]</code>]]></text></answer>
+    <answer fraction="100" format="html"><text><![CDATA[Guardar las líneas en una <code>Queue[string]</code> y mostrar <code>Dequeue()</code> en cada pulsación mientras <code>Count &gt; 0</code>]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[Guardar las líneas en una <code>List[string]</code> y mostrar una línea elegida al azar]]></text></answer>
+    <tags>
+        <tag><text>02-2026</text></tag>
+        <tag><text>Queue</text></tag>
+        <tag><text>Facil</text></tag>
+        <tag><text>Opcion Multiple</text></tag>
+    </tags>
+</question>
+
+<!-- L-Q08 [Facil] Submenús de pausa -->
+<question type="multichoice">
+    <name><text><![CDATA[L-Q08 Submenús de pausa]]></text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p><em>(Nota: Para esta pregunta, usaremos corchetes [...] en lugar de los símbolos de genéricos &lt; &gt;)</em></p>
+<p><strong>Escenario:</strong> El menú de pausa abre <em>Opciones</em>; desde <em>Opciones</em> se abre <em>Audio</em>; desde <em>Audio</em> se abre <em>Volumen avanzado</em>. El botón <strong>Atrás</strong> siempre debe regresar al panel que se abrió <strong>justo antes</strong> del actual.</p>
+<p><strong>Objetivo:</strong> Elegir cómo recordar los paneles abiertos.</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p>La navegación hacia atrás es LIFO: el último panel abierto es el primero en cerrarse. Una sola variable <code>panelAnterior</code> funciona para un nivel, pero al retroceder dos veces ya no recuerda el panel anterior al anterior. Una <code>Queue</code> regresaría al primer panel abierto, y recorrer un arreglo no indica el orden de navegación.</p>]]></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <correctfeedback format="html"><text><![CDATA[¡Correcto!]]></text></correctfeedback>
+    <incorrectfeedback format="html"><text><![CDATA[Incorrecto. Revisa la explicación de los fundamentos.]]></text></incorrectfeedback>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[Una <code>Queue[GameObject]</code> de paneles]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[Una variable <code>GameObject panelAnterior</code>]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[Un arreglo <code>GameObject[] paneles</code> recorrido con <code>foreach</code>]]></text></answer>
+    <answer fraction="100" format="html"><text><![CDATA[Un <code>Stack[GameObject]</code> de paneles: <code>Push()</code> al abrir y <code>Pop()</code> al presionar Atrás]]></text></answer>
+    <tags>
+        <tag><text>02-2026</text></tag>
+        <tag><text>Stack</text></tag>
+        <tag><text>Facil</text></tag>
+        <tag><text>Opcion Multiple</text></tag>
+    </tags>
+</question>
+
+<!-- L-Q09 [Facil] Puntos de control -->
+<question type="multichoice">
+    <name><text><![CDATA[L-Q09 Puntos de control]]></text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p><em>(Nota: Para esta pregunta, usaremos corchetes [...] en lugar de los símbolos de genéricos &lt; &gt;)</em></p>
+<p><strong>Escenario:</strong> El nivel tiene varios puntos de control (<em>checkpoints</em>) con colliders <code>isTrigger</code>. El jugador puede tocarlos en cualquier orden y varias veces, pero cada checkpoint debe <strong>contarse una sola vez</strong>.</p>
+<pre><code>private List[GameObject] tocados = new List[GameObject]();
+
+void OnTriggerEnter2D(Collider2D other)
+{
+    if (other.CompareTag("Checkpoint"))
+    {
+        // ???
+    }
+}</code></pre>
+<p><strong>Objetivo:</strong> Elegir el código que reemplaza a <code>// ???</code>.</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p><code>Contains</code> evita agregar un checkpoint que ya está registrado, así que cada uno cuenta una sola vez. Llamar solo a <code>tocados.Add(other.gameObject)</code> lo agregaría cada vez que el jugador pasa por encima. Hacer <code>Remove</code> seguido de <code>Add</code> evita duplicados, pero hace trabajo innecesario y cambia el orden de registro. Comprobar <code>tocados.Count == 0</code> solo registraría el primer checkpoint.</p>]]></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <correctfeedback format="html"><text><![CDATA[¡Correcto!]]></text></correctfeedback>
+    <incorrectfeedback format="html"><text><![CDATA[Incorrecto. Revisa la explicación de los fundamentos.]]></text></incorrectfeedback>
+    <answer fraction="100" format="html"><text><![CDATA[<code>if (!tocados.Contains(other.gameObject)) tocados.Add(other.gameObject);</code>]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[<code>tocados.Add(other.gameObject);</code>]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[<code>tocados.Remove(other.gameObject); tocados.Add(other.gameObject);</code>]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[<code>if (tocados.Count == 0) tocados.Add(other.gameObject);</code>]]></text></answer>
+    <tags>
+        <tag><text>02-2026</text></tag>
+        <tag><text>List</text></tag>
+        <tag><text>Facil</text></tag>
+        <tag><text>Opcion Multiple</text></tag>
+    </tags>
+</question>
+
+<!-- L-Q10 [Facil] Corazones de vida -->
+<question type="multichoice">
+    <name><text><![CDATA[L-Q10 Corazones de vida]]></text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p><strong>Escenario:</strong> El HUD muestra 3 corazones, guardados en <code>GameObject[] corazones</code> (índices 0, 1 y 2). La variable <code>vidas</code> empieza en 3. Cuando un enemigo choca con el jugador (<code>OnCollisionEnter2D</code>), se pierde una vida y debe ocultarse el corazón correspondiente, empezando por el de la derecha (índice 2).</p>
+<p><strong>Objetivo:</strong> Elegir el código correcto.</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p>Con <code>vidas = 3</code>, primero se decrementa a 2 y se oculta <code>corazones[2]</code>; luego el 1 y el 0. La condición <code>vidas &gt; 0</code> evita valores negativos si el jugador recibe golpes estando sin vidas. Ejecutar <code>corazones[vidas].SetActive(false)</code> antes de restar accede a <code>corazones[3]</code> y lanza <code>IndexOutOfRangeException</code>. Ocultar siempre <code>corazones[0]</code> desactiva el mismo corazón, y usar <code>corazones[vidas - 1]</code> sin <code>vidas--</code> oculta el corazón correcto la primera vez, pero nunca decrementa <code>vidas</code>.</p>]]></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <correctfeedback format="html"><text><![CDATA[¡Correcto!]]></text></correctfeedback>
+    <incorrectfeedback format="html"><text><![CDATA[Incorrecto. Revisa la explicación de los fundamentos.]]></text></incorrectfeedback>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[<code>corazones[vidas].SetActive(false); vidas--;</code>]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[<code>vidas--; corazones[0].SetActive(false);</code>]]></text></answer>
+    <answer fraction="100" format="html"><text><![CDATA[<code>if (vidas &gt; 0) { vidas--; corazones[vidas].SetActive(false); }</code>]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[<code>corazones[vidas - 1].SetActive(false);</code>]]></text></answer>
+    <tags>
+        <tag><text>02-2026</text></tag>
+        <tag><text>Arrays y Matrices</text></tag>
+        <tag><text>Facil</text></tag>
+        <tag><text>Opcion Multiple</text></tag>
+    </tags>
+</question>
+
+<!-- L-Q11 [Facil] Vista previa de la siguiente pieza -->
+<question type="multichoice">
+    <name><text><![CDATA[L-Q11 Vista previa de la siguiente pieza]]></text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p><strong>Escenario:</strong> En un juego de bloques que caen, las próximas piezas se generan al inicio y se guardan en una <code>Queue</code>. Una ventana del HUD debe mostrar <strong>cuál será la siguiente pieza</strong> mientras la pieza actual sigue cayendo.</p>
+<p><strong>Objetivo:</strong> Elegir la operación adecuada para la vista previa.</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p>La vista previa solo <strong>consulta</strong>; la pieza debe seguir en la cola hasta que realmente le toque caer. <code>Peek()</code> devuelve el primer elemento sin retirarlo. Con <code>Dequeue()</code> la pieza mostrada saldría de la cola y nunca llegaría a jugarse. <code>Contains</code> solo indica si una pieza está en la cola, no cuál es la siguiente.</p>]]></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <correctfeedback format="html"><text><![CDATA[¡Correcto!]]></text></correctfeedback>
+    <incorrectfeedback format="html"><text><![CDATA[Incorrecto. Revisa la explicación de los fundamentos.]]></text></incorrectfeedback>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[<code>colaPiezas.Dequeue()</code>, mostrando la pieza que devuelve]]></text></answer>
+    <answer fraction="100" format="html"><text><![CDATA[<code>colaPiezas.Peek()</code>, mostrando la pieza sin retirarla]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[<code>colaPiezas.Clear()</code> y luego volver a generar las piezas]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[<code>colaPiezas.Contains(pieza)</code>]]></text></answer>
+    <tags>
+        <tag><text>02-2026</text></tag>
+        <tag><text>Queue</text></tag>
+        <tag><text>Facil</text></tag>
+        <tag><text>Opcion Multiple</text></tag>
+    </tags>
+</question>
+
+<!-- L-Q12 [Facil] Lanzar sin cajas -->
+<question type="multichoice">
+    <name><text><![CDATA[L-Q12 Lanzar sin cajas]]></text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p><strong>Escenario:</strong> Continuando con el personaje que apila cajas, a veces el jugador presiona el botón de lanzar <strong>sin tener cajas</strong>, y la consola muestra una <code>InvalidOperationException</code>.</p>
+<pre><code>void Update()
+{
+    if (Input.GetKeyDown(KeyCode.F))
+    {
+        GameObject caja = pilaCajas.Pop();
+        Lanzar(caja);
+    }
+}</code></pre>
+<p><strong>Objetivo:</strong> Corregir el problema de la forma más adecuada.</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p><code>Pop()</code> sobre una pila vacía lanza <code>InvalidOperationException</code>; verificar <code>Count &gt; 0</code> antes evita el error y expresa claramente la regla "solo se lanza si hay cajas". <code>Peek()</code> también falla con la pila vacía y además no retira la caja. Un <code>try/catch</code> vacío oculta el problema en lugar de resolverlo, y <code>Dequeue()</code> en una cola vacía falla igual.</p>]]></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <correctfeedback format="html"><text><![CDATA[¡Correcto!]]></text></correctfeedback>
+    <incorrectfeedback format="html"><text><![CDATA[Incorrecto. Revisa la explicación de los fundamentos.]]></text></incorrectfeedback>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[Cambiar <code>Pop()</code> por <code>Peek()</code>]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[Envolver todo el <code>Update</code> en un bloque <code>try/catch</code> vacío]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[Cambiar la pila por una <code>Queue</code> y usar <code>Dequeue()</code>]]></text></answer>
+    <answer fraction="100" format="html"><text><![CDATA[Agregar la condición <code>pilaCajas.Count &gt; 0</code> antes de llamar a <code>Pop()</code>]]></text></answer>
+    <tags>
+        <tag><text>02-2026</text></tag>
+        <tag><text>Stack</text></tag>
+        <tag><text>Facil</text></tag>
+        <tag><text>Opcion Multiple</text></tag>
+    </tags>
+</question>
+
+<!-- L-Q13 [Facil] Ranuras del inventario -->
+<question type="multichoice">
+    <name><text><![CDATA[L-Q13 Ranuras del inventario]]></text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p><em>(Nota: Para esta pregunta, usaremos corchetes [...] en lugar de los símbolos de genéricos &lt; &gt;)</em></p>
+<p><strong>Escenario:</strong> El jugador recoge objetos durante la partida y puede usar <strong>cualquiera</strong> de ellos presionando las teclas 1 a 9 (la tecla 1 corresponde al primer objeto).</p>
+<p><strong>Objetivo:</strong> Elegir la estructura y el acceso correctos.</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p>Se necesita acceso por posición y tamaño variable: <code>List[Item]</code> con <code>inventario[tecla - 1]</code>. Se resta 1 porque la tecla 1 corresponde al índice 0, y se valida contra <code>Count</code> porque el jugador podría presionar una tecla sin objeto. Cola y pila solo permiten usar un extremo. Acceder con <code>inventario[tecla]</code> sin restar 1 hace que la tecla 9 acceda al índice 9, fuera de rango.</p>]]></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <correctfeedback format="html"><text><![CDATA[¡Correcto!]]></text></correctfeedback>
+    <incorrectfeedback format="html"><text><![CDATA[Incorrecto. Revisa la explicación de los fundamentos.]]></text></incorrectfeedback>
+    <answer fraction="100" format="html"><text><![CDATA[<code>List[Item] inventario</code>, usando <code>inventario[tecla - 1]</code> después de validar que el índice sea menor que <code>Count</code>]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[<code>Queue[Item] inventario</code>, usando <code>Dequeue()</code> al presionar cualquier tecla]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[<code>Stack[Item] inventario</code>, usando <code>Pop()</code> al presionar cualquier tecla]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[<code>Item[] inventario = new Item[9]</code>, usando <code>inventario[tecla]</code>]]></text></answer>
+    <tags>
+        <tag><text>02-2026</text></tag>
+        <tag><text>List</text></tag>
+        <tag><text>Facil</text></tag>
+        <tag><text>Opcion Multiple</text></tag>
+    </tags>
+</question>
+
+<!-- L-Q14 [Facil] Movimiento por casillas -->
+<question type="multichoice">
+    <name><text><![CDATA[L-Q14 Movimiento por casillas]]></text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p><strong>Escenario:</strong> En un juego de laberinto, el personaje se mueve <strong>de casilla en casilla</strong> asignando directamente <code>transform.position</code> a la posición de la siguiente celda. Las paredes tienen <code>BoxCollider2D</code>, pero el personaje las atraviesa.</p>
+<p><strong>Objetivo:</strong> Elegir la forma correcta de impedir que el personaje entre en una pared.</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p>Asignar <code>transform.position</code> "teletransporta" al objeto: el motor de física no tiene oportunidad de bloquear el movimiento, así que los colliders no lo detienen. En un movimiento por casillas, la fuente de verdad es la <strong>matriz del mapa</strong>: basta con revisar la celda destino antes de moverse. Agregar colliders o cambiar la masa no afecta a un objeto que se teletransporta.</p>]]></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <correctfeedback format="html"><text><![CDATA[¡Correcto!]]></text></correctfeedback>
+    <incorrectfeedback format="html"><text><![CDATA[Incorrecto. Revisa la explicación de los fundamentos.]]></text></incorrectfeedback>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[Agregar más colliders a las paredes]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[Aumentar la masa del <code>Rigidbody2D</code> del personaje]]></text></answer>
+    <answer fraction="100" format="html"><text><![CDATA[Antes de moverse, consultar la matriz del mapa y moverse solo si la celda destino no es pared (<code>mapa[r][c] != 1</code>)]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[Mover al personaje dos casillas en lugar de una]]></text></answer>
+    <tags>
+        <tag><text>02-2026</text></tag>
+        <tag><text>Arrays y Matrices</text></tag>
+        <tag><text>Facil</text></tag>
+        <tag><text>Opcion Multiple</text></tag>
+    </tags>
+</question>
+
+<!-- L-Q15 [Facil] Patrulla en bucle -->
+<question type="gapselect">
+    <name><text><![CDATA[L-Q15 Patrulla en bucle]]></text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p><strong>Escenario:</strong> Un guardia patrulla entre 4 puntos (<code>Transform[] waypoints</code>, asignados en el Inspector). Al llegar al último punto debe <strong>volver al primero</strong> y seguir patrullando indefinidamente.</p>
+<pre><code>void SiguientePunto()
+{
+    indice = [[1]];
+}</code></pre>
+<p><strong>Objetivo:</strong> Elegir la expresión que calcula el siguiente índice.</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p>El operador <code>%</code> (módulo) hace que el índice vuelva a 0 al llegar al final: con 4 puntos, la secuencia es 0, 1, 2, 3, 0, 1, … Con <code>indice + 1</code> se llega a 4 y se lanza <code>IndexOutOfRangeException</code>. <code>waypoints.Length - indice</code> produce una secuencia que no recorre los puntos en orden, y <code>Random.Range(0, waypoints.Length)</code> convierte la patrulla en un movimiento aleatorio.</p>]]></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>true</shuffleanswers>
+    <correctfeedback format="html"><text><![CDATA[¡Correcto!]]></text></correctfeedback>
+    <partiallycorrectfeedback format="html"><text><![CDATA[Respuesta parcialmente correcta.]]></text></partiallycorrectfeedback>
+    <incorrectfeedback format="html"><text><![CDATA[Incorrecto. Revisa la explicación de los fundamentos.]]></text></incorrectfeedback>
+    <shownumcorrect/>
+    <selectoption><text><![CDATA[(indice + 1) % waypoints.Length]]></text><group>1</group></selectoption>
+    <selectoption><text><![CDATA[indice + 1]]></text><group>1</group></selectoption>
+    <selectoption><text><![CDATA[waypoints.Length - indice]]></text><group>1</group></selectoption>
+    <selectoption><text><![CDATA[Random.Range(0, waypoints.Length)]]></text><group>1</group></selectoption>
+    <tags>
+        <tag><text>02-2026</text></tag>
+        <tag><text>Arrays y Matrices</text></tag>
+        <tag><text>Facil</text></tag>
+        <tag><text>Seleccionar Palabras</text></tag>
+    </tags>
+</question>
+
+<!-- L-Q16 [Facil] Formato del archivo de nivel -->
+<question type="multichoice">
+    <name><text><![CDATA[L-Q16 Formato del archivo de nivel]]></text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p><strong>Escenario:</strong> Los diseñadores van a escribir los mapas a mano en el Bloc de notas y el parser los convertirá en una matriz <code>int[][]</code>.</p>
+<p><strong>Objetivo:</strong> Elegir el formato de archivo más claro y fácil de procesar.</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p>Si cada línea es una fila y cada valor está separado por un delimitador, el archivo <strong>se ve igual que el mapa</strong> y el parser solo divide por saltos de línea y luego por delimitadores. Una sola línea sin separadores no indica dónde termina cada fila ni permite valores de dos dígitos. Una columna de números pierde la forma del mapa, y mezclar descripciones complica el parseo sin beneficio.</p>]]></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <correctfeedback format="html"><text><![CDATA[¡Correcto!]]></text></correctfeedback>
+    <incorrectfeedback format="html"><text><![CDATA[Incorrecto. Revisa la explicación de los fundamentos.]]></text></incorrectfeedback>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[Todos los números en una sola línea larga, sin separadores: <code>1110211001</code>]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[Un número por línea, con todo el mapa en una sola columna]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[Los valores mezclados con descripciones: <code>ladrillo,1;acero,2;...</code>]]></text></answer>
+    <answer fraction="100" format="html"><text><![CDATA[Una línea del archivo por cada fila del mapa, con los valores separados por comas o espacios]]></text></answer>
+    <tags>
+        <tag><text>02-2026</text></tag>
+        <tag><text>Arrays y Matrices</text></tag>
+        <tag><text>Facil</text></tag>
+        <tag><text>Opcion Multiple</text></tag>
+    </tags>
+</question>
+
+<!-- L-Q17 [Facil] Enemigo destruido, referencia viva -->
+<question type="multichoice">
+    <name><text><![CDATA[L-Q17 Enemigo destruido, referencia viva]]></text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p><strong>Escenario:</strong> Cuando una bala toca a un enemigo, el script de la bala ejecuta <code>Destroy(other.gameObject)</code>. Más tarde, el <code>EnemyManager</code> recorre su lista <code>enemigos</code> para moverlos y aparece una <code>MissingReferenceException</code>.</p>
+<p><strong>Objetivo:</strong> Elegir la corrección más adecuada.</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p>La lista guarda una <strong>referencia</strong> al enemigo; <code>Destroy</code> elimina el objeto de la escena, pero no lo quita de la lista. Por eso, al recorrerla, se intenta usar un objeto que ya no existe. Hay que mantener la lista sincronizada quitando la referencia al destruir. Retrasar el <code>Destroy</code> solo aplaza el error, y <code>Clear()</code> haría que el manager pierda a todos los demás enemigos.</p>]]></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <correctfeedback format="html"><text><![CDATA[¡Correcto!]]></text></correctfeedback>
+    <incorrectfeedback format="html"><text><![CDATA[Incorrecto. Revisa la explicación de los fundamentos.]]></text></incorrectfeedback>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[Usar <code>Destroy(other.gameObject, 5f)</code> para destruirlo más tarde]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[Llamar a <code>enemigos.Clear()</code> cada vez que muere un enemigo]]></text></answer>
+    <answer fraction="100" format="html"><text><![CDATA[Antes de destruir al enemigo, quitarlo de la lista: <code>enemigos.Remove(other.gameObject);</code> y luego <code>Destroy(other.gameObject);</code>]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[Desactivar el collider de la bala]]></text></answer>
+    <tags>
+        <tag><text>02-2026</text></tag>
+        <tag><text>List</text></tag>
+        <tag><text>Facil</text></tag>
+        <tag><text>Opcion Multiple</text></tag>
+    </tags>
+</question>
+
+<!-- L-Q18 [Facil] Moverse a los puntos marcados -->
+<question type="multichoice">
+    <name><text><![CDATA[L-Q18 Moverse a los puntos marcados]]></text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p><em>(Nota: Para esta pregunta, usaremos corchetes [...] en lugar de los símbolos de genéricos &lt; &gt;)</em></p>
+<p><strong>Escenario:</strong> En un juego de estrategia 2D, el jugador hace clic en varios puntos del mapa y la unidad debe visitarlos <strong>en el orden de los clics</strong>, uno tras otro.</p>
+<p><strong>Objetivo:</strong> Elegir cómo almacenar los destinos.</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p>Los destinos se visitan en el orden en que se agregaron: FIFO, una <code>Queue</code>. Un <code>Stack</code> visitaría primero el último clic. Una sola variable olvida los clics anteriores, y un arreglo de 3 posiciones limita arbitrariamente cuántos puntos se pueden marcar.</p>]]></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <correctfeedback format="html"><text><![CDATA[¡Correcto!]]></text></correctfeedback>
+    <incorrectfeedback format="html"><text><![CDATA[Incorrecto. Revisa la explicación de los fundamentos.]]></text></incorrectfeedback>
+    <answer fraction="100" format="html"><text><![CDATA[<code>Queue[Vector2]</code>: <code>Enqueue()</code> en cada clic y <code>Dequeue()</code> cuando la unidad llega al destino actual]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[<code>Stack[Vector2]</code>: <code>Push()</code> en cada clic y <code>Pop()</code> al llegar]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[Una sola variable <code>Vector2 destino</code> que se sobrescribe en cada clic]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[<code>Vector2[] destinos = new Vector2[3]</code>]]></text></answer>
+    <tags>
+        <tag><text>02-2026</text></tag>
+        <tag><text>Queue</text></tag>
+        <tag><text>Facil</text></tag>
+        <tag><text>Opcion Multiple</text></tag>
+    </tags>
+</question>
+
+<!-- L-Q19 [Facil] Deshacer en un puzzle -->
+<question type="multichoice">
+    <name><text><![CDATA[L-Q19 Deshacer en un puzzle]]></text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p><em>(Nota: Para esta pregunta, usaremos corchetes [...] en lugar de los símbolos de genéricos &lt; &gt;)</em></p>
+<p><strong>Escenario:</strong> En un puzzle de empujar cajas por casillas, el jugador puede presionar <code>Z</code> para deshacer su último movimiento, varias veces seguidas, hasta volver al inicio del nivel.</p>
+<p><strong>Objetivo:</strong> Elegir la estructura para el historial de movimientos.</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p>Deshacer siempre revierte el movimiento <strong>más reciente</strong>, y luego el anterior a ese: LIFO. <code>Pop()</code> entrega exactamente ese orden. <code>Dequeue()</code> y el índice 0 revertirían el movimiento más antiguo. Una sola variable solo permite deshacer una vez.</p>]]></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <correctfeedback format="html"><text><![CDATA[¡Correcto!]]></text></correctfeedback>
+    <incorrectfeedback format="html"><text><![CDATA[Incorrecto. Revisa la explicación de los fundamentos.]]></text></incorrectfeedback>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[<code>Queue[Movimiento]</code>, deshaciendo con <code>Dequeue()</code>]]></text></answer>
+    <answer fraction="100" format="html"><text><![CDATA[<code>Stack[Movimiento]</code>, guardando cada movimiento con <code>Push()</code> y deshaciendo con <code>Pop()</code>]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[<code>List[Movimiento]</code>, deshaciendo siempre el índice 0]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[Una variable <code>Movimiento ultimo</code>]]></text></answer>
+    <tags>
+        <tag><text>02-2026</text></tag>
+        <tag><text>Stack</text></tag>
+        <tag><text>Facil</text></tag>
+        <tag><text>Opcion Multiple</text></tag>
+    </tags>
+</question>
+
+<!-- L-Q20 [Facil] Tres necesidades, tres estructuras -->
+<question type="matching">
+    <name><text><![CDATA[L-Q20 Tres necesidades, tres estructuras]]></text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p><strong>Escenario:</strong> Un juego necesita resolver tres requerimientos de estructuras de datos.</p>
+<p><strong>Objetivo:</strong> Relacionar cada requerimiento con la estructura más adecuada.</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p><strong>I</strong> es FIFO, una <code>Queue</code>. <strong>II</strong> es LIFO, un <code>Stack</code>. <strong>III</strong> requiere quitar elementos específicos en cualquier orden, una <code>List</code>. Elegir la estructura según el <strong>orden de salida</strong> que exige el problema es la decisión clave en todos estos casos.</p>]]></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>true</shuffleanswers>
+    <correctfeedback format="html"><text><![CDATA[¡Correcto!]]></text></correctfeedback>
+    <partiallycorrectfeedback format="html"><text><![CDATA[Respuesta parcialmente correcta.]]></text></partiallycorrectfeedback>
+    <incorrectfeedback format="html"><text><![CDATA[Incorrecto. Revisa la explicación de los fundamentos.]]></text></incorrectfeedback>
+    <shownumcorrect/>
+    <subquestion format="html">
+        <text><![CDATA[<p>I. Hacer aparecer enemigos en el orden en que fueron programados.</p>]]></text>
+        <answer><text><![CDATA[Queue]]></text></answer>
+    </subquestion>
+    <subquestion format="html">
+        <text><![CDATA[<p>II. Deshacer la última construcción colocada por el jugador.</p>]]></text>
+        <answer><text><![CDATA[Stack]]></text></answer>
+    </subquestion>
+    <subquestion format="html">
+        <text><![CDATA[<p>III. Llevar el registro de las balas activas, que se destruyen en cualquier orden.</p>]]></text>
+        <answer><text><![CDATA[List]]></text></answer>
+    </subquestion>
+    <subquestion format="html">
+        <text></text>
+        <answer><text><![CDATA[T[]]]></text></answer>
+    </subquestion>
+    <subquestion format="html">
+        <text></text>
+        <answer><text><![CDATA[int[,]]]></text></answer>
+    </subquestion>
+    <tags>
+        <tag><text>02-2026</text></tag>
+        <tag><text>List</text></tag>
+        <tag><text>Queue</text></tag>
+        <tag><text>Stack</text></tag>
+        <tag><text>Facil</text></tag>
+        <tag><text>Emparejamiento</text></tag>
+    </tags>
+</question>
+
+<!-- ============================================================ -->
+<!-- SUBCATEGORIA: INTERMEDIO                                        -->
+<!-- ============================================================ -->
+<question type="category">
+    <category><text>$course$/COM200 - Estructuras de Datos en C# para Unity - Logica/Intermedio</text></category>
+    <info format="html"><text><![CDATA[<p><strong>Nivel Intermedio (20 preguntas):</strong> Diseño de mecánicas en videojuegos 2D, object pooling, corrutinas sobre colas, límites dinámicos, deshacer seguro y parseo de símbolos.</p>]]></text></info>
+</question>
+
+<!-- L-Q21 [Intermedio] Máximo de balas en pantalla -->
+<question type="multichoice">
+    <name><text><![CDATA[L-Q21 Máximo de balas en pantalla]]></text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p><em>(Nota: Para esta pregunta, usaremos corchetes [...] en lugar de los símbolos de genéricos &lt; &gt;)</em></p>
+<p><strong>Escenario:</strong> En un juego de tanques, el jugador puede tener <strong>como máximo 2 balas</strong> en pantalla al mismo tiempo. Cada bala se destruye al chocar con algo (<code>OnCollisionEnter2D</code>).</p>
+<p><strong>Objetivo:</strong> Elegir el diseño que respeta el límite en todo momento.</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p>El límite depende de cuántas balas <strong>siguen activas</strong>, no de cuántas se dispararon. Con una lista sincronizada (agregar al disparar y quitar al destruir), <code>Count</code> siempre refleja las balas en pantalla. Un contador que solo sube bloquearía el disparo para siempre tras 2 tiros. Usar siempre <code>balas[0]</code> sobrescribe la referencia, y un tiempo de espera no garantiza el límite si las balas tardan en chocar.</p>]]></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <correctfeedback format="html"><text><![CDATA[¡Correcto!]]></text></correctfeedback>
+    <incorrectfeedback format="html"><text><![CDATA[Incorrecto. Revisa la explicación de los fundamentos.]]></text></incorrectfeedback>
+    <answer fraction="100" format="html"><text><![CDATA[Guardar las balas en una <code>List[GameObject]</code>: agregar al disparar, quitar cuando la bala se destruye, y permitir el disparo solo si <code>balas.Count &lt; 2</code>]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[Contar los disparos con un <code>int</code> que solo se incrementa, y disparar mientras sea menor que 2]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[Usar un <code>GameObject[] balas = new GameObject[2]</code> y disparar siempre en <code>balas[0]</code>]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[Esperar 1 segundo entre disparos con una corrutina]]></text></answer>
+    <tags>
+        <tag><text>02-2026</text></tag>
+        <tag><text>List</text></tag>
+        <tag><text>Intermedio</text></tag>
+        <tag><text>Opcion Multiple</text></tag>
+    </tags>
+</question>
+
+<!-- L-Q22 [Intermedio] Reciclar balas -->
+<question type="multichoice">
+    <name><text><![CDATA[L-Q22 Reciclar balas]]></text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p><em>(Nota: Para esta pregunta, usaremos corchetes [...] en lugar de los símbolos de genéricos &lt; &gt;)</em></p>
+<p><strong>Escenario:</strong> El juego crea 20 balas al inicio y las guarda desactivadas en una <code>Queue[GameObject] disponibles</code>. Al disparar se toma una con <code>Dequeue()</code>, se posiciona y se activa.</p>
+<pre><code>void OnCollisionEnter2D(Collision2D col)
+{
+    // La bala chocó con algo
+    // ???
+}</code></pre>
+<p><strong>Objetivo:</strong> Elegir lo que debe hacer la bala al chocar para que el sistema de reciclaje funcione.</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p>La idea del reciclaje (<em>object pool</em>) es <strong>no destruir</strong>: la bala se desactiva y vuelve a la cola para reutilizarse en un disparo posterior. Con <code>Destroy</code> la cola se quedaría vacía tras 20 disparos. <code>Clear()</code> perdería todas las balas disponibles, y <code>Dequeue()</code> sacaría otra bala en lugar de devolver la que chocó.</p>]]></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <correctfeedback format="html"><text><![CDATA[¡Correcto!]]></text></correctfeedback>
+    <incorrectfeedback format="html"><text><![CDATA[Incorrecto. Revisa la explicación de los fundamentos.]]></text></incorrectfeedback>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[<code>Destroy(gameObject);</code>]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[<code>disponibles.Clear();</code>]]></text></answer>
+    <answer fraction="100" format="html"><text><![CDATA[<code>gameObject.SetActive(false);</code> y devolverla con <code>disponibles.Enqueue(gameObject);</code>]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[<code>disponibles.Dequeue();</code>]]></text></answer>
+    <tags>
+        <tag><text>02-2026</text></tag>
+        <tag><text>Queue</text></tag>
+        <tag><text>Intermedio</text></tag>
+        <tag><text>Opcion Multiple</text></tag>
+    </tags>
+</question>
+
+<!-- L-Q23 [Intermedio] Explosión en cruz -->
+<question type="gapselect">
+    <name><text><![CDATA[L-Q23 Explosión en cruz]]></text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p><strong>Escenario:</strong> En un juego de colocar bombas en una cuadrícula, la explosión avanza hacia la derecha hasta <code>alcance</code> casillas. Las casillas vacías dejan pasar la explosión; el <strong>ladrillo</strong> se destruye y detiene la explosión; el <strong>acero</strong> no se destruye y también la detiene.</p>
+<pre><code>for (int i = 1; i &lt;= alcance; i++)
+{
+    int c2 = c + i;
+    if (c2 &gt;= mapa[r].Length) break;
+
+    if (mapa[r][c2] == ACERO)
+    {
+        [[1]];
+    }
+    if (mapa[r][c2] == LADRILLO)
+    {
+        DestruirLadrillo(r, c2);
+        break;
+    }
+    MostrarFuego(r, c2);
+}</code></pre>
+<p><strong>Objetivo:</strong> Elegir la instrucción para el caso del acero.</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p><code>break</code> detiene solo el avance <strong>en esta dirección</strong>, que es exactamente lo que hace el acero. <code>continue</code> saltaría la casilla de acero y la explosión lo atravesaría. <code>return</code> saldría de todo el método y cancelaría también las otras direcciones de la explosión (izquierda, arriba y abajo). Asignar 0 destruiría el acero, que debe ser indestructible.</p>]]></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>true</shuffleanswers>
+    <correctfeedback format="html"><text><![CDATA[¡Correcto!]]></text></correctfeedback>
+    <partiallycorrectfeedback format="html"><text><![CDATA[Respuesta parcialmente correcta.]]></text></partiallycorrectfeedback>
+    <incorrectfeedback format="html"><text><![CDATA[Incorrecto. Revisa la explicación de los fundamentos.]]></text></incorrectfeedback>
+    <shownumcorrect/>
+    <selectoption><text><![CDATA[break]]></text><group>1</group></selectoption>
+    <selectoption><text><![CDATA[continue]]></text><group>1</group></selectoption>
+    <selectoption><text><![CDATA[return]]></text><group>1</group></selectoption>
+    <selectoption><text><![CDATA[mapa[r][c2] = 0]]></text><group>1</group></selectoption>
+    <tags>
+        <tag><text>02-2026</text></tag>
+        <tag><text>Arrays y Matrices</text></tag>
+        <tag><text>Intermedio</text></tag>
+        <tag><text>Seleccionar Palabras</text></tag>
+    </tags>
+</question>
+
+<!-- L-Q24 [Intermedio] Carriles sin repetir -->
+<question type="multichoice">
+    <name><text><![CDATA[L-Q24 Carriles sin repetir]]></text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p><strong>Escenario:</strong> En un juego de cruzar la carretera, los autos aparecen en uno de 4 carriles (<code>float[] posicionesY</code>). Se quiere que <strong>nunca aparezcan dos autos seguidos en el mismo carril</strong>.</p>
+<p><strong>Objetivo:</strong> Elegir la lógica correcta.</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p>Recordar el último carril y volver a sortear mientras coincida garantiza que nunca se repita, manteniendo el azar (funciona siempre que haya más de un carril). Hacer <code>Random.Range(0, posicionesY.Length - 1)</code> solo excluye el último carril del arreglo, pero sí puede repetir. Avanzar con <code>(ultimoCarril + 1) % posicionesY.Length</code> sin componente aleatorio no repite carriles, pero el patrón es completamente predecible: el jugador sabrá siempre dónde aparecerá el siguiente auto. Ordenar el arreglo no tiene relación con el problema.</p>]]></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <correctfeedback format="html"><text><![CDATA[¡Correcto!]]></text></correctfeedback>
+    <incorrectfeedback format="html"><text><![CDATA[Incorrecto. Revisa la explicación de los fundamentos.]]></text></incorrectfeedback>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[<code>int carril = Random.Range(0, posicionesY.Length - 1);</code>]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[Ordenar el arreglo <code>posicionesY</code> antes de cada spawn]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[<code>int carril = (ultimoCarril + 1) % posicionesY.Length;</code> sin ningún componente aleatorio]]></text></answer>
+    <answer fraction="100" format="html"><text><![CDATA[Guardar <code>ultimoCarril</code> y elegir otro índice aleatorio mientras sea igual al último; después actualizar <code>ultimoCarril</code>]]></text></answer>
+    <tags>
+        <tag><text>02-2026</text></tag>
+        <tag><text>Arrays y Matrices</text></tag>
+        <tag><text>Intermedio</text></tag>
+        <tag><text>Opcion Multiple</text></tag>
+    </tags>
+</question>
+
+<!-- L-Q25 [Intermedio] Misil al enemigo más cercano -->
+<question type="ddwtos">
+    <name><text><![CDATA[L-Q25 Misil al enemigo más cercano]]></text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p><strong>Escenario:</strong> Un misil teledirigido debe elegir como objetivo al enemigo <strong>más cercano</strong> de la lista <code>enemigos</code>.</p>
+<pre><code>GameObject masCercano = null;
+float menorDist = [[1]];
+
+foreach (GameObject e in enemigos)
+{
+    float d = Vector2.Distance(transform.position, e.transform.position);
+    if (d &lt; menorDist)
+    {
+        menorDist = d;
+        masCercano = e;
+    }
+}</code></pre>
+<p><strong>Objetivo:</strong> Elegir el valor inicial de <code>menorDist</code>.</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p>Para encontrar un mínimo, el valor inicial debe ser mayor que cualquier distancia posible, de modo que el primer enemigo siempre lo reemplace. <code>Mathf.Infinity</code> cumple esa condición. Con <code>0f</code> o <code>-1f</code> ninguna distancia sería menor y <code>masCercano</code> quedaría en <code>null</code>. <code>enemigos.Count</code> es una cantidad de elementos, no una distancia: podría ser menor que la distancia real y descartar a todos los enemigos.</p>]]></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>true</shuffleanswers>
+    <correctfeedback format="html"><text><![CDATA[¡Correcto!]]></text></correctfeedback>
+    <partiallycorrectfeedback format="html"><text><![CDATA[Respuesta parcialmente correcta.]]></text></partiallycorrectfeedback>
+    <incorrectfeedback format="html"><text><![CDATA[Incorrecto. Revisa la explicación de los fundamentos.]]></text></incorrectfeedback>
+    <shownumcorrect/>
+    <dragbox><text><![CDATA[Mathf.Infinity]]></text><group>1</group></dragbox>
+    <dragbox><text><![CDATA[0f]]></text><group>1</group></dragbox>
+    <dragbox><text><![CDATA[enemigos.Count]]></text><group>1</group></dragbox>
+    <dragbox><text><![CDATA[-1f]]></text><group>1</group></dragbox>
+    <tags>
+        <tag><text>02-2026</text></tag>
+        <tag><text>List</text></tag>
+        <tag><text>Intermedio</text></tag>
+        <tag><text>Arrastrar y Soltar</text></tag>
+    </tags>
+</question>
+
+<!-- L-Q26 [Intermedio] Un personaje muere esperando turno -->
+<question type="multichoice">
+    <name><text><![CDATA[L-Q26 Un personaje muere esperando turno]]></text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p><em>(Nota: Para esta pregunta, usaremos corchetes [...] en lugar de los símbolos de genéricos &lt; &gt;)</em></p>
+<p><strong>Escenario:</strong> En un combate por turnos, los personajes esperan en una <code>Queue[Personaje]</code>. Un hechizo de área puede matar a un personaje <strong>que todavía está en medio de la cola</strong>. <code>Queue</code> no permite eliminar un elemento del medio.</p>
+<p><strong>Objetivo:</strong> Elegir la solución más simple que mantiene el orden de turnos.</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p>La validación "perezosa" (revisar al momento de sacar el elemento) mantiene la cola intacta y salta a los personajes muertos cuando les tocaría su turno. Vaciar y reconstruir la cola funciona, pero es más complejo y propenso a errores de orden. Un <code>Stack</code> cambia el orden de los turnos. Ignorar el problema haría que un personaje muerto "consuma" un turno o, peor, que actúe.</p>]]></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <correctfeedback format="html"><text><![CDATA[¡Correcto!]]></text></correctfeedback>
+    <incorrectfeedback format="html"><text><![CDATA[Incorrecto. Revisa la explicación de los fundamentos.]]></text></incorrectfeedback>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[Usar <code>Clear()</code> y volver a encolar a todos los personajes cada vez que alguien muere]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[Cambiar la <code>Queue</code> por un <code>Stack</code>]]></text></answer>
+    <answer fraction="100" format="html"><text><![CDATA[Al tomar el siguiente turno con <code>Dequeue()</code>, verificar si el personaje sigue vivo; si está muerto, descartarlo y tomar el siguiente]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[Ignorar el problema, porque los personajes muertos no hacen nada]]></text></answer>
+    <tags>
+        <tag><text>02-2026</text></tag>
+        <tag><text>Queue</text></tag>
+        <tag><text>Intermedio</text></tag>
+        <tag><text>Opcion Multiple</text></tag>
+    </tags>
+</question>
+
+<!-- L-Q27 [Intermedio] Pila de descarte -->
+<question type="gapselect">
+    <name><text><![CDATA[L-Q27 Pila de descarte]]></text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p><strong>Escenario:</strong> En un juego de cartas, las cartas jugadas se colocan en una pila de descarte. Un jugador solo puede jugar una carta si es <strong>del mismo color</strong> que la carta superior de la pila.</p>
+<pre><code>public bool IntentarJugar(Carta carta)
+{
+    if (descarte.Count == 0 || [[1]])
+    {
+        descarte.Push(carta);
+        return true;
+    }
+    return false;
+}</code></pre>
+<p><strong>Objetivo:</strong> Elegir la condición que valida la jugada sin alterar la pila.</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p><code>Peek()</code> consulta la carta superior <strong>sin retirarla</strong>, lo correcto para una validación. Con <code>Pop()</code> la carta superior se perdería aunque la jugada no sea válida. <code>Contains</code> revisa si la carta ya está en algún lugar de la pila, lo cual no tiene relación con la regla del color, y comparar <code>Count</code> con un color carece de sentido.</p>]]></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>true</shuffleanswers>
+    <correctfeedback format="html"><text><![CDATA[¡Correcto!]]></text></correctfeedback>
+    <partiallycorrectfeedback format="html"><text><![CDATA[Respuesta parcialmente correcta.]]></text></partiallycorrectfeedback>
+    <incorrectfeedback format="html"><text><![CDATA[Incorrecto. Revisa la explicación de los fundamentos.]]></text></incorrectfeedback>
+    <shownumcorrect/>
+    <selectoption><text><![CDATA[descarte.Peek().color == carta.color]]></text><group>1</group></selectoption>
+    <selectoption><text><![CDATA[descarte.Pop().color == carta.color]]></text><group>1</group></selectoption>
+    <selectoption><text><![CDATA[descarte.Contains(carta)]]></text><group>1</group></selectoption>
+    <selectoption><text><![CDATA[descarte.Count == carta.color]]></text><group>1</group></selectoption>
+    <tags>
+        <tag><text>02-2026</text></tag>
+        <tag><text>Stack</text></tag>
+        <tag><text>Intermedio</text></tag>
+        <tag><text>Seleccionar Palabras</text></tag>
+    </tags>
+</question>
+
+<!-- L-Q28 [Intermedio] Posición inicial en el archivo -->
+<question type="multichoice">
+    <name><text><![CDATA[L-Q28 Posición inicial en el archivo]]></text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p><strong>Escenario:</strong> El diseñador quiere marcar la posición inicial del jugador con la letra <code>P</code> dentro del archivo del mapa:</p>
+<pre><code>1,1,1,1
+1,P,0,1
+1,1,1,1</code></pre>
+<p>El parser actual usa <code>int.TryParse</code> para cada celda.</p>
+<p><strong>Objetivo:</strong> Elegir la forma más adecuada de soportar la <code>P</code>.</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p>Los símbolos especiales deben detectarse <strong>antes</strong> de la conversión numérica. Así se registra la posición del jugador y la celda queda como pasillo vacío. <code>TryParse</code> solo convertiría la <code>P</code> en <code>0</code>, sin guardar la posición: el jugador nunca sabría dónde aparecer. <code>int.Parse</code> lanzaría una excepción, y un segundo archivo complica la edición sin necesidad.</p>]]></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <correctfeedback format="html"><text><![CDATA[¡Correcto!]]></text></correctfeedback>
+    <incorrectfeedback format="html"><text><![CDATA[Incorrecto. Revisa la explicación de los fundamentos.]]></text></incorrectfeedback>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[No cambiar nada: <code>TryParse</code> convertirá la <code>P</code> en la posición del jugador]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[Pedir al diseñador que escriba la posición del jugador en otro archivo]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[Cambiar <code>TryParse</code> por <code>int.Parse</code>]]></text></answer>
+    <answer fraction="100" format="html"><text><![CDATA[Antes de convertir cada token, revisar si es <code>"P"</code>: en ese caso guardar <code>(r, c)</code> como posición inicial y asignar <code>0</code> a la celda; en caso contrario usar <code>TryParse</code>]]></text></answer>
+    <tags>
+        <tag><text>02-2026</text></tag>
+        <tag><text>Arrays y Matrices</text></tag>
+        <tag><text>Intermedio</text></tag>
+        <tag><text>Opcion Multiple</text></tag>
+    </tags>
+</question>
+
+<!-- L-Q29 [Intermedio] Nivel con forma irregular -->
+<question type="multichoice">
+    <name><text><![CDATA[L-Q29 Nivel con forma irregular]]></text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p><em>(Nota: Para esta pregunta, usaremos corchetes [...] en lugar de los símbolos de genéricos &lt; &gt;)</em></p>
+<p><strong>Escenario:</strong> Un nivel tiene forma de pirámide: la primera fila tiene 3 celdas, la segunda 5, la tercera 7, y así sucesivamente. El mapa se lee desde un archivo <code>.txt</code>.</p>
+<p><strong>Objetivo:</strong> Elegir la representación más adecuada.</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p>Una matriz escalonada permite filas de longitudes diferentes y se construye de forma natural línea por línea. Con <code>int[,]</code> habría que inventar valores de relleno y recordar cuáles son reales. Un arreglo plano pierde la estructura de filas, y una cola no permite consultar una celda por su posición.</p>]]></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <correctfeedback format="html"><text><![CDATA[¡Correcto!]]></text></correctfeedback>
+    <incorrectfeedback format="html"><text><![CDATA[Incorrecto. Revisa la explicación de los fundamentos.]]></text></incorrectfeedback>
+    <answer fraction="100" format="html"><text><![CDATA[<code>int[][]</code>, porque cada fila es un arreglo independiente con su propia longitud]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[<code>int[,]</code> del tamaño de la fila más larga, rellenando las celdas sobrantes con valores inventados]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[<code>int[]</code> con todas las celdas seguidas, sin indicar dónde termina cada fila]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[<code>Queue[int]</code> con todas las celdas]]></text></answer>
+    <tags>
+        <tag><text>02-2026</text></tag>
+        <tag><text>Arrays y Matrices</text></tag>
+        <tag><text>Intermedio</text></tag>
+        <tag><text>Opcion Multiple</text></tag>
+    </tags>
+</question>
+
+<!-- L-Q30 [Intermedio] Torreta y zona de detección -->
+<question type="multichoice">
+    <name><text><![CDATA[L-Q30 Torreta y zona de detección]]></text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p><em>(Nota: Para esta pregunta, usaremos corchetes [...] en lugar de los símbolos de genéricos &lt; &gt;)</em></p>
+<p><strong>Escenario:</strong> Una torreta tiene un <code>CircleCollider2D</code> grande con <code>isTrigger</code> como zona de detección. Los enemigos entran y salen de la zona <strong>en cualquier orden</strong>. La torreta debe disparar al enemigo que <strong>lleva más tiempo dentro</strong> de la zona.</p>
+<p><strong>Objetivo:</strong> Elegir el diseño más adecuado.</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p>La lista conserva el orden de entrada (el índice 0 es el que lleva más tiempo dentro) y, además, permite quitar <strong>al enemigo exacto</strong> que sale, sin importar su posición. Con una <code>Queue</code>, <code>Dequeue</code> en <code>OnTriggerExit2D</code> quitaría al primero de la fila aunque el que salió sea otro. El <code>Stack</code> apuntaría al último que entró. Una sola variable apunta siempre al más reciente y no sabe qué pasa cuando sale.</p>]]></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <correctfeedback format="html"><text><![CDATA[¡Correcto!]]></text></correctfeedback>
+    <incorrectfeedback format="html"><text><![CDATA[Incorrecto. Revisa la explicación de los fundamentos.]]></text></incorrectfeedback>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[<code>Queue[GameObject]</code>: <code>Enqueue</code> en <code>OnTriggerEnter2D</code> y <code>Dequeue</code> en <code>OnTriggerExit2D</code>]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[<code>Stack[GameObject]</code>: <code>Push</code> al entrar, <code>Pop</code> al salir y disparar a <code>Peek()</code>]]></text></answer>
+    <answer fraction="100" format="html"><text><![CDATA[<code>List[GameObject]</code>: <code>Add</code> en <code>OnTriggerEnter2D</code>, <code>Remove(other.gameObject)</code> en <code>OnTriggerExit2D</code>, y disparar a <code>enemigos[0]</code> si <code>Count &gt; 0</code>]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[Una sola variable <code>GameObject objetivo</code> que se sobrescribe en cada <code>OnTriggerEnter2D</code>]]></text></answer>
+    <tags>
+        <tag><text>02-2026</text></tag>
+        <tag><text>List</text></tag>
+        <tag><text>Intermedio</text></tag>
+        <tag><text>Opcion Multiple</text></tag>
+    </tags>
+</question>
+
+<!-- L-Q31 [Intermedio] Robot programable -->
+<question type="multichoice">
+    <name><text><![CDATA[L-Q31 Robot programable]]></text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p><em>(Nota: Para esta pregunta, usaremos corchetes [...] en lugar de los símbolos de genéricos &lt; &gt;)</em></p>
+<p><strong>Escenario:</strong> En un puzzle, el jugador arma una secuencia de órdenes (<code>Arriba</code>, <code>Arriba</code>, <code>Derecha</code>, …) que se guarda en <code>Queue[string] comandos</code>. Al presionar <strong>Play</strong>, el robot debe ejecutar <strong>todas</strong> las órdenes en orden, con medio segundo entre cada una.</p>
+<p><strong>Objetivo:</strong> Elegir la corrutina correcta.</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p>El <code>while (comandos.Count &gt; 0)</code> con <code>Dequeue()</code> se repite mientras queden órdenes y consume una en cada vuelta: se ejecutan todas, en orden. Si se usa <code>for (int i = 0; i &lt; comandos.Count; i++)</code>, <code>Count</code> disminuye en cada <code>Dequeue</code> mientras <code>i</code> aumenta, así que el bucle termina <strong>a la mitad</strong> de la secuencia. Usar <code>Peek()</code> en el <code>while</code> nunca retira la orden: el robot repite la primera orden para siempre. Modificar la cola dentro de su propio <code>foreach</code> lanza <code>InvalidOperationException</code>.</p>]]></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <correctfeedback format="html"><text><![CDATA[¡Correcto!]]></text></correctfeedback>
+    <incorrectfeedback format="html"><text><![CDATA[Incorrecto. Revisa la explicación de los fundamentos.]]></text></incorrectfeedback>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[<pre><code>for (int i = 0; i &lt; comandos.Count; i++)
+{
+    Mover(comandos.Dequeue());
+    yield return new WaitForSeconds(0.5f);
+}</code></pre>]]></text></answer>
+    <answer fraction="100" format="html"><text><![CDATA[<pre><code>while (comandos.Count &gt; 0)
+{
+    Mover(comandos.Dequeue());
+    yield return new WaitForSeconds(0.5f);
+}</code></pre>]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[<pre><code>while (comandos.Count &gt; 0)
+{
+    Mover(comandos.Peek());
+    yield return new WaitForSeconds(0.5f);
+}</code></pre>]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[<pre><code>foreach (string cmd in comandos)
+{
+    Mover(comandos.Dequeue());
+    yield return new WaitForSeconds(0.5f);
+}</code></pre>]]></text></answer>
+    <tags>
+        <tag><text>02-2026</text></tag>
+        <tag><text>Queue</text></tag>
+        <tag><text>Intermedio</text></tag>
+        <tag><text>Opcion Multiple</text></tag>
+    </tags>
+</question>
+
+<!-- L-Q32 [Intermedio] Volver a la sala anterior -->
+<question type="multichoice">
+    <name><text><![CDATA[L-Q32 Volver a la sala anterior]]></text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p><em>(Nota: Para esta pregunta, usaremos corchetes [...] en lugar de los símbolos de genéricos &lt; &gt;)</em></p>
+<p><strong>Escenario:</strong> En un juego de exploración, cada sala visitada se guarda con <code>Push()</code> en <code>Stack[Sala] historial</code>, <strong>incluida la sala actual</strong>, que siempre está en la cima. El botón <strong>Regresar</strong> debe llevar al jugador a la sala en la que estaba antes de la actual.</p>
+<p><strong>Objetivo:</strong> Elegir la lógica correcta del botón Regresar.</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p>Como la cima es la sala <strong>actual</strong>, primero hay que retirarla con <code>Pop()</code>; entonces la nueva cima es la sala anterior, que se consulta con <code>Peek()</code> (y se queda en la pila porque ahora es la actual). La condición <code>Count &gt; 1</code> evita quedarse sin sala. Hacer solo <code>IrA(historial.Pop())</code> devuelve la sala actual, así que el jugador "regresa" al mismo lugar. <code>IrA(historial.Peek())</code> tampoco cambia de sala, y <code>Clear()</code> pierde todo el historial.</p>]]></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <correctfeedback format="html"><text><![CDATA[¡Correcto!]]></text></correctfeedback>
+    <incorrectfeedback format="html"><text><![CDATA[Incorrecto. Revisa la explicación de los fundamentos.]]></text></incorrectfeedback>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[<code>IrA(historial.Pop());</code>]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[<code>IrA(historial.Peek());</code>]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[<code>historial.Clear(); IrA(salaInicial);</code>]]></text></answer>
+    <answer fraction="100" format="html"><text><![CDATA[<code>if (historial.Count &gt; 1) { historial.Pop(); IrA(historial.Peek()); }</code>]]></text></answer>
+    <tags>
+        <tag><text>02-2026</text></tag>
+        <tag><text>Stack</text></tag>
+        <tag><text>Intermedio</text></tag>
+        <tag><text>Opcion Multiple</text></tag>
+    </tags>
+</question>
+
+<!-- L-Q33 [Intermedio] Multiplicador de combo -->
+<question type="multichoice">
+    <name><text><![CDATA[L-Q33 Multiplicador de combo]]></text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p><strong>Escenario:</strong> Los multiplicadores de puntaje se guardan en <code>int[] multiplicadores = { 1, 2, 4, 8 };</code>. La variable <code>combo</code> aumenta con cada enemigo derrotado sin recibir daño y <strong>puede superar 3</strong>. A partir del combo 3, el multiplicador debe quedarse en 8.</p>
+<p><strong>Objetivo:</strong> Elegir cómo obtener el multiplicador sin errores.</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p><code>Mathf.Min</code> limita el índice al último válido (3), así que cualquier combo mayor usa el multiplicador 8. Con <code>multiplicadores[combo]</code> se lanza <code>IndexOutOfRangeException</code> en el combo 4. El módulo hace que el multiplicador <strong>vuelva a 1</strong> en el combo 4, castigando al jugador. <code>multiplicadores[Length]</code> está siempre fuera de rango.</p>]]></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <correctfeedback format="html"><text><![CDATA[¡Correcto!]]></text></correctfeedback>
+    <incorrectfeedback format="html"><text><![CDATA[Incorrecto. Revisa la explicación de los fundamentos.]]></text></incorrectfeedback>
+    <answer fraction="100" format="html"><text><![CDATA[<code>multiplicadores[Mathf.Min(combo, multiplicadores.Length - 1)]</code>]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[<code>multiplicadores[combo]</code>]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[<code>multiplicadores[combo % multiplicadores.Length]</code>]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[<code>multiplicadores[multiplicadores.Length]</code>]]></text></answer>
+    <tags>
+        <tag><text>02-2026</text></tag>
+        <tag><text>Arrays y Matrices</text></tag>
+        <tag><text>Intermedio</text></tag>
+        <tag><text>Opcion Multiple</text></tag>
+    </tags>
+</question>
+
+<!-- L-Q34 [Intermedio] ¿Quién avisa que el enemigo murió? -->
+<question type="multichoice">
+    <name><text><![CDATA[L-Q34 ¿Quién avisa que el enemigo murió?]]></text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p><em>(Nota: Para esta pregunta, usaremos corchetes [...] en lugar de los símbolos de genéricos &lt; &gt;)</em></p>
+<p><strong>Escenario:</strong> El <code>EnemyManager</code> guarda los enemigos vivos en una <code>List[Enemigo]</code>. Los enemigos pueden morir por balas, por trampas, por caer al vacío o por explosiones, y cada causa está programada en scripts diferentes.</p>
+<p><strong>Objetivo:</strong> Elegir el diseño que mantiene la lista siempre correcta con menos riesgo de errores.</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p>Si la eliminación ocurre en <strong>un solo lugar</strong> (<code>Morir()</code>), todas las causas de muerte, presentes y futuras, mantienen la lista sincronizada automáticamente. Repartir <code>manager.enemigos.Remove(...)</code> entre muchos scripts funciona hasta que alguien agrega una causa nueva y se olvida de hacerlo. Adivinar desde fuera es frágil y costoso, y vaciar la lista periódicamente borra también a los enemigos vivos.</p>]]></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <correctfeedback format="html"><text><![CDATA[¡Correcto!]]></text></correctfeedback>
+    <incorrectfeedback format="html"><text><![CDATA[Incorrecto. Revisa la explicación de los fundamentos.]]></text></incorrectfeedback>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[Que cada script que causa daño (bala, trampa, explosión…) llame a <code>manager.enemigos.Remove(...)</code> antes de destruir al enemigo]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[Recorrer cada frame todas las balas y trampas para adivinar qué enemigos murieron]]></text></answer>
+    <answer fraction="100" format="html"><text><![CDATA[Que el propio <code>Enemigo</code>, en su método <code>Morir()</code>, se quite de la lista del manager (por ejemplo, <code>manager.Quitar(this)</code>) y luego se destruya; todas las causas de daño solo llaman a <code>RecibirDanio()</code>]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[Vaciar la lista con <code>Clear()</code> cada 10 segundos]]></text></answer>
+    <tags>
+        <tag><text>02-2026</text></tag>
+        <tag><text>List</text></tag>
+        <tag><text>Intermedio</text></tag>
+        <tag><text>Opcion Multiple</text></tag>
+    </tags>
+</question>
+
+<!-- L-Q35 [Intermedio] Colocar torres en la cuadrícula -->
+<question type="multichoice">
+    <name><text><![CDATA[L-Q35 Colocar torres en la cuadrícula]]></text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p><strong>Escenario:</strong> En un juego de defensa de torres, el mapa es <code>int[,] mapa</code> (<code>0</code> = libre, <code>1</code> = camino, <code>2</code> = torre). El jugador hace clic en una celda <code>(r, c)</code> para colocar una torre. Una celda solo admite una torre y no se puede construir sobre el camino.</p>
+<p><strong>Objetivo:</strong> Elegir la lógica correcta.</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p>Se verifica que la celda esté libre (<code>mapa[r, c] == 0</code>) y, después de construir, se <strong>marca como ocupada</strong> en la matriz (<code>mapa[r, c] = 2</code>) para que no se pueda construir otra torre encima. Comprobar solo <code>mapa[r, c] != 1</code> impide construir sobre el camino, pero no actualiza la matriz, así que se pueden apilar torres infinitas en la misma celda. Asignar <code>mapa[r, c] = 2</code> antes de comprobar <code>mapa[r, c] == 0</code> hace que la condición nunca se cumpla. Instanciar solo por tener dinero ignora todas las reglas del tablero.</p>]]></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <correctfeedback format="html"><text><![CDATA[¡Correcto!]]></text></correctfeedback>
+    <incorrectfeedback format="html"><text><![CDATA[Incorrecto. Revisa la explicación de los fundamentos.]]></text></incorrectfeedback>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[Instanciar la torre en <code>(r, c)</code> siempre que el jugador tenga dinero]]></text></answer>
+    <answer fraction="100" format="html"><text><![CDATA[<code>if (mapa[r, c] == 0) { Instantiate(torrePrefab, pos, Quaternion.identity); mapa[r, c] = 2; }</code>]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[<code>if (mapa[r, c] != 1) Instantiate(torrePrefab, pos, Quaternion.identity);</code>]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[<code>mapa[r, c] = 2; if (mapa[r, c] == 0) Instantiate(torrePrefab, pos, Quaternion.identity);</code>]]></text></answer>
+    <tags>
+        <tag><text>02-2026</text></tag>
+        <tag><text>Arrays y Matrices</text></tag>
+        <tag><text>Intermedio</text></tag>
+        <tag><text>Opcion Multiple</text></tag>
+    </tags>
+</question>
+
+<!-- L-Q36 [Intermedio] Pasar al siguiente nivel -->
+<question type="multichoice">
+    <name><text><![CDATA[L-Q36 Pasar al siguiente nivel]]></text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p><strong>Escenario:</strong> Los niveles están en <code>TextAsset[] niveles</code> (asignado en el Inspector) y <code>nivelActual</code> guarda el índice del nivel en juego. Al completar un nivel se debe cargar el siguiente, y al completar <strong>el último</strong> se debe mostrar la pantalla de victoria.</p>
+<p><strong>Objetivo:</strong> Elegir la lógica correcta.</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p>Se comprueba <strong>antes</strong> de avanzar (<code>nivelActual + 1 &lt; niveles.Length</code>) que exista un nivel siguiente; si no existe, el juego terminó. Incrementar sin validar (<code>nivelActual++</code>) lanza <code>IndexOutOfRangeException</code> al completar el último nivel. Usar <code>(nivelActual + 1) % niveles.Length</code> reinicia en el nivel 1 sin mostrar la victoria. Comprobar <code>nivelActual &lt; niveles.Length</code> y luego leer <code>niveles[nivelActual + 1]</code> se cumple justo en el último índice y deja <code>nivelActual + 1</code> fuera de rango.</p>]]></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <correctfeedback format="html"><text><![CDATA[¡Correcto!]]></text></correctfeedback>
+    <incorrectfeedback format="html"><text><![CDATA[Incorrecto. Revisa la explicación de los fundamentos.]]></text></incorrectfeedback>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[<code>nivelActual++; CargarNivel(niveles[nivelActual].text);</code>]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[<code>nivelActual = (nivelActual + 1) % niveles.Length; CargarNivel(niveles[nivelActual].text);</code>]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[<code>if (nivelActual &lt; niveles.Length) CargarNivel(niveles[nivelActual + 1].text);</code>]]></text></answer>
+    <answer fraction="100" format="html"><text><![CDATA[<code>if (nivelActual + 1 &lt; niveles.Length) { nivelActual++; CargarNivel(niveles[nivelActual].text); } else { MostrarVictoria(); }</code>]]></text></answer>
+    <tags>
+        <tag><text>02-2026</text></tag>
+        <tag><text>Arrays y Matrices</text></tag>
+        <tag><text>Intermedio</text></tag>
+        <tag><text>Opcion Multiple</text></tag>
+    </tags>
+</question>
+
+<!-- L-Q37 [Intermedio] Oleadas con tiempos distintos -->
+<question type="multichoice">
+    <name><text><![CDATA[L-Q37 Oleadas con tiempos distintos]]></text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p><em>(Nota: Para esta pregunta, usaremos corchetes [...] en lugar de los símbolos de genéricos &lt; &gt;)</em></p>
+<p><strong>Escenario:</strong> Cada enemigo de una oleada tiene su propio prefab y su propio tiempo de espera antes de aparecer (por ejemplo: murciélago tras 1 s, golem tras 4 s, murciélago tras 0.5 s).</p>
+<p><strong>Objetivo:</strong> Elegir la forma más clara y segura de almacenar la oleada.</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p>Agrupar en un solo objeto los datos que pertenecen juntos (prefab y espera) garantiza que nunca se desincronicen, y la <code>Queue</code> mantiene el orden de la oleada. Dos colas paralelas funcionan, pero basta un <code>Dequeue</code> olvidado en una de ellas para que todos los tiempos queden desfasados. Un único tiempo no cumple el requerimiento, y un <code>Stack</code> invertiría el orden de la oleada.</p>]]></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <correctfeedback format="html"><text><![CDATA[¡Correcto!]]></text></correctfeedback>
+    <incorrectfeedback format="html"><text><![CDATA[Incorrecto. Revisa la explicación de los fundamentos.]]></text></incorrectfeedback>
+    <answer fraction="100" format="html"><text><![CDATA[Una clase <code>EntradaOleada { GameObject prefab; float espera; }</code> y una <code>Queue[EntradaOleada]</code>]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[Dos colas separadas, <code>Queue[GameObject]</code> y <code>Queue[float]</code>, que deben retirarse siempre juntas]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[Una <code>Queue[GameObject]</code> y un único tiempo de espera para todos]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[Un <code>Stack[EntradaOleada]</code>]]></text></answer>
+    <tags>
+        <tag><text>02-2026</text></tag>
+        <tag><text>Queue</text></tag>
+        <tag><text>Intermedio</text></tag>
+        <tag><text>Opcion Multiple</text></tag>
+    </tags>
+</question>
+
+<!-- L-Q38 [Intermedio] Guardar el movimiento para deshacer -->
+<question type="multichoice">
+    <name><text><![CDATA[L-Q38 Guardar el movimiento para deshacer]]></text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p><strong>Escenario:</strong> En un puzzle por casillas, cada movimiento del jugador debe poder deshacerse con <code>Z</code>, devolviéndolo a la posición en la que estaba antes de moverse.</p>
+<p><strong>Objetivo:</strong> Elegir el par de métodos correcto.</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p>Hay que guardar la posición <strong>anterior</strong> al movimiento (antes de cambiarla) y, al deshacer, recuperarla con <code>Pop()</code>. Si primero se cambia <code>transform.position = destino</code> o se guarda <code>historial.Push(destino)</code>, deshacer deja al jugador donde ya está; además, usar <code>Peek()</code> no retira el registro de la pila. Llamar a <code>historial.Clear()</code> al deshacer funciona solo una vez y, sin validar <code>Count</code>, falla con la pila vacía.</p>]]></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <correctfeedback format="html"><text><![CDATA[¡Correcto!]]></text></correctfeedback>
+    <incorrectfeedback format="html"><text><![CDATA[Incorrecto. Revisa la explicación de los fundamentos.]]></text></incorrectfeedback>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[<pre><code>void Mover(Vector3 destino) { transform.position = destino; historial.Push(transform.position); }
+void Deshacer() { if (historial.Count &gt; 0) transform.position = historial.Pop(); }</code></pre>]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[<pre><code>void Mover(Vector3 destino) { historial.Push(destino); transform.position = destino; }
+void Deshacer() { if (historial.Count &gt; 0) transform.position = historial.Peek(); }</code></pre>]]></text></answer>
+    <answer fraction="100" format="html"><text><![CDATA[<pre><code>void Mover(Vector3 destino) { historial.Push(transform.position); transform.position = destino; }
+void Deshacer() { if (historial.Count &gt; 0) transform.position = historial.Pop(); }</code></pre>]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[<pre><code>void Mover(Vector3 destino) { historial.Push(transform.position); transform.position = destino; }
+void Deshacer() { transform.position = historial.Pop(); historial.Clear(); }</code></pre>]]></text></answer>
+    <tags>
+        <tag><text>02-2026</text></tag>
+        <tag><text>Stack</text></tag>
+        <tag><text>Intermedio</text></tag>
+        <tag><text>Opcion Multiple</text></tag>
+    </tags>
+</question>
+
+<!-- L-Q39 [Intermedio] Fin de partida -->
+<question type="multichoice">
+    <name><text><![CDATA[L-Q39 Fin de partida]]></text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p><strong>Escenario:</strong> Cuando el jugador pierde, todos los enemigos de la lista <code>enemigos</code> deben desaparecer de la escena y la lista debe quedar vacía para la siguiente partida.</p>
+<p><strong>Objetivo:</strong> Elegir el código correcto.</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p>Primero se destruye cada GameObject usando las referencias de la lista y <strong>después</strong> se vacía la lista con <code>enemigos.Clear()</code>. <code>Destroy</code> no modifica la lista, así que el <code>foreach</code> es seguro. Si <code>enemigos.Clear()</code> va antes del <code>foreach</code>, el bucle no recorre nada y los enemigos siguen en la escena. Llamar a <code>enemigos.Remove(e)</code> dentro del <code>foreach</code> lanza <code>InvalidOperationException</code> y nunca destruye nada, y llamar únicamente a <code>enemigos.Clear()</code> tampoco destruye los objetos de la escena.</p>]]></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <correctfeedback format="html"><text><![CDATA[¡Correcto!]]></text></correctfeedback>
+    <incorrectfeedback format="html"><text><![CDATA[Incorrecto. Revisa la explicación de los fundamentos.]]></text></incorrectfeedback>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[<pre><code>enemigos.Clear();
+foreach (GameObject e in enemigos) Destroy(e);</code></pre>]]></text></answer>
+    <answer fraction="100" format="html"><text><![CDATA[<pre><code>foreach (GameObject e in enemigos) Destroy(e);
+enemigos.Clear();</code></pre>]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[<pre><code>foreach (GameObject e in enemigos) enemigos.Remove(e);</code></pre>]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[<pre><code>enemigos.Clear();</code></pre>]]></text></answer>
+    <tags>
+        <tag><text>02-2026</text></tag>
+        <tag><text>List</text></tag>
+        <tag><text>Intermedio</text></tag>
+        <tag><text>Opcion Multiple</text></tag>
+    </tags>
+</question>
+
+<!-- L-Q40 [Intermedio] Monedas generadas desde el mapa -->
+<question type="multichoice">
+    <name><text><![CDATA[L-Q40 Monedas generadas desde el mapa]]></text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p><em>(Nota: Para esta pregunta, usaremos corchetes [...] en lugar de los símbolos de genéricos &lt; &gt;)</em></p>
+<p><strong>Escenario:</strong> Las monedas se instancian al leer el archivo del mapa (valor <code>7</code> = moneda). <strong>No se sabe cuántas monedas hay</strong> hasta terminar de recorrer todo el mapa, y cada nivel tiene una cantidad distinta. Durante la partida, las monedas recogidas deben quitarse de la colección.</p>
+<p><strong>Objetivo:</strong> Elegir la colección para las monedas.</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p>Cuando la cantidad se conoce solo <strong>en tiempo de ejecución</strong> y cambia durante la partida, <code>List</code> es la elección natural: crece al instanciar y se reduce al recoger, y <code>Count</code> indica cuántas faltan. Un arreglo de 100 es un límite arbitrario (sobra o falta espacio). Un <code>Stack</code> no permite quitar la moneda específica que se recogió, y una matriz del tamaño del mapa desperdicia espacio y complica contar las monedas restantes.</p>]]></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <correctfeedback format="html"><text><![CDATA[¡Correcto!]]></text></correctfeedback>
+    <incorrectfeedback format="html"><text><![CDATA[Incorrecto. Revisa la explicación de los fundamentos.]]></text></incorrectfeedback>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[<code>GameObject[] monedas = new GameObject[100];</code>]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[<code>Stack[GameObject] monedas</code>]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[<code>GameObject[,] monedas</code> con el tamaño del mapa]]></text></answer>
+    <answer fraction="100" format="html"><text><![CDATA[<code>List[GameObject] monedas</code>, con <code>Add()</code> al instanciar y <code>Remove()</code> al recoger]]></text></answer>
+    <tags>
+        <tag><text>02-2026</text></tag>
+        <tag><text>List</text></tag>
+        <tag><text>Intermedio</text></tag>
+        <tag><text>Opcion Multiple</text></tag>
+    </tags>
+</question>
+
+<!-- ============================================================ -->
+<!-- SUBCATEGORIA: DIFICIL                                        -->
+<!-- ============================================================ -->
+<question type="category">
+    <category><text>$course$/COM200 - Estructuras de Datos en C# para Unity - Logica/Dificil</text></category>
+    <info format="html"><text><![CDATA[<p><strong>Nivel Difícil (10 preguntas):</strong> Estructuras con ventana acotada, búsqueda en anchura y <em>flood fill</em>, robustez ante referencias destruidas, rotación de matrices e integración integral.</p>]]></text></info>
+</question>
+
+<!-- L-Q41 [Dificil] Rebobinar solo los últimos 3 segundos -->
+<question type="multichoice">
+    <name><text><![CDATA[L-Q41 Rebobinar solo los últimos 3 segundos]]></text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p><em>(Nota: Para esta pregunta, usaremos corchetes [...] en lugar de los símbolos de genéricos &lt; &gt;)</em></p>
+<p><strong>Escenario:</strong> El jugador puede rebobinar el tiempo, pero <strong>solo los últimos 3 segundos</strong> (150 posiciones registradas en <code>FixedUpdate</code>). Actualmente se usa un <code>Stack[Vector2]</code> con un <code>Push</code> por cada <code>FixedUpdate</code>, y la memoria crece sin límite durante partidas largas.</p>
+<p><strong>Objetivo:</strong> Elegir la solución más adecuada.</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p>Se necesitan dos cosas: descartar el registro <strong>más antiguo</strong> cuando se excede el límite y recorrer los registros del <strong>más reciente al más antiguo</strong> al rebobinar. Un <code>Stack</code> solo da acceso a la cima: <code>Pop()</code> eliminaría la posición más reciente, no la más antigua. <code>Clear()</code> haría que, justo después del borrado, no hubiera nada que rebobinar. Una <code>Queue</code> descarta bien lo antiguo, pero <code>Dequeue()</code> rebobinaría en el orden equivocado (de lo más antiguo a lo más reciente). La <code>List</code> permite ambas cosas. Un arreglo circular de 150 posiciones sería todavía más eficiente.</p>]]></text></generalfeedback>
+    <defaultgrade>2</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <correctfeedback format="html"><text><![CDATA[¡Correcto!]]></text></correctfeedback>
+    <incorrectfeedback format="html"><text><![CDATA[Incorrecto. Revisa la explicación de los fundamentos.]]></text></incorrectfeedback>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[Llamar a <code>Clear()</code> en la pila cada 3 segundos]]></text></answer>
+    <answer fraction="100" format="html"><text><![CDATA[Usar una <code>List[Vector2]</code>: agregar al final en cada <code>FixedUpdate</code> y, si <code>Count &gt; 150</code>, eliminar el más antiguo con <code>RemoveAt(0)</code>; al rebobinar, recorrer desde el final hacia el inicio]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[Mantener el <code>Stack</code> y hacer <code>Pop()</code> cuando tenga más de 150 elementos]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[Usar una <code>Queue[Vector2]</code> y rebobinar con <code>Dequeue()</code>]]></text></answer>
+    <tags>
+        <tag><text>02-2026</text></tag>
+        <tag><text>Stack</text></tag>
+        <tag><text>List</text></tag>
+        <tag><text>Dificil</text></tag>
+        <tag><text>Opcion Multiple</text></tag>
+    </tags>
+</question>
+
+<!-- L-Q42 [Dificil] Búsqueda del camino más corto -->
+<question type="multichoice">
+    <name><text><![CDATA[L-Q42 Búsqueda del camino más corto]]></text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p><strong>Escenario:</strong> Un fantasma busca el camino más corto hacia el jugador en la cuadrícula del laberinto. Para ello usa una búsqueda en anchura: encola la celda inicial, y mientras la cola no esté vacía, hace <code>Dequeue()</code> de una celda y encola sus vecinas libres. Un estudiante <strong>olvidó marcar las celdas como visitadas</strong> (<code>bool[,] visitado</code>).</p>
+<p><strong>Objetivo:</strong> Elegir qué sucede y por qué.</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p>Sin marcar las celdas visitadas, cada celda vuelve a encolar a sus vecinas, incluida la celda de la que vino. La cola crece sin fin, el <code>while (cola.Count &gt; 0)</code> nunca termina y, como corre en un solo frame, Unity se congela. La matriz <code>visitado</code> (marcada al <strong>encolar</strong> cada celda) garantiza que cada celda entre a la cola una sola vez. El error no tiene relación con los índices ni invierte el resultado de la búsqueda.</p>]]></text></generalfeedback>
+    <defaultgrade>2</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <correctfeedback format="html"><text><![CDATA[¡Correcto!]]></text></correctfeedback>
+    <incorrectfeedback format="html"><text><![CDATA[Incorrecto. Revisa la explicación de los fundamentos.]]></text></incorrectfeedback>
+    <answer fraction="100" format="html"><text><![CDATA[Las celdas se vuelven a encolar una y otra vez (A encola a B y B vuelve a encolar a A), la cola nunca se vacía y el juego se congela]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[El algoritmo funciona igual, solo que un poco más lento]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[Se lanza <code>IndexOutOfRangeException</code> en la primera iteración]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[El fantasma encuentra el camino más largo en lugar del más corto]]></text></answer>
+    <tags>
+        <tag><text>02-2026</text></tag>
+        <tag><text>Queue</text></tag>
+        <tag><text>Dificil</text></tag>
+        <tag><text>Opcion Multiple</text></tag>
+    </tags>
+</question>
+
+<!-- L-Q43 [Dificil] Bloques conectados del mismo color -->
+<question type="multichoice">
+    <name><text><![CDATA[L-Q43 Bloques conectados del mismo color]]></text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p><em>(Nota: Para esta pregunta, usaremos corchetes [...] en lugar de los símbolos de genéricos &lt; &gt;)</em></p>
+<p><strong>Escenario:</strong> En un puzzle de bloques de colores sobre una cuadrícula <code>int[,] colores</code>, al hacer clic en un bloque se deben eliminar <strong>todos los bloques del mismo color conectados</strong> con él (arriba, abajo, izquierda y derecha), sin importar cuántos sean.</p>
+<p><strong>Objetivo:</strong> Elegir el algoritmo correcto.</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p>Este algoritmo (relleno por inundación o <em>flood fill</em>) explora desde la celda inicial hacia todas las celdas conectadas, a cualquier distancia, y la matriz <code>visitado</code> impide procesar una celda dos veces. Revisar solo las 4 vecinas no detecta bloques conectados a mayor distancia. Eliminar todos los del mismo color ignora la regla de conexión. Sin <code>visitado</code>, dos celdas vecinas se apilarían mutuamente para siempre.</p>]]></text></generalfeedback>
+    <defaultgrade>2</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <correctfeedback format="html"><text><![CDATA[¡Correcto!]]></text></correctfeedback>
+    <incorrectfeedback format="html"><text><![CDATA[Incorrecto. Revisa la explicación de los fundamentos.]]></text></incorrectfeedback>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[Revisar solo las 4 celdas vecinas del bloque clicado y eliminar las que tengan el mismo color]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[Recorrer toda la matriz y eliminar todos los bloques de ese color, estén conectados o no]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[Usar un <code>Stack</code> de celdas, pero sin registrar cuáles ya fueron procesadas]]></text></answer>
+    <answer fraction="100" format="html"><text><![CDATA[Usar un <code>Stack[Vector2Int]</code> con la celda inicial y una matriz <code>bool[,] visitado</code>; mientras la pila no esté vacía, hacer <code>Pop()</code>, guardar la celda y hacer <code>Push()</code> de las vecinas válidas del mismo color que no estén visitadas, marcándolas como visitadas]]></text></answer>
+    <tags>
+        <tag><text>02-2026</text></tag>
+        <tag><text>Arrays y Matrices</text></tag>
+        <tag><text>Stack</text></tag>
+        <tag><text>Dificil</text></tag>
+        <tag><text>Opcion Multiple</text></tag>
+    </tags>
+</question>
+
+<!-- L-Q44 [Dificil] La torreta apunta a un fantasma -->
+<question type="multichoice">
+    <name><text><![CDATA[L-Q44 La torreta apunta a un fantasma]]></text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p><em>(Nota: Para esta pregunta, usaremos corchetes [...] en lugar de los símbolos de genéricos &lt; &gt;)</em></p>
+<p><strong>Escenario:</strong> La torreta de Q30 guarda los enemigos que entran a su zona en <code>List[GameObject] enemigos</code> y dispara a <code>enemigos[0]</code>. Cuando un enemigo muere <strong>dentro de la zona</strong> (destruido por otra torreta), a veces la lista conserva una referencia a un objeto destruido y aparece una <code>MissingReferenceException</code> al apuntarle.</p>
+<p><strong>Objetivo:</strong> Elegir la solución más robusta dentro del script de la torreta.</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p>En Unity, una referencia a un objeto destruido se compara como igual a <code>null</code>. Limpiar esas entradas antes de usar la lista garantiza que <code>enemigos[0]</code> sea un enemigo vivo, sin importar quién lo destruyó. Se recorre hacia atrás para no saltarse elementos al eliminar. Vaciar la lista cada frame haría que la torreta olvide a los enemigos que siguen dentro. Elegir el último elemento no evita que también esté destruido, y cambiar el radio no tiene relación con el problema.</p>]]></text></generalfeedback>
+    <defaultgrade>2</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <correctfeedback format="html"><text><![CDATA[¡Correcto!]]></text></correctfeedback>
+    <incorrectfeedback format="html"><text><![CDATA[Incorrecto. Revisa la explicación de los fundamentos.]]></text></incorrectfeedback>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[Llamar a <code>enemigos.Clear()</code> en cada frame]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[Cambiar <code>enemigos[0]</code> por <code>enemigos[enemigos.Count - 1]</code>]]></text></answer>
+    <answer fraction="100" format="html"><text><![CDATA[Antes de elegir el objetivo, recorrer la lista <strong>hacia atrás</strong> y eliminar con <code>RemoveAt(i)</code> las posiciones donde <code>enemigos[i] == null</code>]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[Aumentar el radio del <code>CircleCollider2D</code>]]></text></answer>
+    <tags>
+        <tag><text>02-2026</text></tag>
+        <tag><text>List</text></tag>
+        <tag><text>Dificil</text></tag>
+        <tag><text>Opcion Multiple</text></tag>
+    </tags>
+</question>
+
+<!-- L-Q45 [Dificil] Validar que el mapa sea rectangular -->
+<question type="multichoice">
+    <name><text><![CDATA[L-Q45 Validar que el mapa sea rectangular]]></text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p><strong>Escenario:</strong> El generador de niveles exige que el mapa sea perfectamente rectangular. Algunos diseñadores olvidan un valor en una fila, y el juego carga el nivel con huecos sin que nadie lo note. Después de <code>ParseTextToMatrix</code> se obtiene <code>int[][] mapa</code>.</p>
+<p><strong>Objetivo:</strong> Elegir la validación más útil.</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p>La validación compara cada fila con la primera y, ante un error, informa <strong>dónde</strong> está el problema (fila y longitud), para que el diseñador lo corrija rápidamente. Dejar que algo falle más adelante produce mensajes confusos que no indican la fila. Verificar solo que haya filas no detecta el problema, y rellenar con ceros sin avisar oculta el error, que es justo lo que se quería evitar.</p>]]></text></generalfeedback>
+    <defaultgrade>2</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <correctfeedback format="html"><text><![CDATA[¡Correcto!]]></text></correctfeedback>
+    <incorrectfeedback format="html"><text><![CDATA[Incorrecto. Revisa la explicación de los fundamentos.]]></text></incorrectfeedback>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[Convertir la matriz a <code>int[,]</code> y dejar que falle si algo está mal]]></text></answer>
+    <answer fraction="100" format="html"><text><![CDATA[Recorrer las filas y comparar <code>mapa[r].Length</code> con <code>mapa[0].Length</code>; si alguna es distinta, registrar <code>Debug.LogError</code> indicando el número de fila y su longitud, y no construir el nivel]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[Verificar únicamente que <code>mapa.Length &gt; 0</code>]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[Rellenar las filas cortas con ceros sin avisar]]></text></answer>
+    <tags>
+        <tag><text>02-2026</text></tag>
+        <tag><text>Arrays y Matrices</text></tag>
+        <tag><text>Dificil</text></tag>
+        <tag><text>Opcion Multiple</text></tag>
+    </tags>
+</question>
+
+<!-- L-Q46 [Dificil] Vehículos de emergencia primero -->
+<question type="multichoice">
+    <name><text><![CDATA[L-Q46 Vehículos de emergencia primero]]></text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p><strong>Escenario:</strong> En un simulador de tráfico, los autos esperan en una <code>Queue</code> para entrar a la carretera. Las <strong>ambulancias</strong> deben entrar antes que cualquier auto normal que esté esperando, pero entre ambulancias se respeta el orden de llegada (y lo mismo entre autos normales).</p>
+<p><strong>Objetivo:</strong> Elegir el diseño más adecuado.</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p>Dos colas mantienen el orden FIFO dentro de cada tipo, y revisar primero la cola de ambulancias implementa la prioridad de forma simple y clara. Encolar dos veces duplica vehículos en lugar de adelantarlos. Un <code>Stack</code> atendería al último en llegar. Una <code>Queue</code> no se puede ordenar directamente, y reconstruirla en cada llegada es complejo e innecesario.</p>]]></text></generalfeedback>
+    <defaultgrade>2</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <correctfeedback format="html"><text><![CDATA[¡Correcto!]]></text></correctfeedback>
+    <incorrectfeedback format="html"><text><![CDATA[Incorrecto. Revisa la explicación de los fundamentos.]]></text></incorrectfeedback>
+    <answer fraction="100" format="html"><text><![CDATA[Dos colas: <code>ambulancias</code> y <code>normales</code>. Al liberar un vehículo, si <code>ambulancias.Count &gt; 0</code> se hace <code>Dequeue()</code> de esa cola; si no, de <code>normales</code>]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[Una sola <code>Queue</code> en la que las ambulancias se encolan dos veces]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[Un <code>Stack</code> para todos los vehículos]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[Una sola <code>Queue</code>, ordenada alfabéticamente por tipo de vehículo cada vez que llega uno]]></text></answer>
+    <tags>
+        <tag><text>02-2026</text></tag>
+        <tag><text>Queue</text></tag>
+        <tag><text>Dificil</text></tag>
+        <tag><text>Opcion Multiple</text></tag>
+    </tags>
+</question>
+
+<!-- L-Q47 [Dificil] Escape en el menú principal -->
+<question type="multichoice">
+    <name><text><![CDATA[L-Q47 Escape en el menú principal]]></text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p><em>(Nota: Para esta pregunta, usaremos corchetes [...] en lugar de los símbolos de genéricos &lt; &gt;)</em></p>
+<p><strong>Escenario:</strong> Los paneles de menú se gestionan con <code>Stack[GameObject] paneles</code>. El menú principal se agrega con <code>Push()</code> al iniciar y siempre debe quedar visible como base. La tecla <code>Escape</code> cierra el panel actual y muestra el anterior.</p>
+<p><strong>Objetivo:</strong> Elegir el código correcto para <code>Escape</code>.</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p>Con <code>Count &gt; 1</code> se asegura que siempre quede al menos el menú principal. Se retira y oculta el panel actual con <code>Pop()</code>, y luego se muestra el nuevo panel superior <strong>sin retirarlo</strong> con <code>Peek()</code>. Sin comprobar <code>Count</code> antes de <code>Pop()</code> y <code>Peek()</code>, en el menú principal se cierra la pantalla base y <code>Peek()</code> lanza una excepción con la pila vacía. Hacer solo <code>if (paneles.Count &gt; 0) paneles.Pop().SetActive(false);</code> permite cerrar el menú principal y nunca muestra el panel anterior. Ocultar <code>Peek()</code> y luego activar <code>Pop()</code> oculta el panel actual y lo vuelve a activar de inmediato.</p>]]></text></generalfeedback>
+    <defaultgrade>2</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <correctfeedback format="html"><text><![CDATA[¡Correcto!]]></text></correctfeedback>
+    <incorrectfeedback format="html"><text><![CDATA[Incorrecto. Revisa la explicación de los fundamentos.]]></text></incorrectfeedback>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[<pre><code>paneles.Pop().SetActive(false);
+paneles.Peek().SetActive(true);</code></pre>]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[<pre><code>if (paneles.Count &gt; 0) paneles.Pop().SetActive(false);</code></pre>]]></text></answer>
+    <answer fraction="100" format="html"><text><![CDATA[<pre><code>if (paneles.Count &gt; 1)
+{
+    paneles.Pop().SetActive(false);
+    paneles.Peek().SetActive(true);
+}</code></pre>]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[<pre><code>paneles.Peek().SetActive(false);
+paneles.Pop().SetActive(true);</code></pre>]]></text></answer>
+    <tags>
+        <tag><text>02-2026</text></tag>
+        <tag><text>Stack</text></tag>
+        <tag><text>Dificil</text></tag>
+        <tag><text>Opcion Multiple</text></tag>
+    </tags>
+</question>
+
+<!-- L-Q48 [Dificil] La serpiente que crece -->
+<question type="multichoice">
+    <name><text><![CDATA[L-Q48 La serpiente que crece]]></text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p><em>(Nota: Para esta pregunta, usaremos corchetes [...] en lugar de los símbolos de genéricos &lt; &gt;)</em></p>
+<p><strong>Escenario:</strong> En un juego de la serpiente sobre una cuadrícula, el cuerpo se guarda en una <code>Queue[Vector2Int] cuerpo</code>: la <strong>cola</strong> de la serpiente es el primer elemento y la <strong>cabeza</strong> es el último. En cada paso la cabeza avanza a una nueva celda. Si la serpiente come una manzana, debe crecer un segmento.</p>
+<p><strong>Objetivo:</strong> Elegir la lógica correcta de cada paso.</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p>Cada paso agrega la nueva cabeza al final (<code>Enqueue(nuevaCabeza)</code>). Si la serpiente no comió, el segmento más antiguo (la punta de la cola) se retira con <code>Dequeue()</code>, por lo que la longitud se mantiene. Si comió, se omite el <code>Dequeue()</code> y la serpiente crece exactamente un segmento. Hacer un segundo <code>Dequeue()</code> al comer hace que la serpiente <strong>se encoja</strong>, omitir <code>Dequeue()</code> siempre la hace crecer en cada paso, y pretender retirar la cabeza con <code>Dequeue()</code> y encolar la cola confunde ambos extremos.</p>]]></text></generalfeedback>
+    <defaultgrade>2</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <correctfeedback format="html"><text><![CDATA[¡Correcto!]]></text></correctfeedback>
+    <incorrectfeedback format="html"><text><![CDATA[Incorrecto. Revisa la explicación de los fundamentos.]]></text></incorrectfeedback>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[Siempre <code>cuerpo.Dequeue()</code> y luego <code>cuerpo.Enqueue(nuevaCabeza)</code>, y al comer volver a hacer <code>Dequeue()</code>]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[<code>cuerpo.Enqueue(nuevaCabeza)</code> en cada paso, sin <code>Dequeue()</code> nunca]]></text></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[<code>cuerpo.Dequeue()</code> de la cabeza y <code>cuerpo.Enqueue()</code> de la cola]]></text></answer>
+    <answer fraction="100" format="html"><text><![CDATA[<code>cuerpo.Enqueue(nuevaCabeza)</code> en cada paso; si <strong>no</strong> comió, <code>cuerpo.Dequeue()</code> para retirar el último segmento de la cola; si comió, no se retira nada]]></text></answer>
+    <tags>
+        <tag><text>02-2026</text></tag>
+        <tag><text>Queue</text></tag>
+        <tag><text>Dificil</text></tag>
+        <tag><text>Opcion Multiple</text></tag>
+    </tags>
+</question>
+
+<!-- L-Q49 [Dificil] Rotar una pieza 90° -->
+<question type="gapselect">
+    <name><text><![CDATA[L-Q49 Rotar una pieza 90°]]></text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p><strong>Escenario:</strong> Una pieza de un juego de bloques se guarda en una matriz cuadrada <code>int[,] original</code> de tamaño <code>n × n</code>. Para rotarla 90° <strong>en sentido horario</strong>, se crea una matriz nueva <code>rotada</code> del mismo tamaño y se recorre <code>original</code> con <code>r</code> (fila) y <code>c</code> (columna).</p>
+<pre><code>for (int r = 0; r &lt; n; r++)
+    for (int c = 0; c &lt; n; c++)
+        [[1]] = original[r, c];</code></pre>
+<p><strong>Objetivo:</strong> Elegir la asignación correcta. (Pista: en una rotación horaria, la esquina superior izquierda pasa a la esquina superior derecha.)</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p>Comprobando con la pista: <code>(0, 0)</code> debe ir a <code>(0, n−1)</code>. Con <code>rotada[c, n − 1 − r]</code> se obtiene <code>(0, n−1)</code> ✓. Y la esquina superior derecha <code>(0, n−1)</code> va a <code>(n−1, n−1)</code>, la esquina inferior derecha ✓. <code>rotada[r, c]</code> copia la pieza sin rotarla, <code>rotada[n - 1 - c, r]</code> la rota en sentido <strong>antihorario</strong> y <code>rotada[c, r]</code> la refleja sobre la diagonal (transpuesta), que no es una rotación. Probar con una o dos esquinas es una buena estrategia para verificar fórmulas con índices.</p>]]></text></generalfeedback>
+    <defaultgrade>2</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>true</shuffleanswers>
+    <correctfeedback format="html"><text><![CDATA[¡Correcto!]]></text></correctfeedback>
+    <partiallycorrectfeedback format="html"><text><![CDATA[Respuesta parcialmente correcta.]]></text></partiallycorrectfeedback>
+    <incorrectfeedback format="html"><text><![CDATA[Incorrecto. Revisa la explicación de los fundamentos.]]></text></incorrectfeedback>
+    <shownumcorrect/>
+    <selectoption><text><![CDATA[rotada[c, n - 1 - r]]]></text><group>1</group></selectoption>
+    <selectoption><text><![CDATA[rotada[r, c]]]></text><group>1</group></selectoption>
+    <selectoption><text><![CDATA[rotada[n - 1 - c, r]]]></text><group>1</group></selectoption>
+    <selectoption><text><![CDATA[rotada[c, r]]]></text><group>1</group></selectoption>
+    <tags>
+        <tag><text>02-2026</text></tag>
+        <tag><text>Arrays y Matrices</text></tag>
+        <tag><text>Dificil</text></tag>
+        <tag><text>Seleccionar Palabras</text></tag>
+    </tags>
+</question>
+
+<!-- L-Q50 [Dificil] Diseño de un endless runner -->
+<question type="matching">
+    <name><text><![CDATA[L-Q50 Diseño de un endless runner]]></text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p><em>(Nota: Para esta pregunta, usaremos corchetes [...] en lugar de los símbolos de genéricos &lt; &gt;)</em></p>
+<p><strong>Escenario:</strong> Un juego tipo <em>endless runner</em> 2D tiene cuatro requerimientos.</p>
+<p><strong>Objetivo:</strong> Relacionar cada requerimiento con la estructura más adecuada.</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p><strong>I:</strong> un conjunto fijo de valores configurado en el Inspector es un arreglo <code>float[]</code> (no una matriz <code>float[,]</code> ni una <code>Queue[float]</code>, que además no se muestra en el Inspector). <strong>II:</strong> la reserva de reutilización (<em>object pool</em>) funciona bien con una <code>Queue[GameObject]</code>: <code>Dequeue()</code> para usar y <code>Enqueue()</code> para devolver. <strong>III:</strong> los obstáculos activos se recorren cada frame y salen en cualquier orden, así que se necesita una <code>List[GameObject]</code>, que permite quitar cualquier elemento (una <code>Queue</code> o un <code>Stack</code> no permiten quitar el obstáculo exacto que salió). <strong>IV:</strong> consumir el último escudo obtenido es LIFO, un <code>Stack[Escudo]</code>.</p>]]></text></generalfeedback>
+    <defaultgrade>2</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>true</shuffleanswers>
+    <correctfeedback format="html"><text><![CDATA[¡Correcto!]]></text></correctfeedback>
+    <partiallycorrectfeedback format="html"><text><![CDATA[Respuesta parcialmente correcta.]]></text></partiallycorrectfeedback>
+    <incorrectfeedback format="html"><text><![CDATA[Incorrecto. Revisa la explicación de los fundamentos.]]></text></incorrectfeedback>
+    <shownumcorrect/>
+    <subquestion format="html">
+        <text><![CDATA[<p>I. 3 carriles con posiciones Y fijas, definidas en el Inspector.</p>]]></text>
+        <answer><text><![CDATA[float[]]]></text></answer>
+    </subquestion>
+    <subquestion format="html">
+        <text><![CDATA[<p>II. Obstáculos que se mueven de derecha a izquierda; los que salen de la pantalla se reutilizan en lugar de destruirse.</p>]]></text>
+        <answer><text><![CDATA[Queue[GameObject]]]></text></answer>
+    </subquestion>
+    <subquestion format="html">
+        <text><![CDATA[<p>III. Los obstáculos activos en pantalla deben recorrerse cada frame para moverlos, y salen de la pantalla en cualquier orden según su velocidad.</p>]]></text>
+        <answer><text><![CDATA[List[GameObject]]]></text></answer>
+    </subquestion>
+    <subquestion format="html">
+        <text><![CDATA[<p>IV. Un power-up "escudo" que se puede acumular, y al recibir un golpe se consume el último escudo obtenido.</p>]]></text>
+        <answer><text><![CDATA[Stack[Escudo]]]></text></answer>
+    </subquestion>
+    <subquestion format="html">
+        <text></text>
+        <answer><text><![CDATA[float[,]]]></text></answer>
+    </subquestion>
+    <subquestion format="html">
+        <text></text>
+        <answer><text><![CDATA[Queue[float]]]></text></answer>
+    </subquestion>
+    <tags>
+        <tag><text>02-2026</text></tag>
+        <tag><text>Arrays y Matrices</text></tag>
+        <tag><text>List</text></tag>
+        <tag><text>Queue</text></tag>
+        <tag><text>Stack</text></tag>
+        <tag><text>Dificil</text></tag>
+        <tag><text>Emparejamiento</text></tag>
+    </tags>
+</question>
+
+</quiz>

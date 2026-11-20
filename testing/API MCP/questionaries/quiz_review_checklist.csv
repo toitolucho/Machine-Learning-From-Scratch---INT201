@@ -1,0 +1,56 @@
+ID,Selected,Difficulty,Chapter,Type,Summary
+Q01,TRUE,Facil,Tema 1: Fundamentos HTTP y REST,multichoice,Protocolo para páginas web
+Q02,TRUE,Facil,Tema 1: Fundamentos HTTP y REST,multichoice,Servicio para enviar correos
+Q03,TRUE,Facil,Tema 1: Fundamentos HTTP y REST,multichoice,Transferencia segura de archivos
+Q04,TRUE,Facil,Tema 1: Fundamentos HTTP y REST,multichoice,Quién inicia la comunicación
+Q05,TRUE,Facil,Tema 1: Fundamentos HTTP y REST,truefalse,HTTP es stateless
+Q06,TRUE,Facil,Tema 1: Fundamentos HTTP y REST,multichoice,Partes de un HTTP Request
+Q07,TRUE,Facil,Tema 1: Fundamentos HTTP y REST,multichoice,Propósito del método GET
+Q08,TRUE,Facil,Tema 1: Fundamentos HTTP y REST,multichoice,Método para enviar datos de predicción
+Q09,TRUE,Facil,Tema 1: Fundamentos HTTP y REST,multichoice,Significado de Status Code 200
+Q10,TRUE,Facil,Tema 1: Fundamentos HTTP y REST,multichoice,Status Code 404
+Q11,TRUE,Facil,Tema 1: Fundamentos HTTP y REST,multichoice,Formato de datos en APIs
+Q12,TRUE,Facil,Tema 1: Fundamentos HTTP y REST,multichoice,Rango 5xx
+Q13,TRUE,Facil,Tema 1: Fundamentos HTTP y REST,multichoice,Header Content-Type
+Q14,TRUE,Facil,Tema 1: Fundamentos HTTP y REST,ddwtos,Completar código GET request
+Q15,TRUE,Facil,Tema 1: Fundamentos HTTP y REST,multichoice,Convertir respuesta a diccionario Python
+Q16,TRUE,Intermedio,Tema 2: Principios de Diseno de APIs,ddwtos,Partes de una URL
+Q17,TRUE,Intermedio,Tema 2: Principios de Diseno de APIs,multichoice,Nombres REST correctos
+Q18,TRUE,Intermedio,Tema 2: Principios de Diseno de APIs,multichoice,Eliminar un recurso en REST
+Q19,TRUE,Intermedio,Tema 1: Fundamentos HTTP y REST,ddwtos,CRUD y métodos HTTP
+Q20,TRUE,Intermedio,Tema 2: Principios de Diseno de APIs,multichoice,Significado de 422
+Q21,TRUE,Intermedio,Tema 1: Fundamentos HTTP y REST,ddwtos,Completar POST request
+Q22,TRUE,Facil,Tema 1: Fundamentos HTTP y REST,multichoice,Qué es un servidor
+Q23,TRUE,Facil,Tema 2: Principios de Diseno de APIs,multichoice,Definición de API
+Q24,TRUE,Intermedio,Tema 3: FastAPI Web Framework,multichoice,Qué hace FastAPI
+Q25,TRUE,Intermedio,Tema 3: FastAPI Web Framework,ddwtos,Completar FastAPI Hello World
+Q26,TRUE,Intermedio,Tema 3: FastAPI Web Framework,multichoice,Función del decorador @app.get
+Q27,TRUE,Intermedio,Tema 3: FastAPI Web Framework,truefalse,Dict se convierte en JSON
+Q28,TRUE,Intermedio,Tema 3: FastAPI Web Framework,multichoice,Qué es un path parameter
+Q29,TRUE,Intermedio,Tema 3: FastAPI Web Framework,multichoice,Diferencia path vs query parameter
+Q30,TRUE,Intermedio,Tema 3: FastAPI Web Framework,multichoice,Validación por type hints
+Q31,TRUE,Intermedio,Tema 3: FastAPI Web Framework,ddwtos,Completar Pydantic Model
+Q32,TRUE,Intermedio,Tema 3: FastAPI Web Framework,ddwtos,Completar HTTPException
+Q33,TRUE,Intermedio,Tema 2: Principios de Diseno de APIs,multichoice,Por qué paginar
+Q34,TRUE,Intermedio,Tema 2: Principios de Diseno de APIs,multichoice,Resultado de paginación
+Q35,TRUE,Intermedio,Tema 3: FastAPI Web Framework,ddwtos,Completar comando uvicorn
+Q36,TRUE,Intermedio,Tema 3: FastAPI Web Framework,multichoice,Documentación automática
+Q37,TRUE,Intermedio,Tema 2: Principios de Diseno de APIs,multichoice,Versionamiento de API
+Q38,TRUE,Dificil,Tema 3: FastAPI Web Framework,multichoice,Resultado de la fórmula de predicción
+Q39,TRUE,Intermedio,Tema 3: FastAPI Web Framework,ddwtos,Completar TestClient
+Q40,TRUE,Dificil,Tema 3: FastAPI Web Framework,multichoice,GET en una ruta POST
+Q41,TRUE,Facil,Tema 1: Fundamentos HTTP y REST,multichoice,Tipo de dato de response.json()
+Q42,TRUE,Dificil,Tema 2: Principios de Diseno de APIs,multichoice,Estructura uniforme de errores
+Q43,TRUE,Dificil,Tema 3: FastAPI Web Framework,ddwtos,Stack de FastAPI
+Q44,TRUE,Facil,Tema 1: Fundamentos HTTP y REST,multichoice,Dirección 127.0.0.1
+Q45,TRUE,Facil,Tema 1: Fundamentos HTTP y REST,multichoice,Qué es un puerto
+Q46,TRUE,Dificil,Tema 3: FastAPI Web Framework,multichoice,Flujo completo de un request
+Q47,TRUE,Dificil,Tema 3: FastAPI Web Framework,multichoice,Propósito de response_model
+Q48,TRUE,Intermedio,Tema 3: FastAPI Web Framework,multichoice,Flag --reload de uvicorn
+Q49,TRUE,Intermedio,Tema 1: Fundamentos HTTP y REST,ddwtos,Servicios y sus funciones
+Q50,TRUE,Dificil,Tema 3: FastAPI Web Framework,multichoice,Qué devuelve este endpoint
+Q51,TRUE,Dificil,Tema 3: FastAPI Web Framework,multichoice,Seleccionar código correcto para POST prediction
+Q52,TRUE,Intermedio,Tema 1: Fundamentos HTTP y REST,truefalse,GET es un método seguro (safe)
+Q53,TRUE,Dificil,Tema 2: Principios de Diseno de APIs,ddwtos,Completar función de paginación
+Q54,TRUE,Intermedio,Tema 2: Principios de Diseno de APIs,multichoice,Convención de nombres en APIs
+Q55,TRUE,Dificil,Tema 3: FastAPI Web Framework,multichoice,Diagnóstico completo de un request fallido

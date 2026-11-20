@@ -1,0 +1,1030 @@
+{
+  "assignments": [
+    {
+      "assignmentid": 77380,
+      "submissions": [
+        {
+          "id": 4494250,
+          "userid": 6668,
+          "attemptnumber": 0,
+          "timecreated": 1792439504,
+          "timemodified": 1792439504,
+          "status": "new",
+          "groupid": 0,
+          "plugins": [
+            {
+              "type": "file",
+              "name": "Archivos enviados",
+              "fileareas": [
+                {
+                  "area": "submission_files",
+                  "files": []
+                }
+              ]
+            },
+            {
+              "type": "comments",
+              "name": "Comentarios de la entrega"
+            }
+          ],
+          "gradingstatus": "notgraded"
+        },
+        {
+          "id": 4496423,
+          "userid": 141808,
+          "attemptnumber": 0,
+          "timecreated": 1792551474,
+          "timemodified": 1792675237,
+          "status": "submitted",
+          "groupid": 0,
+          "plugins": [
+            {
+              "type": "file",
+              "name": "Archivos enviados",
+              "fileareas": [
+                {
+                  "area": "submission_files",
+                  "files": [
+                    {
+                      "filename": "Laboratorio_Evaluado_WBCD_y_Evaluación_Multimodelo.ipynb",
+                      "filepath": "/",
+                      "filesize": 19246,
+                      "fileurl": "https://ecampus.usfx.bo/webservice/pluginfile.php/1862529/assignsubmission_file/submission_files/4496423/Laboratorio_Evaluado_WBCD_y_Evaluaci%C3%B3n_Multimodelo.ipynb",
+                      "timemodified": 1792675237,
+                      "mimetype": "text/plain",
+                      "isexternalfile": false
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "comments",
+              "name": "Comentarios de la entrega"
+            }
+          ],
+          "gradingstatus": "notgraded"
+        },
+        {
+          "id": 4497787,
+          "userid": 153505,
+          "attemptnumber": 0,
+          "timecreated": 1792636182,
+          "timemodified": 1792678700,
+          "status": "submitted",
+          "groupid": 0,
+          "plugins": [
+            {
+              "type": "file",
+              "name": "Archivos enviados",
+              "fileareas": [
+                {
+                  "area": "submission_files",
+                  "files": [
+                    {
+                      "filename": "02_Laboratorio_Evaluacion(1).ipynb",
+                      "filepath": "/",
+                      "filesize": 6754,
+                      "fileurl": "https://ecampus.usfx.bo/webservice/pluginfile.php/1862529/assignsubmission_file/submission_files/4497787/02_Laboratorio_Evaluacion%281%29.ipynb",
+                      "timemodified": 1792678700,
+                      "mimetype": "text/plain",
+                      "isexternalfile": false
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "comments",
+              "name": "Comentarios de la entrega"
+            }
+          ],
+          "gradingstatus": "notgraded"
+        },
+        {
+          "id": 4495139,
+          "userid": 158320,
+          "attemptnumber": 0,
+          "timecreated": 1792497273,
+          "timemodified": 1792669846,
+          "status": "submitted",
+          "groupid": 0,
+          "plugins": [
+            {
+              "type": "file",
+              "name": "Archivos enviados",
+              "fileareas": [
+                {
+                  "area": "submission_files",
+                  "files": [
+                    {
+                      "filename": "02_Laboratorio_Evaluacion (1).ipynb",
+                      "filepath": "/",
+                      "filesize": 23019,
+                      "fileurl": "https://ecampus.usfx.bo/webservice/pluginfile.php/1862529/assignsubmission_file/submission_files/4495139/02_Laboratorio_Evaluacion%20%281%29.ipynb",
+                      "timemodified": 1792669846,
+                      "mimetype": "text/html",
+                      "isexternalfile": false
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "comments",
+              "name": "Comentarios de la entrega"
+            }
+          ],
+          "gradingstatus": "notgraded"
+        },
+        {
+          "id": 4494534,
+          "userid": 174037,
+          "attemptnumber": 0,
+          "timecreated": 1792450461,
+          "timemodified": 1792675571,
+          "status": "submitted",
+          "groupid": 0,
+          "plugins": [
+            {
+              "type": "file",
+              "name": "Archivos enviados",
+              "fileareas": [
+                {
+                  "area": "submission_files",
+                  "files": [
+                    {
+                      "filename": "02_Laboratorio_Evaluacion.ipynb",
+                      "filepath": "/",
+                      "filesize": 9219,
+                      "fileurl": "https://ecampus.usfx.bo/webservice/pluginfile.php/1862529/assignsubmission_file/submission_files/4494534/02_Laboratorio_Evaluacion.ipynb",
+                      "timemodified": 1792675571,
+                      "mimetype": "text/plain",
+                      "isexternalfile": false
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "comments",
+              "name": "Comentarios de la entrega"
+            }
+          ],
+          "gradingstatus": "notgraded"
+        },
+        {
+          "id": 4502276,
+          "userid": 181035,
+          "attemptnumber": 0,
+          "timecreated": 1793028124,
+          "timemodified": 1793028124,
+          "status": "new",
+          "groupid": 0,
+          "plugins": [
+            {
+              "type": "file",
+              "name": "Archivos enviados",
+              "fileareas": [
+                {
+                  "area": "submission_files",
+                  "files": []
+                }
+              ]
+            },
+            {
+              "type": "comments",
+              "name": "Comentarios de la entrega"
+            }
+          ],
+          "gradingstatus": "notgraded"
+        },
+        {
+          "id": 4494276,
+          "userid": 189224,
+          "attemptnumber": 0,
+          "timecreated": 1792440273,
+          "timemodified": 1792672792,
+          "status": "submitted",
+          "groupid": 0,
+          "plugins": [
+            {
+              "type": "file",
+              "name": "Archivos enviados",
+              "fileareas": [
+                {
+                  "area": "submission_files",
+                  "files": [
+                    {
+                      "filename": "AlacoriaCuetoEmanuel_t1.ipynb",
+                      "filepath": "/",
+                      "filesize": 14848,
+                      "fileurl": "https://ecampus.usfx.bo/webservice/pluginfile.php/1862529/assignsubmission_file/submission_files/4494276/AlacoriaCuetoEmanuel_t1.ipynb",
+                      "timemodified": 1792672792,
+                      "mimetype": "text/plain",
+                      "isexternalfile": false
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "comments",
+              "name": "Comentarios de la entrega"
+            }
+          ],
+          "gradingstatus": "notgraded"
+        },
+        {
+          "id": 4494749,
+          "userid": 189741,
+          "attemptnumber": 0,
+          "timecreated": 1792458460,
+          "timemodified": 1792641291,
+          "status": "submitted",
+          "groupid": 0,
+          "plugins": [
+            {
+              "type": "file",
+              "name": "Archivos enviados",
+              "fileareas": [
+                {
+                  "area": "submission_files",
+                  "files": [
+                    {
+                      "filename": "05_Comparacion_Clasificadores_Cruz_Trujillo_Brayann.ipynb",
+                      "filepath": "/",
+                      "filesize": 1471812,
+                      "fileurl": "https://ecampus.usfx.bo/webservice/pluginfile.php/1862529/assignsubmission_file/submission_files/4494749/05_Comparacion_Clasificadores_Cruz_Trujillo_Brayann.ipynb",
+                      "timemodified": 1792641291,
+                      "mimetype": "text/plain",
+                      "isexternalfile": false
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "comments",
+              "name": "Comentarios de la entrega"
+            }
+          ],
+          "gradingstatus": "notgraded"
+        },
+        {
+          "id": 4498143,
+          "userid": 192347,
+          "attemptnumber": 0,
+          "timecreated": 1792673634,
+          "timemodified": 1792679312,
+          "status": "submitted",
+          "groupid": 0,
+          "plugins": [
+            {
+              "type": "file",
+              "name": "Archivos enviados",
+              "fileareas": [
+                {
+                  "area": "submission_files",
+                  "files": [
+                    {
+                      "filename": "05_Laboratorio_Evaluacion (1).ipynb",
+                      "filepath": "/",
+                      "filesize": 27196,
+                      "fileurl": "https://ecampus.usfx.bo/webservice/pluginfile.php/1862529/assignsubmission_file/submission_files/4498143/05_Laboratorio_Evaluacion%20%281%29.ipynb",
+                      "timemodified": 1792679312,
+                      "mimetype": "text/plain",
+                      "isexternalfile": false
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "comments",
+              "name": "Comentarios de la entrega"
+            }
+          ],
+          "gradingstatus": "notgraded"
+        },
+        {
+          "id": 4497475,
+          "userid": 193316,
+          "attemptnumber": 0,
+          "timecreated": 1792624154,
+          "timemodified": 1792679671,
+          "status": "submitted",
+          "groupid": 0,
+          "plugins": [
+            {
+              "type": "file",
+              "name": "Archivos enviados",
+              "fileareas": [
+                {
+                  "area": "submission_files",
+                  "files": [
+                    {
+                      "filename": "05_Comparacion_Clasificadores_Tarea.ipynb",
+                      "filepath": "/",
+                      "filesize": 1157555,
+                      "fileurl": "https://ecampus.usfx.bo/webservice/pluginfile.php/1862529/assignsubmission_file/submission_files/4497475/05_Comparacion_Clasificadores_Tarea.ipynb",
+                      "timemodified": 1792679671,
+                      "mimetype": "text/plain",
+                      "isexternalfile": false
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "comments",
+              "name": "Comentarios de la entrega"
+            }
+          ],
+          "gradingstatus": "notgraded"
+        },
+        {
+          "id": 4494524,
+          "userid": 199170,
+          "attemptnumber": 0,
+          "timecreated": 1792449861,
+          "timemodified": 1792674211,
+          "status": "submitted",
+          "groupid": 0,
+          "plugins": [
+            {
+              "type": "file",
+              "name": "Archivos enviados",
+              "fileareas": [
+                {
+                  "area": "submission_files",
+                  "files": [
+                    {
+                      "filename": "01_Tarea_MaytaBaltazarEdemir.ipynb",
+                      "filepath": "/",
+                      "filesize": 7813,
+                      "fileurl": "https://ecampus.usfx.bo/webservice/pluginfile.php/1862529/assignsubmission_file/submission_files/4494524/01_Tarea_MaytaBaltazarEdemir.ipynb",
+                      "timemodified": 1792674211,
+                      "mimetype": "text/plain",
+                      "isexternalfile": false
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "comments",
+              "name": "Comentarios de la entrega"
+            }
+          ],
+          "gradingstatus": "notgraded"
+        },
+        {
+          "id": 4494256,
+          "userid": 199822,
+          "attemptnumber": 0,
+          "timecreated": 1792439668,
+          "timemodified": 1792439668,
+          "status": "new",
+          "groupid": 0,
+          "plugins": [
+            {
+              "type": "file",
+              "name": "Archivos enviados",
+              "fileareas": [
+                {
+                  "area": "submission_files",
+                  "files": []
+                }
+              ]
+            },
+            {
+              "type": "comments",
+              "name": "Comentarios de la entrega"
+            }
+          ],
+          "gradingstatus": "notgraded"
+        },
+        {
+          "id": 4499662,
+          "userid": 201052,
+          "attemptnumber": 0,
+          "timecreated": 1792764370,
+          "timemodified": 1792764370,
+          "status": "new",
+          "groupid": 0,
+          "plugins": [
+            {
+              "type": "file",
+              "name": "Archivos enviados",
+              "fileareas": [
+                {
+                  "area": "submission_files",
+                  "files": []
+                }
+              ]
+            },
+            {
+              "type": "comments",
+              "name": "Comentarios de la entrega"
+            }
+          ],
+          "gradingstatus": "notgraded"
+        },
+        {
+          "id": 4495808,
+          "userid": 201054,
+          "attemptnumber": 0,
+          "timecreated": 1792534244,
+          "timemodified": 1792675923,
+          "status": "submitted",
+          "groupid": 0,
+          "plugins": [
+            {
+              "type": "file",
+              "name": "Archivos enviados",
+              "fileareas": [
+                {
+                  "area": "submission_files",
+                  "files": [
+                    {
+                      "filename": "02_Laboratorio_Evaluacion (1).ipynb",
+                      "filepath": "/",
+                      "filesize": 9025,
+                      "fileurl": "https://ecampus.usfx.bo/webservice/pluginfile.php/1862529/assignsubmission_file/submission_files/4495808/02_Laboratorio_Evaluacion%20%281%29.ipynb",
+                      "timemodified": 1792675923,
+                      "mimetype": "text/plain",
+                      "isexternalfile": false
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "comments",
+              "name": "Comentarios de la entrega"
+            }
+          ],
+          "gradingstatus": "notgraded"
+        },
+        {
+          "id": 4494925,
+          "userid": 202678,
+          "attemptnumber": 0,
+          "timecreated": 1792466113,
+          "timemodified": 1792677400,
+          "status": "submitted",
+          "groupid": 0,
+          "plugins": [
+            {
+              "type": "file",
+              "name": "Archivos enviados",
+              "fileareas": [
+                {
+                  "area": "submission_files",
+                  "files": [
+                    {
+                      "filename": "02_Laboratorio_Evaluacion_Limbert_Mamani_Isla.ipynb",
+                      "filepath": "/",
+                      "filesize": 5289,
+                      "fileurl": "https://ecampus.usfx.bo/webservice/pluginfile.php/1862529/assignsubmission_file/submission_files/4494925/02_Laboratorio_Evaluacion_Limbert_Mamani_Isla.ipynb",
+                      "timemodified": 1792677400,
+                      "mimetype": "text/plain",
+                      "isexternalfile": false
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "comments",
+              "name": "Comentarios de la entrega"
+            }
+          ],
+          "gradingstatus": "notgraded"
+        },
+        {
+          "id": 4494999,
+          "userid": 203220,
+          "attemptnumber": 0,
+          "timecreated": 1792468801,
+          "timemodified": 1792678842,
+          "status": "submitted",
+          "groupid": 0,
+          "plugins": [
+            {
+              "type": "file",
+              "name": "Archivos enviados",
+              "fileareas": [
+                {
+                  "area": "submission_files",
+                  "files": [
+                    {
+                      "filename": "02_Laboratorio_Evaluacion.completar.ipynb",
+                      "filepath": "/",
+                      "filesize": 5196,
+                      "fileurl": "https://ecampus.usfx.bo/webservice/pluginfile.php/1862529/assignsubmission_file/submission_files/4494999/02_Laboratorio_Evaluacion.completar.ipynb",
+                      "timemodified": 1792678842,
+                      "mimetype": "text/plain",
+                      "isexternalfile": false
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "comments",
+              "name": "Comentarios de la entrega"
+            }
+          ],
+          "gradingstatus": "notgraded"
+        },
+        {
+          "id": 4496574,
+          "userid": 206010,
+          "attemptnumber": 0,
+          "timecreated": 1792557378,
+          "timemodified": 1792557378,
+          "status": "new",
+          "groupid": 0,
+          "plugins": [
+            {
+              "type": "file",
+              "name": "Archivos enviados",
+              "fileareas": [
+                {
+                  "area": "submission_files",
+                  "files": []
+                }
+              ]
+            },
+            {
+              "type": "comments",
+              "name": "Comentarios de la entrega"
+            }
+          ],
+          "gradingstatus": "notgraded"
+        },
+        {
+          "id": 4497884,
+          "userid": 206492,
+          "attemptnumber": 0,
+          "timecreated": 1792639468,
+          "timemodified": 1792640761,
+          "status": "submitted",
+          "groupid": 0,
+          "plugins": [
+            {
+              "type": "file",
+              "name": "Archivos enviados",
+              "fileareas": [
+                {
+                  "area": "submission_files",
+                  "files": [
+                    {
+                      "filename": "02_Laboratorio_Evaluacion.ipynb",
+                      "filepath": "/",
+                      "filesize": 6961,
+                      "fileurl": "https://ecampus.usfx.bo/webservice/pluginfile.php/1862529/assignsubmission_file/submission_files/4497884/02_Laboratorio_Evaluacion.ipynb",
+                      "timemodified": 1792640761,
+                      "mimetype": "text/plain",
+                      "isexternalfile": false
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "comments",
+              "name": "Comentarios de la entrega"
+            }
+          ],
+          "gradingstatus": "notgraded"
+        },
+        {
+          "id": 4496655,
+          "userid": 206731,
+          "attemptnumber": 0,
+          "timecreated": 1792580660,
+          "timemodified": 1792670808,
+          "status": "submitted",
+          "groupid": 0,
+          "plugins": [
+            {
+              "type": "file",
+              "name": "Archivos enviados",
+              "fileareas": [
+                {
+                  "area": "submission_files",
+                  "files": [
+                    {
+                      "filename": "02_laboratorio_evaluacion_YAreth_Penacho_Flores.py",
+                      "filepath": "/",
+                      "filesize": 5664,
+                      "fileurl": "https://ecampus.usfx.bo/webservice/pluginfile.php/1862529/assignsubmission_file/submission_files/4496655/02_laboratorio_evaluacion_YAreth_Penacho_Flores.py",
+                      "timemodified": 1792670808,
+                      "mimetype": "document/unknown",
+                      "isexternalfile": false
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "comments",
+              "name": "Comentarios de la entrega"
+            }
+          ],
+          "gradingstatus": "notgraded"
+        },
+        {
+          "id": 4498083,
+          "userid": 207738,
+          "attemptnumber": 0,
+          "timecreated": 1792670820,
+          "timemodified": 1792671611,
+          "status": "submitted",
+          "groupid": 0,
+          "plugins": [
+            {
+              "type": "file",
+              "name": "Archivos enviados",
+              "fileareas": [
+                {
+                  "area": "submission_files",
+                  "files": [
+                    {
+                      "filename": "02_Laboratorio_Evaluacion_abrilnuñezdelpradoo.ipynb",
+                      "filepath": "/",
+                      "filesize": 12057,
+                      "fileurl": "https://ecampus.usfx.bo/webservice/pluginfile.php/1862529/assignsubmission_file/submission_files/4498083/02_Laboratorio_Evaluacion_abrilnu%C3%B1ezdelpradoo.ipynb",
+                      "timemodified": 1792671611,
+                      "mimetype": "text/plain",
+                      "isexternalfile": false
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "comments",
+              "name": "Comentarios de la entrega"
+            }
+          ],
+          "gradingstatus": "notgraded"
+        },
+        {
+          "id": 4494846,
+          "userid": 208354,
+          "attemptnumber": 0,
+          "timecreated": 1792462448,
+          "timemodified": 1792677512,
+          "status": "submitted",
+          "groupid": 0,
+          "plugins": [
+            {
+              "type": "file",
+              "name": "Archivos enviados",
+              "fileareas": [
+                {
+                  "area": "submission_files",
+                  "files": [
+                    {
+                      "filename": "02_Laboratorio_Evaluacion.ipynb",
+                      "filepath": "/",
+                      "filesize": 7964,
+                      "fileurl": "https://ecampus.usfx.bo/webservice/pluginfile.php/1862529/assignsubmission_file/submission_files/4494846/02_Laboratorio_Evaluacion.ipynb",
+                      "timemodified": 1792677512,
+                      "mimetype": "text/plain",
+                      "isexternalfile": false
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "comments",
+              "name": "Comentarios de la entrega"
+            }
+          ],
+          "gradingstatus": "notgraded"
+        },
+        {
+          "id": 4498085,
+          "userid": 208954,
+          "attemptnumber": 0,
+          "timecreated": 1792671037,
+          "timemodified": 1792679308,
+          "status": "submitted",
+          "groupid": 0,
+          "plugins": [
+            {
+              "type": "file",
+              "name": "Archivos enviados",
+              "fileareas": [
+                {
+                  "area": "submission_files",
+                  "files": [
+                    {
+                      "filename": "02_Laboratorio_Evaluacion_Resuelto (2).ipynb",
+                      "filepath": "/",
+                      "filesize": 78446,
+                      "fileurl": "https://ecampus.usfx.bo/webservice/pluginfile.php/1862529/assignsubmission_file/submission_files/4498085/02_Laboratorio_Evaluacion_Resuelto%20%282%29.ipynb",
+                      "timemodified": 1792679308,
+                      "mimetype": "text/html",
+                      "isexternalfile": false
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "comments",
+              "name": "Comentarios de la entrega"
+            }
+          ],
+          "gradingstatus": "notgraded"
+        },
+        {
+          "id": 4497192,
+          "userid": 209092,
+          "attemptnumber": 0,
+          "timecreated": 1792610157,
+          "timemodified": 1792610157,
+          "status": "new",
+          "groupid": 0,
+          "plugins": [
+            {
+              "type": "file",
+              "name": "Archivos enviados",
+              "fileareas": [
+                {
+                  "area": "submission_files",
+                  "files": []
+                }
+              ]
+            },
+            {
+              "type": "comments",
+              "name": "Comentarios de la entrega"
+            }
+          ],
+          "gradingstatus": "notgraded"
+        },
+        {
+          "id": 4495436,
+          "userid": 209278,
+          "attemptnumber": 0,
+          "timecreated": 1792511632,
+          "timemodified": 1792671778,
+          "status": "submitted",
+          "groupid": 0,
+          "plugins": [
+            {
+              "type": "file",
+              "name": "Archivos enviados",
+              "fileareas": [
+                {
+                  "area": "submission_files",
+                  "files": [
+                    {
+                      "filename": "02_Laboratorio_Evaluacion_sklearn.py",
+                      "filepath": "/",
+                      "filesize": 3973,
+                      "fileurl": "https://ecampus.usfx.bo/webservice/pluginfile.php/1862529/assignsubmission_file/submission_files/4495436/02_Laboratorio_Evaluacion_sklearn.py",
+                      "timemodified": 1792671778,
+                      "mimetype": "document/unknown",
+                      "isexternalfile": false
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "comments",
+              "name": "Comentarios de la entrega"
+            }
+          ],
+          "gradingstatus": "notgraded"
+        },
+        {
+          "id": 4495721,
+          "userid": 209300,
+          "attemptnumber": 0,
+          "timecreated": 1792531300,
+          "timemodified": 1792670571,
+          "status": "submitted",
+          "groupid": 0,
+          "plugins": [
+            {
+              "type": "file",
+              "name": "Archivos enviados",
+              "fileareas": [
+                {
+                  "area": "submission_files",
+                  "files": [
+                    {
+                      "filename": "02_laboratorio_evaluacion_GDPM_.py",
+                      "filepath": "/",
+                      "filesize": 4903,
+                      "fileurl": "https://ecampus.usfx.bo/webservice/pluginfile.php/1862529/assignsubmission_file/submission_files/4495721/02_laboratorio_evaluacion_GDPM_.py",
+                      "timemodified": 1792670571,
+                      "mimetype": "document/unknown",
+                      "isexternalfile": false
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "comments",
+              "name": "Comentarios de la entrega"
+            }
+          ],
+          "gradingstatus": "notgraded"
+        },
+        {
+          "id": 4495628,
+          "userid": 209918,
+          "attemptnumber": 0,
+          "timecreated": 1792525952,
+          "timemodified": 1792672617,
+          "status": "submitted",
+          "groupid": 0,
+          "plugins": [
+            {
+              "type": "file",
+              "name": "Archivos enviados",
+              "fileareas": [
+                {
+                  "area": "submission_files",
+                  "files": [
+                    {
+                      "filename": "Tarea.ipynb",
+                      "filepath": "/",
+                      "filesize": 85192,
+                      "fileurl": "https://ecampus.usfx.bo/webservice/pluginfile.php/1862529/assignsubmission_file/submission_files/4495628/Tarea.ipynb",
+                      "timemodified": 1792672617,
+                      "mimetype": "text/plain",
+                      "isexternalfile": false
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "comments",
+              "name": "Comentarios de la entrega"
+            }
+          ],
+          "gradingstatus": "notgraded"
+        },
+        {
+          "id": 4495229,
+          "userid": 210608,
+          "attemptnumber": 0,
+          "timecreated": 1792502237,
+          "timemodified": 1792678359,
+          "status": "submitted",
+          "groupid": 0,
+          "plugins": [
+            {
+              "type": "file",
+              "name": "Archivos enviados",
+              "fileareas": [
+                {
+                  "area": "submission_files",
+                  "files": [
+                    {
+                      "filename": "02_Laboratorio_Evaluacion_(1).ipynb",
+                      "filepath": "/",
+                      "filesize": 7616,
+                      "fileurl": "https://ecampus.usfx.bo/webservice/pluginfile.php/1862529/assignsubmission_file/submission_files/4495229/02_Laboratorio_Evaluacion_%281%29.ipynb",
+                      "timemodified": 1792678359,
+                      "mimetype": "text/plain",
+                      "isexternalfile": false
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "comments",
+              "name": "Comentarios de la entrega"
+            }
+          ],
+          "gradingstatus": "notgraded"
+        },
+        {
+          "id": 4498182,
+          "userid": 210683,
+          "attemptnumber": 0,
+          "timecreated": 1792674520,
+          "timemodified": 1792675763,
+          "status": "submitted",
+          "groupid": 0,
+          "plugins": [
+            {
+              "type": "file",
+              "name": "Archivos enviados",
+              "fileareas": [
+                {
+                  "area": "submission_files",
+                  "files": [
+                    {
+                      "filename": "02_laboratorio_evalucion y resultados.zip",
+                      "filepath": "/",
+                      "filesize": 3596,
+                      "fileurl": "https://ecampus.usfx.bo/webservice/pluginfile.php/1862529/assignsubmission_file/submission_files/4498182/02_laboratorio_evalucion%20y%20resultados.zip",
+                      "timemodified": 1792675763,
+                      "mimetype": "application/zip",
+                      "isexternalfile": false
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "comments",
+              "name": "Comentarios de la entrega"
+            }
+          ],
+          "gradingstatus": "notgraded"
+        },
+        {
+          "id": 4497731,
+          "userid": 210700,
+          "attemptnumber": 0,
+          "timecreated": 1792634237,
+          "timemodified": 1792679159,
+          "status": "submitted",
+          "groupid": 0,
+          "plugins": [
+            {
+              "type": "file",
+              "name": "Archivos enviados",
+              "fileareas": [
+                {
+                  "area": "submission_files",
+                  "files": [
+                    {
+                      "filename": "tarea1_machinelearning.ipynb",
+                      "filepath": "/",
+                      "filesize": 49805,
+                      "fileurl": "https://ecampus.usfx.bo/webservice/pluginfile.php/1862529/assignsubmission_file/submission_files/4497731/tarea1_machinelearning.ipynb",
+                      "timemodified": 1792679159,
+                      "mimetype": "text/html",
+                      "isexternalfile": false
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "comments",
+              "name": "Comentarios de la entrega"
+            }
+          ],
+          "gradingstatus": "notgraded"
+        },
+        {
+          "id": 4494854,
+          "userid": 211525,
+          "attemptnumber": 0,
+          "timecreated": 1792462758,
+          "timemodified": 1792678724,
+          "status": "submitted",
+          "groupid": 0,
+          "plugins": [
+            {
+              "type": "file",
+              "name": "Archivos enviados",
+              "fileareas": [
+                {
+                  "area": "submission_files",
+                  "files": [
+                    {
+                      "filename": "02_Laboratorio_Evaluacion.ipynb",
+                      "filepath": "/",
+                      "filesize": 717056,
+                      "fileurl": "https://ecampus.usfx.bo/webservice/pluginfile.php/1862529/assignsubmission_file/submission_files/4494854/02_Laboratorio_Evaluacion.ipynb",
+                      "timemodified": 1792678724,
+                      "mimetype": "text/html",
+                      "isexternalfile": false
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "comments",
+              "name": "Comentarios de la entrega"
+            }
+          ],
+          "gradingstatus": "notgraded"
+        }
+      ]
+    }
+  ],
+  "warnings": []
+}

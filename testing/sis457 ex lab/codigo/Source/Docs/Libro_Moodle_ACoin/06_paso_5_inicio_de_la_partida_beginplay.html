@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Paso 5. Inicio de la partida (BeginPlay)</title>
+</head>
+<body>
+<h3>5.1 Código</h3>
+<p>En <code style="background:#f0f0f0;padding:1px 4px;border-radius:3px;">Coin.h</code>, agregar una sección <code style="background:#f0f0f0;padding:1px 4px;border-radius:3px;">protected</code>:</p>
+<pre style="background:#f6f8fa;border:1px solid #d0d7de;border-radius:4px;padding:12px;overflow-x:auto;font-size:0.9em;line-height:1.45;"><code>protected:
+    virtual void BeginPlay() override;</code></pre>
+<p>En <code style="background:#f0f0f0;padding:1px 4px;border-radius:3px;">Coin.cpp</code>, implementar el método y completar el espacio:</p>
+<pre style="background:#f6f8fa;border:1px solid #d0d7de;border-radius:4px;padding:12px;overflow-x:auto;font-size:0.9em;line-height:1.45;"><code>void ACoin::BeginPlay()
+{
+    Super::BeginPlay();
+
+    if (bLadoAleatorio)
+    {
+        bEsCara = FMath::______();               // PISTA: función de FMath que devuelve true o false al azar (Rand + Bool).
+    }
+
+    MostrarLado();
+}</code></pre>
+<h3>5.2 Fundamento</h3>
+<ul>
+<li><code style="background:#f0f0f0;padding:1px 4px;border-radius:3px;">override</code> indica que se redefine un método virtual de la clase padre <code style="background:#f0f0f0;padding:1px 4px;border-radius:3px;">AActor</code>.
+</li>
+<li><code style="background:#f0f0f0;padding:1px 4px;border-radius:3px;">Super::BeginPlay()</code> ejecuta la lógica de inicialización de <code style="background:#f0f0f0;padding:1px 4px;border-radius:3px;">AActor</code>; no debe omitirse.
+</li>
+<li>El constructor define componentes y valores por defecto, y se ejecuta también en el editor. La lógica de juego, como elegir un lado al azar, corresponde a <code style="background:#f0f0f0;padding:1px 4px;border-radius:3px;">BeginPlay()</code>, que se ejecuta cuando inicia la partida.
+</li>
+</ul>
+<h3>Punto de verificación 5</h3>
+<p>Presionar <strong>Play</strong> varias veces. La moneda debe aparecer en algunas ejecuciones de color naranja (CARA) y en otras de color azul (SELLO).</p>
+</body>
+</html>

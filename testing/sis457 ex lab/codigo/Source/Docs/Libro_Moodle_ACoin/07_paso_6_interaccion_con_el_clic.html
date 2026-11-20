@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Paso 6. Interacción con el clic</title>
+</head>
+<body>
+<h3>6.1 Declaración</h3>
+<p>En <code style="background:#f0f0f0;padding:1px 4px;border-radius:3px;">Coin.h</code>, sección <code style="background:#f0f0f0;padding:1px 4px;border-radius:3px;">public</code>:</p>
+<pre style="background:#f6f8fa;border:1px solid #d0d7de;border-radius:4px;padding:12px;overflow-x:auto;font-size:0.9em;line-height:1.45;"><code>    /** Responde al clic del jugador sobre la moneda. */
+    UFUNCTION()
+    void CoinClicked(UPrimitiveComponent* ClickedComp, FKey ButtonClicked);</code></pre>
+<h3>6.2 Conexión del evento</h3>
+<p>En <code style="background:#f0f0f0;padding:1px 4px;border-radius:3px;">Coin.cpp</code>, al final del constructor:</p>
+<pre style="background:#f6f8fa;border:1px solid #d0d7de;border-radius:4px;padding:12px;overflow-x:auto;font-size:0.9em;line-height:1.45;"><code>    // 7. Conexión del evento de clic
+    CoinMesh-&gt;OnClicked.AddDynamic(this, &amp;ACoin::CoinClicked);</code></pre>
+<h3>6.3 Implementación</h3>
+<p>En <code style="background:#f0f0f0;padding:1px 4px;border-radius:3px;">Coin.cpp</code>, implementar el método y completar los espacios:</p>
+<pre style="background:#f6f8fa;border:1px solid #d0d7de;border-radius:4px;padding:12px;overflow-x:auto;font-size:0.9em;line-height:1.45;"><code>void ACoin::CoinClicked(UPrimitiveComponent* ClickedComp, FKey ButtonClicked)
+{
+    bEsCara = FMath::RandBool();                 // Lanzamiento aleatorio
+    ______;                                      // PISTA: incrementar en uno el atributo Lanzamientos (operador ++).
+    MostrarLado();
+
+    UE_LOG(LogTemp, Warning, TEXT(&quot;Moneda %s: %s - lanzamientos: %d&quot;),
+        *GetName(),
+        bEsCara ? ______(&quot;CARA&quot;) : TEXT(&quot;SELLO&quot;),   // PISTA: macro que convierte el literal al tipo de texto de Unreal.
+        Lanzamientos);
+}</code></pre>
+<h3>6.4 Fundamento</h3>
+<ul>
+<li><code style="background:#f0f0f0;padding:1px 4px;border-radius:3px;">OnClicked</code> es un <strong>delegado dinámico</strong> del componente; <code style="background:#f0f0f0;padding:1px 4px;border-radius:3px;">AddDynamic</code> le asocia un método.
+</li>
+<li>Los delegados dinámicos enlazan el método por su nombre mediante el sistema de reflexión; por ello el método debe estar marcado con <code style="background:#f0f0f0;padding:1px 4px;border-radius:3px;">UFUNCTION()</code>.
+</li>
+<li><code style="background:#f0f0f0;padding:1px 4px;border-radius:3px;">UE_LOG</code> trabaja con cadenas de tipo <code style="background:#f0f0f0;padding:1px 4px;border-radius:3px;">TCHAR</code>; los literales deben envolverse en la macro <code style="background:#f0f0f0;padding:1px 4px;border-radius:3px;">TEXT(...)</code>.
+</li>
+</ul>
+<h3>Punto de verificación 6</h3>
+<p>Abrir el registro con <strong>Window → Developer Tools → Output Log</strong>. Presionar <strong>Play</strong> y hacer clic varias veces sobre la moneda. En cada clic, el color debe corresponder al lado indicado en el registro, y el contador de lanzamientos debe aumentar en uno.</p>
+</body>
+</html>

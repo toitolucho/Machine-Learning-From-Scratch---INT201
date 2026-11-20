@@ -1,7 +1,14 @@
 import os
+import sys
 import requests
 import json
 from dotenv import load_dotenv
+
+if hasattr(sys.stdout, 'reconfigure'):
+    try:
+        sys.stdout.reconfigure(encoding='utf-8', errors='replace')
+    except Exception:
+        pass
 
 load_dotenv()
 
@@ -16,8 +23,9 @@ TOKEN = os.environ.get('MOODLE_TOKEN')
 # 2. Configuration based on your links
 MOODLE_DOMAIN = os.environ.get('MOODLE_DOMAIN', 'https://ecampus.usfx.bo')
 #MOODLE_DOMAIN = 'https://aulasvirtuales.usfx.bo/tecnologia'
-COURSE_ID = 1413          # From your course link
-CM_ID_FROM_URL = 410653   # From your assignment link (view.php?id=XXXX)
+COURSE_ID = 6582          # From your course link
+CM_ID_FROM_URL = 419643   # From your assignment link (view.php?id=XXXX)
+DOWNLOAD_FILES = True     # Set to True to download submission files
 
 # ================= THE SCRIPT =================
 ENDPOINT = f'{MOODLE_DOMAIN}/webservice/rest/server.php'
@@ -59,6 +67,7 @@ def main():
     
     real_assign_id = None
     assign_name = None
+    mod_type = None
 
     if course_content and 'exception' not in course_content:
         # Loop through all sections and modules to find our assignment
@@ -67,34 +76,90 @@ def main():
                 if module.get('id') == CM_ID_FROM_URL:
                     real_assign_id = module.get('instance')
                     assign_name = module.get('name')
-                    print(f"✅ Found it! Module '{assign_name}'")
+                    mod_type = module.get('modname')
+                    print(f"✅ Found it! Module '{assign_name}' (Type: {mod_type})")
                     print(f"   - URL ID (CMID): {CM_ID_FROM_URL}")
-                    print(f"   - Real DB ID (Instance): {real_assign_id} <--- We need this one")
+                    print(f"   - Real DB ID (Instance): {real_assign_id}")
                     break
             if real_assign_id: break
     
     if not real_assign_id:
-        print("❌ Could not find the assignment in the course content. Check the IDs.")
+        print("❌ Could not find the module in the course content. Check the IDs.")
         if course_content and 'exception' in course_content:
             print(f"   Error: {course_content.get('message')}")
+        return
+
+    if mod_type != 'assign':
+        print(f"\n⚠️ WARNING: Module '{assign_name}' is of type '{mod_type}' (Quiz / Cuestionario), NOT 'assign' (Tarea)!")
+        print("   The function 'mod_assign_get_submissions' only works for Assignment activities.")
+        # Check if there is an assignment with matching or similar name
+        assign_alternatives = []
+        for section in course_content:
+            for module in section.get('modules', []):
+                if module.get('modname') == 'assign' and (
+                    assign_name.strip().lower() in module.get('name', '').strip().lower() or
+                    module.get('name', '').strip().lower() in assign_name.strip().lower()
+                ):
+                    assign_alternatives.append((module.get('id'), module.get('instance'), module.get('name')))
+        if assign_alternatives:
+            print(f"\n   💡 Did you mean the Assignment counterpart?")
+            for cmid, inst, name in assign_alternatives:
+                print(f"      - CM_ID_FROM_URL = {cmid} (Instance: {inst}) -> '{name}'")
         return
 
     # STEP 3: Try to Fetch Submissions
     print(f"\n3. Testing permission to read submissions for '{assign_name}'...")
     submissions_data = call_moodle('mod_assign_get_submissions', {'assignmentids[0]': real_assign_id})
 
-    if submissions_data and 'assignments' in submissions_data:
+    if submissions_data and submissions_data.get('assignments'):
         submissions = submissions_data['assignments'][0]['submissions']
         count = len(submissions)
         print(f"✅ SUCCESS! Access granted.")
         print(f"   Found {count} submissions for this assignment.")
         
         if count > 0:
-            print("   First student submission found:", submissions[0].get('status'))
-            # This proves we can download the files later!
+            print("   First student submission status:", submissions[0].get('status'))
+            
+            # STEP 4: Download Submissions
+            if DOWNLOAD_FILES:
+                output_dir = os.path.join(os.path.dirname(__file__), f"submissions_{real_assign_id}")
+                os.makedirs(output_dir, exist_ok=True)
+                print(f"\n4. Downloading submission files to: {output_dir}")
+                downloaded = 0
+                
+                for sub in submissions:
+                    user_id = sub['userid']
+                    for plugin in sub.get('plugins', []):
+                        if plugin.get('type') == 'file':
+                            for fa in plugin.get('fileareas', []):
+                                for file_info in fa.get('files', []):
+                                    file_url = file_info.get('fileurl')
+                                    filename = file_info.get('filename')
+                                    if not file_url or not filename:
+                                        continue
+                                    
+                                    user_dir = os.path.join(output_dir, f"User_{user_id}")
+                                    os.makedirs(user_dir, exist_ok=True)
+                                    dest_path = os.path.join(user_dir, filename)
+                                    
+                                    if not os.path.exists(dest_path):
+                                        dl_url = f"{file_url}&token={TOKEN}" if '?' in file_url else f"{file_url}?token={TOKEN}"
+                                        r = requests.get(dl_url)
+                                        with open(dest_path, "wb") as f:
+                                            f.write(r.content)
+                                        downloaded += 1
+                                        print(f"   📥 Downloaded: User_{user_id}/{filename}")
+                                    else:
+                                        print(f"   ⏩ Already exists: User_{user_id}/{filename}")
+                                        
+                print(f"\n✅ All set! Downloaded {downloaded} new submission files.")
     else:
         print("❌ Failed to fetch submissions.")
-        if submissions_data: print(f"   Moodle says: {submissions_data.get('message')}")
+        if submissions_data:
+            if submissions_data.get('warnings'):
+                print(f"   Moodle warnings: {submissions_data.get('warnings')}")
+            if submissions_data.get('message'):
+                print(f"   Moodle says: {submissions_data.get('message')}")
         print("   (This usually means the Token exists but doesn't have 'Teacher' rights or the specific capability)")
 
 if __name__ == "__main__":

@@ -1,0 +1,515 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+
+  <question type="category">
+    <category><text>$course$/SIS457 - Clase ACoin (Andamiaje)</text></category>
+    <info format="html"><text><![CDATA[<p>Evaluación con andamiaje sobre la construcción paso a paso de la clase <code>ACoin</code> (moneda con lados CARA y SELLO) en el proyecto PuzzleDiceGame de Unreal Engine. Combina preguntas de código y de conceptos de Programación Orientada a Objetos.</p>]]></text></info>
+  </question>
+
+  <!-- ===================== INSTRUCCIONES ===================== -->
+  <question type="description">
+    <name><text>Q00. Instrucciones</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<h3>Evaluación con andamiaje: construcción de la clase ACoin</h3>
+<p>En esta evaluación el estudiante construye, paso a paso, una nueva clase <code>ACoin</code> dentro del proyecto <strong>PuzzleDiceGame</strong>, el mismo proyecto en el que se desarrolló la clase <code>ADice</code>. La moneda posee dos lados, <strong>CARA</strong> y <strong>SELLO</strong>, cuenta el número de lanzamientos, se representa con un cilindro escalado y se comunica con la grilla del juego.</p>
+<p><strong>Requerimientos finales de la clase:</strong></p>
+<ol>
+<li>Clase <code>ACoin</code> derivada de <code>AActor</code>.</li>
+<li>Atributos <code>bEsCara</code> (lado visible) y <code>Lanzamientos</code> (número de lanzamientos).</li>
+<li>Malla de cilindro (<code>/Engine/BasicShapes/Cylinder.Cylinder</code>) escalada para representar una moneda.</li>
+<li>Material naranja para CARA y material azul para SELLO.</li>
+<li>Lado aleatorio al iniciar la partida.</li>
+<li>Al recibir un clic, la moneda cambia de lado, incrementa el contador e imprime un mensaje en el registro.</li>
+<li>La grilla (<code>APuzzleDiceGameBlockGrid</code>) crea la moneda y la moneda notifica a la grilla.</li>
+</ol>
+<p><strong>Indicaciones:</strong></p>
+<ul>
+<li>Las preguntas están encadenadas: cada una agrega una parte del código a la anterior. Se recomienda responderlas en orden.</li>
+<li>En las preguntas de completar código, se debe arrastrar cada opción al espacio correspondiente. Cada opción se utiliza una sola vez y existen opciones que no corresponden a ningún espacio.</li>
+<li>En las preguntas de respuesta corta se debe escribir una sola palabra, respetando mayúsculas y minúsculas.</li>
+<li>Las preguntas de opción múltiple aplican <strong>penalización</strong> por respuesta incorrecta. Una pregunta sin responder no resta puntaje.</li>
+<li>Cuando el código utiliza plantillas de C++ (por ejemplo <code>SpawnActor</code> con un tipo), se usan corchetes [ ] en lugar de los símbolos &lt; &gt;.</li>
+</ul>]]></text>
+    </questiontext>
+    <generalfeedback format="html"><text><![CDATA[]]></text></generalfeedback>
+    <defaultgrade>0</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+  </question>
+
+  <!-- ===================== ETAPA 1: CLASE VACÍA ===================== -->
+  <question type="multichoice">
+    <name><text>Q01. Clase base y prefijo</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p><strong>Etapa 1: la clase vacía.</strong></p>
+<p>La moneda debe poder colocarse en el nivel, tener posición y rotación, y recibir clics del jugador. ¿De qué clase debe heredar y qué prefijo debe llevar su nombre?</p>
+<p><em>Advertencia: esta pregunta aplica penalización. Cada respuesta incorrecta descuenta un tercio del valor de la pregunta.</em></p>]]></text>
+    </questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p>Toda entidad que se ubica en el mundo hereda de <code>AActor</code> y, por convención de Epic Games, lleva el prefijo <code>A</code>. El prefijo <code>U</code> se reserva para clases derivadas de <code>UObject</code> y componentes. <code>APawn</code> se utiliza para entidades poseídas por un jugador o una IA; no es necesario para recibir clics.</p>]]></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html"><text><![CDATA[Hereda de <code>AActor</code> y se llama <code>ACoin</code>.]]></text><feedback format="html"><text><![CDATA[Correcto.]]></text></feedback></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[Hereda de <code>UObject</code> y se llama <code>UCoin</code>.]]></text><feedback format="html"><text><![CDATA[Un UObject no puede colocarse en el nivel ni tiene transformación.]]></text></feedback></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[Hereda de <code>UStaticMeshComponent</code> y se llama <code>UCoin</code>.]]></text><feedback format="html"><text><![CDATA[Un componente forma parte de un actor; no es un actor independiente.]]></text></feedback></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[Hereda de <code>APawn</code> y se llama <code>ACoin</code>, porque todo objeto que recibe clics debe ser un Pawn.]]></text><feedback format="html"><text><![CDATA[Cualquier actor con un componente de colisión puede recibir clics.]]></text></feedback></answer>
+  </question>
+
+  <question type="ddwtos">
+    <name><text>Q02. Esqueleto del archivo Coin.h</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Se debe completar el archivo de cabecera <code>Coin.h</code> arrastrando la opción correcta a cada espacio.</p>
+<pre>#pragma once
+
+#include "CoreMinimal.h"
+#include "GameFramework/Actor.h"
+#include [[1]]
+
+[[2]]
+class PUZZLEDICEGAME_API ACoin : public AActor
+{
+    [[3]]
+
+public:
+    ACoin();
+};</pre>]]></text>
+    </questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p><code>UCLASS()</code> registra la clase en el sistema de reflexión de Unreal y <code>GENERATED_BODY()</code> inserta el código generado por el Unreal Header Tool (UHT). El archivo <code>"Coin.generated.h"</code> debe ser siempre el último <code>#include</code>, porque el código generado depende de todas las declaraciones anteriores.</p>]]></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>1</shuffleanswers>
+    <dragbox><text><![CDATA["Coin.generated.h"]]></text><group>1</group></dragbox>
+    <dragbox><text><![CDATA[UCLASS()]]></text><group>1</group></dragbox>
+    <dragbox><text><![CDATA[GENERATED_BODY()]]></text><group>1</group></dragbox>
+    <dragbox><text><![CDATA["Coin.h"]]></text><group>1</group></dragbox>
+    <dragbox><text><![CDATA[UPROPERTY()]]></text><group>1</group></dragbox>
+    <dragbox><text><![CDATA[UFUNCTION()]]></text><group>1</group></dragbox>
+  </question>
+
+  <question type="matching">
+    <name><text>Q03. Ciclo de vida del actor</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Se debe relacionar cada método del ciclo de vida de <code>ACoin</code> con la acción que corresponde realizar en él.</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p>El constructor define los componentes y los valores por defecto; <code>BeginPlay()</code> se ejecuta una vez cuando inicia la partida; <code>Tick()</code> se ejecuta en cada cuadro y se usa para animaciones o lógica continua. La liberación de memoria la realiza el recolector de basura de Unreal.</p>]]></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>true</shuffleanswers>
+    <subquestion format="html"><text><![CDATA[Constructor <code>ACoin()</code>]]></text><answer><text><![CDATA[Crear los componentes y asignar la malla]]></text></answer></subquestion>
+    <subquestion format="html"><text><![CDATA[<code>BeginPlay()</code>]]></text><answer><text><![CDATA[Elegir un lado aleatorio al iniciar la partida]]></text></answer></subquestion>
+    <subquestion format="html"><text><![CDATA[<code>Tick(float DeltaTime)</code>]]></text><answer><text><![CDATA[Animar la moneda cuadro a cuadro]]></text></answer></subquestion>
+    <subquestion format="html"><text><![CDATA[]]></text><answer><text><![CDATA[Liberar manualmente la memoria de los componentes]]></text></answer></subquestion>
+  </question>
+
+  <!-- ===================== ETAPA 2: ATRIBUTOS ===================== -->
+  <question type="ddwtos">
+    <name><text>Q04. Declaración de atributos</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p><strong>Etapa 2: los atributos.</strong></p>
+<p>Se deben declarar en <code>Coin.h</code> los atributos <code>bEsCara</code> y <code>Lanzamientos</code>, ambos editables desde el panel <em>Details</em>. Los tipos deben seguir la convención de Unreal Engine (enteros de tamaño fijo, independiente de la plataforma).</p>
+<pre>public:
+    UPROPERTY([[1]], Category = "Moneda")
+    [[2]] bEsCara = true;
+
+    UPROPERTY(EditAnywhere, Category = "Moneda")
+    [[3]] Lanzamientos = 0;</pre>]]></text>
+    </questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p><code>bEsCara</code> solo tiene dos estados, por lo que su tipo es <code>bool</code>. <code>Lanzamientos</code> es un contador entero; Unreal utiliza <code>int32</code> porque garantiza 32 bits en todas las plataformas, mientras que el tamaño de <code>int</code> depende del compilador. <code>EditAnywhere</code> permite modificar el valor desde el editor.</p>]]></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>1</shuffleanswers>
+    <dragbox><text><![CDATA[EditAnywhere]]></text><group>1</group></dragbox>
+    <dragbox><text><![CDATA[bool]]></text><group>1</group></dragbox>
+    <dragbox><text><![CDATA[int32]]></text><group>1</group></dragbox>
+    <dragbox><text><![CDATA[VisibleAnywhere]]></text><group>1</group></dragbox>
+    <dragbox><text><![CDATA[int]]></text><group>1</group></dragbox>
+    <dragbox><text><![CDATA[float]]></text><group>1</group></dragbox>
+    <dragbox><text><![CDATA[FString]]></text><group>1</group></dragbox>
+  </question>
+
+  <question type="multichoice">
+    <name><text>Q05. Función de la macro UPROPERTY</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>¿Qué ocurre si el atributo se declara como <code>int32 Lanzamientos = 0;</code> sin la macro <code>UPROPERTY(...)</code>?</p>
+<p><em>Advertencia: esta pregunta aplica penalización. Cada respuesta incorrecta descuenta un tercio del valor de la pregunta.</em></p>]]></text>
+    </questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p><code>UPROPERTY</code> registra el atributo en el sistema de reflexión de Unreal. Sin la macro, el atributo existe como una variable normal de C++, pero el editor, los Blueprints y el recolector de basura no lo conocen.</p>]]></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html"><text><![CDATA[Compila y funciona en C++, pero el atributo no aparece en el panel <em>Details</em> ni es visible para el sistema de reflexión.]]></text><feedback format="html"><text><![CDATA[Correcto.]]></text></feedback></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[El proyecto no compila.]]></text><feedback format="html"><text><![CDATA[La declaración es C++ válido.]]></text></feedback></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[El atributo se vuelve privado automáticamente.]]></text><feedback format="html"><text><![CDATA[El nivel de acceso lo definen public, protected y private, no la macro.]]></text></feedback></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[El atributo se reinicia a 0 en cada llamada a <code>Tick</code>.]]></text><feedback format="html"><text><![CDATA[La macro no modifica el valor del atributo durante la ejecución.]]></text></feedback></answer>
+  </question>
+
+  <question type="shortanswer">
+    <name><text>Q06. Especificador de edición</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Un estudiante declaró el contador de la siguiente forma:</p>
+<pre>UPROPERTY(VisibleAnywhere, Category = "Moneda")
+int32 Lanzamientos = 0;</pre>
+<p>En el panel <em>Details</em> el valor se muestra, pero no se puede modificar. Se debe escribir el especificador que reemplaza a <code>VisibleAnywhere</code> para que el valor sea editable en cualquier instancia.</p>
+<p><em>Se debe escribir una sola palabra, respetando mayúsculas y minúsculas.</em></p>]]></text>
+    </questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p><code>VisibleAnywhere</code> muestra el valor como solo lectura. <code>EditAnywhere</code> permite editarlo tanto en los valores por defecto de la clase como en cada instancia del nivel.</p>]]></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <usecase>1</usecase>
+    <answer fraction="100" format="moodle_auto_format"><text><![CDATA[EditAnywhere]]></text><feedback format="html"><text><![CDATA[Correcto.]]></text></feedback></answer>
+    <answer fraction="100" format="moodle_auto_format"><text><![CDATA[EditInstanceOnly]]></text><feedback format="html"><text><![CDATA[Correcto: permite editar el valor en las instancias del nivel. La respuesta esperada era EditAnywhere.]]></text></feedback></answer>
+  </question>
+
+  <!-- ===================== ETAPA 3: MALLA EN EL CONSTRUCTOR ===================== -->
+  <question type="ddwtos">
+    <name><text>Q07. Componentes en el constructor</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p><strong>Etapa 3: la malla en el constructor.</strong></p>
+<p><em>(Nota: para esta pregunta se usarán corchetes [...] en lugar de los símbolos de plantillas &lt; &gt;.)</em></p>
+<p>En <code>Coin.h</code> se declararon los componentes <code>DummyRoot</code> (<code>USceneComponent*</code>) y <code>CoinMesh</code> (<code>UStaticMeshComponent*</code>). Se debe completar el constructor en <code>Coin.cpp</code>.</p>
+<pre>ACoin::ACoin()
+{
+    DummyRoot = [[1]][USceneComponent](TEXT("Dummy0"));
+    [[2]] = DummyRoot;
+
+    CoinMesh = CreateDefaultSubobject[ [[3]] ](TEXT("CoinMesh0"));
+    CoinMesh-&gt;[[4]](DummyRoot);
+}</pre>]]></text>
+    </questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p><code>CreateDefaultSubobject</code> crea un componente que pertenece al actor. <code>RootComponent</code> define el componente raíz que contiene la transformación del actor, y <code>SetupAttachment</code> une la malla a la raíz en el constructor. <code>SpawnActor</code> crea actores en el mundo, no componentes.</p>]]></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>1</shuffleanswers>
+    <dragbox><text><![CDATA[CreateDefaultSubobject]]></text><group>1</group></dragbox>
+    <dragbox><text><![CDATA[RootComponent]]></text><group>1</group></dragbox>
+    <dragbox><text><![CDATA[UStaticMeshComponent]]></text><group>1</group></dragbox>
+    <dragbox><text><![CDATA[SetupAttachment]]></text><group>1</group></dragbox>
+    <dragbox><text><![CDATA[SpawnActor]]></text><group>1</group></dragbox>
+    <dragbox><text><![CDATA[AttachToActor]]></text><group>1</group></dragbox>
+    <dragbox><text><![CDATA[UStaticMesh]]></text><group>1</group></dragbox>
+  </question>
+
+  <question type="multichoice">
+    <name><text>Q08. Relación entre la moneda y su malla</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>La moneda <strong>tiene un</strong> componente <code>CoinMesh</code> que ella misma crea en su constructor y que se destruye junto con ella. ¿Qué tipo de relación entre objetos representa este caso?</p>
+<p><em>Advertencia: esta pregunta aplica penalización. Cada respuesta incorrecta descuenta un tercio del valor de la pregunta.</em></p>]]></text>
+    </questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p>Es una <strong>composición</strong>: la moneda crea el componente y es su dueña, por lo que ambos comparten el mismo ciclo de vida. En cambio, la grilla guarda en <code>listaDados</code> referencias a dados que son actores independientes del mundo; esa relación es una agregación.</p>]]></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html"><text><![CDATA[Composición: la parte depende del todo y comparte su ciclo de vida.]]></text><feedback format="html"><text><![CDATA[Correcto.]]></text></feedback></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[Agregación: la parte puede existir de forma independiente del todo.]]></text><feedback format="html"><text><![CDATA[El componente no existe fuera de la moneda.]]></text></feedback></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[Asociación: los objetos solo se conocen mediante un puntero.]]></text><feedback format="html"><text><![CDATA[La moneda no solo conoce al componente: lo crea y es su dueña.]]></text></feedback></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[Herencia: <code>ACoin</code> es un tipo de <code>UStaticMeshComponent</code>.]]></text><feedback format="html"><text><![CDATA[ACoin hereda de AActor, no del componente.]]></text></feedback></answer>
+  </question>
+
+  <question type="ddwtos">
+    <name><text>Q09. Carga de la malla del cilindro</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p><em>(Nota: para esta pregunta se usarán corchetes [...] en lugar de los símbolos de plantillas &lt; &gt;.)</em></p>
+<p>Dentro del constructor se debe cargar la malla básica del cilindro y asignarla al componente <code>CoinMesh</code>.</p>
+<pre>#include "UObject/ConstructorHelpers.h"
+// ...
+ConstructorHelpers::FObjectFinderOptional[UStaticMesh] Cilindro(TEXT("[[1]]"));
+CoinMesh-&gt;[[2]](Cilindro.Get());</pre>]]></text>
+    </questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p>La ruta del cilindro básico del motor es <code>/Engine/BasicShapes/Cylinder.Cylinder</code> y se asigna con <code>SetStaticMesh</code>. <code>ConstructorHelpers</code> solo puede utilizarse dentro de un constructor; si estas líneas se trasladan a <code>BeginPlay()</code>, el motor detiene la ejecución con un error.</p>]]></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>1</shuffleanswers>
+    <dragbox><text><![CDATA[/Engine/BasicShapes/Cylinder.Cylinder]]></text><group>1</group></dragbox>
+    <dragbox><text><![CDATA[SetStaticMesh]]></text><group>1</group></dragbox>
+    <dragbox><text><![CDATA[/Engine/BasicShapes/Cube.Cube]]></text><group>1</group></dragbox>
+    <dragbox><text><![CDATA[/Game/Puzzle/Meshes/dice.dice]]></text><group>1</group></dragbox>
+    <dragbox><text><![CDATA[SetMaterial]]></text><group>1</group></dragbox>
+    <dragbox><text><![CDATA[SetRelativeScale3D]]></text><group>1</group></dragbox>
+  </question>
+
+  <question type="multichoice">
+    <name><text>Q10. Escala de la moneda</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>El cilindro básico de Unreal mide 100 × 100 × 100 unidades (100 de diámetro y 100 de alto, con su eje en Z). Se aplica la siguiente escala:</p>
+<pre>CoinMesh-&gt;SetRelativeScale3D(FVector(0.5f, 0.5f, 0.05f));</pre>
+<p>¿Cuál será el diámetro y el grosor de la moneda?</p>
+<p><em>Advertencia: esta pregunta aplica penalización. Cada respuesta incorrecta descuenta un tercio del valor de la pregunta.</em></p>]]></text>
+    </questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p>La escala multiplica el tamaño original en cada eje: X e Y definen el diámetro (100 × 0.5 = 50) y Z, el eje del cilindro, define el grosor (100 × 0.05 = 5). Para una moneda de 80 unidades de diámetro y 8 de grosor se usaría <code>FVector(0.8f, 0.8f, 0.08f)</code>.</p>]]></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html"><text><![CDATA[Diámetro 50 y grosor 5 unidades.]]></text><feedback format="html"><text><![CDATA[Correcto.]]></text></feedback></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[Diámetro 0.5 y grosor 0.05 unidades.]]></text><feedback format="html"><text><![CDATA[La escala es un factor que multiplica el tamaño original, no la medida final.]]></text></feedback></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[Diámetro 100 y grosor 5 unidades.]]></text><feedback format="html"><text><![CDATA[La escala también se aplica a los ejes X e Y.]]></text></feedback></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[Diámetro 5 y grosor 50 unidades.]]></text><feedback format="html"><text><![CDATA[El grosor del cilindro corresponde al eje Z.]]></text></feedback></answer>
+  </question>
+
+  <question type="multichoice">
+    <name><text>Q11. Rotación de la moneda</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Se desea colocar la moneda parada de canto (como una rueda) en lugar de acostada. El constructor de <code>FRotator</code> recibe los ángulos en el orden <strong>(Pitch, Yaw, Roll)</strong>. ¿Qué línea logra este resultado?</p>
+<p><em>Advertencia: esta pregunta aplica penalización. Cada respuesta incorrecta descuenta un tercio del valor de la pregunta.</em></p>]]></text>
+    </questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p>Un Roll de 90° gira la moneda sobre el eje X y la deja de canto. Un Yaw de 90° la gira sobre el eje vertical Z; como la moneda es simétrica respecto a ese eje, no se observa ningún cambio. <code>SetRelativeScale3D</code> modifica el tamaño, no la orientación.</p>]]></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html"><text><![CDATA[<code>CoinMesh-&gt;SetRelativeRotation(FRotator(0.f, 0.f, 90.f));</code>]]></text><feedback format="html"><text><![CDATA[Correcto.]]></text></feedback></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[<code>CoinMesh-&gt;SetRelativeRotation(FRotator(0.f, 90.f, 0.f));</code>]]></text><feedback format="html"><text><![CDATA[Un Yaw de 90° gira la moneda sobre su propio eje vertical; no cambia su apariencia.]]></text></feedback></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[<code>CoinMesh-&gt;SetRelativeRotation(FRotator(0.f, 0.f, 0.f));</code>]]></text><feedback format="html"><text><![CDATA[Sin rotación la moneda permanece acostada.]]></text></feedback></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[<code>CoinMesh-&gt;SetRelativeScale3D(FVector(0.f, 0.f, 90.f));</code>]]></text><feedback format="html"><text><![CDATA[Esta línea cambia la escala y deja la moneda sin tamaño en X e Y.]]></text></feedback></answer>
+  </question>
+
+  <!-- ===================== ETAPA 4: MATERIALES ===================== -->
+  <question type="ddwtos">
+    <name><text>Q12. Carga de materiales</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p><strong>Etapa 4: representación de CARA y SELLO.</strong></p>
+<p><em>(Nota: para esta pregunta se usarán corchetes [...] en lugar de los símbolos de plantillas &lt; &gt;.)</em></p>
+<p>En <code>Coin.h</code> se declararon los punteros <code>UMaterialInstance* MatCara</code> y <code>UMaterialInstance* MatSello</code>, ambos con <code>UPROPERTY()</code>. Se deben cargar en el constructor los materiales existentes del proyecto: naranja para CARA y azul para SELLO.</p>
+<pre>ConstructorHelpers::FObjectFinderOptional[ [[1]] ] Orange(TEXT("/Game/Puzzle/Meshes/OrangeMaterial.OrangeMaterial"));
+ConstructorHelpers::FObjectFinderOptional[UMaterialInstance] Blue(TEXT("/Game/Puzzle/Meshes/BlueMaterial.BlueMaterial"));
+
+[[2]] = Orange.Get();
+[[3]] = Blue.Get();</pre>]]></text>
+    </questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p>Ambos materiales son de tipo <code>UMaterialInstance</code>; el naranja se guarda en <code>MatCara</code> y el azul en <code>MatSello</code>. Los punteros llevan <code>UPROPERTY()</code> aunque no se muestren en el editor, para que el recolector de basura de Unreal sepa que están en uso y no libere esos objetos.</p>]]></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>1</shuffleanswers>
+    <dragbox><text><![CDATA[UMaterialInstance]]></text><group>1</group></dragbox>
+    <dragbox><text><![CDATA[MatCara]]></text><group>1</group></dragbox>
+    <dragbox><text><![CDATA[MatSello]]></text><group>1</group></dragbox>
+    <dragbox><text><![CDATA[UStaticMesh]]></text><group>1</group></dragbox>
+    <dragbox><text><![CDATA[CoinMesh]]></text><group>1</group></dragbox>
+    <dragbox><text><![CDATA[bEsCara]]></text><group>1</group></dragbox>
+  </question>
+
+  <question type="ddwtos">
+    <name><text>Q13. Método MostrarLado</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Se debe completar el método <code>MostrarLado()</code>, que aplica el material naranja cuando el lado visible es CARA y el azul en caso contrario.</p>
+<pre>void ACoin::MostrarLado()
+{
+    CoinMesh-&gt;[[1]](0, [[2]] ? [[3]] : MatSello);
+}</pre>]]></text>
+    </questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p><code>SetMaterial(0, ...)</code> asigna el material al primer espacio de material de la malla. El operador ternario evalúa <code>bEsCara</code>: si es verdadero aplica <code>MatCara</code> (naranja) y si es falso aplica <code>MatSello</code> (azul). Por lo tanto, si en el panel <em>Details</em> se desmarca <code>bEsCara</code>, la moneda se mostrará azul.</p>]]></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>1</shuffleanswers>
+    <dragbox><text><![CDATA[SetMaterial]]></text><group>1</group></dragbox>
+    <dragbox><text><![CDATA[bEsCara]]></text><group>1</group></dragbox>
+    <dragbox><text><![CDATA[MatCara]]></text><group>1</group></dragbox>
+    <dragbox><text><![CDATA[SetStaticMesh]]></text><group>1</group></dragbox>
+    <dragbox><text><![CDATA[Lanzamientos]]></text><group>1</group></dragbox>
+    <dragbox><text><![CDATA[OrangeMaterial]]></text><group>1</group></dragbox>
+  </question>
+
+  <!-- ===================== ETAPA 5: INICIO DEL JUEGO ===================== -->
+  <question type="ddwtos">
+    <name><text>Q14. Método BeginPlay</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p><strong>Etapa 5: inicio del juego.</strong></p>
+<p>Se debe completar la declaración y la implementación de <code>BeginPlay()</code> para que la moneda inicie con un lado aleatorio y lo muestre.</p>
+<pre>// Coin.h (sección protected)
+virtual void BeginPlay() [[1]];
+
+// Coin.cpp
+void ACoin::BeginPlay()
+{
+    [[2]]::BeginPlay();
+    bEsCara = FMath::[[3]]();
+    [[4]]();
+}</pre>]]></text>
+    </questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p><code>override</code> indica que se redefine un método virtual de la clase padre. <code>Super::BeginPlay()</code> ejecuta la lógica de <code>AActor</code>; si se omite, el actor puede no inicializarse correctamente. <code>FMath::RandBool()</code> devuelve verdadero o falso al azar y <code>MostrarLado()</code> aplica el material correspondiente.</p>]]></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>1</shuffleanswers>
+    <dragbox><text><![CDATA[override]]></text><group>1</group></dragbox>
+    <dragbox><text><![CDATA[Super]]></text><group>1</group></dragbox>
+    <dragbox><text><![CDATA[RandBool]]></text><group>1</group></dragbox>
+    <dragbox><text><![CDATA[MostrarLado]]></text><group>1</group></dragbox>
+    <dragbox><text><![CDATA[final]]></text><group>1</group></dragbox>
+    <dragbox><text><![CDATA[this]]></text><group>1</group></dragbox>
+    <dragbox><text><![CDATA[RandRange]]></text><group>1</group></dragbox>
+    <dragbox><text><![CDATA[CoinClicked]]></text><group>1</group></dragbox>
+  </question>
+
+  <question type="multichoice">
+    <name><text>Q15. Lógica de juego en el constructor</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Un estudiante escribe <code>bEsCara = FMath::RandBool();</code> dentro del constructor en lugar de <code>BeginPlay()</code>. ¿Por qué no se considera una buena práctica en Unreal Engine?</p>
+<p><em>Advertencia: esta pregunta aplica penalización. Cada respuesta incorrecta descuenta un tercio del valor de la pregunta.</em></p>]]></text>
+    </questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p>El constructor se ejecuta al crear el objeto por defecto de la clase (CDO), en el editor y al cargar el nivel. Su función es definir componentes y valores por defecto; después, Unreal aplica los valores guardados del nivel y del panel <em>Details</em>. La lógica de juego corresponde a <code>BeginPlay()</code>, que se ejecuta cuando inicia la partida.</p>]]></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html"><text><![CDATA[El constructor también se ejecuta en el editor y para el objeto por defecto de la clase; sus valores son valores por defecto que luego pueden ser sobrescritos por los guardados en el nivel.]]></text><feedback format="html"><text><![CDATA[Correcto.]]></text></feedback></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[<code>FMath::RandBool()</code> solo puede llamarse dentro de <code>Tick()</code>.]]></text><feedback format="html"><text><![CDATA[FMath puede utilizarse en cualquier método.]]></text></feedback></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[El constructor se ejecuta en cada cuadro del juego.]]></text><feedback format="html"><text><![CDATA[El método que se ejecuta en cada cuadro es Tick().]]></text></feedback></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[En el constructor el atributo <code>bEsCara</code> todavía no existe.]]></text><feedback format="html"><text><![CDATA[Los atributos ya existen cuando se ejecuta el constructor.]]></text></feedback></answer>
+  </question>
+
+  <!-- ===================== ETAPA 6: CLIC ===================== -->
+  <question type="ddwtos">
+    <name><text>Q16. Conexión del evento de clic</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p><strong>Etapa 6: interacción con el clic.</strong></p>
+<p>Se debe declarar el método que responde al clic y conectarlo al evento del componente, del mismo modo que en <code>ADice</code>.</p>
+<pre>// Coin.h
+[[1]]
+void CoinClicked(UPrimitiveComponent* ClickedComp, FKey ButtonClicked);
+
+// Coin.cpp (dentro del constructor)
+CoinMesh-&gt;[[2]].[[3]](this, &amp;ACoin::CoinClicked);</pre>]]></text>
+    </questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p><code>OnClicked</code> es un delegado dinámico del componente y <code>AddDynamic</code> le asocia un método. Los delegados dinámicos enlazan el método por su nombre mediante el sistema de reflexión, por lo que el método debe estar marcado con <code>UFUNCTION()</code>; de lo contrario, el enlace falla.</p>]]></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>1</shuffleanswers>
+    <dragbox><text><![CDATA[UFUNCTION()]]></text><group>1</group></dragbox>
+    <dragbox><text><![CDATA[OnClicked]]></text><group>1</group></dragbox>
+    <dragbox><text><![CDATA[AddDynamic]]></text><group>1</group></dragbox>
+    <dragbox><text><![CDATA[UPROPERTY()]]></text><group>1</group></dragbox>
+    <dragbox><text><![CDATA[OnComponentHit]]></text><group>1</group></dragbox>
+    <dragbox><text><![CDATA[BindUObject]]></text><group>1</group></dragbox>
+  </question>
+
+  <question type="multichoice">
+    <name><text>Q17. Predicción del registro</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>El método <code>CoinClicked</code> quedó implementado de la siguiente forma:</p>
+<pre>void ACoin::CoinClicked(UPrimitiveComponent* ClickedComp, FKey ButtonClicked)
+{
+    bEsCara = !bEsCara;
+    Lanzamientos++;
+    MostrarLado();
+    UE_LOG(LogTemp, Warning, TEXT("Moneda: %s - lanzamientos: %d"),
+        bEsCara ? TEXT("CARA") : TEXT("SELLO"), Lanzamientos);
+}</pre>
+<p>Si la moneda inicia en CARA con <code>Lanzamientos = 0</code> y el jugador hace tres clics, ¿qué líneas aparecen en el <em>Output Log</em>?</p>
+<p><em>Advertencia: esta pregunta aplica penalización. Cada respuesta incorrecta descuenta un tercio del valor de la pregunta.</em></p>]]></text>
+    </questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p>En cada clic primero se invierte el lado y se incrementa el contador, y después se imprime. Desde CARA: el primer clic produce SELLO con 1, el segundo CARA con 2 y el tercero SELLO con 3.</p>]]></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html"><text><![CDATA[SELLO - 1, CARA - 2, SELLO - 3]]></text><feedback format="html"><text><![CDATA[Correcto.]]></text></feedback></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[CARA - 1, SELLO - 2, CARA - 3]]></text><feedback format="html"><text><![CDATA[El lado se invierte antes de imprimir el mensaje.]]></text></feedback></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[SELLO - 0, CARA - 1, SELLO - 2]]></text><feedback format="html"><text><![CDATA[El contador se incrementa antes de imprimir el mensaje.]]></text></feedback></answer>
+    <answer fraction="-33.33333" format="html"><text><![CDATA[CARA - 1, CARA - 2, CARA - 3]]></text><feedback format="html"><text><![CDATA[La instrucción bEsCara = !bEsCara cambia el lado en cada clic.]]></text></feedback></answer>
+  </question>
+
+  <question type="shortanswer">
+    <name><text>Q18. Error en el mensaje de registro</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>La siguiente línea no compila:</p>
+<pre>UE_LOG(LogTemp, Warning, TEXT("Moneda: %s - lanzamientos: %d"),
+    bEsCara ? "CARA" : "SELLO", Lanzamientos);</pre>
+<p><code>UE_LOG</code> trabaja con cadenas de caracteres anchos (<code>TCHAR</code>). Se debe escribir el nombre de la macro que debe envolver a los literales <code>"CARA"</code> y <code>"SELLO"</code> para corregir el error.</p>
+<p><em>Se debe escribir una sola palabra, respetando mayúsculas y minúsculas.</em></p>]]></text>
+    </questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p>La línea correcta es <code>bEsCara ? TEXT("CARA") : TEXT("SELLO")</code>. La macro <code>TEXT</code> convierte el literal al tipo de carácter que utiliza Unreal. Si se desea un lado realmente aleatorio en cada clic, se reemplaza <code>bEsCara = !bEsCara;</code> por <code>bEsCara = FMath::RandBool();</code>.</p>]]></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <usecase>1</usecase>
+    <answer fraction="100" format="moodle_auto_format"><text><![CDATA[TEXT]]></text><feedback format="html"><text><![CDATA[Correcto.]]></text></feedback></answer>
+  </question>
+
+  <!-- ===================== ETAPA 7: COMUNICACIÓN CON LA GRILLA ===================== -->
+  <question type="ddwtos">
+    <name><text>Q19. Creación de la moneda desde la grilla</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p><strong>Etapa 7: comunicación con la grilla.</strong></p>
+<p><em>(Nota: para esta pregunta se usarán corchetes [...] en lugar de los símbolos de plantillas &lt; &gt;.)</em></p>
+<p>La moneda ya no se coloca manualmente en el nivel: la grilla la crea 300 unidades a su izquierda (eje X negativo) y le indica quién es su grilla dueña. En <code>ACoin</code> se agregó el atributo <code>UPROPERTY() class APuzzleDiceGameBlockGrid* OwningGrid;</code>. Se debe completar <code>PuzzleDiceGameBlockGrid.cpp</code>.</p>
+<pre>#include "PuzzleDiceGameBlockGrid.h"
+#include [[1]]
+
+void APuzzleDiceGameBlockGrid::BeginPlay()
+{
+    Super::BeginPlay();
+    // ... ciclo que crea los dados ...
+
+    ACoin* NuevaMoneda = GetWorld()-&gt;[[2]][ACoin](
+        GetActorLocation() + FVector([[3]], 0.f, 0.f), FRotator::ZeroRotator);
+
+    if (NuevaMoneda)
+    {
+        NuevaMoneda-&gt;[[4]] = this;
+    }
+}</pre>]]></text>
+    </questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p>Se incluye la cabecera <code>"Coin.h"</code>, nunca un archivo <code>.cpp</code>. <code>SpawnActor</code> registra el actor en el mundo: lo ubica, ejecuta su constructor, inicializa sus componentes y llama a <code>BeginPlay()</code>; con <code>new</code> o <code>NewObject</code> el actor no formaría parte del nivel. La posición a la izquierda corresponde a <code>-300.f</code> en X. Finalmente, <code>OwningGrid = this</code> establece la asociación de la moneda con la grilla, igual que en <code>ADice</code>.</p>]]></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>1</shuffleanswers>
+    <dragbox><text><![CDATA["Coin.h"]]></text><group>1</group></dragbox>
+    <dragbox><text><![CDATA[SpawnActor]]></text><group>1</group></dragbox>
+    <dragbox><text><![CDATA[-300.f]]></text><group>1</group></dragbox>
+    <dragbox><text><![CDATA[OwningGrid]]></text><group>1</group></dragbox>
+    <dragbox><text><![CDATA["Coin.cpp"]]></text><group>1</group></dragbox>
+    <dragbox><text><![CDATA[NewObject]]></text><group>1</group></dragbox>
+    <dragbox><text><![CDATA[300.f]]></text><group>1</group></dragbox>
+    <dragbox><text><![CDATA[Owner]]></text><group>1</group></dragbox>
+  </question>
+
+  <question type="matching">
+    <name><text>Q20. Relaciones entre objetos del proyecto</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Con la moneda integrada, <code>CoinClicked</code> notifica a la grilla cada vez que sale CARA:</p>
+<pre>if (bEsCara &amp;&amp; OwningGrid)
+{
+    OwningGrid-&gt;AddScore();
+}</pre>
+<p>Se debe relacionar cada par de objetos del proyecto con el tipo de relación que los une. Una de las opciones no corresponde a ningún par.</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p><strong>Composición:</strong> la moneda crea su componente <code>CoinMesh</code> y ambos comparten el ciclo de vida. <strong>Agregación:</strong> la grilla agrupa en <code>listaDados</code> referencias a dados que existen de forma independiente en el mundo. <strong>Asociación:</strong> la moneda solo conoce a la grilla mediante el puntero <code>OwningGrid</code> para enviarle mensajes, como <code>AddScore()</code>; la comprobación <code>OwningGrid</code> distinto de nulo evita un fallo si la moneda se colocó sin grilla. Ninguno de los pares es una relación de herencia.</p>]]></text></generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <shuffleanswers>true</shuffleanswers>
+    <subquestion format="html"><text><![CDATA[<code>ACoin</code> y su componente <code>CoinMesh</code>]]></text><answer><text><![CDATA[Composición]]></text></answer></subquestion>
+    <subquestion format="html"><text><![CDATA[<code>APuzzleDiceGameBlockGrid</code> y los dados de <code>listaDados</code>]]></text><answer><text><![CDATA[Agregación]]></text></answer></subquestion>
+    <subquestion format="html"><text><![CDATA[<code>ACoin</code> y la grilla referenciada por <code>OwningGrid</code>]]></text><answer><text><![CDATA[Asociación]]></text></answer></subquestion>
+    <subquestion format="html"><text><![CDATA[]]></text><answer><text><![CDATA[Herencia]]></text></answer></subquestion>
+  </question>
+
+</quiz>

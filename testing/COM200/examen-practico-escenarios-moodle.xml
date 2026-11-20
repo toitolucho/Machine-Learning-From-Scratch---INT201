@@ -1,0 +1,516 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+
+<!-- ============================================================ -->
+<!-- CATEGORIA PRINCIPAL — EXAMEN PRACTICO (PREGUNTAS ABIERTAS)   -->
+<!-- ============================================================ -->
+<question type="category">
+    <category><text>$course$/COM200 - Estructuras de Datos en C# para Unity - Practico</text></category>
+    <info format="html"><text><![CDATA[<p><strong>Examen Práctico: Listas de Objetos en Unity 2D — COM200 (02-2026)</strong></p>
+<p>Banco de 3 escenarios prácticos equivalentes en formato de pregunta abierta (<em>Essay</em>, 100 puntos cada uno), listos para asignar aleatoriamente un escenario distinto por estudiante.</p>
+<p>Cada pregunta incluye de forma autónoma su contexto, reglas comunes obligatorias, especificación de clases, pruebas de ejecución, rúbrica de 100 puntos e instrucciones de entrega; las soluciones de referencia docente se alojan únicamente en la sección privada de evaluador (<code>graderinfo</code>).</p>]]></text></info>
+</question>
+
+<!-- P-E01 Escuadrones de colores -->
+<question type="essay">
+    <name><text><![CDATA[P-E01 Escuadrones de colores]]></text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p><em>(Nota: Para esta pregunta, usaremos corchetes [...] en lugar de los símbolos de genéricos &lt; &gt;)</em></p>
+<p><strong>Examen Práctico: Listas de Objetos en Unity 2D</strong> &nbsp;|&nbsp; <strong>Tiempo estimado:</strong> 15 minutos</p>
+<h3>Escenario 1 — Escuadrones de colores</h3>
+<h4>Contexto</h4>
+<p>Los enemigos pertenecen a tres escuadrones: <strong>Rojo</strong>, <strong>Azul</strong> y <strong>Verde</strong>. El jugador tiene un radio de comunicaciones con el que puede <strong>congelar a un escuadrón completo</strong>, pero solo afecta a los enemigos que tiene registrados en su lista.</p>
+<h3>Reglas comunes para este escenario</h3>
+<h4>Base obligatoria</h4>
+<ol><li><strong>Escena 2D</strong> con un GameObject <code>Player</code> (un sprite cuadrado o círculo es suficiente).</li><li>El <code>Player</code> se mueve con las flechas o WASD y <strong>se detiene</strong> al soltar las teclas.</li><li>Un <strong>prefab</strong> <code>Enemigo</code> con un <code>SpriteRenderer</code> y el script <code>Enemigo</code>.</li><li>Al menos <strong>6 clones</strong> del prefab en la escena, con valores distintos en el Inspector (velocidad y el atributo propio del escenario).</li><li>Cada enemigo persigue al <code>Player</code> a <strong>su propia velocidad</strong>.</li><li>El script <code>Player</code> tiene un campo <strong><code>public List[Enemigo] enemigos</code></strong> que se llena <strong>arrastrando</strong> enemigos desde la Jerarquía al Inspector.</li><li><strong>Solo algunos</strong> enemigos deben estar en la lista (por ejemplo, 4 de 6). Los enemigos que no están en la lista siguen persiguiendo, pero <strong>no reaccionan</strong> a las teclas del player.</li></ol>
+<h4>Referencia al player desde el prefab</h4>
+<p>Un prefab guardado en la carpeta del proyecto <strong>no puede</strong> tener arrastrada una referencia a un objeto de la escena. Elige una de estas dos formas y explica cuál usaste:</p>
+<ul><li>Asignar el campo <code>objetivo</code> en <strong>cada clon</strong> de la escena (arrastrando el <code>Player</code>), o</li><li>Buscarlo por código en <code>Start()</code> con el tag <code>Player</code>: <code>GameObject.FindWithTag("Player").transform</code>.</li></ul>
+<h4>Pruebas que hará el docente durante la ejecución (las 3 aplican a todos los escenarios)</h4>
+<ul><li>&#9744; <strong>Quitar</strong> un enemigo de la lista en el Inspector <strong>con el juego en Play</strong>: ese enemigo deja de reaccionar a las teclas.</li><li>&#9744; <strong>Agregar</strong> a la lista, con el juego en Play, un enemigo que antes no estaba: ahora reacciona.</li><li>&#9744; Agregar un <strong>elemento vacío</strong> (<code>None</code>) a la lista con el <code>+</code> del Inspector: el juego <strong>no</strong> debe mostrar errores en la consola.</li></ul>
+<h4>Restricciones</h4>
+<ul><li>Usar el sistema de entrada clásico (<code>Input.GetKeyDown</code>, <code>Input.GetAxisRaw</code>).</li><li>Los métodos que cambian el estado de un enemigo deben estar <strong>en la clase <code>Enemigo</code></strong> y ser llamados desde <code>Player</code>. El <code>Player</code> no debe modificar directamente el color ni la posición de los enemigos.</li></ul>
+<h4>Clase <code>Enemigo</code></h4>
+<table border="1" cellpadding="6" cellspacing="0" style="border-collapse: collapse; width: 100%;"><thead><tr><th style="background-color: #f2f2f2; text-align: left;">Miembro</th><th style="background-color: #f2f2f2; text-align: left;">Descripción</th></tr></thead><tbody><tr><td><code>public ColorEquipo equipo</code></td><td>Enum con los valores <code>Rojo</code>, <code>Azul</code>, <code>Verde</code>. Se elige en el Inspector.</td></tr><tr><td><code>public float velocidad</code></td><td>Velocidad de persecución.</td></tr><tr><td><code>public Transform objetivo</code></td><td>El player (ver <em>Referencia al player</em>).</td></tr><tr><td><code>Start()</code></td><td>Pinta el <code>SpriteRenderer</code> con el color de su equipo.</td></tr><tr><td><code>Update()</code></td><td>Si está en movimiento, avanza hacia el <code>objetivo</code> a su <code>velocidad</code>.</td></tr><tr><td><code>public void Detener()</code></td><td>Deja de moverse.</td></tr><tr><td><code>public void Mover()</code></td><td>Vuelve a moverse.</td></tr></tbody></table>
+<h4>Clase <code>Player</code></h4>
+<table border="1" cellpadding="6" cellspacing="0" style="border-collapse: collapse; width: 100%;"><thead><tr><th style="background-color: #f2f2f2; text-align: left;">Tecla</th><th style="background-color: #f2f2f2; text-align: left;">Acción</th></tr></thead><tbody><tr><td><code>1</code></td><td>Detiene a los enemigos <strong>de la lista</strong> cuyo equipo sea <strong>Rojo</strong>.</td></tr><tr><td><code>2</code></td><td>Detiene a los enemigos de la lista del equipo <strong>Azul</strong>.</td></tr><tr><td><code>3</code></td><td>Detiene a los enemigos de la lista del equipo <strong>Verde</strong>.</td></tr><tr><td><code>Espacio</code></td><td>Hace que <strong>todos</strong> los enemigos de la lista vuelvan a moverse.</td></tr></tbody></table>
+<p>Además, al presionar <code>1</code>, <code>2</code> o <code>3</code>, mostrar en consola cuántos enemigos fueron detenidos, por ejemplo: <code>Equipo Rojo: 2 enemigos detenidos</code>.</p>
+<h4>Configuración mínima en la escena</h4>
+<ul><li>6 enemigos: 2 rojos, 2 azules y 2 verdes, cada uno con una velocidad distinta (entre 1 y 4).</li><li>En la lista del player: 1 rojo, 2 azules y 1 verde.</li></ul>
+<h4>Comportamiento esperado</h4>
+<ul><li>Al presionar <code>1</code>, se detiene <strong>solo el rojo de la lista</strong>; el otro rojo sigue persiguiendo. La consola muestra <code>Equipo Rojo: 1 enemigos detenidos</code>.</li><li>Al presionar <code>Espacio</code>, todos los enemigos de la lista se mueven de nuevo.</li></ul>
+<h4>Rúbrica (100 pts)</h4>
+<table border="1" cellpadding="6" cellspacing="0" style="border-collapse: collapse; width: 100%;"><thead><tr><th style="background-color: #f2f2f2; text-align: left;">Criterio</th><th style="background-color: #f2f2f2; text-align: left;">Pts</th></tr></thead><tbody><tr><td>Escena y prefab configurados (6 clones con valores distintos, colores visibles)</td><td>15</td></tr><tr><td>El player se mueve y se detiene</td><td>10</td></tr><tr><td>Los enemigos persiguen al player, cada uno a su velocidad</td><td>15</td></tr><tr><td>La lista se configura desde el Inspector y solo reaccionan los enemigos registrados</td><td>20</td></tr><tr><td>Las teclas 1/2/3 filtran por equipo y llaman a <code>Detener()</code>; <code>Espacio</code> llama a <code>Mover()</code></td><td>25</td></tr><tr><td>Mensaje en consola con el conteo correcto</td><td>5</td></tr><tr><td>Robustez: no hay errores al agregar un elemento vacío a la lista</td><td>10</td></tr></tbody></table>
+<h4>Instrucciones de entrega (pregunta abierta)</h4><p>Implementa el proyecto funcional en Unity 2D siguiendo todas las especificaciones anteriores y registra en tu respuesta (o adjunta tus scripts <code>.cs</code> si el docente lo indica):</p><ol><li>La forma elegida para referenciar al <code>Player</code> desde el prefab y tu explicación.</li><li>Una breve explicación de cómo recorriste y filtraste <code>enemigos</code> evitando errores con elementos vacíos (<code>None</code>) y casos borde del escenario.</li><li>El código completo de tus scripts <code>Enemigo.cs</code> y <code>Player.cs</code>.</li></ol>]]></text>
+    </questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p><strong>Pauta de revisión — Escenario 1 (Escuadrones de colores):</strong></p><ul><li>Cada instancia de <code>Enemigo</code> debe asignar el color de su equipo en <code>Start()</code> y encapsular su movimiento mediante <code>Mover()</code> y <code>Detener()</code>.</li><li><code>Player</code> solo recorre su campo <code>public List[Enemigo] enemigos</code> (sin usar <code>FindObjectsOfType</code>) e ignora referencias vacías con <code>if (e == null) continue;</code>.</li><li>Al presionar <code>1</code>, <code>2</code> o <code>3</code> se filtra por <code>ColorEquipo</code> y se imprime el conteo exacto de detenidos; con <code>Espacio</code> se reactiva a toda la lista.</li></ul>]]></text></generalfeedback>
+    <defaultgrade>100</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <responseformat>editor</responseformat>
+    <responserequired>1</responserequired>
+    <responsefieldlines>25</responsefieldlines>
+    <attachments>3</attachments>
+    <attachmentsrequired>0</attachmentsrequired>
+    <maxbytes>0</maxbytes>
+    <graderinfo format="html">
+        <text><![CDATA[<p><em>(Nota: Para esta pregunta, usaremos corchetes [...] en lugar de los símbolos de genéricos &lt; &gt;)</em></p>
+<p><strong>ANEXO DOCENTE — Solución de referencia (Escenario 1: Escuadrones de colores)</strong></p>
+<h4>Script común: movimiento del <code>Player</code></h4>
+<p>Las tres soluciones comparten este movimiento dentro de <code>Update()</code>:</p>
+<pre><code>float h = Input.GetAxisRaw("Horizontal");
+float v = Input.GetAxisRaw("Vertical");
+transform.Translate(new Vector2(h, v).normalized * velocidad * Time.deltaTime);</code></pre>
+<p><code>GetAxisRaw</code> devuelve 0 al soltar las teclas, así que el player se detiene sin código adicional.</p>
+<h4>Solución Escenario 1 — Escuadrones de colores</h4>
+<p><strong>Enemigo.cs</strong></p>
+<pre><code>using UnityEngine;
+
+public enum ColorEquipo { Rojo, Azul, Verde }
+
+public class Enemigo : MonoBehaviour
+{
+    public ColorEquipo equipo;
+    public float velocidad = 2f;
+    public Transform objetivo;
+
+    private bool enMovimiento = true;
+
+    void Start()
+    {
+        if (objetivo == null)
+            objetivo = GameObject.FindWithTag("Player").transform;
+
+        GetComponent[SpriteRenderer]().color = ObtenerColor();
+    }
+
+    void Update()
+    {
+        if (enMovimiento &amp;&amp; objetivo != null)
+        {
+            transform.position = Vector2.MoveTowards(
+                transform.position, objetivo.position, velocidad * Time.deltaTime);
+        }
+    }
+
+    public void Detener() { enMovimiento = false; }
+    public void Mover()   { enMovimiento = true; }
+
+    Color ObtenerColor()
+    {
+        switch (equipo)
+        {
+            case ColorEquipo.Rojo: return Color.red;
+            case ColorEquipo.Azul: return Color.blue;
+            default:               return Color.green;
+        }
+    }
+}</code></pre>
+<p><strong>Player.cs</strong></p>
+<pre><code>using System.Collections.Generic;
+using UnityEngine;
+
+public class Player : MonoBehaviour
+{
+    public float velocidad = 5f;
+    public List[Enemigo] enemigos = new List[Enemigo]();
+
+    void Update()
+    {
+        float h = Input.GetAxisRaw("Horizontal");
+        float v = Input.GetAxisRaw("Vertical");
+        transform.Translate(new Vector2(h, v).normalized * velocidad * Time.deltaTime);
+
+        if (Input.GetKeyDown(KeyCode.Alpha1)) DetenerEquipo(ColorEquipo.Rojo);
+        if (Input.GetKeyDown(KeyCode.Alpha2)) DetenerEquipo(ColorEquipo.Azul);
+        if (Input.GetKeyDown(KeyCode.Alpha3)) DetenerEquipo(ColorEquipo.Verde);
+        if (Input.GetKeyDown(KeyCode.Space))  MoverTodos();
+    }
+
+    void DetenerEquipo(ColorEquipo equipo)
+    {
+        int detenidos = 0;
+        foreach (Enemigo e in enemigos)
+        {
+            if (e == null) continue;
+            if (e.equipo == equipo)
+            {
+                e.Detener();
+                detenidos++;
+            }
+        }
+        Debug.Log($"Equipo {equipo}: {detenidos} enemigos detenidos");
+    }
+
+    void MoverTodos()
+    {
+        foreach (Enemigo e in enemigos)
+        {
+            if (e != null) e.Mover();
+        }
+    }
+}</code></pre>
+<p><strong>Errores frecuentes a observar:</strong></p>
+<ul><li>Pintar el color desde <code>Player</code> en lugar de que el enemigo lo haga en su <code>Start()</code>.</li><li>Olvidar <code>if (e == null) continue;</code>, lo que produce <code>NullReferenceException</code> con un elemento vacío en la lista.</li><li>Usar <code>FindObjectsOfType[Enemigo]()</code> en lugar de la lista: así reaccionan <strong>todos</strong> los enemigos de la escena y se incumple el objetivo del examen.</li></ul>
+<h4>Pruebas en vivo (comunes a los 3 escenarios)</h4>
+<ul><li>&#9744; Quitar un enemigo de la lista en el Inspector con el juego en Play: deja de reaccionar.</li><li>&#9744; Agregar a la lista en Play un enemigo que no estaba: ahora reacciona.</li><li>&#9744; Agregar un elemento vacío (<code>None</code>) con el <code>+</code> del Inspector: cero errores en consola.</li><li>Pedir al estudiante que explique en voz alta el recorrido de su lista: qué elementos filtra, qué método llama y por qué.</li></ul>]]></text>
+    </graderinfo>
+    <responsetemplate format="html">
+        <text><![CDATA[<p><strong>1. Forma elegida para referenciar al Player desde el prefab y justificación:</strong></p><p><br></p><p><strong>2. Explicación del recorrido sobre la lista y manejo de elementos vacíos (None) / casos borde:</strong></p><p><br></p><p><strong>3. Código de <code>Enemigo.cs</code>:</strong></p><pre><code>// Pega aquí tu código de Enemigo.cs</code></pre><p><strong>4. Código de <code>Player.cs</code>:</strong></p><pre><code>// Pega aquí tu código de Player.cs</code></pre>]]></text>
+    </responsetemplate>
+    <tags>
+        <tag><text>02-2026</text></tag>
+        <tag><text>List</text></tag>
+        <tag><text>Practico</text></tag>
+        <tag><text>Pregunta Abierta</text></tag>
+    </tags>
+</question>
+
+<!-- P-E02 Los 3 más cercanos -->
+<question type="essay">
+    <name><text><![CDATA[P-E02 Los 3 más cercanos]]></text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p><em>(Nota: Para esta pregunta, usaremos corchetes [...] en lugar de los símbolos de genéricos &lt; &gt;)</em></p>
+<p><strong>Examen Práctico: Listas de Objetos en Unity 2D</strong> &nbsp;|&nbsp; <strong>Tiempo estimado:</strong> 15 minutos</p>
+<h3>Escenario 2 — Los 3 más cercanos</h3>
+<h4>Contexto</h4>
+<p>El jugador tiene un arma congelante con munición limitada: al disparar solo puede congelar a los <strong>3 enemigos más cercanos</strong> de su lista. Los enemigos congelados se detienen y se pintan de celeste.</p>
+<h3>Reglas comunes para este escenario</h3>
+<h4>Base obligatoria</h4>
+<ol><li><strong>Escena 2D</strong> con un GameObject <code>Player</code> (un sprite cuadrado o círculo es suficiente).</li><li>El <code>Player</code> se mueve con las flechas o WASD y <strong>se detiene</strong> al soltar las teclas.</li><li>Un <strong>prefab</strong> <code>Enemigo</code> con un <code>SpriteRenderer</code> y el script <code>Enemigo</code>.</li><li>Al menos <strong>6 clones</strong> del prefab en la escena, con valores distintos en el Inspector (velocidad y el atributo propio del escenario).</li><li>Cada enemigo persigue al <code>Player</code> a <strong>su propia velocidad</strong>.</li><li>El script <code>Player</code> tiene un campo <strong><code>public List[Enemigo] enemigos</code></strong> que se llena <strong>arrastrando</strong> enemigos desde la Jerarquía al Inspector.</li><li><strong>Solo algunos</strong> enemigos deben estar en la lista (por ejemplo, 4 de 6). Los enemigos que no están en la lista siguen persiguiendo, pero <strong>no reaccionan</strong> a las teclas del player.</li></ol>
+<h4>Referencia al player desde el prefab</h4>
+<p>Un prefab guardado en la carpeta del proyecto <strong>no puede</strong> tener arrastrada una referencia a un objeto de la escena. Elige una de estas dos formas y explica cuál usaste:</p>
+<ul><li>Asignar el campo <code>objetivo</code> en <strong>cada clon</strong> de la escena (arrastrando el <code>Player</code>), o</li><li>Buscarlo por código en <code>Start()</code> con el tag <code>Player</code>: <code>GameObject.FindWithTag("Player").transform</code>.</li></ul>
+<h4>Pruebas que hará el docente durante la ejecución (las 3 aplican a todos los escenarios)</h4>
+<ul><li>&#9744; <strong>Quitar</strong> un enemigo de la lista en el Inspector <strong>con el juego en Play</strong>: ese enemigo deja de reaccionar a las teclas.</li><li>&#9744; <strong>Agregar</strong> a la lista, con el juego en Play, un enemigo que antes no estaba: ahora reacciona.</li><li>&#9744; Agregar un <strong>elemento vacío</strong> (<code>None</code>) a la lista con el <code>+</code> del Inspector: el juego <strong>no</strong> debe mostrar errores en la consola.</li></ul>
+<h4>Restricciones</h4>
+<ul><li>Usar el sistema de entrada clásico (<code>Input.GetKeyDown</code>, <code>Input.GetAxisRaw</code>).</li><li>Los métodos que cambian el estado de un enemigo deben estar <strong>en la clase <code>Enemigo</code></strong> y ser llamados desde <code>Player</code>. El <code>Player</code> no debe modificar directamente el color ni la posición de los enemigos.</li></ul>
+<h4>Clase <code>Enemigo</code></h4>
+<table border="1" cellpadding="6" cellspacing="0" style="border-collapse: collapse; width: 100%;"><thead><tr><th style="background-color: #f2f2f2; text-align: left;">Miembro</th><th style="background-color: #f2f2f2; text-align: left;">Descripción</th></tr></thead><tbody><tr><td><code>public float velocidad</code></td><td>Velocidad de persecución.</td></tr><tr><td><code>public Transform objetivo</code></td><td>El player.</td></tr><tr><td><code>Update()</code></td><td>Si no está congelado, avanza hacia el <code>objetivo</code> a su <code>velocidad</code>.</td></tr><tr><td><code>public void Congelar()</code></td><td>Se detiene y cambia el color del sprite a <code>Color.cyan</code>.</td></tr><tr><td><code>public void Descongelar()</code></td><td>Vuelve a moverse y recupera su color original.</td></tr></tbody></table>
+<h4>Clase <code>Player</code></h4>
+<table border="1" cellpadding="6" cellspacing="0" style="border-collapse: collapse; width: 100%;"><thead><tr><th style="background-color: #f2f2f2; text-align: left;">Miembro / Tecla</th><th style="background-color: #f2f2f2; text-align: left;">Acción</th></tr></thead><tbody><tr><td><code>public int cantidad = 3</code></td><td>Cuántos enemigos se congelan por disparo (editable en el Inspector).</td></tr><tr><td><code>Espacio</code></td><td>Congela a los <code>cantidad</code> enemigos <strong>de la lista</strong> más cercanos al player.</td></tr><tr><td><code>R</code></td><td>Descongela a <strong>todos</strong> los enemigos de la lista.</td></tr></tbody></table>
+<p><strong>Reglas:</strong></p>
+<ul><li>Si la lista tiene menos enemigos válidos que <code>cantidad</code>, se congelan todos los que haya, sin errores.</li><li>Los elementos vacíos de la lista se ignoran.</li><li>Un enemigo que no está en la lista nunca se congela, aunque sea el más cercano.</li></ul>
+<p><strong>Pista:</strong> puedes copiar los enemigos válidos a una lista auxiliar y, <code>cantidad</code> veces, buscar el más cercano, congelarlo y quitarlo de la lista auxiliar. También puedes ordenar la lista auxiliar por distancia con <code>Sort</code>.</p>
+<h4>Configuración mínima en la escena</h4>
+<ul><li>6 enemigos con velocidades distintas, ubicados a distancias diferentes del player.</li><li>5 de ellos en la lista. Coloca el enemigo que <strong>no</strong> está en la lista muy cerca del player, para comprobar que no se congela.</li></ul>
+<h4>Comportamiento esperado</h4>
+<ul><li>Al presionar <code>Espacio</code>, exactamente 3 enemigos de la lista (los más cercanos en ese momento) se ponen celestes y se detienen. El enemigo que no está en la lista sigue persiguiendo aunque esté más cerca.</li><li>Al cambiar <code>cantidad</code> a 10 en el Inspector y presionar <code>Espacio</code>, se congelan los 5 enemigos de la lista, sin errores.</li><li><code>R</code> devuelve el color original y el movimiento a todos.</li></ul>
+<h4>Rúbrica (100 pts)</h4>
+<table border="1" cellpadding="6" cellspacing="0" style="border-collapse: collapse; width: 100%;"><thead><tr><th style="background-color: #f2f2f2; text-align: left;">Criterio</th><th style="background-color: #f2f2f2; text-align: left;">Pts</th></tr></thead><tbody><tr><td>Escena y prefab configurados (6 clones con valores distintos)</td><td>15</td></tr><tr><td>El player se mueve y se detiene</td><td>10</td></tr><tr><td>Los enemigos persiguen al player, cada uno a su velocidad</td><td>10</td></tr><tr><td>La lista se configura desde el Inspector y solo reaccionan los enemigos registrados</td><td>15</td></tr><tr><td><code>Espacio</code> congela exactamente a los N más cercanos, calculando la distancia</td><td>30</td></tr><tr><td><code>R</code> descongela y restaura el color original</td><td>10</td></tr><tr><td>Robustez: <code>cantidad</code> mayor que la lista y elementos vacíos no generan errores</td><td>10</td></tr></tbody></table>
+<h4>Instrucciones de entrega (pregunta abierta)</h4><p>Implementa el proyecto funcional en Unity 2D siguiendo todas las especificaciones anteriores y registra en tu respuesta (o adjunta tus scripts <code>.cs</code> si el docente lo indica):</p><ol><li>La forma elegida para referenciar al <code>Player</code> desde el prefab y tu explicación.</li><li>Una breve explicación de cómo recorriste y filtraste <code>enemigos</code> evitando errores con elementos vacíos (<code>None</code>) y casos borde del escenario.</li><li>El código completo de tus scripts <code>Enemigo.cs</code> y <code>Player.cs</code>.</li></ol>]]></text>
+    </questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p><strong>Pauta de revisión — Escenario 2 (Los 3 más cercanos):</strong></p><ul><li><code>Enemigo</code> debe guardar su color original antes de congelar y encapsular <code>Congelar()</code> / <code>Descongelar()</code>.</li><li><code>Player</code> debe copiar los elementos no nulos a una <strong>lista auxiliar</strong> para no alterar ni reordenar <code>enemigos</code> en el Inspector, y acotar iteraciones con <code>Mathf.Min(cantidad, candidatos.Count)</code>.</li><li>La búsqueda de mínima distancia debe inicializar <code>menorDist = Mathf.Infinity</code> (o ordenar la copia auxiliar con <code>Sort</code>).</li></ul>]]></text></generalfeedback>
+    <defaultgrade>100</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <responseformat>editor</responseformat>
+    <responserequired>1</responserequired>
+    <responsefieldlines>25</responsefieldlines>
+    <attachments>3</attachments>
+    <attachmentsrequired>0</attachmentsrequired>
+    <maxbytes>0</maxbytes>
+    <graderinfo format="html">
+        <text><![CDATA[<p><em>(Nota: Para esta pregunta, usaremos corchetes [...] en lugar de los símbolos de genéricos &lt; &gt;)</em></p>
+<p><strong>ANEXO DOCENTE — Solución de referencia (Escenario 2: Los 3 más cercanos)</strong></p>
+<h4>Script común: movimiento del <code>Player</code></h4>
+<p>Las tres soluciones comparten este movimiento dentro de <code>Update()</code>:</p>
+<pre><code>float h = Input.GetAxisRaw("Horizontal");
+float v = Input.GetAxisRaw("Vertical");
+transform.Translate(new Vector2(h, v).normalized * velocidad * Time.deltaTime);</code></pre>
+<p><code>GetAxisRaw</code> devuelve 0 al soltar las teclas, así que el player se detiene sin código adicional.</p>
+<h4>Solución Escenario 2 — Los 3 más cercanos</h4>
+<p><strong>Enemigo.cs</strong></p>
+<pre><code>using UnityEngine;
+
+public class Enemigo : MonoBehaviour
+{
+    public float velocidad = 2f;
+    public Transform objetivo;
+
+    private bool congelado = false;
+    private SpriteRenderer sr;
+    private Color colorOriginal;
+
+    void Start()
+    {
+        if (objetivo == null)
+            objetivo = GameObject.FindWithTag("Player").transform;
+
+        sr = GetComponent[SpriteRenderer]();
+        colorOriginal = sr.color;
+    }
+
+    void Update()
+    {
+        if (!congelado &amp;&amp; objetivo != null)
+        {
+            transform.position = Vector2.MoveTowards(
+                transform.position, objetivo.position, velocidad * Time.deltaTime);
+        }
+    }
+
+    public void Congelar()
+    {
+        congelado = true;
+        sr.color = Color.cyan;
+    }
+
+    public void Descongelar()
+    {
+        congelado = false;
+        sr.color = colorOriginal;
+    }
+}</code></pre>
+<p><strong>Player.cs</strong></p>
+<pre><code>using System.Collections.Generic;
+using UnityEngine;
+
+public class Player : MonoBehaviour
+{
+    public float velocidad = 5f;
+    public int cantidad = 3;
+    public List[Enemigo] enemigos = new List[Enemigo]();
+
+    void Update()
+    {
+        float h = Input.GetAxisRaw("Horizontal");
+        float v = Input.GetAxisRaw("Vertical");
+        transform.Translate(new Vector2(h, v).normalized * velocidad * Time.deltaTime);
+
+        if (Input.GetKeyDown(KeyCode.Space)) CongelarMasCercanos();
+        if (Input.GetKeyDown(KeyCode.R))     DescongelarTodos();
+    }
+
+    void CongelarMasCercanos()
+    {
+        // Copia auxiliar solo con enemigos válidos, para no modificar la lista original
+        List[Enemigo] candidatos = new List[Enemigo]();
+        foreach (Enemigo e in enemigos)
+        {
+            if (e != null) candidatos.Add(e);
+        }
+
+        int n = Mathf.Min(cantidad, candidatos.Count);
+        for (int k = 0; k &lt; n; k++)
+        {
+            Enemigo masCercano = null;
+            float menorDist = Mathf.Infinity;
+
+            foreach (Enemigo e in candidatos)
+            {
+                float d = Vector2.Distance(transform.position, e.transform.position);
+                if (d &lt; menorDist)
+                {
+                    menorDist = d;
+                    masCercano = e;
+                }
+            }
+
+            masCercano.Congelar();
+            candidatos.Remove(masCercano);
+        }
+    }
+
+    void DescongelarTodos()
+    {
+        foreach (Enemigo e in enemigos)
+        {
+            if (e != null) e.Descongelar();
+        }
+    }
+}</code></pre>
+<p><strong>Alternativa válida con <code>Sort</code>:</strong></p>
+<pre><code>candidatos.Sort((a, b) =&gt;
+    Vector2.Distance(transform.position, a.transform.position)
+        .CompareTo(Vector2.Distance(transform.position, b.transform.position)));
+
+for (int i = 0; i &lt; Mathf.Min(cantidad, candidatos.Count); i++)
+    candidatos[i].Congelar();</code></pre>
+<p><strong>Errores frecuentes a observar:</strong></p>
+<ul><li>Ordenar o eliminar elementos de la lista <strong>original</strong>: el Inspector del player cambia de orden o pierde enemigos.</li><li><code>for (int i = 0; i &lt; cantidad; i++)</code> sin <code>Mathf.Min</code>: <code>ArgumentOutOfRangeException</code> cuando <code>cantidad</code> es mayor que la lista.</li><li>Inicializar <code>menorDist</code> en <code>0</code>: nunca se encuentra un enemigo más cercano y <code>masCercano</code> queda en <code>null</code>.</li><li>Guardar <code>colorOriginal</code> después de haber cambiado el color.</li></ul>
+<h4>Pruebas en vivo (comunes a los 3 escenarios)</h4>
+<ul><li>&#9744; Quitar un enemigo de la lista en el Inspector con el juego en Play: deja de reaccionar.</li><li>&#9744; Agregar a la lista en Play un enemigo que no estaba: ahora reacciona.</li><li>&#9744; Agregar un elemento vacío (<code>None</code>) con el <code>+</code> del Inspector: cero errores en consola.</li><li>Pedir al estudiante que explique en voz alta el recorrido de su lista: qué elementos filtra, qué método llama y por qué.</li></ul>]]></text>
+    </graderinfo>
+    <responsetemplate format="html">
+        <text><![CDATA[<p><strong>1. Forma elegida para referenciar al Player desde el prefab y justificación:</strong></p><p><br></p><p><strong>2. Explicación del recorrido sobre la lista y manejo de elementos vacíos (None) / casos borde:</strong></p><p><br></p><p><strong>3. Código de <code>Enemigo.cs</code>:</strong></p><pre><code>// Pega aquí tu código de Enemigo.cs</code></pre><p><strong>4. Código de <code>Player.cs</code>:</strong></p><pre><code>// Pega aquí tu código de Player.cs</code></pre>]]></text>
+    </responsetemplate>
+    <tags>
+        <tag><text>02-2026</text></tag>
+        <tag><text>List</text></tag>
+        <tag><text>Practico</text></tag>
+        <tag><text>Pregunta Abierta</text></tag>
+    </tags>
+</question>
+
+<!-- P-E03 Onda expansiva -->
+<question type="essay">
+    <name><text><![CDATA[P-E03 Onda expansiva]]></text></name>
+    <questiontext format="html">
+        <text><![CDATA[<p><em>(Nota: Para esta pregunta, usaremos corchetes [...] en lugar de los símbolos de genéricos &lt; &gt;)</em></p>
+<p><strong>Examen Práctico: Listas de Objetos en Unity 2D</strong> &nbsp;|&nbsp; <strong>Tiempo estimado:</strong> 15 minutos</p>
+<h3>Escenario 3 — Onda expansiva</h3>
+<h4>Contexto</h4>
+<p>El jugador lanza una onda expansiva que daña a los enemigos <strong>de su lista</strong> que estén dentro de un radio. Los enemigos tienen distinta cantidad de vida y desaparecen al llegar a cero, y en ese momento también deben salir de la lista del player.</p>
+<h3>Reglas comunes para este escenario</h3>
+<h4>Base obligatoria</h4>
+<ol><li><strong>Escena 2D</strong> con un GameObject <code>Player</code> (un sprite cuadrado o círculo es suficiente).</li><li>El <code>Player</code> se mueve con las flechas o WASD y <strong>se detiene</strong> al soltar las teclas.</li><li>Un <strong>prefab</strong> <code>Enemigo</code> con un <code>SpriteRenderer</code> y el script <code>Enemigo</code>.</li><li>Al menos <strong>6 clones</strong> del prefab en la escena, con valores distintos en el Inspector (velocidad y el atributo propio del escenario).</li><li>Cada enemigo persigue al <code>Player</code> a <strong>su propia velocidad</strong>.</li><li>El script <code>Player</code> tiene un campo <strong><code>public List[Enemigo] enemigos</code></strong> que se llena <strong>arrastrando</strong> enemigos desde la Jerarquía al Inspector.</li><li><strong>Solo algunos</strong> enemigos deben estar en la lista (por ejemplo, 4 de 6). Los enemigos que no están en la lista siguen persiguiendo, pero <strong>no reaccionan</strong> a las teclas del player.</li></ol>
+<h4>Referencia al player desde el prefab</h4>
+<p>Un prefab guardado en la carpeta del proyecto <strong>no puede</strong> tener arrastrada una referencia a un objeto de la escena. Elige una de estas dos formas y explica cuál usaste:</p>
+<ul><li>Asignar el campo <code>objetivo</code> en <strong>cada clon</strong> de la escena (arrastrando el <code>Player</code>), o</li><li>Buscarlo por código en <code>Start()</code> con el tag <code>Player</code>: <code>GameObject.FindWithTag("Player").transform</code>.</li></ul>
+<h4>Pruebas que hará el docente durante la ejecución (las 3 aplican a todos los escenarios)</h4>
+<ul><li>&#9744; <strong>Quitar</strong> un enemigo de la lista en el Inspector <strong>con el juego en Play</strong>: ese enemigo deja de reaccionar a las teclas.</li><li>&#9744; <strong>Agregar</strong> a la lista, con el juego en Play, un enemigo que antes no estaba: ahora reacciona.</li><li>&#9744; Agregar un <strong>elemento vacío</strong> (<code>None</code>) a la lista con el <code>+</code> del Inspector: el juego <strong>no</strong> debe mostrar errores en la consola.</li></ul>
+<h4>Restricciones</h4>
+<ul><li>Usar el sistema de entrada clásico (<code>Input.GetKeyDown</code>, <code>Input.GetAxisRaw</code>).</li><li>Los métodos que cambian el estado de un enemigo deben estar <strong>en la clase <code>Enemigo</code></strong> y ser llamados desde <code>Player</code>. El <code>Player</code> no debe modificar directamente el color ni la posición de los enemigos.</li></ul>
+<h4>Clase <code>Enemigo</code></h4>
+<table border="1" cellpadding="6" cellspacing="0" style="border-collapse: collapse; width: 100%;"><thead><tr><th style="background-color: #f2f2f2; text-align: left;">Miembro</th><th style="background-color: #f2f2f2; text-align: left;">Descripción</th></tr></thead><tbody><tr><td><code>public float velocidad</code></td><td>Velocidad de persecución.</td></tr><tr><td><code>public int vida</code></td><td>Puntos de vida (entre 1 y 3), configurados en el Inspector.</td></tr><tr><td><code>public Transform objetivo</code></td><td>El player.</td></tr><tr><td><code>Update()</code></td><td>Avanza hacia el <code>objetivo</code> a su <code>velocidad</code>.</td></tr><tr><td><code>public void RecibirDanio(int cantidad)</code></td><td>Resta vida y muestra en consola <code>"&lt;nombre&gt; recibió daño. Vida: X"</code>.</td></tr><tr><td><code>public bool EstaMuerto()</code></td><td>Devuelve <code>true</code> si <code>vida &lt;= 0</code>.</td></tr></tbody></table>
+<h4>Clase <code>Player</code></h4>
+<table border="1" cellpadding="6" cellspacing="0" style="border-collapse: collapse; width: 100%;"><thead><tr><th style="background-color: #f2f2f2; text-align: left;">Miembro / Tecla</th><th style="background-color: #f2f2f2; text-align: left;">Acción</th></tr></thead><tbody><tr><td><code>public float radio = 3f</code></td><td>Alcance de la onda (editable en el Inspector).</td></tr><tr><td><code>Espacio</code></td><td>Cada enemigo <strong>de la lista</strong> que esté a una distancia menor o igual a <code>radio</code> recibe 1 de daño. Los enemigos que mueren se <strong>quitan de la lista</strong> y se destruyen.</td></tr><tr><td><code>Tab</code></td><td>Muestra en consola el enemigo de la lista con <strong>más vida</strong>: <code>"Más resistente: &lt;nombre&gt; (vida X)"</code>. Si la lista está vacía, muestra <code>"No hay enemigos registrados"</code>.</td></tr></tbody></table>
+<p><strong>Reglas:</strong></p>
+<ul><li>Eliminar elementos de una lista mientras se recorre requiere cuidado: no debe saltarse a ningún enemigo ni lanzar excepciones.</li><li>Los elementos vacíos de la lista se ignoran (o se eliminan).</li><li><strong>Bonus (+10):</strong> dibujar el radio en la vista <em>Scene</em> con <code>OnDrawGizmosSelected()</code> y <code>Gizmos.DrawWireSphere</code>.</li></ul>
+<h4>Configuración mínima en la escena</h4>
+<ul><li>6 enemigos con velocidades distintas y vidas de 1, 2 y 3.</li><li>4 de ellos en la lista.</li></ul>
+<h4>Comportamiento esperado</h4>
+<ul><li>Al presionar <code>Espacio</code> con varios enemigos cerca, todos los de la lista dentro del radio reciben daño en el mismo pulso. Los que llegan a 0 desaparecen de la escena <strong>y</strong> de la lista del Inspector.</li><li>Un enemigo fuera de la lista no recibe daño aunque esté dentro del radio.</li><li><code>Tab</code> siempre informa correctamente al enemigo con más vida, incluso después de que algunos hayan muerto.</li></ul>
+<h4>Rúbrica (100 pts)</h4>
+<table border="1" cellpadding="6" cellspacing="0" style="border-collapse: collapse; width: 100%;"><thead><tr><th style="background-color: #f2f2f2; text-align: left;">Criterio</th><th style="background-color: #f2f2f2; text-align: left;">Pts</th></tr></thead><tbody><tr><td>Escena y prefab configurados (6 clones con valores distintos)</td><td>15</td></tr><tr><td>El player se mueve y se detiene</td><td>10</td></tr><tr><td>Los enemigos persiguen al player, cada uno a su velocidad</td><td>10</td></tr><tr><td>La lista se configura desde el Inspector y solo reaccionan los enemigos registrados</td><td>15</td></tr><tr><td><code>Espacio</code> aplica daño solo dentro del radio, llamando a <code>RecibirDanio()</code></td><td>20</td></tr><tr><td>Los enemigos muertos se quitan de la lista sin saltarse elementos y se destruyen</td><td>15</td></tr><tr><td><code>Tab</code> encuentra al enemigo con más vida (y maneja la lista vacía)</td><td>10</td></tr><tr><td>Robustez: elementos vacíos en la lista no generan errores</td><td>5</td></tr></tbody></table>
+<h4>Instrucciones de entrega (pregunta abierta)</h4><p>Implementa el proyecto funcional en Unity 2D siguiendo todas las especificaciones anteriores y registra en tu respuesta (o adjunta tus scripts <code>.cs</code> si el docente lo indica):</p><ol><li>La forma elegida para referenciar al <code>Player</code> desde el prefab y tu explicación.</li><li>Una breve explicación de cómo recorriste y filtraste <code>enemigos</code> evitando errores con elementos vacíos (<code>None</code>) y casos borde del escenario.</li><li>El código completo de tus scripts <code>Enemigo.cs</code> y <code>Player.cs</code>.</li></ol>]]></text>
+    </questiontext>
+    <generalfeedback format="html"><text><![CDATA[<p><strong>Pauta de revisión — Escenario 3 (Onda expansiva):</strong></p><ul><li>Al dañar y eliminar enemigos muertos dentro del radio, el bucle sobre <code>enemigos</code> debe recorrer <strong>hacia atrás</strong> (<code>for (int i = enemigos.Count - 1; i &gt;= 0; i--)</code>) para que <code>RemoveAt(i)</code> no omita elementos contiguos ni lance excepciones.</li><li><code>Player</code> debe quitar al enemigo de la lista antes o junto con <code>Destroy(e.gameObject)</code> e ignorar/limpiar elementos <code>null</code>.</li><li>Con <code>Tab</code> se busca el máximo <code>e.vida</code> evitando fallos si todos son nulos o la lista está vacía.</li></ul>]]></text></generalfeedback>
+    <defaultgrade>100</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <responseformat>editor</responseformat>
+    <responserequired>1</responserequired>
+    <responsefieldlines>25</responsefieldlines>
+    <attachments>3</attachments>
+    <attachmentsrequired>0</attachmentsrequired>
+    <maxbytes>0</maxbytes>
+    <graderinfo format="html">
+        <text><![CDATA[<p><em>(Nota: Para esta pregunta, usaremos corchetes [...] en lugar de los símbolos de genéricos &lt; &gt;)</em></p>
+<p><strong>ANEXO DOCENTE — Solución de referencia (Escenario 3: Onda expansiva)</strong></p>
+<h4>Script común: movimiento del <code>Player</code></h4>
+<p>Las tres soluciones comparten este movimiento dentro de <code>Update()</code>:</p>
+<pre><code>float h = Input.GetAxisRaw("Horizontal");
+float v = Input.GetAxisRaw("Vertical");
+transform.Translate(new Vector2(h, v).normalized * velocidad * Time.deltaTime);</code></pre>
+<p><code>GetAxisRaw</code> devuelve 0 al soltar las teclas, así que el player se detiene sin código adicional.</p>
+<h4>Solución Escenario 3 — Onda expansiva</h4>
+<p><strong>Enemigo.cs</strong></p>
+<pre><code>using UnityEngine;
+
+public class Enemigo : MonoBehaviour
+{
+    public float velocidad = 2f;
+    public int vida = 2;
+    public Transform objetivo;
+
+    void Start()
+    {
+        if (objetivo == null)
+            objetivo = GameObject.FindWithTag("Player").transform;
+    }
+
+    void Update()
+    {
+        if (objetivo != null)
+        {
+            transform.position = Vector2.MoveTowards(
+                transform.position, objetivo.position, velocidad * Time.deltaTime);
+        }
+    }
+
+    public void RecibirDanio(int cantidad)
+    {
+        vida -= cantidad;
+        Debug.Log($"{name} recibió daño. Vida: {vida}");
+    }
+
+    public bool EstaMuerto()
+    {
+        return vida &lt;= 0;
+    }
+}</code></pre>
+<p><strong>Player.cs</strong></p>
+<pre><code>using System.Collections.Generic;
+using UnityEngine;
+
+public class Player : MonoBehaviour
+{
+    public float velocidad = 5f;
+    public float radio = 3f;
+    public List[Enemigo] enemigos = new List[Enemigo]();
+
+    void Update()
+    {
+        float h = Input.GetAxisRaw("Horizontal");
+        float v = Input.GetAxisRaw("Vertical");
+        transform.Translate(new Vector2(h, v).normalized * velocidad * Time.deltaTime);
+
+        if (Input.GetKeyDown(KeyCode.Space)) OndaExpansiva();
+        if (Input.GetKeyDown(KeyCode.Tab))   MostrarMasResistente();
+    }
+
+    void OndaExpansiva()
+    {
+        // Recorrido hacia atrás: eliminar con RemoveAt(i) no salta elementos
+        for (int i = enemigos.Count - 1; i &gt;= 0; i--)
+        {
+            Enemigo e = enemigos[i];
+            if (e == null)
+            {
+                enemigos.RemoveAt(i);
+                continue;
+            }
+
+            float d = Vector2.Distance(transform.position, e.transform.position);
+            if (d &lt;= radio)
+            {
+                e.RecibirDanio(1);
+                if (e.EstaMuerto())
+                {
+                    enemigos.RemoveAt(i);
+                    Destroy(e.gameObject);
+                }
+            }
+        }
+    }
+
+    void MostrarMasResistente()
+    {
+        Enemigo mejor = null;
+        foreach (Enemigo e in enemigos)
+        {
+            if (e == null) continue;
+            if (mejor == null || e.vida &gt; mejor.vida) mejor = e;
+        }
+
+        if (mejor == null)
+            Debug.Log("No hay enemigos registrados");
+        else
+            Debug.Log($"Más resistente: {mejor.name} (vida {mejor.vida})");
+    }
+
+    void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireSphere(transform.position, radio);
+    }
+}</code></pre>
+<p><strong>Errores frecuentes a observar:</strong></p>
+<ul><li>Usar <code>foreach</code> y <code>enemigos.Remove(e)</code> dentro del mismo bucle: <code>InvalidOperationException</code>.</li><li>Recorrer hacia adelante con <code>RemoveAt(i)</code>: cuando mueren dos enemigos seguidos, el segundo se salta en ese pulso.</li><li>Destruir el enemigo sin quitarlo de la lista: en el siguiente <code>Espacio</code> o <code>Tab</code> aparece <code>MissingReferenceException</code>.</li><li>Que el enemigo se destruya a sí mismo dentro de <code>RecibirDanio()</code> sin avisar al player: el objeto desaparece, pero la referencia sigue en la lista.</li></ul>
+<h4>Pruebas en vivo (comunes a los 3 escenarios)</h4>
+<ul><li>&#9744; Quitar un enemigo de la lista en el Inspector con el juego en Play: deja de reaccionar.</li><li>&#9744; Agregar a la lista en Play un enemigo que no estaba: ahora reacciona.</li><li>&#9744; Agregar un elemento vacío (<code>None</code>) con el <code>+</code> del Inspector: cero errores en consola.</li><li>Pedir al estudiante que explique en voz alta el recorrido de su lista: qué elementos filtra, qué método llama y por qué.</li></ul>]]></text>
+    </graderinfo>
+    <responsetemplate format="html">
+        <text><![CDATA[<p><strong>1. Forma elegida para referenciar al Player desde el prefab y justificación:</strong></p><p><br></p><p><strong>2. Explicación del recorrido sobre la lista y manejo de elementos vacíos (None) / casos borde:</strong></p><p><br></p><p><strong>3. Código de <code>Enemigo.cs</code>:</strong></p><pre><code>// Pega aquí tu código de Enemigo.cs</code></pre><p><strong>4. Código de <code>Player.cs</code>:</strong></p><pre><code>// Pega aquí tu código de Player.cs</code></pre>]]></text>
+    </responsetemplate>
+    <tags>
+        <tag><text>02-2026</text></tag>
+        <tag><text>List</text></tag>
+        <tag><text>Practico</text></tag>
+        <tag><text>Pregunta Abierta</text></tag>
+    </tags>
+</question>
+
+</quiz>

@@ -1,0 +1,312 @@
+\documentclass[aspectratio=169, 10pt]{beamer}
+
+% --- Configuración de Idioma y Codificación ---
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish, es-tabla]{babel}
+
+% --- Paquetes de Estilo y Gráficos ---
+\usepackage{amsmath, amssymb}
+\usepackage{booktabs}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{tikz}
+
+% --- Tema de la Presentación ---
+\usetheme{Madrid}
+\usecolortheme{whale}
+
+% Ajuste de pie de página limpio
+\setbeamertemplate{navigation symbols}{}
+
+% --- Definición de Colores para Código C++ ---
+\definecolor{codegreen}{rgb}{0.1, 0.55, 0.1}
+\definecolor{codegray}{rgb}{0.45, 0.45, 0.45}
+\definecolor{codepurple}{rgb}{0.5, 0.0, 0.7}
+\definecolor{codeblue}{rgb}{0.0, 0.25, 0.75}
+\definecolor{codebg}{rgb}{0.97, 0.97, 0.98}
+
+% --- Configuración del Entorno de Código Listings ---
+\lstdefinestyle{cppstyle}{
+    backgroundcolor=\color{codebg},   
+    commentstyle=\color{codegreen}\itshape,
+    keywordstyle=\color{codeblue}\bfseries,
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\scriptsize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=6pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2,
+    frame=single,
+    rulecolor=\color{codegray!30},
+    morekeywords={UCLASS, GENERATED_BODY, UPROPERTY, UFUNCTION, AActor, Super, int32, FVector, FRotator}
+}
+\lstset{style=cppstyle}
+
+% --- Metadatos de la Presentación ---
+\title[POO en Unreal Engine - Parte 1]{Programación Orientada a Objetos en C++}
+\subtitle{Mini-Proyecto Dado 3D: Parte 1 — Creación del Actor Vacío}
+\author[SIS457]{Docente: SIS457 / Computación Gráfica y Videojuegos}
+\institute[Universidad]{Carrera de Ingeniería de Sistemas}
+\date{\today}
+
+% =========================================================================
+\begin{document}
+
+% --- Diapositiva 1: Carátula ---
+\begin{frame}
+    \titlepage
+\end{frame}
+
+% --- Diapositiva 2: Hoja de Ruta Global ---
+\begin{frame}{Mini-Proyecto: Hoja de Ruta de 11 Pasos}
+    \begin{columns}[T]
+        \begin{column}{0.48\textwidth}
+            \textbf{Bloque 1: Estructura y Visualización}
+            \begin{enumerate}
+                \item \textbf{\color{blue}Paso 1: Actor Vacío (ADice)} $\leftarrow$ \textit{Hoy}
+                \item Paso 2: Root y Componente de Malla
+                \item Paso 3: Malla de Dado personalizada
+                \item Paso 4: Atributo Value (1..6)
+                \item Paso 5: Función ShowDiceFace
+                \item Paso 6: Prueba reactiva en Tick
+            \end{enumerate}
+        \end{column}
+        \begin{column}{0.48\textwidth}
+            \textbf{Bloque 2: Interactividad y Física}
+            \begin{enumerate}
+                \setcounter{enumi}{6}
+                \item Paso 7: Evento Click y Debug
+                \item Paso 8: Cambio incremental de caras
+                \item Paso 9: Cinemática de Salto (Fuerza/Gravedad)
+                \item Paso 10: Rotación angular 3D en el aire
+                \item Paso 11: Detección con Producto Punto
+            \end{enumerate}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+% --- Diapositiva 3: Objetivos del Paso 1 ---
+\begin{frame}{Objetivos de la Sesión (Paso 1)}
+    \begin{block}{¿Qué aprenderemos hoy?}
+        \begin{itemize}
+            \item Comprender qué es un \textbf{AActor} dentro de la jerarquía de Unreal Engine.
+            \item Conectar conceptos de POO tradicional (C\#, Delphi, Unity) con C++ en Unreal.
+            \item Aprender el rol del precompilador \textbf{UHT (Unreal Header Tool)}: macros \texttt{UCLASS()} y \texttt{GENERATED\_BODY()}.
+            \item Analizar las etapas del ciclo de vida básico: \textbf{Constructor}, \textbf{BeginPlay()} y \textbf{Tick()}.
+            \item Compilar y comprobar la instanciación en el \textbf{World Outliner}.
+        \end{itemize}
+    \end{block}
+\end{frame}
+
+% --- Diapositiva 4: Concepto de AActor ---
+\begin{frame}{Concepto Fundamental: ¿Qué es un AActor?}
+    \begin{itemize}
+        \item En Unreal Engine, \textbf{AActor} es la clase base para cualquier objeto que pueda colocarse o generarse (spawnearse) en un nivel 3D.
+        \item Hereda de \texttt{UObject} (la raíz de todos los objetos con recolección de basura).
+    \end{itemize}
+
+    \vspace{0.3cm}
+    \begin{table}[]
+        \centering
+        \footnotesize
+        \begin{tabular}{@{}lll@{}}
+            \toprule
+            \textbf{Entorno} & \textbf{Concepto Equivalente} & \textbf{Características} \\ \midrule
+            \textbf{Unreal Engine} & \texttt{AActor} & Posee Transform (posición/rotación) si tiene Root. \\
+            \textbf{Unity} & \texttt{GameObject} & Contenedor de componentes. \\
+            \textbf{C\# / WinForms} & \texttt{Control} & Elemento visible en un Formulario. \\
+            \textbf{Delphi} & \texttt{TWinControl} & Componente con handle visual y coordenadas. \\ \bottomrule
+        \end{tabular}
+    \end{table}
+
+    \begin{alertblock}{Regla de Nomenclatura Epic}
+        Las clases que heredan de \texttt{AActor} llevan obligatoriamente el prefijo \textbf{A} (ejemplo: \texttt{ADice}).
+    \end{alertblock}
+\end{frame}
+
+% --- Diapositiva 5: El Sistema de Reflexión (UHT) ---
+\begin{frame}{El Sistema de Reflexión de Unreal (UHT)}
+    \begin{itemize}
+        \item C++ estándar no tiene reflexión nativa (inspección de tipos en tiempo de ejecución).
+        \item Unreal utiliza el \textbf{Unreal Header Tool (UHT)} para generar metadatos automáticamente.
+    \end{itemize}
+
+    \vspace{0.3cm}
+    \begin{columns}[T]
+        \begin{column}{0.48\textwidth}
+            \begin{block}{Macro \texttt{UCLASS()}}
+                Registra la clase para:
+                \begin{itemize}
+                    \item Garbage Collection (gestión de memoria).
+                    \item Visualización e instanciación en el Editor.
+                    \item Serialización y guardado.
+                \end{itemize}
+            \end{block}
+        \end{column}
+        \begin{column}{0.48\textwidth}
+            \begin{block}{Macro \texttt{GENERATED\_BODY()}}
+                \begin{itemize}
+                    \item Obligatoria en la primera línea de la clase.
+                    \item Inyecta código autogenerado necesario para el motor.
+                    \item Requiere \texttt{\#include "Dice.generated.h"} como \textbf{último include}.
+                \end{itemize}
+            \end{block}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+% --- Diapositiva 6: Código Dice.h ---
+\begin{frame}[fragile]{Código Fuente: Archivo de Cabecera \texttt{Dice.h}}
+\begin{lstlisting}[language=C++]
+#pragma once
+
+#include "CoreMinimal.h"
+#include "GameFramework/Actor.h"
+#include "Dice.generated.h" // SIEMPRE el ultimo include
+
+UCLASS()
+class PUZZLEDICEGAME_API ADice : public AActor
+{
+    GENERATED_BODY()
+    
+public: 
+    // Constructor: inicializa valores por defecto
+    ADice();
+
+protected:
+    // Se ejecuta una sola vez al iniciar el juego
+    virtual void BeginPlay() override;
+
+public: 
+    // Se ejecuta en cada fotograma del motor
+    virtual void Tick(float DeltaTime) override;
+};
+\end{lstlisting}
+\end{frame}
+
+% --- Diapositiva 7: Código Dice.cpp ---
+\begin{frame}[fragile]{Código Fuente: Implementación \texttt{Dice.cpp}}
+\begin{lstlisting}[language=C++]
+#include "Dice.h"
+
+ADice::ADice()
+{
+    // Habilita que Tick() se llame cada frame
+    PrimaryActorTick.bCanEverTick = true;
+}
+
+void ADice::BeginPlay()
+{
+    Super::BeginPlay();
+    
+    // Mensaje de diagnostico en la consola de salida
+    UE_LOG(LogTemp, Warning, TEXT("ADice creado exitosamente en el mundo"));
+}
+
+void ADice::Tick(float DeltaTime)
+{
+    Super::Tick(DeltaTime);
+    // Aqui iran las actualizaciones continuas de fisica
+}
+\end{lstlisting}
+\end{frame}
+
+% --- Diapositiva 8: Ciclo de Vida ---
+\begin{frame}{Ciclo de Vida: ¿Dónde colocar nuestro código?}
+    \begin{columns}[T]
+        \begin{column}{0.32\textwidth}
+            \begin{block}{\textbf{Constructor}}
+                \texttt{ADice()}
+                \begin{itemize}
+                    \item Se ejecuta al compilar, abrir el editor y crear el CDO.
+                    \item \textbf{Uso:} Inicializar atributos por defecto y crear componentes (\texttt{CreateDefaultSubobject}).
+                \end{itemize}
+            \end{block}
+        \end{column}
+        \begin{column}{0.32\textwidth}
+            \begin{block}{\textbf{BeginPlay}}
+                \texttt{BeginPlay()}
+                \begin{itemize}
+                    \item Se ejecuta al presionar \textit{Play} o cuando el Actor nace en la escena.
+                    \item \textbf{Uso:} Suscribirse a eventos, buscar otros actores y preparar el estado inicial.
+                \end{itemize}
+            \end{block}
+        \end{column}
+        \begin{column}{0.32\textwidth}
+            \begin{block}{\textbf{Tick}}
+                \texttt{Tick(DeltaTime)}
+                \begin{itemize}
+                    \item Se ejecuta 60+ veces por segundo.
+                    \item \textbf{Uso:} Traslación continua, cálculo de gravedad e interpolaciones físicas.
+                \end{itemize}
+            \end{block}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+% --- Diapositiva 9: Práctica en el Editor ---
+\begin{frame}{Verificación Práctica en Unreal Editor}
+    \begin{enumerate}
+        \item \textbf{Compilar:} Presionar \texttt{Ctrl + Shift + B} en Visual Studio o el botón \textbf{Live Coding} en Unreal.
+        \item \textbf{Localizar en Content Browser:} Ir a \texttt{C++ Classes} $\rightarrow$ \texttt{PuzzleDiceGame} $\rightarrow$ \texttt{Dice}.
+        \item \textbf{Instanciar:} Arrastrar \texttt{Dice} hacia el Viewport 3D del nivel.
+        \item \textbf{Comprobar World Outliner:} Verificar que aparece \texttt{Dice1}.
+    \end{enumerate}
+
+    \vspace{0.2cm}
+    \begin{alertblock}{Pregunta para la clase}
+        ¿Por qué el actor aparece en la lista del Outliner pero \textbf{no se ve ninguna forma visual} en la pantalla 3D?
+        \newline
+        $\rightarrow$ \textit{Porque un \texttt{AActor} es solo un contenedor lógico; requiere \textbf{Componentes} para tener forma visible.}
+    \end{alertblock}
+\end{frame}
+
+% --- Diapositiva 10: Control de Versiones Git ---
+\begin{frame}[fragile]{Registro del Hito en Git}
+    Para que los alumnos puedan descargar y verificar este estado del proyecto:
+
+    \vspace{0.2cm}
+    \begin{lstlisting}[language=bash]
+# 1. Comprobar archivos modificados
+git status
+
+# 2. Agregar archivos de cabecera e implementacion
+git add Source/PuzzleDiceGame/Dice.h Source/PuzzleDiceGame/Dice.cpp
+
+# 3. Crear el commit descriptivo
+git commit -m "feat(dice): Paso 01 - Creacion del actor vacio ADice"
+
+# 4. Crear etiqueta de version para la clase
+git tag step-01-empty-actor
+    \end{lstlisting}
+\end{frame}
+
+% --- Diapositiva 11: Conclusión y Próximo Paso ---
+\begin{frame}{Resumen y Siguiente Sesión}
+    \begin{block}{Lo que hemos logrado hoy:}
+        \checkmark Estructura base C++ de la entidad \texttt{ADice} registrada en el motor.\\
+        \checkmark Comprensión del sistema de reflexión \texttt{UCLASS} y \texttt{GENERATED\_BODY}.\\
+        \checkmark Verificación de instanciación en el nivel.
+    \end{block}
+
+    \vspace{0.4cm}
+    \begin{exampleblock}{Próximo Paso: Paso 02 — Composición y Geometría}
+        Aprenderemos el principio de \textbf{Composición sobre Herencia}:
+        \begin{itemize}
+            \item Crearemos un \texttt{USceneComponent* DummyRoot}.
+            \item Adheriremos un componente de malla estática \texttt{UStaticMeshComponent* BlockMesh}.
+            \item Veremos el cubo 3D renderizado físicamente en el nivel.
+        \end{itemize}
+    \end{exampleblock}
+\end{frame}
+
+\end{document}

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Paso 1. Creación de la clase vacía</title>
+</head>
+<body>
+<h3>1.1 Procedimiento</h3>
+<ol>
+<li>En el editor de Unreal, abrir el menú <strong>File → New C++ Class...</strong>
+</li>
+<li>Seleccionar la clase padre <strong>Actor</strong> y presionar <strong>Next</strong>.
+</li>
+<li>Asignar el nombre <strong><code style="background:#f0f0f0;padding:1px 4px;border-radius:3px;">Coin</code></strong>. Unreal agregará automáticamente el prefijo <code style="background:#f0f0f0;padding:1px 4px;border-radius:3px;">A</code>, por lo que la clase se llamará <code style="background:#f0f0f0;padding:1px 4px;border-radius:3px;">ACoin</code>.
+</li>
+<li>Presionar <strong>Create Class</strong>. Se generarán los archivos <code style="background:#f0f0f0;padding:1px 4px;border-radius:3px;">Coin.h</code> y <code style="background:#f0f0f0;padding:1px 4px;border-radius:3px;">Coin.cpp</code> en la carpeta <code style="background:#f0f0f0;padding:1px 4px;border-radius:3px;">Source/PuzzleDiceGame/</code>.
+</li>
+</ol>
+<h3>1.2 Fundamento</h3>
+<p>Toda entidad que puede ubicarse en el nivel, poseer posición y rotación, y recibir eventos, hereda de <code style="background:#f0f0f0;padding:1px 4px;border-radius:3px;">AActor</code>. Por convención de Epic Games, las clases derivadas de <code style="background:#f0f0f0;padding:1px 4px;border-radius:3px;">AActor</code> llevan el prefijo <code style="background:#f0f0f0;padding:1px 4px;border-radius:3px;">A</code>, mientras que las derivadas de <code style="background:#f0f0f0;padding:1px 4px;border-radius:3px;">UObject</code> y los componentes llevan el prefijo <code style="background:#f0f0f0;padding:1px 4px;border-radius:3px;">U</code>.</p>
+<h3>1.3 Limpieza del código generado</h3>
+<p>Reemplazar el contenido de <code style="background:#f0f0f0;padding:1px 4px;border-radius:3px;">Coin.h</code> por el siguiente esqueleto y completar el espacio:</p>
+<pre style="background:#f6f8fa;border:1px solid #d0d7de;border-radius:4px;padding:12px;overflow-x:auto;font-size:0.9em;line-height:1.45;"><code>#pragma once
+
+#include &quot;CoreMinimal.h&quot;
+#include &quot;GameFramework/Actor.h&quot;
+#include &quot;______&quot;        // PISTA: nombre del archivo + &quot;.generated.h&quot;. Debe ser el último include.
+
+UCLASS()
+class PUZZLEDICEGAME_API ACoin : public AActor
+{
+    GENERATED_BODY()
+
+public:
+    ACoin();
+};</code></pre>
+<p>Reemplazar el contenido de <code style="background:#f0f0f0;padding:1px 4px;border-radius:3px;">Coin.cpp</code> por:</p>
+<pre style="background:#f6f8fa;border:1px solid #d0d7de;border-radius:4px;padding:12px;overflow-x:auto;font-size:0.9em;line-height:1.45;"><code>#include &quot;Coin.h&quot;
+
+ACoin::ACoin()
+{
+}</code></pre>
+<h3>Punto de verificación 1</h3>
+<p>Compilar el proyecto. En el <strong>Content Browser</strong>, dentro de <strong>C++ Classes → PuzzleDiceGame</strong>, debe aparecer la clase <code style="background:#f0f0f0;padding:1px 4px;border-radius:3px;">Coin</code>. Arrastrarla al nivel y comprobar que aparece en el <strong>World Outliner</strong> con el nombre <code style="background:#f0f0f0;padding:1px 4px;border-radius:3px;">Coin</code>. Todavía no es visible en la escena, porque no tiene malla.</p>
+</body>
+</html>

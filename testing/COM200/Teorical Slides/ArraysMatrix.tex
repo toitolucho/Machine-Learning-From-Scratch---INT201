@@ -1,0 +1,499 @@
+\documentclass{beamer}
+
+\usetheme{Madrid}
+\usecolortheme{seahorse}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{amsmath}
+\usepackage{booktabs}
+
+% --- Configuracion del estilo del codigo C# ---
+\lstdefinestyle{CSharpStyle}{
+  language=[Sharp]C,
+  basicstyle=\scriptsize\ttfamily,
+  keywordstyle=\color{blue}\bfseries,
+  stringstyle=\color{teal},
+  commentstyle=\color{gray}\itshape,
+  showstringspaces=false,
+  breaklines=true,
+  frame=single,
+  rulecolor=\color{gray!30},
+  tabsize=2,
+  captionpos=b,
+  numbers=left,
+  numberstyle=\tiny\color{gray},
+  morekeywords={GameObject,Vector3,Quaternion,Instantiate,Sprite,SpriteRenderer,TextAsset,File,Path,Debug,List,StringSplitOptions}
+}
+
+% --- Titulo ---
+\title[Arreglos, Matrices y Archivos en C\#]{Arreglos, Matrices y Lectura de Archivos de Texto en C\# para Unity}
+\subtitle{Estructuras de Datos y Generaci\'on de Mapas Tipo Cuadr\'icula (Grid)}
+\author{Luis Antonio Molina Yampa}
+\institute{COM200 - Programacion Avanzada}
+\date{\today}
+
+\begin{document}
+
+% --- Portada ---
+\begin{frame}
+  \titlepage
+\end{frame}
+
+% --- Introduccion y Objetivos ---
+\begin{frame}{Contenido y Objetivos}
+  En esta presentaci\'on se exploran las bases fundamentales del manejo de estructuras de datos en C\# aplicadas al desarrollo de videojuegos en Unity:
+
+  \vspace{0.3cm}
+  \begin{itemize}
+    \item \textbf{Arreglos unidimensionales ($T[]$):} Declaraci\'on, indexaci\'on y recorridos.
+    \item \textbf{Matrices en C\#:} Diferencias entre matrices rectangulares (\texttt{int[,]}) y escalonadas o \textit{jagged} (\texttt{int[][]}).
+    \item \textbf{Lectura de archivos \texttt{.txt}:} Uso de \texttt{TextAsset} vs. \texttt{System.IO.File}.
+    \item \textbf{Pipeline de parseo:} De texto sin formato a matrices bidimensionales.
+    \item \textbf{Generaci\'on de cuadr\'iculas (Grid):} Sistema de coordenadas espaciales estilo Battle City e instanciaci\'on de prefabs en escena.
+  \end{itemize}
+\end{frame}
+
+% --- Arreglos Unidimensionales: Concepto ---
+\begin{frame}{Arreglos Unidimensionales ($T[]$) --- Concepto}
+  Un \textbf{arreglo (array)} en C\# es una colecci\'on contigua y de tama\~no fijo que almacena elementos del mismo tipo de dato.
+
+  \vspace{0.3cm}
+  \textbf{Caracter\'isticas principales:}
+  \begin{itemize}
+    \item \textbf{Indexaci\'on en base cero:} Los \'indices van desde \texttt{0} hasta $\text{Length} - 1$.
+    \item \textbf{Tama\~no est\'atico:} Una vez instanciado, su capacidad no puede alterarse.
+    \item \textbf{Acceso r\'apido en $O(1)$:} Acceso inmediato a cualquier posici\'on mediante su \'indice en memoria.
+  \end{itemize}
+
+  \vspace{0.3cm}
+  \textbf{Aplicaciones t\'ipicas en Unity:}
+  \begin{itemize}
+    \item Lista fija de prefabs o sprites de bloques (ladrillo, acero, agua).
+    \item Puntos de patrullaje (\textit{waypoints}) predeterminados.
+    \item Filas individuales le\'idas de un mapa.
+  \end{itemize}
+\end{frame}
+
+% --- Declaracion e Inicializacion de Arrays ---
+\begin{frame}[fragile]{Declaraci\'on e Inicializaci\'on de Arreglos}
+\lstset{style=CSharpStyle}
+C\# ofrece tres alternativas comunes para declarar e inicializar arreglos:
+
+\begin{lstlisting}
+// 1. Con tamano fijo y valores por defecto (0 para int)
+int[] numbers = new int[5]; // { 0, 0, 0, 0, 0 }
+
+// 2. Declaracion con valores explicitos
+int[] reglon1 = new int[] { 1, 1, 1, 0, 2, 2, 3 };
+
+// 3. Sintaxis simplificada (el compilador infiere tipo y tamano)
+int[] reglon2 = { 1, 0, 0, 0, 0, 0, 1 };
+\end{lstlisting}
+
+\vspace{0.2cm}
+\textbf{Nota:} Si se crea con \texttt{new int[N]}, todos los elementos se inicializan autom\'aticamente en su valor por defecto (\texttt{0} para n\'umeros, \texttt{null} para objetos).
+\end{frame}
+
+% --- Acceso y Modificacion ---
+\begin{frame}[fragile]{Acceso, Modificaci\'on y Seguridad}
+\lstset{style=CSharpStyle}
+El acceso y alteraci\'on de valores se realiza mediante corchetes \texttt{[]}:
+
+\begin{lstlisting}
+int[] scores = { 10, 20, 30, 40 };
+
+// Lectura de un elemento
+int primerValor = scores[0]; // 10
+
+// Modificacion de un elemento
+scores[1] = 99; // El arreglo ahora es { 10, 99, 30, 40 }
+
+// Cantidad total de elementos
+int total = scores.Length; // 4
+\end{lstlisting}
+
+\vspace{0.2cm}
+\begin{alertblock}{Precauci\'on: L\'imites del Arreglo}
+Intentar acceder a un \'indice $< 0$ o $\ge \text{Length}$ produce la excepci\'on \texttt{IndexOutOfRangeException}. Siempre debe verificarse: $0 \le i < \text{array.Length}$.
+\end{alertblock}
+\end{frame}
+
+% --- Recorrido de Arreglos ---
+\begin{frame}[fragile]{Recorrido de Arreglos: \texttt{for} vs. \texttt{foreach}}
+\lstset{style=CSharpStyle}
+\textbf{Bucle \texttt{for}:} Permite conocer y manipular el \'indice actual, adem\'as de modificar elementos:
+\begin{lstlisting}
+for (int i = 0; i < scores.Length; i++)
+{
+    Debug.Log($"Elemento en indice {i}: {scores[i]}");
+}
+\end{lstlisting}
+
+\vspace{0.2cm}
+\textbf{Bucle \texttt{foreach}:} Sintaxis m\'as limpia y declarativa; \'util cuando s\'olo se requiere lectura:
+\begin{lstlisting}
+foreach (int score in scores)
+{
+    Debug.Log($"Puntaje: {score}");
+}
+\end{lstlisting}
+\end{frame}
+
+% --- Matrices en C#: Comparacion ---
+\begin{frame}{Matrices en C\#: Rectangulares vs. Escalonadas}
+  C\# admite dos formas nativas para trabajar con dos dimensiones:
+
+  \vspace{0.3cm}
+  \begin{table}
+    \centering
+    \footnotesize
+    \begin{tabular}{|l|p{4.2cm}|p{4.2cm}|}
+      \hline
+      \textbf{Caracter\'istica} & \textbf{Rectangular (\texttt{int[,]})} & \textbf{Escalonada (\texttt{int[][]})} \\ \hline
+      \textbf{Estructura} & Bloque continuo fijo & Arreglo de arreglos (\textit{Jagged}) \\ \hline
+      \textbf{Longitud filas} & Todas tienen la misma longitud & Cada fila puede tener longitud distinta \\ \hline
+      \textbf{Sintaxis acceso} & \texttt{matriz[r, c]} & \texttt{matriz[r][c]} \\ \hline
+      \textbf{Consulta tama\~no} & \texttt{GetLength(0)}, \texttt{GetLength(1)} & \texttt{Length}, \texttt{matriz[r].Length} \\ \hline
+      \textbf{Parseo archivos} & R\'igido; requiere conocer dimensiones previas & Muy natural para construcci\'on l\'inea por l\'inea \\ \hline
+    \end{tabular}
+  \end{table}
+\end{frame}
+
+% --- Matriz Rectangular ---
+\begin{frame}[fragile]{Matriz Rectangular (\texttt{int[,]})}
+\lstset{style=CSharpStyle}
+Se utiliza cuando la cuadr\'icula tiene dimensiones uniformes y perfectamente definidas:
+
+\begin{lstlisting}
+// Declaracion e instanciacion fija (3 filas x 5 columnas)
+int[,] mapaFijo = new int[,]
+{
+    { 1, 1, 1, 0, 2 },
+    { 1, 0, 0, 0, 1 },
+    { 1, 1, 1, 0, 2 }
+};
+
+// Acceso y asignacion directa con coma
+int tile = mapaFijo[0, 2]; // fila 0, columna 2 -> 1
+mapaFijo[1, 1] = 3;        // asigna 3 en (1, 1)
+
+// Obtencion de dimensiones
+int filas = mapaFijo.GetLength(0);    // 3
+int columnas = mapaFijo.GetLength(1); // 5
+\end{lstlisting}
+\end{frame}
+
+% --- Recorrido Matriz Rectangular ---
+\begin{frame}[fragile]{Recorrido de Matriz Rectangular}
+\lstset{style=CSharpStyle}
+Para iterar sobre una matriz rectangular se utiliza un doble bucle anidado utilizando \texttt{GetLength()}:
+
+\begin{lstlisting}
+int rows = mapaFijo.GetLength(0);
+int cols = mapaFijo.GetLength(1);
+
+for (int r = 0; r < rows; r++)
+{
+    for (int c = 0; c < cols; c++)
+    {
+        int cellValue = mapaFijo[r, c];
+        // Procesamiento de cada celda (r, c)
+    }
+}
+\end{lstlisting}
+
+\vspace{0.2cm}
+\textbf{Observaci\'on:} Todas las filas tienen obligatoriamente la misma cantidad de columnas (\texttt{cols}).
+\end{frame}
+
+% --- Matriz Escalonada (Jagged) ---
+\begin{frame}[fragile]{Matriz Escalonada (\texttt{int[][]}) --- Arreglo de Arreglos}
+\lstset{style=CSharpStyle}
+Un arreglo escalonado (\textit{jagged array}) almacena arreglos internos independientes:
+
+\begin{lstlisting}
+// Declaracion de un arreglo que contendra 4 filas
+int[][] matriz = new int[4][];
+
+// Inicializacion independiente por fila
+matriz[0] = new int[] { 1, 1, 1, 0, 2 };
+matriz[1] = new int[] { 1, 0, 0, 0, 1 };
+matriz[2] = new int[] { 1, 0, 0, 0, 1 };
+matriz[3] = new int[] { 1, 1, 1, 0, 2 };
+
+// Acceso mediante corchetes dobles
+int valor = matriz[0][2]; // fila 0, columna 2
+\end{lstlisting}
+
+\vspace{0.2cm}
+\textbf{Ventaja clave:} Permite que cada fila provenga de una cadena o l\'inea le\'ida directamente de un archivo de texto.
+\end{frame}
+
+% --- Recorrido Matriz Escalonada ---
+\begin{frame}[fragile]{Recorrido de Matriz Escalonada}
+\lstset{style=CSharpStyle}
+Cada fila consulta su propia longitud con \texttt{matriz[r].Length}:
+
+\begin{lstlisting}
+for (int r = 0; r < matriz.Length; r++)
+{
+    for (int c = 0; c < matriz[r].Length; c++)
+    {
+        int cell = matriz[r][c];
+        // Procesamiento del elemento
+    }
+}
+\end{lstlisting}
+
+\vspace{0.3cm}
+\textbf{Composici\'on din\'amica desde arreglos 1D:}
+\begin{lstlisting}
+int[] filaA = { 1, 1, 1, 0 };
+int[] filaB = { 1, 0, 0, 1 };
+int[][] mapaV2 = { filaA, filaB };
+\end{lstlisting}
+\end{frame}
+
+% --- Lectura de Archivos de Texto en Unity ---
+\begin{frame}{Lectura de Archivos \texttt{.txt} en Unity}
+  Existen dos m\'etodos principales para cargar mapas de texto en Unity:
+
+  \vspace{0.3cm}
+  \begin{block}{1. \texttt{UnityEngine.TextAsset} (Recomendado para videojuegos)}
+    \begin{itemize}
+      \item Unity reconoce autom\'aticamente archivos \texttt{.txt}, \texttt{.json}, \texttt{.csv}.
+      \item Se empaqueta en la \textit{build} final del juego.
+      \item Multiplataforma nativo (Windows, Mac, Android, iOS, WebGL).
+      \item Asignaci\'on visual v\'ia Inspector por \textit{drag and drop}.
+    \end{itemize}
+  \end{block}
+
+  \begin{block}{2. \texttt{System.IO.File} (Archivos externos / Modding)}
+    \begin{itemize}
+      \item Lee directamente del disco (\texttt{Application.streamingAssetsPath}).
+      \item Permite a los jugadores crear o modificar niveles sin recompilar.
+      \item En Android/WebGL requiere consideraciones adicionales de acceso.
+    \end{itemize}
+  \end{block}
+\end{frame}
+
+% --- Carga con TextAsset ---
+\begin{frame}[fragile]{M\'etodo 1: \texttt{UnityEngine.TextAsset}}
+\lstset{style=CSharpStyle}
+\begin{lstlisting}
+using UnityEngine;
+
+public class MapLoaderTextAsset : MonoBehaviour
+{
+    [SerializeField] private TextAsset mapFile;
+    [SerializeField] private TextAsset[] allMapFiles; // Multiples niveles
+
+    void Start()
+    {
+        if (mapFile != null)
+        {
+            // .text entrega el contenido completo del archivo como string
+            string rawContent = mapFile.text;
+            Debug.Log($"Contenido cargado:\n{rawContent}");
+        }
+    }
+}
+\end{lstlisting}
+
+\vspace{0.2cm}
+\textbf{Beneficio:} Cero rutas r\'igidas (\textit{hardcoded paths}) y compatibilidad total con cualquier dispositivo.
+\end{frame}
+
+% --- Carga con System.IO.File ---
+\begin{frame}[fragile]{M\'etodo 2: \texttt{System.IO.File} (StreamingAssets)}
+\lstset{style=CSharpStyle}
+\begin{lstlisting}
+using System.IO;
+using UnityEngine;
+
+public class MapLoaderSystemIO : MonoBehaviour
+{
+    void LoadExternalMap(string fileName)
+    {
+        string fullPath = Path.Combine(
+            Application.streamingAssetsPath, fileName);
+
+        if (File.Exists(fullPath))
+        {
+            // Lee todas las lineas a la vez en un arreglo de strings
+            string[] lines = File.ReadAllLines(fullPath);
+        }
+        else
+        {
+            Debug.LogError($"Archivo no encontrado en: {fullPath}");
+        }
+    }
+}
+\end{lstlisting}
+\end{frame}
+
+% --- Pipeline de Parseo ---
+\begin{frame}{Pipeline de Transformaci\'on: De Texto a Matriz 2D}
+  \textbf{Etapas secuenciales del procesamiento de mapas:}
+
+  \vspace{0.3cm}
+  \begin{enumerate}
+    \item \textbf{Texto sin procesar:} Obtener el \texttt{string} completo desde \texttt{TextAsset.text}.
+    \item \textbf{Divisi\'on por l\'ineas:} Separar por saltos de l\'inea (\verb|'\n'|, \verb|'\r'|).
+    \item \textbf{Limpieza y filtrado:} Aplicar \texttt{Trim()} e ignorar l\'ineas vac\'ias o comentarios (\texttt{\#}, \texttt{//}).
+    \item \textbf{Separaci\'on de celdas:} Dividir cada l\'inea por delimitadores (\verb|','|, espacio, \verb|'\t'|).
+    \item \textbf{Conversi\'on num\'erica:} Emplear \texttt{int.TryParse()} para evitar ca\'idas por caracteres inv\'alidos.
+    \item \textbf{Construcci\'on de matriz:} Almacenar cada fila en \texttt{List<int[]>} y transformar a \texttt{int[][]}.
+  \end{enumerate}
+\end{frame}
+
+% --- Implementacion del Parser ---
+\begin{frame}[fragile]{Implementaci\'on del Parser: \texttt{MapParser}}
+\lstset{style=CSharpStyle}
+\begin{lstlisting}
+using System;
+using System.Collections.Generic;
+
+public static class MapParser
+{
+    public static int[][] ParseTextToMatrix(string textContent)
+    {
+        if (string.IsNullOrEmpty(textContent)) return new int[0][];
+
+        string[] rawLines = textContent.Split(
+            new[] { '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries);
+        List<int[]> matrixList = new List<int[]>();
+
+        for (int r = 0; r < rawLines.Length; r++)
+        {
+            string line = rawLines[r].Trim();
+            if (string.IsNullOrEmpty(line) || line.StartsWith("#") || line.StartsWith("//"))
+                continue;
+
+            string[] tokens = line.Split(
+                new[] { ',', ' ', '\t' }, StringSplitOptions.RemoveEmptyEntries);
+            int[] row = new int[tokens.Length];
+
+            for (int c = 0; c < tokens.Length; c++)
+                int.TryParse(tokens[c], out row[c]);
+
+            matrixList.Add(row);
+        }
+        return matrixList.ToArray();
+    }
+}
+\end{lstlisting}
+\end{frame}
+
+% --- Coordenadas del Mapa estilo Battle City ---
+\begin{frame}{Sistema de Coordenadas de la Cuadr\'icula (Grid)}
+  En juegos 2D tipo \textit{Battle City} o laberintos:
+  \begin{itemize}
+    \item Las \textbf{columnas ($c$)} avanzan de izquierda a derecha en el eje $+X$.
+    \item Las \textbf{filas ($r$)} avanzan de arriba hacia abajo en el eje $-Y$.
+  \end{itemize}
+
+  \vspace{0.3cm}
+  \textbf{F\'ormula de posici\'on en el espacio del mundo:}
+  \[
+    \vec{P}(r, c) = \begin{pmatrix} X_{\text{origen}} + c \times \text{cellWidth} \\ Y_{\text{origen}} - r \times \text{cellHeight} \\ 0 \end{pmatrix}
+  \]
+
+  \vspace{0.2cm}
+  \begin{itemize}
+    \item $X_{\text{origen}}, Y_{\text{origen}}$: Posici\'on de la esquina superior izquierda.
+    \item $\text{cellWidth}, \text{cellHeight}$: Ancho y alto de cada celda en unidades de Unity.
+    \item El signo negativo en $Y$ garantiza que la fila 0 est\'e en la parte superior.
+  \end{itemize}
+\end{frame}
+
+% --- Instanciacion en Unity: BuildGrid ---
+\begin{frame}[fragile]{Instanciaci\'on en Escena: \texttt{BuildGrid}}
+\lstset{style=CSharpStyle}
+\begin{lstlisting}
+public void BuildGrid(int[][] matrix, GameObject wallPrefab, 
+                      Sprite[] wallSprites, float cellWidth, float cellHeight)
+{
+    Vector3 origin = transform.position;
+
+    for (int r = 0; r < matrix.Length; r++)
+    {
+        for (int c = 0; c < matrix[r].Length; c++)
+        {
+            int tileType = matrix[r][c];
+            if (tileType == 0) continue; // 0 = celda vacia
+
+            Vector3 worldPos = new Vector3(
+                origin.x + (c * cellWidth),
+                origin.y - (r * cellHeight),
+                0f
+            );
+
+            GameObject tile = Instantiate(wallPrefab, worldPos, 
+                                          Quaternion.identity, transform);
+            // Asignacion de Sprite segun tipo
+            int spriteIndex = tileType - 1;
+            if (spriteIndex >= 0 && spriteIndex < wallSprites.Length)
+                tile.GetComponent<SpriteRenderer>().sprite = wallSprites[spriteIndex];
+        }
+    }
+}
+\end{lstlisting}
+\end{frame}
+
+% --- Mapeo de Sprites ---
+\begin{frame}{Asignaci\'on Din\'amica de Sprites por Tipo de Bloque}
+  Al instanciar el \texttt{wallPrefab}, se utiliza el valor num\'erico \texttt{tileType} le\'ido del mapa para configurar su representaci\'on visual:
+
+  \vspace{0.3cm}
+  \begin{table}
+    \centering
+    \begin{tabular}{|c|l|l|l|}
+      \hline
+      \textbf{Valor} & \textbf{Tipo de Bloque} & \textbf{\'Indice Sprite} & \textbf{Comportamiento} \\ \hline
+      \texttt{0} & Fondo / Suelo & Ninguno & Espacio libre transitable \\ \hline
+      \texttt{1} & Ladrillo & \texttt{wallSprites[0]} & Destructible por disparos \\ \hline
+      \texttt{2} & Concreto / Acero & \texttt{wallSprites[1]} & Indestructible com\'un \\ \hline
+      \texttt{3} & Pasto / Arbusto & \texttt{wallSprites[2]} & Oculta a los tanques \\ \hline
+      \texttt{4} & Agua & \texttt{wallSprites[3]} & Bloquea tanques, no balas \\ \hline
+    \end{tabular}
+  \end{table}
+
+  \vspace{0.3cm}
+  \textbf{F\'ormula del \'indice:} $\text{spriteIndex} = \text{tileType} - 1$, validando siempre $0 \le \text{spriteIndex} < \text{wallSprites.Length}$.
+\end{frame}
+
+% --- Tabla Comparativa Global ---
+\begin{frame}{Comparativa de Estructuras para Mapas en Unity}
+  \begin{table}
+    \centering
+    \small
+    \begin{tabular}{|l|l|l|}
+      \hline
+      \textbf{Estructura} & \textbf{Acceso / Recorrido} & \textbf{Caso de Uso en Unity} \\ \hline
+      \texttt{T[]} (1D) & \texttt{arr[i]} & Lista de prefabs, sprites, armas \\ \hline
+      \texttt{T[,]} (2D Rect.) & \texttt{arr[r, c]} & Tableros r\'igidos (Ajedrez, Damas) \\ \hline
+      \texttt{T[][]} (Jagged) & \texttt{arr[r][c]} & Mapas din\'amicos le\'idos de \texttt{.txt} \\ \hline
+      \texttt{TextAsset} & \texttt{.text} & Niveles integrados en el juego \\ \hline
+      \texttt{System.IO.File} & \texttt{File.ReadAllLines} & Niveles externos / Mods de usuarios \\ \hline
+    \end{tabular}
+  \end{table}
+
+  \vspace{0.3cm}
+  \textbf{Recomendaci\'on:} Para niveles empaquetados en Unity, la combinaci\'on de \textbf{\texttt{TextAsset}} + \textbf{\texttt{int[][]}} ofrece el mejor equilibrio entre rendimiento, portabilidad y sencillez de c\'odigo.
+\end{frame}
+
+% --- Conclusiones ---
+\begin{frame}{Conclusiones y Buenas Pr\'acticas}
+  \begin{itemize}
+    \item \textbf{Robustez con \texttt{int.TryParse}:} Evita que el juego se cierre si el archivo de texto contiene espacios adicionales o caracteres no num\'ericos.
+    \item \textbf{Uso de \texttt{TextAsset}:} Asegura que los mapas funcionen en cualquier plataforma destino sin problemas de rutas relativas.
+    \item \textbf{Cuidado con las coordenadas espaciales:} En una matriz la fila avanza hacia abajo ($+r$), lo que en el espacio mundial de Unity corresponde a restar altura ($-Y$).
+    \item \textbf{Gesti\'on de memoria en escena:} Antes de cargar un nuevo nivel, destruir (\texttt{Destroy}) los bloques generados en la iteraci\'on anterior.
+    \item \textbf{Flexibilidad de delimitadores:} Soportar comas, espacios y tabuladores hace que los archivos de texto sean f\'aciles de editar a mano por los dise\~nadores.
+  \end{itemize}
+\end{frame}
+
+\end{document}
