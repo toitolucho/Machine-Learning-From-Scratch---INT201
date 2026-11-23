@@ -18,7 +18,7 @@ evidencia.
 1. Interpretar el contexto del caso e identificar las restricciones que condicionan la solución.
 2. Explorar el registro de inicios de sesión y detectar problemas de calidad en los datos.
 3. Decidir y justificar qué registros y columnas se conservan, corrigen, transforman o excluyen.
-4. Entrenar y comparar al menos dos modelos de clasificación vistos en la asignatura.
+4. Entrenar los modelos definidos en el protocolo obligatorio y compararlos.
 5. Seleccionar la métrica de evaluación adecuada al caso y justificar el modelo recomendado.
 6. Contrastar las hipótesis planteadas por la Dirección de TI con evidencia.
 7. Comunicar los resultados en un lenguaje comprensible para la Dirección de TI.
@@ -124,15 +124,16 @@ El estudiante deberá definir y aplicar el tratamiento de los datos.
   tratamiento de faltantes)?
 
 ### Fase 3. Modelado
-El estudiante deberá entrenar y comparar al menos dos modelos vistos en la asignatura (regresión logística,
-k-NN, árbol de decisión, Naive Bayes, Random Forest).
-- ¿Cómo se dividieron los datos y por qué la evaluación es válida, considerando la proporción de ataques?
+El estudiante deberá entrenar los modelos obligatorios definidos en la sección 8 y, opcionalmente, otros modelos
+vistos en la asignatura (k-NN, árbol de decisión, Naive Bayes).
+- ¿Por qué la división de datos definida en el protocolo produce una evaluación válida, considerando la
+  proporción de ataques?
 
 ### Fase 4. Evaluación
 El estudiante deberá seleccionar la métrica principal según las condiciones del caso y justificar el modelo
 recomendado.
 - ¿Qué métrica refleja mejor el costo de los errores descrito en la sección 4?
-- ¿Qué modelo, configuración y umbral de decisión se recomiendan?
+- ¿Qué modelo y qué umbral de decisión se recomiendan?
 - ¿Cada hipótesis de la DTI se cumple o no se cumple? ¿Con qué evidencia?
 
 ### Fase 5. Conclusiones y recomendación
@@ -140,44 +141,89 @@ El estudiante deberá presentar la solución en lenguaje de la DTI.
 - ¿Qué hace la solución, qué tan bien funciona y qué limitaciones tiene?
 - ¿Qué datos adicionales permitirían mejorar el detector?
 
-## 8. Requisitos mínimos
+## 8. Protocolo obligatorio de evaluación
+
+Para que los resultados de todos los estudiantes sean comparables, el notebook deberá respetar las siguientes
+condiciones. Las decisiones sobre **qué registros y columnas utilizar** siguen siendo responsabilidad del
+estudiante.
+
+| Elemento | Condición obligatoria |
+|---|---|
+| Momento de la división | Después de eliminar duplicados y excluir los registros que no correspondan a usuarios reales |
+| División de datos | `train_test_split(X, y, test_size=0.25, stratify=y, random_state=42)` |
+| Preprocesamiento | Imputación, escalado y codificación dentro de un `Pipeline` / `ColumnTransformer`, ajustados solo con los datos de entrenamiento |
+| Modelo obligatorio 1 | `LogisticRegression(max_iter=1000, class_weight="balanced")` |
+| Modelo obligatorio 2 | `RandomForestClassifier(n_estimators=200, class_weight="balanced", random_state=42)` |
+| Métricas | Exactitud, precisión y recall de la clase «ataque», sobre el conjunto de prueba |
+| Umbral | Resultados con umbral 0.5 y análisis de los umbrales 0.1, 0.2, …, 0.7 para el modelo recomendado |
+| Validación cruzada | `StratifiedKFold(n_splits=5, shuffle=True, random_state=42)`, métrica recall |
+
+## 9. Estructura obligatoria del notebook
+
+El estudiante deberá utilizar el notebook base `notebook_P01.ipynb`, que contiene las secciones siguientes. Se
+pueden agregar celdas dentro de cada sección, pero no cambiar su orden ni sus títulos.
+
+| Sección | Contenido esperado |
+|---|---|
+| 1. Carga de datos | Lectura del archivo y dimensiones |
+| 2. Comprensión de los datos | Tipos, faltantes, duplicados, valores imposibles, categorías, registros no reales |
+| 3. Preparación de los datos | Cada decisión con el formato **Decisión → Evidencia → Justificación** |
+| 4. Contraste de hipótesis | H1 a H4 con evidencia |
+| 5. Modelado | División y modelos según el protocolo (sección 8) |
+| 6. Evaluación | Métricas, matrices de confusión, análisis de umbral y validación cruzada |
+| 7. Conclusiones | Modelo y umbral recomendados, limitaciones |
+| 8. Ficha de resultados | Celda final que genera `ficha_resultados.json` (sección 10) |
+
+## 10. Ficha de resultados
+
+La última sección del notebook deberá completar el diccionario `FICHA` (ya definido en el notebook base) con los
+valores obtenidos por el estudiante y guardarlo como `ficha_resultados.json`. Cada campo debe calcularse con
+código a partir de los datos, no escribirse a mano. La ficha se utiliza para comparar las soluciones y forma
+parte de la evaluación.
+
+## 11. Requisitos mínimos
 
 1. El notebook debe ejecutarse completo, de principio a fin, sin errores.
 2. Cada decisión sobre los datos debe estar registrada en la bitácora con su evidencia.
-3. Se deben comparar al menos dos modelos con la misma división de datos.
-4. La métrica principal debe justificarse con las condiciones del caso.
+3. El protocolo de la sección 8 y la estructura de la sección 9 deben respetarse.
+4. La ficha de resultados debe estar completa y generada por el notebook.
 5. Las cuatro hipótesis deben responderse.
 
-## 9. Entregables
+## 12. Entregables
 
 | N.º | Entregable | Formato |
 |---|---|---|
-| 1 | Notebook con el desarrollo completo | `.ipynb` |
-| 2 | Bitácora de decisiones (`bitacora_decisiones.md`, adjunta) | `.md` |
-| 3 | Resumen ejecutivo dirigido a la DTI (máximo una página, sin código) | `.pdf` o `.md` |
+| 1 | Notebook completo, basado en `notebook_P01.ipynb` | `.ipynb` |
+| 2 | Ficha de resultados generada por el notebook | `ficha_resultados.json` |
+| 3 | Bitácora de decisiones (`bitacora_decisiones.md`, adjunta) | `.md` |
+| 4 | Resumen ejecutivo dirigido a la DTI (máximo una página, sin código) | `.pdf` o `.md` |
 
-## 10. Defensa oral
+## 13. Evaluación individual
 
-La defensa tiene una duración de 10 minutos y se desarrolla en tres partes:
+La evaluación del proyecto incluye tres instancias individuales:
 
-1. **Presentación** (3 min): el estudiante expone la solución como si se dirigiera a la DTI.
-2. **Preguntas** (4 min): el docente consulta sobre las decisiones registradas en la bitácora y los resultados
-   obtenidos.
-3. **Tarea en el notebook** (3 min): el docente solicita una modificación o un análisis adicional en el
-   notebook; el estudiante deberá realizarlo y explicar el resultado.
+1. **Cuestionario en Moodle** sobre el proyecto: preguntas sobre los datos, las decisiones tomadas, el código
+   del protocolo y la interpretación de los resultados. El cuestionario es común para todos los estudiantes que
+   desarrollaron el mismo proyecto.
+2. **Defensa oral** (10 minutos):
+   - **Presentación** (3 min): el estudiante expone la solución como si se dirigiera a la DTI.
+   - **Preguntas** (4 min): el docente consulta sobre las decisiones registradas en la bitácora y los
+     resultados obtenidos.
+   - **Tarea en el notebook** (3 min): el docente solicita una modificación o un análisis adicional en el
+     notebook; el estudiante deberá realizarlo y explicar el resultado.
+3. **Revisión del trabajo escrito** (notebook, ficha, bitácora y resumen ejecutivo).
 
 El estudiante deberá contar con su notebook abierto y ejecutable durante la defensa.
 
-## 11. Criterios de evaluación
+## 14. Criterios de evaluación
 
 | Criterio | Ponderación |
 |---|---|
-| Comprensión del caso y de sus restricciones | 15 % |
-| Preparación de datos justificada en la bitácora | 25 % |
-| Modelado y evaluación (división válida, comparación, métrica pertinente) | 20 % |
-| Contraste de hipótesis con evidencia | 10 % |
-| Resumen ejecutivo para la DTI | 10 % |
-| Defensa oral (explicación, respuestas y tarea en el notebook) | 20 % |
+| Trabajo escrito: preparación de datos justificada en la bitácora | 20 % |
+| Trabajo escrito: modelado y evaluación según el protocolo; ficha de resultados | 15 % |
+| Trabajo escrito: contraste de hipótesis y resumen ejecutivo | 10 % |
+| Cuestionario en Moodle | 30 % |
+| Defensa oral (explicación, respuestas y tarea en el notebook) | 25 % |
 
-La calificación del trabajo escrito se ajusta según la defensa: las decisiones que el estudiante no pueda
-explicar no se consideran parte de su trabajo.
+La calificación del trabajo escrito se ajusta según el cuestionario y la defensa: las decisiones que el
+estudiante no pueda explicar no se consideran parte de su trabajo.

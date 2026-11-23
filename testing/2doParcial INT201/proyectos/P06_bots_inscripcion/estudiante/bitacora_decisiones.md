@@ -1,0 +1,40 @@
+# Bitácora de decisiones – Proyecto P06: Detección de bots en el portal de inscripciones
+
+**Estudiante(s):** {{nombre(s)}}
+
+**Instrucciones.** Registrar cada decisión relevante sobre los datos y el modelo. Cada decisión debe indicar la
+evidencia que la respalda (conteo, gráfico, tabla o métrica) y la celda del notebook donde se encuentra. Las
+decisiones registradas serán consultadas durante la defensa oral.
+
+## 1. Decisiones sobre los datos
+
+| N.º | Decisión | Evidencia (celda del notebook) | Alternativa descartada y motivo | Efecto (registros, columnas o métricas) |
+|---|---|---|---|---|
+| D1 | | | | |
+| D2 | | | | |
+| D3 | | | | |
+
+<!-- Ejemplo:
+| D4 | Imputación de `tiempo_respuesta` con la mediana | El histograma presenta cola larga: media 353 ms, mediana 175 ms (celda 12) | Media: afectada por los valores extremos del ataque DDoS | 31 valores imputados; 0 registros eliminados |
+-->
+
+## 2. Decisiones sobre el modelo
+
+| N.º | Decisión | Evidencia | Alternativa descartada y motivo | Efecto |
+|---|---|---|---|---|
+| M1 | Métrica principal: | | | |
+| M2 | Modelo recomendado: | | | |
+| M3 | Umbral de decisión: | | | |
+
+## 3. Contraste de hipótesis
+
+| Hipótesis | Resultado (se cumple / no se cumple) | Evidencia |
+|---|---|---|
+| H1 | | |
+| H2 | | |
+| H3 | | |
+| H4 | | |
+
+## 4. Limitaciones y aspectos pendientes
+
+- 

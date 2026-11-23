@@ -35,3 +35,11 @@ ENV/
 .DS_Store
 Thumbs.db
 Desktop.ini
+
+# 2do Parcial INT201 - reserved teacher material (do not publish)
+testing/2doParcial INT201/banco_preguntas/
+testing/2doParcial INT201/proyectos/**/docente/
+testing/2doParcial INT201/proyectos/herramientas/
+testing/2doParcial INT201/proyectos/plantillas/
+testing/2doParcial INT201/proyectos/flujo_evaluacion.md
+testing/2doParcial INT201/proyectos/README.md

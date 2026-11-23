@@ -1,0 +1,2021 @@
+incidente_id,fecha_inicio,servidor_principal,tipo_incidente,servidores_afectados,criticidad,tamano_respaldo_gb,antiguedad_respaldo_dias,equipo_turno,edificio_datacenter,version_hipervisor,horas_informe_final,costo_total_bs,horas_recuperacion
+INC-00001,2025-01-01 03:00,srv-virtual-22,Ransomware,1,2,741.6,,C,Central,HV-8.0,54.6,22689.0,54.4
+INC-00002,2025-01-01 08:00,srv-web-23,malware,3,3,250.1,27.0,A,Anexo,HV-8.0,14.9,6213.0,15.2
+INC-00003,2025-01-01 14:00,srv-acad-39,malware,6,1,48.0,14.0,A,Anexo,HV-8.0,7.9,3278.0,8.2
+INC-00004,2025-01-01 16:00,srv-virtual-15,error_configuracion,7,3,90.7,23.0,B,Central,HV-8.0,8.6,3568.0,9.2
+INC-00005,2025-01-02 04:00,srv-correo-32,ransomware ,2,3,133.7,3.0,C,Central,HV-8.0,27.3,10660.0,27.6
+INC-00006,2025-01-02 09:00,srv-acad-20,Malware,4,3,63.3,,B,Central,HV-8.0,30.4,12285.0,30.1
+INC-00006,2025-01-02 09:00,srv-acad-20,Malware,4,3,63.3,,B,Central,HV-8.0,30.4,12285.0,30.1
+INC-00008,2025-01-02 10:00,srv-biblio-22,error_configuracion,8,2,117.1,13.0,A,Anexo,HV-8.0,10.1,4003.0,10.3
+INC-00009,2025-01-02 16:00,srv-acad-31,Ransomware,1,1,209.2,,C,Anexo,HV-8.0,52.1,20371.0,52.1
+INC-00010,2025-01-02 21:00,srv-biblio-29,falla_hardware,4,3,233.8,10.0,A,Central,HV-8.0,14.7,5535.0,14.3
+INC-00011,2025-01-03 00:00,srv-web-08,RANSOMWARE,4,2,131.1,,A,Anexo,HV-8.0,79.7,32304.0,79.9
+INC-00012,2025-01-03 07:00,srv-acad-16,Error configuración,6,3,176.6,18.0,C,Anexo,HV-8.0,7.8,3186.0,8.0
+INC-00013,2025-01-03 14:00,srv-acad-10,FALLA HW,8,2,231.6,16.0,B,Anexo,HV-8.0,16.8,6532.0,16.3
+INC-00014,2025-01-04 12:00,srv-web-35,Ransomware,8,2,39.8,8.0,A,Central,HV-8.0,37.1,14993.0,37.3
+INC-00015,2025-01-04 13:00,srv-virtual-03,falla_hardware,5,3,119.4,27.0,B,Anexo,HV-8.0,11.8,4789.0,12.1
+INC-00016,2025-01-04 15:00,srv-correo-01,error_configuracion,8,1,186.7,7.0,C,Central,HV-8.0,5.1,2169.0,5.3
+INC-00017,2025-01-04 20:00,srv-virtual-36,RANSOMWARE,5,2,51.7,,B,Central,HV-8.0,56.5,23220.0,56.0
+INC-00018,2025-01-05 13:00,srv-web-28,ransomware ,7,2,230.3,,B,Central,HV-8.0,59.5,22910.0,59.6
+INC-00019,2025-01-05 16:00,srv-correo-01,malware,7,2,161.4,7.0,B,Anexo,HV-8.0,13.8,5386.0,13.9
+INC-00020,2025-01-05 19:00,srv-virtual-21,Error configuración,7,1,219.2,8.0,C,Central,HV-8.0,7.1,2920.0,7.5
+INC-00021,2025-01-05 23:00,srv-correo-36,error_configuracion,4,1,350.7,,A,Central,HV-8.0,10.6,4235.0,10.4
+INC-00022,2025-01-06 00:00,srv-acad-14,Falla hardware,1,1,510.9,,C,Anexo,HV-8.0,16.2,6689.0,16.3
+INC-00023,2025-01-06 08:00,srv-correo-14,Ransomware,2,2,310.0,11.0,B,Central,HV-8.0,24.0,9543.0,24.0
+INC-00024,2025-01-06 19:00,srv-web-09,RANSOMWARE,3,2,212.5,12.0,A,Anexo,HV-8.0,32.7,13035.0,33.1
+INC-00025,2025-01-07 07:00,srv-correo-15,FALLA HW,7,1,509.1,12.0,C,Central,HV-8.0,12.9,4681.0,12.3
+INC-00026,2025-01-09 13:00,srv-acad-12,RANSOMWARE,3,3,235.5,15.0,A,Anexo,HV-8.0,29.8,12001.0,29.7
+INC-00027,2025-01-09 19:00,srv-virtual-31,falla_hardware,8,2,289.7,25.0,A,Anexo,HV-8.0,22.6,9060.0,22.1
+INC-00028,2025-01-10 03:00,srv-correo-39,FALLA HW,6,3,92.6,,B,Anexo,HV-8.0,26.9,10698.0,26.8
+INC-00029,2025-01-10 05:00,srv-acad-30,error_configuracion,7,3,273.6,4.0,C,Anexo,HV-8.0,5.6,2422.0,5.9
+INC-00030,2025-01-10 17:00,srv-acad-33,Error configuración,3,2,111.2,25.0,B,Central,HV-8.0,5.8,1897.0,4.9
+INC-00031,2025-01-11 08:00,srv-correo-18,Error configuración,6,1,75.2,,B,Anexo,HV-8.0,11.7,4928.0,11.8
+INC-00032,2025-01-11 11:00,srv-correo-26,malware,3,1,169.4,6.0,B,Central,HV-8.0,9.1,3383.0,8.9
+INC-00033,2025-01-11 16:00,srv-web-28,Malware,1,2,87.5,3.0,A,Central,HV-8.0,8.1,3031.0,7.8
+INC-00034,2025-01-12 08:00,srv-acad-25,DDoS,4,1,492.8,,A,Central,HV-8.0,15.7,6371.0,15.9
+INC-00035,2025-01-12 13:00,srv-correo-04,malware,2,2,484.4,24.0,A,Central,HV-8.0,15.0,5825.0,15.1
+INC-00036,2025-01-13 12:00,srv-acad-05,Falla hardware,8,2,37.6,14.0,A,Central,HV-8.0,15.4,6398.0,15.3
+INC-00037,2025-01-14 04:00,srv-virtual-10,ransomware ,8,3,579.8,19.0,C,Anexo,HV-8.0,60.3,24456.0,60.6
+INC-00038,2025-01-14 08:00,srv-correo-38,ERROR CONFIG,6,3,290.0,18.0,A,Anexo,HV-8.0,8.1,3017.0,7.9
+INC-00039,2025-01-14 10:00,srv-acad-02,falla_hardware,7,1,738.6,22.0,C,Anexo,HV-8.0,18.2,7421.0,18.8
+INC-00040,2025-01-14 16:00,srv-virtual-38,Ransomware,1,2,38.5,19.0,B,Anexo,HV-8.0,16.1,6536.0,15.9
+INC-00041,2025-01-15 18:00,srv-virtual-16,ERROR CONFIG,6,3,205.9,18.0,B,Central,HV-8.0,5.9,2531.0,6.1
+INC-00042,2025-01-15 22:00,srv-virtual-29,ERROR CONFIG,5,2,104.4,16.0,C,Central,HV-8.0,4.2,1762.0,4.2
+INC-00043,2025-01-16 07:00,srv-web-10,RANSOMWARE,7,1,241.2,19.0,B,Anexo,HV-8.0,40.8,15429.0,40.6
+INC-00044,2025-01-16 08:00,srv-correo-05,falla_hardware,8,3,86.0,1.0,A,Anexo,HV-8.0,16.6,6497.0,16.2
+INC-00045,2025-01-16 11:00,srv-correo-20,ddos,5,3,475.9,18.0,C,Central,HV-8.0,11.0,4159.0,10.8
+INC-00046,2025-01-17 02:00,srv-virtual-07,RANSOMWARE,3,2,474.7,17.0,B,Anexo,HV-8.0,38.5,15691.0,38.4
+INC-00047,2025-01-17 07:00,srv-acad-04,falla_hardware,7,2,89.9,22.0,A,Central,HV-8.0,17.1,7167.0,17.3
+INC-00048,2025-01-17 07:00,srv-acad-10,RANSOMWARE,7,1,290.9,2.0,B,Central,HV-8.0,57.7,23764.0,57.8
+INC-00049,2025-01-17 11:00,srv-correo-35,ERROR CONFIG,7,2,39.2,19.0,B,Anexo,HV-8.0,6.2,2435.0,6.2
+INC-00050,2025-01-17 14:00,srv-biblio-34,FALLA HW,3,1,1242.7,22.0,C,Central,HV-8.0,18.8,7962.0,19.1
+INC-00051,2025-01-17 20:00,srv-web-09,Error configuración,7,2,393.3,,C,Anexo,HV-8.0,14.0,5605.0,13.7
+INC-00052,2025-01-18 13:00,srv-acad-05,error_configuracion,8,1,51.8,22.0,B,Central,HV-8.0,3.9,1565.0,3.8
+INC-00053,2025-01-19 02:00,srv-web-19,error_configuracion,1,1,198.9,24.0,C,Anexo,HV-8.0,3.3,1496.0,3.6
+INC-00054,2025-01-19 03:00,srv-web-04,DDoS,2,1,283.0,23.0,C,Anexo,HV-8.0,6.8,2758.0,6.6
+INC-00055,2025-01-19 04:00,srv-biblio-09,error_configuracion,1,1,49.9,27.0,B,Central,HV-8.0,2.2,933.0,2.3
+INC-00056,2025-01-19 10:00,srv-correo-36,error_configuracion,3,3,62.6,20.0,C,Central,HV-8.0,5.3,2209.0,5.8
+INC-00057,2025-01-19 15:00,srv-web-29,ERROR CONFIG,5,3,206.9,23.0,A,Anexo,HV-8.0,7.4,3053.0,7.4
+INC-00058,2025-01-19 18:00,srv-biblio-28,Error configuración,4,3,20.8,3.0,B,Anexo,HV-8.0,7.4,2715.0,6.8
+INC-00059,2025-01-21 02:00,srv-biblio-30,Error configuración,7,1,507.0,,A,Central,HV-8.0,14.4,5724.0,14.9
+INC-00060,2025-01-21 10:00,srv-web-04,malware,2,1,20.3,0.0,B,Central,HV-8.0,6.4,2585.0,6.2
+INC-00061,2025-01-21 22:00,srv-acad-25,DDOS,7,2,40.2,29.0,A,Anexo,HV-8.0,7.5,3055.0,7.4
+INC-00062,2025-01-22 11:00,srv-virtual-30,Falla hardware,7,1,129.0,,C,Anexo,HV-8.0,45.2,17878.0,45.4
+INC-00063,2025-01-23 03:00,srv-virtual-02,MALWARE,2,3,254.7,,C,Central,HV-8.0,23.6,9598.0,23.4
+INC-00064,2025-01-23 06:00,srv-correo-08,falla_hardware,1,2,446.7,25.0,C,Central,HV-8.0,8.5,3432.0,8.8
+INC-00065,2025-01-23 12:00,srv-acad-23,ransomware ,1,1,628.7,14.0,A,Central,HV-8.0,29.2,11890.0,29.1
+INC-00066,2025-01-23 19:00,srv-acad-10,Ransomware,7,2,69.3,,A,Central,HV-8.0,55.1,21622.0,55.4
+INC-00067,2025-01-23 22:00,srv-web-17,Malware,6,1,223.3,16.0,A,Anexo,HV-8.0,14.4,5745.0,14.3
+INC-00068,2025-01-24 01:00,srv-web-34,malware,2,2,2354.0,4.0,B,Central,HV-8.0,14.1,5480.0,13.7
+INC-00069,2025-01-24 08:00,srv-virtual-22,Malware,4,3,68.4,10.0,A,Central,HV-8.0,15.3,6017.0,15.4
+INC-00070,2025-01-24 17:00,srv-virtual-22,DDOS,7,3,158.0,6.0,B,Anexo,HV-8.0,12.7,5157.0,12.7
+INC-00071,2025-01-25 10:00,srv-web-38,error_configuracion,4,3,70.7,23.0,C,Central,HV-8.0,5.7,2369.0,5.8
+SIM-00072,2025-01-25 10:00,srv-web-38,error_configuracion,4,3,70.7,1.0,C,Central,HV-8.0,0.0,0.0,1.8
+INC-00073,2025-01-25 11:00,srv-correo-19,Error configuración,2,2,55.4,,C,Anexo,HV-8.0,8.4,3274.0,8.3
+INC-00074,2025-01-26 00:00,srv-virtual-39,RANSOMWARE,3,2,91.3,16.0,C,Anexo,HV-8.0,23.1,9373.0,23.3
+INC-00075,2025-01-27 00:00,srv-acad-06,FALLA HW,4,1,217.3,,A,Anexo,HV-8.0,26.5,10804.0,26.3
+INC-00076,2025-01-27 17:00,srv-web-01,error_configuracion,7,2,85.9,14.0,A,Central,HV-8.0,4.9,1965.0,5.0
+INC-00077,2025-01-27 22:00,srv-biblio-14,error_configuracion,5,3,132.8,18.0,C,Central,HV-8.0,8.8,3196.0,8.3
+INC-00078,2025-01-28 18:00,srv-correo-03,Ransomware,3,2,18.5,12.0,A,Central,HV-8.0,13.6,5378.0,13.4
+SIM-00079,2025-01-29 02:00,srv-correo-34,MALWARE,1,2,106.7,1.0,A,Anexo,HV-8.0,0.0,0.0,1.7
+INC-00080,2025-01-29 02:00,srv-correo-34,MALWARE,1,2,106.7,4.0,A,Anexo,HV-8.0,6.8,2692.0,6.6
+INC-00081,2025-01-29 04:00,srv-web-03,malware,1,2,89.7,29.0,C,Central,HV-8.0,8.9,3690.0,8.9
+INC-00082,2025-01-29 11:00,srv-virtual-22,malware,8,2,38.7,23.0,B,Anexo,HV-8.0,29.5,12387.0,29.6
+INC-00083,2025-01-30 02:00,srv-biblio-37,Error configuración,4,1,42.6,4.0,B,Central,HV-8.0,2.6,1236.0,3.0
+INC-00084,2025-01-30 04:00,srv-biblio-21,MALWARE,5,1,155.5,16.0,A,Anexo,HV-8.0,14.1,5941.0,14.5
+INC-00085,2025-01-31 19:00,srv-biblio-36,DDoS,6,2,84.9,16.0,B,Central,HV-8.0,7.1,2781.0,6.8
+INC-00086,2025-02-01 01:00,srv-acad-06,falla_hardware,7,2,301.3,,B,Central,HV-8.0,43.9,16889.0,43.6
+INC-00087,2025-02-01 03:00,srv-virtual-15,falla_hardware,3,3,793.1,17.0,A,Central,HV-8.0,16.9,6812.0,17.2
+INC-00088,2025-02-01 08:00,srv-web-06,MALWARE,6,3,151.4,19.0,B,Central,HV-8.0,19.3,7474.0,18.9
+INC-00089,2025-02-01 12:00,srv-biblio-29,ddos,2,1,96.6,0.0,B,Central,HV-8.0,4.6,1771.0,4.4
+INC-00090,2025-02-01 17:00,srv-biblio-14,Malware,1,1,179.3,27.0,B,Central,HV-8.0,8.8,3685.0,8.9
+INC-00091,2025-02-02 00:00,srv-biblio-34,error_configuracion,7,2,936.2,3.0,A,Anexo,HV-8.0,10.9,4461.0,10.9
+INC-00091,2025-02-02 00:00,srv-biblio-34,error_configuracion,7,2,936.2,3.0,A,Anexo,HV-8.0,10.9,4461.0,10.9
+INC-00093,2025-02-02 01:00,srv-virtual-10,DDoS,8,1,224.5,27.0,A,Anexo,HV-8.0,11.9,4599.0,12.0
+INC-00094,2025-02-02 10:00,srv-web-13,ddos,2,3,186.8,16.0,B,Central,HV-8.0,5.2,2141.0,5.1
+INC-00095,2025-02-02 13:00,srv-virtual-18,FALLA HW,7,2,285.4,11.0,C,Central,HV-8.0,22.7,9404.0,22.6
+INC-00096,2025-02-02 16:00,srv-web-19,error_configuracion,8,1,59.3,3.0,C,Central,HV-8.0,11.8,4995.0,11.9
+INC-00097,2025-02-02 21:00,srv-biblio-28,Falla hardware,8,2,54.4,19.0,B,Central,HV-8.0,18.4,7530.0,18.4
+INC-00098,2025-02-03 22:00,srv-acad-17,MALWARE,3,3,131.2,7.0,A,Central,HV-8.0,16.1,6120.0,15.8
+INC-00099,2025-02-04 04:00,srv-web-37,Falla hardware,3,1,625.9,6.0,B,Central,HV-8.0,9.8,3686.0,9.5
+INC-00099,2025-02-04 04:00,srv-web-37,Falla hardware,3,1,625.9,6.0,B,Central,HV-8.0,9.8,3686.0,9.5
+SIM-00101,2025-02-04 12:00,srv-acad-17,FALLA HW,7,1,970.0,1.0,C,Anexo,HV-8.0,0.0,0.0,1.4
+INC-00102,2025-02-04 12:00,srv-acad-17,FALLA HW,7,1,970.0,27.0,C,Anexo,HV-8.0,16.6,6429.0,16.9
+INC-00103,2025-02-04 17:00,srv-correo-32,ransomware ,6,2,71.1,20.0,A,Central,HV-8.0,37.7,15484.0,38.0
+INC-00104,2025-02-05 03:00,srv-web-19,Falla hardware,3,2,76.6,25.0,A,Anexo,HV-8.0,8.1,3293.0,8.3
+INC-00105,2025-02-05 12:00,srv-virtual-09,ddos,3,2,262.5,,B,Central,HV-8.0,15.8,5955.0,15.6
+INC-00106,2025-02-05 13:00,srv-correo-39,Ransomware,8,3,103.1,3.0,C,Anexo,HV-8.0,43.1,16493.0,43.0
+INC-00107,2025-02-05 17:00,srv-correo-12,ransomware ,6,2,126.1,19.0,B,Anexo,HV-8.0,33.9,13871.0,33.7
+INC-00108,2025-02-05 17:00,srv-acad-21,error_configuracion,6,1,75.2,25.0,A,Central,HV-8.0,5.8,2389.0,5.8
+SIM-00109,2025-02-05 17:00,srv-acad-21,error_configuracion,6,1,75.2,1.0,A,Central,HV-8.0,0.0,0.0,0.8
+INC-00110,2025-02-06 08:00,srv-virtual-23,falla_hardware,2,3,111.9,,A,Anexo,HV-8.0,15.3,5767.0,15.0
+INC-00111,2025-02-06 09:00,srv-correo-29,Malware,4,2,344.3,5.0,A,Central,HV-8.0,14.7,5757.0,14.7
+INC-00112,2025-02-06 12:00,srv-virtual-10,DDOS,6,1,58.3,,A,Central,HV-8.0,12.7,5153.0,12.5
+INC-00113,2025-02-06 18:00,srv-virtual-32,RANSOMWARE,8,3,168.1,17.0,B,Central,HV-8.0,62.9,24777.0,63.0
+INC-00114,2025-02-07 02:00,srv-acad-09,Falla hardware,8,1,86.4,20.0,A,Anexo,HV-8.0,16.5,6839.0,16.3
+INC-00115,2025-02-07 05:00,srv-correo-36,malware,1,2,565.9,21.0,B,Central,HV-8.0,16.3,6130.0,16.1
+INC-00116,2025-02-07 14:00,srv-acad-03,DDoS,7,1,310.0,9.0,A,Central,HV-8.0,7.8,3174.0,7.6
+INC-00117,2025-02-07 15:00,srv-web-37,Error configuración,2,1,285.5,25.0,A,Anexo,HV-8.0,3.3,1347.0,3.5
+INC-00118,2025-02-08 07:00,srv-web-23,DDOS,3,3,329.6,23.0,C,Central,HV-8.0,11.2,4307.0,11.1
+INC-00119,2025-02-08 07:00,srv-correo-04,RANSOMWARE,2,2,36.3,20.0,B,Anexo,HV-8.0,21.4,8255.0,20.9
+INC-00119,2025-02-08 07:00,srv-correo-04,RANSOMWARE,2,2,36.3,20.0,B,Anexo,HV-8.0,21.4,8255.0,20.9
+INC-00121,2025-02-08 09:00,srv-correo-12,ransomware ,6,2,60.2,26.0,B,Central,HV-8.0,37.8,14589.0,37.5
+INC-00122,2025-02-08 20:00,srv-web-35,error_configuracion,5,1,155.6,0.0,C,Central,HV-8.0,5.0,1999.0,5.2
+INC-00123,2025-02-09 03:00,srv-acad-26,MALWARE,3,3,139.6,18.0,B,Anexo,HV-8.0,6.3,2715.0,6.6
+SIM-00124,2025-02-09 14:00,srv-web-09,MALWARE,4,3,697.3,1.0,B,Central,HV-8.0,0.0,0.0,1.5
+INC-00125,2025-02-09 14:00,srv-web-09,MALWARE,4,3,697.3,26.0,B,Central,HV-8.0,11.1,4318.0,10.8
+INC-00126,2025-02-10 00:00,srv-biblio-03,ERROR CONFIG,8,2,38.1,1.0,C,Anexo,HV-8.0,7.6,2949.0,7.1
+INC-00127,2025-02-11 11:00,srv-web-01,DDOS,4,1,113.6,27.0,B,Anexo,HV-8.0,15.9,6486.0,16.0
+SIM-00128,2025-02-11 14:00,srv-correo-13,MALWARE,5,1,45.3,1.0,C,Anexo,HV-8.0,0.0,0.0,1.1
+INC-00129,2025-02-11 14:00,srv-correo-13,MALWARE,5,1,45.3,28.0,C,Anexo,HV-8.0,16.7,6670.0,16.8
+INC-00130,2025-02-12 03:00,srv-correo-14,ERROR CONFIG,1,2,126.4,10.0,B,Anexo,HV-8.0,2.5,1058.0,2.7
+INC-00131,2025-02-12 14:00,srv-correo-24,malware,5,3,316.7,26.0,B,Central,HV-8.0,24.7,9846.0,24.7
+INC-00132,2025-02-12 14:00,srv-correo-01,ERROR CONFIG,6,2,67.3,1.0,B,Anexo,HV-8.0,6.2,2676.0,6.4
+INC-00133,2025-02-13 02:00,srv-biblio-33,ransomware ,2,2,298.9,17.0,A,Central,HV-8.0,20.1,8211.0,20.3
+INC-00134,2025-02-13 05:00,srv-acad-17,Ransomware,2,3,275.1,18.0,A,Anexo,HV-8.0,26.6,11150.0,26.6
+INC-00135,2025-02-13 21:00,srv-acad-21,MALWARE,8,3,142.7,22.0,B,Anexo,HV-8.0,15.1,5886.0,14.9
+INC-00136,2025-02-14 02:00,srv-correo-22,malware,4,3,354.2,20.0,A,Central,HV-8.0,22.3,9102.0,22.1
+INC-00137,2025-02-14 17:00,srv-correo-04,ddos,4,1,1002.4,9.0,A,Anexo,HV-8.0,7.3,2943.0,7.1
+INC-00138,2025-02-14 18:00,srv-web-17,ERROR CONFIG,1,1,20.7,,A,Anexo,HV-8.0,5.2,2070.0,5.3
+INC-00139,2025-02-14 23:00,srv-correo-10,RANSOMWARE,7,3,184.1,,C,Central,HV-8.0,149.4,60428.0,149.6
+INC-00140,2025-02-15 00:00,srv-web-32,FALLA HW,5,3,35.2,,C,Anexo,HV-8.0,32.0,12900.0,31.5
+INC-00141,2025-02-15 05:00,srv-virtual-23,DDOS,6,3,29.4,19.0,C,Central,HV-8.0,6.3,2339.0,6.1
+INC-00141,2025-02-15 05:00,srv-virtual-23,DDOS,6,3,29.4,19.0,C,Central,HV-8.0,6.3,2339.0,6.1
+INC-00143,2025-02-15 06:00,srv-web-10,ransomware ,8,2,103.9,18.0,C,Central,HV-8.0,44.4,18763.0,44.7
+INC-00144,2025-02-15 12:00,srv-acad-11,MALWARE,2,2,797.0,4.0,C,Central,HV-8.0,14.8,5606.0,14.5
+INC-00145,2025-02-15 21:00,srv-virtual-01,Error configuración,5,1,64.9,24.0,C,Anexo,HV-8.0,3.3,1430.0,3.5
+INC-00146,2025-02-16 03:00,srv-correo-23,Falla hardware,1,3,374.1,15.0,B,Central,HV-8.0,6.8,2496.0,6.5
+INC-00147,2025-02-16 07:00,srv-acad-04,error_configuracion,4,3,52.5,9.0,B,Anexo,HV-8.0,3.7,1305.0,3.3
+INC-00148,2025-02-16 10:00,srv-web-23,Malware,6,3,168.6,29.0,A,Central,HV-8.0,21.1,8399.0,21.4
+INC-00148,2025-02-16 10:00,srv-web-23,Malware,6,3,168.6,29.0,A,Central,HV-8.0,21.1,8399.0,21.4
+INC-00150,2025-02-16 10:00,srv-biblio-16,Malware,6,2,127.6,7.0,C,Central,HV-8.0,53.5,20596.0,53.8
+INC-00151,2025-02-17 00:00,srv-acad-28,malware,5,2,691.0,18.0,A,Central,HV-8.0,15.3,6198.0,15.4
+INC-00152,2025-02-17 08:00,srv-virtual-32,falla_hardware,8,2,227.1,,A,Central,HV-8.0,46.8,19596.0,47.0
+INC-00153,2025-02-17 12:00,srv-biblio-26,FALLA HW,5,1,453.9,,B,Anexo,HV-8.0,35.9,14741.0,35.8
+INC-00154,2025-02-17 16:00,srv-biblio-28,falla_hardware,8,2,119.5,,B,Central,HV-8.0,35.8,14666.0,35.5
+INC-00155,2025-02-18 01:00,srv-biblio-32,DDOS,2,2,36.5,23.0,B,Anexo,HV-8.0,5.3,2234.0,5.6
+INC-00156,2025-02-18 06:00,srv-biblio-19,Falla hardware,7,2,147.6,17.0,C,Anexo,HV-8.0,11.8,4580.0,11.9
+INC-00157,2025-02-18 12:00,srv-biblio-36,Falla hardware,1,3,309.6,27.0,A,Central,HV-8.0,21.6,8530.0,21.8
+INC-00158,2025-02-18 13:00,srv-acad-05,DDoS,4,2,317.3,13.0,A,Central,HV-8.0,8.2,3486.0,8.4
+INC-00159,2025-02-18 20:00,srv-virtual-29,MALWARE,8,2,171.7,1.0,C,Anexo,HV-8.0,11.9,4922.0,11.9
+INC-00160,2025-02-20 06:00,srv-correo-24,error_configuracion,3,2,171.9,4.0,B,Central,HV-8.0,4.4,1945.0,4.8
+INC-00161,2025-02-21 02:00,srv-virtual-35,Error configuración,6,3,256.0,2.0,C,Central,HV-8.0,6.0,2507.0,6.2
+INC-00162,2025-02-21 04:00,srv-correo-13,ransomware ,3,2,231.4,22.0,C,Anexo,HV-8.0,22.1,8861.0,21.9
+INC-00163,2025-02-21 20:00,srv-web-15,Error configuración,1,1,77.8,,A,Central,HV-8.0,5.1,1980.0,4.8
+INC-00164,2025-02-22 18:00,srv-virtual-14,MALWARE,8,3,277.4,16.0,B,Central,HV-8.0,26.3,10932.0,26.2
+INC-00165,2025-02-23 07:00,srv-virtual-23,DDoS,2,3,171.7,15.0,C,Anexo,HV-8.0,6.8,2634.0,6.5
+INC-00166,2025-02-24 03:00,srv-correo-33,malware,5,2,93.3,,A,Central,HV-8.0,17.6,6992.0,17.6
+INC-00167,2025-02-24 08:00,srv-acad-04,FALLA HW,8,2,66.1,11.0,A,Central,HV-8.0,12.7,5036.0,12.5
+INC-00168,2025-02-24 20:00,srv-biblio-12,Malware,5,3,67.7,27.0,A,Anexo,HV-8.0,13.7,5185.0,13.4
+INC-00169,2025-02-24 22:00,srv-biblio-19,ransomware ,3,2,80.5,5.0,C,Central,HV-8.0,23.3,9492.0,23.5
+INC-00170,2025-02-25 13:00,srv-virtual-14,ERROR CONFIG,1,1,42.3,,C,Central,HV-8.0,7.3,3034.0,7.5
+INC-00171,2025-02-25 13:00,srv-web-02,Error configuración,6,1,206.4,,B,Anexo,HV-8.0,13.6,4959.0,13.0
+INC-00172,2025-02-25 18:00,srv-virtual-37,DDOS,3,2,122.6,22.0,B,Anexo,HV-8.0,5.7,2243.0,5.7
+INC-00173,2025-02-26 22:00,srv-biblio-21,malware,1,3,184.3,12.0,B,Anexo,HV-8.0,5.1,1993.0,5.2
+INC-00174,2025-02-26 22:00,srv-acad-33,falla_hardware,8,1,107.1,18.0,A,Anexo,HV-8.0,17.1,6905.0,17.2
+INC-00175,2025-02-27 05:00,srv-virtual-34,DDoS,6,3,292.6,27.0,A,Central,HV-8.0,13.4,5536.0,13.3
+INC-00176,2025-02-27 09:00,srv-biblio-37,malware,2,2,301.6,3.0,C,Central,HV-8.0,6.8,2836.0,7.1
+INC-00177,2025-03-01 20:00,srv-virtual-23,FALLA HW,8,3,30.5,4.0,B,Anexo,HV-8.0,12.3,4790.0,12.2
+INC-00178,2025-03-02 02:00,srv-correo-37,FALLA HW,3,1,197.3,5.0,A,Anexo,HV-8.0,7.0,2505.0,6.5
+INC-00179,2025-03-02 06:00,srv-virtual-28,Ransomware,3,3,477.9,,A,Anexo,HV-8.0,71.1,29881.0,71.3
+INC-00180,2025-03-02 10:00,srv-virtual-03,DDoS,3,1,208.6,4.0,C,Anexo,HV-8.0,4.5,1744.0,4.5
+INC-00181,2025-03-02 15:00,srv-acad-16,Malware,6,1,192.2,22.0,A,Anexo,HV-8.0,21.0,8571.0,21.0
+INC-00182,2025-03-03 22:00,srv-biblio-10,DDoS,1,1,279.2,11.0,B,Anexo,HV-8.0,3.6,1295.0,3.4
+INC-00183,2025-03-04 12:00,srv-correo-15,malware,2,2,626.4,16.0,A,Central,HV-8.0,20.3,7767.0,19.9
+INC-00184,2025-03-04 19:00,srv-acad-01,malware,2,1,50.3,12.0,C,Anexo,HV-8.0,4.1,1834.0,4.4
+INC-00185,2025-03-05 10:00,srv-correo-07,malware,2,2,127.2,29.0,C,Anexo,HV-8.0,10.1,3868.0,9.8
+INC-00186,2025-03-05 13:00,srv-virtual-02,error_configuracion,5,3,71.3,2.0,C,Central,HV-8.0,4.9,1895.0,4.9
+INC-00187,2025-03-05 18:00,srv-web-09,falla_hardware,6,3,498.0,,C,Anexo,HV-8.0,42.7,17800.0,42.4
+INC-00188,2025-03-07 02:00,srv-acad-24,DDOS,4,2,265.8,0.0,B,Anexo,HV-8.0,5.0,2003.0,5.2
+INC-00189,2025-03-07 04:00,srv-virtual-34,Falla hardware,3,3,225.4,20.0,C,Anexo,HV-8.0,16.9,6690.0,16.7
+INC-00190,2025-03-07 09:00,srv-biblio-10,FALLA HW,7,2,-246.9,28.0,B,Central,HV-8.0,10.9,4429.0,11.2
+INC-00191,2025-03-07 11:00,srv-correo-02,ddos,8,3,90.3,8.0,A,Central,HV-8.0,9.1,3609.0,9.0
+INC-00192,2025-03-07 14:00,srv-acad-22,FALLA HW,8,3,-94.9,,A,Central,HV-8.0,59.2,23478.0,58.9
+INC-00193,2025-03-07 22:00,srv-correo-06,DDoS,2,2,291.5,6.0,A,Anexo,HV-8.0,4.6,2014.0,5.1
+INC-00194,2025-03-08 07:00,srv-correo-07,Falla hardware,5,1,41.9,,C,Anexo,HV-8.0,16.5,6280.0,16.4
+INC-00195,2025-03-08 13:00,srv-biblio-21,DDoS,6,1,26.5,,B,Central,HV-8.0,15.8,6800.0,16.4
+INC-00196,2025-03-08 16:00,srv-virtual-05,DDOS,2,3,4.3,21.0,B,Central,HV-8.0,4.9,2033.0,5.2
+INC-00197,2025-03-08 21:00,srv-acad-07,malware,3,1,47.6,5.0,A,Central,HV-8.0,7.6,3143.0,7.6
+INC-00198,2025-03-09 07:00,srv-web-36,Malware,6,2,48.5,11.0,B,Anexo,HV-8.0,11.8,5203.0,12.4
+INC-00199,2025-03-10 01:00,srv-acad-09,Falla hardware,1,2,75.4,10.0,A,Central,HV-8.0,7.0,2934.0,7.3
+INC-00200,2025-03-10 05:00,srv-biblio-37,error_configuracion,4,2,344.8,20.0,C,Anexo,HV-8.0,5.8,2281.0,5.9
+INC-00201,2025-03-10 11:00,srv-virtual-23,malware,3,3,246.6,25.0,B,Anexo,HV-8.0,22.6,9671.0,23.1
+INC-00202,2025-03-10 16:00,srv-acad-16,falla_hardware,1,2,8.6,9.0,B,Anexo,HV-8.0,5.3,2009.0,5.1
+INC-00203,2025-03-10 17:00,srv-biblio-37,error_configuracion,5,2,111.6,7.0,B,Anexo,HV-8.0,4.0,1718.0,4.1
+INC-00204,2025-03-11 02:00,srv-biblio-27,Error configuración,5,2,190.9,24.0,A,Central,HV-8.0,7.3,2956.0,7.5
+INC-00205,2025-03-11 08:00,srv-acad-05,ransomware ,1,2,287.4,14.0,B,Central,HV-8.0,20.4,8160.0,20.3
+INC-00206,2025-03-11 14:00,srv-correo-14,FALLA HW,3,1,149.7,9.0,B,Anexo,HV-8.0,8.4,3257.0,8.4
+INC-00207,2025-03-11 14:00,srv-correo-03,ddos,8,1,33.7,14.0,A,Anexo,HV-8.0,5.1,2045.0,5.0
+INC-00208,2025-03-12 06:00,srv-correo-23,ERROR CONFIG,8,3,86.8,9.0,B,Anexo,HV-8.0,6.9,2827.0,7.0
+INC-00209,2025-03-12 08:00,srv-virtual-18,RANSOMWARE,4,3,510.4,1.0,B,Anexo,HV-8.0,31.4,11967.0,30.7
+INC-00210,2025-03-12 22:00,srv-acad-29,MALWARE,6,1,137.6,1.0,C,Anexo,HV-8.0,17.8,7044.0,17.5
+INC-00211,2025-03-13 03:00,srv-correo-25,falla_hardware,2,3,26.4,8.0,C,Anexo,HV-8.0,22.6,8558.0,22.4
+INC-00212,2025-03-13 10:00,srv-acad-39,RANSOMWARE,4,3,1281.8,11.0,A,Anexo,HV-8.0,58.2,23946.0,58.3
+INC-00213,2025-03-13 16:00,srv-web-14,MALWARE,6,2,113.0,11.0,B,Anexo,HV-8.0,10.6,4567.0,11.1
+INC-00214,2025-03-14 04:00,srv-web-20,falla_hardware,4,3,114.4,29.0,A,Central,HV-8.0,11.4,4814.0,11.5
+INC-00215,2025-03-14 05:00,srv-biblio-39,Error configuración,8,2,168.8,3.0,C,Anexo,HV-8.0,7.5,2968.0,7.5
+INC-00216,2025-03-14 12:00,srv-web-38,Ransomware,5,2,276.5,6.0,C,Anexo,HV-8.0,71.8,30009.0,71.7
+INC-00217,2025-03-14 19:00,srv-biblio-18,ddos,6,2,116.0,7.0,C,Central,HV-8.0,8.3,3149.0,8.1
+INC-00218,2025-03-16 01:00,srv-acad-22,MALWARE,1,2,373.5,21.0,A,Anexo,HV-8.0,11.5,4633.0,11.3
+INC-00219,2025-03-16 07:00,srv-acad-06,RANSOMWARE,4,2,343.5,18.0,B,Anexo,HV-8.0,49.0,19012.0,49.1
+INC-00220,2025-03-16 09:00,srv-virtual-37,falla_hardware,8,1,107.0,21.0,A,Anexo,HV-8.0,21.2,8956.0,21.7
+INC-00221,2025-03-17 07:00,srv-correo-07,ERROR CONFIG,5,1,265.3,,B,Central,HV-8.0,9.0,3647.0,9.3
+INC-00222,2025-03-17 07:00,srv-web-18,ddos,8,2,154.6,13.0,C,Anexo,HV-8.0,12.8,4810.0,12.6
+INC-00223,2025-03-17 21:00,srv-virtual-28,RANSOMWARE,1,1,191.0,,B,Anexo,HV-8.0,43.5,17249.0,43.6
+INC-00223,2025-03-17 21:00,srv-virtual-28,RANSOMWARE,1,1,191.0,,B,Anexo,HV-8.0,43.5,17249.0,43.6
+INC-00225,2025-03-18 03:00,srv-web-13,Error configuración,4,3,170.2,24.0,A,Anexo,HV-8.0,7.4,2882.0,7.2
+INC-00226,2025-03-18 12:00,srv-biblio-38,ERROR CONFIG,4,1,154.0,14.0,A,Central,HV-8.0,5.3,2228.0,5.5
+INC-00227,2025-03-18 14:00,srv-web-18,MALWARE,3,1,489.4,,C,Anexo,HV-8.0,21.6,8562.0,21.3
+INC-00228,2025-03-18 19:00,srv-acad-18,ERROR CONFIG,1,2,275.7,7.0,B,Anexo,HV-8.0,4.1,1843.0,4.4
+INC-00229,2025-03-19 03:00,srv-acad-38,ERROR CONFIG,8,2,-219.2,5.0,B,Anexo,HV-8.0,5.2,1810.0,4.7
+INC-00230,2025-03-19 13:00,srv-biblio-31,Error configuración,7,1,138.0,1.0,C,Anexo,HV-8.0,5.5,2173.0,5.5
+INC-00231,2025-03-19 22:00,srv-biblio-33,error_configuracion,8,3,101.0,22.0,A,Anexo,HV-8.0,6.3,2556.0,6.5
+INC-00232,2025-03-19 22:00,srv-virtual-11,error_configuracion,3,2,44.4,28.0,A,Central,HV-8.0,5.1,1990.0,4.9
+INC-00233,2025-03-19 23:00,srv-virtual-07,DDOS,3,2,131.0,7.0,A,Central,HV-8.0,3.2,1252.0,3.1
+INC-00234,2025-03-20 04:00,srv-acad-04,DDOS,3,2,1137.8,,B,Anexo,HV-8.0,11.7,4297.0,11.2
+INC-00234,2025-03-20 04:00,srv-acad-04,DDOS,3,2,1137.8,,B,Anexo,HV-8.0,11.7,4297.0,11.2
+INC-00236,2025-03-20 05:00,srv-biblio-26,FALLA HW,4,2,305.5,13.0,A,Anexo,HV-8.0,9.9,4304.0,10.4
+INC-00237,2025-03-20 13:00,srv-web-03,falla_hardware,4,2,40.3,,A,Anexo,HV-8.0,53.2,20903.0,52.9
+INC-00238,2025-03-20 16:00,srv-web-02,DDOS,3,2,12.1,2.0,A,Anexo,HV-8.0,3.5,1274.0,3.2
+INC-00239,2025-03-21 01:00,srv-acad-28,MALWARE,7,2,37.3,21.0,C,Anexo,HV-8.0,13.5,5268.0,13.0
+INC-00240,2025-03-21 01:00,srv-correo-13,error_configuracion,4,2,165.4,24.0,A,Anexo,HV-8.0,5.6,2355.0,5.9
+INC-00241,2025-03-21 12:00,srv-correo-34,DDoS,7,1,118.6,22.0,B,Central,HV-8.0,9.3,3742.0,9.8
+INC-00242,2025-03-21 13:00,srv-acad-24,Malware,4,2,69.0,28.0,A,Anexo,HV-8.0,15.1,5913.0,15.1
+INC-00243,2025-03-22 00:00,srv-virtual-33,MALWARE,2,1,360.6,8.0,A,Central,HV-8.0,9.2,3655.0,9.2
+INC-00243,2025-03-22 00:00,srv-virtual-33,MALWARE,2,1,360.6,8.0,A,Central,HV-8.0,9.2,3655.0,9.2
+INC-00245,2025-03-22 05:00,srv-web-21,error_configuracion,3,3,201.5,11.0,C,Central,HV-8.0,3.9,1566.0,4.1
+INC-00246,2025-03-22 06:00,srv-acad-21,ddos,4,2,82.0,13.0,C,Central,HV-8.0,6.1,2448.0,6.0
+INC-00247,2025-03-23 04:00,srv-virtual-17,Ransomware,8,1,187.7,28.0,A,Central,HV-8.0,41.3,16986.0,41.0
+INC-00248,2025-03-24 02:00,srv-biblio-15,Malware,8,2,82.6,29.0,B,Central,HV-8.0,15.2,6359.0,15.2
+INC-00249,2025-03-24 10:00,srv-web-16,ransomware ,3,2,129.0,20.0,A,Central,HV-8.0,64.6,26554.0,64.2
+INC-00250,2025-03-24 13:00,srv-acad-33,Falla hardware,6,2,57.9,11.0,A,Central,HV-8.0,13.0,5252.0,12.7
+INC-00251,2025-03-24 16:00,srv-correo-32,RANSOMWARE,3,3,54.1,,A,Central,HV-8.0,60.0,22983.0,59.6
+INC-00252,2025-03-24 21:00,srv-acad-15,DDoS,1,3,136.0,23.0,C,Central,HV-8.0,5.0,1964.0,4.9
+INC-00253,2025-03-24 22:00,srv-correo-39,Error configuración,1,2,20.2,13.0,B,Central,HV-8.0,2.7,1070.0,2.7
+INC-00254,2025-03-26 05:00,srv-acad-02,Error configuración,4,3,137.9,13.0,C,Anexo,HV-8.0,6.4,2647.0,6.5
+INC-00255,2025-03-26 21:00,srv-web-19,DDOS,1,2,394.2,24.0,A,Central,HV-8.0,5.9,2341.0,5.6
+INC-00256,2025-03-27 10:00,srv-web-38,Malware,5,2,94.7,9.0,B,Anexo,HV-8.0,13.8,5684.0,14.3
+INC-00257,2025-03-27 11:00,srv-acad-28,RANSOMWARE,4,2,157.1,25.0,A,Anexo,HV-8.0,27.8,10664.0,27.6
+INC-00258,2025-03-27 15:00,srv-biblio-18,FALLA HW,4,2,75.8,6.0,C,Anexo,HV-8.0,10.4,4023.0,10.3
+INC-00259,2025-03-28 02:00,srv-biblio-23,Falla hardware,6,1,446.6,28.0,C,Central,HV-8.0,13.4,5102.0,13.4
+INC-00260,2025-03-28 03:00,srv-acad-14,Error configuración,3,2,78.6,4.0,B,Anexo,HV-8.0,4.0,1775.0,4.4
+INC-00261,2025-03-28 12:00,srv-web-36,FALLA HW,7,1,145.5,22.0,B,Central,HV-8.0,11.1,4138.0,10.8
+INC-00262,2025-03-28 15:00,srv-web-11,malware,6,1,218.7,27.0,A,Central,HV-8.0,12.1,4832.0,12.1
+INC-00263,2025-03-28 19:00,srv-correo-09,falla_hardware,7,1,25.6,28.0,B,Central,HV-8.0,14.0,5703.0,14.4
+INC-00264,2025-03-28 22:00,srv-biblio-17,falla_hardware,3,1,180.1,24.0,C,Anexo,HV-8.0,7.9,3152.0,8.1
+INC-00265,2025-03-29 08:00,srv-virtual-15,Error configuración,8,2,41.8,17.0,C,Central,HV-8.0,7.8,2848.0,7.4
+INC-00266,2025-03-30 13:00,srv-correo-06,FALLA HW,1,2,62.3,29.0,B,Central,HV-8.0,4.6,1896.0,4.9
+INC-00267,2025-03-31 06:00,srv-acad-15,Error configuración,4,1,79.0,6.0,A,Anexo,HV-8.0,6.0,2287.0,5.8
+INC-00268,2025-03-31 10:00,srv-correo-33,Falla hardware,4,2,123.5,,C,Anexo,HV-8.0,29.7,12481.0,30.1
+INC-00269,2025-03-31 11:00,srv-biblio-32,ddos,2,2,51.6,4.0,B,Central,HV-8.0,4.8,1919.0,4.9
+INC-00270,2025-03-31 18:00,srv-acad-33,ransomware ,2,1,193.4,7.0,C,Central,HV-8.0,21.4,8812.0,21.3
+INC-00271,2025-04-01 01:00,srv-biblio-34,ransomware ,1,1,72.2,21.0,A,Anexo,HV-8.0,7.6,3160.0,8.0
+INC-00272,2025-04-01 06:00,srv-biblio-11,Error configuración,7,3,987.3,6.0,C,Central,HV-8.0,12.4,4674.0,12.2
+INC-00273,2025-04-01 12:00,srv-biblio-13,DDOS,8,3,161.3,6.0,A,Central,HV-8.0,11.9,4583.0,11.9
+INC-00274,2025-04-01 20:00,srv-biblio-12,FALLA HW,3,2,18.8,2.0,C,Anexo,HV-8.0,5.2,1993.0,5.2
+INC-00275,2025-04-02 00:00,srv-correo-39,malware,3,2,84.2,19.0,C,Anexo,HV-8.0,14.7,5629.0,14.3
+INC-00276,2025-04-02 03:00,srv-web-01,falla_hardware,4,1,18.8,27.0,C,Anexo,HV-8.0,10.5,4171.0,10.1
+INC-00277,2025-04-02 03:00,srv-biblio-06,ddos,8,2,214.0,25.0,B,Central,HV-8.0,14.0,5535.0,13.9
+INC-00278,2025-04-02 10:00,srv-biblio-15,malware,1,1,103.4,2.0,A,Central,HV-8.0,5.8,2404.0,6.0
+INC-00279,2025-04-02 15:00,srv-acad-08,falla_hardware,4,2,370.8,25.0,A,Central,HV-8.0,14.8,5908.0,14.6
+INC-00280,2025-04-03 15:00,srv-virtual-23,Falla hardware,1,1,69.8,18.0,C,Anexo,HV-8.0,18.6,7631.0,18.6
+INC-00281,2025-04-03 19:00,srv-acad-13,error_configuracion,8,1,144.4,29.0,A,Anexo,HV-8.0,8.9,3501.0,9.0
+SIM-00282,2025-04-03 21:00,srv-virtual-16,ddos,8,1,899.5,1.0,C,Anexo,HV-8.0,0.0,0.0,1.9
+INC-00283,2025-04-03 21:00,srv-virtual-16,ddos,8,1,899.5,11.0,C,Anexo,HV-8.0,7.0,2839.0,7.1
+INC-00284,2025-04-04 01:00,srv-virtual-26,Malware,6,1,302.2,4.0,B,Central,HV-8.0,9.0,3609.0,9.0
+INC-00285,2025-04-04 02:00,srv-virtual-39,ERROR CONFIG,3,1,343.9,27.0,A,Anexo,HV-8.0,3.7,1391.0,3.6
+INC-00286,2025-04-04 10:00,srv-web-12,error_configuracion,5,3,229.1,,B,Central,HV-8.0,18.7,7562.0,18.9
+INC-00287,2025-04-04 13:00,srv-virtual-33,ERROR CONFIG,7,2,51.6,18.0,C,Anexo,HV-8.0,7.1,2910.0,7.1
+INC-00288,2025-04-05 03:00,srv-biblio-25,DDOS,2,3,411.2,,A,Central,HV-8.0,18.7,7445.0,18.3
+INC-00289,2025-04-05 14:00,srv-acad-08,ERROR CONFIG,2,1,244.5,2.0,C,Central,HV-8.0,3.3,1108.0,2.8
+INC-00290,2025-04-05 15:00,srv-acad-27,ddos,2,1,203.4,19.0,A,Central,HV-8.0,4.1,1843.0,4.4
+INC-00291,2025-04-05 17:00,srv-virtual-01,DDOS,8,3,534.9,18.0,C,Central,HV-8.0,17.9,6840.0,17.8
+INC-00292,2025-04-05 23:00,srv-acad-11,ransomware ,3,2,63.1,3.0,A,Central,HV-8.0,20.8,8490.0,20.6
+INC-00293,2025-04-06 11:00,srv-virtual-09,Falla hardware,1,3,140.6,,C,Central,HV-8.0,15.2,5750.0,15.0
+INC-00294,2025-04-06 19:00,srv-acad-21,Falla hardware,1,3,79.3,13.0,A,Anexo,HV-8.0,6.1,2225.0,5.7
+INC-00294,2025-04-06 19:00,srv-acad-21,Falla hardware,1,3,79.3,13.0,A,Anexo,HV-8.0,6.1,2225.0,5.7
+INC-00296,2025-04-07 02:00,srv-web-34,Malware,2,2,146.9,,C,Anexo,HV-8.0,21.0,8719.0,21.3
+INC-00297,2025-04-08 03:00,srv-correo-10,falla_hardware,3,3,355.8,0.0,C,Central,HV-8.0,16.3,6654.0,16.0
+INC-00298,2025-04-08 05:00,srv-biblio-19,ransomware ,2,3,82.4,26.0,A,Anexo,HV-8.0,25.5,10287.0,25.6
+INC-00299,2025-04-08 07:00,srv-web-39,ransomware ,2,3,149.4,,B,Central,HV-8.0,51.9,20238.0,52.1
+INC-00300,2025-04-08 12:00,srv-acad-14,error_configuracion,7,3,114.3,1.0,B,Anexo,HV-8.0,7.5,3013.0,7.3
+INC-00301,2025-04-08 13:00,srv-web-05,MALWARE,2,3,148.6,29.0,A,Central,HV-8.0,14.1,5794.0,13.8
+INC-00302,2025-04-08 19:00,srv-biblio-33,ransomware ,4,1,88.2,10.0,C,Central,HV-8.0,23.9,9477.0,23.7
+INC-00303,2025-04-08 23:00,srv-virtual-29,RANSOMWARE,1,1,43.6,2.0,B,Central,HV-8.0,11.7,4861.0,12.0
+INC-00304,2025-04-09 22:00,srv-correo-11,malware,7,2,20.0,17.0,B,Anexo,HV-8.0,15.2,6003.0,14.8
+INC-00305,2025-04-10 02:00,srv-correo-13,ransomware ,5,1,87.5,6.0,A,Central,HV-8.0,29.8,11769.0,29.9
+INC-00306,2025-04-10 02:00,srv-biblio-39,malware,6,1,62.1,18.0,A,Central,HV-8.0,16.4,6470.0,15.9
+INC-00307,2025-04-10 05:00,srv-biblio-23,Ransomware,4,3,32.2,,A,Central,HV-8.0,55.5,23304.0,55.5
+INC-00308,2025-04-10 11:00,srv-web-34,Falla hardware,5,2,42.6,17.0,A,Central,HV-8.0,11.4,4219.0,11.1
+INC-00309,2025-04-10 16:00,srv-correo-26,Malware,4,1,9.4,0.0,B,Central,HV-8.0,6.0,2574.0,6.7
+INC-00310,2025-04-10 21:00,srv-correo-03,error_configuracion,1,1,-280.8,13.0,A,Central,HV-8.0,4.1,1541.0,3.7
+INC-00311,2025-04-10 22:00,srv-acad-13,ransomware ,8,3,253.6,0.0,B,Central,HV-8.0,52.1,21048.0,51.7
+INC-00312,2025-04-11 15:00,srv-biblio-37,DDoS,8,2,115.0,4.0,B,Anexo,HV-8.0,10.6,3956.0,10.3
+INC-00313,2025-04-12 10:00,srv-correo-12,ddos,3,2,123.3,,B,Central,HV-8.0,20.9,7980.0,20.8
+INC-00314,2025-04-12 18:00,srv-web-21,falla_hardware,3,2,621.3,16.0,B,Anexo,HV-8.0,15.6,6252.0,15.7
+INC-00315,2025-04-14 17:00,srv-web-19,ERROR CONFIG,1,2,77.5,25.0,B,Anexo,HV-8.0,3.4,1050.0,2.7
+INC-00316,2025-04-14 18:00,srv-acad-28,error_configuracion,1,2,68.7,24.0,C,Central,HV-8.0,4.8,1644.0,4.3
+INC-00317,2025-04-14 22:00,srv-virtual-39,falla_hardware,8,2,184.9,27.0,A,Central,HV-8.0,17.4,7262.0,17.5
+INC-00318,2025-04-15 00:00,srv-virtual-10,ddos,5,2,688.9,3.0,C,Central,HV-8.0,11.6,4731.0,11.8
+INC-00319,2025-04-15 06:00,srv-web-14,ddos,3,2,236.2,14.0,B,Central,HV-8.0,5.9,2389.0,5.8
+INC-00320,2025-04-15 11:00,srv-correo-13,Malware,6,3,1199.3,6.0,C,Central,HV-8.0,20.5,8354.0,20.2
+INC-00321,2025-04-15 15:00,srv-web-28,FALLA HW,6,3,847.8,4.0,A,Anexo,HV-8.0,20.3,8180.0,20.7
+INC-00322,2025-04-15 21:00,srv-correo-24,error_configuracion,6,2,107.7,22.0,B,Anexo,HV-8.0,7.2,2790.0,6.8
+INC-00323,2025-04-15 23:00,srv-biblio-11,ddos,5,2,1102.6,19.0,A,Central,HV-8.0,9.5,4136.0,9.9
+INC-00324,2025-04-16 03:00,srv-web-07,MALWARE,3,2,79.1,21.0,B,Central,HV-8.0,10.6,4122.0,10.8
+INC-00325,2025-04-16 18:00,srv-correo-26,Falla hardware,2,3,281.5,,A,Central,HV-8.0,30.8,12196.0,31.3
+INC-00326,2025-04-17 05:00,srv-biblio-38,DDOS,3,2,244.3,22.0,C,Central,HV-8.0,4.7,1769.0,4.6
+INC-00327,2025-04-17 13:00,srv-virtual-14,Falla hardware,2,1,238.2,15.0,B,Anexo,HV-8.0,6.1,2460.0,6.2
+SIM-00328,2025-04-17 13:00,srv-virtual-14,Falla hardware,2,1,238.2,1.0,B,Anexo,HV-8.0,0.0,0.0,0.6
+INC-00329,2025-04-17 23:00,srv-web-39,ERROR CONFIG,1,3,780.8,21.0,A,Central,HV-8.0,3.9,1369.0,3.6
+INC-00330,2025-04-19 03:00,srv-acad-19,RANSOMWARE,1,2,171.0,18.0,A,Central,HV-8.0,23.3,9641.0,23.5
+INC-00330,2025-04-19 03:00,srv-acad-19,RANSOMWARE,1,2,171.0,18.0,A,Central,HV-8.0,23.3,9641.0,23.5
+INC-00332,2025-04-19 11:00,srv-acad-38,MALWARE,7,1,299.4,11.0,A,Anexo,HV-8.0,14.7,5486.0,13.9
+SIM-00333,2025-04-19 11:00,srv-acad-38,MALWARE,7,1,299.4,1.0,A,Anexo,HV-8.0,0.0,0.0,1.4
+INC-00334,2025-04-19 16:00,srv-web-39,DDOS,5,2,677.3,18.0,C,Central,HV-8.0,6.8,2742.0,6.9
+INC-00335,2025-04-19 23:00,srv-acad-27,Falla hardware,7,2,561.3,6.0,C,Anexo,HV-8.0,17.7,6860.0,17.4
+INC-00336,2025-04-20 00:00,srv-biblio-18,error_configuracion,1,3,473.1,21.0,C,Central,HV-8.0,4.8,1704.0,4.1
+INC-00337,2025-04-20 04:00,srv-web-22,Ransomware,1,3,435.8,19.0,C,Central,HV-8.0,30.1,12556.0,30.1
+INC-00338,2025-04-20 13:00,srv-virtual-03,Error configuración,6,2,677.0,10.0,A,Anexo,HV-8.0,7.0,2933.0,7.3
+INC-00339,2025-04-20 15:00,srv-virtual-12,DDOS,2,3,86.5,13.0,B,Anexo,HV-8.0,8.7,3493.0,8.5
+INC-00340,2025-04-20 15:00,srv-biblio-30,ddos,6,2,220.7,7.0,C,Anexo,HV-8.0,8.5,3480.0,8.6
+INC-00341,2025-04-20 18:00,srv-acad-07,Falla hardware,2,1,86.2,26.0,A,Anexo,HV-8.0,7.6,3008.0,7.3
+INC-00342,2025-04-21 01:00,srv-web-24,DDOS,7,3,188.0,14.0,A,Central,HV-8.0,10.7,4449.0,10.6
+INC-00343,2025-04-21 06:00,srv-virtual-15,FALLA HW,6,2,324.2,21.0,A,Anexo,HV-8.0,15.7,6252.0,16.0
+INC-00344,2025-04-22 04:00,srv-correo-25,Malware,6,2,188.1,4.0,C,Anexo,HV-8.0,19.1,7643.0,19.3
+INC-00345,2025-04-22 16:00,srv-virtual-39,ransomware ,5,2,1395.4,13.0,B,Anexo,HV-8.0,54.6,20994.0,54.2
+INC-00346,2025-04-22 18:00,srv-virtual-31,FALLA HW,1,2,67.5,23.0,B,Anexo,HV-8.0,3.4,1422.0,3.7
+INC-00347,2025-04-22 20:00,srv-virtual-18,ransomware ,3,2,181.9,,B,Anexo,HV-8.0,54.8,21670.0,55.1
+INC-00348,2025-04-22 22:00,srv-acad-19,falla_hardware,7,2,59.7,3.0,A,Central,HV-8.0,17.4,7162.0,17.4
+INC-00349,2025-04-23 10:00,srv-virtual-28,Malware,5,3,492.3,11.0,B,Central,HV-8.0,22.2,9025.0,22.5
+INC-00350,2025-04-23 22:00,srv-biblio-18,error_configuracion,1,2,127.7,26.0,B,Central,HV-8.0,2.8,1081.0,2.6
+INC-00351,2025-04-24 03:00,srv-web-13,malware,3,1,316.5,3.0,B,Central,HV-8.0,13.3,5097.0,12.9
+INC-00352,2025-04-24 08:00,srv-web-19,ERROR CONFIG,6,2,285.8,17.0,A,Anexo,HV-8.0,11.9,4768.0,11.7
+INC-00353,2025-04-24 11:00,srv-acad-24,Falla hardware,1,2,92.7,,B,Central,HV-8.0,15.8,6012.0,15.8
+INC-00354,2025-04-24 13:00,srv-virtual-16,Falla hardware,8,2,398.4,1.0,C,Central,HV-8.0,14.8,6207.0,15.3
+INC-00355,2025-04-25 00:00,srv-acad-10,Malware,2,2,116.6,12.0,B,Anexo,HV-8.0,7.3,2964.0,7.4
+INC-00356,2025-04-25 04:00,srv-acad-02,Error configuración,6,2,585.7,27.0,A,Anexo,HV-8.0,9.0,3239.0,8.5
+INC-00357,2025-04-25 14:00,srv-acad-01,malware,3,1,85.5,11.0,B,Central,HV-8.0,6.6,2629.0,6.8
+SIM-00358,2025-04-25 14:00,srv-acad-01,malware,3,1,85.5,1.0,B,Central,HV-8.0,0.0,0.0,1.9
+INC-00359,2025-04-25 16:00,srv-biblio-25,Malware,5,2,13.3,27.0,A,Anexo,HV-8.0,19.2,7986.0,19.6
+INC-00360,2025-04-25 19:00,srv-correo-16,ERROR CONFIG,6,3,35.4,16.0,C,Anexo,HV-8.0,5.3,2217.0,5.3
+INC-00361,2025-04-25 20:00,srv-acad-06,malware,6,2,26.5,17.0,A,Anexo,HV-8.0,9.7,3919.0,9.8
+INC-00362,2025-04-26 23:00,srv-correo-08,ERROR CONFIG,2,3,102.5,0.0,B,Central,HV-8.0,2.6,1256.0,3.1
+INC-00363,2025-04-27 06:00,srv-virtual-02,ddos,3,2,71.6,26.0,B,Anexo,HV-8.0,6.9,2560.0,6.6
+INC-00364,2025-04-27 09:00,srv-biblio-37,ransomware ,4,3,1595.8,2.0,B,Anexo,HV-8.0,191.5,75358.0,192.0
+INC-00365,2025-04-27 18:00,srv-virtual-29,RANSOMWARE,5,2,77.8,,A,Anexo,HV-8.0,65.9,25531.0,66.4
+INC-00366,2025-04-28 18:00,srv-correo-04,DDOS,2,1,141.8,26.0,A,Anexo,HV-8.0,14.3,5702.0,13.8
+INC-00367,2025-04-29 12:00,srv-biblio-34,RANSOMWARE,2,2,113.7,6.0,B,Central,HV-8.0,27.9,10831.0,27.9
+SIM-00368,2025-04-29 12:00,srv-biblio-34,RANSOMWARE,2,2,113.7,1.0,B,Central,HV-8.0,0.0,0.0,1.2
+INC-00369,2025-04-29 22:00,srv-correo-07,Error configuración,1,1,504.8,10.0,C,Anexo,HV-8.0,2.9,1216.0,3.1
+INC-00370,2025-04-30 00:00,srv-web-34,falla_hardware,7,1,-254.5,20.0,B,Central,HV-8.0,12.6,4878.0,12.5
+INC-00371,2025-04-30 02:00,srv-biblio-27,falla_hardware,7,1,119.6,29.0,A,Central,HV-8.0,9.2,3692.0,9.2
+INC-00372,2025-04-30 02:00,srv-biblio-13,ransomware ,8,2,307.8,6.0,A,Central,HV-8.0,59.3,24487.0,59.4
+INC-00373,2025-04-30 15:00,srv-virtual-38,falla_hardware,4,2,124.7,5.0,C,Anexo,HV-8.0,9.1,3696.0,9.2
+SIM-00374,2025-04-30 15:00,srv-virtual-38,falla_hardware,4,2,124.7,1.0,C,Anexo,HV-8.0,0.0,0.0,0.9
+INC-00375,2025-04-30 19:00,srv-web-16,falla_hardware,4,3,433.8,21.0,A,Anexo,HV-8.0,16.6,6332.0,16.1
+INC-00376,2025-05-01 17:00,srv-virtual-18,Ransomware,2,1,160.4,2.0,A,Central,HV-8.0,12.9,5087.0,12.2
+INC-00377,2025-05-01 19:00,srv-web-23,ERROR CONFIG,6,3,189.3,26.0,C,Anexo,HV-8.0,9.1,3643.0,9.0
+INC-00378,2025-05-02 10:00,srv-virtual-20,Error configuración,3,1,422.2,21.0,B,Central,HV-8.0,7.6,3251.0,7.8
+SIM-00379,2025-05-02 10:00,srv-virtual-20,Error configuración,3,1,422.2,1.0,B,Central,HV-8.0,0.0,0.0,1.5
+INC-00380,2025-05-03 05:00,srv-acad-32,RANSOMWARE,1,2,75.9,15.0,C,Central,HV-8.0,15.9,6571.0,15.7
+INC-00381,2025-05-04 14:00,srv-biblio-21,error_configuracion,2,1,553.3,19.0,C,Anexo,HV-8.0,3.7,1380.0,3.4
+INC-00382,2025-05-04 22:00,srv-virtual-11,Ransomware,7,1,188.2,11.0,A,Anexo,HV-8.0,41.0,16267.0,41.1
+INC-00383,2025-05-05 09:00,srv-virtual-34,FALLA HW,5,2,333.9,1.0,A,Anexo,HV-8.0,7.9,3002.0,7.8
+INC-00384,2025-05-05 18:00,srv-web-27,ERROR CONFIG,3,1,138.2,23.0,A,Anexo,HV-8.0,4.5,1815.0,4.6
+INC-00385,2025-05-06 21:00,srv-virtual-01,DDOS,6,2,68.8,,C,Anexo,HV-8.0,17.5,7391.0,17.6
+INC-00386,2025-05-06 21:00,srv-acad-20,ERROR CONFIG,7,2,73.3,21.0,A,Anexo,HV-8.0,9.5,3732.0,9.7
+INC-00387,2025-05-07 04:00,srv-biblio-02,malware,1,1,224.5,14.0,C,Central,HV-8.0,9.3,3630.0,9.5
+INC-00388,2025-05-07 04:00,srv-biblio-13,malware,7,2,185.2,7.0,A,Central,HV-8.0,22.2,8891.0,22.3
+INC-00389,2025-05-07 19:00,srv-web-26,falla_hardware,3,2,36.4,11.0,A,Anexo,HV-8.0,5.3,2558.0,6.1
+INC-00390,2025-05-08 02:00,srv-web-27,RANSOMWARE,1,3,110.7,23.0,A,Anexo,HV-8.0,23.0,9143.0,22.9
+INC-00391,2025-05-08 18:00,srv-virtual-28,DDOS,6,2,73.3,10.0,C,Central,HV-8.0,8.6,3572.0,9.0
+INC-00392,2025-05-09 18:00,srv-correo-34,falla_hardware,2,3,108.9,21.0,B,Anexo,HV-8.0,7.5,3054.0,7.3
+INC-00393,2025-05-09 20:00,srv-web-09,malware,2,2,262.6,3.0,C,Anexo,HV-8.0,8.2,3144.0,8.1
+INC-00394,2025-05-10 01:00,srv-web-25,DDoS,3,2,1462.7,5.0,B,Central,HV-8.0,8.7,3273.0,8.6
+INC-00395,2025-05-11 02:00,srv-virtual-09,DDOS,3,3,86.1,19.0,B,Central,HV-8.0,7.0,2913.0,7.2
+SIM-00396,2025-05-11 05:00,srv-biblio-33,DDOS,4,3,155.7,1.0,A,Central,HV-8.0,0.0,0.0,1.4
+INC-00397,2025-05-11 05:00,srv-biblio-33,DDOS,4,3,155.7,26.0,A,Central,HV-8.0,7.8,3327.0,8.0
+INC-00398,2025-05-11 18:00,srv-acad-35,falla_hardware,6,3,584.5,0.0,A,Central,HV-8.0,25.7,10688.0,25.6
+INC-00399,2025-05-12 10:00,srv-correo-14,FALLA HW,2,1,1556.2,15.0,C,Central,HV-8.0,5.5,2020.0,5.2
+INC-00400,2025-05-12 22:00,srv-correo-35,FALLA HW,3,2,605.4,4.0,B,Anexo,HV-8.0,15.7,5897.0,15.5
+INC-00401,2025-05-13 10:00,srv-virtual-34,Error configuración,8,1,26.6,21.0,A,Anexo,HV-8.0,6.9,2779.0,7.3
+INC-00402,2025-05-13 17:00,srv-virtual-10,ERROR CONFIG,6,2,1204.5,1.0,A,Central,HV-8.0,11.3,4519.0,11.4
+INC-00403,2025-05-13 21:00,srv-web-16,FALLA HW,2,2,83.6,,B,Anexo,HV-8.0,20.7,8237.0,20.4
+INC-00404,2025-05-13 22:00,srv-web-34,MALWARE,6,3,199.4,14.0,A,Central,HV-8.0,18.4,7627.0,18.6
+INC-00405,2025-05-16 06:00,srv-acad-21,RANSOMWARE,1,1,22.9,27.0,A,Central,HV-8.0,10.7,4585.0,11.0
+INC-00406,2025-05-16 16:00,srv-biblio-12,Malware,6,1,52.8,10.0,C,Anexo,HV-8.0,8.5,3468.0,8.6
+INC-00407,2025-05-17 23:00,srv-web-38,error_configuracion,1,3,65.8,19.0,A,Central,HV-8.0,4.8,1684.0,4.4
+INC-00408,2025-05-18 02:00,srv-biblio-07,ddos,1,2,373.8,15.0,B,Anexo,HV-8.0,5.8,2212.0,5.5
+INC-00409,2025-05-19 04:00,srv-virtual-01,falla_hardware,5,3,278.3,10.0,A,Central,HV-8.0,13.4,5640.0,13.5
+INC-00410,2025-05-19 05:00,srv-biblio-15,Error configuración,2,3,39.4,13.0,B,Central,HV-8.0,5.3,2029.0,5.1
+INC-00411,2025-05-19 06:00,srv-web-22,Malware,8,1,43.5,11.0,A,Anexo,HV-8.0,12.3,4388.0,11.4
+INC-00412,2025-05-19 19:00,srv-biblio-18,Error configuración,1,2,506.4,24.0,C,Central,HV-8.0,4.5,1720.0,4.3
+INC-00413,2025-05-20 18:00,srv-correo-05,DDoS,3,3,92.0,26.0,A,Central,HV-8.0,4.7,1981.0,5.0
+INC-00414,2025-05-20 19:00,srv-correo-30,Error configuración,4,3,380.1,14.0,B,Central,HV-8.0,5.9,2293.0,6.0
+SIM-00415,2025-05-21 05:00,srv-biblio-13,error_configuracion,2,1,91.7,1.0,A,Central,HV-8.0,0.0,0.0,1.2
+INC-00416,2025-05-21 05:00,srv-biblio-13,error_configuracion,2,1,91.7,3.0,A,Central,HV-8.0,3.3,1342.0,3.3
+INC-00417,2025-05-21 07:00,srv-biblio-22,FALLA HW,7,2,293.9,,C,Anexo,HV-8.0,49.8,19695.0,50.0
+INC-00418,2025-05-21 19:00,srv-correo-06,Falla hardware,5,3,112.6,10.0,C,Anexo,HV-8.0,18.5,7105.0,18.3
+INC-00419,2025-05-22 15:00,srv-web-03,Falla hardware,6,2,320.9,21.0,B,Anexo,HV-8.0,16.4,6635.0,16.2
+INC-00420,2025-05-23 19:00,srv-web-09,RANSOMWARE,8,3,102.5,10.0,B,Anexo,HV-8.0,48.9,19093.0,49.0
+INC-00421,2025-05-23 23:00,srv-web-20,error_configuracion,5,3,199.2,5.0,C,Anexo,HV-8.0,4.3,1858.0,4.5
+INC-00422,2025-05-24 01:00,srv-virtual-09,malware,5,2,186.9,21.0,B,Central,HV-8.0,15.6,5844.0,15.2
+INC-00423,2025-05-24 09:00,srv-virtual-03,DDoS,1,2,21.3,5.0,A,Central,HV-8.0,3.9,1530.0,4.0
+SIM-00424,2025-05-25 18:00,srv-virtual-08,RANSOMWARE,8,3,101.6,1.0,B,Central,HV-8.0,0.0,0.0,1.3
+INC-00425,2025-05-25 18:00,srv-virtual-08,RANSOMWARE,8,3,101.6,,B,Central,HV-8.0,87.5,35944.0,87.8
+INC-00426,2025-05-26 01:00,srv-web-27,DDoS,6,2,193.1,4.0,B,Central,HV-8.0,8.1,3209.0,7.9
+INC-00427,2025-05-26 05:00,srv-acad-10,falla_hardware,5,3,348.1,6.0,A,Anexo,HV-8.0,10.9,4444.0,11.3
+INC-00428,2025-05-29 05:00,srv-web-17,MALWARE,1,2,186.9,,B,Central,HV-8.0,17.9,6835.0,17.8
+SIM-00429,2025-05-29 06:00,srv-web-01,Error configuración,3,3,860.0,1.0,B,Anexo,HV-8.0,0.0,0.0,1.0
+INC-00430,2025-05-29 06:00,srv-web-01,Error configuración,3,3,860.0,20.0,B,Anexo,HV-8.0,5.2,1933.0,4.9
+INC-00431,2025-05-29 07:00,srv-web-28,Falla hardware,2,3,320.5,22.0,C,Central,HV-8.0,8.6,3433.0,8.6
+INC-00432,2025-05-29 11:00,srv-acad-22,RANSOMWARE,6,2,60.8,2.0,A,Anexo,HV-8.0,16.8,6732.0,16.7
+INC-00433,2025-05-29 14:00,srv-virtual-32,ddos,1,1,59.8,,B,Anexo,HV-8.0,8.1,3190.0,8.0
+INC-00433,2025-05-29 14:00,srv-virtual-32,ddos,1,1,59.8,,B,Anexo,HV-8.0,8.1,3190.0,8.0
+INC-00435,2025-05-29 21:00,srv-virtual-07,DDOS,2,3,30.6,,B,Anexo,HV-8.0,10.0,4186.0,10.6
+INC-00436,2025-05-30 07:00,srv-biblio-11,Malware,2,1,61.6,7.0,B,Anexo,HV-8.0,9.5,4068.0,9.7
+INC-00436,2025-05-30 07:00,srv-biblio-11,Malware,2,1,61.6,7.0,B,Anexo,HV-8.0,9.5,4068.0,9.7
+INC-00438,2025-05-30 12:00,srv-virtual-13,ERROR CONFIG,4,3,417.9,25.0,A,Central,HV-8.0,8.8,3630.0,9.0
+INC-00439,2025-05-30 12:00,srv-virtual-02,Falla hardware,4,1,289.8,28.0,C,Anexo,HV-8.0,10.1,4179.0,10.1
+INC-00440,2025-05-30 14:00,srv-web-06,Error configuración,8,2,1239.3,14.0,B,Anexo,HV-8.0,7.4,2933.0,7.5
+INC-00441,2025-05-31 06:00,srv-biblio-02,Falla hardware,5,2,533.0,20.0,C,Central,HV-8.0,17.7,6786.0,17.7
+INC-00442,2025-05-31 18:00,srv-web-06,Malware,5,2,33.3,13.0,B,Anexo,HV-8.0,10.1,4130.0,10.0
+INC-00443,2025-06-01 01:00,srv-acad-32,ERROR CONFIG,7,3,133.3,15.0,C,Central,HV-8.0,11.6,4858.0,11.9
+INC-00444,2025-06-01 03:00,srv-biblio-03,DDOS,6,3,347.1,7.0,B,Anexo,HV-8.0,6.7,2436.0,6.2
+INC-00445,2025-06-01 21:00,srv-acad-09,MALWARE,5,3,159.8,6.0,B,Central,HV-8.0,38.9,14974.0,38.9
+INC-00446,2025-06-02 06:00,srv-web-10,error_configuracion,8,2,272.9,23.0,A,Central,HV-8.0,8.5,3588.0,8.6
+INC-00447,2025-06-02 16:00,srv-acad-38,Malware,5,2,102.5,,B,Central,HV-8.0,32.4,13097.0,32.0
+INC-00448,2025-06-02 22:00,srv-biblio-11,Error configuración,1,2,138.9,3.0,B,Anexo,HV-8.0,3.8,1685.0,4.2
+INC-00449,2025-06-03 00:00,srv-acad-12,DDOS,1,3,190.9,0.0,B,Anexo,HV-8.0,3.1,1302.0,3.3
+INC-00449,2025-06-03 00:00,srv-acad-12,DDOS,1,3,190.9,0.0,B,Anexo,HV-8.0,3.1,1302.0,3.3
+INC-00451,2025-06-03 14:00,srv-web-21,ERROR CONFIG,8,2,233.5,26.0,B,Central,HV-8.0,6.7,2571.0,6.6
+INC-00452,2025-06-04 14:00,srv-correo-06,error_configuracion,6,1,31.9,,B,Anexo,HV-8.0,11.1,4693.0,11.3
+INC-00453,2025-06-04 14:00,srv-correo-04,Error configuración,7,1,2297.0,23.0,B,Central,HV-8.0,11.2,4267.0,11.2
+INC-00454,2025-06-04 23:00,srv-correo-04,MALWARE,3,2,63.1,21.0,C,Central,HV-8.0,13.1,5173.0,12.9
+INC-00455,2025-06-05 04:00,srv-biblio-23,ERROR CONFIG,8,3,88.3,16.0,B,Central,HV-8.0,9.5,3653.0,9.5
+INC-00456,2025-06-05 07:00,srv-correo-01,FALLA HW,7,2,262.1,,A,Anexo,HV-8.0,41.4,15718.0,41.1
+INC-00457,2025-06-05 11:00,srv-correo-07,FALLA HW,5,2,324.7,,C,Central,HV-8.0,34.0,13523.0,34.3
+INC-00458,2025-06-05 13:00,srv-virtual-04,Falla hardware,3,2,136.0,3.0,A,Anexo,HV-8.0,12.2,5074.0,12.1
+INC-00459,2025-06-06 09:00,srv-biblio-22,Falla hardware,1,2,349.9,20.0,B,Anexo,HV-8.0,9.9,3915.0,10.2
+INC-00460,2025-06-06 09:00,srv-virtual-20,ERROR CONFIG,4,3,103.3,26.0,B,Central,HV-8.0,5.1,2036.0,5.0
+INC-00461,2025-06-06 09:00,srv-web-31,FALLA HW,7,1,324.7,23.0,B,Central,HV-8.0,15.8,6192.0,15.7
+INC-00462,2025-06-06 12:00,srv-acad-09,MALWARE,1,2,45.1,,A,Anexo,HV-8.0,16.4,6919.0,16.7
+INC-00463,2025-06-06 15:00,srv-virtual-36,RANSOMWARE,6,1,42.4,8.0,A,Central,HV-8.0,20.2,8478.0,20.9
+INC-00464,2025-06-06 18:00,srv-acad-17,ddos,7,2,60.9,19.0,B,Anexo,HV-8.0,11.4,4784.0,11.6
+INC-00465,2025-06-06 18:00,srv-biblio-25,error_configuracion,2,1,116.2,25.0,B,Central,HV-8.0,3.4,1535.0,3.7
+INC-00466,2025-06-06 23:00,srv-correo-08,Falla hardware,8,2,27.4,22.0,C,Central,HV-8.0,11.2,4544.0,11.4
+INC-00467,2025-06-07 05:00,srv-acad-15,Error configuración,6,3,47.2,,A,Central,HV-8.0,14.2,5886.0,14.5
+INC-00468,2025-06-08 02:00,srv-virtual-14,Falla hardware,1,3,880.8,1.0,A,Central,HV-8.0,7.8,3437.0,8.2
+INC-00469,2025-06-08 14:00,srv-acad-18,MALWARE,4,2,25.4,2.0,C,Anexo,HV-8.0,6.2,2524.0,6.1
+INC-00470,2025-06-09 00:00,srv-acad-37,ransomware ,2,2,74.0,1.0,C,Anexo,HV-8.0,20.2,7921.0,20.6
+INC-00471,2025-06-09 05:00,srv-virtual-30,error_configuracion,1,2,804.6,12.0,A,Central,HV-8.0,5.0,1979.0,5.2
+INC-00472,2025-06-09 10:00,srv-acad-36,error_configuracion,6,1,90.3,11.0,C,Anexo,HV-8.0,5.5,2194.0,5.7
+INC-00473,2025-06-09 14:00,srv-virtual-05,error_configuracion,6,2,394.5,3.0,C,Central,HV-8.0,9.0,3415.0,8.8
+INC-00474,2025-06-09 19:00,srv-web-25,ransomware ,1,2,408.9,,A,Anexo,HV-8.0,58.6,22694.0,58.8
+INC-00475,2025-06-10 01:00,srv-biblio-19,FALLA HW,1,3,81.9,1.0,A,Central,HV-8.0,6.4,2888.0,6.9
+INC-00476,2025-06-10 19:00,srv-biblio-10,DDoS,2,1,59.3,5.0,A,Central,HV-8.0,4.1,1618.0,4.0
+INC-00477,2025-06-11 08:00,srv-web-25,ERROR CONFIG,3,2,27.4,2.0,A,Anexo,HV-8.0,3.2,1326.0,3.3
+INC-00478,2025-06-12 07:00,srv-acad-36,falla_hardware,1,1,93.6,9.0,C,Anexo,HV-8.0,4.1,1700.0,4.1
+INC-00479,2025-06-12 13:00,srv-virtual-15,DDOS,2,2,86.5,17.0,A,Anexo,HV-8.0,3.9,1481.0,3.6
+INC-00480,2025-06-12 14:00,srv-acad-12,FALLA HW,1,2,724.4,28.0,C,Anexo,HV-8.0,12.5,5046.0,12.3
+INC-00481,2025-06-12 16:00,srv-acad-21,error_configuracion,5,2,52.0,0.0,A,Anexo,HV-8.0,4.8,1752.0,4.5
+INC-00482,2025-06-13 17:00,srv-virtual-26,error_configuracion,3,2,59.0,,B,Central,HV-8.0,10.1,3942.0,10.1
+INC-00483,2025-06-13 20:00,srv-acad-23,Falla hardware,2,1,2076.9,3.0,C,Central,HV-8.0,10.7,4469.0,10.9
+INC-00484,2025-06-13 21:00,srv-virtual-14,Falla hardware,2,2,289.9,14.0,A,Anexo,HV-8.0,9.1,3481.0,9.1
+INC-00485,2025-06-14 08:00,srv-correo-38,error_configuracion,5,2,70.9,5.0,A,Central,HV-8.0,6.2,2645.0,6.3
+INC-00486,2025-06-14 13:00,srv-web-08,Falla hardware,1,1,394.3,20.0,B,Anexo,HV-8.0,4.3,1705.0,4.1
+INC-00487,2025-06-15 03:00,srv-biblio-25,FALLA HW,1,3,126.0,25.0,C,Central,HV-8.0,7.1,2856.0,7.5
+INC-00488,2025-06-15 10:00,srv-biblio-37,malware,5,3,305.6,12.0,C,Central,HV-8.0,17.8,6881.0,17.8
+INC-00489,2025-06-15 14:00,srv-web-17,malware,7,3,84.9,16.0,C,Central,HV-8.0,13.2,5329.0,13.4
+INC-00490,2025-06-16 11:00,srv-biblio-02,ERROR CONFIG,5,2,61.5,23.0,A,Anexo,HV-8.0,5.2,2129.0,5.4
+INC-00491,2025-06-16 12:00,srv-biblio-13,ERROR CONFIG,1,2,634.9,2.0,C,Anexo,HV-8.0,3.9,1698.0,4.2
+INC-00492,2025-06-17 01:00,srv-acad-13,ERROR CONFIG,6,1,187.5,11.0,B,Anexo,HV-8.0,6.3,2453.0,6.3
+INC-00493,2025-06-17 17:00,srv-biblio-34,Ransomware,3,3,30.4,17.0,B,Anexo,HV-8.0,27.5,11100.0,27.4
+INC-00494,2025-06-17 21:00,srv-acad-39,Ransomware,6,1,548.4,13.0,B,Central,HV-8.0,34.3,13632.0,34.6
+INC-00495,2025-06-18 08:00,srv-virtual-06,MALWARE,1,1,173.5,23.0,C,Central,HV-8.0,7.3,2850.0,6.8
+INC-00496,2025-06-18 22:00,srv-virtual-04,falla_hardware,7,2,779.0,9.0,C,Central,HV-8.0,15.8,6099.0,16.0
+INC-00497,2025-06-19 02:00,srv-web-19,error_configuracion,3,2,98.9,16.0,A,Central,HV-8.0,5.0,1914.0,4.9
+INC-00498,2025-06-19 07:00,srv-virtual-02,Error configuración,8,2,39.4,1.0,B,Central,HV-8.0,7.9,3358.0,8.1
+INC-00499,2025-06-20 13:00,srv-virtual-29,FALLA HW,6,1,199.9,24.0,B,Central,HV-8.0,9.4,3789.0,9.5
+INC-00500,2025-06-20 18:00,srv-virtual-07,Malware,5,2,464.7,28.0,B,Central,HV-8.0,21.5,8505.0,21.4
+INC-00501,2025-06-21 03:00,srv-correo-37,ERROR CONFIG,1,2,393.9,,C,Central,HV-8.0,9.6,3899.0,9.6
+INC-00502,2025-06-21 03:00,srv-virtual-01,ERROR CONFIG,8,2,41.4,12.0,C,Central,HV-8.0,10.5,4268.0,10.4
+INC-00503,2025-06-21 04:00,srv-web-02,FALLA HW,5,2,50.8,5.0,A,Central,HV-8.0,8.7,3588.0,8.7
+INC-00504,2025-06-21 18:00,srv-acad-19,DDoS,5,3,110.2,18.0,B,Anexo,HV-8.0,13.5,5304.0,13.6
+INC-00504,2025-06-21 18:00,srv-acad-19,DDoS,5,3,110.2,18.0,B,Anexo,HV-8.0,13.5,5304.0,13.6
+INC-00506,2025-06-22 09:00,srv-acad-36,FALLA HW,8,2,85.8,15.0,C,Anexo,HV-8.0,19.7,7970.0,19.8
+INC-00507,2025-06-23 06:00,srv-virtual-04,Falla hardware,5,3,141.9,19.0,B,Central,HV-8.0,14.4,5419.0,14.1
+INC-00508,2025-06-23 09:00,srv-correo-22,FALLA HW,2,3,85.4,13.0,C,Anexo,HV-8.0,7.3,2801.0,7.2
+INC-00509,2025-06-23 19:00,srv-virtual-09,malware,6,3,415.2,3.0,A,Central,HV-8.0,26.3,10383.0,25.8
+INC-00510,2025-06-24 09:00,srv-virtual-23,Falla hardware,2,2,579.2,,B,Anexo,HV-8.0,34.7,13928.0,34.8
+INC-00511,2025-06-24 17:00,srv-virtual-10,Malware,4,2,87.4,11.0,A,Central,HV-8.0,11.0,4221.0,10.5
+INC-00512,2025-06-24 20:00,srv-web-06,error_configuracion,1,3,66.2,3.0,A,Central,HV-8.0,3.6,1491.0,3.8
+INC-00513,2025-06-25 03:00,srv-acad-30,Falla hardware,1,1,208.7,,A,Central,HV-8.0,14.3,5814.0,14.4
+INC-00514,2025-06-25 10:00,srv-correo-30,Error configuración,6,1,127.1,5.0,A,Central,HV-8.0,6.2,2404.0,6.0
+INC-00515,2025-06-26 01:00,srv-virtual-02,Ransomware,6,3,104.9,16.0,A,Central,HV-8.0,54.1,20946.0,53.9
+INC-00516,2025-06-28 02:00,srv-web-20,ERROR CONFIG,4,2,76.1,20.0,B,Anexo,HV-8.0,7.1,2761.0,6.6
+INC-00517,2025-06-28 10:00,srv-biblio-31,falla_hardware,5,2,6.1,16.0,C,Central,HV-8.0,8.2,3261.0,7.8
+INC-00518,2025-06-28 10:00,srv-virtual-10,malware,7,3,53.0,15.0,B,Central,HV-8.0,48.6,20081.0,49.4
+INC-00519,2025-06-28 20:00,srv-web-07,DDOS,7,1,159.9,11.0,B,Anexo,HV-8.0,9.7,3912.0,9.5
+INC-00520,2025-06-29 00:00,srv-virtual-13,Error configuración,2,1,204.5,,A,Central,HV-8.0,8.2,3434.0,8.3
+INC-00521,2025-06-29 00:00,srv-virtual-08,Ransomware,6,1,41.8,24.0,A,Central,HV-8.0,30.5,12192.0,30.0
+INC-00522,2025-06-29 08:00,srv-acad-17,MALWARE,5,2,371.9,21.0,B,Central,HV-8.0,17.8,7380.0,17.6
+INC-00523,2025-06-29 08:00,srv-virtual-08,Error configuración,6,2,100.7,5.0,A,Anexo,HV-8.0,6.1,2385.0,5.7
+INC-00524,2025-06-29 10:00,srv-web-03,ddos,4,1,245.2,19.0,C,Central,HV-8.0,6.0,2190.0,5.7
+INC-00525,2025-06-30 03:00,srv-biblio-03,Error configuración,2,1,55.9,23.0,A,Central,HV-8.0,4.8,1994.0,5.0
+INC-00526,2025-06-30 10:00,srv-web-11,Malware,4,2,72.5,10.0,B,Anexo,HV-8.0,15.7,6350.0,15.6
+INC-00527,2025-06-30 21:00,srv-web-37,Falla hardware,6,2,39.3,13.0,B,Central,HV-8.0,8.1,3157.0,7.7
+INC-00528,2025-07-01 00:00,srv-web-24,ERROR CONFIG,2,2,578.2,16.0,C,Anexo,HV-8.0,4.0,1825.0,4.5
+INC-00529,2025-07-01 06:00,srv-biblio-30,malware,2,2,54.4,3.0,A,Central,HV-8.0,6.5,2466.0,5.9
+INC-00530,2025-07-01 08:00,srv-web-29,FALLA HW,3,1,967.9,2.0,B,Anexo,HV-8.0,15.7,6436.0,15.5
+INC-00531,2025-07-01 09:00,srv-biblio-22,MALWARE,7,2,287.1,16.0,C,Central,HV-8.0,12.3,4758.0,12.3
+INC-00532,2025-07-01 21:00,srv-virtual-37,FALLA HW,7,2,195.0,29.0,B,Central,HV-8.0,20.0,7553.0,19.8
+INC-00533,2025-07-02 01:00,srv-web-36,MALWARE,5,3,110.1,29.0,A,Anexo,HV-8.0,19.0,7884.0,19.1
+INC-00534,2025-07-02 13:00,srv-web-19,falla_hardware,7,1,3498.1,20.0,B,Central,HV-8.0,19.4,7611.0,19.2
+INC-00535,2025-07-03 04:00,srv-correo-03,Malware,8,3,221.7,3.0,B,Central,HV-8.0,26.1,10773.0,26.3
+INC-00536,2025-07-03 16:00,srv-virtual-15,Falla hardware,3,2,170.6,21.0,A,Central,HV-8.0,7.5,2928.0,7.4
+SIM-00537,2025-07-04 12:00,srv-biblio-17,error_configuracion,4,1,436.1,1.0,B,Anexo,HV-8.0,0.0,0.0,1.5
+INC-00538,2025-07-04 12:00,srv-biblio-17,error_configuracion,4,1,436.1,7.0,B,Anexo,HV-8.0,5.2,1887.0,4.9
+INC-00539,2025-07-04 16:00,srv-biblio-11,FALLA HW,1,2,70.1,24.0,A,Central,HV-8.0,8.3,3344.0,8.2
+INC-00540,2025-07-04 21:00,srv-web-06,MALWARE,5,2,124.7,8.0,B,Central,HV-8.0,8.8,3644.0,8.9
+INC-00541,2025-07-04 22:00,srv-correo-32,ERROR CONFIG,2,2,38.9,22.0,C,Central,HV-8.0,2.6,1158.0,3.0
+INC-00542,2025-07-05 01:00,srv-biblio-28,Error configuración,5,3,30.0,14.0,C,Anexo,HV-8.0,6.3,2437.0,6.4
+INC-00543,2025-07-05 02:00,srv-biblio-14,Error configuración,6,1,540.7,14.0,B,Anexo,HV-8.0,5.3,2039.0,5.0
+INC-00544,2025-07-05 08:00,srv-acad-12,Falla hardware,8,2,65.9,,C,Central,HV-8.0,28.1,11297.0,27.8
+INC-00545,2025-07-06 05:00,srv-web-24,falla_hardware,3,2,147.0,25.0,A,Central,HV-8.0,11.3,4630.0,11.1
+INC-00546,2025-07-06 08:00,srv-virtual-30,RANSOMWARE,5,2,601.5,12.0,B,Anexo,HV-8.0,43.2,17205.0,43.5
+INC-00547,2025-07-06 23:00,srv-acad-33,DDoS,4,1,161.6,,A,Central,HV-8.0,25.8,10142.0,26.0
+INC-00548,2025-07-07 00:00,srv-biblio-39,ransomware ,4,2,55.0,,A,Central,HV-8.0,38.3,14713.0,38.2
+INC-00549,2025-07-07 04:00,srv-web-31,DDoS,1,2,877.1,7.0,A,Anexo,HV-8.0,3.7,1738.0,4.2
+INC-00550,2025-07-07 05:00,srv-virtual-18,FALLA HW,2,3,333.2,6.0,A,Anexo,HV-8.0,7.1,2781.0,7.2
+INC-00551,2025-07-07 15:00,srv-correo-08,Ransomware,7,1,302.3,17.0,A,Anexo,HV-8.0,45.4,17620.0,45.9
+INC-00552,2025-07-07 16:00,srv-correo-25,ddos,2,2,406.5,13.0,C,Central,HV-8.0,5.8,2082.0,5.4
+INC-00553,2025-07-07 20:00,srv-virtual-11,DDOS,5,2,148.4,,A,Central,HV-8.0,17.6,6808.0,17.4
+INC-00554,2025-07-07 23:00,srv-web-21,falla_hardware,2,3,359.9,,C,Anexo,HV-8.0,66.5,27777.0,66.3
+INC-00555,2025-07-08 06:00,srv-correo-26,Malware,5,3,43.4,20.0,A,Central,HV-8.0,12.1,4570.0,11.9
+INC-00556,2025-07-08 06:00,srv-biblio-34,Falla hardware,2,1,117.5,11.0,B,Central,HV-8.0,6.1,2605.0,6.4
+INC-00557,2025-07-08 12:00,srv-web-25,malware,5,1,508.1,,B,Central,HV-8.0,29.0,11742.0,29.1
+INC-00558,2025-07-08 13:00,srv-virtual-17,ransomware ,6,2,60.6,7.0,C,Anexo,HV-8.0,24.3,9686.0,23.9
+INC-00559,2025-07-08 20:00,srv-web-28,DDOS,8,2,970.7,0.0,B,Anexo,HV-8.0,11.8,4654.0,12.0
+INC-00560,2025-07-09 04:00,srv-acad-08,ransomware ,6,2,97.9,20.0,C,Central,HV-8.0,35.9,14483.0,35.3
+INC-00561,2025-07-09 19:00,srv-web-26,error_configuracion,4,2,71.1,28.0,B,Anexo,HV-8.0,5.1,1998.0,5.0
+INC-00562,2025-07-09 21:00,srv-correo-05,error_configuracion,1,3,127.0,23.0,A,Anexo,HV-8.0,4.9,2010.0,4.9
+INC-00563,2025-07-10 09:00,srv-correo-03,Falla hardware,4,1,59.6,6.0,B,Anexo,HV-8.0,8.8,3823.0,9.5
+INC-00564,2025-07-10 16:00,srv-acad-34,FALLA HW,8,3,106.9,0.0,B,Anexo,HV-8.0,10.2,4336.0,10.4
+INC-00565,2025-07-11 01:00,srv-web-16,error_configuracion,3,2,347.9,28.0,B,Anexo,HV-8.0,7.9,3156.0,7.7
+INC-00566,2025-07-11 05:00,srv-acad-39,Ransomware,4,1,101.5,15.0,C,Central,HV-8.0,43.4,16712.0,43.4
+INC-00566,2025-07-11 05:00,srv-acad-39,Ransomware,4,1,101.5,15.0,C,Central,HV-8.0,43.4,16712.0,43.4
+INC-00568,2025-07-11 08:00,srv-biblio-30,ERROR CONFIG,8,2,2420.8,8.0,A,Anexo,HV-8.0,10.8,4048.0,10.6
+INC-00569,2025-07-11 13:00,srv-biblio-14,falla_hardware,4,3,1085.6,7.0,B,Central,HV-8.0,15.3,6312.0,16.1
+INC-00570,2025-07-11 17:00,srv-correo-26,error_configuracion,6,1,48.8,3.0,C,Anexo,HV-8.0,5.3,2255.0,5.6
+INC-00571,2025-07-12 06:00,srv-web-16,falla_hardware,5,3,101.8,6.0,A,Central,HV-8.0,13.7,5056.0,13.3
+INC-00572,2025-07-13 00:00,srv-correo-37,ddos,7,1,700.3,,B,Anexo,HV-8.0,24.3,9974.0,24.4
+INC-00573,2025-07-13 03:00,srv-virtual-19,DDOS,1,2,290.6,,B,Central,HV-8.0,7.0,2902.0,7.0
+INC-00574,2025-07-13 05:00,srv-acad-28,Error configuración,7,3,49.6,2.0,A,Anexo,HV-8.0,3.1,1297.0,3.3
+INC-00575,2025-07-13 07:00,srv-acad-39,ERROR CONFIG,5,3,334.6,21.0,B,Central,HV-8.0,8.4,3558.0,8.7
+INC-00576,2025-07-13 11:00,srv-virtual-08,malware,1,1,76.6,13.0,B,Central,HV-8.0,7.7,3088.0,7.9
+INC-00577,2025-07-13 12:00,srv-virtual-29,ERROR CONFIG,3,1,26.1,21.0,B,Central,HV-8.0,1.9,780.0,2.0
+INC-00578,2025-07-13 20:00,srv-web-26,DDoS,5,2,53.5,16.0,C,Anexo,HV-8.0,3.9,1535.0,3.7
+INC-00578,2025-07-13 20:00,srv-web-26,DDoS,5,2,53.5,16.0,C,Anexo,HV-8.0,3.9,1535.0,3.7
+INC-00580,2025-07-13 21:00,srv-web-16,ransomware ,4,1,239.9,14.0,A,Anexo,HV-8.0,24.3,9931.0,24.8
+INC-00581,2025-07-14 09:00,srv-web-16,Error configuración,1,2,22.5,28.0,B,Central,HV-8.0,3.1,1107.0,2.8
+INC-00582,2025-07-14 18:00,srv-virtual-09,ERROR CONFIG,7,2,235.2,15.0,A,Anexo,HV-8.0,7.7,2958.0,7.5
+INC-00583,2025-07-15 18:00,srv-web-16,error_configuracion,7,2,358.6,25.0,C,Central,HV-8.0,9.0,3740.0,9.1
+INC-00584,2025-07-15 22:00,srv-web-25,ERROR CONFIG,8,1,198.1,18.0,C,Anexo,HV-8.0,8.3,3226.0,8.1
+INC-00585,2025-07-16 07:00,srv-biblio-06,Malware,4,3,434.4,27.0,B,Anexo,HV-8.0,22.2,8858.0,22.2
+INC-00586,2025-07-16 16:00,srv-virtual-32,DDoS,7,3,80.0,20.0,B,Central,HV-8.0,7.7,2863.0,7.1
+INC-00587,2025-07-16 19:00,srv-biblio-07,ransomware ,2,1,90.7,19.0,B,Central,HV-8.0,19.4,7515.0,19.2
+INC-00587,2025-07-16 19:00,srv-biblio-07,ransomware ,2,1,90.7,19.0,B,Central,HV-8.0,19.4,7515.0,19.2
+INC-00589,2025-07-18 02:00,srv-biblio-04,RANSOMWARE,5,2,90.0,7.0,B,Central,HV-8.0,47.9,19886.0,48.3
+INC-00590,2025-07-18 09:00,srv-biblio-27,falla_hardware,1,3,110.7,13.0,A,Anexo,HV-8.0,8.4,3156.0,8.1
+INC-00591,2025-07-18 11:00,srv-web-37,Error configuración,3,1,96.0,7.0,A,Anexo,HV-8.0,4.0,1401.0,3.6
+INC-00592,2025-07-18 14:00,srv-virtual-28,ransomware ,2,2,1726.0,2.0,B,Central,HV-8.0,27.8,11514.0,28.2
+SIM-00593,2025-07-19 00:00,srv-web-31,MALWARE,3,2,222.2,1.0,A,Anexo,HV-8.0,0.0,0.0,1.3
+SIM-00593,2025-07-19 00:00,srv-web-31,MALWARE,3,2,222.2,1.0,A,Anexo,HV-8.0,0.0,0.0,1.3
+INC-00595,2025-07-19 00:00,srv-web-31,MALWARE,3,2,222.2,22.0,A,Anexo,HV-8.0,12.6,4974.0,12.6
+INC-00596,2025-07-19 09:00,srv-web-28,ransomware ,1,3,138.0,29.0,B,Anexo,HV-8.0,36.4,14763.0,37.0
+SIM-00597,2025-07-19 09:00,srv-web-28,ransomware ,1,3,138.0,1.0,B,Anexo,HV-8.0,0.0,0.0,1.9
+INC-00598,2025-07-20 06:00,srv-web-10,Error configuración,6,1,35.1,23.0,B,Central,HV-8.0,5.6,2290.0,5.5
+INC-00599,2025-07-20 21:00,srv-acad-07,malware,5,1,193.3,,A,Central,HV-8.0,31.3,12133.0,31.2
+INC-00600,2025-07-22 05:00,srv-web-33,FALLA HW,1,2,174.0,,C,Central,HV-8.0,20.8,8202.0,20.6
+INC-00601,2025-07-22 09:00,srv-biblio-12,ransomware ,3,3,115.4,0.0,B,Anexo,HV-8.0,15.9,6208.0,16.0
+INC-00602,2025-07-22 11:00,srv-acad-24,ERROR CONFIG,5,2,439.8,19.0,A,Anexo,HV-8.0,7.8,2869.0,7.5
+INC-00603,2025-07-23 00:00,srv-acad-39,Malware,7,2,749.6,23.0,C,Anexo,HV-8.0,34.2,14123.0,34.2
+INC-00604,2025-07-23 07:00,srv-biblio-24,Error configuración,1,2,304.3,19.0,B,Anexo,HV-8.0,6.0,2073.0,5.4
+INC-00605,2025-07-23 07:00,srv-correo-39,DDOS,7,2,16.0,9.0,A,Central,HV-8.0,9.3,3410.0,8.9
+INC-00606,2025-07-24 11:00,srv-web-33,FALLA HW,2,2,161.1,,A,Central,HV-8.0,31.1,12234.0,31.4
+INC-00607,2025-07-24 14:00,srv-web-08,ERROR CONFIG,5,2,55.2,21.0,C,Central,HV-8.0,6.2,2438.0,6.4
+INC-00608,2025-07-24 16:00,srv-web-23,error_configuracion,2,3,160.0,27.0,B,Anexo,HV-8.0,4.3,1580.0,4.1
+INC-00609,2025-07-25 01:00,srv-correo-31,DDoS,3,3,478.2,7.0,B,Central,HV-8.0,8.6,3563.0,8.5
+INC-00610,2025-07-25 23:00,srv-acad-07,ddos,1,2,25.1,16.0,C,Central,HV-8.0,2.8,1316.0,3.2
+INC-00611,2025-07-26 06:00,srv-web-33,DDoS,1,1,103.6,3.0,B,Anexo,HV-8.0,3.0,1325.0,3.4
+INC-00612,2025-07-26 19:00,srv-web-35,Falla hardware,7,2,118.8,21.0,A,Central,HV-8.0,26.8,10390.0,26.9
+INC-00613,2025-07-26 20:00,srv-biblio-35,ransomware ,6,1,91.2,10.0,A,Anexo,HV-8.0,25.9,10440.0,25.6
+INC-00614,2025-07-27 04:00,srv-acad-11,ddos,7,1,82.2,1.0,B,Anexo,HV-8.0,4.9,1951.0,4.8
+INC-00615,2025-07-27 18:00,srv-correo-03,Error configuración,7,2,63.0,1.0,A,Central,HV-8.0,11.9,4760.0,11.7
+INC-00616,2025-07-27 19:00,srv-biblio-15,Malware,3,1,370.9,2.0,A,Central,HV-8.0,10.5,4249.0,10.3
+INC-00617,2025-07-28 05:00,srv-correo-24,error_configuracion,8,1,24.2,17.0,C,Anexo,HV-8.0,5.2,2121.0,5.2
+INC-00618,2025-07-28 07:00,srv-biblio-30,Error configuración,3,2,300.1,1.0,C,Anexo,HV-8.0,6.8,2700.0,7.1
+INC-00619,2025-07-28 20:00,srv-biblio-31,DDOS,6,2,168.2,22.0,C,Anexo,HV-8.0,7.9,3148.0,8.2
+SIM-00620,2025-07-28 20:00,srv-biblio-31,DDOS,6,2,168.2,1.0,C,Anexo,HV-8.0,0.0,0.0,0.7
+INC-00621,2025-07-28 22:00,srv-web-04,error_configuracion,2,3,60.5,19.0,B,Anexo,HV-8.0,4.5,1787.0,4.3
+INC-00622,2025-07-29 04:00,srv-acad-34,Malware,8,1,147.5,6.0,B,Central,HV-8.0,13.0,5161.0,12.8
+INC-00623,2025-07-29 04:00,srv-correo-02,DDOS,8,3,111.1,5.0,B,Anexo,HV-8.0,7.5,2933.0,7.2
+INC-00624,2025-07-29 08:00,srv-virtual-05,malware,8,3,648.5,9.0,B,Central,HV-8.0,22.6,8767.0,22.8
+INC-00625,2025-07-29 11:00,srv-web-20,Falla hardware,7,2,50.3,4.0,A,Anexo,HV-8.0,19.0,7500.0,18.8
+INC-00626,2025-07-29 20:00,srv-correo-26,Falla hardware,6,1,61.2,,B,Central,HV-8.0,18.6,7445.0,18.5
+INC-00627,2025-07-30 08:00,srv-biblio-30,Error configuración,5,2,54.3,,A,Central,HV-8.0,14.2,5479.0,13.6
+INC-00628,2025-07-30 09:00,srv-biblio-13,Malware,4,3,53.2,21.0,A,Anexo,HV-8.0,10.2,4525.0,10.9
+INC-00629,2025-07-30 23:00,srv-correo-31,MALWARE,4,2,55.9,25.0,B,Anexo,HV-8.0,10.6,4304.0,10.8
+INC-00630,2025-07-31 04:00,srv-web-23,malware,6,3,363.5,5.0,A,Central,HV-8.0,18.3,7599.0,18.4
+INC-00631,2025-07-31 09:00,srv-web-05,MALWARE,8,2,284.7,7.0,A,Central,HV-8.0,11.8,4875.0,11.8
+INC-00632,2025-08-01 07:00,srv-correo-20,error_configuracion,3,2,32.5,28.0,B,Anexo,HV-8.0,4.3,1591.0,4.0
+INC-00633,2025-08-01 20:00,srv-virtual-16,ransomware ,3,1,173.4,4.0,B,Anexo,HV-8.0,21.1,8605.0,21.1
+INC-00634,2025-08-01 21:00,srv-web-26,DDoS,4,1,132.4,20.0,B,Central,HV-8.0,4.5,1966.0,4.9
+INC-00635,2025-08-02 04:00,srv-web-15,Falla hardware,1,3,78.9,16.0,B,Anexo,HV-8.0,6.9,2935.0,7.3
+INC-00636,2025-08-02 13:00,srv-virtual-26,ransomware ,7,3,93.2,21.0,B,Anexo,HV-8.0,50.2,19961.0,50.6
+INC-00637,2025-08-02 20:00,srv-correo-07,error_configuracion,7,3,548.7,,A,Central,HV-8.0,31.8,12770.0,31.4
+INC-00638,2025-08-04 01:00,srv-acad-17,ERROR CONFIG,1,1,48.1,4.0,C,Anexo,HV-8.0,2.8,1035.0,2.5
+INC-00639,2025-08-05 03:00,srv-virtual-21,Error configuración,2,3,121.3,2.0,A,Central,HV-8.0,5.8,2482.0,6.3
+INC-00640,2025-08-05 07:00,srv-virtual-38,ransomware ,6,3,311.2,14.0,C,Central,HV-8.0,29.4,12076.0,29.5
+INC-00641,2025-08-05 16:00,srv-acad-17,error_configuracion,6,3,349.8,9.0,A,Central,HV-8.0,9.6,3699.0,9.1
+INC-00642,2025-08-06 00:00,srv-biblio-31,Error configuración,7,1,90.1,,C,Central,HV-8.0,16.6,6762.0,16.9
+INC-00643,2025-08-06 09:00,srv-correo-23,ddos,2,2,268.7,0.0,C,Anexo,HV-8.0,4.5,1666.0,4.3
+INC-00643,2025-08-06 09:00,srv-correo-23,ddos,2,2,268.7,0.0,C,Anexo,HV-8.0,4.5,1666.0,4.3
+INC-00645,2025-08-06 09:00,srv-virtual-35,malware,7,3,160.8,5.0,C,Anexo,HV-8.0,17.5,7017.0,17.7
+INC-00646,2025-08-07 06:00,srv-virtual-09,Falla hardware,4,2,229.3,7.0,A,Central,HV-8.0,16.2,6383.0,16.7
+INC-00647,2025-08-07 17:00,srv-acad-28,ERROR CONFIG,8,1,227.7,28.0,C,Anexo,HV-8.0,9.6,3721.0,9.1
+INC-00648,2025-08-07 18:00,srv-web-37,Ransomware,4,1,91.5,2.0,B,Central,HV-8.0,18.0,6917.0,17.6
+INC-00649,2025-08-07 19:00,srv-virtual-22,Falla hardware,6,2,164.8,15.0,A,Anexo,HV-8.0,13.1,5379.0,13.0
+INC-00650,2025-08-08 09:00,srv-virtual-38,error_configuracion,3,2,269.4,22.0,B,Central,HV-8.0,6.9,2592.0,6.7
+INC-00651,2025-08-08 14:00,srv-virtual-32,Error configuración,8,1,1844.1,,C,Central,HV-8.0,17.5,7485.0,17.9
+INC-00652,2025-08-08 21:00,srv-virtual-31,DDOS,3,2,81.0,14.0,C,Anexo,HV-8.0,5.7,2224.0,5.3
+INC-00653,2025-08-09 14:00,srv-correo-25,error_configuracion,3,2,310.5,,C,Anexo,HV-8.0,13.8,5384.0,13.6
+INC-00654,2025-08-09 17:00,srv-acad-35,RANSOMWARE,3,1,171.4,12.0,B,Central,HV-8.0,21.3,8482.0,21.7
+INC-00654,2025-08-09 17:00,srv-acad-35,RANSOMWARE,3,1,171.4,12.0,B,Central,HV-8.0,21.3,8482.0,21.7
+INC-00656,2025-08-09 18:00,srv-correo-05,FALLA HW,3,1,18.2,0.0,A,Anexo,HV-8.0,4.7,1896.0,4.8
+SIM-00657,2025-08-09 18:00,srv-correo-05,FALLA HW,3,1,18.2,1.0,A,Anexo,HV-8.0,0.0,0.0,1.4
+INC-00658,2025-08-10 00:00,srv-virtual-09,DDOS,5,2,133.4,6.0,B,Central,HV-8.0,4.1,1551.0,3.8
+INC-00659,2025-08-10 10:00,srv-correo-39,falla_hardware,1,3,325.5,22.0,B,Anexo,HV-8.0,12.8,5245.0,12.7
+SIM-00660,2025-08-11 04:00,srv-biblio-28,DDOS,1,3,314.3,1.0,C,Anexo,HV-8.0,0.0,0.0,1.3
+INC-00661,2025-08-11 04:00,srv-biblio-28,DDOS,1,3,314.3,19.0,C,Anexo,HV-8.0,3.2,1303.0,3.2
+INC-00662,2025-08-11 04:00,srv-acad-04,Error configuración,7,1,54.6,3.0,A,Anexo,HV-8.0,2.9,1312.0,3.3
+INC-00663,2025-08-11 13:00,srv-virtual-33,FALLA HW,2,2,177.8,,A,Central,HV-8.0,18.2,7210.0,18.3
+INC-00664,2025-08-11 14:00,srv-correo-21,RANSOMWARE,4,2,66.5,9.0,C,Central,HV-8.0,43.2,16931.0,43.0
+INC-00665,2025-08-12 15:00,srv-web-36,Error configuración,3,2,45.6,3.0,B,Central,HV-8.0,3.8,1597.0,4.0
+INC-00666,2025-08-13 01:00,srv-biblio-05,falla_hardware,4,2,151.1,17.0,A,Anexo,HV-8.0,19.0,7207.0,18.7
+INC-00667,2025-08-13 06:00,srv-acad-38,Error configuración,1,2,29.1,29.0,A,Anexo,HV-8.0,1.4,763.0,2.0
+INC-00668,2025-08-13 08:00,srv-virtual-19,Falla hardware,5,1,251.4,11.0,A,Central,HV-8.0,10.3,4070.0,10.2
+INC-00669,2025-08-13 09:00,srv-web-29,error_configuracion,2,3,40.3,25.0,A,Central,HV-8.0,7.7,3123.0,7.7
+INC-00670,2025-08-14 02:00,srv-acad-08,Ransomware,8,1,459.3,25.0,A,Central,HV-8.0,56.2,23743.0,56.9
+INC-00671,2025-08-15 17:00,srv-correo-34,Falla hardware,4,1,148.4,13.0,C,Central,HV-8.0,11.3,4554.0,11.5
+INC-00672,2025-08-16 23:00,srv-acad-03,Error configuración,4,2,35.9,18.0,B,Anexo,HV-8.0,4.0,1515.0,3.9
+INC-00673,2025-08-17 02:00,srv-virtual-04,DDoS,7,2,19.5,19.0,B,Central,HV-8.0,9.9,4015.0,9.8
+INC-00674,2025-08-18 02:00,srv-virtual-23,malware,5,3,26.9,26.0,B,Central,HV-8.0,23.2,9365.0,23.0
+INC-00675,2025-08-19 05:00,srv-acad-08,MALWARE,5,3,64.3,3.0,C,Central,HV-8.0,13.9,5694.0,14.2
+INC-00676,2025-08-20 17:00,srv-correo-11,ERROR CONFIG,7,1,191.7,23.0,C,Anexo,HV-8.0,8.2,3325.0,8.1
+INC-00677,2025-08-21 12:00,srv-virtual-05,MALWARE,2,2,138.0,21.0,A,Anexo,HV-8.0,10.1,4330.0,10.4
+INC-00678,2025-08-21 17:00,srv-acad-39,DDoS,6,2,318.9,,B,Anexo,HV-8.0,21.9,9207.0,22.1
+INC-00679,2025-08-22 05:00,srv-virtual-02,Error configuración,7,3,33.7,6.0,C,Anexo,HV-8.0,5.1,1963.0,4.9
+INC-00680,2025-08-22 23:00,srv-acad-05,Ransomware,6,2,178.8,26.0,B,Central,HV-8.0,49.9,19682.0,49.7
+INC-00681,2025-08-23 02:00,srv-virtual-23,MALWARE,6,2,95.8,2.0,C,Anexo,HV-8.0,11.5,4429.0,11.4
+INC-00682,2025-08-23 03:00,srv-acad-31,ERROR CONFIG,1,3,634.8,27.0,C,Anexo,HV-8.0,5.7,2237.0,5.5
+INC-00683,2025-08-23 05:00,srv-virtual-22,falla_hardware,2,3,77.0,28.0,A,Central,HV-8.0,11.5,4593.0,11.5
+INC-00684,2025-08-23 12:00,srv-acad-30,MALWARE,2,2,351.3,17.0,C,Anexo,HV-8.0,11.4,4676.0,11.5
+INC-00685,2025-08-23 14:00,srv-correo-01,Falla hardware,2,2,38.6,28.0,B,Central,HV-8.0,6.7,2882.0,6.9
+INC-00686,2025-08-23 15:00,srv-virtual-02,FALLA HW,4,2,25.6,14.0,A,Central,HV-8.0,10.3,4161.0,10.1
+INC-00687,2025-08-23 22:00,srv-web-20,RANSOMWARE,6,2,59.6,6.0,A,Central,HV-8.0,32.6,12888.0,32.4
+INC-00688,2025-08-25 04:00,srv-web-16,error_configuracion,3,1,43.4,3.0,A,Anexo,HV-8.0,2.3,937.0,2.3
+INC-00689,2025-08-25 14:00,srv-virtual-21,Malware,2,1,99.7,,A,Central,HV-8.0,11.4,4997.0,12.0
+INC-00690,2025-08-25 18:00,srv-virtual-21,malware,8,2,129.0,0.0,C,Central,HV-8.0,18.7,7389.0,18.4
+INC-00691,2025-08-26 16:00,srv-correo-27,Error configuración,7,2,466.0,7.0,C,Central,HV-8.0,10.1,3950.0,9.9
+INC-00692,2025-08-26 19:00,srv-virtual-13,falla_hardware,8,1,375.7,28.0,C,Anexo,HV-8.0,15.6,6378.0,15.8
+INC-00693,2025-08-26 22:00,srv-acad-34,malware,7,2,296.9,28.0,C,Central,HV-8.0,27.4,11203.0,27.0
+INC-00694,2025-08-26 23:00,srv-acad-23,Malware,1,3,383.2,21.0,B,Central,HV-8.0,11.5,4521.0,10.8
+INC-00695,2025-08-27 01:00,srv-correo-39,malware,6,3,154.1,24.0,C,Central,HV-8.0,23.0,9638.0,23.0
+INC-00696,2025-08-27 11:00,srv-correo-17,Ransomware,1,1,174.3,3.0,B,Anexo,HV-8.0,11.5,5065.0,12.2
+INC-00697,2025-08-27 21:00,srv-biblio-01,Falla hardware,2,3,327.4,20.0,B,Central,HV-8.0,13.7,5550.0,13.8
+INC-00698,2025-08-28 04:00,srv-correo-20,ERROR CONFIG,3,1,47.2,1.0,C,Central,HV-8.0,2.7,1040.0,2.5
+INC-00699,2025-08-28 14:00,srv-biblio-26,DDOS,6,1,227.4,1.0,A,Central,HV-8.0,6.8,2499.0,6.1
+INC-00700,2025-08-28 18:00,srv-web-35,Ransomware,2,2,57.8,10.0,B,Anexo,HV-8.0,20.5,8557.0,20.7
+INC-00701,2025-08-29 01:00,srv-acad-24,DDOS,2,2,315.7,6.0,A,Anexo,HV-8.0,3.9,1395.0,3.4
+INC-00702,2025-08-29 04:00,srv-correo-25,ERROR CONFIG,4,2,626.3,,C,Central,HV-8.0,20.8,8717.0,20.9
+INC-00703,2025-08-29 06:00,srv-correo-01,DDoS,4,1,37.6,7.0,C,Anexo,HV-8.0,2.6,1111.0,2.9
+INC-00704,2025-08-29 09:00,srv-virtual-03,malware,4,1,295.8,10.0,A,Anexo,HV-8.0,10.8,4263.0,10.2
+INC-00705,2025-08-29 11:00,srv-web-02,ransomware ,5,2,194.0,,A,Central,HV-8.0,102.0,39773.0,102.0
+INC-00706,2025-08-29 11:00,srv-web-20,ddos,6,3,33.3,7.0,B,Central,HV-8.0,8.5,3444.0,8.5
+INC-00707,2025-08-29 18:00,srv-biblio-15,ransomware ,3,2,646.1,24.0,C,Anexo,HV-8.0,35.4,13488.0,35.3
+INC-00708,2025-08-29 23:00,srv-acad-14,Error configuración,5,3,284.1,23.0,A,Anexo,HV-8.0,6.8,2888.0,7.1
+INC-00709,2025-08-30 01:00,srv-correo-16,RANSOMWARE,5,3,114.6,23.0,B,Anexo,HV-8.0,41.0,17103.0,41.0
+INC-00710,2025-08-30 05:00,srv-web-13,falla_hardware,3,3,52.1,26.0,C,Anexo,HV-8.0,7.3,2981.0,7.5
+INC-00711,2025-08-30 13:00,srv-correo-22,Falla hardware,7,2,137.1,12.0,C,Central,HV-8.0,10.8,4054.0,10.5
+INC-00712,2025-08-30 17:00,srv-acad-01,error_configuracion,4,2,22.8,24.0,B,Central,HV-8.0,5.8,2111.0,5.2
+INC-00713,2025-08-30 19:00,srv-web-27,Malware,7,2,250.4,,C,Central,HV-8.0,42.0,16012.0,41.7
+INC-00714,2025-08-30 20:00,srv-correo-27,Ransomware,6,2,543.4,13.0,C,Anexo,HV-8.0,35.8,14696.0,36.0
+INC-00715,2025-08-30 21:00,srv-acad-17,falla_hardware,1,1,298.4,29.0,B,Anexo,HV-8.0,5.7,2143.0,5.5
+INC-00716,2025-08-31 03:00,srv-correo-07,DDoS,1,2,284.1,1.0,B,Central,HV-8.0,4.3,1556.0,4.0
+INC-00717,2025-08-31 20:00,srv-biblio-30,Malware,2,3,161.7,12.0,B,Anexo,HV-8.0,7.5,3121.0,8.1
+INC-00718,2025-09-01 00:00,srv-virtual-24,falla_hardware,5,2,41.3,24.0,A,Central,HV-8.0,8.4,3458.0,8.6
+INC-00718,2025-09-01 00:00,srv-virtual-24,falla_hardware,5,2,41.3,24.0,A,Central,HV-8.0,8.4,3458.0,8.6
+INC-00720,2025-09-01 09:00,srv-web-13,Error configuración,2,1,22.5,5.0,B,Central,HV-8.0,6.2,2465.0,6.1
+INC-00721,2025-09-01 13:00,srv-acad-36,FALLA HW,3,2,1071.6,8.0,A,Central,HV-8.0,18.2,7253.0,17.9
+INC-00722,2025-09-01 16:00,srv-biblio-26,malware,8,2,93.8,5.0,A,Central,HV-8.0,15.6,5838.0,15.3
+INC-00723,2025-09-02 01:00,srv-acad-25,Malware,8,2,176.1,5.0,A,Anexo,HV-8.0,11.7,4821.0,11.7
+INC-00723,2025-09-02 01:00,srv-acad-25,Malware,8,2,176.1,5.0,A,Anexo,HV-8.0,11.7,4821.0,11.7
+INC-00725,2025-09-02 03:00,srv-virtual-19,error_configuracion,2,1,118.5,29.0,C,Anexo,HV-8.0,3.6,1296.0,3.3
+INC-00726,2025-09-02 06:00,srv-correo-18,error_configuracion,2,2,166.5,27.0,C,Central,HV-8.0,5.8,2213.0,5.5
+INC-00727,2025-09-02 13:00,srv-virtual-10,DDoS,8,3,170.9,4.0,C,Anexo,HV-8.0,7.2,2661.0,6.9
+INC-00728,2025-09-02 15:00,srv-acad-20,Malware,8,1,44.2,5.0,C,Anexo,HV-8.0,27.0,10335.0,26.9
+INC-00729,2025-09-02 15:00,srv-web-22,Malware,4,3,168.1,,C,Central,HV-8.0,20.7,8454.0,20.6
+INC-00730,2025-09-02 18:00,srv-virtual-15,falla_hardware,3,2,25.4,16.0,C,Central,HV-8.0,7.9,3234.0,7.8
+INC-00731,2025-09-02 18:00,srv-biblio-39,error_configuracion,5,3,631.2,18.0,B,Anexo,HV-8.0,7.1,2913.0,7.1
+INC-00732,2025-09-02 19:00,srv-acad-17,malware,6,1,2035.7,1.0,C,Anexo,HV-8.0,28.8,11256.0,28.6
+INC-00733,2025-09-04 03:00,srv-web-08,malware,8,3,267.9,10.0,C,Anexo,HV-8.0,28.3,11269.0,28.2
+INC-00734,2025-09-05 00:00,srv-web-38,FALLA HW,3,1,490.5,27.0,B,Central,HV-8.0,10.2,4007.0,9.9
+INC-00735,2025-09-05 16:00,srv-correo-07,ERROR CONFIG,4,1,110.0,1.0,B,Central,HV-8.0,3.0,1234.0,3.1
+INC-00736,2025-09-05 20:00,srv-virtual-09,Falla hardware,7,2,67.4,4.0,B,Central,HV-8.0,11.2,4485.0,10.7
+INC-00737,2025-09-05 22:00,srv-biblio-14,ransomware ,8,2,308.2,19.0,C,Anexo,HV-8.0,60.8,25516.0,61.2
+INC-00738,2025-09-05 23:00,srv-virtual-24,error_configuracion,7,2,119.6,,C,Anexo,HV-8.0,13.7,5156.0,13.2
+INC-00739,2025-09-06 13:00,srv-correo-09,Error configuración,4,3,112.7,2.0,B,Central,HV-8.0,4.7,1907.0,4.7
+INC-00740,2025-09-06 18:00,srv-correo-25,falla_hardware,7,3,103.3,16.0,C,Anexo,HV-8.0,19.1,7632.0,19.2
+INC-00741,2025-09-07 02:00,srv-virtual-11,malware,8,1,141.7,,B,Anexo,HV-8.0,21.2,8132.0,21.4
+INC-00742,2025-09-07 05:00,srv-acad-39,DDoS,5,2,301.4,17.0,C,Anexo,HV-8.0,10.6,4248.0,10.6
+INC-00743,2025-09-07 09:00,srv-virtual-34,malware,3,2,25.7,14.0,B,Central,HV-8.0,6.7,2876.0,7.0
+INC-00744,2025-09-07 13:00,srv-acad-38,Falla hardware,6,3,94.8,15.0,C,Central,HV-8.0,14.7,6116.0,14.8
+INC-00745,2025-09-07 19:00,srv-acad-39,RANSOMWARE,2,3,108.0,20.0,C,Anexo,HV-8.0,20.6,8303.0,21.0
+SIM-00746,2025-09-08 02:00,srv-web-37,ransomware ,7,1,180.2,1.0,C,Anexo,HV-8.0,0.0,0.0,0.9
+INC-00747,2025-09-08 02:00,srv-web-37,ransomware ,7,1,180.2,,C,Anexo,HV-8.0,67.5,28198.0,67.9
+SIM-00746,2025-09-08 02:00,srv-web-37,ransomware ,7,1,180.2,1.0,C,Anexo,HV-8.0,0.0,0.0,0.9
+INC-00749,2025-09-08 08:00,srv-correo-05,MALWARE,8,2,79.1,29.0,C,Central,HV-8.0,18.2,7320.0,17.7
+INC-00750,2025-09-08 15:00,srv-correo-29,malware,2,3,423.9,14.0,B,Central,HV-8.0,12.4,4793.0,12.5
+INC-00751,2025-09-08 20:00,srv-correo-02,ddos,3,2,129.2,,B,Central,HV-8.0,16.1,6332.0,16.2
+INC-00752,2025-09-08 23:00,srv-correo-30,Ransomware,3,1,312.9,15.0,A,Anexo,HV-8.0,20.9,8674.0,21.2
+INC-00753,2025-09-09 03:00,srv-acad-10,ransomware ,2,2,226.0,3.0,A,Anexo,HV-8.0,40.5,16531.0,40.1
+INC-00754,2025-09-09 05:00,srv-biblio-32,ddos,3,2,171.7,2.0,A,Anexo,HV-8.0,6.3,2753.0,6.6
+INC-00755,2025-09-09 14:00,srv-web-06,FALLA HW,5,1,11.8,25.0,C,Central,HV-8.0,10.5,4384.0,11.0
+SIM-00756,2025-09-09 14:00,srv-web-06,FALLA HW,5,1,11.8,1.0,C,Central,HV-8.0,0.0,0.0,1.9
+INC-00757,2025-09-10 04:00,srv-acad-33,RANSOMWARE,4,3,271.2,5.0,A,Central,HV-8.0,15.6,6313.0,15.6
+INC-00758,2025-09-10 09:00,srv-acad-25,DDOS,3,2,63.1,,C,Central,HV-8.0,12.0,5250.0,12.8
+INC-00759,2025-09-12 01:00,srv-web-03,Malware,4,1,18.4,15.0,B,Central,HV-8.0,8.7,3328.0,8.6
+INC-00760,2025-09-12 02:00,srv-acad-03,DDOS,5,2,70.4,9.0,B,Central,HV-8.0,5.7,2243.0,5.8
+INC-00761,2025-09-12 14:00,srv-virtual-34,error_configuracion,5,1,279.9,,B,Anexo,HV-8.0,11.5,4432.0,11.4
+INC-00762,2025-09-13 13:00,srv-biblio-11,ddos,3,1,502.8,5.0,A,Central,HV-8.0,6.6,2491.0,6.2
+INC-00763,2025-09-13 13:00,srv-correo-37,error_configuracion,4,3,50.1,22.0,A,Anexo,HV-8.0,3.6,1169.0,3.0
+INC-00764,2025-09-13 15:00,srv-correo-20,MALWARE,5,1,31.5,16.0,C,Central,HV-8.0,6.0,2562.0,6.6
+INC-00765,2025-09-13 16:00,srv-acad-20,DDoS,5,1,289.0,15.0,A,Central,HV-8.0,9.9,3914.0,10.0
+INC-00766,2025-09-13 17:00,srv-acad-35,DDOS,7,3,90.5,14.0,B,Central,HV-8.0,6.1,2308.0,6.0
+INC-00767,2025-09-13 22:00,srv-biblio-13,ERROR CONFIG,8,2,63.4,11.0,B,Central,HV-8.0,15.6,6190.0,16.0
+INC-00768,2025-09-13 22:00,srv-acad-07,ERROR CONFIG,4,3,450.5,27.0,C,Central,HV-8.0,5.7,2212.0,5.6
+SIM-00769,2025-09-13 22:00,srv-biblio-13,ERROR CONFIG,8,2,63.4,1.0,B,Central,HV-8.0,0.0,0.0,1.5
+INC-00770,2025-09-14 00:00,srv-correo-35,RANSOMWARE,1,3,181.7,0.0,C,Anexo,HV-8.0,22.1,8580.0,21.9
+SIM-00771,2025-09-14 00:00,srv-correo-35,RANSOMWARE,1,3,181.7,1.0,C,Anexo,HV-8.0,0.0,0.0,1.3
+INC-00772,2025-09-14 02:00,srv-web-28,MALWARE,5,2,71.7,3.0,A,Anexo,HV-8.0,21.5,8764.0,21.6
+INC-00773,2025-09-14 15:00,srv-correo-10,falla_hardware,6,2,62.9,,A,Central,HV-8.0,24.9,9987.0,24.6
+INC-00774,2025-09-14 15:00,srv-web-06,FALLA HW,5,2,334.6,17.0,A,Anexo,HV-8.0,16.5,6556.0,16.5
+INC-00775,2025-09-15 02:00,srv-virtual-31,DDOS,1,2,143.8,1.0,B,Anexo,HV-8.0,4.7,1618.0,4.2
+INC-00776,2025-09-16 01:00,srv-virtual-36,ERROR CONFIG,4,2,243.7,2.0,B,Anexo,HV-8.0,5.3,2085.0,5.2
+INC-00777,2025-09-16 05:00,srv-acad-29,falla_hardware,4,1,28.6,23.0,C,Central,HV-8.0,7.5,2975.0,7.5
+INC-00778,2025-09-16 14:00,srv-biblio-07,error_configuracion,4,2,71.5,3.0,B,Anexo,HV-8.0,4.1,1766.0,4.4
+INC-00779,2025-09-16 15:00,srv-acad-07,Malware,6,2,282.7,9.0,B,Anexo,HV-8.0,17.3,6965.0,17.4
+INC-00780,2025-09-16 20:00,srv-correo-28,ERROR CONFIG,7,1,113.2,17.0,B,Central,HV-8.0,9.0,3543.0,9.0
+INC-00781,2025-09-17 11:00,srv-web-16,Ransomware,7,1,636.7,20.0,C,Anexo,HV-8.0,44.7,17569.0,45.2
+INC-00782,2025-09-17 18:00,srv-virtual-39,Malware,4,2,550.6,1.0,B,Central,HV-8.0,17.8,7261.0,17.4
+INC-00783,2025-09-18 00:00,srv-virtual-26,DDOS,2,1,376.8,4.0,C,Central,HV-8.0,5.7,2205.0,5.6
+INC-00784,2025-09-18 15:00,srv-biblio-17,falla_hardware,3,3,200.1,14.0,B,Central,HV-8.0,14.2,5588.0,13.9
+INC-00785,2025-09-18 21:00,srv-correo-19,Ransomware,3,2,79.5,17.0,C,Anexo,HV-8.0,25.6,9982.0,25.3
+INC-00786,2025-09-19 16:00,srv-biblio-36,Falla hardware,8,2,1055.5,2.0,B,Anexo,HV-8.0,17.0,6382.0,16.7
+INC-00787,2025-09-19 18:00,srv-biblio-23,ERROR CONFIG,3,2,70.7,6.0,A,Central,HV-8.0,2.0,816.0,2.1
+INC-00788,2025-09-21 02:00,srv-acad-31,falla_hardware,5,1,117.5,13.0,C,Central,HV-8.0,16.3,6709.0,16.1
+INC-00789,2025-09-21 06:00,srv-acad-17,RANSOMWARE,7,3,60.2,20.0,B,Anexo,HV-8.0,39.9,16737.0,39.9
+INC-00790,2025-09-21 08:00,srv-acad-34,Falla hardware,7,2,77.2,26.0,A,Anexo,HV-8.0,16.2,6296.0,15.8
+INC-00791,2025-09-21 13:00,srv-biblio-37,ERROR CONFIG,1,1,366.3,16.0,C,Central,HV-8.0,2.2,1139.0,2.8
+SIM-00792,2025-09-21 13:00,srv-biblio-37,ERROR CONFIG,1,1,366.3,1.0,C,Central,HV-8.0,0.0,0.0,1.2
+INC-00793,2025-09-21 17:00,srv-acad-26,error_configuracion,5,2,644.1,,B,Central,HV-8.0,17.5,6840.0,17.4
+INC-00794,2025-09-22 18:00,srv-biblio-04,ransomware ,3,2,10.5,27.0,A,Anexo,HV-8.0,22.3,8522.0,22.3
+INC-00795,2025-09-22 18:00,srv-web-24,Ransomware,6,2,213.3,26.0,A,Central,HV-8.0,64.1,25381.0,63.9
+SIM-00796,2025-09-24 00:00,srv-acad-33,ransomware ,3,2,374.9,1.0,A,Anexo,HV-8.0,0.0,0.0,0.8
+INC-00797,2025-09-24 00:00,srv-acad-33,ransomware ,3,2,374.9,26.0,A,Anexo,HV-8.0,26.3,10722.0,26.2
+INC-00798,2025-09-24 08:00,srv-correo-33,MALWARE,3,1,61.8,26.0,B,Anexo,HV-8.0,9.7,3930.0,9.6
+INC-00799,2025-09-24 12:00,srv-virtual-15,ransomware ,2,2,58.5,29.0,A,Central,HV-8.0,17.0,7113.0,17.1
+INC-00800,2025-09-25 03:00,srv-virtual-08,malware,3,2,57.5,27.0,C,Central,HV-8.0,16.8,6742.0,16.7
+INC-00801,2025-09-25 03:00,srv-correo-14,malware,8,1,184.1,26.0,A,Central,HV-8.0,19.8,7588.0,19.8
+INC-00802,2025-09-25 07:00,srv-acad-30,Ransomware,6,2,88.8,24.0,C,Anexo,HV-8.0,45.2,18104.0,45.2
+INC-00803,2025-09-25 08:00,srv-web-24,Malware,4,2,221.0,10.0,C,Central,HV-8.0,17.3,6972.0,16.9
+INC-00804,2025-09-25 18:00,srv-virtual-31,malware,1,3,77.1,15.0,A,Anexo,HV-8.0,8.6,3410.0,8.7
+INC-00805,2025-09-26 19:00,srv-biblio-09,falla_hardware,3,2,427.5,14.0,B,Central,HV-8.0,12.5,4959.0,12.3
+INC-00806,2025-09-27 10:00,srv-acad-20,Error configuración,6,1,38.1,1.0,B,Central,HV-8.0,4.0,1663.0,4.3
+INC-00807,2025-09-27 16:00,srv-correo-37,error_configuracion,2,2,636.9,11.0,A,Anexo,HV-8.0,5.2,1800.0,4.6
+INC-00808,2025-09-27 19:00,srv-biblio-38,MALWARE,5,2,355.4,24.0,B,Anexo,HV-8.0,18.7,7710.0,18.9
+INC-00809,2025-09-27 21:00,srv-virtual-08,FALLA HW,4,2,59.4,22.0,B,Central,HV-8.0,9.5,3830.0,9.2
+INC-00810,2025-09-28 04:00,srv-virtual-14,falla_hardware,5,1,251.4,17.0,B,Central,HV-8.0,11.6,4339.0,11.1
+INC-00811,2025-09-28 11:00,srv-web-23,error_configuracion,6,3,730.5,26.0,B,Central,HV-8.0,12.5,4957.0,12.3
+INC-00812,2025-09-29 06:00,srv-biblio-24,DDOS,1,1,68.1,,A,Anexo,HV-8.0,9.8,3917.0,9.5
+INC-00813,2025-09-29 09:00,srv-virtual-29,Ransomware,2,1,13.6,3.0,B,Anexo,HV-8.0,14.8,5697.0,14.9
+INC-00814,2025-09-30 06:00,srv-correo-12,Malware,7,3,267.0,28.0,A,Central,HV-8.0,19.4,7878.0,19.4
+INC-00815,2025-10-01 02:00,srv-web-29,Error configuración,4,3,129.5,11.0,B,Central,HV-8.0,8.1,3212.0,8.2
+INC-00816,2025-10-01 09:00,srv-correo-23,DDoS,8,2,206.3,4.0,C,Central,HV-8.0,14.4,5442.0,13.9
+INC-00817,2025-10-01 10:00,srv-web-37,ERROR CONFIG,5,1,363.2,0.0,C,Anexo,HV-8.0,6.9,2883.0,7.3
+INC-00818,2025-10-01 12:00,srv-correo-06,malware,2,2,110.0,1.0,C,Central,HV-8.0,8.6,3310.0,8.3
+INC-00819,2025-10-01 16:00,srv-biblio-02,error_configuracion,7,3,120.4,22.0,C,Anexo,HV-8.0,6.8,2624.0,6.9
+INC-00820,2025-10-01 18:00,srv-acad-29,DDoS,5,2,149.5,15.0,A,Anexo,HV-8.0,9.2,3951.0,9.6
+INC-00821,2025-10-01 22:00,srv-web-12,Ransomware,1,2,380.9,15.0,A,Central,HV-8.0,20.3,7902.0,20.3
+INC-00822,2025-10-03 00:00,srv-web-15,Error configuración,3,2,190.1,8.0,C,Anexo,HV-8.0,4.8,1583.0,4.1
+INC-00823,2025-10-03 09:00,srv-correo-03,falla_hardware,6,3,541.1,25.0,B,Anexo,HV-8.0,22.0,8486.0,21.8
+INC-00824,2025-10-03 14:00,srv-correo-17,DDoS,5,3,95.4,20.0,C,Central,HV-8.0,7.7,2786.0,7.3
+INC-00825,2025-10-03 17:00,srv-biblio-04,ransomware ,8,2,319.6,18.0,B,Anexo,HV-8.0,69.8,28687.0,70.0
+INC-00826,2025-10-03 23:00,srv-web-25,Falla hardware,2,1,147.1,,A,Anexo,HV-8.0,18.7,7700.0,18.6
+INC-00827,2025-10-04 00:00,srv-web-13,falla_hardware,6,2,20.7,,C,Anexo,HV-8.0,26.0,10151.0,25.5
+INC-00828,2025-10-04 00:00,srv-web-32,Falla hardware,6,1,438.2,7.0,C,Central,HV-8.0,12.9,5306.0,12.7
+SIM-00829,2025-10-04 00:00,srv-web-32,Falla hardware,6,1,438.2,1.0,C,Central,HV-8.0,0.0,0.0,1.7
+INC-00828,2025-10-04 00:00,srv-web-32,Falla hardware,6,1,438.2,7.0,C,Central,HV-8.0,12.9,5306.0,12.7
+INC-00831,2025-10-04 19:00,srv-web-18,Malware,4,2,121.5,0.0,A,Anexo,HV-8.0,12.1,4451.0,11.6
+SIM-00832,2025-10-04 19:00,srv-web-18,Malware,4,2,121.5,1.0,A,Anexo,HV-8.0,0.0,0.0,1.0
+INC-00833,2025-10-05 03:00,srv-web-01,falla_hardware,4,3,343.9,,B,Central,HV-8.0,19.3,8040.0,20.2
+INC-00834,2025-10-06 05:00,srv-virtual-30,ERROR CONFIG,2,2,840.6,18.0,B,Anexo,HV-8.0,3.5,1397.0,3.5
+INC-00835,2025-10-06 06:00,srv-biblio-09,Falla hardware,2,2,59.6,13.0,C,Central,HV-8.0,5.8,2393.0,5.7
+INC-00836,2025-10-06 08:00,srv-web-24,RANSOMWARE,7,2,151.1,24.0,C,Central,HV-8.0,74.7,29011.0,74.3
+INC-00837,2025-10-06 14:00,srv-web-01,Malware,2,1,54.9,15.0,A,Anexo,HV-8.0,11.9,4541.0,11.9
+INC-00838,2025-10-06 14:00,srv-biblio-05,ransomware ,1,2,44.0,12.0,A,Anexo,HV-8.0,18.6,7527.0,18.0
+INC-00839,2025-10-06 19:00,srv-acad-14,ERROR CONFIG,5,1,142.1,26.0,C,Anexo,HV-8.0,7.7,3160.0,8.0
+SIM-00840,2025-10-07 00:00,srv-biblio-18,falla_hardware,2,2,70.7,1.0,A,Anexo,HV-8.0,0.0,0.0,0.6
+INC-00841,2025-10-07 00:00,srv-biblio-18,falla_hardware,2,2,70.7,15.0,A,Anexo,HV-8.0,6.9,2805.0,6.8
+INC-00842,2025-10-07 07:00,srv-correo-19,MALWARE,7,3,191.1,4.0,B,Anexo,HV-8.0,20.7,8500.0,20.3
+INC-00843,2025-10-07 16:00,srv-virtual-32,FALLA HW,3,3,364.2,8.0,B,Central,HV-8.0,6.3,2453.0,6.4
+INC-00844,2025-10-09 01:00,srv-correo-02,Malware,1,2,988.0,8.0,A,Central,HV-8.0,9.9,3817.0,9.8
+INC-00845,2025-10-09 07:00,srv-correo-07,ERROR CONFIG,4,2,121.1,,B,Central,HV-8.0,13.8,5832.0,14.1
+INC-00846,2025-10-09 14:00,srv-acad-10,Error configuración,6,1,30.3,5.0,A,Central,HV-8.0,5.1,2276.0,5.5
+INC-00847,2025-10-10 15:00,srv-web-29,Error configuración,4,1,238.4,19.0,C,Central,HV-8.0,4.1,1683.0,4.1
+INC-00848,2025-10-10 22:00,srv-web-05,Error configuración,8,2,254.8,13.0,C,Central,HV-8.0,14.6,5484.0,14.1
+INC-00849,2025-10-10 23:00,srv-acad-36,Error configuración,8,3,185.6,24.0,C,Central,HV-8.0,10.9,4205.0,10.5
+INC-00850,2025-10-11 02:00,srv-biblio-04,falla_hardware,5,2,339.8,23.0,B,Central,HV-8.0,7.7,2951.0,7.4
+INC-00851,2025-10-11 03:00,srv-acad-35,Falla hardware,2,2,278.8,5.0,B,Central,HV-8.0,9.4,3588.0,8.9
+INC-00852,2025-10-11 12:00,srv-acad-02,MALWARE,7,3,185.4,13.0,A,Anexo,HV-8.0,26.5,10433.0,26.3
+INC-00853,2025-10-11 14:00,srv-acad-16,error_configuracion,2,3,51.9,29.0,B,Central,HV-8.0,4.3,1674.0,4.1
+INC-00854,2025-10-12 04:00,srv-biblio-26,falla_hardware,2,1,742.8,13.0,C,Anexo,HV-8.0,12.0,4842.0,12.2
+INC-00855,2025-10-12 18:00,srv-acad-34,FALLA HW,8,2,239.8,,C,Central,HV-8.0,23.5,9818.0,23.4
+INC-00856,2025-10-13 02:00,srv-web-30,MALWARE,6,2,276.8,15.0,B,Central,HV-8.0,15.8,6253.0,15.0
+INC-00857,2025-10-13 07:00,srv-virtual-03,error_configuracion,6,2,123.7,7.0,A,Anexo,HV-8.0,5.9,2363.0,5.9
+INC-00858,2025-10-13 15:00,srv-biblio-34,error_configuracion,2,3,66.4,1.0,C,Central,HV-8.0,4.0,1568.0,4.1
+INC-00859,2025-10-13 19:00,srv-correo-21,MALWARE,7,2,103.2,20.0,A,Anexo,HV-8.0,22.1,9322.0,22.3
+INC-00860,2025-10-14 10:00,srv-acad-38,RANSOMWARE,7,1,191.5,13.0,A,Central,HV-8.0,43.4,16919.0,42.9
+INC-00861,2025-10-14 21:00,srv-biblio-07,error_configuracion,2,1,95.8,18.0,A,Anexo,HV-8.0,2.0,1106.0,2.7
+INC-00862,2025-10-15 07:00,srv-virtual-32,FALLA HW,8,1,61.0,12.0,A,Central,HV-8.0,9.9,3818.0,9.9
+INC-00863,2025-10-15 16:00,srv-web-36,FALLA HW,1,2,190.3,8.0,C,Central,HV-8.0,7.5,2931.0,7.7
+INC-00864,2025-10-17 02:00,srv-acad-13,ddos,7,3,279.7,17.0,B,Central,HV-8.0,10.8,4516.0,10.9
+INC-00865,2025-10-17 04:00,srv-biblio-19,RANSOMWARE,6,3,7.4,29.0,A,Anexo,HV-8.0,121.4,50323.0,121.9
+INC-00866,2025-10-17 16:00,srv-biblio-21,FALLA HW,6,2,76.7,23.0,A,Anexo,HV-8.0,15.1,6330.0,15.3
+INC-00867,2025-10-17 18:00,srv-web-08,ERROR CONFIG,2,1,180.5,18.0,C,Central,HV-8.0,3.9,1465.0,3.7
+INC-00868,2025-10-18 05:00,srv-correo-02,Malware,3,2,199.7,22.0,A,Anexo,HV-8.0,13.6,5343.0,13.1
+INC-00869,2025-10-18 10:00,srv-correo-08,ERROR CONFIG,8,2,296.9,23.0,A,Anexo,HV-8.0,14.3,5414.0,14.0
+INC-00870,2025-10-18 15:00,srv-web-31,ERROR CONFIG,5,1,17.3,3.0,B,Central,HV-8.0,5.9,2296.0,5.7
+INC-00871,2025-10-18 19:00,srv-virtual-16,DDoS,7,3,130.8,8.0,C,Central,HV-8.0,13.8,5489.0,13.7
+INC-00872,2025-10-19 02:00,srv-acad-15,ddos,2,2,125.3,6.0,A,Anexo,HV-8.0,3.0,1380.0,3.6
+INC-00873,2025-10-19 04:00,srv-virtual-22,Malware,7,3,111.3,27.0,B,Central,HV-8.0,20.8,8268.0,20.7
+INC-00874,2025-10-19 07:00,srv-acad-07,malware,7,1,98.1,6.0,C,Anexo,HV-8.0,13.4,5061.0,13.1
+INC-00875,2025-10-20 00:00,srv-web-32,Error configuración,3,2,290.0,21.0,A,Anexo,HV-8.0,4.0,1539.0,3.7
+SIM-00876,2025-10-20 00:00,srv-web-32,Error configuración,3,2,290.0,1.0,A,Anexo,HV-8.0,0.0,0.0,0.6
+INC-00877,2025-10-20 05:00,srv-virtual-18,Error configuración,4,3,102.6,26.0,C,Central,HV-8.0,6.0,2516.0,6.3
+INC-00877,2025-10-20 05:00,srv-virtual-18,Error configuración,4,3,102.6,26.0,C,Central,HV-8.0,6.0,2516.0,6.3
+INC-00879,2025-10-20 14:00,srv-web-35,malware,1,2,161.4,2.0,B,Anexo,HV-8.0,8.5,3474.0,8.7
+INC-00880,2025-10-20 23:00,srv-correo-32,Error configuración,4,1,129.0,4.0,B,Anexo,HV-8.0,4.2,1736.0,4.2
+INC-00881,2025-10-21 09:00,srv-web-26,malware,5,2,26.5,19.0,B,Anexo,HV-8.0,11.6,4866.0,11.7
+INC-00882,2025-10-21 11:00,srv-correo-21,FALLA HW,4,2,90.1,,C,Anexo,HV-8.0,33.6,12691.0,33.1
+INC-00883,2025-10-21 21:00,srv-web-15,DDoS,6,1,42.8,15.0,B,Central,HV-8.0,5.6,2212.0,5.5
+INC-00884,2025-10-22 01:00,srv-virtual-23,FALLA HW,5,2,115.9,4.0,A,Central,HV-8.0,10.3,3923.0,9.9
+INC-00885,2025-10-22 09:00,srv-biblio-15,Malware,7,2,132.3,24.0,B,Central,HV-8.0,17.8,7059.0,17.9
+INC-00886,2025-10-22 12:00,srv-correo-09,MALWARE,1,1,22.5,13.0,C,Central,HV-8.0,6.8,2676.0,6.5
+INC-00887,2025-10-22 21:00,srv-web-33,malware,6,2,93.4,0.0,A,Anexo,HV-8.0,15.3,6157.0,15.0
+INC-00888,2025-10-22 23:00,srv-correo-04,MALWARE,1,2,84.3,4.0,A,Central,HV-8.0,5.0,1864.0,4.8
+INC-00889,2025-10-23 03:00,srv-virtual-14,RANSOMWARE,6,3,61.0,,C,Anexo,HV-8.0,80.0,32461.0,80.5
+INC-00890,2025-10-23 05:00,srv-correo-39,Falla hardware,7,1,69.7,25.0,B,Anexo,HV-8.0,8.5,3393.0,8.6
+INC-00891,2025-10-23 21:00,srv-biblio-27,Ransomware,4,2,28.0,5.0,C,Anexo,HV-8.0,22.6,8548.0,22.3
+INC-00891,2025-10-23 21:00,srv-biblio-27,Ransomware,4,2,28.0,5.0,C,Anexo,HV-8.0,22.6,8548.0,22.3
+INC-00893,2025-10-24 04:00,srv-virtual-11,DDOS,5,2,270.5,21.0,A,Central,HV-8.0,7.2,3000.0,7.4
+INC-00894,2025-10-25 01:00,srv-correo-38,falla_hardware,6,2,240.3,6.0,C,Central,HV-8.0,8.9,3543.0,8.6
+INC-00895,2025-10-25 06:00,srv-web-35,ddos,4,1,1654.3,5.0,B,Central,HV-8.0,7.2,2887.0,7.3
+INC-00896,2025-10-25 06:00,srv-virtual-34,MALWARE,8,1,710.1,16.0,C,Central,HV-8.0,17.3,6773.0,17.7
+INC-00897,2025-10-25 10:00,srv-correo-15,ERROR CONFIG,8,1,233.0,,A,Central,HV-8.0,18.1,7158.0,18.5
+INC-00897,2025-10-25 10:00,srv-correo-15,ERROR CONFIG,8,1,233.0,,A,Central,HV-8.0,18.1,7158.0,18.5
+INC-00899,2025-10-25 12:00,srv-correo-35,FALLA HW,5,3,58.3,9.0,C,Anexo,HV-8.0,9.2,3609.0,9.3
+INC-00900,2025-10-25 18:00,srv-biblio-20,DDoS,4,2,2262.7,5.0,A,Central,HV-8.0,13.5,5681.0,13.8
+INC-00901,2025-10-26 23:00,srv-web-38,MALWARE,3,3,101.5,28.0,C,Central,HV-8.0,14.1,5881.0,14.1
+INC-00902,2025-10-27 00:00,srv-web-32,DDoS,6,3,482.0,29.0,B,Central,HV-8.0,10.6,4074.0,10.7
+INC-00903,2025-10-27 14:00,srv-correo-39,Error configuración,3,3,139.8,26.0,B,Central,HV-8.0,5.3,2170.0,5.2
+INC-00903,2025-10-27 14:00,srv-correo-39,Error configuración,3,3,139.8,26.0,B,Central,HV-8.0,5.3,2170.0,5.2
+INC-00905,2025-10-27 18:00,srv-web-05,falla_hardware,3,2,378.4,22.0,A,Anexo,HV-8.0,9.6,3625.0,9.5
+INC-00906,2025-10-28 02:00,srv-biblio-16,falla_hardware,8,2,96.7,22.0,C,Anexo,HV-8.0,19.1,7703.0,19.1
+INC-00907,2025-10-28 07:00,srv-virtual-24,MALWARE,8,3,291.7,,B,Anexo,HV-8.0,39.5,15547.0,39.5
+INC-00908,2025-10-29 02:00,srv-biblio-21,malware,8,2,260.1,11.0,A,Central,HV-8.0,21.2,8520.0,21.3
+INC-00909,2025-10-29 07:00,srv-acad-29,Falla hardware,2,2,81.4,18.0,A,Central,HV-8.0,8.0,3063.0,7.9
+INC-00910,2025-10-30 12:00,srv-virtual-18,falla_hardware,3,3,175.4,2.0,C,Anexo,HV-8.0,8.2,3415.0,8.6
+INC-00911,2025-10-30 13:00,srv-acad-35,FALLA HW,1,2,414.0,5.0,B,Anexo,HV-8.0,6.8,2557.0,6.7
+INC-00912,2025-10-31 04:00,srv-correo-01,Falla hardware,7,3,75.7,,B,Anexo,HV-8.0,28.2,11503.0,28.6
+INC-00913,2025-10-31 05:00,srv-biblio-27,RANSOMWARE,4,2,48.6,26.0,C,Anexo,HV-8.0,23.8,9767.0,24.2
+INC-00914,2025-10-31 11:00,srv-acad-39,MALWARE,2,3,159.0,4.0,B,Anexo,HV-8.0,11.8,4635.0,11.5
+INC-00915,2025-11-01 05:00,srv-correo-26,ransomware ,4,1,136.7,15.0,B,Central,HV-8.0,27.0,10383.0,26.9
+INC-00916,2025-11-01 08:00,srv-biblio-34,Ransomware,4,1,326.2,12.0,A,Central,HV-8.0,40.6,15703.0,40.6
+INC-00917,2025-11-01 10:00,srv-acad-09,DDoS,5,2,191.4,25.0,C,Anexo,HV-8.0,9.2,3779.0,9.7
+INC-00918,2025-11-01 11:00,srv-web-33,FALLA HW,5,3,67.9,18.0,C,Central,HV-8.0,11.7,5022.0,12.2
+INC-00919,2025-11-01 15:00,srv-virtual-25,Malware,8,2,89.8,14.0,A,Central,HV-8.0,12.5,4639.0,12.1
+INC-00920,2025-11-01 20:00,srv-web-23,ransomware ,7,1,95.9,,A,Central,HV-8.0,83.0,34349.0,83.2
+INC-00921,2025-11-02 06:00,srv-acad-15,DDOS,7,1,120.3,19.0,B,Anexo,HV-8.0,7.4,3110.0,7.8
+INC-00922,2025-11-03 01:00,srv-virtual-23,falla_hardware,5,2,77.9,9.0,C,Anexo,HV-8.0,9.6,3634.0,9.4
+INC-00923,2025-11-03 14:00,srv-acad-30,error_configuracion,7,1,26.4,21.0,C,Central,HV-8.0,4.9,1976.0,5.0
+INC-00924,2025-11-04 15:00,srv-virtual-20,FALLA HW,2,1,73.1,16.0,C,Central,HV-8.0,7.7,2882.0,7.2
+INC-00925,2025-11-04 16:00,srv-acad-06,ERROR CONFIG,8,3,152.4,10.0,B,Central,HV-8.0,8.0,3096.0,8.0
+INC-00926,2025-11-04 21:00,srv-acad-03,ransomware ,3,2,66.7,20.0,C,Central,HV-8.0,31.3,12269.0,31.5
+INC-00927,2025-11-05 06:00,srv-acad-14,error_configuracion,3,1,368.8,4.0,A,Central,HV-8.0,4.2,1593.0,4.0
+INC-00928,2025-11-05 14:00,srv-acad-17,Falla hardware,1,2,472.5,8.0,C,Central,HV-8.0,5.1,2331.0,5.6
+INC-00929,2025-11-06 02:00,srv-virtual-31,FALLA HW,2,2,61.6,16.0,B,Central,HV-8.0,12.7,4888.0,11.9
+INC-00930,2025-11-06 03:00,srv-acad-17,Malware,4,2,128.6,9.0,C,Anexo,HV-8.0,14.2,5876.0,14.2
+INC-00931,2025-11-06 09:00,srv-virtual-17,MALWARE,1,2,178.6,,C,Anexo,HV-8.0,16.7,6972.0,16.7
+INC-00932,2025-11-06 21:00,srv-acad-07,RANSOMWARE,6,3,294.5,12.0,A,Central,HV-8.0,40.1,15912.0,39.4
+INC-00933,2025-11-07 01:00,srv-biblio-15,ERROR CONFIG,4,3,211.5,6.0,B,Central,HV-8.0,5.7,2114.0,5.4
+INC-00934,2025-11-07 02:00,srv-acad-02,MALWARE,8,1,76.4,12.0,B,Anexo,HV-8.0,21.8,8346.0,21.6
+INC-00935,2025-11-07 08:00,srv-correo-25,error_configuracion,6,3,43.3,2.0,C,Central,HV-8.0,8.1,3202.0,8.1
+INC-00936,2025-11-07 13:00,srv-web-17,Malware,7,1,147.2,24.0,C,Anexo,HV-8.0,9.2,3687.0,8.9
+INC-00937,2025-11-07 15:00,srv-web-10,Falla hardware,1,2,45.1,11.0,C,Anexo,HV-8.0,3.7,1515.0,3.7
+INC-00937,2025-11-07 15:00,srv-web-10,Falla hardware,1,2,45.1,11.0,C,Anexo,HV-8.0,3.7,1515.0,3.7
+INC-00939,2025-11-07 20:00,srv-correo-39,falla_hardware,8,3,71.5,10.0,A,Anexo,HV-8.0,15.5,6246.0,15.9
+INC-00940,2025-11-07 23:00,srv-acad-07,error_configuracion,2,2,230.4,29.0,C,Anexo,HV-8.0,11.9,4784.0,11.8
+INC-00941,2025-11-08 01:00,srv-biblio-11,malware,8,2,81.2,15.0,C,Anexo,HV-8.0,15.3,5921.0,15.2
+INC-00942,2025-11-08 02:00,srv-virtual-26,Error configuración,3,2,299.3,14.0,B,Central,HV-8.0,5.1,2049.0,5.1
+INC-00943,2025-11-08 20:00,srv-correo-26,Malware,5,1,321.0,24.0,A,Central,HV-8.0,18.3,7120.0,18.6
+INC-00944,2025-11-09 03:00,srv-acad-34,falla_hardware,7,1,185.1,22.0,B,Anexo,HV-8.0,18.5,7632.0,18.3
+INC-00944,2025-11-09 03:00,srv-acad-34,falla_hardware,7,1,185.1,22.0,B,Anexo,HV-8.0,18.5,7632.0,18.3
+INC-00946,2025-11-10 14:00,srv-correo-15,MALWARE,4,3,92.7,,C,Central,HV-8.0,28.8,11299.0,28.5
+INC-00947,2025-11-10 14:00,srv-web-29,Falla hardware,3,2,167.6,9.0,C,Anexo,HV-8.0,11.6,4768.0,11.6
+INC-00948,2025-11-11 15:00,srv-web-24,error_configuracion,4,1,365.2,22.0,C,Central,HV-8.0,4.5,1763.0,4.6
+INC-00949,2025-11-11 16:00,srv-virtual-35,MALWARE,2,2,74.8,12.0,C,Anexo,HV-8.0,8.0,3166.0,8.2
+INC-00950,2025-11-11 19:00,srv-biblio-39,MALWARE,7,1,258.0,6.0,A,Central,HV-8.0,21.7,8920.0,21.6
+INC-00951,2025-11-11 22:00,srv-correo-27,DDOS,3,3,72.2,9.0,C,Anexo,HV-8.0,8.9,3254.0,8.2
+INC-00952,2025-11-12 10:00,srv-web-37,Falla hardware,5,1,43.0,7.0,A,Central,HV-8.0,8.6,3558.0,9.1
+INC-00953,2025-11-12 20:00,srv-correo-22,MALWARE,6,2,199.5,,B,Anexo,HV-8.0,37.1,14767.0,37.1
+INC-00954,2025-11-13 01:00,srv-web-15,DDOS,4,1,324.3,,C,Anexo,HV-8.0,23.1,9190.0,23.0
+INC-00955,2025-11-13 05:00,srv-biblio-05,DDoS,4,3,38.1,15.0,B,Anexo,HV-8.0,5.9,2282.0,5.5
+INC-00956,2025-11-13 17:00,srv-acad-29,FALLA HW,1,3,127.7,17.0,C,Anexo,HV-8.0,5.7,2603.0,6.3
+INC-00957,2025-11-14 11:00,srv-biblio-29,ddos,7,3,37.1,17.0,C,Anexo,HV-8.0,7.4,3001.0,7.6
+INC-00958,2025-11-14 11:00,srv-virtual-37,RANSOMWARE,7,1,91.8,,B,Central,HV-8.0,89.8,35206.0,89.5
+INC-00959,2025-11-15 05:00,srv-web-26,FALLA HW,8,3,574.4,7.0,A,Anexo,HV-8.0,21.0,8102.0,21.1
+INC-00960,2025-11-15 06:00,srv-biblio-19,ransomware ,8,2,40.1,2.0,B,Central,HV-8.0,58.7,23230.0,58.5
+INC-00961,2025-11-15 08:00,srv-biblio-01,Error configuración,5,1,289.7,10.0,B,Central,HV-8.0,8.9,3445.0,8.8
+INC-00962,2025-11-15 14:00,srv-acad-06,malware,4,1,56.7,0.0,C,Anexo,HV-8.0,9.7,4067.0,10.0
+SIM-00963,2025-11-15 16:00,srv-biblio-35,ERROR CONFIG,4,3,309.0,1.0,B,Anexo,HV-8.0,0.0,0.0,0.9
+INC-00964,2025-11-15 16:00,srv-biblio-35,ERROR CONFIG,4,3,309.0,12.0,B,Anexo,HV-8.0,7.2,2785.0,7.3
+INC-00965,2025-11-15 16:00,srv-correo-06,FALLA HW,2,2,383.3,23.0,B,Central,HV-8.0,8.7,3474.0,8.6
+INC-00966,2025-11-15 22:00,srv-web-19,MALWARE,3,3,86.2,23.0,C,Central,HV-8.0,9.3,3877.0,9.6
+INC-00967,2025-11-16 00:00,srv-acad-26,ERROR CONFIG,1,3,204.4,10.0,C,Anexo,HV-8.0,6.1,2414.0,5.8
+INC-00968,2025-11-16 11:00,srv-web-32,MALWARE,6,1,115.5,26.0,B,Anexo,HV-8.0,17.1,7175.0,17.2
+INC-00969,2025-11-17 14:00,srv-acad-20,Falla hardware,4,2,127.1,,A,Central,HV-8.0,21.7,8795.0,21.8
+SIM-00970,2025-11-17 20:00,srv-web-04,MALWARE,5,2,99.6,1.0,B,Anexo,HV-8.0,0.0,0.0,1.8
+INC-00971,2025-11-17 20:00,srv-web-04,MALWARE,5,2,99.6,23.0,B,Anexo,HV-8.0,14.7,5907.0,15.2
+INC-00972,2025-11-18 01:00,srv-biblio-12,ddos,1,2,87.4,22.0,B,Central,HV-8.0,10.0,3722.0,9.6
+INC-00973,2025-11-18 13:00,srv-web-24,ERROR CONFIG,1,2,131.6,2.0,C,Anexo,HV-8.0,4.1,1573.0,4.1
+INC-00974,2025-11-19 17:00,srv-virtual-30,error_configuracion,7,1,535.9,1.0,C,Central,HV-8.0,8.6,3422.0,8.6
+INC-00975,2025-11-20 13:00,srv-acad-25,falla_hardware,2,1,376.2,0.0,C,Central,HV-8.0,8.2,3335.0,8.5
+INC-00976,2025-11-20 14:00,srv-acad-33,Error configuración,4,3,148.3,,A,Anexo,HV-8.0,7.0,2883.0,7.1
+INC-00977,2025-11-20 19:00,srv-biblio-23,ddos,7,2,62.0,16.0,B,Central,HV-8.0,10.1,3851.0,9.4
+INC-00978,2025-11-21 15:00,srv-biblio-08,RANSOMWARE,4,2,156.0,,B,Anexo,HV-8.0,67.2,26576.0,67.9
+SIM-00979,2025-11-22 03:00,srv-acad-04,FALLA HW,8,1,445.7,1.0,B,Anexo,HV-8.0,0.0,0.0,1.8
+INC-00980,2025-11-22 03:00,srv-acad-04,FALLA HW,8,1,445.7,19.0,B,Anexo,HV-8.0,13.4,5254.0,13.7
+INC-00981,2025-11-22 04:00,srv-acad-13,ransomware ,6,2,128.7,9.0,B,Anexo,HV-8.0,29.6,12100.0,29.9
+INC-00982,2025-11-22 10:00,srv-correo-05,RANSOMWARE,8,3,54.1,19.0,B,Anexo,HV-8.0,65.0,24880.0,64.8
+INC-00983,2025-11-22 12:00,srv-virtual-33,falla_hardware,2,1,362.5,29.0,C,Anexo,HV-8.0,6.9,2990.0,7.3
+INC-00984,2025-11-22 18:00,srv-virtual-28,ransomware ,5,1,2360.9,13.0,A,Central,HV-8.0,35.0,14042.0,34.9
+INC-00985,2025-11-23 03:00,srv-biblio-03,Malware,1,2,16.5,11.0,C,Central,HV-8.0,4.5,1868.0,4.5
+INC-00986,2025-11-23 06:00,srv-acad-06,RANSOMWARE,1,2,123.3,18.0,C,Central,HV-8.0,18.4,7011.0,18.3
+INC-00987,2025-11-23 11:00,srv-virtual-37,RANSOMWARE,5,1,984.0,25.0,A,Anexo,HV-8.0,51.9,20133.0,51.6
+INC-00988,2025-11-24 05:00,srv-correo-03,DDOS,6,2,400.3,21.0,C,Central,HV-8.0,7.1,2851.0,6.8
+INC-00989,2025-11-24 06:00,srv-biblio-09,RANSOMWARE,5,2,903.9,4.0,A,Anexo,HV-8.0,51.3,19825.0,51.7
+INC-00990,2025-11-24 08:00,srv-virtual-07,ddos,3,2,1783.5,23.0,A,Central,HV-8.0,10.7,3914.0,10.1
+INC-00991,2025-11-24 08:00,srv-acad-25,DDOS,2,1,98.5,16.0,C,Central,HV-8.0,3.4,1295.0,3.2
+INC-00992,2025-11-24 22:00,srv-virtual-34,ddos,3,2,292.0,16.0,B,Anexo,HV-8.0,5.0,2190.0,5.4
+INC-00993,2025-11-25 04:00,srv-correo-24,malware,4,2,148.1,8.0,B,Anexo,HV-8.0,13.5,5619.0,13.5
+INC-00994,2025-11-25 04:00,srv-acad-26,falla_hardware,3,2,110.8,,C,Anexo,HV-8.0,15.2,6196.0,14.8
+INC-00995,2025-11-25 18:00,srv-biblio-23,Ransomware,2,1,39.0,4.0,A,Anexo,HV-8.0,7.5,3077.0,7.4
+INC-00996,2025-11-26 03:00,srv-web-12,falla_hardware,7,2,978.1,15.0,C,Central,HV-8.0,15.6,6237.0,15.5
+INC-00997,2025-11-26 10:00,srv-biblio-17,DDOS,2,3,143.0,19.0,C,Anexo,HV-8.0,4.5,1985.0,4.8
+INC-00998,2025-11-26 13:00,srv-web-10,RANSOMWARE,8,2,762.3,26.0,B,Anexo,HV-8.0,54.6,22678.0,54.5
+INC-00999,2025-11-26 16:00,srv-correo-29,falla_hardware,8,1,110.1,18.0,A,Anexo,HV-8.0,10.0,4310.0,10.4
+SIM-01000,2025-11-26 21:00,srv-web-01,ERROR CONFIG,4,2,65.9,1.0,B,Central,HV-8.0,0.0,0.0,0.7
+INC-01001,2025-11-26 21:00,srv-web-01,ERROR CONFIG,4,2,65.9,22.0,B,Central,HV-8.0,5.9,2385.0,6.1
+INC-01002,2025-11-26 23:00,srv-correo-06,DDOS,2,3,264.2,7.0,A,Central,HV-8.0,3.6,1550.0,3.8
+INC-01003,2025-11-26 23:00,srv-correo-04,ransomware ,5,2,-271.2,24.0,C,Anexo,HV-8.0,109.0,43829.0,109.5
+INC-01004,2025-11-26 23:00,srv-web-39,falla_hardware,1,1,393.0,3.0,C,Central,HV-8.0,7.7,2906.0,7.5
+INC-01005,2025-11-27 12:00,srv-biblio-32,FALLA HW,3,2,812.4,5.0,B,Anexo,HV-8.0,11.2,4496.0,11.3
+INC-01006,2025-11-27 15:00,srv-biblio-11,FALLA HW,3,2,322.7,,C,Anexo,HV-8.0,23.7,9517.0,24.1
+INC-01007,2025-11-28 17:00,srv-biblio-23,ddos,2,1,944.4,0.0,B,Central,HV-8.0,4.7,1900.0,4.9
+INC-01008,2025-11-28 19:00,srv-web-07,DDOS,4,1,193.2,,A,Anexo,HV-8.0,7.8,3035.0,7.8
+INC-01009,2025-11-28 20:00,srv-virtual-18,ERROR CONFIG,3,3,229.1,28.0,B,Anexo,HV-8.0,7.1,2734.0,6.8
+INC-01010,2025-11-29 00:00,srv-acad-37,Error configuración,1,2,177.3,0.0,B,Central,HV-8.0,3.1,1127.0,2.9
+INC-01011,2025-11-30 10:00,srv-biblio-30,Error configuración,2,2,637.3,20.0,C,Anexo,HV-8.0,4.8,1881.0,4.7
+INC-01012,2025-12-01 10:00,srv-correo-30,ddos,6,2,156.0,7.0,B,Central,HV-8.0,7.2,2696.0,6.8
+INC-01013,2025-12-01 13:00,srv-correo-25,MALWARE,7,3,94.3,15.0,B,Anexo,HV-8.0,17.4,7039.0,17.6
+INC-01014,2025-12-01 23:00,srv-correo-11,Ransomware,7,3,99.5,25.0,A,Central,HV-8.0,55.3,22064.0,55.2
+INC-01015,2025-12-02 03:00,srv-biblio-13,Ransomware,4,2,118.8,20.0,A,Anexo,HV-8.0,27.8,11276.0,27.5
+INC-01016,2025-12-02 19:00,srv-biblio-11,malware,4,1,244.8,,B,Anexo,HV-8.0,42.4,16855.0,42.2
+INC-01017,2025-12-03 09:00,srv-virtual-02,falla_hardware,2,1,128.0,0.0,C,Anexo,HV-8.0,7.1,3032.0,7.6
+INC-01018,2025-12-03 11:00,srv-acad-37,Ransomware,8,3,176.4,28.0,B,Anexo,HV-8.0,31.6,13102.0,31.9
+INC-01019,2025-12-03 21:00,srv-web-01,Malware,4,2,119.3,23.0,C,Central,HV-8.0,15.7,6279.0,15.8
+INC-01020,2025-12-04 07:00,srv-acad-07,falla_hardware,6,2,119.3,1.0,A,Central,HV-8.0,11.7,4446.0,11.7
+INC-01021,2025-12-04 14:00,srv-acad-10,Malware,3,2,42.2,17.0,B,Anexo,HV-8.0,8.1,3251.0,8.5
+INC-01022,2025-12-05 02:00,srv-virtual-29,DDoS,7,2,226.6,,A,Central,HV-8.0,27.2,10449.0,27.1
+INC-01023,2025-12-05 13:00,srv-correo-26,DDoS,6,2,207.0,9.0,B,Anexo,HV-8.0,6.5,2690.0,6.9
+INC-01024,2025-12-05 18:00,srv-acad-09,error_configuracion,1,2,169.9,10.0,C,Anexo,HV-8.0,3.6,1429.0,3.7
+INC-01025,2025-12-05 19:00,srv-web-20,DDoS,5,1,250.8,,B,Central,HV-8.0,28.3,11114.0,28.6
+INC-01026,2025-12-05 20:00,srv-acad-13,ERROR CONFIG,7,2,28.8,23.0,C,Anexo,HV-8.0,8.2,3582.0,8.6
+INC-01027,2025-12-06 07:00,srv-web-14,MALWARE,7,2,1519.4,13.0,A,Anexo,HV-8.0,19.7,8175.0,19.8
+INC-01028,2025-12-06 08:00,srv-correo-17,FALLA HW,6,1,104.9,14.0,B,Central,HV-8.0,8.3,3141.0,8.2
+INC-01029,2025-12-06 12:00,srv-acad-35,error_configuracion,5,2,67.8,23.0,C,Central,HV-8.0,3.6,1601.0,4.1
+INC-01030,2025-12-07 21:00,srv-web-15,Ransomware,5,1,46.9,25.0,A,Anexo,HV-8.0,31.5,12327.0,31.6
+INC-01031,2025-12-08 05:00,srv-web-11,MALWARE,8,3,172.8,13.0,B,Anexo,HV-8.0,21.0,8234.0,21.0
+INC-01032,2025-12-09 06:00,srv-acad-18,MALWARE,2,2,96.0,13.0,B,Central,HV-8.0,9.2,3656.0,8.9
+INC-01033,2025-12-10 01:00,srv-correo-24,DDOS,8,1,405.9,7.0,A,Central,HV-8.0,11.1,4249.0,10.8
+INC-01034,2025-12-10 02:00,srv-web-14,error_configuracion,7,2,37.3,21.0,A,Anexo,HV-8.0,6.5,2662.0,6.7
+INC-01035,2025-12-10 04:00,srv-acad-15,DDoS,2,3,185.5,21.0,A,Anexo,HV-8.0,6.8,2495.0,6.5
+SIM-01036,2025-12-10 06:00,srv-virtual-11,malware,5,2,93.4,1.0,A,Central,HV-8.0,0.0,0.0,0.9
+INC-01037,2025-12-10 06:00,srv-virtual-11,malware,5,2,93.4,6.0,A,Central,HV-8.0,18.0,7158.0,17.9
+INC-01038,2025-12-10 09:00,srv-acad-10,ransomware ,4,2,155.0,,A,Anexo,HV-8.0,46.2,18270.0,46.3
+INC-01039,2025-12-10 14:00,srv-biblio-18,Ransomware,6,2,1354.0,27.0,A,Anexo,HV-8.0,61.4,24161.0,61.8
+INC-01040,2025-12-10 21:00,srv-virtual-37,error_configuracion,8,2,236.3,15.0,B,Central,HV-8.0,6.5,2582.0,6.4
+INC-01041,2025-12-11 03:00,srv-acad-09,ransomware ,7,1,110.2,14.0,B,Anexo,HV-8.0,22.6,8722.0,22.8
+INC-01042,2025-12-11 05:00,srv-biblio-07,falla_hardware,5,1,106.0,,C,Central,HV-8.0,20.5,8632.0,20.6
+INC-01043,2025-12-11 07:00,srv-biblio-13,FALLA HW,6,1,1127.0,3.0,C,Central,HV-8.0,17.1,6698.0,17.0
+INC-01044,2025-12-11 11:00,srv-acad-12,malware,6,2,21.4,29.0,A,Anexo,HV-8.0,16.0,6244.0,16.2
+INC-01045,2025-12-11 13:00,srv-biblio-31,FALLA HW,6,1,2022.8,17.0,A,Anexo,HV-8.0,7.9,3030.0,7.7
+INC-01046,2025-12-11 20:00,srv-correo-35,DDOS,7,3,182.1,11.0,A,Anexo,HV-8.0,8.3,3473.0,8.4
+INC-01047,2025-12-12 03:00,srv-web-37,DDOS,8,3,303.0,4.0,B,Central,HV-8.0,15.1,6292.0,15.4
+INC-01048,2025-12-12 15:00,srv-acad-04,FALLA HW,8,3,199.0,24.0,A,Central,HV-8.0,22.2,9164.0,22.4
+INC-01049,2025-12-13 09:00,srv-web-18,ERROR CONFIG,3,1,211.4,12.0,A,Central,HV-8.0,10.2,4096.0,9.9
+INC-01050,2025-12-13 19:00,srv-correo-11,Malware,3,3,98.5,23.0,B,Anexo,HV-8.0,11.9,4786.0,11.4
+SIM-01051,2025-12-14 09:00,srv-virtual-18,MALWARE,2,1,133.8,1.0,A,Anexo,HV-8.0,0.0,0.0,1.3
+INC-01052,2025-12-14 09:00,srv-virtual-18,MALWARE,2,1,133.8,5.0,A,Anexo,HV-8.0,16.3,6250.0,16.0
+INC-01053,2025-12-14 10:00,srv-virtual-26,FALLA HW,1,2,250.3,13.0,A,Anexo,HV-8.0,8.5,3387.0,8.1
+INC-01054,2025-12-14 16:00,srv-correo-07,DDoS,7,2,52.8,15.0,A,Central,HV-8.0,6.7,2753.0,7.1
+INC-01055,2025-12-14 19:00,srv-web-03,Falla hardware,6,2,34.8,,C,Central,HV-8.0,20.7,7983.0,20.6
+INC-01056,2025-12-15 04:00,srv-acad-30,DDOS,5,1,94.6,22.0,C,Anexo,HV-8.0,7.0,2812.0,7.1
+INC-01057,2025-12-15 06:00,srv-virtual-14,DDOS,2,2,118.4,28.0,A,Central,HV-8.0,10.1,3789.0,9.8
+INC-01058,2025-12-15 09:00,srv-acad-06,FALLA HW,4,1,270.3,21.0,C,Central,HV-8.0,10.8,4408.0,10.6
+SIM-01059,2025-12-15 09:00,srv-acad-06,FALLA HW,4,1,270.3,1.0,C,Central,HV-8.0,0.0,0.0,1.5
+INC-01060,2025-12-15 14:00,srv-biblio-13,Malware,2,2,122.5,6.0,B,Anexo,HV-8.0,6.5,2432.0,6.4
+INC-01061,2025-12-15 19:00,srv-virtual-36,FALLA HW,8,2,325.5,6.0,A,Anexo,HV-8.0,18.6,6980.0,18.3
+INC-01062,2025-12-16 05:00,srv-biblio-32,ERROR CONFIG,4,2,559.7,16.0,B,Central,HV-8.0,5.3,1908.0,5.0
+INC-01063,2025-12-16 06:00,srv-biblio-14,Ransomware,8,3,285.8,12.0,C,Central,HV-8.0,52.3,20452.0,52.7
+INC-01063,2025-12-16 06:00,srv-biblio-14,Ransomware,8,3,285.8,12.0,C,Central,HV-8.0,52.3,20452.0,52.7
+INC-01065,2025-12-16 14:00,srv-biblio-36,Falla hardware,6,1,78.0,,B,Anexo,HV-8.0,20.0,8304.0,20.4
+INC-01066,2025-12-16 19:00,srv-web-13,ransomware ,4,2,114.3,15.0,B,Anexo,HV-8.0,33.5,12936.0,33.2
+INC-01067,2025-12-17 06:00,srv-acad-23,ERROR CONFIG,8,3,137.8,9.0,A,Anexo,HV-8.0,9.0,3779.0,9.1
+INC-01068,2025-12-17 16:00,srv-acad-05,RANSOMWARE,2,2,515.8,,B,Central,HV-8.0,67.5,27381.0,67.2
+INC-01069,2025-12-18 04:00,srv-acad-23,MALWARE,8,3,101.4,,A,Central,HV-8.0,35.9,14705.0,36.1
+INC-01070,2025-12-18 04:00,srv-web-09,MALWARE,3,2,41.6,1.0,B,Central,HV-8.0,10.5,4231.0,10.2
+INC-01071,2025-12-18 05:00,srv-acad-26,error_configuracion,8,2,285.2,11.0,C,Central,HV-8.0,9.3,3759.0,9.6
+INC-01072,2025-12-18 12:00,srv-correo-15,RANSOMWARE,2,1,496.1,8.0,C,Central,HV-8.0,29.2,11706.0,29.3
+INC-01073,2025-12-18 18:00,srv-virtual-16,DDoS,4,3,40.2,29.0,A,Central,HV-8.0,8.4,3247.0,7.9
+INC-01074,2025-12-19 03:00,srv-acad-37,error_configuracion,3,2,33.3,6.0,B,Anexo,HV-8.0,4.6,1892.0,4.7
+INC-01075,2025-12-19 11:00,srv-correo-30,Error configuración,5,2,101.1,29.0,A,Anexo,HV-8.0,6.1,2612.0,6.4
+SIM-01076,2025-12-19 11:00,srv-correo-30,Error configuración,5,2,101.1,1.0,A,Anexo,HV-8.0,0.0,0.0,1.5
+INC-01077,2025-12-20 04:00,srv-acad-04,malware,1,2,95.4,3.0,A,Central,HV-8.0,6.7,2582.0,6.6
+INC-01078,2025-12-21 05:00,srv-virtual-13,FALLA HW,7,3,155.1,3.0,C,Central,HV-8.0,14.6,6185.0,14.8
+INC-01079,2025-12-21 11:00,srv-web-05,DDOS,8,3,376.4,1.0,A,Central,HV-8.0,10.4,4286.0,10.7
+INC-01080,2025-12-21 11:00,srv-correo-13,malware,4,1,207.1,16.0,C,Central,HV-8.0,12.1,4798.0,12.3
+INC-01081,2025-12-21 12:00,srv-web-12,ERROR CONFIG,1,1,583.3,14.0,A,Central,HV-8.0,3.2,1291.0,3.2
+INC-01082,2025-12-22 01:00,srv-biblio-34,Error configuración,4,3,175.5,23.0,A,Central,HV-8.0,7.5,2853.0,7.5
+INC-01083,2025-12-22 02:00,srv-acad-11,Error configuración,6,3,177.7,5.0,A,Anexo,HV-8.0,10.8,4331.0,10.8
+INC-01084,2025-12-22 03:00,srv-web-33,FALLA HW,8,3,342.8,5.0,C,Anexo,HV-8.0,20.4,7575.0,19.9
+INC-01085,2025-12-22 09:00,srv-virtual-16,malware,8,2,87.5,,A,Central,HV-8.0,52.6,20210.0,52.8
+INC-01086,2025-12-22 10:00,srv-correo-34,falla_hardware,6,3,99.8,4.0,C,Central,HV-8.0,10.9,4344.0,11.0
+INC-01087,2025-12-23 14:00,srv-virtual-03,ddos,5,2,389.6,,C,Anexo,HV-8.0,20.8,8135.0,20.6
+INC-01087,2025-12-23 14:00,srv-virtual-03,ddos,5,2,389.6,,C,Anexo,HV-8.0,20.8,8135.0,20.6
+INC-01089,2025-12-23 18:00,srv-acad-14,ddos,4,3,153.2,,B,Anexo,HV-8.0,12.1,4966.0,12.5
+INC-01090,2025-12-23 21:00,srv-web-18,ddos,8,1,305.7,7.0,A,Anexo,HV-8.0,8.9,3377.0,8.5
+INC-01091,2025-12-23 21:00,srv-biblio-24,Error configuración,5,3,346.1,20.0,B,Central,HV-8.0,9.6,3754.0,9.5
+INC-01092,2025-12-23 23:00,srv-correo-05,RANSOMWARE,2,2,211.8,5.0,B,Anexo,HV-8.0,15.3,5913.0,14.8
+SIM-01093,2025-12-23 23:00,srv-correo-05,RANSOMWARE,2,2,211.8,1.0,B,Anexo,HV-8.0,0.0,0.0,1.3
+INC-01094,2025-12-24 04:00,srv-virtual-22,Error configuración,3,2,33.1,27.0,A,Central,HV-8.0,4.9,1845.0,4.6
+INC-01095,2025-12-24 23:00,srv-virtual-29,DDoS,5,2,266.1,24.0,B,Central,HV-8.0,11.7,4743.0,11.5
+INC-01096,2025-12-25 06:00,srv-biblio-05,RANSOMWARE,4,1,84.4,18.0,A,Central,HV-8.0,24.1,9432.0,24.1
+INC-01097,2025-12-25 12:00,srv-virtual-29,malware,8,3,64.3,19.0,C,Central,HV-8.0,18.6,7636.0,19.1
+SIM-01098,2025-12-25 14:00,srv-biblio-30,DDoS,3,3,575.9,1.0,A,Anexo,HV-8.0,0.0,0.0,0.7
+INC-01099,2025-12-25 14:00,srv-biblio-30,DDoS,3,3,575.9,1.0,A,Anexo,HV-8.0,5.9,2177.0,5.6
+INC-01100,2025-12-26 03:00,srv-web-11,RANSOMWARE,7,2,153.6,11.0,A,Anexo,HV-8.0,47.3,18159.0,47.2
+INC-01101,2025-12-26 12:00,srv-correo-14,Malware,4,2,58.7,14.0,C,Anexo,HV-8.0,8.6,3356.0,8.3
+INC-01102,2025-12-27 07:00,srv-virtual-10,RANSOMWARE,1,2,218.7,11.0,C,Anexo,HV-8.0,21.3,8309.0,21.5
+INC-01103,2025-12-27 08:00,srv-biblio-20,malware,6,3,890.3,11.0,B,Anexo,HV-8.0,28.0,11092.0,28.0
+INC-01104,2025-12-27 12:00,srv-biblio-06,Error configuración,4,2,186.1,,C,Central,HV-8.0,12.1,4428.0,11.5
+INC-01105,2025-12-28 03:00,srv-acad-34,ddos,7,1,88.4,,B,Central,HV-8.0,16.3,6497.0,16.4
+INC-01106,2025-12-28 19:00,srv-biblio-38,ddos,6,3,249.8,28.0,A,Anexo,HV-8.0,12.8,5162.0,12.8
+INC-01107,2025-12-29 06:00,srv-biblio-34,RANSOMWARE,2,2,45.3,25.0,B,Central,HV-8.0,23.4,9544.0,23.6
+INC-01108,2025-12-29 07:00,srv-biblio-37,MALWARE,4,2,321.5,27.0,C,Central,HV-8.0,13.2,5439.0,13.5
+INC-01109,2025-12-29 10:00,srv-acad-14,malware,5,1,-226.3,6.0,C,Central,HV-8.0,14.3,5538.0,14.4
+INC-01110,2025-12-30 16:00,srv-correo-06,DDoS,3,3,72.4,14.0,B,Central,HV-8.0,4.5,1826.0,4.4
+INC-01111,2025-12-30 22:00,srv-biblio-02,Malware,7,1,48.1,19.0,B,Central,HV-8.0,16.6,6812.0,16.7
+INC-01112,2025-12-30 23:00,srv-biblio-19,Falla hardware,4,3,269.1,27.0,B,Central,HV-8.0,15.9,6240.0,16.2
+INC-01113,2025-12-31 01:00,srv-biblio-34,Error configuración,2,3,49.1,29.0,A,Central,HV-8.0,4.4,1808.0,4.6
+INC-01114,2025-12-31 08:00,srv-correo-28,MALWARE,4,2,114.0,24.0,A,Anexo,HV-8.0,13.9,5187.0,13.3
+INC-01115,2026-01-01 04:00,srv-biblio-31,ransomware ,3,1,273.1,17.0,A,Central,HV-8.0,20.4,8193.0,19.7
+INC-01116,2026-01-01 09:00,srv-biblio-10,ERROR CONFIG,1,3,330.8,21.0,A,Anexo,HV-8.0,5.8,2467.0,6.3
+INC-01117,2026-01-02 00:00,srv-virtual-31,error_configuracion,5,2,198.3,21.0,A,Anexo,HV-8.0,7.4,2833.0,7.4
+INC-01118,2026-01-02 04:00,srv-correo-10,error_configuracion,1,2,100.4,10.0,C,Anexo,HV-8.0,2.3,987.0,2.5
+INC-01119,2026-01-02 21:00,srv-correo-25,Ransomware,6,2,548.2,1.0,A,Anexo,HV-8.0,68.9,28581.0,68.7
+INC-01120,2026-01-03 22:00,srv-acad-22,DDoS,3,2,529.8,3.0,B,Anexo,HV-8.0,4.4,1817.0,4.6
+INC-01121,2026-01-04 02:00,srv-biblio-28,Ransomware,3,2,153.9,20.0,A,Central,HV-8.0,15.3,5991.0,15.0
+INC-01122,2026-01-04 17:00,srv-virtual-03,Falla hardware,8,1,46.8,23.0,B,Anexo,HV-8.0,8.3,3537.0,8.8
+INC-01123,2026-01-04 17:00,srv-acad-28,MALWARE,8,1,53.0,17.0,B,Anexo,HV-8.0,12.4,4694.0,12.1
+INC-01124,2026-01-05 05:00,srv-web-29,ERROR CONFIG,1,2,88.3,8.0,C,Anexo,HV-8.0,3.6,1388.0,3.4
+INC-01125,2026-01-05 05:00,srv-virtual-15,Ransomware,7,1,424.9,,B,Central,HV-8.0,113.9,47024.0,113.7
+INC-01126,2026-01-05 12:00,srv-web-30,FALLA HW,2,2,261.1,23.0,C,Anexo,HV-8.0,8.2,3117.0,7.9
+INC-01127,2026-01-05 20:00,srv-web-25,ransomware ,8,3,638.0,19.0,B,Anexo,HV-8.0,84.4,31975.0,84.0
+INC-01128,2026-01-06 11:00,srv-web-38,ERROR CONFIG,4,1,770.7,4.0,B,Anexo,HV-8.0,8.5,3079.0,8.1
+INC-01129,2026-01-06 15:00,srv-virtual-29,falla_hardware,3,3,100.7,29.0,B,Central,HV-8.0,13.2,5451.0,13.0
+INC-01130,2026-01-07 13:00,srv-biblio-31,Malware,1,3,163.1,,B,Anexo,HV-8.0,14.4,5676.0,14.3
+INC-01131,2026-01-07 13:00,srv-correo-25,RANSOMWARE,6,2,227.1,7.0,A,Anexo,HV-8.0,39.9,15543.0,39.6
+INC-01132,2026-01-07 16:00,srv-web-08,ransomware ,1,1,88.9,22.0,B,Anexo,HV-8.0,16.8,7102.0,17.2
+INC-01133,2026-01-07 21:00,srv-biblio-21,ddos,4,1,1178.9,11.0,B,Anexo,HV-8.0,8.2,3467.0,8.5
+INC-01134,2026-01-08 19:00,srv-web-18,ERROR CONFIG,1,2,103.3,5.0,C,Central,HV-8.0,3.1,1065.0,2.6
+INC-01135,2026-01-09 04:00,srv-correo-04,ERROR CONFIG,4,2,31.1,,B,Anexo,HV-8.0,9.8,3927.0,9.7
+SIM-01136,2026-01-09 04:00,srv-biblio-27,ERROR CONFIG,5,2,415.9,1.0,A,Anexo,HV-8.0,0.0,0.0,0.9
+INC-01137,2026-01-09 04:00,srv-biblio-27,ERROR CONFIG,5,2,415.9,26.0,A,Anexo,HV-8.0,4.4,2213.0,5.4
+INC-01138,2026-01-09 08:00,srv-biblio-13,FALLA HW,3,2,472.8,24.0,B,Anexo,HV-8.0,11.7,4827.0,11.6
+INC-01139,2026-01-10 06:00,srv-web-20,MALWARE,6,3,793.8,20.0,C,Central,HV-8.0,23.2,9342.0,23.7
+INC-01140,2026-01-10 11:00,srv-virtual-12,DDOS,5,2,9.0,,B,Central,HV-8.0,10.6,3989.0,10.3
+INC-01141,2026-01-10 11:00,srv-web-32,falla_hardware,6,2,182.0,4.0,C,Anexo,HV-8.0,11.4,4735.0,11.4
+INC-01140,2026-01-10 11:00,srv-virtual-12,DDOS,5,2,9.0,,B,Central,HV-8.0,10.6,3989.0,10.3
+INC-01143,2026-01-10 17:00,srv-biblio-21,ransomware ,7,1,43.2,,C,Anexo,HV-8.0,38.8,14816.0,38.6
+INC-01144,2026-01-10 22:00,srv-virtual-35,Error configuración,6,2,221.8,20.0,C,Anexo,HV-8.0,11.3,4732.0,11.5
+INC-01145,2026-01-10 23:00,srv-biblio-08,Malware,5,1,746.0,23.0,B,Anexo,HV-8.0,25.0,9477.0,24.8
+INC-01146,2026-01-12 02:00,srv-virtual-19,ERROR CONFIG,6,3,69.9,0.0,A,Anexo,HV-8.0,13.8,5758.0,13.8
+INC-01147,2026-01-12 03:00,srv-web-38,malware,2,2,44.8,20.0,C,Anexo,HV-8.0,5.9,2299.0,6.0
+INC-01148,2026-01-12 20:00,srv-web-38,FALLA HW,4,2,209.7,1.0,A,Anexo,HV-8.0,8.1,3206.0,8.3
+INC-01149,2026-01-13 05:00,srv-virtual-18,falla_hardware,6,2,-55.1,20.0,B,Central,HV-8.0,21.0,8858.0,21.6
+INC-01150,2026-01-13 11:00,srv-acad-23,Error configuración,5,3,137.5,8.0,A,Central,HV-8.0,6.5,2619.0,6.4
+INC-01151,2026-01-13 15:00,srv-virtual-16,ddos,1,2,41.8,27.0,B,Anexo,HV-8.0,3.5,1408.0,3.5
+INC-01152,2026-01-14 09:00,srv-correo-24,MALWARE,1,3,68.4,26.0,A,Anexo,HV-8.0,8.6,3564.0,8.5
+INC-01153,2026-01-14 23:00,srv-virtual-39,ddos,1,3,30.2,,C,Central,HV-8.0,7.2,2783.0,7.2
+INC-01154,2026-01-15 01:00,srv-web-26,ransomware ,8,2,195.6,9.0,B,Anexo,HV-8.0,34.1,13848.0,33.9
+INC-01155,2026-01-15 13:00,srv-biblio-35,ddos,1,1,40.8,3.0,B,Anexo,HV-8.0,2.1,809.0,2.0
+INC-01156,2026-01-15 16:00,srv-web-27,RANSOMWARE,5,2,144.7,6.0,C,Central,HV-8.0,64.4,24871.0,64.5
+INC-01157,2026-01-15 20:00,srv-acad-34,FALLA HW,5,3,93.3,23.0,B,Central,HV-8.0,12.6,5067.0,12.6
+INC-01158,2026-01-16 23:00,srv-web-05,DDoS,5,1,101.6,29.0,B,Central,HV-8.0,10.1,3977.0,10.3
+INC-01159,2026-01-17 08:00,srv-acad-28,DDOS,1,3,105.2,17.0,A,Anexo,HV-8.0,3.3,1322.0,3.2
+INC-01160,2026-01-18 10:00,srv-biblio-29,ERROR CONFIG,3,1,144.6,13.0,C,Anexo,HV-8.0,7.1,2646.0,6.7
+INC-01161,2026-01-18 20:00,srv-virtual-12,DDOS,4,2,426.7,13.0,A,Central,HV-8.0,5.2,2313.0,5.8
+INC-01162,2026-01-18 20:00,srv-correo-02,Error configuración,1,1,38.8,,C,Central,HV-8.0,9.8,3740.0,9.7
+INC-01163,2026-01-18 21:00,srv-web-06,ddos,8,2,34.2,29.0,B,Anexo,HV-8.0,11.7,4902.0,12.0
+INC-01164,2026-01-19 03:00,srv-web-15,Error configuración,8,1,25.9,27.0,A,Anexo,HV-8.0,5.0,2142.0,5.5
+INC-01165,2026-01-19 07:00,srv-acad-16,FALLA HW,3,2,60.7,26.0,C,Central,HV-8.0,9.8,3795.0,9.3
+INC-01166,2026-01-19 16:00,srv-biblio-33,ransomware ,2,1,261.1,2.0,C,Central,HV-8.0,16.9,7086.0,17.0
+INC-01167,2026-01-19 17:00,srv-virtual-34,Ransomware,7,1,209.9,26.0,A,Central,HV-8.0,35.2,13588.0,35.0
+INC-01168,2026-01-20 00:00,srv-biblio-17,falla_hardware,3,3,118.4,16.0,A,Central,HV-8.0,9.1,3785.0,9.2
+INC-01169,2026-01-20 00:00,srv-acad-34,MALWARE,6,2,165.9,24.0,C,Anexo,HV-8.0,18.1,7260.0,18.8
+INC-01170,2026-01-20 05:00,srv-biblio-19,Error configuración,1,2,348.5,14.0,C,Central,HV-8.0,4.1,1623.0,4.0
+INC-01171,2026-01-21 02:00,srv-correo-28,malware,1,2,85.2,27.0,B,Central,HV-8.0,7.1,2968.0,7.3
+INC-01172,2026-01-21 04:00,srv-correo-18,error_configuracion,7,3,135.9,19.0,C,Central,HV-8.0,10.9,4351.0,10.8
+INC-01173,2026-01-21 04:00,srv-virtual-22,malware,5,1,197.5,16.0,B,Central,HV-8.0,14.1,5993.0,14.3
+INC-01174,2026-01-21 05:00,srv-virtual-16,Error configuración,5,1,97.0,19.0,A,Anexo,HV-8.0,4.8,2031.0,5.0
+INC-01175,2026-01-21 11:00,srv-web-09,falla_hardware,5,1,115.1,,A,Anexo,HV-8.0,18.2,7444.0,18.0
+INC-01176,2026-01-21 15:00,srv-virtual-23,ransomware ,1,2,61.9,12.0,B,Anexo,HV-8.0,16.1,6421.0,16.1
+INC-01177,2026-01-21 19:00,srv-virtual-31,ERROR CONFIG,3,2,207.3,9.0,A,Central,HV-8.0,5.4,2163.0,5.6
+INC-01178,2026-01-21 23:00,srv-correo-10,error_configuracion,1,1,84.4,29.0,A,Anexo,HV-8.0,4.1,1546.0,3.8
+INC-01179,2026-01-22 08:00,srv-acad-27,DDOS,2,3,443.1,3.0,A,Anexo,HV-8.0,6.6,2816.0,6.9
+INC-01180,2026-01-22 22:00,srv-virtual-13,Malware,4,2,64.2,,C,Central,HV-8.0,37.3,15028.0,37.5
+INC-01181,2026-01-23 02:00,srv-correo-12,Falla hardware,6,2,310.9,12.0,A,Central,HV-8.0,27.5,11140.0,27.4
+INC-01182,2026-01-23 22:00,srv-correo-01,DDOS,1,1,507.8,26.0,C,Central,HV-8.0,4.9,2104.0,5.4
+INC-01183,2026-01-24 00:00,srv-web-35,malware,7,2,517.7,28.0,B,Central,HV-8.0,29.8,11583.0,29.8
+INC-01184,2026-01-24 03:00,srv-correo-01,Falla hardware,5,3,39.7,9.0,B,Anexo,HV-8.0,11.2,4293.0,10.9
+INC-01185,2026-01-26 10:00,srv-biblio-21,falla_hardware,1,2,162.7,27.0,A,Anexo,HV-8.0,6.6,2409.0,6.2
+INC-01186,2026-01-26 16:00,srv-web-18,DDoS,6,1,290.4,1.0,C,Anexo,HV-8.0,8.2,3432.0,8.3
+INC-01187,2026-01-28 05:00,srv-correo-34,DDoS,5,2,1050.4,12.0,B,Central,HV-8.0,9.2,4098.0,9.8
+INC-01188,2026-01-29 03:00,srv-acad-33,Error configuración,6,2,224.2,23.0,C,Central,HV-8.0,10.6,4215.0,10.3
+SIM-01189,2026-01-29 14:00,srv-correo-09,malware,2,2,135.9,1.0,B,Anexo,HV-8.0,0.0,0.0,1.7
+INC-01190,2026-01-29 14:00,srv-correo-09,malware,2,2,135.9,26.0,B,Anexo,HV-8.0,13.9,5436.0,14.3
+SIM-01189,2026-01-29 14:00,srv-correo-09,malware,2,2,135.9,1.0,B,Anexo,HV-8.0,0.0,0.0,1.7
+INC-01192,2026-01-29 23:00,srv-acad-28,malware,7,1,106.1,1.0,C,Central,HV-8.0,10.8,4308.0,10.8
+INC-01193,2026-01-30 19:00,srv-virtual-06,ransomware ,5,1,107.5,27.0,C,Central,HV-8.0,34.4,13584.0,34.5
+INC-01194,2026-01-30 21:00,srv-biblio-19,Malware,1,3,255.1,23.0,A,Central,HV-8.0,54.1,21708.0,54.6
+INC-01195,2026-01-31 00:00,srv-web-01,ddos,5,1,233.6,28.0,A,Central,HV-8.0,9.0,3646.0,8.7
+INC-01196,2026-01-31 07:00,srv-web-11,RANSOMWARE,6,3,812.9,24.0,A,Anexo,HV-8.0,73.0,29736.0,73.2
+INC-01197,2026-01-31 12:00,srv-web-37,error_configuracion,4,2,83.1,22.0,A,Anexo,HV-8.0,4.5,1826.0,4.7
+INC-01198,2026-01-31 16:00,srv-acad-25,DDoS,5,3,79.3,8.0,B,Central,HV-8.0,5.8,2273.0,5.5
+INC-01199,2026-01-31 20:00,srv-web-37,Falla hardware,8,2,342.2,25.0,C,Central,HV-8.0,17.2,6471.0,16.8
+INC-01200,2026-02-02 05:00,srv-web-37,error_configuracion,7,2,161.9,17.0,C,Anexo,HV-8.0,6.3,2581.0,6.5
+INC-01201,2026-02-02 15:00,srv-acad-17,Ransomware,6,1,66.0,28.0,B,Central,HV-8.0,38.8,15341.0,38.7
+INC-01202,2026-02-02 16:00,srv-biblio-32,ddos,4,3,266.3,20.0,C,Anexo,HV-8.0,5.9,2510.0,6.0
+INC-01203,2026-02-02 22:00,srv-virtual-30,Malware,2,2,81.4,25.0,B,Anexo,HV-8.0,13.0,4959.0,13.0
+INC-01204,2026-02-03 00:00,srv-biblio-14,ddos,2,2,56.6,24.0,B,Anexo,HV-8.0,3.9,1412.0,3.7
+INC-01205,2026-02-03 14:00,srv-biblio-09,DDOS,7,2,53.9,28.0,A,Central,HV-8.0,10.5,4115.0,10.8
+INC-01206,2026-02-04 04:00,srv-correo-27,MALWARE,6,1,204.3,20.0,A,Anexo,HV-8.0,17.9,6868.0,17.9
+INC-01207,2026-02-04 12:00,srv-virtual-01,Malware,8,2,144.5,9.0,C,Anexo,HV-8.0,13.9,5374.0,13.8
+INC-01208,2026-02-04 14:00,srv-biblio-02,DDOS,4,2,59.8,2.0,A,Anexo,HV-8.0,4.6,1738.0,4.4
+INC-01209,2026-02-05 22:00,srv-web-18,Falla hardware,7,3,54.5,12.0,C,Anexo,HV-8.0,13.6,4961.0,13.0
+INC-01210,2026-02-06 01:00,srv-biblio-06,malware,6,2,439.9,,A,Central,HV-8.0,46.4,18988.0,46.3
+INC-01211,2026-02-06 11:00,srv-web-02,MALWARE,1,3,70.0,6.0,B,Central,HV-8.0,6.4,2309.0,5.9
+INC-01212,2026-02-07 08:00,srv-biblio-18,FALLA HW,5,1,403.5,23.0,C,Central,HV-8.0,13.6,5201.0,13.6
+INC-01213,2026-02-07 09:00,srv-acad-29,ERROR CONFIG,7,2,128.0,24.0,A,Central,HV-8.0,9.4,3562.0,8.7
+INC-01214,2026-02-08 01:00,srv-virtual-23,Falla hardware,2,2,38.3,15.0,C,Central,HV-8.0,7.5,2847.0,7.3
+INC-01215,2026-02-08 23:00,srv-correo-31,DDOS,1,2,136.2,0.0,B,Central,HV-8.0,4.5,1713.0,4.4
+INC-01216,2026-02-09 04:00,srv-virtual-11,falla_hardware,1,1,307.6,14.0,C,Anexo,HV-8.0,8.9,3587.0,8.7
+INC-01217,2026-02-09 13:00,srv-acad-22,falla_hardware,5,2,202.9,1.0,A,Central,HV-8.0,9.0,3660.0,8.9
+INC-01218,2026-02-09 19:00,srv-correo-10,falla_hardware,6,2,51.0,27.0,B,Anexo,HV-8.0,11.0,4599.0,11.0
+INC-01219,2026-02-09 20:00,srv-biblio-11,ERROR CONFIG,4,2,216.9,9.0,B,Central,HV-8.0,7.3,3151.0,8.1
+INC-01220,2026-02-10 07:00,srv-web-08,falla_hardware,5,3,365.9,13.0,B,Anexo,HV-8.0,10.3,4438.0,10.9
+INC-01221,2026-02-10 08:00,srv-acad-39,Error configuración,8,1,396.2,19.0,C,Anexo,HV-8.0,12.7,5396.0,13.0
+INC-01222,2026-02-10 17:00,srv-biblio-05,malware,4,1,63.8,20.0,C,Anexo,HV-8.0,11.1,4684.0,11.3
+INC-01223,2026-02-11 03:00,srv-virtual-39,Error configuración,1,2,2066.0,15.0,C,Central,HV-8.0,5.2,1990.0,5.2
+INC-01224,2026-02-11 09:00,srv-biblio-02,error_configuracion,5,3,254.9,,B,Anexo,HV-8.0,17.0,6386.0,16.8
+INC-01225,2026-02-11 10:00,srv-web-27,MALWARE,6,2,196.4,23.0,C,Central,HV-8.0,21.5,8337.0,21.7
+INC-01226,2026-02-11 11:00,srv-biblio-35,FALLA HW,1,1,48.3,,A,Central,HV-8.0,8.3,3702.0,8.9
+INC-01227,2026-02-11 12:00,srv-biblio-10,falla_hardware,6,1,211.3,29.0,B,Central,HV-8.0,13.7,5354.0,13.8
+INC-01228,2026-02-11 17:00,srv-web-07,ransomware ,1,1,158.2,23.0,A,Central,HV-8.0,16.2,6173.0,16.2
+INC-01229,2026-02-11 19:00,srv-biblio-38,error_configuracion,5,1,258.4,24.0,A,Central,HV-8.0,8.5,3271.0,8.5
+INC-01230,2026-02-14 00:00,srv-web-09,DDOS,1,2,340.3,27.0,A,Central,HV-8.0,5.8,2185.0,5.4
+INC-01231,2026-02-14 07:00,srv-acad-32,error_configuracion,4,2,32.0,,C,Anexo,HV-8.0,11.2,4175.0,10.9
+INC-01232,2026-02-14 16:00,srv-virtual-11,error_configuracion,1,3,66.4,11.0,B,Central,HV-8.0,12.0,4665.0,11.7
+INC-01233,2026-02-15 14:00,srv-acad-27,MALWARE,1,2,588.5,29.0,A,Anexo,HV-8.0,15.5,5974.0,15.4
+INC-01234,2026-02-16 05:00,srv-biblio-11,FALLA HW,5,3,28.7,3.0,A,Central,HV-8.0,10.4,4063.0,10.3
+INC-01235,2026-02-16 20:00,srv-biblio-33,Error configuración,8,2,229.1,7.0,B,Anexo,HV-8.0,8.3,3133.0,7.9
+INC-01236,2026-02-17 05:00,srv-acad-11,error_configuracion,8,2,177.3,18.0,A,Anexo,HV-8.0,8.8,3381.0,8.7
+INC-01237,2026-02-17 17:00,srv-biblio-05,RANSOMWARE,6,3,91.4,3.0,C,Anexo,HV-8.0,41.9,16582.0,41.6
+INC-01238,2026-02-18 11:00,srv-virtual-23,error_configuracion,6,3,198.4,13.0,C,Central,HV-8.0,10.6,4189.0,10.3
+INC-01239,2026-02-18 22:00,srv-web-24,RANSOMWARE,3,1,104.1,19.0,C,Central,HV-8.0,20.4,7970.0,20.0
+INC-01240,2026-02-18 23:00,srv-biblio-20,Falla hardware,2,2,76.4,14.0,B,Central,HV-8.0,7.0,2893.0,7.1
+INC-01241,2026-02-19 05:00,srv-biblio-16,FALLA HW,2,2,926.6,13.0,A,Central,HV-8.0,14.6,5552.0,14.4
+INC-01242,2026-02-19 22:00,srv-web-26,malware,4,3,123.2,23.0,A,Anexo,HV-8.0,17.4,6948.0,17.2
+INC-01243,2026-02-19 22:00,srv-acad-23,malware,2,3,246.6,11.0,A,Anexo,HV-8.0,9.6,3822.0,9.8
+INC-01244,2026-02-20 13:00,srv-virtual-37,falla_hardware,5,2,606.3,2.0,C,Anexo,HV-8.0,13.3,5398.0,13.3
+INC-01245,2026-02-20 16:00,srv-biblio-26,ERROR CONFIG,6,3,23.8,,C,Central,HV-8.0,16.3,6463.0,16.1
+INC-01246,2026-02-21 08:00,srv-virtual-04,DDOS,8,2,61.3,29.0,C,Central,HV-8.0,9.3,3742.0,9.4
+INC-01247,2026-02-21 10:00,srv-acad-06,falla_hardware,7,1,-132.1,2.0,C,Anexo,HV-8.0,9.5,3641.0,9.5
+INC-01248,2026-02-21 14:00,srv-biblio-22,MALWARE,4,2,230.2,18.0,B,Central,HV-8.0,16.0,6314.0,15.5
+INC-01249,2026-02-21 15:00,srv-web-04,FALLA HW,8,3,178.5,25.0,A,Central,HV-8.0,14.2,5672.0,14.4
+INC-01250,2026-02-21 16:00,srv-acad-32,ERROR CONFIG,8,2,91.0,20.0,C,Central,HV-8.0,7.7,3089.0,7.6
+INC-01251,2026-02-22 01:00,srv-biblio-29,error_configuracion,7,2,218.7,10.0,A,Central,HV-8.0,7.1,3092.0,7.4
+INC-01252,2026-02-22 02:00,srv-biblio-05,MALWARE,7,3,347.4,15.0,C,Anexo,HV-8.0,23.1,8851.0,22.7
+INC-01253,2026-02-22 06:00,srv-correo-38,ransomware ,3,3,86.4,8.0,B,Anexo,HV-8.0,28.7,11439.0,28.3
+INC-01254,2026-02-22 17:00,srv-virtual-26,FALLA HW,4,2,80.1,10.0,C,Central,HV-8.0,8.7,3534.0,8.7
+INC-01255,2026-02-22 23:00,srv-biblio-25,Error configuración,6,2,234.4,,A,Anexo,HV-8.0,25.8,10162.0,25.6
+INC-01256,2026-02-23 20:00,srv-biblio-01,falla_hardware,2,1,63.0,,A,Central,HV-8.0,16.7,6317.0,16.4
+INC-01257,2026-02-24 00:00,srv-correo-34,Error configuración,5,3,38.5,2.0,B,Central,HV-8.0,5.3,1833.0,4.7
+INC-01258,2026-02-24 16:00,srv-virtual-31,malware,8,1,202.1,26.0,A,Central,HV-8.0,32.1,12263.0,31.8
+INC-01259,2026-02-25 03:00,srv-acad-10,malware,2,3,50.4,4.0,A,Central,HV-8.0,7.6,3100.0,7.8
+INC-01260,2026-02-25 10:00,srv-acad-23,Malware,3,2,104.8,14.0,A,Central,HV-8.0,7.2,2625.0,6.9
+INC-01261,2026-02-25 13:00,srv-virtual-33,Malware,5,3,255.9,21.0,A,Central,HV-8.0,19.6,8053.0,20.1
+SIM-01262,2026-02-25 13:00,srv-virtual-33,Malware,5,3,255.9,1.0,A,Central,HV-8.0,0.0,0.0,1.9
+INC-01263,2026-02-25 20:00,srv-virtual-05,MALWARE,1,2,627.0,6.0,C,Central,HV-8.0,11.4,4646.0,11.6
+INC-01264,2026-02-26 00:00,srv-web-10,falla_hardware,2,2,399.2,28.0,B,Anexo,HV-8.0,13.2,5443.0,13.1
+INC-01265,2026-02-26 09:00,srv-biblio-24,malware,5,1,120.6,13.0,C,Anexo,HV-8.0,10.7,4461.0,10.7
+INC-01266,2026-02-27 03:00,srv-acad-16,Ransomware,6,1,552.3,18.0,A,Anexo,HV-8.0,38.3,15185.0,38.5
+INC-01267,2026-02-27 09:00,srv-correo-16,ransomware ,8,2,112.2,13.0,B,Central,HV-8.0,21.8,9105.0,21.9
+INC-01268,2026-02-28 02:00,srv-acad-15,ransomware ,4,1,103.1,10.0,A,Anexo,HV-8.0,20.1,8207.0,19.7
+INC-01269,2026-02-28 10:00,srv-biblio-06,error_configuracion,1,1,207.1,,C,Central,HV-8.0,6.6,2576.0,6.5
+INC-01270,2026-02-28 17:00,srv-virtual-11,malware,8,3,97.1,16.0,C,Central,HV-8.0,14.2,6201.0,14.8
+INC-01271,2026-03-01 11:00,srv-acad-04,ddos,4,1,906.6,18.0,B,Central,HV-8.0,8.2,2979.0,7.3
+INC-01272,2026-03-01 18:00,srv-correo-33,ERROR CONFIG,5,2,38.4,19.0,B,Central,HV-8.0,4.1,1669.0,4.2
+INC-01272,2026-03-01 18:00,srv-correo-33,ERROR CONFIG,5,2,38.4,19.0,B,Central,HV-8.0,4.1,1669.0,4.2
+INC-01274,2026-03-01 23:00,srv-acad-27,DDoS,3,3,66.9,10.0,C,Central,HV-8.0,4.2,1577.0,3.9
+INC-01275,2026-03-02 05:00,srv-correo-06,FALLA HW,7,3,437.7,17.0,B,Central,HV-8.0,21.0,8103.0,21.1
+INC-01276,2026-03-02 16:00,srv-biblio-21,FALLA HW,6,3,80.0,29.0,A,Central,HV-8.0,17.0,6986.0,17.2
+INC-01277,2026-03-03 13:00,srv-acad-10,DDoS,4,2,70.4,16.0,B,Anexo,HV-8.0,3.5,1544.0,4.0
+INC-01278,2026-03-03 16:00,srv-biblio-30,Error configuración,8,2,85.8,26.0,A,Anexo,HV-8.0,9.2,3739.0,9.1
+INC-01279,2026-03-04 01:00,srv-virtual-29,Error configuración,2,2,286.1,2.0,B,Anexo,HV-8.0,4.1,1718.0,4.3
+INC-01280,2026-03-04 11:00,srv-biblio-03,Error configuración,7,1,148.0,12.0,B,Anexo,HV-8.0,6.5,2828.0,7.4
+INC-01281,2026-03-05 09:00,srv-acad-03,error_configuracion,7,1,107.2,29.0,A,Central,HV-8.0,8.9,3532.0,8.7
+INC-01282,2026-03-05 15:00,srv-acad-07,falla_hardware,5,3,495.4,26.0,A,Central,HV-8.0,23.3,9687.0,23.5
+INC-01283,2026-03-06 00:00,srv-acad-19,DDOS,5,3,51.5,10.0,A,Anexo,HV-8.0,5.4,2296.0,5.5
+INC-01284,2026-03-07 01:00,srv-correo-36,Malware,6,2,97.4,0.0,C,Anexo,HV-8.0,16.4,6497.0,16.3
+INC-01285,2026-03-07 04:00,srv-biblio-22,malware,8,2,98.1,,C,Central,HV-8.0,69.3,28971.0,69.3
+INC-01286,2026-03-07 04:00,srv-biblio-25,malware,6,1,155.6,22.0,A,Anexo,HV-8.0,17.3,7129.0,17.4
+INC-01287,2026-03-07 08:00,srv-virtual-30,ERROR CONFIG,7,1,167.5,,C,Anexo,HV-8.0,6.9,2806.0,6.8
+INC-01288,2026-03-07 14:00,srv-web-12,MALWARE,7,2,24.7,24.0,C,Anexo,HV-8.0,17.4,7058.0,17.9
+INC-01289,2026-03-07 23:00,srv-web-12,Malware,8,3,290.4,1.0,C,Anexo,HV-8.0,58.2,22531.0,58.3
+INC-01290,2026-03-08 09:00,srv-biblio-34,MALWARE,7,3,393.7,24.0,C,Central,HV-8.0,34.6,14344.0,35.0
+INC-01291,2026-03-08 20:00,srv-virtual-17,error_configuracion,3,2,454.4,18.0,B,Anexo,HV-8.0,5.7,2388.0,5.9
+INC-01292,2026-03-10 04:00,srv-biblio-18,MALWARE,5,2,357.9,,A,Central,HV-8.0,37.4,14574.0,37.3
+INC-01293,2026-03-11 12:00,srv-virtual-14,FALLA HW,5,2,77.3,10.0,C,Anexo,HV-8.0,14.9,5774.0,15.1
+INC-01294,2026-03-11 17:00,srv-acad-16,falla_hardware,3,3,248.9,14.0,A,Central,HV-8.0,11.4,4620.0,11.5
+INC-01295,2026-03-12 01:00,srv-web-04,falla_hardware,1,2,430.8,,C,Central,HV-8.0,15.0,5934.0,15.1
+INC-01296,2026-03-12 06:00,srv-acad-35,RANSOMWARE,1,3,101.6,10.0,B,Anexo,HV-8.0,22.2,8992.0,21.8
+INC-01297,2026-03-13 00:00,srv-biblio-25,RANSOMWARE,1,2,96.4,19.0,B,Central,HV-8.0,23.7,9156.0,23.7
+INC-01298,2026-03-13 00:00,srv-web-03,ERROR CONFIG,1,3,107.2,15.0,B,Central,HV-8.0,4.3,1761.0,4.2
+INC-01299,2026-03-13 07:00,srv-acad-17,FALLA HW,1,3,332.8,29.0,A,Central,HV-8.0,8.1,3436.0,8.7
+INC-01300,2026-03-13 14:00,srv-acad-26,MALWARE,8,2,99.8,8.0,B,Anexo,HV-8.0,18.2,6924.0,18.0
+INC-01301,2026-03-13 20:00,srv-virtual-13,Falla hardware,4,2,151.7,27.0,A,Central,HV-8.0,19.3,8099.0,19.5
+INC-01302,2026-03-13 23:00,srv-biblio-11,error_configuracion,8,2,105.6,25.0,A,Anexo,HV-8.0,9.1,3718.0,9.1
+INC-01303,2026-03-14 13:00,srv-correo-33,DDOS,8,1,97.7,8.0,C,Anexo,HV-8.0,7.1,2745.0,6.8
+INC-01304,2026-03-15 03:00,srv-biblio-34,Error configuración,4,2,112.2,29.0,A,Central,HV-8.0,8.3,3253.0,8.3
+INC-01305,2026-03-15 10:00,srv-virtual-26,Malware,5,2,115.2,9.0,C,Anexo,HV-8.0,15.6,6362.0,15.6
+INC-01306,2026-03-16 00:00,srv-correo-19,DDOS,8,1,35.5,23.0,B,Central,HV-8.0,7.2,2747.0,6.8
+INC-01307,2026-03-16 17:00,srv-biblio-04,error_configuracion,6,1,480.0,16.0,A,Anexo,HV-8.0,6.3,2466.0,5.9
+INC-01308,2026-03-17 15:00,srv-virtual-36,ERROR CONFIG,6,2,207.3,1.0,C,Central,HV-8.0,5.3,2118.0,5.3
+INC-01309,2026-03-18 05:00,srv-correo-08,DDoS,3,2,182.5,4.0,B,Anexo,HV-8.0,6.1,2266.0,5.5
+INC-01310,2026-03-18 08:00,srv-biblio-36,MALWARE,6,1,72.8,,A,Anexo,HV-8.0,31.5,12256.0,31.5
+INC-01311,2026-03-19 00:00,srv-virtual-01,error_configuracion,6,2,72.0,29.0,C,Anexo,HV-8.0,7.4,2898.0,7.2
+INC-01312,2026-03-19 01:00,srv-virtual-28,Error configuración,1,1,292.1,13.0,B,Central,HV-8.0,4.2,1668.0,4.0
+INC-01313,2026-03-19 04:00,srv-virtual-06,Ransomware,6,1,72.5,4.0,A,Anexo,HV-8.0,28.4,11000.0,27.8
+INC-01314,2026-03-19 16:00,srv-acad-26,ERROR CONFIG,8,1,26.1,28.0,A,Anexo,HV-8.0,5.8,2235.0,5.4
+INC-01315,2026-03-19 18:00,srv-virtual-13,Malware,5,1,53.2,22.0,B,Anexo,HV-8.0,9.7,3668.0,9.6
+INC-01316,2026-03-19 18:00,srv-correo-35,Ransomware,3,2,24.7,28.0,B,Anexo,HV-8.0,18.1,7555.0,18.1
+INC-01317,2026-03-20 07:00,srv-acad-33,Error configuración,7,1,72.0,19.0,B,Central,HV-8.0,6.2,2385.0,5.9
+INC-01318,2026-03-20 12:00,srv-correo-06,FALLA HW,8,1,441.6,0.0,A,Central,HV-8.0,10.4,3941.0,10.1
+INC-01319,2026-03-21 11:00,srv-web-08,Falla hardware,3,2,180.3,0.0,A,Anexo,HV-8.0,8.9,3648.0,9.2
+INC-01320,2026-03-21 13:00,srv-correo-12,FALLA HW,4,2,135.5,0.0,C,Central,HV-8.0,7.1,2881.0,7.1
+INC-01321,2026-03-22 06:00,srv-web-27,Ransomware,3,3,232.0,,C,Anexo,HV-8.0,65.6,25773.0,65.5
+INC-01322,2026-03-23 14:00,srv-virtual-11,error_configuracion,7,1,59.1,22.0,A,Anexo,HV-8.0,7.5,2942.0,7.6
+INC-01323,2026-03-23 16:00,srv-correo-29,Error configuración,7,2,45.5,21.0,C,Anexo,HV-8.0,5.4,2179.0,5.4
+INC-01324,2026-03-23 17:00,srv-acad-12,error_configuracion,4,2,90.8,28.0,B,Anexo,HV-8.0,5.7,2281.0,5.7
+INC-01325,2026-03-24 19:00,srv-web-29,Ransomware,8,3,200.1,17.0,A,Central,HV-8.0,55.2,22933.0,55.6
+INC-01326,2026-03-25 09:00,srv-correo-33,ERROR CONFIG,5,1,35.2,5.0,C,Anexo,HV-8.0,4.1,1733.0,4.2
+INC-01326,2026-03-25 09:00,srv-correo-33,ERROR CONFIG,5,1,35.2,5.0,C,Anexo,HV-8.0,4.1,1733.0,4.2
+INC-01328,2026-03-25 10:00,srv-web-17,Falla hardware,8,1,374.3,16.0,B,Central,HV-8.0,19.5,7863.0,19.1
+INC-01329,2026-03-25 10:00,srv-web-22,falla_hardware,7,2,128.2,26.0,A,Central,HV-8.0,12.3,5068.0,12.8
+INC-01330,2026-03-25 21:00,srv-correo-21,Falla hardware,1,2,288.2,19.0,B,Anexo,HV-8.0,6.6,2496.0,6.2
+SIM-01331,2026-03-25 21:00,srv-correo-21,Falla hardware,1,2,288.2,1.0,B,Anexo,HV-8.0,0.0,0.0,0.9
+INC-01332,2026-03-26 00:00,srv-biblio-39,falla_hardware,2,2,1031.2,21.0,B,Central,HV-8.0,7.4,3079.0,7.7
+INC-01333,2026-03-26 02:00,srv-correo-25,Ransomware,6,1,137.7,24.0,B,Anexo,HV-8.0,34.2,14252.0,34.4
+INC-01334,2026-03-26 02:00,srv-correo-28,ransomware ,8,2,418.8,26.0,A,Anexo,HV-8.0,57.6,22062.0,57.7
+INC-01335,2026-03-26 06:00,srv-acad-20,ransomware ,8,2,609.0,11.0,C,Anexo,HV-8.0,30.6,11871.0,30.6
+INC-01336,2026-03-26 19:00,srv-virtual-17,MALWARE,2,3,356.2,,A,Anexo,HV-8.0,32.1,12289.0,31.9
+INC-01337,2026-03-26 22:00,srv-acad-11,ERROR CONFIG,5,1,268.3,5.0,B,Anexo,HV-8.0,3.0,1211.0,3.1
+INC-01338,2026-03-28 02:00,srv-biblio-38,FALLA HW,7,3,49.1,,A,Central,HV-8.0,31.0,11876.0,30.8
+INC-01339,2026-03-29 10:00,srv-web-15,error_configuracion,6,1,19.9,21.0,B,Anexo,HV-8.0,3.3,1368.0,3.4
+INC-01340,2026-03-29 12:00,srv-biblio-20,error_configuracion,3,1,7.6,14.0,C,Central,HV-8.0,2.8,1302.0,3.1
+INC-01341,2026-03-30 05:00,srv-virtual-06,ransomware ,3,2,113.4,28.0,A,Anexo,HV-8.0,28.3,10985.0,27.7
+INC-01342,2026-03-30 22:00,srv-virtual-15,Error configuración,4,1,147.3,27.0,C,Central,HV-8.0,5.4,2084.0,5.3
+INC-01343,2026-03-31 14:00,srv-acad-15,Falla hardware,6,2,501.3,28.0,B,Central,HV-8.0,11.6,4854.0,12.0
+INC-01344,2026-03-31 18:00,srv-web-01,FALLA HW,4,2,158.8,5.0,C,Anexo,HV-8.0,8.6,3367.0,8.1
+INC-01345,2026-04-01 14:00,srv-web-17,Malware,3,3,757.4,25.0,A,Central,HV-8.0,25.3,9981.0,25.3
+INC-01346,2026-04-02 04:00,srv-virtual-20,falla_hardware,7,3,188.1,15.0,C,Central,HV-8.0,15.9,6094.0,15.7
+INC-01347,2026-04-02 09:00,srv-virtual-34,MALWARE,1,1,185.6,3.0,A,Central,HV-8.0,5.6,2283.0,6.0
+INC-01347,2026-04-02 09:00,srv-virtual-34,MALWARE,1,1,185.6,3.0,A,Central,HV-8.0,5.6,2283.0,6.0
+INC-01349,2026-04-02 16:00,srv-virtual-05,MALWARE,7,2,127.6,29.0,C,Anexo,HV-8.0,19.7,8122.0,19.8
+INC-01350,2026-04-03 09:00,srv-web-10,RANSOMWARE,3,2,129.7,15.0,A,Anexo,HV-8.0,29.8,11258.0,29.6
+INC-01351,2026-04-03 14:00,srv-virtual-14,malware,8,2,217.3,19.0,B,Anexo,HV-8.0,21.8,8077.0,21.0
+INC-01352,2026-04-04 03:00,srv-virtual-27,falla_hardware,3,1,114.5,14.0,C,Central,HV-8.0,6.1,2330.0,5.6
+INC-01353,2026-04-04 05:00,srv-web-08,MALWARE,1,1,143.0,23.0,B,Anexo,HV-8.0,7.9,3102.0,7.4
+INC-01354,2026-04-04 14:00,srv-biblio-17,Malware,5,1,77.0,0.0,B,Central,HV-8.0,8.1,3219.0,8.4
+INC-01355,2026-04-04 16:00,srv-acad-07,RANSOMWARE,5,1,147.0,10.0,A,Anexo,HV-8.0,28.4,11997.0,28.7
+INC-01356,2026-04-05 04:00,srv-virtual-01,FALLA HW,4,1,247.5,0.0,A,Central,HV-8.0,9.0,3540.0,9.0
+INC-01357,2026-04-06 14:00,srv-virtual-23,MALWARE,7,3,92.8,8.0,C,Anexo,HV-8.0,36.1,13855.0,36.3
+INC-01358,2026-04-06 17:00,srv-virtual-03,MALWARE,2,2,357.8,,C,Anexo,HV-8.0,18.0,6924.0,18.2
+INC-01359,2026-04-06 17:00,srv-biblio-22,ddos,6,3,105.5,19.0,B,Central,HV-8.0,9.3,3629.0,9.0
+INC-01360,2026-04-06 19:00,srv-correo-21,RANSOMWARE,4,1,85.4,9.0,C,Anexo,HV-8.0,26.2,10926.0,26.5
+INC-01361,2026-04-06 23:00,srv-biblio-09,ransomware ,7,3,227.8,13.0,A,Anexo,HV-8.0,66.3,25789.0,66.2
+INC-01362,2026-04-06 23:00,srv-acad-20,DDOS,7,1,67.9,22.0,B,Central,HV-8.0,5.9,2486.0,6.2
+INC-01363,2026-04-07 05:00,srv-acad-38,FALLA HW,4,1,466.2,8.0,C,Anexo,HV-8.0,7.7,3105.0,7.4
+INC-01364,2026-04-07 08:00,srv-biblio-16,malware,4,3,286.8,5.0,C,Anexo,HV-8.0,12.9,5153.0,12.7
+INC-01365,2026-04-07 15:00,srv-acad-13,falla_hardware,7,1,234.3,27.0,A,Anexo,HV-8.0,15.0,5915.0,15.4
+INC-01366,2026-04-08 00:00,srv-acad-01,ERROR CONFIG,3,1,156.8,12.0,A,Anexo,HV-8.0,5.0,1977.0,5.0
+INC-01367,2026-04-08 21:00,srv-virtual-31,ERROR CONFIG,2,1,1120.0,23.0,C,Anexo,HV-8.0,3.1,1396.0,3.4
+INC-01368,2026-04-09 11:00,srv-web-38,ransomware ,8,1,107.2,10.0,B,Central,HV-8.0,29.3,11467.0,29.7
+SIM-01369,2026-04-09 11:00,srv-web-38,ransomware ,8,1,107.2,1.0,B,Central,HV-8.0,0.0,0.0,0.7
+INC-01370,2026-04-09 20:00,srv-biblio-18,RANSOMWARE,2,2,29.8,0.0,A,Central,HV-8.0,12.9,5252.0,13.0
+INC-01371,2026-04-09 23:00,srv-web-23,DDOS,6,2,31.3,12.0,C,Anexo,HV-8.0,9.3,3746.0,9.6
+INC-01372,2026-04-10 02:00,srv-biblio-33,DDOS,8,2,57.9,1.0,B,Central,HV-8.0,8.9,3392.0,8.9
+INC-01373,2026-04-10 22:00,srv-correo-17,malware,7,3,74.0,28.0,C,Anexo,HV-8.0,18.5,7364.0,18.2
+INC-01374,2026-04-11 14:00,srv-acad-33,Malware,5,2,657.8,13.0,B,Anexo,HV-8.0,16.5,6699.0,16.4
+INC-01375,2026-04-11 23:00,srv-correo-23,ddos,5,2,174.0,9.0,B,Central,HV-8.0,8.7,3473.0,8.7
+INC-01376,2026-04-12 00:00,srv-virtual-39,error_configuracion,1,2,45.4,22.0,A,Anexo,HV-8.0,5.4,1861.0,4.7
+INC-01377,2026-04-12 01:00,srv-correo-22,falla_hardware,7,3,167.4,11.0,C,Anexo,HV-8.0,21.2,8336.0,21.4
+INC-01378,2026-04-12 03:00,srv-biblio-13,MALWARE,3,3,2757.7,,B,Central,HV-8.0,29.0,11775.0,29.2
+INC-01379,2026-04-12 14:00,srv-web-33,error_configuracion,5,3,-140.5,26.0,C,Central,HV-8.0,6.2,2687.0,6.7
+INC-01380,2026-04-13 06:00,srv-virtual-22,ransomware ,4,1,186.3,,C,Central,HV-8.0,57.1,22524.0,57.0
+INC-01381,2026-04-13 08:00,srv-correo-16,malware,5,1,125.3,6.0,C,Central,HV-8.0,10.3,4143.0,10.5
+INC-01382,2026-04-14 02:00,srv-acad-38,Falla hardware,5,2,153.6,8.0,A,Anexo,HV-8.0,10.6,4527.0,11.1
+INC-01383,2026-04-14 15:00,srv-virtual-26,MALWARE,4,3,139.5,,C,Central,HV-8.0,22.2,8765.0,22.8
+INC-01384,2026-04-14 17:00,srv-virtual-15,DDoS,8,2,419.1,22.0,B,Central,HV-8.0,9.0,3998.0,9.6
+INC-01385,2026-04-14 22:00,srv-web-38,DDoS,6,1,138.9,13.0,A,Central,HV-8.0,9.7,3711.0,9.7
+INC-01386,2026-04-15 06:00,srv-web-38,ERROR CONFIG,4,2,356.2,15.0,B,Anexo,HV-8.0,3.9,1657.0,4.1
+INC-01387,2026-04-15 09:00,srv-virtual-25,DDoS,1,2,278.0,21.0,A,Central,HV-8.0,6.9,2716.0,6.5
+INC-01388,2026-04-15 15:00,srv-acad-28,DDoS,4,2,151.8,11.0,A,Anexo,HV-8.0,18.1,7240.0,18.1
+INC-01389,2026-04-16 20:00,srv-virtual-24,DDOS,6,1,67.0,4.0,B,Central,HV-8.0,5.3,2036.0,5.0
+INC-01390,2026-04-17 03:00,srv-web-26,Ransomware,7,2,142.4,13.0,A,Central,HV-8.0,45.2,17738.0,45.3
+INC-01391,2026-04-17 13:00,srv-virtual-16,Ransomware,4,1,107.3,20.0,C,Anexo,HV-8.0,24.0,9741.0,24.5
+INC-01392,2026-04-17 15:00,srv-virtual-31,DDOS,2,1,126.4,7.0,C,Anexo,HV-8.0,5.1,2071.0,5.2
+INC-01393,2026-04-17 16:00,srv-acad-07,ddos,8,3,137.2,,C,Anexo,HV-8.0,24.9,10192.0,24.9
+INC-01394,2026-04-17 19:00,srv-acad-28,MALWARE,2,2,257.9,2.0,C,Central,HV-8.0,14.5,5937.0,14.3
+INC-01395,2026-04-18 01:00,srv-virtual-12,ddos,1,3,201.6,26.0,B,Central,HV-8.0,8.2,3156.0,8.0
+INC-01396,2026-04-18 03:00,srv-acad-26,malware,8,2,494.0,,A,Anexo,HV-8.0,54.4,21111.0,54.8
+INC-01397,2026-04-18 10:00,srv-biblio-08,FALLA HW,4,2,179.1,14.0,B,Central,HV-8.0,57.5,22359.0,57.3
+INC-01398,2026-04-18 22:00,srv-web-07,falla_hardware,8,3,134.4,0.0,A,Central,HV-8.0,21.3,8402.0,20.8
+INC-01399,2026-04-18 23:00,srv-virtual-35,falla_hardware,1,2,593.7,4.0,B,Anexo,HV-8.0,7.8,2980.0,7.6
+INC-01400,2026-04-19 12:00,srv-biblio-39,Ransomware,5,1,63.2,11.0,C,Central,HV-8.0,18.6,7023.0,18.1
+INC-01401,2026-04-19 17:00,srv-web-26,Error configuración,5,2,62.8,,B,Central,HV-8.0,12.9,4760.0,12.5
+INC-01402,2026-04-19 19:00,srv-biblio-31,Ransomware,1,3,458.9,22.0,C,Anexo,HV-8.0,22.4,9096.0,22.4
+INC-01403,2026-04-20 02:00,srv-web-11,RANSOMWARE,4,2,357.9,23.0,A,Anexo,HV-8.0,33.6,13485.0,33.7
+INC-01404,2026-04-21 16:00,srv-correo-25,DDOS,7,2,224.8,18.0,C,Anexo,HV-8.0,12.1,4758.0,12.2
+SIM-01405,2026-04-22 18:00,srv-acad-21,malware,8,2,339.5,1.0,B,Anexo,HV-8.0,0.0,0.0,1.9
+INC-01406,2026-04-22 18:00,srv-acad-21,malware,8,2,339.5,3.0,B,Anexo,HV-8.0,18.0,7306.0,17.8
+INC-01407,2026-04-23 01:00,srv-web-24,Falla hardware,2,1,105.0,19.0,B,Central,HV-8.0,7.2,2749.0,6.8
+INC-01408,2026-04-23 17:00,srv-biblio-06,malware,3,2,156.9,8.0,B,Anexo,HV-8.0,14.9,5796.0,14.9
+INC-01409,2026-04-24 04:00,srv-acad-12,error_configuracion,2,3,149.2,7.0,A,Anexo,HV-8.0,2.3,1196.0,2.9
+INC-01410,2026-04-24 12:00,srv-web-10,Ransomware,1,2,179.4,0.0,B,Anexo,HV-8.0,18.3,7191.0,18.1
+INC-01411,2026-04-24 18:00,srv-web-11,MALWARE,1,2,43.0,2.0,B,Central,HV-8.0,9.9,4106.0,9.8
+INC-01411,2026-04-24 18:00,srv-web-11,MALWARE,1,2,43.0,2.0,B,Central,HV-8.0,9.9,4106.0,9.8
+INC-01413,2026-04-24 20:00,srv-biblio-09,falla_hardware,7,1,468.2,22.0,C,Central,HV-8.0,11.3,4475.0,11.6
+INC-01414,2026-04-25 09:00,srv-biblio-27,Ransomware,4,1,94.3,18.0,A,Central,HV-8.0,25.5,10566.0,25.2
+INC-01415,2026-04-25 21:00,srv-acad-34,FALLA HW,5,2,950.8,16.0,C,Central,HV-8.0,18.2,7054.0,18.3
+INC-01416,2026-04-25 21:00,srv-web-04,ddos,5,1,106.6,8.0,C,Central,HV-8.0,7.4,3131.0,7.6
+INC-01417,2026-04-26 10:00,srv-biblio-38,Falla hardware,7,1,295.4,13.0,B,Anexo,HV-8.0,19.4,8053.0,19.4
+INC-01418,2026-04-27 19:00,srv-virtual-32,MALWARE,7,2,148.6,3.0,C,Anexo,HV-8.0,10.1,4281.0,10.3
+INC-01419,2026-04-28 02:00,srv-virtual-16,Ransomware,2,1,186.0,0.0,A,Central,HV-8.0,12.1,4917.0,12.4
+INC-01420,2026-04-28 05:00,srv-biblio-08,ERROR CONFIG,8,2,168.0,15.0,C,Central,HV-8.0,10.2,4322.0,10.4
+INC-01421,2026-04-28 17:00,srv-acad-04,falla_hardware,4,1,1685.9,29.0,C,Central,HV-8.0,11.9,4733.0,11.5
+SIM-01422,2026-04-28 17:00,srv-acad-04,falla_hardware,4,1,1685.9,1.0,C,Central,HV-8.0,0.0,0.0,1.8
+INC-01423,2026-04-28 18:00,srv-acad-36,ERROR CONFIG,2,2,189.2,21.0,C,Central,HV-8.0,6.1,2265.0,5.4
+INC-01424,2026-04-29 08:00,srv-acad-32,ddos,8,1,594.1,7.0,A,Central,HV-8.0,9.6,3528.0,9.1
+INC-01425,2026-04-29 08:00,srv-correo-13,ddos,7,2,1067.8,2.0,A,Central,HV-8.0,10.5,4426.0,10.7
+INC-01426,2026-04-29 18:00,srv-acad-06,error_configuracion,1,1,162.9,7.0,B,Anexo,HV-8.0,3.8,1380.0,3.6
+INC-01427,2026-04-30 21:00,srv-virtual-26,FALLA HW,7,2,540.5,18.0,C,Anexo,HV-8.0,22.5,8888.0,22.4
+INC-01428,2026-05-01 21:00,srv-virtual-02,falla_hardware,7,3,218.7,17.0,B,Central,HV-8.0,22.2,8971.0,21.8
+INC-01429,2026-05-01 22:00,srv-correo-07,falla_hardware,3,2,408.7,,C,Anexo,HV-8.0,45.8,19402.0,46.2
+INC-01430,2026-05-02 01:00,srv-acad-31,malware,8,2,419.9,21.0,B,Central,HV-8.0,42.7,17699.0,42.6
+INC-01431,2026-05-03 08:00,srv-biblio-17,RANSOMWARE,7,2,247.4,20.0,B,Central,HV-8.0,65.4,27334.0,65.9
+INC-01432,2026-05-03 14:00,srv-web-23,Error configuración,3,1,197.2,0.0,A,Central,HV-8.0,2.5,1153.0,2.8
+INC-01433,2026-05-03 18:00,srv-virtual-17,error_configuracion,3,3,36.0,18.0,A,Central,HV-8.0,6.5,2593.0,6.5
+INC-01434,2026-05-04 22:00,srv-correo-37,Ransomware,2,3,359.7,14.0,A,Central,HV-8.0,24.8,10416.0,25.1
+INC-01435,2026-05-05 01:00,srv-biblio-15,ransomware ,5,2,114.1,,C,Anexo,HV-8.0,99.4,40588.0,99.0
+INC-01436,2026-05-05 11:00,srv-biblio-19,RANSOMWARE,6,1,120.3,1.0,C,Central,HV-8.0,27.3,11684.0,28.1
+INC-01437,2026-05-05 11:00,srv-web-33,RANSOMWARE,7,2,122.5,19.0,A,Central,HV-8.0,21.5,8674.0,21.6
+INC-01438,2026-05-05 22:00,srv-biblio-01,falla_hardware,3,1,142.6,29.0,C,Central,HV-8.0,8.8,3442.0,8.7
+INC-01439,2026-05-06 04:00,srv-acad-07,error_configuracion,7,3,65.2,21.0,A,Central,HV-8.0,5.5,2422.0,5.8
+INC-01440,2026-05-06 10:00,srv-acad-15,falla_hardware,3,1,137.9,1.0,A,Anexo,HV-8.0,7.7,3217.0,7.9
+INC-01441,2026-05-06 17:00,srv-acad-22,ransomware ,1,3,82.5,26.0,A,Anexo,HV-8.0,15.0,6022.0,15.4
+INC-01442,2026-05-06 21:00,srv-virtual-23,FALLA HW,2,1,55.5,3.0,B,Central,HV-8.0,4.9,1942.0,4.9
+INC-01443,2026-05-07 03:00,srv-correo-13,Ransomware,2,1,297.6,16.0,A,Central,HV-8.0,17.1,6524.0,17.1
+INC-01444,2026-05-07 14:00,srv-virtual-15,malware,6,2,1148.4,29.0,C,Anexo,HV-8.0,29.2,11775.0,29.1
+INC-01445,2026-05-08 02:00,srv-virtual-28,error_configuracion,3,2,76.1,,B,Central,HV-8.0,10.1,4146.0,10.3
+INC-01446,2026-05-11 01:00,srv-web-28,malware,4,2,179.9,16.0,B,Central,HV-8.0,26.3,10635.0,26.4
+INC-01447,2026-05-11 20:00,srv-web-25,Error configuración,2,2,63.1,28.0,A,Anexo,HV-8.0,3.6,1298.0,3.2
+SIM-01448,2026-05-11 20:00,srv-web-25,Error configuración,2,2,63.1,1.0,A,Anexo,HV-8.0,0.0,0.0,1.7
+INC-01449,2026-05-12 08:00,srv-correo-15,Error configuración,3,3,271.3,9.0,C,Central,HV-8.0,6.9,2892.0,6.9
+INC-01450,2026-05-12 13:00,srv-correo-26,RANSOMWARE,8,2,66.8,5.0,B,Anexo,HV-8.0,29.8,12366.0,29.9
+INC-01451,2026-05-12 14:00,srv-correo-01,falla_hardware,7,2,182.7,3.0,C,Anexo,HV-8.0,16.7,6399.0,16.1
+INC-01452,2026-05-12 15:00,srv-virtual-27,ERROR CONFIG,4,2,32.0,1.0,A,Anexo,HV-8.0,4.6,1762.0,4.2
+INC-01453,2026-05-13 03:00,srv-web-04,ddos,6,2,158.4,19.0,C,Anexo,HV-8.0,10.6,4396.0,10.6
+INC-01454,2026-05-13 07:00,srv-web-16,RANSOMWARE,2,3,67.7,,B,Central,HV-8.0,56.6,23359.0,56.5
+INC-01455,2026-05-13 21:00,srv-web-15,Falla hardware,6,1,45.3,11.0,C,Central,HV-8.0,15.1,6236.0,15.3
+INC-01456,2026-05-15 02:00,srv-biblio-09,Falla hardware,3,2,59.1,4.0,A,Anexo,HV-8.0,8.6,3621.0,8.7
+INC-01457,2026-05-15 06:00,srv-web-25,Ransomware,7,2,552.1,26.0,A,Anexo,HV-8.0,41.6,16892.0,41.8
+INC-01458,2026-05-15 14:00,srv-virtual-30,falla_hardware,2,2,872.9,25.0,A,Anexo,HV-8.0,12.0,4747.0,11.6
+INC-01459,2026-05-16 02:00,srv-biblio-32,FALLA HW,2,1,94.7,2.0,A,Central,HV-8.0,4.1,1713.0,4.1
+INC-01459,2026-05-16 02:00,srv-biblio-32,FALLA HW,2,1,94.7,2.0,A,Central,HV-8.0,4.1,1713.0,4.1
+INC-01461,2026-05-16 04:00,srv-correo-16,Error configuración,5,2,70.7,23.0,C,Central,HV-8.0,7.4,3194.0,7.8
+INC-01462,2026-05-16 23:00,srv-virtual-09,ERROR CONFIG,2,1,47.3,9.0,A,Central,HV-8.0,2.5,1124.0,2.8
+INC-01463,2026-05-17 19:00,srv-acad-21,FALLA HW,8,3,146.2,19.0,A,Central,HV-8.0,19.5,7681.0,19.3
+INC-01464,2026-05-17 22:00,srv-biblio-30,falla_hardware,5,1,349.0,12.0,A,Anexo,HV-8.0,10.9,4564.0,11.0
+INC-01465,2026-05-18 02:00,srv-web-24,Ransomware,2,2,144.6,22.0,B,Anexo,HV-8.0,13.2,5436.0,13.6
+INC-01466,2026-05-18 02:00,srv-virtual-07,DDoS,5,2,70.8,19.0,C,Anexo,HV-8.0,6.0,2405.0,6.2
+INC-01467,2026-05-18 04:00,srv-web-18,RANSOMWARE,3,2,229.8,16.0,A,Anexo,HV-8.0,21.2,8377.0,21.2
+INC-01467,2026-05-18 04:00,srv-web-18,RANSOMWARE,3,2,229.8,16.0,A,Anexo,HV-8.0,21.2,8377.0,21.2
+INC-01469,2026-05-18 06:00,srv-acad-19,falla_hardware,6,3,51.4,9.0,A,Anexo,HV-8.0,8.5,3448.0,8.3
+INC-01470,2026-05-18 07:00,srv-biblio-02,DDoS,7,3,162.0,16.0,A,Central,HV-8.0,9.9,4054.0,9.8
+INC-01471,2026-05-18 08:00,srv-acad-18,DDoS,6,1,99.9,10.0,C,Anexo,HV-8.0,5.6,2300.0,5.7
+INC-01472,2026-05-18 08:00,srv-web-18,ERROR CONFIG,3,1,81.6,5.0,C,Central,HV-8.0,18.7,7799.0,18.9
+INC-01473,2026-05-18 17:00,srv-web-33,DDOS,1,3,174.3,16.0,C,Central,HV-8.0,3.6,1508.0,3.6
+INC-01474,2026-05-19 05:00,srv-web-13,ransomware ,1,3,124.2,10.0,A,Anexo,HV-8.0,17.4,7470.0,17.9
+INC-01475,2026-05-20 03:00,srv-web-32,ddos,6,2,465.6,4.0,B,Central,HV-8.0,9.6,3965.0,9.8
+INC-01476,2026-05-20 06:00,srv-biblio-21,Ransomware,7,3,355.0,11.0,A,Anexo,HV-8.0,41.6,16804.0,41.9
+INC-01477,2026-05-20 12:00,srv-correo-28,error_configuracion,8,2,113.7,23.0,C,Central,HV-8.0,5.3,2272.0,5.7
+INC-01478,2026-05-20 14:00,srv-biblio-05,FALLA HW,3,2,75.6,,A,Central,HV-8.0,17.8,6810.0,17.6
+INC-01479,2026-05-20 18:00,srv-biblio-01,falla_hardware,4,3,49.6,27.0,A,Anexo,HV-8.0,39.3,15483.0,38.8
+INC-01479,2026-05-20 18:00,srv-biblio-01,falla_hardware,4,3,49.6,27.0,A,Anexo,HV-8.0,39.3,15483.0,38.8
+INC-01481,2026-05-20 19:00,srv-acad-02,Falla hardware,6,1,146.2,10.0,A,Central,HV-8.0,11.8,4694.0,11.2
+INC-01481,2026-05-20 19:00,srv-acad-02,Falla hardware,6,1,146.2,10.0,A,Central,HV-8.0,11.8,4694.0,11.2
+INC-01483,2026-05-21 00:00,srv-biblio-32,Malware,8,3,61.8,7.0,B,Central,HV-8.0,18.9,7602.0,18.5
+INC-01484,2026-05-21 03:00,srv-biblio-27,DDOS,3,1,165.8,29.0,C,Central,HV-8.0,8.0,3188.0,7.6
+INC-01485,2026-05-21 07:00,srv-web-27,ddos,3,3,297.7,9.0,A,Anexo,HV-8.0,6.2,2492.0,6.2
+INC-01486,2026-05-21 07:00,srv-virtual-21,ddos,7,3,294.7,19.0,A,Anexo,HV-8.0,13.7,5392.0,13.5
+INC-01487,2026-05-21 18:00,srv-virtual-08,ddos,3,3,105.3,0.0,B,Anexo,HV-8.0,3.9,1629.0,4.0
+INC-01488,2026-05-22 00:00,srv-acad-31,malware,7,1,361.0,16.0,B,Anexo,HV-8.0,13.1,5520.0,13.2
+INC-01489,2026-05-22 13:00,srv-biblio-19,falla_hardware,6,1,220.6,21.0,C,Anexo,HV-8.0,8.6,3582.0,8.6
+INC-01490,2026-05-22 13:00,srv-acad-18,MALWARE,5,3,111.5,20.0,A,Central,HV-8.0,18.9,7938.0,19.1
+INC-01491,2026-05-22 17:00,srv-biblio-23,RANSOMWARE,4,1,200.5,12.0,A,Anexo,HV-8.0,28.8,11473.0,28.5
+INC-01492,2026-05-23 00:00,srv-correo-02,FALLA HW,2,2,96.4,3.0,A,Anexo,HV-8.0,5.4,2435.0,5.8
+SIM-01493,2026-05-23 08:00,srv-correo-26,Malware,4,1,16.5,1.0,B,Anexo,HV-8.0,0.0,0.0,1.4
+INC-01494,2026-05-23 08:00,srv-correo-26,Malware,4,1,16.5,,B,Anexo,HV-8.0,19.9,7728.0,20.1
+INC-01495,2026-05-23 09:00,srv-acad-33,Falla hardware,5,1,80.5,15.0,B,Anexo,HV-8.0,14.0,5140.0,13.4
+INC-01496,2026-05-24 01:00,srv-acad-36,ERROR CONFIG,8,2,164.0,,C,Central,HV-8.0,22.9,9399.0,23.4
+INC-01497,2026-05-24 01:00,srv-correo-22,falla_hardware,3,1,130.9,11.0,C,Central,HV-8.0,25.8,10331.0,25.5
+INC-01498,2026-05-24 02:00,srv-virtual-18,Falla hardware,4,2,104.3,28.0,A,Central,HV-8.0,13.9,6125.0,14.6
+INC-01499,2026-05-25 00:00,srv-biblio-34,malware,6,1,73.6,19.0,A,Central,HV-8.0,11.3,4519.0,11.0
+INC-01500,2026-05-25 18:00,srv-biblio-14,ddos,7,1,189.6,2.0,C,Central,HV-8.0,6.4,2746.0,6.6
+INC-01501,2026-05-25 23:00,srv-correo-39,ddos,6,2,68.9,22.0,C,Central,HV-8.0,9.5,3752.0,9.4
+INC-01502,2026-05-26 03:00,srv-web-02,malware,8,2,149.4,24.0,B,Central,HV-8.0,31.4,12115.0,31.8
+INC-01503,2026-05-26 08:00,srv-correo-17,falla_hardware,3,3,194.2,24.0,A,Anexo,HV-8.0,19.8,7759.0,20.0
+INC-01504,2026-05-26 23:00,srv-biblio-23,Malware,1,1,4035.9,18.0,A,Central,HV-8.0,6.0,2443.0,6.2
+INC-01505,2026-05-27 07:00,srv-acad-12,Ransomware,3,3,38.3,3.0,C,Central,HV-8.0,17.6,7101.0,17.5
+INC-01506,2026-05-27 08:00,srv-correo-37,Falla hardware,8,2,606.5,25.0,C,Anexo,HV-8.0,28.1,11360.0,28.0
+INC-01507,2026-05-29 19:00,srv-web-19,FALLA HW,5,1,113.3,1.0,C,Central,HV-8.0,11.6,4419.0,11.4
+INC-01508,2026-05-29 19:00,srv-acad-04,falla_hardware,1,2,87.2,11.0,B,Anexo,HV-8.0,6.1,2332.0,6.0
+INC-01509,2026-05-30 10:00,srv-virtual-31,DDoS,1,1,56.1,13.0,B,Central,HV-8.0,3.1,1231.0,3.0
+INC-01510,2026-05-30 12:00,srv-biblio-26,Falla hardware,4,2,291.4,20.0,B,Central,HV-8.0,11.9,4829.0,11.9
+INC-01511,2026-05-30 13:00,srv-virtual-34,FALLA HW,6,1,240.8,23.0,A,Central,HV-8.0,15.3,5994.0,15.0
+INC-01512,2026-05-31 11:00,srv-correo-25,ddos,2,1,211.5,11.0,B,Anexo,HV-8.0,5.5,2268.0,5.7
+INC-01513,2026-05-31 16:00,srv-web-04,falla_hardware,6,2,75.6,,B,Anexo,HV-8.0,34.4,13698.0,34.3
+INC-01514,2026-06-01 02:00,srv-acad-05,DDOS,4,3,68.5,14.0,B,Anexo,HV-8.0,4.6,1687.0,4.4
+INC-01515,2026-06-01 03:00,srv-virtual-03,falla_hardware,3,1,63.7,16.0,A,Anexo,HV-8.0,14.7,5680.0,14.7
+INC-01516,2026-06-01 04:00,srv-correo-23,DDoS,3,2,311.9,8.0,A,Central,HV-8.0,5.7,2095.0,5.5
+INC-01517,2026-06-01 19:00,srv-web-06,ransomware ,3,1,2106.2,,A,Anexo,HV-8.0,82.9,31624.0,83.0
+INC-01518,2026-06-02 03:00,srv-biblio-22,Error configuración,3,2,107.4,10.0,A,Anexo,HV-8.0,5.2,1825.0,4.8
+INC-01519,2026-06-02 19:00,srv-biblio-22,RANSOMWARE,4,2,718.2,27.0,C,Anexo,HV-8.0,63.6,26211.0,63.5
+INC-01520,2026-06-03 00:00,srv-correo-02,ddos,3,2,525.8,,B,Anexo,HV-8.0,16.5,6695.0,16.8
+INC-01521,2026-06-03 03:00,srv-acad-16,error_configuracion,7,2,188.2,18.0,A,Anexo,HV-8.0,9.1,3466.0,8.8
+INC-01522,2026-06-03 13:00,srv-correo-20,error_configuracion,4,2,344.6,21.0,A,Anexo,HV-8.0,7.1,2856.0,7.0
+INC-01523,2026-06-04 08:00,srv-correo-06,falla_hardware,4,1,161.0,23.0,A,Anexo,HV-8.0,8.1,3393.0,8.1
+INC-01524,2026-06-04 19:00,srv-acad-18,Error configuración,2,3,410.1,29.0,C,Anexo,HV-8.0,4.0,1540.0,3.9
+INC-01525,2026-06-04 22:00,srv-web-06,FALLA HW,8,1,43.5,23.0,B,Anexo,HV-8.0,14.2,5709.0,14.0
+INC-01526,2026-06-05 05:00,srv-web-24,DDoS,1,3,157.0,13.0,C,Anexo,HV-8.0,4.3,1573.0,4.1
+INC-01527,2026-06-06 03:00,srv-acad-10,FALLA HW,7,2,68.1,,C,Anexo,HV-8.0,41.5,16304.0,41.5
+INC-01528,2026-06-06 05:00,srv-virtual-11,Error configuración,3,1,646.1,3.0,B,Anexo,HV-8.0,5.7,2082.0,5.3
+INC-01529,2026-06-07 04:00,srv-web-26,Error configuración,4,1,129.9,4.0,B,Central,HV-8.0,4.5,1807.0,4.5
+INC-01530,2026-06-07 12:00,srv-biblio-10,Error configuración,4,3,75.6,27.0,B,Anexo,HV-8.0,4.8,1891.0,4.8
+INC-01531,2026-06-07 22:00,srv-virtual-15,DDoS,3,2,484.7,21.0,C,Anexo,HV-8.0,7.2,2959.0,7.2
+INC-01532,2026-06-08 07:00,srv-virtual-27,FALLA HW,8,1,34.5,15.0,B,Anexo,HV-8.0,15.4,6163.0,15.3
+INC-01533,2026-06-08 09:00,srv-web-20,MALWARE,2,1,9.9,0.0,A,Central,HV-8.0,6.7,2734.0,6.8
+INC-01534,2026-06-09 01:00,srv-biblio-17,RANSOMWARE,8,1,62.9,17.0,B,Central,HV-8.0,32.1,12734.0,32.2
+INC-01535,2026-06-09 03:00,srv-correo-17,MALWARE,4,1,428.2,5.0,A,Anexo,HV-8.0,11.6,4893.0,11.8
+INC-01536,2026-06-09 04:00,srv-correo-25,malware,4,2,174.9,24.0,B,Central,HV-8.0,18.5,7383.0,18.9
+INC-01537,2026-06-09 22:00,srv-web-36,ddos,8,3,292.0,28.0,A,Central,HV-8.0,10.7,4241.0,10.7
+INC-01538,2026-06-10 01:00,srv-acad-11,error_configuracion,7,3,236.2,2.0,A,Anexo,HV-8.0,9.3,3689.0,9.2
+INC-01539,2026-06-10 14:00,srv-virtual-06,ERROR CONFIG,4,2,61.8,21.0,A,Anexo,HV-8.0,4.0,1730.0,4.2
+INC-01540,2026-06-10 14:00,srv-web-34,error_configuracion,4,1,349.3,4.0,C,Central,HV-8.0,4.9,1778.0,4.6
+INC-01541,2026-06-11 02:00,srv-correo-22,Error configuración,1,2,192.7,29.0,C,Anexo,HV-8.0,2.1,1034.0,2.5
+INC-01542,2026-06-11 03:00,srv-biblio-10,malware,8,2,350.6,6.0,C,Central,HV-8.0,18.9,7845.0,19.0
+INC-01543,2026-06-11 03:00,srv-acad-13,ransomware ,4,2,49.4,12.0,A,Anexo,HV-8.0,22.3,9203.0,22.1
+INC-01544,2026-06-11 08:00,srv-biblio-27,DDOS,1,2,28.2,,C,Anexo,HV-8.0,7.9,3123.0,7.9
+INC-01545,2026-06-11 13:00,srv-biblio-18,DDoS,1,1,82.9,,B,Anexo,HV-8.0,12.9,5113.0,12.6
+INC-01546,2026-06-12 11:00,srv-acad-21,error_configuracion,4,2,415.0,28.0,A,Central,HV-8.0,5.3,2154.0,5.2
+INC-01547,2026-06-12 13:00,srv-web-18,ransomware ,7,1,334.0,2.0,A,Anexo,HV-8.0,44.8,17422.0,45.0
+INC-01548,2026-06-12 23:00,srv-biblio-22,Malware,6,1,223.0,24.0,C,Central,HV-8.0,21.4,8370.0,21.2
+INC-01549,2026-06-13 00:00,srv-biblio-27,ERROR CONFIG,8,1,144.1,3.0,C,Anexo,HV-8.0,4.3,1802.0,4.6
+INC-01550,2026-06-13 09:00,srv-web-33,Falla hardware,6,2,106.0,,A,Central,HV-8.0,26.7,10193.0,26.2
+INC-01551,2026-06-13 23:00,srv-correo-08,MALWARE,5,3,237.0,,C,Anexo,HV-8.0,31.9,12370.0,31.9
+INC-01552,2026-06-14 06:00,srv-virtual-24,Error configuración,3,1,626.8,22.0,A,Central,HV-8.0,6.9,2823.0,7.1
+INC-01553,2026-06-14 12:00,srv-correo-11,ddos,1,3,33.4,8.0,B,Central,HV-8.0,3.8,1695.0,4.1
+INC-01554,2026-06-15 02:00,srv-web-34,MALWARE,2,3,36.2,,A,Anexo,HV-8.0,21.0,8909.0,21.6
+INC-01555,2026-06-16 02:00,srv-acad-39,Ransomware,4,3,84.2,8.0,A,Central,HV-8.0,33.0,13580.0,33.3
+INC-01556,2026-06-16 02:00,srv-web-19,malware,4,2,198.4,23.0,A,Central,HV-8.0,18.8,7635.0,18.5
+INC-01557,2026-06-16 22:00,srv-web-17,ERROR CONFIG,6,1,52.7,25.0,C,Anexo,HV-8.0,5.5,1986.0,5.2
+INC-01558,2026-06-17 06:00,srv-acad-23,DDOS,6,2,147.5,21.0,A,Anexo,HV-8.0,8.2,3368.0,8.7
+INC-01559,2026-06-17 09:00,srv-correo-23,Falla hardware,2,3,89.4,11.0,C,Central,HV-8.0,7.0,2931.0,7.4
+INC-01560,2026-06-19 03:00,srv-biblio-01,falla_hardware,5,3,51.2,26.0,A,Anexo,HV-8.0,16.1,6257.0,16.2
+INC-01561,2026-06-20 21:00,srv-acad-33,Malware,6,1,275.7,1.0,C,Central,HV-8.0,16.7,6904.0,16.9
+INC-01561,2026-06-20 21:00,srv-acad-33,Malware,6,1,275.7,1.0,C,Central,HV-8.0,16.7,6904.0,16.9
+INC-01563,2026-06-21 07:00,srv-web-13,ERROR CONFIG,7,2,141.3,16.0,B,Central,HV-8.0,7.0,2737.0,6.8
+INC-01564,2026-06-22 03:00,srv-web-23,DDoS,7,2,362.6,,A,Central,HV-8.0,30.9,12145.0,30.8
+INC-01565,2026-06-22 04:00,srv-acad-13,Ransomware,1,1,146.2,1.0,A,Anexo,HV-8.0,18.0,6695.0,17.5
+INC-01566,2026-06-22 10:00,srv-virtual-08,ERROR CONFIG,8,1,237.5,15.0,C,Central,HV-8.0,5.5,2320.0,6.0
+INC-01567,2026-06-23 03:00,srv-biblio-37,ransomware ,5,1,34.5,15.0,C,Anexo,HV-8.0,18.8,7488.0,19.0
+INC-01568,2026-06-23 05:00,srv-virtual-20,Error configuración,8,2,88.6,23.0,C,Central,HV-8.0,12.1,4960.0,12.4
+INC-01569,2026-06-23 06:00,srv-virtual-25,Malware,8,1,59.0,20.0,C,Anexo,HV-8.0,11.8,4749.0,12.2
+INC-01570,2026-06-23 12:00,srv-correo-13,DDoS,7,2,927.4,3.0,A,Anexo,HV-8.0,9.0,3588.0,8.9
+INC-01571,2026-06-23 17:00,srv-biblio-19,FALLA HW,4,2,121.1,,A,Central,HV-8.0,20.6,8082.0,21.2
+INC-01572,2026-06-24 23:00,srv-biblio-39,FALLA HW,5,3,172.9,0.0,C,Central,HV-8.0,11.6,4542.0,11.5
+INC-01573,2026-06-25 09:00,srv-biblio-08,DDoS,5,3,91.8,13.0,B,Anexo,HV-8.0,14.6,6016.0,14.8
+INC-01574,2026-06-25 15:00,srv-web-03,malware,4,1,193.7,25.0,C,Central,HV-8.0,11.7,4951.0,12.1
+INC-01575,2026-06-26 08:00,srv-virtual-18,Falla hardware,8,2,193.3,16.0,B,Anexo,HV-8.0,24.8,10036.0,24.7
+INC-01576,2026-06-26 13:00,srv-acad-01,Malware,4,1,93.5,7.0,C,Anexo,HV-8.0,30.6,11657.0,29.9
+INC-01577,2026-06-27 08:00,srv-web-13,malware,8,3,497.1,18.0,A,Central,HV-8.0,28.0,11699.0,28.1
+INC-01578,2026-06-27 10:00,srv-acad-30,DDOS,1,2,224.3,14.0,B,Anexo,HV-8.0,4.6,1810.0,4.4
+INC-01579,2026-06-27 13:00,srv-correo-10,ERROR CONFIG,8,2,181.0,13.0,C,Central,HV-8.0,9.7,3859.0,9.4
+INC-01580,2026-06-27 23:00,srv-correo-10,Error configuración,4,2,157.5,14.0,C,Anexo,HV-8.0,5.1,2138.0,5.1
+INC-01581,2026-06-28 02:00,srv-correo-18,FALLA HW,5,1,36.4,17.0,C,Anexo,HV-8.0,8.0,3330.0,8.3
+INC-01582,2026-06-28 07:00,srv-web-26,Error configuración,6,1,104.8,,A,Central,HV-8.0,13.5,5524.0,13.2
+INC-01583,2026-06-28 15:00,srv-correo-07,Error configuración,7,1,38.5,23.0,A,Central,HV-8.0,9.0,3727.0,9.1
+INC-01584,2026-06-29 08:00,srv-virtual-14,Error configuración,6,2,107.3,,A,Central,HV-8.0,13.7,5253.0,13.8
+INC-01585,2026-06-29 13:00,srv-biblio-06,FALLA HW,4,3,153.8,4.0,C,Central,HV-8.0,11.9,4769.0,11.8
+INC-01586,2026-06-29 14:00,srv-web-31,DDOS,1,2,168.2,5.0,A,Anexo,HV-8.0,4.5,1709.0,4.3
+INC-01587,2026-06-29 15:00,srv-acad-06,Ransomware,6,2,42.0,5.0,C,Anexo,HV-8.0,36.7,14861.0,36.8
+INC-01588,2026-06-29 16:00,srv-acad-19,Malware,8,2,219.9,,C,Anexo,HV-8.0,105.2,40624.0,105.2
+INC-01589,2026-06-30 02:00,srv-biblio-30,RANSOMWARE,4,1,195.3,20.0,B,Central,HV-8.0,27.2,10499.0,26.8
+INC-01590,2026-07-01 09:00,srv-correo-03,RANSOMWARE,6,1,44.0,5.0,A,Anexo,HV-8.0,20.9,8085.0,20.8
+INC-01591,2026-07-02 08:00,srv-web-04,Ransomware,8,3,52.5,,B,Central,HV-8.0,115.6,45411.0,115.5
+INC-01592,2026-07-02 18:00,srv-acad-39,RANSOMWARE,3,3,132.6,29.0,C,Anexo,HV-8.0,49.3,19937.0,49.3
+INC-01592,2026-07-02 18:00,srv-acad-39,RANSOMWARE,3,3,132.6,29.0,C,Anexo,HV-8.0,49.3,19937.0,49.3
+INC-01594,2026-07-02 21:00,srv-correo-29,ransomware ,6,3,50.0,29.0,B,Anexo,HV-8.0,43.6,17452.0,43.2
+INC-01595,2026-07-02 22:00,srv-biblio-25,ERROR CONFIG,2,3,337.1,16.0,C,Anexo,HV-8.0,4.4,1942.0,4.7
+SIM-01596,2026-07-02 22:00,srv-biblio-14,Ransomware,2,2,234.3,1.0,C,Anexo,HV-8.0,0.0,0.0,1.9
+INC-01597,2026-07-02 22:00,srv-biblio-14,Ransomware,2,2,234.3,10.0,C,Anexo,HV-8.0,20.2,7538.0,19.6
+INC-01597,2026-07-02 22:00,srv-biblio-14,Ransomware,2,2,234.3,10.0,C,Anexo,HV-8.0,20.2,7538.0,19.6
+INC-01599,2026-07-03 03:00,srv-virtual-11,ddos,2,3,227.4,24.0,B,Central,HV-8.0,6.7,2772.0,7.2
+INC-01600,2026-07-04 04:00,srv-biblio-26,falla_hardware,4,2,459.7,16.0,A,Anexo,HV-8.0,9.5,3836.0,9.6
+INC-01601,2026-07-04 07:00,srv-biblio-31,Error configuración,3,2,82.3,1.0,C,Central,HV-8.0,4.0,1381.0,3.6
+INC-01602,2026-07-04 14:00,srv-web-05,Error configuración,1,2,259.0,11.0,B,Anexo,HV-8.0,4.6,1712.0,4.4
+INC-01603,2026-07-04 16:00,srv-virtual-17,malware,1,1,134.1,11.0,A,Anexo,HV-8.0,7.7,3049.0,7.7
+INC-01604,2026-07-05 06:00,srv-acad-05,Malware,5,2,130.1,2.0,A,Central,HV-8.0,12.4,5206.0,12.4
+INC-01605,2026-07-05 14:00,srv-acad-04,ransomware ,1,2,225.6,20.0,B,Central,HV-8.0,22.2,9265.0,22.6
+INC-01606,2026-07-05 17:00,srv-web-22,Malware,2,3,85.6,9.0,B,Anexo,HV-8.0,6.9,2596.0,6.5
+INC-01607,2026-07-05 22:00,srv-virtual-16,DDOS,1,2,140.3,7.0,A,Central,HV-8.0,3.1,1214.0,3.1
+INC-01607,2026-07-05 22:00,srv-virtual-16,DDOS,1,2,140.3,7.0,A,Central,HV-8.0,3.1,1214.0,3.1
+INC-01609,2026-07-06 00:00,srv-acad-11,falla_hardware,5,3,544.0,8.0,A,Central,HV-8.0,12.3,4699.0,12.3
+INC-01610,2026-07-06 01:00,srv-correo-16,MALWARE,1,3,556.3,12.0,C,Central,HV-8.0,12.1,5055.0,12.1
+INC-01611,2026-07-06 20:00,srv-biblio-12,RANSOMWARE,7,2,26.9,23.0,C,Anexo,HV-8.0,28.4,11285.0,28.6
+INC-01612,2026-07-06 21:00,srv-virtual-06,Malware,5,1,291.2,,B,Central,HV-8.0,40.3,16197.0,40.4
+INC-01613,2026-07-07 04:00,srv-virtual-11,ransomware ,4,2,209.1,12.0,C,Anexo,HV-8.0,35.6,14573.0,35.7
+INC-01614,2026-07-07 16:00,srv-correo-39,Error configuración,6,2,854.5,1.0,C,Anexo,HV-8.0,5.8,2433.0,6.4
+INC-01615,2026-07-07 16:00,srv-biblio-06,ERROR CONFIG,6,3,586.4,15.0,B,Anexo,HV-8.0,9.7,4062.0,9.7
+INC-01616,2026-07-10 00:00,srv-virtual-31,DDOS,7,2,524.8,26.0,B,Anexo,HV-8.0,13.8,5412.0,14.1
+INC-01617,2026-07-10 13:00,srv-biblio-33,falla_hardware,6,2,132.8,28.0,B,Anexo,HV-8.0,13.3,5355.0,13.6
+INC-01618,2026-07-10 20:00,srv-web-17,DDOS,5,1,183.5,20.0,C,Central,HV-8.0,8.0,3067.0,7.8
+INC-01619,2026-07-11 09:00,srv-virtual-34,ransomware ,5,1,223.8,25.0,B,Central,HV-8.0,27.5,11225.0,27.6
+SIM-01620,2026-07-11 15:00,srv-virtual-24,malware,1,3,320.6,1.0,A,Anexo,HV-8.0,0.0,0.0,1.1
+INC-01621,2026-07-11 15:00,srv-acad-37,ddos,6,3,33.5,16.0,C,Anexo,HV-8.0,7.5,2847.0,7.4
+INC-01622,2026-07-11 15:00,srv-virtual-24,malware,1,3,320.6,10.0,A,Anexo,HV-8.0,9.3,3854.0,9.8
+INC-01623,2026-07-12 06:00,srv-correo-23,Falla hardware,3,2,190.2,29.0,B,Central,HV-8.0,9.7,4067.0,10.0
+INC-01624,2026-07-12 11:00,srv-biblio-05,FALLA HW,2,1,153.1,18.0,A,Central,HV-8.0,8.7,3761.0,9.0
+INC-01625,2026-07-12 13:00,srv-web-27,error_configuracion,1,2,53.3,20.0,C,Central,HV-8.0,4.5,1727.0,4.5
+INC-01626,2026-07-12 15:00,srv-web-21,malware,8,2,669.6,20.0,C,Anexo,HV-8.0,20.0,7873.0,20.1
+INC-01627,2026-07-12 19:00,srv-correo-06,Malware,2,1,13.8,15.0,C,Anexo,HV-8.0,6.3,2378.0,6.0
+INC-01628,2026-07-13 03:00,srv-biblio-30,Ransomware,8,2,29.8,12.0,C,Central,HV-8.0,50.4,20610.0,50.6
+INC-01629,2026-07-13 09:00,srv-biblio-22,malware,7,2,521.9,12.0,B,Anexo,HV-8.0,19.5,7686.0,19.5
+INC-01630,2026-07-13 10:00,srv-biblio-10,FALLA HW,2,2,135.6,,C,Anexo,HV-8.0,20.1,8314.0,20.6
+INC-01631,2026-07-13 11:00,srv-acad-10,malware,1,1,254.8,,B,Central,HV-8.0,15.2,6035.0,14.9
+INC-01632,2026-07-13 22:00,srv-correo-22,error_configuracion,1,3,795.7,24.0,A,Central,HV-8.0,5.7,2468.0,5.9
+INC-01633,2026-07-14 06:00,srv-biblio-21,falla_hardware,4,1,116.8,19.0,B,Central,HV-8.0,10.2,3917.0,9.5
+INC-01634,2026-07-14 18:00,srv-acad-17,falla_hardware,6,3,249.2,16.0,A,Anexo,HV-8.0,20.8,8102.0,21.2
+INC-01635,2026-07-14 18:00,srv-biblio-05,Falla hardware,5,2,598.1,0.0,A,Anexo,HV-8.0,64.7,24797.0,64.5
+INC-01636,2026-07-15 11:00,srv-correo-19,FALLA HW,1,3,419.8,14.0,A,Anexo,HV-8.0,7.8,3054.0,7.6
+INC-01637,2026-07-15 15:00,srv-web-36,Malware,3,2,452.6,28.0,A,Central,HV-8.0,14.8,5808.0,15.1
+INC-01638,2026-07-15 15:00,srv-biblio-06,Error configuración,1,2,88.5,22.0,C,Anexo,HV-8.0,2.9,1181.0,3.0
+INC-01639,2026-07-15 20:00,srv-acad-34,DDoS,1,3,117.6,0.0,C,Anexo,HV-8.0,4.7,1963.0,5.0
+INC-01640,2026-07-16 02:00,srv-correo-36,error_configuracion,6,2,269.4,3.0,A,Central,HV-8.0,7.9,3301.0,8.0
+INC-01641,2026-07-16 07:00,srv-biblio-16,FALLA HW,8,3,75.8,5.0,C,Anexo,HV-8.0,22.7,8830.0,23.1
+INC-01642,2026-07-16 18:00,srv-virtual-29,ERROR CONFIG,8,1,91.9,12.0,C,Anexo,HV-8.0,7.0,2784.0,7.1
+INC-01643,2026-07-16 19:00,srv-biblio-39,DDOS,6,2,1338.5,23.0,B,Central,HV-8.0,9.5,3845.0,9.9
+INC-01644,2026-07-16 21:00,srv-biblio-24,ddos,2,3,286.1,19.0,C,Anexo,HV-8.0,5.7,2379.0,5.7
+INC-01645,2026-07-17 04:00,srv-correo-32,Malware,8,3,517.9,19.0,B,Anexo,HV-8.0,38.6,14942.0,38.4
+INC-01646,2026-07-17 16:00,srv-virtual-02,ERROR CONFIG,4,3,136.7,8.0,A,Central,HV-8.0,6.3,2413.0,5.9
+INC-01647,2026-07-17 17:00,srv-correo-26,Error configuración,2,1,99.0,6.0,B,Central,HV-8.0,2.5,1096.0,2.8
+INC-01648,2026-07-18 00:00,srv-web-24,malware,6,1,85.1,,B,Central,HV-8.0,36.8,14204.0,36.5
+INC-01649,2026-07-18 15:00,srv-correo-35,ddos,4,2,305.8,24.0,A,Anexo,HV-8.0,6.1,2387.0,5.8
+INC-01650,2026-07-19 16:00,srv-biblio-05,ERROR CONFIG,6,2,31.0,19.0,C,Central,HV-8.0,5.7,2317.0,5.7
+INC-01651,2026-07-20 02:00,srv-acad-12,falla_hardware,6,1,218.4,13.0,C,Central,HV-8.0,13.9,5912.0,14.1
+INC-01652,2026-07-20 02:00,srv-virtual-14,Falla hardware,7,3,509.8,,C,Central,HV-8.0,45.4,18887.0,45.4
+INC-01653,2026-07-20 04:00,srv-biblio-38,error_configuracion,2,3,6.9,1.0,B,Central,HV-8.0,2.9,1088.0,2.6
+INC-01654,2026-07-20 05:00,srv-virtual-16,Malware,8,2,509.9,20.0,C,Central,HV-8.0,20.4,7954.0,20.4
+INC-01655,2026-07-20 12:00,srv-virtual-18,error_configuracion,2,1,203.1,15.0,B,Central,HV-8.0,5.5,2271.0,5.5
+INC-01656,2026-07-21 07:00,srv-virtual-12,Malware,3,2,139.2,6.0,B,Anexo,HV-8.0,9.6,3726.0,9.3
+INC-01657,2026-07-21 13:00,srv-virtual-20,falla_hardware,8,2,347.0,27.0,C,Anexo,HV-8.0,17.5,6816.0,17.7
+INC-01658,2026-07-21 13:00,srv-acad-23,Malware,7,3,170.7,27.0,B,Central,HV-8.0,20.6,8324.0,20.6
+INC-01659,2026-07-23 15:00,srv-biblio-29,error_configuracion,2,3,213.6,22.0,B,Anexo,HV-8.0,4.7,2062.0,5.0
+INC-01660,2026-07-24 01:00,srv-acad-20,RANSOMWARE,6,2,27.1,17.0,A,Central,HV-8.0,27.9,10679.0,27.9
+INC-01661,2026-07-24 03:00,srv-acad-17,FALLA HW,3,3,357.1,,B,Central,HV-8.0,29.0,11408.0,29.4
+INC-01662,2026-07-24 03:00,srv-web-20,Ransomware,1,3,31.7,,B,Central,HV-8.0,46.8,18785.0,46.8
+INC-01663,2026-07-24 15:00,srv-acad-16,falla_hardware,4,2,66.6,20.0,B,Anexo,HV-8.0,9.2,3651.0,9.4
+INC-01664,2026-07-24 18:00,srv-virtual-20,Error configuración,5,1,84.1,20.0,C,Anexo,HV-8.0,5.5,2277.0,5.8
+INC-01665,2026-07-25 04:00,srv-acad-29,Ransomware,1,2,213.0,14.0,C,Central,HV-8.0,19.5,8264.0,19.9
+SIM-01666,2026-07-25 04:00,srv-acad-29,Ransomware,1,2,213.0,1.0,C,Central,HV-8.0,0.0,0.0,1.8
+INC-01667,2026-07-25 10:00,srv-web-23,ddos,7,3,493.4,21.0,B,Central,HV-8.0,18.8,7764.0,18.6
+INC-01668,2026-07-25 17:00,srv-biblio-16,falla_hardware,2,3,156.7,2.0,A,Central,HV-8.0,8.1,3251.0,8.1
+INC-01669,2026-07-25 23:00,srv-correo-32,FALLA HW,7,1,383.9,12.0,B,Anexo,HV-8.0,17.8,7352.0,18.3
+INC-01670,2026-07-26 17:00,srv-correo-32,malware,1,2,76.1,21.0,B,Central,HV-8.0,8.7,3387.0,8.3
+INC-01671,2026-07-26 23:00,srv-acad-32,Falla hardware,5,3,18.2,16.0,B,Anexo,HV-8.0,10.7,4332.0,11.1
+INC-01672,2026-07-27 02:00,srv-virtual-35,malware,1,3,276.7,,A,Central,HV-8.0,18.9,7932.0,19.1
+INC-01673,2026-07-27 13:00,srv-virtual-16,DDoS,8,1,246.6,2.0,B,Anexo,HV-8.0,4.4,1871.0,4.5
+INC-01674,2026-07-28 02:00,srv-biblio-30,falla_hardware,3,3,352.3,23.0,C,Anexo,HV-8.0,6.4,2649.0,6.4
+INC-01675,2026-07-28 03:00,srv-correo-34,Malware,5,1,260.1,,B,Central,HV-8.0,29.0,11154.0,29.3
+INC-01676,2026-07-28 08:00,srv-acad-25,Falla hardware,1,2,213.5,,A,Anexo,HV-8.0,52.1,21293.0,52.2
+INC-01677,2026-07-29 00:00,srv-biblio-32,MALWARE,2,2,367.8,7.0,C,Central,HV-8.0,12.6,4918.0,12.9
+INC-01678,2026-07-29 11:00,srv-acad-25,malware,1,3,31.4,,C,Central,HV-8.0,12.3,5069.0,12.7
+INC-01679,2026-07-29 11:00,srv-correo-27,MALWARE,3,2,117.9,6.0,C,Anexo,HV-8.0,13.1,5343.0,13.0
+INC-01680,2026-07-30 14:00,srv-correo-33,MALWARE,8,2,171.2,15.0,A,Central,HV-8.0,28.4,11642.0,28.6
+INC-01681,2026-07-30 18:00,srv-acad-04,MALWARE,1,2,130.8,16.0,B,Anexo,HV-8.0,8.5,3556.0,8.8
+INC-01682,2026-07-31 01:00,srv-virtual-08,Error configuración,2,2,178.3,21.0,A,Central,HV-8.0,4.2,1706.0,4.1
+INC-01683,2026-07-31 10:00,srv-biblio-20,falla_hardware,7,2,987.8,,C,Anexo,HV-8.0,32.3,13142.0,32.2
+INC-01684,2026-07-31 19:00,srv-virtual-09,Malware,6,2,94.4,22.0,A,Anexo,HV-8.0,19.7,7999.0,19.7
+INC-01685,2026-07-31 21:00,srv-acad-39,Falla hardware,5,2,114.4,23.0,C,Central,HV-8.0,7.9,3288.0,8.2
+INC-01686,2026-08-01 07:00,srv-virtual-10,error_configuracion,6,1,225.1,25.0,A,Anexo,HV-8.0,6.4,2665.0,6.6
+INC-01687,2026-08-01 07:00,srv-biblio-25,error_configuracion,4,3,236.0,24.0,A,Anexo,HV-8.0,6.0,2308.0,5.7
+INC-01688,2026-08-01 10:00,srv-virtual-21,MALWARE,3,2,138.3,10.0,C,Anexo,HV-8.0,7.0,2758.0,6.6
+INC-01689,2026-08-01 18:00,srv-correo-29,Malware,5,2,38.9,20.0,A,Anexo,HV-8.0,14.3,5726.0,14.2
+INC-01690,2026-08-01 18:00,srv-acad-03,falla_hardware,8,3,132.4,8.0,A,Anexo,HV-8.0,21.5,8256.0,21.0
+INC-01691,2026-08-02 11:00,srv-web-17,Error configuración,7,2,43.7,15.0,A,Central,HV-8.0,4.3,1673.0,4.4
+INC-01692,2026-08-02 16:00,srv-correo-24,error_configuracion,7,3,355.2,18.0,A,Central,HV-8.0,13.7,5462.0,13.4
+INC-01693,2026-08-02 17:00,srv-acad-04,MALWARE,1,3,795.6,26.0,B,Anexo,HV-8.0,10.6,4219.0,10.8
+INC-01694,2026-08-03 07:00,srv-correo-29,error_configuracion,6,2,115.9,7.0,A,Central,HV-8.0,5.0,2297.0,5.7
+INC-01695,2026-08-04 02:00,srv-acad-35,FALLA HW,8,2,51.6,,C,Anexo,HV-8.0,18.0,7303.0,17.6
+INC-01696,2026-08-04 03:00,srv-correo-18,FALLA HW,4,3,244.0,29.0,C,Anexo,HV-8.0,14.0,5245.0,13.7
+INC-01697,2026-08-05 16:00,srv-web-23,malware,2,2,1210.7,13.0,B,Anexo,HV-8.0,21.0,8614.0,21.0
+INC-01698,2026-08-05 19:00,srv-correo-25,ransomware ,7,1,106.6,17.0,C,Central,HV-8.0,27.7,11405.0,27.6
+INC-01699,2026-08-06 02:00,srv-virtual-03,Error configuración,2,1,652.2,14.0,B,Anexo,HV-8.0,3.6,1329.0,3.2
+INC-01700,2026-08-06 11:00,srv-web-31,Error configuración,5,2,130.5,16.0,C,Central,HV-8.0,7.8,3021.0,7.8
+INC-01701,2026-08-06 18:00,srv-biblio-04,MALWARE,4,3,481.1,17.0,C,Central,HV-8.0,17.2,6550.0,16.6
+INC-01702,2026-08-07 02:00,srv-correo-28,MALWARE,1,1,665.0,,C,Central,HV-8.0,24.0,10116.0,24.5
+INC-01703,2026-08-07 09:00,srv-correo-25,malware,8,2,10.8,,B,Anexo,HV-8.0,27.5,11432.0,27.7
+INC-01704,2026-08-07 19:00,srv-biblio-33,malware,1,3,25.4,20.0,C,Anexo,HV-8.0,6.9,2838.0,6.8
+INC-01705,2026-08-07 20:00,srv-acad-06,FALLA HW,6,3,357.1,3.0,C,Central,HV-8.0,14.7,5747.0,14.4
+INC-01706,2026-08-07 23:00,srv-correo-35,ERROR CONFIG,4,2,62.5,0.0,B,Central,HV-8.0,3.0,1311.0,3.2
+INC-01707,2026-08-09 02:00,srv-web-14,RANSOMWARE,1,3,318.9,,C,Central,HV-8.0,80.7,32142.0,80.7
+INC-01708,2026-08-09 03:00,srv-correo-17,DDOS,8,2,666.9,24.0,C,Anexo,HV-8.0,14.6,6113.0,15.2
+INC-01709,2026-08-10 05:00,srv-acad-26,Malware,3,2,336.3,7.0,A,Anexo,HV-8.0,12.4,5017.0,12.4
+INC-01710,2026-08-10 11:00,srv-virtual-07,ERROR CONFIG,8,1,865.3,15.0,C,Anexo,HV-8.0,7.0,2650.0,6.9
+INC-01711,2026-08-11 05:00,srv-virtual-01,ddos,6,2,146.3,22.0,C,Anexo,HV-8.0,6.3,2611.0,6.3
+INC-01712,2026-08-11 15:00,srv-correo-16,DDoS,2,2,113.5,20.0,A,Central,HV-8.0,4.1,1676.0,4.2
+INC-01713,2026-08-12 18:00,srv-web-02,error_configuracion,2,2,77.3,2.0,B,Anexo,HV-8.0,4.1,1720.0,4.1
+INC-01714,2026-08-12 19:00,srv-web-08,Falla hardware,4,1,69.2,24.0,B,Anexo,HV-8.0,7.2,2753.0,6.9
+INC-01715,2026-08-13 09:00,srv-biblio-23,Falla hardware,4,1,88.9,21.0,B,Central,HV-8.0,6.4,2559.0,6.1
+INC-01716,2026-08-14 23:00,srv-correo-33,error_configuracion,2,1,107.2,14.0,C,Central,HV-8.0,3.6,1338.0,3.2
+INC-01717,2026-08-15 08:00,srv-web-25,ddos,6,2,64.1,5.0,B,Central,HV-8.0,6.8,2909.0,7.3
+INC-01718,2026-08-15 11:00,srv-virtual-09,Error configuración,5,1,34.9,11.0,B,Anexo,HV-8.0,4.8,2173.0,5.3
+INC-01719,2026-08-15 21:00,srv-correo-10,Malware,7,1,82.1,10.0,A,Central,HV-8.0,14.1,5534.0,14.2
+INC-01720,2026-08-16 06:00,srv-web-04,DDoS,8,1,303.7,12.0,C,Anexo,HV-8.0,9.3,3762.0,9.1
+INC-01721,2026-08-16 11:00,srv-web-15,error_configuracion,2,1,103.7,4.0,C,Anexo,HV-8.0,3.9,1557.0,3.8
+INC-01722,2026-08-16 13:00,srv-web-15,ddos,7,3,220.6,26.0,B,Anexo,HV-8.0,11.8,4711.0,11.8
+INC-01723,2026-08-16 22:00,srv-biblio-11,FALLA HW,3,3,92.0,17.0,A,Anexo,HV-8.0,8.0,3273.0,8.4
+INC-01724,2026-08-16 22:00,srv-biblio-22,Error configuración,1,3,116.2,14.0,C,Anexo,HV-8.0,2.4,972.0,2.5
+INC-01725,2026-08-17 04:00,srv-web-03,Error configuración,2,2,177.1,3.0,B,Anexo,HV-8.0,3.2,1452.0,3.7
+INC-01726,2026-08-17 07:00,srv-web-26,malware,6,2,65.2,4.0,A,Anexo,HV-8.0,16.2,6409.0,16.2
+INC-01727,2026-08-17 23:00,srv-web-23,Error configuración,2,2,249.0,15.0,C,Anexo,HV-8.0,10.6,4379.0,10.9
+INC-01728,2026-08-18 14:00,srv-correo-28,ERROR CONFIG,2,2,196.8,,A,Anexo,HV-8.0,7.4,3194.0,7.7
+INC-01729,2026-08-18 18:00,srv-acad-14,Error configuración,5,2,76.3,28.0,A,Anexo,HV-8.0,3.9,1509.0,3.9
+INC-01730,2026-08-18 23:00,srv-virtual-04,Error configuración,3,2,1094.7,,B,Anexo,HV-8.0,14.3,5775.0,14.8
+INC-01731,2026-08-19 07:00,srv-acad-31,error_configuracion,1,3,78.2,8.0,A,Anexo,HV-8.0,3.6,1503.0,3.6
+INC-01732,2026-08-20 11:00,srv-virtual-28,Falla hardware,2,2,150.3,18.0,B,Anexo,HV-8.0,5.1,1970.0,4.9
+INC-01733,2026-08-21 09:00,srv-virtual-27,Malware,8,2,451.5,23.0,B,Anexo,HV-8.0,14.6,5973.0,14.4
+INC-01734,2026-08-22 00:00,srv-biblio-24,DDoS,6,2,1190.0,13.0,B,Central,HV-8.0,15.5,5906.0,15.5
+INC-01735,2026-08-22 11:00,srv-biblio-27,Ransomware,1,2,324.8,6.0,A,Anexo,HV-8.0,19.0,7484.0,18.8
+INC-01736,2026-08-22 20:00,srv-biblio-38,ddos,3,1,69.2,,C,Anexo,HV-8.0,7.8,3169.0,8.0
+INC-01737,2026-08-24 20:00,srv-biblio-07,malware,2,2,958.3,4.0,C,Central,HV-8.0,12.3,4753.0,11.7
+INC-01738,2026-08-24 21:00,srv-virtual-11,ransomware ,3,2,119.1,,B,Anexo,HV-8.0,101.3,40200.0,101.2
+INC-01738,2026-08-24 21:00,srv-virtual-11,ransomware ,3,2,119.1,,B,Anexo,HV-8.0,101.3,40200.0,101.2
+INC-01740,2026-08-25 00:00,srv-web-33,Ransomware,7,1,249.1,8.0,C,Anexo,HV-8.0,27.5,10455.0,26.7
+INC-01741,2026-08-25 08:00,srv-correo-16,ERROR CONFIG,8,3,70.0,28.0,A,Anexo,HV-8.0,29.2,11852.0,28.8
+INC-01742,2026-08-25 09:00,srv-biblio-19,error_configuracion,2,2,103.7,10.0,A,Anexo,HV-8.0,2.5,1130.0,2.9
+INC-01743,2026-08-25 11:00,srv-virtual-12,ERROR CONFIG,1,1,61.1,13.0,C,Central,HV-8.0,3.1,1134.0,2.9
+INC-01744,2026-08-25 20:00,srv-correo-18,ERROR CONFIG,4,3,205.0,,C,Anexo,HV-8.0,13.3,5110.0,13.2
+INC-01745,2026-08-25 20:00,srv-web-31,RANSOMWARE,3,1,51.4,9.0,B,Central,HV-8.0,27.7,11147.0,28.0
+INC-01746,2026-08-26 00:00,srv-biblio-09,malware,8,2,908.1,19.0,C,Anexo,HV-8.0,20.8,8492.0,20.6
+INC-01747,2026-08-26 10:00,srv-acad-39,FALLA HW,4,2,94.7,3.0,B,Anexo,HV-8.0,9.4,3913.0,9.5
+INC-01748,2026-08-26 14:00,srv-virtual-18,MALWARE,4,1,69.1,,B,Central,HV-8.0,22.7,9038.0,22.5
+INC-01749,2026-08-26 21:00,srv-virtual-38,DDoS,1,2,86.4,19.0,C,Central,HV-8.0,5.4,2241.0,5.6
+INC-01750,2026-08-26 23:00,srv-correo-19,falla_hardware,4,2,50.9,13.0,A,Anexo,HV-8.0,10.3,3869.0,9.9
+INC-01751,2026-08-27 06:00,srv-virtual-38,RANSOMWARE,2,3,71.5,4.0,B,Anexo,HV-8.0,23.8,9304.0,23.9
+INC-01752,2026-08-27 09:00,srv-biblio-28,Error configuración,3,1,60.0,2.0,A,Anexo,HV-8.0,3.7,1459.0,3.8
+SIM-01753,2026-08-27 09:00,srv-biblio-28,Error configuración,3,1,60.0,1.0,A,Anexo,HV-8.0,0.0,0.0,1.0
+INC-01754,2026-08-27 11:00,srv-web-02,falla_hardware,6,1,134.8,2.0,B,Anexo,HV-8.0,11.4,4515.0,11.7
+INC-01755,2026-08-27 15:00,srv-biblio-20,Falla hardware,2,3,264.0,26.0,C,Anexo,HV-8.0,14.6,6120.0,14.6
+INC-01756,2026-08-28 12:00,srv-biblio-28,falla_hardware,4,2,150.8,19.0,C,Central,HV-8.0,11.2,4564.0,11.4
+INC-01757,2026-08-28 19:00,srv-virtual-31,Falla hardware,2,3,377.0,13.0,B,Central,HV-8.0,19.0,7696.0,18.6
+INC-01758,2026-08-28 23:00,srv-acad-04,Error configuración,1,2,31.5,,A,Anexo,HV-8.0,5.4,2391.0,6.0
+INC-01759,2026-08-29 03:00,srv-web-33,error_configuracion,7,3,42.6,,A,Anexo,HV-8.0,17.6,6857.0,17.9
+INC-01760,2026-08-29 04:00,srv-biblio-14,ddos,5,2,197.5,28.0,A,Central,HV-8.0,14.0,5817.0,14.1
+INC-01761,2026-08-29 20:00,srv-web-28,falla_hardware,5,1,600.6,6.0,C,Anexo,HV-8.0,12.8,4998.0,12.6
+INC-01762,2026-08-30 04:00,srv-correo-09,malware,3,2,109.4,28.0,A,Anexo,HV-8.0,19.1,7926.0,19.0
+INC-01762,2026-08-30 04:00,srv-correo-09,malware,3,2,109.4,28.0,A,Anexo,HV-8.0,19.1,7926.0,19.0
+INC-01764,2026-08-30 08:00,srv-web-01,DDOS,4,2,78.4,27.0,B,Central,HV-8.0,7.9,3201.0,7.9
+INC-01765,2026-08-30 13:00,srv-virtual-12,Falla hardware,6,1,202.4,20.0,A,Anexo,HV-8.0,13.9,5769.0,14.1
+INC-01766,2026-08-31 14:00,srv-biblio-18,DDoS,6,3,204.3,8.0,A,Anexo,HV-8.0,9.5,3803.0,9.8
+INC-01767,2026-09-02 23:00,srv-virtual-15,ERROR CONFIG,7,1,44.9,26.0,A,Central,HV-8.0,6.4,2891.0,6.9
+INC-01768,2026-09-03 01:00,srv-correo-16,error_configuracion,2,2,185.3,16.0,A,Central,HV-8.0,4.3,1715.0,4.3
+INC-01769,2026-09-03 01:00,srv-virtual-09,falla_hardware,3,3,234.5,24.0,A,Central,HV-8.0,11.2,4498.0,11.2
+INC-01770,2026-09-03 05:00,srv-correo-06,falla_hardware,1,1,105.5,27.0,A,Central,HV-8.0,4.0,1579.0,4.1
+INC-01771,2026-09-03 06:00,srv-web-32,malware,2,2,913.9,4.0,A,Central,HV-8.0,11.1,4497.0,11.1
+INC-01772,2026-09-03 06:00,srv-acad-34,ransomware ,7,1,327.3,15.0,C,Central,HV-8.0,45.5,18176.0,45.9
+INC-01772,2026-09-03 06:00,srv-acad-34,ransomware ,7,1,327.3,15.0,C,Central,HV-8.0,45.5,18176.0,45.9
+INC-01774,2026-09-03 20:00,srv-virtual-33,FALLA HW,4,2,312.7,28.0,C,Central,HV-8.0,15.1,6004.0,14.7
+INC-01775,2026-09-04 04:00,srv-acad-21,Malware,3,1,46.7,29.0,A,Anexo,HV-8.0,8.4,3283.0,8.5
+INC-01776,2026-09-04 15:00,srv-correo-28,Malware,8,1,63.8,,B,Central,HV-8.0,21.7,8250.0,20.9
+INC-01777,2026-09-04 23:00,srv-web-20,falla_hardware,6,3,341.9,24.0,A,Central,HV-8.0,13.3,5267.0,13.1
+INC-01778,2026-09-05 13:00,srv-correo-03,MALWARE,8,2,310.8,9.0,C,Central,HV-8.0,15.4,6386.0,15.5
+INC-01779,2026-09-06 21:00,srv-biblio-08,ERROR CONFIG,6,1,70.2,28.0,B,Anexo,HV-8.0,4.6,1755.0,4.5
+INC-01780,2026-09-07 18:00,srv-acad-06,DDoS,6,2,232.6,17.0,C,Anexo,HV-8.0,6.4,2626.0,6.5
+INC-01781,2026-09-08 17:00,srv-biblio-28,FALLA HW,5,1,251.7,9.0,A,Central,HV-8.0,12.3,5187.0,13.0
+INC-01782,2026-09-09 00:00,srv-web-01,Malware,5,1,235.0,27.0,C,Anexo,HV-8.0,21.3,8565.0,21.0
+INC-01783,2026-09-09 07:00,srv-biblio-20,Ransomware,1,2,22.0,12.0,B,Anexo,HV-8.0,13.2,5186.0,13.2
+INC-01784,2026-09-09 12:00,srv-correo-04,FALLA HW,1,3,155.5,6.0,C,Central,HV-8.0,6.3,2558.0,6.2
+INC-01785,2026-09-09 14:00,srv-correo-13,MALWARE,5,2,366.1,26.0,A,Anexo,HV-8.0,14.0,5806.0,14.1
+INC-01786,2026-09-09 15:00,srv-biblio-06,DDOS,5,1,31.7,26.0,C,Anexo,HV-8.0,5.3,2074.0,5.3
+INC-01787,2026-09-09 18:00,srv-web-03,falla_hardware,4,2,158.9,12.0,C,Anexo,HV-8.0,10.6,4029.0,10.3
+INC-01788,2026-09-10 09:00,srv-correo-22,Falla hardware,6,1,262.8,19.0,A,Anexo,HV-8.0,10.4,4281.0,10.7
+INC-01789,2026-09-10 15:00,srv-correo-11,ERROR CONFIG,2,1,215.7,,B,Central,HV-8.0,6.8,2581.0,6.5
+INC-01790,2026-09-11 03:00,srv-correo-24,DDoS,1,2,427.4,16.0,A,Anexo,HV-8.0,3.9,1646.0,4.1
+INC-01791,2026-09-11 11:00,srv-biblio-07,FALLA HW,7,2,794.1,28.0,B,Anexo,HV-8.0,28.9,11259.0,28.8
+INC-01792,2026-09-11 18:00,srv-biblio-09,ERROR CONFIG,4,2,362.0,17.0,C,Anexo,HV-8.0,6.8,2626.0,6.7
+INC-01793,2026-09-12 04:00,srv-correo-33,Malware,1,2,68.4,18.0,C,Anexo,HV-8.0,11.4,4800.0,11.6
+INC-01794,2026-09-12 06:00,srv-acad-21,ransomware ,6,3,102.5,22.0,C,Anexo,HV-8.0,53.8,20813.0,54.2
+INC-01794,2026-09-12 06:00,srv-acad-21,ransomware ,6,3,102.5,22.0,C,Anexo,HV-8.0,53.8,20813.0,54.2
+INC-01796,2026-09-12 18:00,srv-correo-02,falla_hardware,7,3,40.3,18.0,A,Central,HV-8.0,14.1,5210.0,13.7
+INC-01797,2026-09-13 05:00,srv-correo-21,MALWARE,5,3,344.8,19.0,A,Anexo,HV-8.0,20.4,8273.0,20.6
+INC-01798,2026-09-14 01:00,srv-web-15,error_configuracion,3,3,326.9,15.0,A,Central,HV-8.0,8.1,3120.0,7.6
+INC-01799,2026-09-14 13:00,srv-acad-04,error_configuracion,8,1,99.4,8.0,B,Central,HV-8.0,4.6,1981.0,4.8
+INC-01800,2026-09-14 21:00,srv-virtual-13,ransomware ,1,2,1087.9,29.0,A,Central,HV-8.0,18.5,7327.0,18.6
+INC-01801,2026-09-15 01:00,srv-web-21,DDOS,7,3,1745.9,14.0,B,Central,HV-8.0,21.7,8792.0,21.7
+INC-01802,2026-09-15 12:00,srv-virtual-05,FALLA HW,7,1,476.7,15.0,B,Central,HV-8.0,13.2,5588.0,13.5
+INC-01802,2026-09-15 12:00,srv-virtual-05,FALLA HW,7,1,476.7,15.0,B,Central,HV-8.0,13.2,5588.0,13.5
+INC-01804,2026-09-15 19:00,srv-biblio-16,Malware,8,1,615.0,24.0,B,Anexo,HV-8.0,33.3,12778.0,33.5
+INC-01805,2026-09-16 18:00,srv-web-15,falla_hardware,2,2,430.0,27.0,B,Anexo,HV-8.0,14.5,6258.0,14.9
+INC-01806,2026-09-16 22:00,srv-acad-27,ransomware ,3,1,87.6,25.0,C,Central,HV-8.0,19.9,7675.0,19.5
+INC-01807,2026-09-17 09:00,srv-correo-21,MALWARE,6,2,107.4,26.0,B,Anexo,HV-8.0,23.1,9385.0,23.7
+INC-01808,2026-09-17 14:00,srv-virtual-04,RANSOMWARE,7,1,330.6,19.0,C,Anexo,HV-8.0,39.1,16085.0,39.4
+INC-01809,2026-09-17 21:00,srv-correo-31,RANSOMWARE,3,1,352.4,26.0,B,Anexo,HV-8.0,37.0,14723.0,36.8
+INC-01810,2026-09-18 11:00,srv-virtual-32,ddos,8,2,169.0,3.0,A,Central,HV-8.0,9.9,3990.0,10.3
+INC-01811,2026-09-18 18:00,srv-acad-11,DDOS,4,3,255.6,20.0,C,Central,HV-8.0,10.0,3756.0,9.8
+INC-01812,2026-09-18 22:00,srv-biblio-19,DDoS,8,1,48.8,19.0,C,Central,HV-8.0,8.3,3274.0,8.5
+INC-01813,2026-09-19 02:00,srv-correo-31,Malware,7,2,172.0,1.0,C,Anexo,HV-8.0,16.7,6586.0,17.0
+INC-01814,2026-09-19 06:00,srv-acad-39,MALWARE,8,2,138.2,3.0,A,Central,HV-8.0,20.5,8484.0,20.4
+INC-01815,2026-09-19 07:00,srv-web-28,error_configuracion,6,2,121.9,6.0,B,Central,HV-8.0,4.6,1917.0,4.6
+INC-01816,2026-09-19 11:00,srv-web-26,ddos,5,2,23.0,23.0,A,Anexo,HV-8.0,7.2,3267.0,7.8
+INC-01817,2026-09-19 18:00,srv-correo-09,ERROR CONFIG,5,2,125.0,29.0,B,Anexo,HV-8.0,8.2,3194.0,8.3
+INC-01818,2026-09-19 20:00,srv-virtual-24,malware,5,3,374.9,0.0,C,Central,HV-8.0,27.0,10295.0,26.9
+INC-01819,2026-09-20 13:00,srv-acad-13,falla_hardware,6,2,68.9,21.0,A,Central,HV-8.0,10.9,4307.0,11.1
+INC-01820,2026-09-20 20:00,srv-correo-34,ransomware ,2,1,401.4,29.0,C,Anexo,HV-8.0,31.3,12613.0,31.4
+SIM-01821,2026-09-20 23:00,srv-acad-21,Falla hardware,1,3,368.9,1.0,A,Anexo,HV-8.0,0.0,0.0,1.9
+INC-01822,2026-09-20 23:00,srv-acad-21,Falla hardware,1,3,368.9,20.0,A,Anexo,HV-8.0,8.6,3415.0,8.6
+INC-01823,2026-09-21 03:00,srv-biblio-33,MALWARE,2,1,478.5,28.0,B,Central,HV-8.0,22.4,8641.0,22.2
+INC-01824,2026-09-21 14:00,srv-virtual-28,error_configuracion,6,2,131.1,15.0,A,Anexo,HV-8.0,6.0,2514.0,6.1
+INC-01825,2026-09-21 17:00,srv-virtual-06,ERROR CONFIG,4,2,75.7,16.0,A,Anexo,HV-8.0,3.2,1218.0,3.0
+INC-01826,2026-09-22 00:00,srv-correo-13,Ransomware,8,3,218.6,,C,Central,HV-8.0,90.6,34785.0,90.8
+INC-01827,2026-09-22 01:00,srv-virtual-23,ddos,3,2,125.3,9.0,B,Central,HV-8.0,4.5,1672.0,4.1
+INC-01828,2026-09-22 14:00,srv-correo-24,DDoS,8,3,251.4,9.0,B,Central,HV-8.0,35.4,14711.0,35.7
+INC-01829,2026-09-22 17:00,srv-correo-14,Falla hardware,4,2,107.8,22.0,A,Central,HV-8.0,13.5,5376.0,13.0
+INC-01830,2026-09-22 21:00,srv-acad-38,malware,6,3,100.2,,B,Anexo,HV-8.0,38.2,15425.0,38.6
+INC-01831,2026-09-22 22:00,srv-web-04,Ransomware,8,1,141.3,15.0,B,Central,HV-8.0,38.6,15038.0,38.5
+INC-01832,2026-09-23 06:00,srv-virtual-09,ddos,6,3,137.9,11.0,C,Anexo,HV-8.0,8.2,3337.0,8.3
+INC-01833,2026-09-23 11:00,srv-acad-39,malware,4,3,4517.8,3.0,A,Central,HV-8.0,26.6,11004.0,27.0
+INC-01834,2026-09-23 20:00,srv-acad-16,Malware,4,2,308.5,11.0,B,Central,HV-8.0,17.4,7501.0,18.0
+INC-01835,2026-09-25 00:00,srv-biblio-08,FALLA HW,3,2,694.2,15.0,A,Anexo,HV-8.0,9.8,4133.0,9.9
+INC-01836,2026-09-25 06:00,srv-virtual-20,falla_hardware,6,3,190.3,12.0,B,Anexo,HV-8.0,9.6,3934.0,10.0
+INC-01837,2026-09-25 12:00,srv-biblio-13,Malware,3,3,541.7,9.0,C,Central,HV-8.0,21.4,8861.0,21.4
+INC-01838,2026-09-25 22:00,srv-acad-14,FALLA HW,4,2,57.7,12.0,C,Central,HV-8.0,12.8,5118.0,13.0
+INC-01839,2026-09-26 10:00,srv-biblio-35,Error configuración,7,2,111.5,8.0,A,Central,HV-8.0,6.7,2533.0,6.5
+INC-01840,2026-09-26 12:00,srv-biblio-24,Malware,7,2,390.4,10.0,C,Anexo,HV-8.0,17.4,6981.0,17.6
+INC-01841,2026-09-26 17:00,srv-virtual-27,DDOS,3,2,43.0,24.0,B,Anexo,HV-8.0,3.4,1325.0,3.4
+INC-01842,2026-09-27 09:00,srv-web-24,Error configuración,3,1,140.6,,A,Central,HV-8.0,7.3,2906.0,7.1
+INC-01843,2026-09-27 10:00,srv-correo-27,MALWARE,3,2,2340.3,21.0,B,Central,HV-8.0,23.2,8820.0,23.2
+INC-01844,2026-09-27 14:00,srv-acad-26,FALLA HW,4,1,302.6,14.0,C,Central,HV-8.0,8.7,3453.0,8.8
+INC-01845,2026-09-28 03:00,srv-virtual-37,ddos,8,2,628.4,24.0,C,Central,HV-8.0,12.8,5337.0,13.0
+INC-01846,2026-09-28 05:00,srv-virtual-26,error_configuracion,7,1,799.7,,B,Anexo,HV-8.0,18.6,7060.0,18.5
+INC-01847,2026-09-28 14:00,srv-virtual-23,Error configuración,5,1,368.3,,B,Anexo,HV-8.0,15.2,5756.0,15.1
+INC-01848,2026-09-28 23:00,srv-correo-15,error_configuracion,1,1,50.8,1.0,A,Central,HV-8.0,3.0,1417.0,3.4
+INC-01849,2026-09-29 14:00,srv-web-24,ransomware ,6,2,98.9,23.0,B,Central,HV-8.0,36.2,15257.0,36.9
+INC-01850,2026-09-30 04:00,srv-web-14,Malware,7,2,114.8,,B,Central,HV-8.0,49.5,19031.0,49.3
+INC-01851,2026-09-30 09:00,srv-biblio-36,ddos,3,2,159.0,19.0,B,Central,HV-8.0,4.3,1588.0,3.8
+INC-01852,2026-10-02 00:00,srv-biblio-36,malware,5,1,-251.6,2.0,B,Anexo,HV-8.0,16.1,6652.0,16.5
+INC-01853,2026-10-02 06:00,srv-biblio-06,FALLA HW,5,1,118.2,12.0,B,Central,HV-8.0,6.8,2817.0,6.8
+INC-01854,2026-10-02 08:00,srv-correo-01,DDOS,2,1,27.1,25.0,B,Anexo,HV-8.0,3.1,1300.0,3.3
+INC-01855,2026-10-02 17:00,srv-biblio-25,ransomware ,6,2,131.6,5.0,A,Anexo,HV-8.0,32.7,13583.0,32.8
+INC-01856,2026-10-03 14:00,srv-correo-37,error_configuracion,1,2,123.6,5.0,C,Central,HV-8.0,3.0,1297.0,3.2
+INC-01857,2026-10-03 22:00,srv-acad-22,FALLA HW,8,2,276.6,22.0,B,Anexo,HV-8.0,24.1,10079.0,24.0
+INC-01858,2026-10-04 15:00,srv-virtual-38,falla_hardware,2,1,191.7,,C,Anexo,HV-8.0,19.1,7523.0,19.1
+INC-01859,2026-10-05 01:00,srv-acad-28,error_configuracion,7,3,80.8,20.0,A,Anexo,HV-8.0,7.1,2844.0,7.2
+INC-01860,2026-10-05 17:00,srv-biblio-38,ERROR CONFIG,7,2,232.2,3.0,B,Anexo,HV-8.0,7.9,3124.0,8.2
+INC-01860,2026-10-05 17:00,srv-biblio-38,ERROR CONFIG,7,2,232.2,3.0,B,Anexo,HV-8.0,7.9,3124.0,8.2
+INC-01862,2026-10-06 06:00,srv-acad-02,Falla hardware,6,3,510.0,26.0,A,Central,HV-8.0,17.3,6850.0,17.4
+INC-01863,2026-10-06 07:00,srv-acad-09,error_configuracion,4,2,882.0,15.0,B,Anexo,HV-8.0,6.2,2493.0,6.2
+INC-01864,2026-10-06 14:00,srv-correo-10,Ransomware,8,3,1454.4,3.0,C,Anexo,HV-8.0,46.0,18699.0,46.3
+INC-01865,2026-10-06 14:00,srv-correo-28,falla_hardware,5,3,295.2,1.0,A,Central,HV-8.0,18.4,6962.0,18.3
+INC-01866,2026-10-06 21:00,srv-correo-13,Malware,7,1,282.7,1.0,C,Anexo,HV-8.0,20.9,8473.0,21.1
+INC-01867,2026-10-07 12:00,srv-web-28,FALLA HW,8,1,22.7,0.0,A,Anexo,HV-8.0,7.3,2966.0,7.3
+INC-01867,2026-10-07 12:00,srv-web-28,FALLA HW,8,1,22.7,0.0,A,Anexo,HV-8.0,7.3,2966.0,7.3
+INC-01869,2026-10-08 01:00,srv-web-25,MALWARE,4,1,333.2,26.0,A,Anexo,HV-8.0,13.2,5540.0,13.2
+INC-01870,2026-10-08 19:00,srv-web-02,Error configuración,3,2,24.6,18.0,A,Central,HV-8.0,3.0,1307.0,3.3
+INC-01871,2026-10-10 00:00,srv-acad-07,Ransomware,1,1,715.9,19.0,A,Anexo,HV-8.0,23.4,9926.0,23.9
+INC-01872,2026-10-10 02:00,srv-acad-19,Error configuración,7,3,211.2,28.0,A,Central,HV-8.0,12.9,5486.0,13.2
+INC-01873,2026-10-10 03:00,srv-virtual-03,ERROR CONFIG,8,2,-44.5,3.0,A,Anexo,HV-8.0,7.1,2773.0,7.1
+INC-01874,2026-10-10 07:00,srv-web-23,falla_hardware,5,1,200.8,,B,Anexo,HV-8.0,77.4,31726.0,77.0
+INC-01875,2026-10-10 20:00,srv-web-21,DDOS,6,2,34.4,8.0,A,Central,HV-8.0,7.2,2875.0,7.1
+INC-01875,2026-10-10 20:00,srv-web-21,DDOS,6,2,34.4,8.0,A,Central,HV-8.0,7.2,2875.0,7.1
+INC-01877,2026-10-11 01:00,srv-web-15,FALLA HW,2,2,53.0,18.0,A,Central,HV-8.0,5.9,2197.0,5.6
+INC-01878,2026-10-11 05:00,srv-correo-01,error_configuracion,2,3,83.3,28.0,A,Central,HV-8.0,5.0,1946.0,4.7
+INC-01878,2026-10-11 05:00,srv-correo-01,error_configuracion,2,3,83.3,28.0,A,Central,HV-8.0,5.0,1946.0,4.7
+INC-01880,2026-10-11 10:00,srv-virtual-16,malware,5,1,484.3,24.0,B,Central,HV-8.0,14.0,5754.0,14.1
+INC-01881,2026-10-11 19:00,srv-biblio-09,malware,3,1,300.2,21.0,C,Anexo,HV-8.0,11.6,4551.0,11.4
+INC-01882,2026-10-11 23:00,srv-web-26,Falla hardware,7,1,96.5,,C,Central,HV-8.0,30.5,11563.0,30.3
+INC-01883,2026-10-12 13:00,srv-virtual-11,error_configuracion,5,1,145.4,16.0,B,Central,HV-8.0,10.3,4127.0,10.0
+INC-01884,2026-10-12 16:00,srv-web-30,MALWARE,2,1,106.7,,A,Central,HV-8.0,12.9,5090.0,12.9
+INC-01885,2026-10-13 08:00,srv-acad-19,Error configuración,2,2,215.8,12.0,C,Central,HV-8.0,12.4,4956.0,12.1
+INC-01886,2026-10-13 10:00,srv-biblio-31,Falla hardware,2,3,166.2,10.0,B,Central,HV-8.0,25.4,10343.0,25.6
+INC-01887,2026-10-13 13:00,srv-web-19,error_configuracion,3,2,9.7,8.0,A,Central,HV-8.0,3.7,1648.0,4.0
+INC-01888,2026-10-14 16:00,srv-correo-16,falla_hardware,5,3,55.6,10.0,B,Central,HV-8.0,12.7,5077.0,13.0
+INC-01889,2026-10-14 17:00,srv-acad-35,falla_hardware,7,2,332.6,9.0,C,Anexo,HV-8.0,11.7,4908.0,12.0
+INC-01890,2026-10-14 22:00,srv-web-32,Ransomware,1,1,808.9,24.0,B,Central,HV-8.0,28.7,11594.0,28.8
+INC-01891,2026-10-15 02:00,srv-virtual-25,malware,2,2,172.4,28.0,C,Central,HV-8.0,9.8,4263.0,10.3
+INC-01892,2026-10-15 19:00,srv-acad-37,MALWARE,1,1,191.5,4.0,A,Anexo,HV-8.0,5.3,2291.0,5.7
+INC-01893,2026-10-16 17:00,srv-biblio-04,DDOS,4,1,393.5,10.0,C,Central,HV-8.0,6.6,2474.0,6.2
+INC-01894,2026-10-17 17:00,srv-biblio-11,Malware,4,2,75.7,7.0,B,Central,HV-8.0,12.9,5498.0,13.1
+INC-01895,2026-10-18 04:00,srv-virtual-10,ddos,1,1,117.1,10.0,B,Central,HV-8.0,4.3,1597.0,4.1
+INC-01896,2026-10-18 23:00,srv-biblio-35,RANSOMWARE,4,2,581.0,19.0,A,Anexo,HV-8.0,31.5,13229.0,31.6
+INC-01897,2026-10-19 02:00,srv-acad-08,MALWARE,7,3,95.7,2.0,B,Anexo,HV-8.0,24.5,9815.0,24.6
+INC-01898,2026-10-19 06:00,srv-virtual-05,FALLA HW,7,3,211.0,,B,Anexo,HV-8.0,46.5,19413.0,46.4
+INC-01899,2026-10-19 12:00,srv-web-33,malware,2,1,419.1,10.0,A,Central,HV-8.0,7.5,2986.0,7.2
+INC-01900,2026-10-19 13:00,srv-virtual-31,Falla hardware,6,1,39.4,24.0,B,Central,HV-8.0,9.6,4042.0,9.7
+INC-01901,2026-10-19 20:00,srv-acad-14,Error configuración,5,2,63.4,3.0,A,Anexo,HV-8.0,4.4,1837.0,4.4
+INC-01902,2026-10-20 02:00,srv-biblio-23,ddos,1,2,112.7,1.0,A,Anexo,HV-8.0,3.9,1529.0,3.7
+INC-01903,2026-10-20 06:00,srv-biblio-33,Error configuración,7,1,15.7,26.0,A,Anexo,HV-8.0,4.4,1787.0,4.7
+INC-01904,2026-10-20 06:00,srv-correo-21,Ransomware,2,2,20.5,8.0,A,Central,HV-8.0,9.9,3929.0,10.3
+INC-01905,2026-10-22 01:00,srv-web-09,ddos,8,2,68.2,5.0,A,Anexo,HV-8.0,5.6,2130.0,5.6
+SIM-01906,2026-10-22 19:00,srv-web-31,MALWARE,4,2,150.6,1.0,C,Central,HV-8.0,0.0,0.0,1.1
+INC-01907,2026-10-22 19:00,srv-web-31,MALWARE,4,2,150.6,7.0,C,Central,HV-8.0,28.1,11280.0,28.5
+INC-01908,2026-10-22 21:00,srv-correo-35,Malware,7,3,115.3,,C,Central,HV-8.0,52.6,20964.0,52.3
+INC-01909,2026-10-23 18:00,srv-correo-32,Malware,3,3,134.0,13.0,C,Anexo,HV-8.0,12.3,4947.0,12.0
+INC-01910,2026-10-23 22:00,srv-web-30,Malware,5,1,192.8,3.0,B,Central,HV-8.0,17.9,7511.0,18.2
+INC-01911,2026-10-24 00:00,srv-acad-12,DDoS,2,2,1672.5,11.0,B,Anexo,HV-8.0,6.9,2940.0,7.4
+INC-01912,2026-10-24 00:00,srv-biblio-29,Error configuración,2,3,193.0,23.0,B,Anexo,HV-8.0,5.6,2157.0,5.4
+INC-01913,2026-10-24 06:00,srv-web-12,FALLA HW,1,2,210.9,20.0,B,Central,HV-8.0,11.3,4548.0,11.1
+INC-01914,2026-10-25 10:00,srv-web-37,DDOS,3,1,69.0,13.0,C,Central,HV-8.0,4.8,1928.0,4.8
+INC-01915,2026-10-25 15:00,srv-biblio-29,ransomware ,3,3,53.9,15.0,A,Anexo,HV-8.0,20.3,8033.0,20.2
+INC-01916,2026-10-27 01:00,srv-virtual-24,Falla hardware,1,2,69.8,28.0,A,Central,HV-8.0,5.8,2260.0,5.6
+INC-01917,2026-10-27 17:00,srv-web-09,Ransomware,7,3,68.1,24.0,A,Anexo,HV-8.0,52.5,20886.0,52.6
+INC-01918,2026-10-28 05:00,srv-biblio-16,RANSOMWARE,8,2,407.8,12.0,A,Anexo,HV-8.0,74.9,28769.0,75.2
+INC-01919,2026-10-28 14:00,srv-correo-10,error_configuracion,8,1,393.4,17.0,C,Central,HV-8.0,7.8,2975.0,7.8
+INC-01920,2026-10-29 00:00,srv-web-21,Malware,6,1,251.7,26.0,B,Central,HV-8.0,23.0,8918.0,23.0
+INC-01921,2026-10-29 10:00,srv-acad-04,falla_hardware,3,1,101.0,17.0,A,Anexo,HV-8.0,12.2,5091.0,12.5
+INC-01922,2026-10-29 20:00,srv-virtual-36,DDoS,7,2,181.7,,B,Central,HV-8.0,24.0,9575.0,24.2
+INC-01923,2026-10-30 03:00,srv-web-08,Error configuración,4,1,76.8,17.0,A,Anexo,HV-8.0,3.8,1569.0,3.9
+INC-01924,2026-10-30 13:00,srv-web-01,falla_hardware,8,2,265.0,6.0,C,Central,HV-8.0,15.0,5812.0,14.7
+INC-01925,2026-10-30 13:00,srv-correo-15,ERROR CONFIG,6,2,201.3,19.0,C,Anexo,HV-8.0,22.5,8887.0,22.3
+INC-01926,2026-10-30 14:00,srv-acad-31,ransomware ,4,3,160.9,1.0,B,Anexo,HV-8.0,31.5,12186.0,31.4
+INC-01927,2026-10-31 00:00,srv-correo-07,Falla hardware,2,1,271.7,21.0,A,Anexo,HV-8.0,6.3,2849.0,6.8
+INC-01928,2026-10-31 13:00,srv-biblio-03,Malware,8,3,228.9,5.0,C,Anexo,HV-8.0,28.4,11173.0,28.3
+INC-01929,2026-10-31 18:00,srv-correo-39,falla_hardware,7,2,115.2,22.0,C,Anexo,HV-8.0,19.6,7775.0,19.4
+INC-01930,2026-11-01 00:00,srv-biblio-20,Ransomware,6,2,37.8,19.0,A,Anexo,HV-8.0,40.6,16881.0,40.5
+INC-01931,2026-11-01 03:00,srv-biblio-29,MALWARE,1,2,77.2,14.0,C,Anexo,HV-8.0,5.7,2030.0,5.2
+INC-01932,2026-11-01 22:00,srv-biblio-29,Error configuración,6,2,92.6,,B,Central,HV-8.0,12.3,4759.0,12.3
+INC-01933,2026-11-01 23:00,srv-correo-26,error_configuracion,5,1,61.8,19.0,C,Anexo,HV-8.0,4.4,1886.0,4.5
+INC-01934,2026-11-02 16:00,srv-biblio-08,falla_hardware,7,2,158.3,13.0,A,Anexo,HV-8.0,20.5,8253.0,20.3
+INC-01935,2026-11-02 18:00,srv-acad-16,ddos,7,1,43.7,11.0,A,Anexo,HV-8.0,5.1,2187.0,5.3
+INC-01936,2026-11-02 22:00,srv-acad-19,ERROR CONFIG,4,1,194.0,20.0,A,Anexo,HV-8.0,5.5,2294.0,5.6
+INC-01937,2026-11-04 03:00,srv-biblio-31,Falla hardware,4,3,274.0,12.0,A,Central,HV-8.0,14.4,5736.0,14.3
+INC-01938,2026-11-04 04:00,srv-web-12,DDOS,2,2,402.5,2.0,B,Central,HV-8.0,5.5,2256.0,5.7
+INC-01939,2026-11-04 11:00,srv-web-19,Error configuración,3,1,512.5,4.0,A,Central,HV-8.0,2.5,1155.0,2.8
+INC-01940,2026-11-05 00:00,srv-web-30,Ransomware,5,3,45.4,8.0,C,Anexo,HV-8.0,90.2,36266.0,90.3
+INC-01941,2026-11-05 00:00,srv-virtual-21,DDOS,4,2,804.5,10.0,A,Anexo,HV-8.0,8.8,3508.0,8.6
+INC-01940,2026-11-05 00:00,srv-web-30,Ransomware,5,3,45.4,8.0,C,Anexo,HV-8.0,90.2,36266.0,90.3
+INC-01943,2026-11-05 17:00,srv-correo-28,falla_hardware,3,2,1829.6,0.0,B,Central,HV-8.0,13.4,5495.0,13.3
+INC-01944,2026-11-06 02:00,srv-acad-11,MALWARE,4,2,236.9,11.0,A,Central,HV-8.0,8.9,3744.0,9.0
+INC-01945,2026-11-06 04:00,srv-web-27,FALLA HW,2,2,195.1,16.0,A,Central,HV-8.0,14.0,5723.0,13.8
+INC-01946,2026-11-06 07:00,srv-web-13,Error configuración,6,1,74.1,20.0,A,Anexo,HV-8.0,5.3,2096.0,5.2
+INC-01947,2026-11-06 22:00,srv-acad-37,DDoS,8,1,120.3,19.0,A,Central,HV-8.0,10.0,4203.0,10.3
+INC-01948,2026-11-07 05:00,srv-biblio-20,FALLA HW,1,3,107.0,,B,Anexo,HV-8.0,15.7,6245.0,15.4
+INC-01949,2026-11-08 10:00,srv-correo-04,ddos,4,3,86.9,20.0,C,Anexo,HV-8.0,5.5,1987.0,5.0
+INC-01950,2026-11-08 14:00,srv-biblio-10,ransomware ,5,2,92.5,2.0,B,Anexo,HV-8.0,18.3,6985.0,18.1
+INC-01951,2026-11-09 03:00,srv-biblio-13,DDOS,3,1,46.7,1.0,C,Anexo,HV-8.0,3.2,1237.0,3.2
+INC-01952,2026-11-09 09:00,srv-biblio-19,DDoS,7,2,438.2,4.0,A,Central,HV-8.0,13.0,5138.0,13.0
+INC-01953,2026-11-09 15:00,srv-virtual-02,FALLA HW,1,1,76.7,1.0,B,Central,HV-8.0,20.1,8471.0,20.2
+INC-01954,2026-11-09 20:00,srv-acad-12,ransomware ,1,3,1491.9,,C,Anexo,HV-8.0,62.9,25333.0,63.3
+INC-01955,2026-11-09 23:00,srv-correo-11,Falla hardware,2,3,182.9,14.0,A,Central,HV-8.0,11.4,4575.0,11.8
+INC-01956,2026-11-10 00:00,srv-correo-15,falla_hardware,2,2,155.1,11.0,B,Central,HV-8.0,6.3,2371.0,6.0
+INC-01957,2026-11-10 02:00,srv-acad-26,Falla hardware,8,1,53.1,0.0,A,Central,HV-8.0,5.7,2339.0,5.8
+INC-01958,2026-11-10 05:00,srv-acad-24,error_configuracion,8,2,154.1,12.0,C,Anexo,HV-8.0,6.4,2753.0,6.9
+INC-01959,2026-11-10 16:00,srv-biblio-32,falla_hardware,2,3,26.7,20.0,B,Anexo,HV-8.0,7.7,3171.0,7.9
+INC-01960,2026-11-10 18:00,srv-virtual-15,falla_hardware,2,2,202.0,25.0,C,Anexo,HV-8.0,7.2,3129.0,7.5
+INC-01961,2026-11-11 06:00,srv-virtual-17,MALWARE,7,2,134.0,,C,Anexo,HV-8.0,31.4,12076.0,31.3
+INC-01962,2026-11-12 01:00,srv-virtual-11,malware,6,2,381.7,25.0,C,Anexo,HV-8.0,19.8,7614.0,19.8
+INC-01963,2026-11-12 15:00,srv-virtual-11,ransomware ,4,2,73.7,2.0,C,Central,HV-8.0,25.2,10137.0,25.2
+INC-01964,2026-11-13 17:00,srv-acad-20,Ransomware,1,2,94.0,19.0,C,Anexo,HV-8.0,12.6,5172.0,12.7
+INC-01965,2026-11-14 07:00,srv-biblio-39,FALLA HW,6,3,22.1,9.0,B,Central,HV-8.0,12.0,4793.0,12.5
+INC-01966,2026-11-14 14:00,srv-virtual-28,ransomware ,1,2,247.4,14.0,A,Central,HV-8.0,15.9,6437.0,16.2
+INC-01967,2026-11-14 18:00,srv-acad-05,MALWARE,1,3,52.7,20.0,B,Central,HV-8.0,9.0,3347.0,8.6
+INC-01968,2026-11-14 21:00,srv-biblio-25,malware,4,1,75.3,17.0,B,Central,HV-8.0,10.8,4194.0,11.0
+INC-01969,2026-11-15 01:00,srv-web-06,ERROR CONFIG,4,1,147.0,29.0,B,Central,HV-8.0,7.1,2820.0,7.1
+INC-01970,2026-11-15 16:00,srv-virtual-11,DDoS,3,2,27.1,12.0,B,Anexo,HV-8.0,3.2,1105.0,2.7
+INC-01971,2026-11-16 03:00,srv-biblio-01,error_configuracion,7,2,160.7,11.0,B,Anexo,HV-8.0,26.7,10615.0,26.7
+INC-01972,2026-11-17 00:00,srv-biblio-25,malware,1,3,92.6,18.0,C,Anexo,HV-8.0,8.8,3421.0,9.0
+SIM-01973,2026-11-17 00:00,srv-biblio-25,malware,1,3,92.6,1.0,C,Anexo,HV-8.0,0.0,0.0,1.5
+INC-01974,2026-11-17 01:00,srv-acad-35,error_configuracion,7,2,125.5,21.0,B,Central,HV-8.0,9.1,3635.0,9.1
+INC-01975,2026-11-17 02:00,srv-correo-20,FALLA HW,3,3,107.4,21.0,A,Central,HV-8.0,13.6,5442.0,13.2
+INC-01976,2026-11-17 03:00,srv-biblio-14,malware,6,3,953.4,0.0,B,Central,HV-8.0,19.4,8286.0,19.8
+INC-01977,2026-11-17 07:00,srv-web-22,falla_hardware,6,2,295.2,11.0,A,Central,HV-8.0,17.0,6488.0,16.8
+INC-01978,2026-11-17 08:00,srv-correo-35,ERROR CONFIG,2,2,119.1,22.0,C,Anexo,HV-8.0,3.8,1408.0,3.7
+INC-01979,2026-11-17 08:00,srv-web-22,ransomware ,7,3,46.7,17.0,B,Anexo,HV-8.0,39.7,15987.0,39.6
+SIM-01980,2026-11-17 08:00,srv-web-22,ransomware ,7,3,46.7,1.0,B,Anexo,HV-8.0,0.0,0.0,1.1
+INC-01981,2026-11-17 11:00,srv-correo-37,malware,1,1,534.4,29.0,B,Anexo,HV-8.0,12.4,5048.0,12.6
+INC-01982,2026-11-17 19:00,srv-web-34,Malware,2,3,126.1,2.0,C,Central,HV-8.0,4.9,1970.0,4.8
+INC-01983,2026-11-18 00:00,srv-correo-24,MALWARE,3,3,42.1,,C,Anexo,HV-8.0,30.3,11861.0,30.1
+INC-01984,2026-11-18 03:00,srv-correo-24,Malware,8,2,43.2,27.0,C,Anexo,HV-8.0,21.9,8442.0,22.1
+INC-01985,2026-11-19 11:00,srv-acad-14,MALWARE,2,2,559.7,16.0,A,Anexo,HV-8.0,16.5,6264.0,16.0
+INC-01986,2026-11-19 12:00,srv-biblio-08,RANSOMWARE,6,2,92.9,21.0,A,Anexo,HV-8.0,51.9,20620.0,52.1
+INC-01987,2026-11-20 04:00,srv-acad-19,error_configuracion,3,2,8.6,13.0,C,Central,HV-8.0,2.6,1122.0,2.8
+INC-01988,2026-11-21 04:00,srv-biblio-24,ddos,4,2,1280.5,,B,Central,HV-8.0,18.0,6865.0,18.0
+INC-01989,2026-11-21 10:00,srv-acad-19,ddos,6,1,76.0,10.0,C,Central,HV-8.0,6.0,2565.0,6.3
+INC-01990,2026-11-21 14:00,srv-web-02,falla_hardware,1,2,154.3,5.0,B,Central,HV-8.0,5.5,2201.0,5.7
+INC-01991,2026-11-22 09:00,srv-acad-04,Malware,6,2,71.8,22.0,C,Anexo,HV-8.0,14.8,5402.0,14.2
+INC-01992,2026-11-22 20:00,srv-virtual-06,error_configuracion,4,3,78.8,20.0,A,Central,HV-8.0,3.7,1663.0,4.1
+INC-01993,2026-11-23 08:00,srv-acad-39,DDOS,7,2,24.0,,A,Central,HV-8.0,17.0,6762.0,16.8
+INC-01994,2026-11-23 16:00,srv-acad-22,ERROR CONFIG,8,3,47.1,12.0,B,Central,HV-8.0,9.0,3551.0,9.0
+INC-01995,2026-11-23 22:00,srv-virtual-02,FALLA HW,6,2,21.0,3.0,C,Anexo,HV-8.0,7.7,2946.0,7.7
+INC-01996,2026-11-24 03:00,srv-biblio-11,error_configuracion,7,2,310.3,2.0,A,Central,HV-8.0,8.4,3330.0,8.1
+INC-01997,2026-11-24 11:00,srv-web-27,ransomware ,5,2,79.6,27.0,C,Anexo,HV-8.0,52.6,22195.0,52.9
+INC-01998,2026-11-24 21:00,srv-web-29,MALWARE,2,1,65.4,21.0,C,Central,HV-8.0,8.5,3149.0,8.1
+INC-01999,2026-11-25 00:00,srv-virtual-02,ddos,7,2,37.4,21.0,C,Anexo,HV-8.0,8.2,3149.0,8.1
+INC-02000,2026-11-25 12:00,srv-web-21,ERROR CONFIG,6,3,127.6,19.0,A,Anexo,HV-8.0,6.2,2584.0,6.5
+INC-02000,2026-11-25 12:00,srv-web-21,ERROR CONFIG,6,3,127.6,19.0,A,Anexo,HV-8.0,6.2,2584.0,6.5
+INC-02002,2026-11-25 16:00,srv-correo-17,DDoS,1,1,53.8,19.0,C,Anexo,HV-8.0,3.1,1271.0,3.3
+INC-02003,2026-11-26 19:00,srv-biblio-02,Error configuración,3,3,223.8,8.0,B,Central,HV-8.0,4.0,1397.0,3.4
+INC-02004,2026-11-26 21:00,srv-acad-15,FALLA HW,2,1,273.9,11.0,A,Anexo,HV-8.0,7.0,3056.0,7.4
+INC-02005,2026-11-27 05:00,srv-acad-38,MALWARE,6,1,169.4,6.0,C,Anexo,HV-8.0,16.4,6825.0,16.3
+INC-02006,2026-11-27 13:00,srv-web-25,Error configuración,5,2,187.2,2.0,C,Anexo,HV-8.0,5.5,1999.0,5.0
+INC-02006,2026-11-27 13:00,srv-web-25,Error configuración,5,2,187.2,2.0,C,Anexo,HV-8.0,5.5,1999.0,5.0
+INC-02008,2026-11-27 18:00,srv-virtual-31,MALWARE,1,2,719.8,20.0,C,Anexo,HV-8.0,14.8,5956.0,14.7
+INC-02008,2026-11-27 18:00,srv-virtual-31,MALWARE,1,2,719.8,20.0,C,Anexo,HV-8.0,14.8,5956.0,14.7
+INC-02010,2026-11-28 10:00,srv-web-07,Error configuración,7,2,54.0,28.0,C,Central,HV-8.0,5.4,2196.0,5.6
+INC-02011,2026-11-28 13:00,srv-acad-31,ERROR CONFIG,2,2,151.2,7.0,C,Central,HV-8.0,4.3,1577.0,4.1
+INC-02012,2026-11-28 20:00,srv-virtual-26,RANSOMWARE,1,1,518.7,23.0,A,Anexo,HV-8.0,16.0,6525.0,15.7
+INC-02013,2026-11-29 12:00,srv-biblio-39,ransomware ,1,1,164.4,5.0,A,Central,HV-8.0,10.6,4361.0,10.4
+INC-02014,2026-11-30 01:00,srv-web-26,Error configuración,7,3,188.0,3.0,B,Anexo,HV-8.0,9.0,3759.0,9.1
+INC-02015,2026-11-30 06:00,srv-virtual-17,RANSOMWARE,5,1,752.0,23.0,B,Central,HV-8.0,32.0,13443.0,32.2
+INC-02016,2026-11-30 08:00,srv-web-11,Error configuración,3,2,35.4,17.0,A,Anexo,HV-8.0,3.7,1358.0,3.4
+INC-02017,2026-11-30 13:00,srv-web-23,error_configuracion,4,1,62.4,3.0,B,Anexo,HV-8.0,2.6,1231.0,3.1
+INC-02018,2026-11-30 22:00,srv-acad-29,Falla hardware,1,2,392.0,13.0,B,Central,HV-8.0,26.2,10625.0,26.5
+INC-02019,2026-12-01 00:00,srv-correo-07,DDOS,4,1,135.8,21.0,B,Central,HV-8.0,6.2,2328.0,5.9
+INC-02020,2026-12-01 10:00,srv-correo-36,error_configuracion,4,1,72.6,11.0,C,Anexo,HV-8.0,10.2,3803.0,9.9
